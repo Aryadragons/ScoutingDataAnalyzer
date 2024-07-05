@@ -47,8 +47,8 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 	public void handle(ActionEvent event) {
 		try {
 			if(event.getSource() == submitReB) {
-				String fileTeamNumS;
-				String fileAmpS;
+				String fileTeamNumS = "0";
+				String fileAmpS = null;
 				String fileSpeS;
 				String fileTrapS;
 				String fileClimbS;
@@ -57,6 +57,9 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				int fileSpe;
 				int fileTrap;
 				int fileClimb;
+				int fileMatches;
+				int isNext;
+				fileTempTeamList.clearTempTeamList();
 				FileChooser chooser = new FileChooser();
 				File fileChosen = chooser.showOpenDialog(null);
 				if (fileChosen != null) {
@@ -66,6 +69,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 						fileInput.next();
 					}
 					fileTeamNumS = fileInput.next();
+					while(fileTeamNumS != null)
 					fileAmpS = fileInput.next();
 					fileSpeS = fileInput.next();
 					fileTrapS = fileInput.next();
@@ -75,9 +79,53 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					fileSpe = Integer.parseInt(fileSpeS);
 					fileTrap = Integer.parseInt(fileTrapS);
 					fileClimb = Integer.parseInt(fileClimbS);
+					fileMatches = fileTempTeamList.getATempTeam(fileTeamNum).getTotalMatchesPlayed();
 					if(fileTempTeamList.getATempTeam(fileTeamNum) != null) {
-						fileTempTeamList.addOnToTempTeam(fileTeamNum, (), fileTeamNum, fileAmp, fileSpe, fileTrap, fileClimb);
+						fileTempTeamList.addOnToTempTeam(fileTeamNum, (fileTrap + fileAmp + fileSpe), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb);
+					} else {
+						fileTempTeamList.addTempTeam(fileTeamNum, (fileAmp + fileSpe + fileTrap), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb);
 					}
+					fileTeamNumS = fileInput.next();
+				}
+			}
+			if(event.getSource() == submitAddB) {
+				String fileTeamNumS = "0";
+				String fileAmpS = null;
+				String fileSpeS;
+				String fileTrapS;
+				String fileClimbS;
+				int fileTeamNum;
+				int fileAmp;
+				int fileSpe;
+				int fileTrap;
+				int fileClimb;
+				int fileMatches;
+				FileChooser chooser = new FileChooser();
+				File fileChosen = chooser.showOpenDialog(null);
+				if (fileChosen != null) {
+					System.out.println(fileChosen);
+					Scanner fileInput = new Scanner(fileChosen);
+					for(int i = 0; i < 5; i++) {
+						fileInput.next();
+					}
+					fileTeamNumS = fileInput.next();
+					while(fileTeamNumS != null)
+					fileAmpS = fileInput.next();
+					fileSpeS = fileInput.next();
+					fileTrapS = fileInput.next();
+					fileClimbS = fileInput.next();
+					fileTeamNum = Integer.parseInt(fileTeamNumS);
+					fileAmp = Integer.parseInt(fileAmpS);
+					fileSpe = Integer.parseInt(fileSpeS);
+					fileTrap = Integer.parseInt(fileTrapS);
+					fileClimb = Integer.parseInt(fileClimbS);
+					fileMatches = fileTempTeamList.getATempTeam(fileTeamNum).getTotalMatchesPlayed();
+					if(fileTempTeamList.getATempTeam(fileTeamNum) != null) {
+						fileTempTeamList.addOnToTempTeam(fileTeamNum, (fileTrap + fileAmp + fileSpe), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb);
+					} else {
+						fileTempTeamList.addTempTeam(fileTeamNum, (fileAmp + fileSpe + fileTrap), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb);
+					}
+					fileTeamNumS = fileInput.next();
 				}
 			}
 		} catch(Exception e) {

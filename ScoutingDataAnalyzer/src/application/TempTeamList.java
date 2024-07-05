@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class TempTeamList {
 	ArrayList<TempTeam> listOfTempTeams;
+	ArrayList<TempTeam> emptyListOfTempTeams;
 	TempTeamList() {
 		listOfTempTeams = new ArrayList<TempTeam>();
 	}
@@ -65,4 +66,9 @@ public class TempTeamList {
 		}
 		return tempTempT;
 	}
+	
+	public void clearTempTeamList() {
+		this.listOfTempTeams.clear();
+	}
+	
 }

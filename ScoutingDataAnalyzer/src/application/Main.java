@@ -56,6 +56,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	private TabPane mainTP;
 	//Home page Menu Item
 	private MenuItem homePageMI;
+	//Adding list of stuff
+	private TempTeamList mainTempTeamList;
+	private TeamList mainTeamList; 
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -64,6 +67,8 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			//adding menu bar
 			MenuBar MB = createMenuBar();
+			mainTempTeamList = new TempTeamList();
+			mainTeamList = new TeamList();
 			root.setTop(MB);
 			//adding the Tab panes
 			mainTP = new TabPane();
@@ -299,8 +304,8 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		mainTP.getTabs().addAll(deletePlayOffTab);
 	}
 	
-	private void makeOpenNewScData() {
-		openNewScDataTab openScData = new openNewScDataTab();
+	private void makeOpenNewScData(TempTeamList mainTempTeamList) {
+		openNewScDataTab openScData = new openNewScDataTab(mainTempTeamList);
 		Tab openScDataTab = new Tab("Open New Scouting Data", openScData);
 		mainTP.getTabs().addAll(openScDataTab);
 	}
@@ -442,7 +447,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 				makeDeletePlayOffAlliance();
 			}
 			if(event.getSource() == openNewScDataMI) {
-				makeOpenNewScData();
+				makeOpenNewScData(mainTempTeamList);
 			}
 			if(event.getSource() == openNewPitDataMI) {
 				makeOpenNewPitData();
