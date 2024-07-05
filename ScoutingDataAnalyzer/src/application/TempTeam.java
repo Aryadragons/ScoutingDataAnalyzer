@@ -1,6 +1,7 @@
 package application;
 
 public class TempTeam {
+	private int teamNum;
 	private int totalCycles;
 	private int totalMatchesPlayed;
 	private int totalAmp;
@@ -8,13 +9,17 @@ public class TempTeam {
 	private int totalClimb;
 	private int totalTrap;
 	
-	TempTeam(int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap){
+	TempTeam(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap){
 		setTotalCycles(tempTotalCycles);
 		setTotalMatchesPlayed(tempTotalMatchesPlayed);
 		setTotalAmp(tempTotalAmp);
 		setTotalSpe(tempTotalSpe);
 		setTotalTrap(tempTotalTrap);
 		setTotalClimb(tempTotalClimb);
+	}
+	
+	public int setTeamNum(int tempTeamNum){
+		return teamNum = tempTeamNum;
 	}
 	
 	public int setTotalCycles(int tempTotalCycles){
@@ -41,6 +46,10 @@ public class TempTeam {
 		return totalClimb = tempTotalClimb;
 	}
 	
+	public int getTeamNum() {
+		return teamNum;
+	}
+	
 	public int getTotalCycles() {
 		return totalCycles;
 	}
@@ -63,6 +72,7 @@ public class TempTeam {
 	public int getTotalClimb() {
 		return totalClimb;
 	}
+	
 	public String toString() {
 		return("Total Cycles" + totalCycles +"Total Matches Played" + totalMatchesPlayed +"Total Amp" + totalAmp +"Total Spe" + totalSpe +"Total Trap" + totalTrap +"Total Climb" + totalClimb);
 	}

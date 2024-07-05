@@ -1,6 +1,7 @@
 package application;
 
 public class Team {
+	private int teamNum;
 	private int totalCycles;
 	private int totalMatchesPlayed;
 	private int totalAmp;
@@ -14,7 +15,8 @@ public class Team {
 	private int avgClimb;
 	private int avgTrap;
 	
-	Team(int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap){
+	Team(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap){
+		setTeamNum(tempTeamNum);
 		setTotalCycles(tempTotalCycles);
 		setTotalMatchesPlayed(tempTotalMatchesPlayed);
 		setTotalAmp(tempTotalAmp);
@@ -27,6 +29,10 @@ public class Team {
 		setAvgSpe(tempTotalSpe/totalMatchesPlayed);
 		setAvgTrap(tempTotalTrap/totalMatchesPlayed);
 		setAvgClimb(tempTotalClimb/totalMatchesPlayed);
+	}
+	
+	public int setTeamNum(int tempTeamNum){
+		return teamNum = tempTeamNum;
 	}
 	
 	public int setTotalCycles(int tempTotalCycles){
@@ -73,6 +79,9 @@ public class Team {
 		return avgClimb = tempAvgClimb;
 	}
 	//get er's for total
+	public int getTeamNum() {
+		return teamNum;
+	}
 	public int getTotalCycles() {
 		return totalCycles;
 	}
@@ -116,6 +125,6 @@ public class Team {
 		return avgClimb;
 	}
 	public String toString() {
-		return("Total Cycles" + totalCycles +"Total Matches Played" + totalMatchesPlayed +"Total Amp" + totalAmp +"Total Spe" + totalSpe +"Total Trap" + totalTrap +"Total Climb" + totalClimb);
+		return("Avg Cycles" + avgCycles + "Avg Amp" + avgAmp +"Avg Spe" + avgSpe +"Avg Trap" + avgTrap +"Avg Climb" + avgClimb);
 	}
 }
