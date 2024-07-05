@@ -1,11 +1,18 @@
 package application;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.stage.FileChooser;
 
-public class openNewScDataTab extends GridPane{
+public class openNewScDataTab extends GridPane implements EventHandler<ActionEvent>{
 	
 	private Button goForReplaceB;
 	private Button goForAddB;
@@ -13,8 +20,10 @@ public class openNewScDataTab extends GridPane{
 	private Button submitAddB;
 	private TextField fileNameReTF;
 	private TextField fileNameAddTF;
+	private TempTeamList fileTempTeamList;
 	
-	public openNewScDataTab() {
+	public openNewScDataTab(TempTeamList theTempTeamList) {
+		fileTempTeamList = theTempTeamList;
 		this.add(new Label("Open New Data That Will Replace All Scouting Data"), 0, 0);
 		this.add(new Label("Choosen File Name"), 0, 1);
 		fileNameReTF = new TextField();
@@ -26,10 +35,53 @@ public class openNewScDataTab extends GridPane{
 		goForReplaceB = new Button("Go");
 		goForAddB = new Button("Go");
 		submitReB = new Button("Submit");
+		submitReB.setOnAction(this);
 		submitAddB = new Button("Submit");
 		this.add(goForReplaceB, 1, 0);
 		this.add(goForAddB, 1, 2);
 		this.add(submitReB, 2, 1);
 		this.add(submitAddB, 2, 3);
+	}
+
+	@Override
+	public void handle(ActionEvent event) {
+		try {
+			if(event.getSource() == submitReB) {
+				String fileTeamNumS;
+				String fileAmpS;
+				String fileSpeS;
+				String fileTrapS;
+				String fileClimbS;
+				int fileTeamNum;
+				int fileAmp;
+				int fileSpe;
+				int fileTrap;
+				int fileClimb;
+				FileChooser chooser = new FileChooser();
+				File fileChosen = chooser.showOpenDialog(null);
+				if (fileChosen != null) {
+					System.out.println(fileChosen);
+					Scanner fileInput = new Scanner(fileChosen);
+					for(int i = 0; i < 5; i++) {
+						fileInput.next();
+					}
+					fileTeamNumS = fileInput.next();
+					fileAmpS = fileInput.next();
+					fileSpeS = fileInput.next();
+					fileTrapS = fileInput.next();
+					fileClimbS = fileInput.next();
+					fileTeamNum = Integer.parseInt(fileTeamNumS);
+					fileAmp = Integer.parseInt(fileAmpS);
+					fileSpe = Integer.parseInt(fileSpeS);
+					fileTrap = Integer.parseInt(fileTrapS);
+					fileClimb = Integer.parseInt(fileClimbS);
+					if(fileTempTeamList.getATempTeam(fileTeamNum) != null) {
+						fileTempTeamList.addOnToTempTeam(fileTeamNum, (), fileTeamNum, fileAmp, fileSpe, fileTrap, fileClimb);
+					}
+				}
+			}
+		} catch(Exception e) {
+			
+		}
 	}
 }
