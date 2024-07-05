@@ -185,7 +185,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	}
 	
 	private void makeSearchTeams() {
-		searchTeamsTab seTeams = new searchTeamsTab();
+		searchTeamsTab seTeams = new searchTeamsTab(mainTeamList);
 		Tab seTeamsTab = new Tab("Search Teams", seTeams);
 		mainTP.getTabs().addAll(seTeamsTab);
 	}
@@ -304,8 +304,8 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		mainTP.getTabs().addAll(deletePlayOffTab);
 	}
 	
-	private void makeOpenNewScData(TempTeamList mainTempTeamList) {
-		openNewScDataTab openScData = new openNewScDataTab(mainTempTeamList);
+	private void makeOpenNewScData(TempTeamList mainTempTeamList, TeamList mainTeamList) {
+		openNewScDataTab openScData = new openNewScDataTab(mainTempTeamList, mainTeamList);
 		Tab openScDataTab = new Tab("Open New Scouting Data", openScData);
 		mainTP.getTabs().addAll(openScDataTab);
 	}
@@ -447,7 +447,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 				makeDeletePlayOffAlliance();
 			}
 			if(event.getSource() == openNewScDataMI) {
-				makeOpenNewScData(mainTempTeamList);
+				makeOpenNewScData(mainTempTeamList, mainTeamList);
 			}
 			if(event.getSource() == openNewPitDataMI) {
 				makeOpenNewPitData();

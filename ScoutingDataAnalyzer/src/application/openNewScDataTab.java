@@ -21,8 +21,10 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 	private TextField fileNameReTF;
 	private TextField fileNameAddTF;
 	private TempTeamList fileTempTeamList;
+	private TeamList fileTeamList;
+	private Scanner fileInput;
 	
-	public openNewScDataTab(TempTeamList theTempTeamList) {
+	public openNewScDataTab(TempTeamList theTempTeamList, TeamList theTeamList) {
 		fileTempTeamList = theTempTeamList;
 		this.add(new Label("Open New Data That Will Replace All Scouting Data"), 0, 0);
 		this.add(new Label("Choosen File Name"), 0, 1);
@@ -46,6 +48,26 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 	@Override
 	public void handle(ActionEvent event) {
 		try {
+			if(event.getSource() == goForReplaceB) {
+				fileTempTeamList.clearTempTeamList();
+				FileChooser chooser = new FileChooser();
+				File fileChosen = chooser.showOpenDialog(null);
+				if (fileChosen != null) {
+					System.out.println(fileChosen);
+					fileInput = new Scanner(fileChosen);
+					fileNameReTF.setText(fileChosen.toString());
+				}
+			}
+			if(event.getSource() == goForReplaceB) {
+				fileTempTeamList.clearTempTeamList();
+				FileChooser chooser = new FileChooser();
+				File fileChosen = chooser.showOpenDialog(null);
+				if (fileChosen != null) {
+					System.out.println(fileChosen);
+					fileInput = new Scanner(fileChosen);
+					fileNameReTF.setText(fileChosen.toString());
+				}
+			}
 			if(event.getSource() == submitReB) {
 				String fileTeamNumS = "0";
 				String fileAmpS = null;
@@ -58,18 +80,18 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				int fileTrap;
 				int fileClimb;
 				int fileMatches;
-				int isNext;
-				fileTempTeamList.clearTempTeamList();
-				FileChooser chooser = new FileChooser();
-				File fileChosen = chooser.showOpenDialog(null);
-				if (fileChosen != null) {
-					System.out.println(fileChosen);
-					Scanner fileInput = new Scanner(fileChosen);
-					for(int i = 0; i < 5; i++) {
-						fileInput.next();
-					}
-					fileTeamNumS = fileInput.next();
-					while(fileTeamNumS != null)
+				int fileTeamNumT;
+				int fileAmpT;
+				int fileSpeT;
+				int fileTrapT;
+				int fileClimbT;
+				int fileCyclesT;
+				int fileMatchesT;
+				for(int i = 0; i < 5; i++) {
+					fileInput.next();
+				}
+				fileTeamNumS = fileInput.next();
+				while(fileTeamNumS != null) {
 					fileAmpS = fileInput.next();
 					fileSpeS = fileInput.next();
 					fileTrapS = fileInput.next();
@@ -87,7 +109,18 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					}
 					fileTeamNumS = fileInput.next();
 				}
-			}
+				for (int i = 0; i < fileTempTeamList.listOfTempTeams.size(); i++) {
+					fileTeamNumT = fileTempTeamList.listOfTempTeams.get(i).getTeamNum();
+					fileMatchesT = fileTempTeamList.listOfTempTeams.get(i).getTotalMatchesPlayed();
+					fileCyclesT = fileTempTeamList.listOfTempTeams.get(i).getTotalCycles();
+					fileAmpT = fileTempTeamList.listOfTempTeams.get(i).getTotalAmp();
+					fileSpeT = fileTempTeamList.listOfTempTeams.get(i).getTotalSpe();
+					fileTrapT = fileTempTeamList.listOfTempTeams.get(i).getTotalTrap();
+					fileClimbT = fileTempTeamList.listOfTempTeams.get(i).getTotalClimb();
+					fileTeamList.addTempTeam(fileTeamNumT, fileMatchesT, fileCyclesT, fileAmpT, fileSpeT, fileTrapT, fileClimbT);
+				}
+					
+				}
 			if(event.getSource() == submitAddB) {
 				String fileTeamNumS = "0";
 				String fileAmpS = null;
@@ -100,16 +133,18 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				int fileTrap;
 				int fileClimb;
 				int fileMatches;
-				FileChooser chooser = new FileChooser();
-				File fileChosen = chooser.showOpenDialog(null);
-				if (fileChosen != null) {
-					System.out.println(fileChosen);
-					Scanner fileInput = new Scanner(fileChosen);
-					for(int i = 0; i < 5; i++) {
-						fileInput.next();
-					}
-					fileTeamNumS = fileInput.next();
-					while(fileTeamNumS != null)
+				int fileTeamNumT;
+				int fileAmpT;
+				int fileSpeT;
+				int fileTrapT;
+				int fileClimbT;
+				int fileCyclesT;
+				int fileMatchesT;
+				for(int i = 0; i < 5; i++) {
+					fileInput.next();
+				}
+				fileTeamNumS = fileInput.next();
+				while(fileTeamNumS != null) {
 					fileAmpS = fileInput.next();
 					fileSpeS = fileInput.next();
 					fileTrapS = fileInput.next();
@@ -127,8 +162,18 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					}
 					fileTeamNumS = fileInput.next();
 				}
+				for (int i = 0; i < fileTempTeamList.listOfTempTeams.size(); i++) {
+					fileTeamNumT = fileTempTeamList.listOfTempTeams.get(i).getTeamNum();
+					fileMatchesT = fileTempTeamList.listOfTempTeams.get(i).getTotalMatchesPlayed();
+					fileCyclesT = fileTempTeamList.listOfTempTeams.get(i).getTotalCycles();
+					fileAmpT = fileTempTeamList.listOfTempTeams.get(i).getTotalAmp();
+					fileSpeT = fileTempTeamList.listOfTempTeams.get(i).getTotalSpe();
+					fileTrapT = fileTempTeamList.listOfTempTeams.get(i).getTotalTrap();
+					fileClimbT = fileTempTeamList.listOfTempTeams.get(i).getTotalClimb();
+					fileTeamList.addTempTeam(fileTeamNumT, fileMatchesT, fileCyclesT, fileAmpT, fileSpeT, fileTrapT, fileClimbT);
+				}
 			}
-		} catch(Exception e) {
+		}catch(Exception e) {
 			
 		}
 	}
