@@ -1,5 +1,8 @@
 package application;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TempTeam {
 	private int teamNum;
 	private int totalCycles;
@@ -8,14 +11,17 @@ public class TempTeam {
 	private int totalSpe;
 	private int totalClimb;
 	private int totalTrap;
+	private List<String> listOfComments;
 	
-	TempTeam(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap){
+	TempTeam(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, String comment){
 		setTotalCycles(tempTotalCycles);
 		setTotalMatchesPlayed(tempTotalMatchesPlayed);
 		setTotalAmp(tempTotalAmp);
 		setTotalSpe(tempTotalSpe);
 		setTotalTrap(tempTotalTrap);
 		setTotalClimb(tempTotalClimb);
+		listOfComments = new ArrayList<>();
+		addOnCommentList(comment);
 	}
 	
 	public int setTeamNum(int tempTeamNum){
@@ -46,6 +52,11 @@ public class TempTeam {
 		return totalClimb = tempTotalClimb;
 	}
 	
+	public List<String> addOnCommentList(String comment) {
+		listOfComments.add(comment);
+		return listOfComments;
+	}
+	
 	public int getTeamNum() {
 		return teamNum;
 	}
@@ -71,6 +82,10 @@ public class TempTeam {
 	
 	public int getTotalClimb() {
 		return totalClimb;
+	}
+	
+	public List<String> getCommentList() {
+		return listOfComments;
 	}
 	
 	public String toString() {

@@ -1,10 +1,14 @@
 package application;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 
@@ -17,6 +21,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	private TextField avgSpeTF;
 	private TextField avgTrapTF;
 	private TextField avgClimbTF;
+	private TextField avgCommentListTF;
+	private TextArea commentsTA;
 	
 	public searchTeamsTab(TeamList mainTeamList) {
 		this.add(new Label("Select Team to Look Up"), 0, 0);
@@ -42,6 +48,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				this.add(new Label("Avg Speaker:  "), 4, 3);
 				this.add(new Label("Avg Trap:  "), 6, 3);
 				this.add(new Label("Avg Climb:  "), 8, 3);
+				this.add(new Label("Comments:  "), 10, 3);
 				avgCyclesTF = new TextField();
 				avgAmpTF = new TextField();
 				avgSpeTF = new TextField();
@@ -62,6 +69,14 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				avgTrapTF.setText(avgTrapS);
 				String avgClimbS = Integer.toString(theTeam.getAvgClimb());
 				avgClimbTF.setText(avgClimbS);
+				List<String> commentList = theTeam.getCommentsList();
+				commentsTA = new TextArea();
+				String commentsS = "";
+				for(int i = 0; i < commentList.size(); i++) {
+					commentsS = commentsS + "\n" +commentList.get(i);
+				}
+				this.add(commentsTA, 11, 3);
+				commentsTA.setText(commentsS);
 				this.add(new Label("and Did " + theTeam.getTotalMatchesPlayed() + " Matches"), selectedTeam, selectedTeam);
 			}
 		} catch(Exception e) {

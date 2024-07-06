@@ -68,6 +68,8 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	// adding save data files stuff
 	private Button saveDataB;
 	private Scanner fileInput;
+	//
+	private List<Integer> listofTeamNums;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -86,6 +88,8 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			//adding save files stuff
 			saveDataB = new Button("Save All Data");
 			saveDataB.setOnAction(this);
+			//
+			listofTeamNums = new ArrayList<Integer>();
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {

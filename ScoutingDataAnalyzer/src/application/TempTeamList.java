@@ -10,12 +10,12 @@ public class TempTeamList {
 		listOfTempTeams = new ArrayList<TempTeam>();
 	}
 	
-	public void addTempTeam(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap) {
-		TempTeam TempT = new TempTeam(tempTeamNum, tempTotalCycles, tempTotalMatchesPlayed, tempTotalAmp, tempTotalSpe, tempTotalClimb, tempTotalTrap);
+	public void addTempTeam(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalTrap, int tempTotalClimb, String comment) {
+		TempTeam TempT = new TempTeam(tempTeamNum, tempTotalCycles, tempTotalMatchesPlayed, tempTotalAmp, tempTotalSpe, tempTotalClimb, tempTotalTrap, comment);
 		listOfTempTeams.add(TempT);
 	}
 	
-	public void addOnToTempTeam(int teamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap) {
+	public void addOnToTempTeam(int teamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, String comment) {
 		int found = 0;
 		int theTempTeam = -1;
 		int tempsSearched = 0;
@@ -44,6 +44,7 @@ public class TempTeamList {
 		listOfTempTeams.get(i).setTotalSpe(tempTotalSpe + storedSpe);
 		listOfTempTeams.get(i).setTotalTrap(tempTotalTrap + storedTrap);
 		listOfTempTeams.get(i).setTotalClimb(tempTotalClimb + storedClimb);
+		listOfTempTeams.get(i).addOnCommentList(comment);
 		
 	}
 	
