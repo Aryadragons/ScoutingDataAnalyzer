@@ -1,6 +1,8 @@
 package application;
 	
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import javafx.application.Application;
@@ -205,6 +207,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		String fileClimbS;
 		String fileMatchesS;
 		String fileCyclesS;
+		String fileNumOfCommsS;
 		int fileTeamNum;
 		int fileAmp;
 		int fileSpe;
@@ -212,21 +215,30 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		int fileClimb;
 		int fileMatches;
 		int fileCycles;
+		int fileNumOfComms;
+		List<String> commentList = new ArrayList<>();;
 		fileTeamNumS = fileInput.next();
 		while(fileTeamNumS != null) {
+			fileMatchesS  = fileInput.next();
+			fileCyclesS = fileInput.next();
 			fileAmpS = fileInput.next();
 			fileSpeS = fileInput.next();
 			fileTrapS = fileInput.next();
 			fileClimbS = fileInput.next();
-			fileMatchesS  = fileInput.next();
+			fileNumOfCommsS = fileInput.next();
+			fileNumOfComms = Integer.parseInt(fileNumOfCommsS);
+			for(int i = 0; i < fileNumOfComms; i++) {
+				commentList.add(fileInput.next());
+			}
 			fileTeamNum = Integer.parseInt(fileTeamNumS);
 			fileAmp = Integer.parseInt(fileAmpS);
 			fileSpe = Integer.parseInt(fileSpeS);
 			fileTrap = Integer.parseInt(fileTrapS);
 			fileClimb = Integer.parseInt(fileClimbS);
 			fileMatches  = Integer.parseInt(fileMatchesS);
-			mainTeamList.addTempTeam(fileTeamNum, fileCycles, fileMatches, fileAmp, fileSpe, fileTrap, fileClimb);
-			}
+			fileCycles  = Integer.parseInt(fileCyclesS);
+			mainTeamList.addTempTeam(fileTeamNum, fileCycles, fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, commentList);
+			fileTeamNumS = fileInput.next();
 		}
 	}
 	

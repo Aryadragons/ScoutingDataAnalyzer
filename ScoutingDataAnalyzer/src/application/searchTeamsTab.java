@@ -5,12 +5,18 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 
 public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent>{
 	private ComboBox<String> teamListCB;
 	private Button seTeamsB;
 	private TeamList theTeamList;
+	private TextField avgCyclesTF;
+	private TextField avgAmpTF;
+	private TextField avgSpeTF;
+	private TextField avgTrapTF;
+	private TextField avgClimbTF;
 	
 	public searchTeamsTab(TeamList mainTeamList) {
 		this.add(new Label("Select Team to Look Up"), 0, 0);
@@ -26,9 +32,37 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	public void handle(ActionEvent event) {
 		try {
 			if(event.getSource() == seTeamsB) {
+				Team theTeam;
 				String selectedTeamS = teamListCB.getSelectionModel().getSelectedItem();; 
 				int selectedTeam = Integer.parseInt(selectedTeamS);
-				theTeamList.getATeam(selectedTeam);
+				theTeam = theTeamList.getATeam(selectedTeam);
+				this.add(new Label(selectedTeamS), 0, 2);
+				this.add(new Label("Avg Cycles:  "), 0, 3);
+				this.add(new Label("Avg Amp:  "), 2, 3);
+				this.add(new Label("Avg Speaker:  "), 4, 3);
+				this.add(new Label("Avg Trap:  "), 6, 3);
+				this.add(new Label("Avg Climb:  "), 8, 3);
+				avgCyclesTF = new TextField();
+				avgAmpTF = new TextField();
+				avgSpeTF = new TextField();
+				avgTrapTF = new TextField();
+				avgClimbTF = new TextField();
+				this.add(avgCyclesTF, 1, 3);
+				this.add(avgAmpTF, 3, 3);
+				this.add(avgSpeTF, 5, 3);
+				this.add(avgTrapTF, 7, 3);
+				this.add(avgClimbTF, 9, 3);
+				String avgCyclesS = Integer.toString(theTeam.getAvgCycles());
+				avgCyclesTF.setText(avgCyclesS);
+				String avgAmpS = Integer.toString(theTeam.getAvgAmp());
+				avgAmpTF.setText(avgAmpS);
+				String avgSpeS = Integer.toString(theTeam.getAvgSpe());
+				avgSpeTF.setText(avgSpeS);
+				String avgTrapS = Integer.toString(theTeam.getAvgTrap());
+				avgTrapTF.setText(avgTrapS);
+				String avgClimbS = Integer.toString(theTeam.getAvgClimb());
+				avgClimbTF.setText(avgClimbS);
+				this.add(new Label("and Did " + theTeam.getTotalMatchesPlayed() + " Matches"), selectedTeam, selectedTeam);
 			}
 		} catch(Exception e) {
 			

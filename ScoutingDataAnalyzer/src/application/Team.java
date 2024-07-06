@@ -1,5 +1,8 @@
 package application;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Team {
 	private int teamNum;
 	private int totalCycles;
@@ -14,8 +17,9 @@ public class Team {
 	private int avgSpe;
 	private int avgClimb;
 	private int avgTrap;
-	
-	Team(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap){
+	// comments
+	private List<String> listOfComments;
+	Team(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, List<String> commentList){
 		setTeamNum(tempTeamNum);
 		setTotalCycles(tempTotalCycles);
 		setTotalMatchesPlayed(tempTotalMatchesPlayed);
@@ -29,6 +33,8 @@ public class Team {
 		setAvgSpe(tempTotalSpe/totalMatchesPlayed);
 		setAvgTrap(tempTotalTrap/totalMatchesPlayed);
 		setAvgClimb(tempTotalClimb/totalMatchesPlayed);
+		listOfComments = new ArrayList<>();
+		addToCommentsList(commentList);
 	}
 	
 	public int setTeamNum(int tempTeamNum){
@@ -78,6 +84,12 @@ public class Team {
 	public int setAvgClimb(int tempAvgClimb){
 		return avgClimb = tempAvgClimb;
 	}
+	
+	public void addToCommentsList(List<String> commentList) {
+		for (int i = 0; i < commentList.size(); i++) {
+			listOfComments.add(commentList.get(i));
+		}
+	}
 	//get er's for total
 	public int getTeamNum() {
 		return teamNum;
@@ -123,6 +135,10 @@ public class Team {
 	
 	public int getAvgClimb() {
 		return avgClimb;
+	}
+	
+	public List<String> getCommentsList() {
+		return listOfComments;
 	}
 	public String toString() {
 		return("Avg Cycles" + avgCycles + "Avg Amp" + avgAmp +"Avg Spe" + avgSpe +"Avg Trap" + avgTrap +"Avg Climb" + avgClimb);
