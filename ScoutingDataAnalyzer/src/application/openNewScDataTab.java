@@ -2,6 +2,8 @@ package application;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 import javafx.event.ActionEvent;
@@ -23,6 +25,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 	private TempTeamList fileTempTeamList;
 	private TeamList fileTeamList;
 	private Scanner fileInput;
+	private FileWriter csvWriter;
 	
 	public openNewScDataTab(TempTeamList theTempTeamList, TeamList theTeamList) {
 		fileTempTeamList = theTempTeamList;
@@ -44,7 +47,54 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 		this.add(submitReB, 2, 1);
 		this.add(submitAddB, 2, 3);
 	}
-
+	
+	public void exportDataToCSV() {
+		try {
+			csvWriter = new FileWriter("MainScoutingDataFiles.csv");
+			String csvTeamNumS;
+			String csvMatchesS;
+			String csvCyclesS;
+			String csvAmpS;
+			String csvSpeS;
+			String csvTrapS;
+			String csvClimbS;
+			int csvTeamNum;
+			int csvMatches;
+			int csvCycles;
+			int csvAmp;
+			int csvSpe;
+			int csvTrap;
+			int csvClimb;
+			for(int i = 0; i < fileTeamList.listOfTeams.size(); i++) {
+				csvTeamNum = fileTeamList.listOfTeams.get(i).getTeamNum();
+				csvMatches = fileTeamList.listOfTeams.get(i).getTotalMatchesPlayed();
+				csvCycles = fileTeamList.listOfTeams.get(i).getAvgCycles();
+				csvAmp = fileTeamList.listOfTeams.get(i).getAvgAmp();
+				csvSpe = fileTeamList.listOfTeams.get(i).getAvgSpe();
+				csvTrap = fileTeamList.listOfTeams.get(i).getAvgTrap();
+				csvClimb = fileTeamList.listOfTeams.get(i).getAvgClimb();
+				csvTeamNumS = Integer.toString(csvTeamNum);
+				csvMatchesS = Integer.toString(csvMatches);
+				csvCyclesS = Integer.toString(csvCycles);
+				csvAmpS = Integer.toString(csvAmp);
+				csvSpeS = Integer.toString(csvSpe);
+				csvTrapS = Integer.toString(csvTrap);
+				csvClimbS = Integer.toString(csvClimb);
+				csvWriter.append(csvTeamNumS);
+				csvWriter.append(csvMatchesS);
+				csvWriter.append(csvCyclesS);
+				csvWriter.append(csvAmpS);
+				csvWriter.append(csvSpeS);
+				csvWriter.append(csvTrapS);
+				csvWriter.append(csvClimbS);
+				csvWriter.append("\n");
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	@Override
 	public void handle(ActionEvent event) {
 		try {
@@ -119,7 +169,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					fileClimbT = fileTempTeamList.listOfTempTeams.get(i).getTotalClimb();
 					fileTeamList.addTempTeam(fileTeamNumT, fileMatchesT, fileCyclesT, fileAmpT, fileSpeT, fileTrapT, fileClimbT);
 				}
-					
+				this.exportDataToCSV();	
 				}
 			if(event.getSource() == submitAddB) {
 				String fileTeamNumS = "0";
@@ -133,13 +183,6 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				int fileTrap;
 				int fileClimb;
 				int fileMatches;
-				int fileTeamNumT;
-				int fileAmpT;
-				int fileSpeT;
-				int fileTrapT;
-				int fileClimbT;
-				int fileCyclesT;
-				int fileMatchesT;
 				for(int i = 0; i < 5; i++) {
 					fileInput.next();
 				}
@@ -162,19 +205,10 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					}
 					fileTeamNumS = fileInput.next();
 				}
-				for (int i = 0; i < fileTempTeamList.listOfTempTeams.size(); i++) {
-					fileTeamNumT = fileTempTeamList.listOfTempTeams.get(i).getTeamNum();
-					fileMatchesT = fileTempTeamList.listOfTempTeams.get(i).getTotalMatchesPlayed();
-					fileCyclesT = fileTempTeamList.listOfTempTeams.get(i).getTotalCycles();
-					fileAmpT = fileTempTeamList.listOfTempTeams.get(i).getTotalAmp();
-					fileSpeT = fileTempTeamList.listOfTempTeams.get(i).getTotalSpe();
-					fileTrapT = fileTempTeamList.listOfTempTeams.get(i).getTotalTrap();
-					fileClimbT = fileTempTeamList.listOfTempTeams.get(i).getTotalClimb();
-					fileTeamList.addTempTeam(fileTeamNumT, fileMatchesT, fileCyclesT, fileAmpT, fileSpeT, fileTrapT, fileClimbT);
-				}
+				this.exportDataToCSV();
 			}
 		}catch(Exception e) {
-			
+			;
 		}
 	}
 }

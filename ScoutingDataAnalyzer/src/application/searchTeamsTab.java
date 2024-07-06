@@ -26,7 +26,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	public void handle(ActionEvent event) {
 		try {
 			if(event.getSource() == seTeamsB) {
-				int selectedTeam;
+				String selectedTeamS = teamListCB.getSelectionModel().getSelectedItem();; 
+				int selectedTeam = Integer.parseInt(selectedTeamS);
 				theTeamList.getATeam(selectedTeam);
 			}
 		} catch(Exception e) {

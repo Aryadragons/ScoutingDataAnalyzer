@@ -1,5 +1,8 @@
 package application;
 	
+import java.io.File;
+import java.util.Scanner;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -8,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.FileChooser;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -58,7 +62,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	private MenuItem homePageMI;
 	//Adding list of stuff
 	private TempTeamList mainTempTeamList;
-	private TeamList mainTeamList; 
+	private TeamList mainTeamList;
+	// adding save data files stuff
+	private Button saveDataB;
+	private Scanner fileInput;
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -73,6 +81,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			//adding the Tab panes
 			mainTP = new TabPane();
 			root.setBottom(mainTP);
+			//adding save files stuff
+			saveDataB = new Button("Save All Data");
+			saveDataB.setOnAction(this);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {
@@ -182,6 +193,41 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		//Adding Menu Items to the Menu Bar
 		mB.getMenus().addAll(homePageMenu, searchMenu, compareMenu, findBestMenu, createMenu, playOffMenu, openMenu, editMenu, exportMenu);
 		return mB;
+	}
+	
+	private void updateDataList() {
+		fileInput = new Scanner("MainScoutingDataFiles.csv");
+		mainTeamList.listOfTeams.clear();
+		String fileTeamNumS = "0";
+		String fileAmpS = null;
+		String fileSpeS;
+		String fileTrapS;
+		String fileClimbS;
+		String fileMatchesS;
+		String fileCyclesS;
+		int fileTeamNum;
+		int fileAmp;
+		int fileSpe;
+		int fileTrap;
+		int fileClimb;
+		int fileMatches;
+		int fileCycles;
+		fileTeamNumS = fileInput.next();
+		while(fileTeamNumS != null) {
+			fileAmpS = fileInput.next();
+			fileSpeS = fileInput.next();
+			fileTrapS = fileInput.next();
+			fileClimbS = fileInput.next();
+			fileMatchesS  = fileInput.next();
+			fileTeamNum = Integer.parseInt(fileTeamNumS);
+			fileAmp = Integer.parseInt(fileAmpS);
+			fileSpe = Integer.parseInt(fileSpeS);
+			fileTrap = Integer.parseInt(fileTrapS);
+			fileClimb = Integer.parseInt(fileClimbS);
+			fileMatches  = Integer.parseInt(fileMatchesS);
+			mainTeamList.addTempTeam(fileTeamNum, fileCycles, fileMatches, fileAmp, fileSpe, fileTrap, fileClimb);
+			}
+		}
 	}
 	
 	private void makeSearchTeams() {
@@ -383,6 +429,10 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		mainTP.getTabs().addAll(homeTab);
 	}
 	
+	public void setMainTeamList(TeamList incoming) {
+		mainTeamList = incoming;
+	}
+	
 	@Override
 	public void handle(ActionEvent event) {
 		try {
@@ -484,6 +534,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			}
 			if(event.getSource() == homePageMI) {
 				makeHomePage();
+			}
+			if(event.getSource() == saveDataB) {
+				updateDataList();
 			}
 		} catch(Exception e) {
 			System.out.println("error: " + e);
