@@ -69,7 +69,8 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	private Button saveDataB;
 	private Scanner fileInput;
 	//
-	private List<Integer> listofTeamNums;
+	private List<Integer> listOfTeamNums;
+	private List<Integer> listOfTeamNumsSorted;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -88,8 +89,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			//adding save files stuff
 			saveDataB = new Button("Save All Data");
 			saveDataB.setOnAction(this);
+			root.setCenter(saveDataB);
 			//
-			listofTeamNums = new ArrayList<Integer>();
+			listOfTeamNums = new ArrayList<Integer>();
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {
@@ -241,13 +243,27 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			fileClimb = Integer.parseInt(fileClimbS);
 			fileMatches  = Integer.parseInt(fileMatchesS);
 			fileCycles  = Integer.parseInt(fileCyclesS);
+			listOfTeamNums.add(fileTeamNum);
 			mainTeamList.addTempTeam(fileTeamNum, fileCycles, fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, commentList);
 			fileTeamNumS = fileInput.next();
+		}
+		sortListOfTeamNums();
+	}
+	
+	private void sortListOfTeamNums() {
+		int place = 0;
+		for (int i = 0; i < listOfTeamNums.size(); i++) {
+			for(int e = 0; e < listOfTeamNums.size(); e++) {
+				if (listOfTeamNums.get(i) > listOfTeamNums.get(e)) {
+					place++;
+				}
+			}
+			listOfTeamNumsSorted.add(place, listOfTeamNums.get(i));
 		}
 	}
 	
 	private void makeSearchTeams() {
-		searchTeamsTab seTeams = new searchTeamsTab(mainTeamList);
+		searchTeamsTab seTeams = new searchTeamsTab(mainTeamList, listOfTeamNumsSorted);
 		Tab seTeamsTab = new Tab("Search Teams", seTeams);
 		mainTP.getTabs().addAll(seTeamsTab);
 	}

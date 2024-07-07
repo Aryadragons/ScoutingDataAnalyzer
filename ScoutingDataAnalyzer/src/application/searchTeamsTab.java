@@ -23,17 +23,27 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	private TextField avgClimbTF;
 	private TextField avgCommentListTF;
 	private TextArea commentsTA;
+	private List<Integer> listOfTeamNums;
 	
-	public searchTeamsTab(TeamList mainTeamList) {
+	public searchTeamsTab(TeamList mainTeamList, List<Integer> importedListOfTeamNums) {
 		this.add(new Label("Select Team to Look Up"), 0, 0);
 		teamListCB = new ComboBox<String>();
-		teamListCB.getItems().addAll("1234", "5678");
+		listOfTeamNums = importedListOfTeamNums;
+		addComboBoxItems();
 		this.add(teamListCB, 0, 1);
 		seTeamsB = new Button("Submit");
 		this.add(seTeamsB, 1, 1);
 		mainTeamList = theTeamList;
 	}
-
+	
+	private void addComboBoxItems() {
+		String teamNumS;
+		for (int i = 0; i < listOfTeamNums.size(); i++) {
+			teamNumS = Integer.toString(listOfTeamNums.get(i));
+			teamListCB.getItems().add(teamNumS);
+		}
+	}
+	
 	@Override
 	public void handle(ActionEvent event) {
 		try {
