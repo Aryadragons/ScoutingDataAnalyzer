@@ -54,25 +54,17 @@ public class TempTeamList {
 		int tempsSearched = 0;
 		int i = 0;
 		TempTeam tempTempT;
-		System.out.println("Boop5.4");
 		tempTempT = theList.listOfTempTeams.get(i);
-		System.out.println("Boop5.41" + theList.listOfTempTeams.size());
 		while(found < 1 & i < theList.listOfTempTeams.size()) {
-			System.out.println("Boop5.42");
 			tempTempT = theList.listOfTempTeams.get(i);
-			System.out.println("Boop5.43");
 			if(tempTempT.getTeamNum() == teamNum) {
-				System.out.println("Boop5.44");
 				found = 1;
 				theTempTeam = i;
 			} else {
-				System.out.println("Boop5.45");
 				i++;
 				tempsSearched++;
 			}
-			System.out.println("Boop5.46" + i);
 		}
-		System.out.println("Boop5.47");
 		if (found == 0) {
 			return null;
 		} else {

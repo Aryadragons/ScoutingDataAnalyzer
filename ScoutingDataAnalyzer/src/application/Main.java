@@ -204,8 +204,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	}
 	
 	private void updateDataList() {
+		System.out.println("Boop2");
 		fileInput = new Scanner("MainScoutingDataFiles.csv");
+		System.out.println("Boop3");
 		mainTeamList.listOfTeams.clear();
+		System.out.println("Boop4");
 		String fileTeamNumS = "0";
 		String fileAmpS = null;
 		String fileSpeS;
@@ -223,8 +226,10 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		int fileCycles;
 		int fileNumOfComms;
 		List<String> commentList = new ArrayList<>();;
-		fileTeamNumS = fileInput.next();
-		while(fileTeamNumS != null) {
+		System.out.println("Boop5");
+		while(fileInput.hasNextLine()) {
+			System.out.println("Boop6");
+			fileTeamNumS = fileInput.next();
 			fileMatchesS  = fileInput.next();
 			fileCyclesS = fileInput.next();
 			fileAmpS = fileInput.next();
@@ -232,10 +237,14 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			fileTrapS = fileInput.next();
 			fileClimbS = fileInput.next();
 			fileNumOfCommsS = fileInput.next();
+			System.out.println("Boop7");
 			fileNumOfComms = Integer.parseInt(fileNumOfCommsS);
+			System.out.println("Boop8");
 			for(int i = 0; i < fileNumOfComms; i++) {
+				System.out.println("Boop9");
 				commentList.add(fileInput.next());
 			}
+			System.out.println("Boop10");
 			fileTeamNum = Integer.parseInt(fileTeamNumS);
 			fileAmp = Integer.parseInt(fileAmpS);
 			fileSpe = Integer.parseInt(fileSpeS);
@@ -243,11 +252,15 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			fileClimb = Integer.parseInt(fileClimbS);
 			fileMatches  = Integer.parseInt(fileMatchesS);
 			fileCycles  = Integer.parseInt(fileCyclesS);
+			System.out.println("Boop11");
 			listOfTeamNums.add(fileTeamNum);
+			System.out.println("Boop12");
 			mainTeamList.addTempTeam(fileTeamNum, fileCycles, fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, commentList);
-			fileTeamNumS = fileInput.next();
+			System.out.println("Boop13");
 		}
+		System.out.println("Boop14");
 		sortListOfTeamNums();
+		System.out.println("Boop15");
 	}
 	
 	private void sortListOfTeamNums() {
@@ -568,6 +581,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 				makeHomePage();
 			}
 			if(event.getSource() == saveDataB) {
+				System.out.println("Boop1");
 				updateDataList();
 			}
 		} catch(Exception e) {

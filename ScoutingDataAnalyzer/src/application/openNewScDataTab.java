@@ -130,7 +130,6 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				}
 			}
 			if(event.getSource() == submitReB) {
-				System.out.println("Boop1");
 				String fileTeamNumS = "0";
 				String fileAmpS = null;
 				String fileSpeS;
@@ -160,80 +159,55 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				//for(int i = 0; i < 5; i++) {
 					//fileInput.next();
 			//	}
-				System.out.println("Boop2");
 				while(fileInput.hasNextLine()) {
 					fileTeamNumS = fileInput.next();
-					System.out.println("Boop3");
 					fileAmpS = fileInput.next();
 					fileSpeS = fileInput.next();
 					fileTrapS = fileInput.next();
 					fileClimbS = fileInput.next();
 					fileCommentS = fileInput.next();
-					System.out.println("Boop4");
 					System.out.println(fileTeamNumS);
 					System.out.println(fileAmpS);
 					System.out.println(fileSpeS);
 					System.out.println(fileTrapS);
 					System.out.println(fileClimbS);
 					//remove "s part
-					System.out.println("Boop4.1");
 					int lengthOfFileTeamNum = fileTeamNumS.length() - 1;
 					fileTeamNumSTrue = fileTeamNumS.substring(1, lengthOfFileTeamNum);
-					System.out.println("Boop4.2");
 					int lengthOfFileAmp = fileAmpS.length() - 1;
 					fileAmpSTrue = fileAmpS.substring(1, lengthOfFileAmp);
-					System.out.println("Boop4.3");
 					int lengthOfFileSpe = fileSpeS.length() - 1;
 					fileSpeSTrue = fileSpeS.substring(1, lengthOfFileSpe);
-					System.out.println("Boop4.4");
 					int lengthOfFileTrap = fileTrapS.length() - 1;
 					fileTrapSTrue = fileTrapS.substring(1, lengthOfFileTrap);
-					System.out.println("Boop4.5");
 					int lengthOfFileClimb = fileClimbS.length() - 1;
 					fileClimbSTrue = fileClimbS.substring(1, lengthOfFileClimb);
-					System.out.println("Boop4.6");
 					int lengthOfFileComment = fileClimbS.length() - 1;
 					if (lengthOfFileComment == 0) {
 						fileCommentSTrue = "None";
-						System.out.println("Boop4.7");
 					} else {
 						fileClimbSTrue = fileClimbS.substring(1, lengthOfFileClimb);
 					}
-					System.out.println("Boop4.8");
 					fileTeamNum = Integer.parseInt(fileTeamNumSTrue);
-					System.out.println("Boop4.81");
 					fileAmp = Integer.parseInt(fileAmpSTrue);
-					System.out.println("Boop4.82");
 					fileSpe = Integer.parseInt(fileSpeSTrue);
-					System.out.println("Boop4.83");
 					fileTrap = Integer.parseInt(fileTrapSTrue);
-					System.out.println("Boop4.84");
 					fileClimb = Integer.parseInt(fileClimbSTrue);
-					System.out.println("Boop5");
 					
 					if (fileTempTeamList.listOfTempTeams.size() == 0) {
 						fileMatches = 1;
-						System.out.println("Boop5.1");
 						fileTempTeamList.addTempTeam(fileTeamNum, (fileAmp + fileSpe + fileTrap), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue);
 					} else {
-						System.out.println("Boop5.2");
-						System.out.println("Boop5.3");
 						if(fileTempTeamList.getATempTeam(fileTeamNum, fileTempTeamList) != null) {
-							System.out.println("Boop6");
 							fileMatches = fileTempTeamList.getATempTeam(fileTeamNum, fileTempTeamList).getTotalMatchesPlayed();
 							fileTempTeamList.addOnToTempTeam(fileTeamNum, (fileTrap + fileAmp + fileSpe), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue);
 						} else {
-							System.out.println("Boop7");
 							fileMatches = 1;
 							fileTempTeamList.addTempTeam(fileTeamNum, (fileAmp + fileSpe + fileTrap), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue);
 						}
 					}
-					System.out.println("Boop8");
-					System.out.println("Boop8.5");
 				}
-				System.out.println("Boop9");
 				for (int i = 0; i < fileTempTeamList.listOfTempTeams.size(); i++) {
-					System.out.println("Boop10");
 					fileTeamNumT = fileTempTeamList.listOfTempTeams.get(i).getTeamNum();
 					fileMatchesT = fileTempTeamList.listOfTempTeams.get(i).getTotalMatchesPlayed();
 					fileCyclesT = fileTempTeamList.listOfTempTeams.get(i).getTotalCycles();
@@ -242,11 +216,8 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					fileTrapT = fileTempTeamList.listOfTempTeams.get(i).getTotalTrap();
 					fileClimbT = fileTempTeamList.listOfTempTeams.get(i).getTotalClimb();
 					commentListT = fileTempTeamList.listOfTempTeams.get(i).getCommentList();
-					System.out.println("Boop11");
 					fileTeamList.addTempTeam(fileTeamNumT, fileCyclesT, fileMatchesT, fileAmpT, fileSpeT, fileTrapT, fileClimbT, commentListT);
-					System.out.println("Boop12");
 				}
-				System.out.println("Boop13");
 				this.exportDataToCSV();	
 				}
 			if(event.getSource() == submitAddB) {
