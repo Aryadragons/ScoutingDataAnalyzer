@@ -48,15 +48,15 @@ public class TempTeamList {
 		
 	}
 	
-	public TempTeam getATempTeam(int teamNum) {
+	public TempTeam getATempTeam(int teamNum, TempTeamList theList) {
 		int found = 0;
 		int theTempTeam = -1;
 		int tempsSearched = 0;
 		int i = 0;
 		TempTeam tempTempT;
-		tempTempT = listOfTempTeams.get(i);
-		while(found < 1) {
-			tempTempT = listOfTempTeams.get(i);
+		tempTempT = theList.listOfTempTeams.get(i);
+		while(found < 1 || i < theList.listOfTempTeams.size()) {
+			tempTempT = theList.listOfTempTeams.get(i);
 			if(tempTempT.getTeamNum() == teamNum) {
 				found = 1;
 				theTempTeam = i;
