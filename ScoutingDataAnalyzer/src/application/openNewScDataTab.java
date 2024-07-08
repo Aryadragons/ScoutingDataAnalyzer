@@ -144,8 +144,8 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				}
 			}
 			if(event.getSource() == submitReB) {
-				String fileTeamNumS = "0";
-				String fileAmpS = null;
+				String fileTeamNumS;
+				String fileAmpS;
 				String fileSpeS;
 				String fileTrapS;
 				String fileClimbS;
@@ -188,6 +188,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					//remove "s part
 					int lengthOfFileTeamNum = fileTeamNumS.length() - 1;
 					fileTeamNumSTrue = fileTeamNumS.substring(1, lengthOfFileTeamNum);
+					
 					int lengthOfFileAmp = fileAmpS.length() - 1;
 					fileAmpSTrue = fileAmpS.substring(1, lengthOfFileAmp);
 					int lengthOfFileSpe = fileSpeS.length() - 1;
@@ -224,6 +225,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				}
 				for (int i = 0; i < fileTempTeamList.listOfTempTeams.size(); i++) {
 					fileTeamNumT = fileTempTeamList.listOfTempTeams.get(i).getTeamNum();
+					System.out.println(fileTeamNumT);
 					fileMatchesT = fileTempTeamList.listOfTempTeams.get(i).getTotalMatchesPlayed();
 					fileCyclesT = fileTempTeamList.listOfTempTeams.get(i).getTotalCycles();
 					fileAmpT = fileTempTeamList.listOfTempTeams.get(i).getTotalAmp();
@@ -233,12 +235,14 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					commentListT = fileTempTeamList.listOfTempTeams.get(i).getCommentList();
 					System.out.println(commentListT);
 					fileTeamList.addTempTeam(fileTeamNumT, fileCyclesT, fileMatchesT, fileAmpT, fileSpeT, fileTrapT, fileClimbT, commentListT);
+					System.out.println(fileTeamNumT);
 				}
 				this.exportDataToCSV();	
+				fileInput.close();
 				}
 			if(event.getSource() == submitAddB) {
-				String fileTeamNumS = "0";
-				String fileAmpS = null;
+				String fileTeamNumS;
+				String fileAmpS;
 				String fileSpeS;
 				String fileTrapS;
 				String fileClimbS;

@@ -14,6 +14,7 @@ public class TempTeam {
 	private List<String> listOfComments;
 	
 	TempTeam(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, String comment){
+		System.out.println(tempTeamNum + "tempTeamNum");
 		setTotalCycles(tempTotalCycles);
 		setTotalMatchesPlayed(tempTotalMatchesPlayed);
 		setTotalAmp(tempTotalAmp);
@@ -58,6 +59,7 @@ public class TempTeam {
 	}
 	
 	public int getTeamNum() {
+		System.out.println(teamNum + "getTeamNum");
 		return teamNum;
 	}
 	

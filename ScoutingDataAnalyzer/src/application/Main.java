@@ -1,6 +1,7 @@
 package application;
 	
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -205,7 +206,12 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void updateDataList() {
 		System.out.println("Boop2");
-		fileInput = new Scanner("MainScoutingDataFiles.txt");
+		File file = new File("MainScoutingDataFiles.txt");
+		try {
+			fileInput = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error" + e);
+		}
 		System.out.println("Boop3");
 		mainTeamList.listOfTeams.clear();
 		System.out.println("Boop4");
@@ -230,12 +236,19 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		while(fileInput.hasNextLine()) {
 			System.out.println("Boop6");
 			fileTeamNumS = fileInput.next();
+			System.out.println("Boop6.1" + fileTeamNumS);
 			fileMatchesS  = fileInput.next();
+			System.out.println("Boop6." + fileMatchesS);
 			fileCyclesS = fileInput.next();
+			System.out.println("Boop6.3" + fileCyclesS);
 			fileAmpS = fileInput.next();
+			System.out.println("Boop6.4" + fileAmpS);
 			fileSpeS = fileInput.next();
+			System.out.println("Boop6.5" + fileSpeS);
 			fileTrapS = fileInput.next();
+			System.out.println("Boop6.6" + fileTrapS);
 			fileClimbS = fileInput.next();
+			System.out.println("Boop6.7" + fileClimbS);
 			fileNumOfCommsS = fileInput.next();
 			System.out.println("Boop7");
 			fileNumOfComms = Integer.parseInt(fileNumOfCommsS);
