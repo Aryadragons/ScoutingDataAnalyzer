@@ -205,7 +205,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void updateDataList() {
 		System.out.println("Boop2");
-		fileInput = new Scanner("MainScoutingDataFiles.csv");
+		fileInput = new Scanner("MainScoutingDataFiles.txt");
 		System.out.println("Boop3");
 		mainTeamList.listOfTeams.clear();
 		System.out.println("Boop4");

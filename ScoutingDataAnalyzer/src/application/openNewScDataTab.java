@@ -1,9 +1,11 @@
 package application;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Scanner;
 
@@ -26,7 +28,6 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 	private TempTeamList fileTempTeamList;
 	private TeamList fileTeamList;
 	private Scanner fileInput;
-	private FileWriter csvWriter;
 	
 	public openNewScDataTab(TempTeamList theTempTeamList, TeamList theTeamList) {
 		fileTempTeamList = theTempTeamList;
@@ -56,7 +57,6 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 	public void exportDataToCSV() {
 		try {
 			System.out.println("Boop14");
-			csvWriter = new FileWriter("MainScoutingDataFiles.csv");
 			System.out.println("Boop15");
 			String csvTeamNumS;
 			String csvMatchesS;
@@ -65,6 +65,8 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 			String csvSpeS;
 			String csvTrapS;
 			String csvClimbS;
+			String csvCommentS;
+			List<String> csvCommentList;
 			int csvTeamNum;
 			int csvMatches;
 			int csvCycles;
@@ -72,6 +74,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 			int csvSpe;
 			int csvTrap;
 			int csvClimb;
+			new FileWriter("MainScoutingDataFiles.txt", false).close();
 			for(int i = 0; i < fileTeamList.listOfTeams.size(); i++) {
 				System.out.println("Boop16");
 				csvTeamNum = fileTeamList.listOfTeams.get(i).getTeamNum();
@@ -81,6 +84,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				csvSpe = fileTeamList.listOfTeams.get(i).getAvgSpe();
 				csvTrap = fileTeamList.listOfTeams.get(i).getAvgTrap();
 				csvClimb = fileTeamList.listOfTeams.get(i).getAvgClimb();
+				csvCommentList = fileTeamList.listOfTeams.get(i).getCommentsList();
 				csvTeamNumS = Integer.toString(csvTeamNum);
 				csvMatchesS = Integer.toString(csvMatches);
 				csvCyclesS = Integer.toString(csvCycles);
@@ -89,14 +93,24 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				csvTrapS = Integer.toString(csvTrap);
 				csvClimbS = Integer.toString(csvClimb);
 				System.out.println("Boop17");
-				csvWriter.append(csvTeamNumS);
-				csvWriter.append(csvMatchesS);
-				csvWriter.append(csvCyclesS);
-				csvWriter.append(csvAmpS);
-				csvWriter.append(csvSpeS);
-				csvWriter.append(csvTrapS);
-				csvWriter.append(csvClimbS);
-				csvWriter.append("\n");
+				FileWriter fw = new FileWriter("MainScoutingDataFiles.txt", true);
+					    BufferedWriter bw = new BufferedWriter(fw);
+					    PrintWriter out = new PrintWriter(bw);
+					    out.println(csvTeamNumS);
+					    out.println(csvMatchesS);
+					    out.println(csvCyclesS);
+					    out.println(csvAmpS);
+					    out.println(csvSpeS);
+					    out.println(csvTrapS);
+					    out.println(csvClimbS);
+					    csvCommentList.toString();
+					    out.println(csvCommentList.size());
+					    for (int e = 0; e < csvCommentList.size(); e++) {
+					    	System.out.println(csvCommentList.get(e));
+					    	out.println(csvCommentList.get(e));
+					    	
+					    }
+					    out.close();
 				System.out.println("Boop18");
 			}
 		} catch (IOException e) {
@@ -182,11 +196,12 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					fileTrapSTrue = fileTrapS.substring(1, lengthOfFileTrap);
 					int lengthOfFileClimb = fileClimbS.length() - 1;
 					fileClimbSTrue = fileClimbS.substring(1, lengthOfFileClimb);
-					int lengthOfFileComment = fileClimbS.length() - 1;
+					
+					int lengthOfFileComment = fileCommentS.length() - 1;
 					if (lengthOfFileComment == 0) {
 						fileCommentSTrue = "None";
 					} else {
-						fileClimbSTrue = fileClimbS.substring(1, lengthOfFileClimb);
+						fileCommentSTrue = fileCommentS.substring(1, lengthOfFileComment);
 					}
 					fileTeamNum = Integer.parseInt(fileTeamNumSTrue);
 					fileAmp = Integer.parseInt(fileAmpSTrue);
@@ -216,6 +231,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					fileTrapT = fileTempTeamList.listOfTempTeams.get(i).getTotalTrap();
 					fileClimbT = fileTempTeamList.listOfTempTeams.get(i).getTotalClimb();
 					commentListT = fileTempTeamList.listOfTempTeams.get(i).getCommentList();
+					System.out.println(commentListT);
 					fileTeamList.addTempTeam(fileTeamNumT, fileCyclesT, fileMatchesT, fileAmpT, fileSpeT, fileTrapT, fileClimbT, commentListT);
 				}
 				this.exportDataToCSV();	
