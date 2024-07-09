@@ -1,6 +1,7 @@
 package application;
 	
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +9,15 @@ import java.util.Scanner;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.FileChooser;
@@ -21,6 +29,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 
 
 public class Main extends Application implements EventHandler<ActionEvent>{
@@ -91,12 +100,22 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			saveDataB = new Button("Save All Data");
 			saveDataB.setOnAction(this);
 			root.setCenter(saveDataB);
+			//background stuff
+			FileInputStream input = new FileInputStream("ScoutBackground.png"); 
+            Image image = new Image(input); 
+            BackgroundImage backgroundimage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+            // create Background 
+            Background background = new Background(backgroundimage);
+			root.setBackground(background);
+			
 			//
 			listOfTeamNums = new ArrayList<Integer>();
 			listOfTeamNumsSorted = new ArrayList<Integer>();
 			for (int i = 0; i < 60; i++) {
 				listOfTeamNumsSorted.add(null);
 			}
+			// adding css file stuff
+			scene.getStylesheets().add("application/ScoutingDataAnalyzercssFile.css");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {

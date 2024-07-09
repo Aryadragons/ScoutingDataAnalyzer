@@ -1,5 +1,6 @@
 package application;
 
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 
 public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent>{
@@ -26,6 +28,9 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	private List<Integer> listOfTeamNums;
 	
 	public searchTeamsTab(TeamList mainTeamList, List<Integer> importedListOfTeamNums) {
+		FileInputStream input = new FileInputStream("TabsBackground.png"); 
+        Image image = new Image(input); 
+		this.add(, 0, 0);
 		this.add(new Label("Select Team to Look Up"), 0, 0);
 		teamListCB = new ComboBox<String>();
 		listOfTeamNums = importedListOfTeamNums;
