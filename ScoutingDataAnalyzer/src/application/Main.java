@@ -93,6 +93,10 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			root.setCenter(saveDataB);
 			//
 			listOfTeamNums = new ArrayList<Integer>();
+			listOfTeamNumsSorted = new ArrayList<Integer>();
+			for (int i = 0; i < 60; i++) {
+				listOfTeamNumsSorted.add(null);
+			}
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {
@@ -233,7 +237,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		int fileNumOfComms;
 		List<String> commentList = new ArrayList<>();;
 		System.out.println("Boop5");
-		while(fileInput.hasNextLine()) {
+		while(fileInput.hasNext() == true) {
 			System.out.println("Boop6");
 			fileTeamNumS = fileInput.next();
 			System.out.println("Boop6.1" + fileTeamNumS);
@@ -265,7 +269,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			fileClimb = Integer.parseInt(fileClimbS);
 			fileMatches  = Integer.parseInt(fileMatchesS);
 			fileCycles  = Integer.parseInt(fileCyclesS);
-			System.out.println("Boop11");
+			System.out.println("Boop11" + fileTeamNum);
 			listOfTeamNums.add(fileTeamNum);
 			System.out.println("Boop12");
 			mainTeamList.addTempTeam(fileTeamNum, fileCycles, fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, commentList);
@@ -277,14 +281,23 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	}
 	
 	private void sortListOfTeamNums() {
-		int place = 0;
+		int place;
+		System.out.println("Boop14.1");
 		for (int i = 0; i < listOfTeamNums.size(); i++) {
+			place = 0;
+			System.out.println("Boop14.2");
 			for(int e = 0; e < listOfTeamNums.size(); e++) {
+				System.out.println("Boop14.3");
 				if (listOfTeamNums.get(i) > listOfTeamNums.get(e)) {
+					System.out.println("Boop14.4");
 					place++;
 				}
+				System.out.println("Boop14.5");
 			}
-			listOfTeamNumsSorted.add(place, listOfTeamNums.get(i));
+			System.out.println("Boop14.6");
+			listOfTeamNumsSorted.set(place, listOfTeamNums.get(i));
+			System.out.println(listOfTeamNums.get(i) + "  " + place);
+			System.out.println("Boop14.7");
 		}
 	}
 	

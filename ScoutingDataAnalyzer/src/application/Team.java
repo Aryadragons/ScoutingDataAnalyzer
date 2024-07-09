@@ -38,6 +38,7 @@ public class Team {
 	}
 	
 	public int setTeamNum(int tempTeamNum){
+		System.out.println("set team" + tempTeamNum);
 		return teamNum = tempTeamNum;
 	}
 	

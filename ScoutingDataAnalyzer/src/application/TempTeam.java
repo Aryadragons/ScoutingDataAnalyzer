@@ -15,6 +15,7 @@ public class TempTeam {
 	
 	TempTeam(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, String comment){
 		System.out.println(tempTeamNum + "tempTeamNum");
+		setTeamNum(tempTeamNum);
 		setTotalCycles(tempTotalCycles);
 		setTotalMatchesPlayed(tempTotalMatchesPlayed);
 		setTotalAmp(tempTotalAmp);
@@ -26,6 +27,7 @@ public class TempTeam {
 	}
 	
 	public int setTeamNum(int tempTeamNum){
+		System.out.println(tempTeamNum + "tempTeamNum being set");
 		return teamNum = tempTeamNum;
 	}
 	
@@ -91,6 +93,6 @@ public class TempTeam {
 	}
 	
 	public String toString() {
-		return("Total Cycles" + totalCycles +"Total Matches Played" + totalMatchesPlayed +"Total Amp" + totalAmp +"Total Spe" + totalSpe +"Total Trap" + totalTrap +"Total Climb" + totalClimb);
+		return( "teamNum" + teamNum +"Total Cycles" + totalCycles +"Total Matches Played" + totalMatchesPlayed +"Total Amp" + totalAmp +"Total Spe" + totalSpe +"Total Trap" + totalTrap +"Total Climb" + totalClimb);
 	}
 }

@@ -30,8 +30,8 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 	private Scanner fileInput;
 	
 	public openNewScDataTab(TempTeamList theTempTeamList, TeamList theTeamList) {
-		fileTempTeamList = theTempTeamList;
-		fileTeamList = theTeamList;
+		fileTempTeamList = new TempTeamList();
+		fileTeamList = new TeamList();
 		this.add(new Label("Open New Data That Will Replace All Scouting Data"), 0, 0);
 		this.add(new Label("Choosen File Name"), 0, 1);
 		fileNameReTF = new TextField();
@@ -204,12 +204,14 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					} else {
 						fileCommentSTrue = fileCommentS.substring(1, lengthOfFileComment);
 					}
+					System.out.println("boop00.5  " + fileTeamNumSTrue);
 					fileTeamNum = Integer.parseInt(fileTeamNumSTrue);
+					System.out.println("boop00  " + fileTeamNum);
 					fileAmp = Integer.parseInt(fileAmpSTrue);
 					fileSpe = Integer.parseInt(fileSpeSTrue);
 					fileTrap = Integer.parseInt(fileTrapSTrue);
 					fileClimb = Integer.parseInt(fileClimbSTrue);
-					
+					System.out.println("boop0");
 					if (fileTempTeamList.listOfTempTeams.size() == 0) {
 						fileMatches = 1;
 						fileTempTeamList.addTempTeam(fileTeamNum, (fileAmp + fileSpe + fileTrap), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue);
@@ -219,10 +221,15 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 							fileTempTeamList.addOnToTempTeam(fileTeamNum, (fileTrap + fileAmp + fileSpe), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue);
 						} else {
 							fileMatches = 1;
+							System.out.println("boop");
 							fileTempTeamList.addTempTeam(fileTeamNum, (fileAmp + fileSpe + fileTrap), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue);
 						}
 					}
+					System.out.println("boop00  " + fileTeamNum);
+					System.out.println("boop00  " + fileTempTeamList.listOfTempTeams.get(0).toString());
+					System.out.println("boop00  " + fileTempTeamList.listOfTempTeams.get(0).getTeamNum());
 				}
+				System.out.println("boop");
 				for (int i = 0; i < fileTempTeamList.listOfTempTeams.size(); i++) {
 					fileTeamNumT = fileTempTeamList.listOfTempTeams.get(i).getTeamNum();
 					System.out.println(fileTeamNumT);

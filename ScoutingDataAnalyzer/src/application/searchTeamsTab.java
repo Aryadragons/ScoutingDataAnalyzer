@@ -32,15 +32,18 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		addComboBoxItems();
 		this.add(teamListCB, 0, 1);
 		seTeamsB = new Button("Submit");
+		seTeamsB.setOnAction(this);
 		this.add(seTeamsB, 1, 1);
-		mainTeamList = theTeamList;
+		theTeamList = mainTeamList;
 	}
 	
 	private void addComboBoxItems() {
 		String teamNumS;
 		for (int i = 0; i < listOfTeamNums.size(); i++) {
-			teamNumS = Integer.toString(listOfTeamNums.get(i));
-			teamListCB.getItems().add(teamNumS);
+			if (listOfTeamNums.get(i) != null) {
+				teamNumS = Integer.toString(listOfTeamNums.get(i));
+				teamListCB.getItems().add(teamNumS);
+			}
 		}
 	}
 	
@@ -49,9 +52,11 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		try {
 			if(event.getSource() == seTeamsB) {
 				Team theTeam;
+				System.out.println("Boop20");
 				String selectedTeamS = teamListCB.getSelectionModel().getSelectedItem();; 
 				int selectedTeam = Integer.parseInt(selectedTeamS);
 				theTeam = theTeamList.getATeam(selectedTeam);
+				System.out.println("Boop20");
 				this.add(new Label(selectedTeamS), 0, 2);
 				this.add(new Label("Avg Cycles:  "), 0, 3);
 				this.add(new Label("Avg Amp:  "), 2, 3);
@@ -59,6 +64,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				this.add(new Label("Avg Trap:  "), 6, 3);
 				this.add(new Label("Avg Climb:  "), 8, 3);
 				this.add(new Label("Comments:  "), 10, 3);
+				System.out.println("Boop20");
 				avgCyclesTF = new TextField();
 				avgAmpTF = new TextField();
 				avgSpeTF = new TextField();
@@ -90,7 +96,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				this.add(new Label("and Did " + theTeam.getTotalMatchesPlayed() + " Matches"), selectedTeam, selectedTeam);
 			}
 		} catch(Exception e) {
-			
+			System.out.println("Boop20" + e);
 		}
 	}
 }
