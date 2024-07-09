@@ -14,7 +14,6 @@ public class TempTeam {
 	private List<String> listOfComments;
 	
 	TempTeam(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, String comment){
-		System.out.println(tempTeamNum + "tempTeamNum");
 		setTeamNum(tempTeamNum);
 		setTotalCycles(tempTotalCycles);
 		setTotalMatchesPlayed(tempTotalMatchesPlayed);
@@ -27,7 +26,6 @@ public class TempTeam {
 	}
 	
 	public int setTeamNum(int tempTeamNum){
-		System.out.println(tempTeamNum + "tempTeamNum being set");
 		return teamNum = tempTeamNum;
 	}
 	
@@ -61,7 +59,6 @@ public class TempTeam {
 	}
 	
 	public int getTeamNum() {
-		System.out.println(teamNum + "getTeamNum");
 		return teamNum;
 	}
 	

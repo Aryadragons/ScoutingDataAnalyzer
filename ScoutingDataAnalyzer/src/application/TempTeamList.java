@@ -12,7 +12,6 @@ public class TempTeamList {
 	
 	public void addTempTeam(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalTrap, int tempTotalClimb, String comment) {
 		TempTeam TempT = new TempTeam(tempTeamNum, tempTotalCycles, tempTotalMatchesPlayed, tempTotalAmp, tempTotalSpe, tempTotalClimb, tempTotalTrap, comment);
-		System.out.println("boop2" +  tempTeamNum);
 		listOfTempTeams.add(TempT);
 	}
 	
@@ -56,7 +55,6 @@ public class TempTeamList {
 		int i = 0;
 		TempTeam tempTempT;
 		int boop = theList.listOfTempTeams.get(i).getTeamNum();
-		System.out.println(boop);
 		tempTempT = theList.listOfTempTeams.get(i);
 		while(found < 1 & i < theList.listOfTempTeams.size()) {
 			tempTempT = theList.listOfTempTeams.get(i);

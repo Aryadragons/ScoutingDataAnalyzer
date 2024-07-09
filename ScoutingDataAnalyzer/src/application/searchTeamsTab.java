@@ -52,19 +52,16 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		try {
 			if(event.getSource() == seTeamsB) {
 				Team theTeam;
-				System.out.println("Boop20");
 				String selectedTeamS = teamListCB.getSelectionModel().getSelectedItem();; 
 				int selectedTeam = Integer.parseInt(selectedTeamS);
 				theTeam = theTeamList.getATeam(selectedTeam);
-				System.out.println("Boop20");
 				this.add(new Label(selectedTeamS), 0, 2);
 				this.add(new Label("Avg Cycles:  "), 0, 3);
 				this.add(new Label("Avg Amp:  "), 2, 3);
 				this.add(new Label("Avg Speaker:  "), 4, 3);
-				this.add(new Label("Avg Trap:  "), 6, 3);
-				this.add(new Label("Avg Climb:  "), 8, 3);
+				this.add(new Label("Avg Trap:  "), 0, 4);
+				this.add(new Label("Avg Climb:  "), 2, 4);
 				this.add(new Label("Comments:  "), 10, 3);
-				System.out.println("Boop20");
 				avgCyclesTF = new TextField();
 				avgAmpTF = new TextField();
 				avgSpeTF = new TextField();
@@ -73,8 +70,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				this.add(avgCyclesTF, 1, 3);
 				this.add(avgAmpTF, 3, 3);
 				this.add(avgSpeTF, 5, 3);
-				this.add(avgTrapTF, 7, 3);
-				this.add(avgClimbTF, 9, 3);
+				this.add(avgTrapTF, 1, 4);
+				this.add(avgClimbTF, 3, 4);
 				String avgCyclesS = Integer.toString(theTeam.getAvgCycles());
 				avgCyclesTF.setText(avgCyclesS);
 				String avgAmpS = Integer.toString(theTeam.getAvgAmp());
@@ -93,10 +90,14 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				}
 				this.add(commentsTA, 11, 3);
 				commentsTA.setText(commentsS);
-				this.add(new Label("and Did " + theTeam.getTotalMatchesPlayed() + " Matches"), selectedTeam, selectedTeam);
+				if (theTeam.getTotalMatchesPlayed() == 1) {
+					this.add(new Label("Did 1 Match"), 0, 5);
+				} else {
+					this.add(new Label("Did " + theTeam.getTotalMatchesPlayed() + " Matches"), 0, 5);
+				}
 			}
 		} catch(Exception e) {
-			System.out.println("Boop20" + e);
+			System.out.println("Error: " + e);
 		}
 	}
 }
