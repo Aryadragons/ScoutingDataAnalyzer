@@ -28,9 +28,6 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	private List<Integer> listOfTeamNums;
 	
 	public searchTeamsTab(TeamList mainTeamList, List<Integer> importedListOfTeamNums) {
-		FileInputStream input = new FileInputStream("TabsBackground.png"); 
-        Image image = new Image(input); 
-		this.add(, 0, 0);
 		this.add(new Label("Select Team to Look Up"), 0, 0);
 		teamListCB = new ComboBox<String>();
 		listOfTeamNums = importedListOfTeamNums;
