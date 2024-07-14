@@ -1,10 +1,19 @@
 .root{
-	
+	-fx-text-fill: rgb(219,178,255);
+	-fx-font-size: 15;
 }
 .menu-bar {
     -fx-background-color: rgb(72,72,72) ;
 }
+.button{
+    -fx-background-color: rgb(219,178,255) ;
+}
 #seTeamsStyle{
-	-fx-tab-min-width: 1400 ;
-	-fx-tab-min-height: 400 ;
+}
+.label{
+	-fx-text-fill: rgb(219,178,255);
+}
+.tab{
+	-fx-tab-min-width: 1400;
+	-fx-tab-min-height: 400;
 }

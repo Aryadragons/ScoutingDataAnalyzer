@@ -635,66 +635,187 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeOpenNewScData(TempTeamList mainTempTeamList, TeamList mainTeamList) {
 		openNewScDataTab openScData = new openNewScDataTab(mainTempTeamList, mainTeamList);
+		FileInputStream inputOpenScData;
+		try {
+			inputOpenScData = new FileInputStream("TabsBackground.png");
+			Image imageOpenScData = new Image(inputOpenScData); 
+	        BackgroundImage backgroundimageOpenScData = new BackgroundImage(imageOpenScData, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundOpenScData = new Background(backgroundimageOpenScData);
+	        openScData.setBackground(backgroundOpenScData);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab openScDataTab = new Tab("Open New Scouting Data", openScData);
 		mainTP.getTabs().addAll(openScDataTab);
 	}
 	
 	private void makeOpenNewPitData() {
 		openNewPitDataTab openPitData = new openNewPitDataTab();
+		FileInputStream inputOpenPitData;
+		try {
+			inputOpenPitData = new FileInputStream("TabsBackground.png");
+			Image imageOpenPitData = new Image(inputOpenPitData); 
+	        BackgroundImage backgroundimageOpenPitData = new BackgroundImage(imageOpenPitData, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundOpenPitData = new Background(backgroundimageOpenPitData);
+	        openPitData.setBackground(backgroundOpenPitData);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab openPitDataTab = new Tab("Open New Pit Data", openPitData);
 		mainTP.getTabs().addAll(openPitDataTab);
 	}
 	
 	private void makeOpenNewDriveTeamData() {
 		openNewDriveTeamDataTab openDriveTeamData = new openNewDriveTeamDataTab();
+		FileInputStream inputOpenDriveTeamData;
+		try {
+			inputOpenDriveTeamData = new FileInputStream("TabsBackground.png");
+			Image imageOpenDriveTeamData = new Image(inputOpenDriveTeamData); 
+	        BackgroundImage backgroundimageOpenDriveTeamData = new BackgroundImage(imageOpenDriveTeamData, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundOpenDriveTeamData = new Background(backgroundimageOpenDriveTeamData);
+	        openDriveTeamData.setBackground(backgroundOpenDriveTeamData);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab openDriveTeamDataTab = new Tab("Open New DriveTeam Data", openDriveTeamData);
 		mainTP.getTabs().addAll(openDriveTeamDataTab);
 	}
 	
 	private void makeOpenNewDriveTeamComs() {
 		openNewDriveTeamComsTab openDriveTeamComs = new openNewDriveTeamComsTab();
+		FileInputStream inputOpenDriveTeamComs;
+		try {
+			inputOpenDriveTeamComs = new FileInputStream("TabsBackground.png");
+			Image imageOpenDriveTeamComs = new Image(inputOpenDriveTeamComs); 
+	        BackgroundImage backgroundimageOpenDriveTeamComs = new BackgroundImage(imageOpenDriveTeamComs, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundOpenDriveTeamComs = new Background(backgroundimageOpenDriveTeamComs);
+	        openDriveTeamComs.setBackground(backgroundOpenDriveTeamComs);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab openDriveTeamComsTab = new Tab("Open New DriveTeam Comments", openDriveTeamComs);
 		mainTP.getTabs().addAll(openDriveTeamComsTab);
 	}
 	
 	private void makeEditScData() {
 		editScDataTab edScData = new editScDataTab();
+		FileInputStream inputEdScData;
+		try {
+			inputEdScData = new FileInputStream("TabsBackground.png");
+			Image imageEdScData = new Image(inputEdScData); 
+	        BackgroundImage backgroundimageEdScData = new BackgroundImage(imageEdScData, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundEdScData = new Background(backgroundimageEdScData);
+	        edScData.setBackground(backgroundEdScData);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab edScDataTab = new Tab("Edit Scouting Data", edScData);
 		mainTP.getTabs().addAll(edScDataTab);
 	}
 	
 	private void makeEditPitData() {
 		editPitDataTab edPitData = new editPitDataTab();
+		FileInputStream inputEdPitData;
+		try {
+			inputEdPitData = new FileInputStream("TabsBackground.png");
+			Image imageEdPitData = new Image(inputEdPitData); 
+	        BackgroundImage backgroundimageEdPitData = new BackgroundImage(imageEdPitData, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundEdPitData = new Background(backgroundimageEdPitData);
+	        edPitData.setBackground(backgroundEdPitData);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab edPitDataTab = new Tab("Edit Pit Data", edPitData);
 		mainTP.getTabs().addAll(edPitDataTab);
 	}
 	
 	private void makeEditDriveTeamData() {
 		editDriveTeamDataTab edDriveTeamData = new editDriveTeamDataTab();
+		FileInputStream inputEdDriveTeamData;
+		try {
+			inputEdDriveTeamData = new FileInputStream("TabsBackground.png");
+			Image imageEdDriveTeamData = new Image(inputEdDriveTeamData); 
+	        BackgroundImage backgroundimageEdDriveTeamData = new BackgroundImage(imageEdDriveTeamData, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundEdDriveTeamData = new Background(backgroundimageEdDriveTeamData);
+	        edDriveTeamData.setBackground(backgroundEdDriveTeamData);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab edDriveTeamDataTab = new Tab("Edit Drive Team Data", edDriveTeamData);
 		mainTP.getTabs().addAll(edDriveTeamDataTab);
 	}
 	
 	private void makeEditDriveTeamComs() {
 		editDriveTeamComsTab edDriveTeamComs = new editDriveTeamComsTab();
+		FileInputStream inputEdDriveTeamComs;
+		try {
+			inputEdDriveTeamComs = new FileInputStream("TabsBackground.png");
+			Image imageEdDriveTeamComs = new Image(inputEdDriveTeamComs); 
+	        BackgroundImage backgroundimageEdDriveTeamComs = new BackgroundImage(imageEdDriveTeamComs, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundEdDriveTeamComs = new Background(backgroundimageEdDriveTeamComs);
+	        edDriveTeamComs.setBackground(backgroundEdDriveTeamComs);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab edDriveTeamComsTab = new Tab("Edit Drive Team Comments", edDriveTeamComs);
 		mainTP.getTabs().addAll(edDriveTeamComsTab);
 	}
 	
 	private void makeExportScData() {
 		exportScDataTab exScData = new exportScDataTab();
+		FileInputStream inputExScData;
+		try {
+			inputExScData = new FileInputStream("TabsBackground.png");
+			Image imageExScData = new Image(inputExScData); 
+	        BackgroundImage backgroundimageExScData = new BackgroundImage(imageExScData, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundExScData = new Background(backgroundimageExScData);
+	        exScData.setBackground(backgroundExScData);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		}
 		Tab exScDataTab = new Tab("Export Scouting Data", exScData);
 		mainTP.getTabs().addAll(exScDataTab);
 	}
 	
 	private void makeExportPitData() {
 		exportPitDataTab exPitData = new exportPitDataTab();
+		FileInputStream inputExPitData;
+		try {
+			inputExPitData = new FileInputStream("TabsBackground.png");
+			Image imageExPitData = new Image(inputExPitData); 
+	        BackgroundImage backgroundimageExPitData = new BackgroundImage(imageExPitData, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundExPitData = new Background(backgroundimageExPitData);
+	        exPitData.setBackground(backgroundExPitData);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		}
 		Tab exPitDataTab = new Tab("Export Pit Data", exPitData);
 		mainTP.getTabs().addAll(exPitDataTab);
 	}
 	
 	private void makeExportDriveTeamData() {
 		exportDriveTeamDataTab exDriveTeamData = new exportDriveTeamDataTab();
+		FileInputStream inputExDriveTeamData;
+		try {
+			inputExDriveTeamData = new FileInputStream("TabsBackground.png");
+			Image imageExDriveTeamData = new Image(inputExDriveTeamData); 
+	        BackgroundImage backgroundimageExDriveTeamData = new BackgroundImage(imageExDriveTeamData, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundExDriveTeamData = new Background(backgroundimageExDriveTeamData);
+	        exDriveTeamData.setBackground(backgroundExDriveTeamData);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab exDriveTeamDataTab = new Tab("Export Drive Team Data", exDriveTeamData);
 		mainTP.getTabs().addAll(exDriveTeamDataTab);
 	}
@@ -702,12 +823,34 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeExportDriveTeamComs() {
 		exportDriveTeamComsTab exDriveTeamComs = new exportDriveTeamComsTab();
+		FileInputStream inputExDriveTeamComs;
+		try {
+			inputExDriveTeamComs = new FileInputStream("TabsBackground.png");
+			Image imageExDriveTeamComs = new Image(inputExDriveTeamComs); 
+	        BackgroundImage backgroundimageExDriveTeamComs = new BackgroundImage(imageExDriveTeamComs, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundExDriveTeamComs = new Background(backgroundimageExDriveTeamComs);
+	        exDriveTeamComs.setBackground(backgroundExDriveTeamComs);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab exDriveTeamComsTab = new Tab("Export Drive Team Comments", exDriveTeamComs);
 		mainTP.getTabs().addAll(exDriveTeamComsTab);
 	}
 	
 	private void makeHomePage() {
 		homePageTab home = new homePageTab();
+		FileInputStream inputHome;
+		try {
+			inputHome = new FileInputStream("TabsBackground.png");
+			Image imageHome = new Image(inputHome); 
+	        BackgroundImage backgroundimageHome = new BackgroundImage(imageHome, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundHome = new Background(backgroundimageHome);
+	        home.setBackground(backgroundHome);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab homeTab = new Tab("Home Page", home);
 		mainTP.getTabs().addAll(homeTab);
 	}
