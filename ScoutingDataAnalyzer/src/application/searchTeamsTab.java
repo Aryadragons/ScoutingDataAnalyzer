@@ -2,10 +2,17 @@ package application;
 
 import java.io.FileInputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.scene.chart.XYChart.Data;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -36,9 +43,6 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		seTeamsB = new Button("Submit");
 		seTeamsB.setOnAction(this);
 		this.add(seTeamsB, 1, 1);
-		for (int i = 0; i < 23; i++) {
-			this.add(new Label(""), 0, i);
-		}
 		theTeamList = mainTeamList;
 	}
 	
@@ -51,6 +55,27 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 		}
 	}
+	
+	public void addCharts(int teams, int avgCy, int avgAmp, int avgSpe, int avgTrap, int avgCli) {
+		ObservableList<String> avgThings;
+		avgThings.add("Cycles");
+		avgThings.add("Amp");
+		avgThings.add("Specker");
+		avgThings.add("Trap");
+		avgThings.add("Climb");
+		String c = "Cycles: " + avgCy;
+		XYChart.Series<String,Number> avgBarC = new XYChart.Series<String,Number>();
+		avgBarC.setName("Avg:");
+		avgBarC.getData().add(new XYChart.Data<String,Number>("Cycles", 10));
+		CategoryAxis typeXAxisBarC = new CategoryAxis();
+	    NumberAxis numScaleAxisBarC = new NumberAxis();
+	    BarChart<String,Number> avgBCBarC = new BarChart<String,Number>(typeXAxisBarC, numScaleAxisBarC);
+	    typeXAxisBarC.setCategories(avgThings);
+	    avgBarC.getData().add(new XYChart.Data<String,Number>("Cycles", avgCy));
+	    avgBarC.getData().add(new XYChart.Data<String,Number>("Cycles", avgCy));
+	    avgBarC.getData().add(new XYChart.Data<String,Number>("Cycles", avgCy));
+	}
+	
 	
 	@Override
 	public void handle(ActionEvent event) {
