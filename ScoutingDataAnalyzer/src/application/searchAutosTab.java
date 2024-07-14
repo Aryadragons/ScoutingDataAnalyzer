@@ -28,6 +28,8 @@ public class searchAutosTab extends GridPane{
 		this.add(notesAmpTF, 3, 1);
 		submitB = new Button("Submit");
 		this.add(submitB, 4, 1);
-		
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 	}
 }

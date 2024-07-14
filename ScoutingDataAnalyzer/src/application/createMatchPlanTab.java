@@ -160,5 +160,8 @@ public class createMatchPlanTab extends GridPane{
 		this.add(team6NumCB, 2, 12);
 		submitOtherTeamsB = new Button("Submit");
 		this.add(submitOtherTeamsB, 0, 13);
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 	}
 }

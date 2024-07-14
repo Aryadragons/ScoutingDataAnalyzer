@@ -304,8 +304,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	        Background backgroundSeTeams = new Background(backgroundimageSeTeams);
 			seTeams.setBackground(backgroundSeTeams);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Error: " + e);
 		} 
 		Tab seTeamsTab = new Tab("Search Teams", seTeams);
 		mainTP.getTabs().addAll(seTeamsTab);
@@ -313,114 +312,323 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeSearchAllinces() {
 		searchAllincesTab seAllinces = new searchAllincesTab();
+		FileInputStream inputSeAllinces;
+		try {
+			inputSeAllinces = new FileInputStream("TabsBackground.png");
+			Image imageSeAllinces = new Image(inputSeAllinces); 
+	        BackgroundImage backgroundimageSeAllinces = new BackgroundImage(imageSeAllinces, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundSeAllinces = new Background(backgroundimageSeAllinces);
+	        seAllinces.setBackground(backgroundSeAllinces);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab seAllincesTab = new Tab("Search Alliances", seAllinces);
 		mainTP.getTabs().addAll(seAllincesTab);
 	}
 	
 	private void makeSearchAutos() {
 		searchAutosTab seAutos = new searchAutosTab();
+		FileInputStream inputSeAutos;
+		try {
+			inputSeAutos = new FileInputStream("TabsBackground.png");
+			Image imageSeAutos = new Image(inputSeAutos); 
+	        BackgroundImage backgroundimageSeAutos = new BackgroundImage(imageSeAutos, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundSeAutos = new Background(backgroundimageSeAutos);
+	        seAutos.setBackground(backgroundSeAutos);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab seAutosTab = new Tab("Search Autos", seAutos);
 		mainTP.getTabs().addAll(seAutosTab);
 	}
 	
 	private void makeSearchMatch() {
 		searchMatchTab seMatch = new searchMatchTab();
+		FileInputStream inputSeMacth;
+		try {
+			inputSeMacth = new FileInputStream("TabsBackground.png");
+			Image imageSeMacth = new Image(inputSeMacth); 
+	        BackgroundImage backgroundimageSeMacth = new BackgroundImage(imageSeMacth, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundSeMacth = new Background(backgroundimageSeMacth);
+	        seMatch.setBackground(backgroundSeMacth);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab seMatchTab = new Tab("Search Match", seMatch);
 		mainTP.getTabs().addAll(seMatchTab);
 	}
 	
 	private void makeCompareTeams() {
 		compareTeamsTab comTeams = new compareTeamsTab();
+		FileInputStream inputComTeams;
+		try {
+			inputComTeams = new FileInputStream("TabsBackground.png");
+			Image imageComTeams = new Image(inputComTeams); 
+	        BackgroundImage backgroundimageComTeams = new BackgroundImage(imageComTeams, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundComTeams = new Background(backgroundimageComTeams);
+	        comTeams.setBackground(backgroundComTeams);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab comTeamsTab = new Tab("Compare Teams", comTeams);
 		mainTP.getTabs().addAll(comTeamsTab);
 	}
 	
 	private void makeCompareAllinces() {
 		compareAlliancesTab comAlliances = new compareAlliancesTab();
+		FileInputStream inputComAlliances;
+		try {
+			inputComAlliances = new FileInputStream("TabsBackground.png");
+			Image imageComAlliances = new Image(inputComAlliances); 
+	        BackgroundImage backgroundimageComAlliances = new BackgroundImage(imageComAlliances, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundComAlliances = new Background(backgroundimageComAlliances);
+	        comAlliances.setBackground(backgroundComAlliances);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab comAlliancesTab = new Tab("Compare Alliances", comAlliances);
 		mainTP.getTabs().addAll(comAlliancesTab);
 	}
 	
 	private void makeCompareAutos() {
 		compareAutosTab comAutos = new compareAutosTab();
+		FileInputStream inputComAutos;
+		try {
+			inputComAutos = new FileInputStream("TabsBackground.png");
+			Image imageComAutos = new Image(inputComAutos); 
+	        BackgroundImage backgroundimageComAutos = new BackgroundImage(imageComAutos, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundComAutos = new Background(backgroundimageComAutos);
+	        comAutos.setBackground(backgroundComAutos);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab comAutosTab = new Tab("Compare Autos", comAutos);
 		mainTP.getTabs().addAll(comAutosTab);
 	}
 	
 	private void makeCompareMatches() {
 		compareMatchesTab comMatches = new compareMatchesTab();
+		FileInputStream inputComMatches;
+		try {
+			inputComMatches = new FileInputStream("TabsBackground.png");
+			Image imageComMatches = new Image(inputComMatches); 
+	        BackgroundImage backgroundimageComMatches = new BackgroundImage(imageComMatches, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundComMatches = new Background(backgroundimageComMatches);
+	        comMatches.setBackground(backgroundComMatches);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab comMatchesTab = new Tab("Compare Matches", comMatches);
 		mainTP.getTabs().addAll(comMatchesTab);
 	}
 	
 	private void makeFindBestTeam() {
 		findBestTeamTab findTeam = new findBestTeamTab();
+		FileInputStream inputFindTeam;
+		try {
+			inputFindTeam = new FileInputStream("TabsBackground.png");
+			Image imageFindTeam = new Image(inputFindTeam); 
+	        BackgroundImage backgroundimageFindTeam = new BackgroundImage(imageFindTeam, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundFindTeam = new Background(backgroundimageFindTeam);
+	        findTeam.setBackground(backgroundFindTeam);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab findTeamTab = new Tab("Find Best Team", findTeam);
 		mainTP.getTabs().addAll(findTeamTab);
 	}
 	
 	private void makeFindBestAllince() {
 		findBestAllianceTab findAlliance = new findBestAllianceTab();
+		FileInputStream inputFindAlliance;
+		try {
+			inputFindAlliance = new FileInputStream("TabsBackground.png");
+			Image imageFindAlliance = new Image(inputFindAlliance); 
+	        BackgroundImage backgroundimageFindAlliance = new BackgroundImage(imageFindAlliance, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundFindAlliance = new Background(backgroundimageFindAlliance);
+	        findAlliance.setBackground(backgroundFindAlliance);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab findAllianceTab = new Tab("Find Best Alliance", findAlliance);
 		mainTP.getTabs().addAll(findAllianceTab);
 	}
 	
 	private void makeFindBestAuto() {
 		findBestAutoTab findAuto = new findBestAutoTab();
+		FileInputStream inputFindAuto;
+		try {
+			inputFindAuto = new FileInputStream("TabsBackground.png");
+			Image imageFindAuto = new Image(inputFindAuto); 
+	        BackgroundImage backgroundimageFindAuto = new BackgroundImage(imageFindAuto, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundFindAuto = new Background(backgroundimageFindAuto);
+	        findAuto.setBackground(backgroundFindAuto);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab findAutoTab = new Tab("Find Best auto", findAuto);
 		mainTP.getTabs().addAll(findAutoTab);
 	}
 	
 	private void makeFindBestStat() {
 		findBestStatTab findStat = new findBestStatTab();
+		FileInputStream inputFindStat;
+		try {
+			inputFindStat = new FileInputStream("TabsBackground.png");
+			Image imageFindStat = new Image(inputFindStat); 
+	        BackgroundImage backgroundimageFindStat = new BackgroundImage(imageFindStat, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundFindStat = new Background(backgroundimageFindStat);
+	        findStat.setBackground(backgroundFindStat);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab findStatTab = new Tab("Find Best Stat", findStat);
 		mainTP.getTabs().addAll(findStatTab);
 	}
 	
 	private void makeFindBestRobotArchatype() {
 		findBestRobotArchetype findArchetype = new findBestRobotArchetype();
+		FileInputStream inputFindArchetype;
+		try {
+			inputFindArchetype = new FileInputStream("TabsBackground.png");
+			Image imageFindArchetype = new Image(inputFindArchetype); 
+	        BackgroundImage backgroundimageFindArchetype = new BackgroundImage(imageFindArchetype, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundFindArchetype = new Background(backgroundimageFindArchetype);
+	        findArchetype.setBackground(backgroundFindArchetype);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab findArchetypeTab = new Tab("Find Best Robot Archetype", findArchetype);
 		mainTP.getTabs().addAll(findArchetypeTab);
 	}
 	
 	private void makeCreateAllince() {
 		createAllianceTab creAlliance = new createAllianceTab();
+		FileInputStream inputCreAlliance;
+		try {
+			inputCreAlliance = new FileInputStream("TabsBackground.png");
+			Image imageCreAlliance = new Image(inputCreAlliance); 
+	        BackgroundImage backgroundimageCreAlliance = new BackgroundImage(imageCreAlliance, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundCreAlliance = new Background(backgroundimageCreAlliance);
+	        creAlliance.setBackground(backgroundCreAlliance);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab creAllianceTab = new Tab("Create Alliance", creAlliance);
 		mainTP.getTabs().addAll(creAllianceTab);
 	}
 	
 	private void makeCreateMatch() {
 		createMatchTab creMatch = new createMatchTab();
+		FileInputStream inputCreMatch;
+		try {
+			inputCreMatch = new FileInputStream("TabsBackground.png");
+			Image imageCreMatch = new Image(inputCreMatch); 
+	        BackgroundImage backgroundimageCreMatch = new BackgroundImage(imageCreMatch, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundCreMatch = new Background(backgroundimageCreMatch);
+	        creMatch.setBackground(backgroundCreMatch);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab creMatchTab = new Tab("Create Match", creMatch);
 		mainTP.getTabs().addAll(creMatchTab);
 	}
 	
 	private void makeCreateAutoPlan() {
 		createAutoPlanTab creAutoPlan = new createAutoPlanTab();
+		FileInputStream inputCreAutoPlan;
+		try {
+			inputCreAutoPlan = new FileInputStream("TabsBackground.png");
+			Image imageCreAutoPlan = new Image(inputCreAutoPlan); 
+	        BackgroundImage backgroundimageCreAutoPlan = new BackgroundImage(imageCreAutoPlan, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundCreAutoPlan = new Background(backgroundimageCreAutoPlan);
+	        creAutoPlan.setBackground(backgroundCreAutoPlan);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab creAutoPlanTab = new Tab("Create Auto Plan", creAutoPlan);
 		mainTP.getTabs().addAll(creAutoPlanTab);
 	}
 	
 	private void makeCreateMatchPlan() {
 		createMatchPlanTab creMatchPlan = new createMatchPlanTab();
+		FileInputStream inputCreMatchPlan;
+		try {
+			inputCreMatchPlan = new FileInputStream("TabsBackground.png");
+			Image imageCreMatchPlan = new Image(inputCreMatchPlan); 
+	        BackgroundImage backgroundimageCreMatchPlan = new BackgroundImage(imageCreMatchPlan, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundCreMatchPlan = new Background(backgroundimageCreMatchPlan);
+	        creMatchPlan.setBackground(backgroundCreMatchPlan);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab creMatchPlanTab = new Tab("Create Match Plan", creMatchPlan);
 		mainTP.getTabs().addAll(creMatchPlanTab);
 	}
 	
 	private void makeSetPlayOffAlliance() {
 		setPlayOffAlliancesTab setPlayOff = new setPlayOffAlliancesTab();
+		FileInputStream inputSetPlayOff;
+		try {
+			inputSetPlayOff = new FileInputStream("TabsBackground.png");
+			Image imageSetPlayOff = new Image(inputSetPlayOff); 
+	        BackgroundImage backgroundimageSetPlayOff = new BackgroundImage(imageSetPlayOff, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundSetPlayOff = new Background(backgroundimageSetPlayOff);
+	        setPlayOff.setBackground(backgroundSetPlayOff);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab setPlayOffTab = new Tab("Set Play Off Alliances", setPlayOff);
 		mainTP.getTabs().addAll(setPlayOffTab);
 	}
 	
 	private void makeEditPlayOffAlliance() {
 		editPlayOffAlliancesTab editPlayOff = new editPlayOffAlliancesTab();
+		FileInputStream inputEditPlayOff;
+		try {
+			inputEditPlayOff = new FileInputStream("TabsBackground.png");
+			Image imageEditPlayOff = new Image(inputEditPlayOff); 
+	        BackgroundImage backgroundimageEditPlayOff = new BackgroundImage(imageEditPlayOff, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundEditPlayOff = new Background(backgroundimageEditPlayOff);
+	        editPlayOff.setBackground(backgroundEditPlayOff);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab editPlayOffTab = new Tab("Edit Play Off Alliances", editPlayOff);
 		mainTP.getTabs().addAll(editPlayOffTab);
 	}
 	
 	private void makeDeletePlayOffAlliance() {
 		deletePlayOffAlliancesTab deletePlayOff = new deletePlayOffAlliancesTab();
+		FileInputStream inputDeletePlayOff;
+		try {
+			inputDeletePlayOff = new FileInputStream("TabsBackground.png");
+			Image imageDeletePlayOff = new Image(inputDeletePlayOff); 
+	        BackgroundImage backgroundimageDeletePlayOff = new BackgroundImage(imageDeletePlayOff, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundDeletePlayOff = new Background(backgroundimageDeletePlayOff);
+	        deletePlayOff.setBackground(backgroundDeletePlayOff);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error: " + e);
+		} 
 		Tab deletePlayOffTab = new Tab("Delete Play Off Alliances", deletePlayOff);
 		mainTP.getTabs().addAll(deletePlayOffTab);
 	}

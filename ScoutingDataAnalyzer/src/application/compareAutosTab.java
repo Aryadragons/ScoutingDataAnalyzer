@@ -45,5 +45,8 @@ public class compareAutosTab extends GridPane{
 		//Adding Submit Button
 		submitB = new Button("Submit");
 		this.add(submitB, 0, 4);
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 	}
 }

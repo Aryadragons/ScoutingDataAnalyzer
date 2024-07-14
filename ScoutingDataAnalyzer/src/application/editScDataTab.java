@@ -20,5 +20,8 @@ public class editScDataTab extends GridPane {
 		this.add(doThisAddB, 1, 0);
 		this.add(doThisEditB, 1, 1);
 		this.add(doThisDelB, 1, 2);
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 	}
 }

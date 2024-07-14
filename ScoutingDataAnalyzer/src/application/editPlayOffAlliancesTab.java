@@ -46,6 +46,9 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 		this.add(team1EditCB, 1, 2);
 		this.add(team2EditCB, 2, 2);
 		this.add(team3EditCB, 3, 2);
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 	}
 
 	@Override

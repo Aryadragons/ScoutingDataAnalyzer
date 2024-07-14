@@ -65,5 +65,8 @@ public class findBestAllianceTab extends GridPane {
 		this.add(sixthAllinceTF, 0, 8);
 		this.add(seventhAllinceTF, 0, 9);
 		this.add(eighthAllinceTF, 0, 10);
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 	}
 }

@@ -38,5 +38,8 @@ public class findBestTeamTab extends GridPane {
 		//Adding in the Button
 		submitB = new Button("Submit");
 		this.add(submitB, 5, 1);
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 	}
 }

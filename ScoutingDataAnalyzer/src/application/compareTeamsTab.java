@@ -25,6 +25,9 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		submitHowManyB.setOnAction(this);
 		this.add(submitHowManyB, 1, 1);
 		this.add(new Label("Test"), 0, 2);
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 	}
 
 	@Override

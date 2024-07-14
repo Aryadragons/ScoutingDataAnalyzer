@@ -27,5 +27,8 @@ public class searchAllincesTab extends GridPane{
 		this.add(teamCB3, 2, 1);
 		seAllincesB = new Button("Submit");
 		this.add(seAllincesB, 3, 1);
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 	}
 }

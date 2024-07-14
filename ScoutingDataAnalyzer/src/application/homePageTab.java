@@ -23,5 +23,8 @@ public class homePageTab extends GridPane{
 		this.add(new Label("The Edit Features are for changing small amouts of data, or added/deleting a few peice of data escally Driveteam Comments"), 0, 12);
 		this.add(new Label("Export Features:"), 0, 13);
 		this.add(new Label("The Export features is for editing a the inputed file with all edits you have made to the data so you won't ha e to re enter them in"), 0, 14);
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 	}
 }

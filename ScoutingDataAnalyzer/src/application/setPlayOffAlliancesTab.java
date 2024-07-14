@@ -139,6 +139,9 @@ public class setPlayOffAlliancesTab extends GridPane{
 		this.add(team22CB, 1, 15);
 		this.add(team23CB, 2, 15);
 		this.add(team24CB, 3, 15);
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 		
 	}
 }

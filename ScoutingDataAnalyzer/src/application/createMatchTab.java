@@ -43,5 +43,8 @@ public class createMatchTab extends GridPane{
 		// adding Button
 		submitB = new Button("Submit");
 		this.add(submitB, 3, 3);
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 	}
 }

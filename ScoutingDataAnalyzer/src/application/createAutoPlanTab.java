@@ -156,5 +156,8 @@ public class createAutoPlanTab extends GridPane {
 		this.add(team36thPickTF, 9, 8);
 		this.add(team37thPickTF, 10, 8);
 		this.add(team38thPickTF, 11, 8);
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 	}
 }

@@ -16,6 +16,9 @@ public class deletePlayOffAlliancesTab extends GridPane{
 		this.add(yesB, 1, 0);
 		doneTF = new TextField();
 		this.add(doneTF, 0, 1);
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 	}
 	
 }

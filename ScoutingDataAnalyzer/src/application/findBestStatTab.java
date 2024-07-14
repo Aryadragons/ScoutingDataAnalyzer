@@ -17,5 +17,8 @@ public class findBestStatTab extends GridPane{
 		this.add(listStatsCB, 1, 0);
 		submitB = new Button("Submit");
 		this.add(submitB, 2, 0);
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 	}
 }

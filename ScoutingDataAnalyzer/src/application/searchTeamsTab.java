@@ -36,27 +36,9 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		seTeamsB = new Button("Submit");
 		seTeamsB.setOnAction(this);
 		this.add(seTeamsB, 1, 1);
-		this.add(new Label(""), 0, 2);
-		this.add(new Label(""), 0, 3);
-		this.add(new Label(""), 0, 4);
-		this.add(new Label(""), 0, 5);
-		this.add(new Label(""), 0, 6);
-		this.add(new Label(""), 0, 7);
-		this.add(new Label(""), 0, 8);
-		this.add(new Label(""), 0, 9);
-		this.add(new Label(""), 0, 10);
-		this.add(new Label(""), 0, 11);
-		this.add(new Label(""), 0, 12);
-		this.add(new Label(""), 0, 13);
-		this.add(new Label(""), 0, 14);
-		this.add(new Label(""), 0, 15);
-		this.add(new Label(""), 0, 16);
-		this.add(new Label(""), 0, 17);
-		this.add(new Label(""), 0, 18);
-		this.add(new Label(""), 0, 19);
-		this.add(new Label(""), 0, 20);
-		this.add(new Label(""), 0, 21);
-		this.add(new Label(""), 0, 22);
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 		theTeamList = mainTeamList;
 	}
 	

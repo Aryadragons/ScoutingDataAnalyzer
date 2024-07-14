@@ -31,5 +31,8 @@ public class openNewDriveTeamDataTab extends GridPane{
 		this.add(goForAddB, 1, 2);
 		this.add(submitReB, 2, 1);
 		this.add(submitAddB, 2, 3);
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 	}
 }

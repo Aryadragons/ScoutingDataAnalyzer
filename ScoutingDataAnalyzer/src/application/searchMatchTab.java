@@ -32,5 +32,8 @@ public class searchMatchTab extends GridPane{
 		this.add(matchNumTF, 1, 1);
 		this.add(isPracCB, 2, 1);
 		this.add(isReplayCB, 3, 1);
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 	}
 }

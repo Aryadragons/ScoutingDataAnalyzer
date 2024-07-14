@@ -56,5 +56,8 @@ public class compareMatchesTab extends GridPane{
 		this.add(matchNum2TF, 1, 3);
 		this.add(isPrac2CB, 2, 3);
 		this.add(isReplay2CB, 3, 3);
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 	}
 }

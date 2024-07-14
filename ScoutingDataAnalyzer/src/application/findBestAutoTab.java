@@ -17,5 +17,8 @@ public class findBestAutoTab extends GridPane{
 		this.add(choosenAutosCB, 1, 0);
 		choosenSubmitB = new Button("Submit");
 		this.add(choosenSubmitB, 2, 0);
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 	}
 }

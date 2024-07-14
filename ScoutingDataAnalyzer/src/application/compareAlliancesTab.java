@@ -43,5 +43,8 @@ public class compareAlliancesTab extends GridPane{
 		//adding button
 		submitB = new Button("Submit");
 		this.add(submitB, 6, 1);
+		for (int i = 0; i < 23; i++) {
+			this.add(new Label(""), 0, i);
+		}
 	}
 }
