@@ -115,7 +115,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 				listOfTeamNumsSorted.add(null);
 			}
 			// adding css file stuff
-			scene.getStylesheets().add("application/ScoutingDataAnalyzercssFile.css");
+			scene.getStylesheets().add(getClass().getResource("ScoutingDataAnalyzercssFile.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {
@@ -126,6 +126,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	private MenuBar createMenuBar() {
 		// Creating the Menu Bar
 		MenuBar mB = new MenuBar();
+		mB.getStyleClass().add("menu-bar");
 		// Creating the Menus
 		Menu homePageMenu = new Menu("Home");
 		Menu searchMenu = new Menu("Search:");
@@ -293,6 +294,19 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeSearchTeams() {
 		searchTeamsTab seTeams = new searchTeamsTab(mainTeamList, listOfTeamNumsSorted);
+		seTeams.setId("seTeamsStyle");
+		FileInputStream inputSeTeams;
+		try {
+			inputSeTeams = new FileInputStream("TabsBackground.png");
+			Image imageSeTeams = new Image(inputSeTeams); 
+	        BackgroundImage backgroundimageSeTeams = new BackgroundImage(imageSeTeams, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
+	        // create Background 
+	        Background backgroundSeTeams = new Background(backgroundimageSeTeams);
+			seTeams.setBackground(backgroundSeTeams);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
 		Tab seTeamsTab = new Tab("Search Teams", seTeams);
 		mainTP.getTabs().addAll(seTeamsTab);
 	}
