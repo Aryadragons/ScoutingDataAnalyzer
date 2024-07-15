@@ -12,14 +12,25 @@ public class Team {
 	private int totalClimb;
 	private int totalTrap;
 	//avg stuff
-	private int avgCycles;
-	private int avgAmp;
-	private int avgSpe;
-	private int avgClimb;
-	private int avgTrap;
+	private double avgCycles;
+	private double avgAmp;
+	private double avgSpe;
+	private double avgClimb;
+	private double avgTrap;
 	// comments
 	private List<String> listOfComments;
-	Team(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, List<String> commentList){
+	//human Player stuff
+	private double avgHumAmpPostion;
+	private double avgHumScoPostion;
+	private double avgHumNonePostion;
+	private double avgHumScoSkill;
+	private double avgHumAmpSkill;
+	private double avgHumAmpNotes;
+	private int timesHumAmp;
+	private int timesHumSco;
+	private List<String> listOfHumPostions;
+	
+	Team(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, List<String> commentList, List<String> tempHumPostionsList, int totalHumScoSkill, int totalHumAmpSkill, int totalHumAmpNotes, int importTimesHumAmp, int importTimesHumSco){
 		setTeamNum(tempTeamNum);
 		setTotalCycles(tempTotalCycles);
 		setTotalMatchesPlayed(tempTotalMatchesPlayed);
@@ -33,8 +44,18 @@ public class Team {
 		setAvgSpe(tempTotalSpe/totalMatchesPlayed);
 		setAvgTrap(tempTotalTrap/totalMatchesPlayed);
 		setAvgClimb(tempTotalClimb/totalMatchesPlayed);
+		// set er's for comments
 		listOfComments = new ArrayList<>();
 		addToCommentsList(commentList);
+		// set er's for human player stuff
+		setTimesHumAmp(importTimesHumAmp);
+		setTimesHumSco(importTimesHumSco);
+		setAvgHumAmpPostion();
+		setAvgHumScoPostion();
+		setAvgHumNonePostion();
+		setAvgHumScoSkill(totalHumScoSkill);
+		setAvgHumAmpSkill(totalHumAmpSkill);
+		setAvgHumAmpNotes(totalHumAmpNotes);
 	}
 	
 	public int setTeamNum(int tempTeamNum){
@@ -65,30 +86,75 @@ public class Team {
 		return totalClimb = tempTotalClimb;
 	}
 	//set er's for avg
-	public int setAvgCycles(int tempAvgCycles){
+	public double setAvgCycles(double tempAvgCycles){
 		return avgCycles = tempAvgCycles;
 	}
 	
-	public int setAvgAmp(int tempAvgAmp){
+	public double setAvgAmp(double tempAvgAmp){
 		return avgAmp = tempAvgAmp;
 	}
 	
-	public int setAvgSpe(int tempAvgSpe){
+	public double setAvgSpe(double tempAvgSpe){
 		return avgSpe = tempAvgSpe;
 	}
 	//boop test
-	public int setAvgTrap(int tempAvgTrap){
+	public double setAvgTrap(double tempAvgTrap){
 		return avgTrap = tempAvgTrap;
 	}
 	
-	public int setAvgClimb(int tempAvgClimb){
+	public double setAvgClimb(double tempAvgClimb){
 		return avgClimb = tempAvgClimb;
+	}
+	
+	public int setTimesHumAmp(int importedTimesHumAmp) {
+		return timesHumAmp = importedTimesHumAmp;
+	}
+	
+	public int setTimesHumSco(int importedTimesHumSco) {
+		return timesHumSco = importedTimesHumSco;
+	}
+	
+	public double setAvgHumAmpPostion() {
+		return avgHumAmpPostion = (timesHumAmp/totalMatchesPlayed);
+	}
+	
+	public double setAvgHumScoPostion() {
+		return avgHumScoPostion = (timesHumSco/totalMatchesPlayed);
+	}
+	
+	public double setAvgHumNonePostion() {
+		return avgHumNonePostion = ((totalMatchesPlayed - timesHumAmp - timesHumSco)/totalMatchesPlayed);
+	}
+	
+	public List<String> setHumPostionList(List<String> importedListOfHumPostion){
+		listOfHumPostions = importedListOfHumPostion;
+		return listOfHumPostions;
+	}
+	
+	public double setAvgHumScoSkill(int tempHumScoSkill) {
+		return avgHumScoSkill = (tempHumScoSkill/timesHumSco);
+	}
+	
+	public double setAvgHumAmpSkill(int tempHumAmpSkill) {
+		return avgHumAmpSkill = (tempHumAmpSkill/timesHumAmp);
+	}
+	
+	public double setAvgHumAmpNotes(int tempHumAmpNotes) {
+		return avgHumAmpNotes = (tempHumAmpNotes/timesHumAmp);
 	}
 	
 	public void addToCommentsList(List<String> commentList) {
 		for (int i = 0; i < commentList.size(); i++) {
 			listOfComments.add(commentList.get(i));
 		}
+	}
+	//clear list er's
+	public void clearCommentsList(){
+		listOfComments.clear();
+	}
+	
+	public void clearHumPostionList(){
+		listOfComments.clear();
 	}
 	//get er's for total
 	public int getTeamNum() {
@@ -117,29 +183,66 @@ public class Team {
 		return totalClimb;
 	}
 	//get er's for avg
-	public int getAvgCycles() {
+	public double getAvgCycles() {
 		return avgCycles;
 	}
 	
-	public int getAvgAmp() {
+	public double getAvgAmp() {
 		return avgAmp;
 	}
 	
-	public int getAvgSpe() {
+	public double getAvgSpe() {
 		return avgSpe;
 	}
 	
-	public int getAvgTrap() {
+	public double getAvgTrap() {
 		return avgTrap;
 	}
 	
-	public int getAvgClimb() {
+	public double getAvgClimb() {
 		return avgClimb;
 	}
 	
 	public List<String> getCommentsList() {
 		return listOfComments;
 	}
+	
+	public List<String> getHumanPostionList() {
+		return listOfHumPostions;
+	}
+	
+	public double getAvgHumAmpPostion() {
+		return avgHumAmpPostion;
+	}
+	
+	public double getAvgHumScoPostion() {
+		return avgHumScoPostion;
+	}
+	
+	public double getAvgHumNonePostion() {
+		return avgHumNonePostion;
+	}
+	
+	public double getHumAmpSkill() {
+		return avgHumAmpSkill;
+	}
+	
+	public double getHumScoSkill() {
+		return avgHumScoSkill;
+	}
+	
+	public double getHumAmpNotes() {
+		return avgHumAmpNotes;
+	}
+	
+	public int getTimesHumAmp() {
+		return timesHumAmp;
+	}
+	
+	public int getTimesHumSco() {
+		return timesHumSco;
+	}
+	
 	public String toString() {
 		return("Avg Cycles" + avgCycles + "Avg Amp" + avgAmp +"Avg Spe" + avgSpe +"Avg Trap" + avgTrap +"Avg Climb" + avgClimb);
 	}
