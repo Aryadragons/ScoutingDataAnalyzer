@@ -23,11 +23,11 @@ public class Team {
 	private double avgHumAmpPostion;
 	private double avgHumScoPostion;
 	private double avgHumNonePostion;
-	private double avgHumScoSkill;
-	private double avgHumAmpSkill;
-	private double avgHumAmpNotes;
-	private int timesHumAmp;
-	private int timesHumSco;
+	private double avgHumScoSkill = 0;
+	private double avgHumAmpSkill = 0;
+	private double avgHumAmpNotes = 0;
+	private int timesHumAmp = 0;
+	private int timesHumSco = 0;
 	private List<String> listOfHumPostions;
 	
 	Team(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, List<String> commentList, List<String> tempHumPostionsList, int totalHumScoSkill, int totalHumAmpSkill, int totalHumAmpNotes, int importTimesHumAmp, int importTimesHumSco){

@@ -67,14 +67,25 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 			String csvTrapS;
 			String csvClimbS;
 			String csvCommentS;
+			String csvHumAmpSkillS;
+			String csvHumScoSkillS;
+			String csvHumAmpNotesS;
+			String csvTimesHumAmpS;
+			String csvTimesHumScoS;
 			List<String> csvCommentList;
+			List<String> csvHumPostionsList;
 			int csvTeamNum;
 			int csvMatches;
-			int csvCycles;
-			int csvAmp;
-			int csvSpe;
-			int csvTrap;
-			int csvClimb;
+			double csvCycles;
+			double csvAmp;
+			double csvSpe;
+			double csvTrap;
+			double csvClimb;
+			double csvHumAmpSkill;
+			double csvHumScoSkill;
+			double csvHumAmpNotes;
+			double csvTimesHumAmp;
+			double csvTimesHumSco;
 			new FileWriter("MainScoutingDataFiles.txt", false).close();
 			for(int i = 0; i < fileTeamList.listOfTeams.size(); i++) {
 				csvTeamNum = fileTeamList.listOfTeams.get(i).getTeamNum();
@@ -85,13 +96,25 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				csvTrap = fileTeamList.listOfTeams.get(i).getAvgTrap();
 				csvClimb = fileTeamList.listOfTeams.get(i).getAvgClimb();
 				csvCommentList = fileTeamList.listOfTeams.get(i).getCommentsList();
+				csvHumPostionsList = fileTeamList.listOfTeams.get(i).getHumanPostionList();
+				csvHumAmpSkill = fileTeamList.listOfTeams.get(i).getHumAmpSkill();
+				csvHumScoSkill = fileTeamList.listOfTeams.get(i).getHumScoSkill();
+				csvHumAmpNotes = fileTeamList.listOfTeams.get(i).getHumAmpNotes();
+				csvTimesHumAmp = fileTeamList.listOfTeams.get(i).getTimesHumAmp();
+				csvTimesHumSco = fileTeamList.listOfTeams.get(i).getTimesHumSco();
 				csvTeamNumS = Integer.toString(csvTeamNum);
 				csvMatchesS = Integer.toString(csvMatches);
-				csvCyclesS = Integer.toString(csvCycles);
-				csvAmpS = Integer.toString(csvAmp);
-				csvSpeS = Integer.toString(csvSpe);
-				csvTrapS = Integer.toString(csvTrap);
-				csvClimbS = Integer.toString(csvClimb);
+				csvCyclesS = Double.toString(csvCycles);
+				csvAmpS = Double.toString(csvAmp);
+				csvSpeS = Double.toString(csvSpe);
+				csvTrapS = Double.toString(csvTrap);
+				csvClimbS = Double.toString(csvClimb);
+				csvHumAmpSkillS= Double.toString(csvHumAmpSkill);
+				csvHumScoSkillS= Double.toString(csvHumScoSkill);
+				csvHumAmpNotesS= Double.toString(csvHumAmpNotes);
+				csvTimesHumAmpS= Double.toString(csvTimesHumAmp);
+				csvTimesHumScoS= Double.toString(csvTimesHumSco);
+				
 				FileWriter fw = new FileWriter("MainScoutingDataFiles.txt", true);
 					    BufferedWriter bw = new BufferedWriter(fw);
 					    PrintWriter out = new PrintWriter(bw);
@@ -106,6 +129,11 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					    out.println(csvCommentList.size());
 					    for (int e = 0; e < csvCommentList.size(); e++) {
 					    	out.println(csvCommentList.get(e));
+					    	
+					    }
+					    out.println(csvHumPostionsList.size());
+					    for (int e = 0; e < csvHumPostionsList.size(); e++) {
+					    	out.println(csvHumPostionsList.get(e));
 					    	
 					    }
 					    out.close();
@@ -172,9 +200,15 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				int fileCyclesT;
 				int fileMatchesT;
 				List<String> commentListT;
-				int fileHumAmpSkill;
-				int fileHumScoSkill;
-				int fileHumAmpNotes;
+				int fileHumAmpSkill = 0;
+				int fileHumScoSkill = 0;
+				int fileHumAmpNotes = 0;
+				int fileHumAmpSkillT;
+				int fileHumScoSkillT;
+				int fileHumAmpNotesT;
+				List<String> humPostionsListT;
+				int timesHumAmpT;
+				int timesHumScoT;
 				//for(int i = 0; i < 5; i++) {
 					//fileInput.next();
 			//	}
@@ -187,17 +221,19 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					fileCommentS = fileInput.next();
 					fileHumPostionS = fileInput.next();
 					fileHumSkillS = fileInput.next();
+					int lengthOfFileHumPostion = fileHumPostionS.length() - 1;
+					fileHumPostionSTrue = fileHumSkillS.substring(1, lengthOfFileHumPostion);
 					int lengthOfFileHumSkill = fileHumSkillS.length() - 1;
 					fileHumSkillSTrue = fileHumSkillS.substring(1, lengthOfFileHumSkill);
 					// hum postion and skill stuff
-					if (fileHumPostionS.compareTo("Amp") == 0) {
+					if (fileHumPostionSTrue.compareTo("Amp") == 0) {
 						fileHumAmpSkill = Integer.parseInt(fileHumSkillSTrue);
 						fileHumAmpNotesS = fileInput.next();
 						int lengthOfFileHumAmpNotes = fileHumAmpNotesS.length() - 1;
 						fileHumAmpNotesSTrue = fileHumAmpNotesS.substring(1, lengthOfFileHumAmpNotes);
 						fileHumAmpNotes = Integer.parseInt(fileHumAmpNotesSTrue);
 					}
-					if (fileHumPostionS.compareTo("Scoure") == 0) {
+					if (fileHumPostionSTrue.compareTo("Scoure") == 0) {
 						fileHumScoSkill = Integer.parseInt(fileHumSkillSTrue);
 					}
 					//remove "s part
@@ -226,14 +262,14 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					fileClimb = Integer.parseInt(fileClimbSTrue);
 					if (fileTempTeamList.listOfTempTeams.size() == 0) {
 						fileMatches = 1;
-						fileTempTeamList.addTempTeam(fileTeamNum, (fileAmp + fileSpe + fileTrap), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue);
+						fileTempTeamList.addTempTeam(fileTeamNum, (fileAmp + fileSpe + fileTrap), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue, fileHumPostionSTrue, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes);
 					} else {
 						if(fileTempTeamList.getATempTeam(fileTeamNum, fileTempTeamList) != null) {
 							fileMatches = fileTempTeamList.getATempTeam(fileTeamNum, fileTempTeamList).getTotalMatchesPlayed();
-							fileTempTeamList.addOnToTempTeam(fileTeamNum, (fileTrap + fileAmp + fileSpe), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue);
+							fileTempTeamList.addOnToTempTeam(fileTeamNum, (fileTrap + fileAmp + fileSpe), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue, fileHumPostionSTrue, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes);
 						} else {
 							fileMatches = 1;
-							fileTempTeamList.addTempTeam(fileTeamNum, (fileAmp + fileSpe + fileTrap), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue);
+							fileTempTeamList.addTempTeam(fileTeamNum, (fileAmp + fileSpe + fileTrap), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue, fileHumPostionSTrue, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes);
 						}
 					}
 				}
@@ -246,7 +282,14 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					fileTrapT = fileTempTeamList.listOfTempTeams.get(i).getTotalTrap();
 					fileClimbT = fileTempTeamList.listOfTempTeams.get(i).getTotalClimb();
 					commentListT = fileTempTeamList.listOfTempTeams.get(i).getCommentList();
-					fileTeamList.addTempTeam(fileTeamNumT, fileCyclesT, fileMatchesT, fileAmpT, fileSpeT, fileTrapT, fileClimbT, commentListT);
+					fileHumAmpSkillT = fileTempTeamList.listOfTempTeams.get(i).getHumAmpSkill();
+					fileHumScoSkillT = fileTempTeamList.listOfTempTeams.get(i).getHumScoSkill();
+					fileHumAmpNotesT = fileTempTeamList.listOfTempTeams.get(i).getHumAmpNotes();
+					humPostionsListT = fileTempTeamList.listOfTempTeams.get(i).getHumanPostionList();
+					timesHumAmpT = fileTempTeamList.listOfTempTeams.get(i).getTimesHumAmp();
+					timesHumScoT = fileTempTeamList.listOfTempTeams.get(i).getTimesHumSco();
+					
+					fileTeamList.addTempTeam(fileTeamNumT, fileCyclesT, fileMatchesT, fileAmpT, fileSpeT, fileTrapT, fileClimbT, commentListT, humPostionsListT, fileHumAmpSkillT, fileHumScoSkillT, fileHumAmpNotesT, timesHumAmpT, timesHumScoT);
 				}
 				this.exportDataToCSV();	
 				fileInput.close();
@@ -258,36 +301,125 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				String fileTrapS;
 				String fileClimbS;
 				String fileCommentS;
+				String fileHumPostionS;
+				String fileHumSkillS;
+				String fileHumAmpNotesS;
+				String fileTeamNumSTrue = "";
+				String fileAmpSTrue = "";
+				String fileSpeSTrue = "";
+				String fileTrapSTrue = "";
+				String fileClimbSTrue = "";
+				String fileCommentSTrue = "";
+				String fileHumPostionSTrue;
+				String fileHumSkillSTrue;
+				String fileHumAmpNotesSTrue;
 				int fileTeamNum;
 				int fileAmp;
 				int fileSpe;
 				int fileTrap;
 				int fileClimb;
 				int fileMatches;
-				for(int i = 0; i < 5; i++) {
+				int fileTeamNumT;
+				int fileAmpT;
+				int fileSpeT;
+				int fileTrapT;
+				int fileClimbT;
+				int fileCyclesT;
+				int fileMatchesT;
+				List<String> commentListT;
+				int fileHumAmpSkill = 0;
+				int fileHumScoSkill = 0;
+				int fileHumAmpNotes = 0;
+				int fileHumAmpSkillT;
+				int fileHumScoSkillT;
+				int fileHumAmpNotesT;
+				List<String> humPostionsListT;
+				int timesHumAmpT;
+				int timesHumScoT;
+				/**for(int i = 0; i < 5; i++) {
 					fileInput.next();
-				}
-				fileTeamNumS = fileInput.next();
-				while(fileTeamNumS != null) {
+				}**/
+				while(fileInput.hasNextLine()) {
+					fileTeamNumS = fileInput.next();
 					fileAmpS = fileInput.next();
 					fileSpeS = fileInput.next();
 					fileTrapS = fileInput.next();
 					fileClimbS = fileInput.next();
 					fileCommentS = fileInput.next();
-					fileTeamNum = Integer.parseInt(fileTeamNumS);
-					fileAmp = Integer.parseInt(fileAmpS);
-					fileSpe = Integer.parseInt(fileSpeS);
-					fileTrap = Integer.parseInt(fileTrapS);
-					fileClimb = Integer.parseInt(fileClimbS);
-					fileMatches = fileTempTeamList.getATempTeam(fileTeamNum, fileTempTeamList).getTotalMatchesPlayed();
-					if(fileTempTeamList.getATempTeam(fileTeamNum, fileTempTeamList) != null) {
-						fileTempTeamList.addOnToTempTeam(fileTeamNum, (fileTrap + fileAmp + fileSpe), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentS);
-					} else {
-						fileTempTeamList.addTempTeam(fileTeamNum, (fileAmp + fileSpe + fileTrap), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentS);
+					fileHumPostionS = fileInput.next();
+					fileHumSkillS = fileInput.next();
+					int lengthOfFileHumPostion = fileHumPostionS.length() - 1;
+					fileHumPostionSTrue = fileHumSkillS.substring(1, lengthOfFileHumPostion);
+					int lengthOfFileHumSkill = fileHumSkillS.length() - 1;
+					fileHumSkillSTrue = fileHumSkillS.substring(1, lengthOfFileHumSkill);
+					// hum postion and skill stuff
+					if (fileHumPostionSTrue.compareTo("Amp") == 0) {
+						fileHumAmpSkill = Integer.parseInt(fileHumSkillSTrue);
+						fileHumAmpNotesS = fileInput.next();
+						int lengthOfFileHumAmpNotes = fileHumAmpNotesS.length() - 1;
+						fileHumAmpNotesSTrue = fileHumAmpNotesS.substring(1, lengthOfFileHumAmpNotes);
+						fileHumAmpNotes = Integer.parseInt(fileHumAmpNotesSTrue);
 					}
-					fileTeamNumS = fileInput.next();
+					if (fileHumPostionSTrue.compareTo("Scoure") == 0) {
+						fileHumScoSkill = Integer.parseInt(fileHumSkillSTrue);
+					}
+					//remove "s part
+					int lengthOfFileTeamNum = fileTeamNumS.length() - 1;
+					fileTeamNumSTrue = fileTeamNumS.substring(1, lengthOfFileTeamNum);
+					
+					int lengthOfFileAmp = fileAmpS.length() - 1;
+					fileAmpSTrue = fileAmpS.substring(1, lengthOfFileAmp);
+					int lengthOfFileSpe = fileSpeS.length() - 1;
+					fileSpeSTrue = fileSpeS.substring(1, lengthOfFileSpe);
+					int lengthOfFileTrap = fileTrapS.length() - 1;
+					fileTrapSTrue = fileTrapS.substring(1, lengthOfFileTrap);
+					int lengthOfFileClimb = fileClimbS.length() - 1;
+					fileClimbSTrue = fileClimbS.substring(1, lengthOfFileClimb);
+					
+					int lengthOfFileComment = fileCommentS.length() - 1;
+					if (lengthOfFileComment == 0) {
+						fileCommentSTrue = "None";
+					} else {
+						fileCommentSTrue = fileCommentS.substring(1, lengthOfFileComment);
+					}
+					fileTeamNum = Integer.parseInt(fileTeamNumS);
+					fileAmp = Integer.parseInt(fileAmpSTrue);
+					fileSpe = Integer.parseInt(fileSpeSTrue);
+					fileTrap = Integer.parseInt(fileTrapSTrue);
+					fileClimb = Integer.parseInt(fileClimbSTrue);
+					if (fileTempTeamList.listOfTempTeams.size() == 0) {
+						fileMatches = 1;
+						fileTempTeamList.addTempTeam(fileTeamNum, (fileAmp + fileSpe + fileTrap), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue, fileHumPostionSTrue, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes);
+					} else {
+						if(fileTempTeamList.getATempTeam(fileTeamNum, fileTempTeamList) != null) {
+							fileMatches = fileTempTeamList.getATempTeam(fileTeamNum, fileTempTeamList).getTotalMatchesPlayed();
+							fileTempTeamList.addOnToTempTeam(fileTeamNum, (fileTrap + fileAmp + fileSpe), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue, fileHumPostionSTrue, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes);
+						} else {
+							fileMatches = 1;
+							fileTempTeamList.addTempTeam(fileTeamNum, (fileAmp + fileSpe + fileTrap), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue, fileHumPostionSTrue, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes);
+						}
+					}
+				}
+				for (int i = 0; i < fileTempTeamList.listOfTempTeams.size(); i++) {
+					fileTeamNumT = fileTempTeamList.listOfTempTeams.get(i).getTeamNum();
+					fileMatchesT = fileTempTeamList.listOfTempTeams.get(i).getTotalMatchesPlayed();
+					fileCyclesT = fileTempTeamList.listOfTempTeams.get(i).getTotalCycles();
+					fileAmpT = fileTempTeamList.listOfTempTeams.get(i).getTotalAmp();
+					fileSpeT = fileTempTeamList.listOfTempTeams.get(i).getTotalSpe();
+					fileTrapT = fileTempTeamList.listOfTempTeams.get(i).getTotalTrap();
+					fileClimbT = fileTempTeamList.listOfTempTeams.get(i).getTotalClimb();
+					commentListT = fileTempTeamList.listOfTempTeams.get(i).getCommentList();
+					fileHumAmpSkillT = fileTempTeamList.listOfTempTeams.get(i).getHumAmpSkill();
+					fileHumScoSkillT = fileTempTeamList.listOfTempTeams.get(i).getHumScoSkill();
+					fileHumAmpNotesT = fileTempTeamList.listOfTempTeams.get(i).getHumAmpNotes();
+					humPostionsListT = fileTempTeamList.listOfTempTeams.get(i).getHumanPostionList();
+					timesHumAmpT = fileTempTeamList.listOfTempTeams.get(i).getTimesHumAmp();
+					timesHumScoT = fileTempTeamList.listOfTempTeams.get(i).getTimesHumSco();
+					
+					fileTeamList.addTempTeam(fileTeamNumT, fileCyclesT, fileMatchesT, fileAmpT, fileSpeT, fileTrapT, fileClimbT, commentListT, humPostionsListT, fileHumAmpSkillT, fileHumScoSkillT, fileHumAmpNotesT, timesHumAmpT, timesHumScoT);
 				}
 				this.exportDataToCSV();
+				fileInput.close();
 			}
 		}catch(Exception e) {
 			System.out.println("Error:  " + e);

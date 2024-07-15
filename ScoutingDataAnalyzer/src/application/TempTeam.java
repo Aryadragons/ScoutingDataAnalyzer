@@ -13,11 +13,11 @@ public class TempTeam {
 	private int totalTrap;
 	private List<String> listOfComments;
 	private String humPostion;
-	private int humScoSkill;
-	private int humAmpSkill;
-	private int totalHumAmpNotes;
-	private int timesHumAmp;
-	private int timesHumSco;
+	private int humScoSkill = 0;
+	private int humAmpSkill = 0;
+	private int totalHumAmpNotes = 0;
+	private int timesHumAmp = 0;
+	private int timesHumSco = 0;
 	private List<String> listOfHumPostions;
 	
 	TempTeam(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, String comment, String tempHumPostion, int tempHumAmpSkill, int tempHumScoSkill, int tempHumAmpNotes){
