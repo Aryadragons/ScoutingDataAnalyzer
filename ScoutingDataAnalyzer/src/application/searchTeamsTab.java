@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -56,24 +57,56 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		}
 	}
 	
-	public void addCharts(int teams, int avgCy, int avgAmp, int avgSpe, int avgTrap, int avgCli) {
-		ObservableList<String> avgThings;
-		avgThings.add("Cycles");
-		avgThings.add("Amp");
-		avgThings.add("Specker");
-		avgThings.add("Trap");
-		avgThings.add("Climb");
-		String c = "Cycles: " + avgCy;
+	public void addCharts(int team, int avgCy, int avgAmp, int avgSpe, int avgTrap, int avgCli) {
+		System.out.println("Team: " + team + "Cycles: " + avgCy + "Amp: " + avgAmp + "Speaker: " + avgSpe + "Trap: " + avgTrap + "Climb: " + avgCli);
+		String[] avgThings = {"Cycles", "Amp", "Speaker", "Trap", "Climb"};
 		XYChart.Series<String,Number> avgBarC = new XYChart.Series<String,Number>();
 		avgBarC.setName("Avg:");
 		avgBarC.getData().add(new XYChart.Data<String,Number>("Cycles", 10));
 		CategoryAxis typeXAxisBarC = new CategoryAxis();
-	    NumberAxis numScaleAxisBarC = new NumberAxis();
+	    NumberAxis numScaleAxisBarC = new NumberAxis(0, 20, 4);
 	    BarChart<String,Number> avgBCBarC = new BarChart<String,Number>(typeXAxisBarC, numScaleAxisBarC);
-	    typeXAxisBarC.setCategories(avgThings);
-	    avgBarC.getData().add(new XYChart.Data<String,Number>("Cycles", avgCy));
-	    avgBarC.getData().add(new XYChart.Data<String,Number>("Cycles", avgCy));
-	    avgBarC.getData().add(new XYChart.Data<String,Number>("Cycles", avgCy));
+	    typeXAxisBarC.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(avgThings)));
+	    XYChart.Series<String,Number> cyData = new XYChart.Series<String,Number>();
+	    cyData.setName("Cycle Data");
+	    cyData.getData().add(new XYChart.Data<String,Number>("Cycles", avgCy));
+	    XYChart.Series<String,Number> ampData = new XYChart.Series<String,Number>();
+	    ampData.setName("Amp Data");
+	    ampData.getData().add(new XYChart.Data<String,Number>("Amp", avgAmp));
+	    XYChart.Series<String,Number> speData = new XYChart.Series<String,Number>();
+	    speData.setName("Speaker Data");
+	    speData.getData().add(new XYChart.Data<String,Number>("Speaker", avgSpe));
+	    XYChart.Series<String,Number> trapData = new XYChart.Series<String,Number>();
+	    trapData.setName("Trap Data");
+	    trapData.getData().add(new XYChart.Data<String,Number>("Trap", avgTrap));
+	    XYChart.Series<String,Number> cliData = new XYChart.Series<String,Number>();
+	    cliData.setName("Climb Data");
+	    cliData.getData().add(new XYChart.Data<String,Number>("Climb", avgCli));
+	    avgBCBarC.getData().addAll(cyData, ampData, speData, trapData, cliData);
+	    avgBCBarC.setBarGap(5);
+	    avgBCBarC.setMinSize(300, 200);
+	    this.add(avgBCBarC, 0, 1);
+	    
+		 // add data
+	   /* XYChart.Series<String,Number> series1 = new XYChart.Series<String,Number>();
+	    series1.setName("Data Series 1");
+	    series1.getData().add(new XYChart.Data<String,Number>("2007", 567));
+	    XYChart.Series<String,Number> series2 = new XYChart.Series<String,Number>();
+	    series2.setName("Data Series 1");
+	    series2.getData().add(new XYChart.Data<String,Number>("2009", 547));
+	    XYChart.Series<String,Number> series3 = new XYChart.Series<String,Number>();
+	    series3.setName("Data Series 1");
+	    series3.getData().add(new XYChart.Data<String,Number>("2008", 575));
+
+
+	    String[] years = {"2007", "2008", "2009"};
+	    final CategoryAxis xAxis = new CategoryAxis();
+	    final NumberAxis yAxis = new NumberAxis();
+	    final BarChart<String,Number> bc = new BarChart<String,Number>(xAxis, yAxis);
+	    xAxis.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(years)));
+	    bc.getData().addAll(series1, series2, series3);
+	    this.add(bc, 2, 0);
+	    */
 	}
 	
 	
@@ -82,49 +115,30 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		try {
 			if(event.getSource() == seTeamsB) {
 				Team theTeam;
+				this.getChildren().clear();
 				String selectedTeamS = teamListCB.getSelectionModel().getSelectedItem();; 
 				int selectedTeam = Integer.parseInt(selectedTeamS);
 				theTeam = theTeamList.getATeam(selectedTeam);
-				this.add(new Label(selectedTeamS), 0, 2);
-				this.add(new Label("Avg Cycles:  "), 0, 3);
-				this.add(new Label("Avg Amp:  "), 2, 3);
-				this.add(new Label("Avg Speaker:  "), 4, 3);
-				this.add(new Label("Avg Trap:  "), 0, 4);
-				this.add(new Label("Avg Climb:  "), 2, 4);
-				this.add(new Label("Comments:  "), 10, 3);
-				avgCyclesTF = new TextField();
-				avgAmpTF = new TextField();
-				avgSpeTF = new TextField();
-				avgTrapTF = new TextField();
-				avgClimbTF = new TextField();
-				this.add(avgCyclesTF, 1, 3);
-				this.add(avgAmpTF, 3, 3);
-				this.add(avgSpeTF, 5, 3);
-				this.add(avgTrapTF, 1, 4);
-				this.add(avgClimbTF, 3, 4);
-				String avgCyclesS = Integer.toString(theTeam.getAvgCycles());
-				avgCyclesTF.setText(avgCyclesS);
-				String avgAmpS = Integer.toString(theTeam.getAvgAmp());
-				avgAmpTF.setText(avgAmpS);
-				String avgSpeS = Integer.toString(theTeam.getAvgSpe());
-				avgSpeTF.setText(avgSpeS);
-				String avgTrapS = Integer.toString(theTeam.getAvgTrap());
-				avgTrapTF.setText(avgTrapS);
-				String avgClimbS = Integer.toString(theTeam.getAvgClimb());
-				avgClimbTF.setText(avgClimbS);
+				this.getChildren().clear();
+				String teamNumS = Integer.toString(theTeam.getTeamNum());
+				String title = (teamNumS +"'s Stats:");
+				this.add(new Label(title), 0, 0);
+				this.add(new Label("Comments:  "), 1, 0);
 				List<String> commentList = theTeam.getCommentsList();
 				commentsTA = new TextArea();
+				commentsTA.setMaxSize(100, 100);
 				String commentsS = "";
 				for(int i = 0; i < commentList.size(); i++) {
 					commentsS = commentsS + "\n" +commentList.get(i);
 				}
-				this.add(commentsTA, 11, 3);
+				this.add(commentsTA, 1, 1);
 				commentsTA.setText(commentsS);
 				if (theTeam.getTotalMatchesPlayed() == 1) {
-					this.add(new Label("Did 1 Match"), 0, 5);
+					this.add(new Label("Did 1 Match"), 1, 2);
 				} else {
-					this.add(new Label("Did " + theTeam.getTotalMatchesPlayed() + " Matches"), 0, 5);
+					this.add(new Label("Did " + theTeam.getTotalMatchesPlayed() + " Matches"), 1, 2);
 				}
+				addCharts(theTeam.getTeamNum(), theTeam.getAvgCycles(), theTeam.getAvgAmp(), theTeam.getAvgSpe(), theTeam.getAvgTrap(), theTeam.getAvgClimb());
 			}
 		} catch(Exception e) {
 			System.out.println("Error: " + e);
