@@ -31,6 +31,7 @@ public class TempTeam {
 		listOfComments = new ArrayList<>();
 		addOnCommentList(comment);
 		setHumPostion(tempHumPostion);
+		setHumPostionList();
 		if (humPostion.compareTo("Amp") == 0) {
 			timesHumAmp++;
 			setHumAmpSkill(tempHumAmpSkill);

@@ -146,12 +146,18 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				String fileTrapS;
 				String fileClimbS;
 				String fileCommentS;
+				String fileHumPostionS;
+				String fileHumSkillS;
+				String fileHumAmpNotesS;
 				String fileTeamNumSTrue = "";
 				String fileAmpSTrue = "";
 				String fileSpeSTrue = "";
 				String fileTrapSTrue = "";
 				String fileClimbSTrue = "";
 				String fileCommentSTrue = "";
+				String fileHumPostionSTrue;
+				String fileHumSkillSTrue;
+				String fileHumAmpNotesSTrue;
 				int fileTeamNum;
 				int fileAmp;
 				int fileSpe;
@@ -166,6 +172,9 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				int fileCyclesT;
 				int fileMatchesT;
 				List<String> commentListT;
+				int fileHumAmpSkill;
+				int fileHumScoSkill;
+				int fileHumAmpNotes;
 				//for(int i = 0; i < 5; i++) {
 					//fileInput.next();
 			//	}
@@ -176,6 +185,21 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					fileTrapS = fileInput.next();
 					fileClimbS = fileInput.next();
 					fileCommentS = fileInput.next();
+					fileHumPostionS = fileInput.next();
+					fileHumSkillS = fileInput.next();
+					int lengthOfFileHumSkill = fileHumSkillS.length() - 1;
+					fileHumSkillSTrue = fileHumSkillS.substring(1, lengthOfFileHumSkill);
+					// hum postion and skill stuff
+					if (fileHumPostionS.compareTo("Amp") == 0) {
+						fileHumAmpSkill = Integer.parseInt(fileHumSkillSTrue);
+						fileHumAmpNotesS = fileInput.next();
+						int lengthOfFileHumAmpNotes = fileHumAmpNotesS.length() - 1;
+						fileHumAmpNotesSTrue = fileHumAmpNotesS.substring(1, lengthOfFileHumAmpNotes);
+						fileHumAmpNotes = Integer.parseInt(fileHumAmpNotesSTrue);
+					}
+					if (fileHumPostionS.compareTo("Scoure") == 0) {
+						fileHumScoSkill = Integer.parseInt(fileHumSkillSTrue);
+					}
 					//remove "s part
 					int lengthOfFileTeamNum = fileTeamNumS.length() - 1;
 					fileTeamNumSTrue = fileTeamNumS.substring(1, lengthOfFileTeamNum);
