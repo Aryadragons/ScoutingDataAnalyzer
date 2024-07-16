@@ -16,6 +16,12 @@ public class TeamList {
 		listOfTeams.add(T);
 	}
 	
+	public void addTempTeamInMain(int tempTeamNum, double tempAvgCycles, int tempTotalMatchesPlayed, double tempAvgAmp, double tempAvgSpe, double tempAvgTrap, double tempAvgClimb, List<String> commentList, List<String> tempHumPostionsList, double tempHumAmpSkill, double tempHumScoSkill, double tempHumAmpNotes, int importTimesHumAmp, int importTimesHumSco) {
+		Team T = new Team();
+		T.setTeamInMain(tempTeamNum, tempAvgCycles, tempTotalMatchesPlayed, tempAvgAmp, tempAvgSpe, tempAvgClimb, tempAvgTrap, commentList, tempHumPostionsList, tempHumAmpSkill, tempHumScoSkill, tempHumAmpNotes, importTimesHumAmp, importTimesHumSco);
+		listOfTeams.add(T);
+	}
+	
 	public Team getATeam(int teamNum) {
 		int found = 0;
 		int theTeam = -1;

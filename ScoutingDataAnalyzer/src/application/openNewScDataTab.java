@@ -136,6 +136,11 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					    	out.println(csvHumPostionsList.get(e));
 					    	
 					    }
+					    out.println(csvHumAmpSkillS);
+					    out.println(csvHumScoSkillS);
+					    out.println(csvHumAmpNotesS);
+					    out.println(csvTimesHumAmpS);
+					    out.println(csvTimesHumScoS);
 					    out.close();
 			}
 		} catch (IOException e) {

@@ -30,6 +30,9 @@ public class Team {
 	private int timesHumSco = 0;
 	private List<String> listOfHumPostions;
 	
+	Team(){
+	}
+	
 	Team(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, List<String> commentList, List<String> tempHumPostionsList, int totalHumScoSkill, int totalHumAmpSkill, int totalHumAmpNotes, int importTimesHumAmp, int importTimesHumSco){
 		setTeamNum(tempTeamNum);
 		setTotalCycles(tempTotalCycles);
@@ -53,9 +56,30 @@ public class Team {
 		setAvgHumAmpPostion();
 		setAvgHumScoPostion();
 		setAvgHumNonePostion();
-		setAvgHumScoSkill(totalHumScoSkill);
-		setAvgHumAmpSkill(totalHumAmpSkill);
-		setAvgHumAmpNotes(totalHumAmpNotes);
+		setAvgHumScoSkill(totalHumScoSkill/timesHumSco);
+		setAvgHumAmpSkill(totalHumAmpSkill/timesHumSco);
+		setAvgHumAmpNotes(totalHumAmpNotes/timesHumSco);
+	}
+	
+	public void setTeamInMain(int tempTeamNum, double tempAvgCycles, int tempTotalMatchesPlayed, double tempAvgAmp, double tempAvgSpe, double tempAvgClimb, double tempAvgTrap, List<String> commentList, List<String> tempHumPostionsList, double avgHumScoSkill, double avgHumAmpSkill, double avgHumAmpNotes, int importTimesHumAmp, int importTimesHumSco) {
+		// set er's for avg
+				setAvgCycles(tempAvgCycles/totalMatchesPlayed);
+				setAvgAmp(tempAvgAmp/totalMatchesPlayed);
+				setAvgSpe(tempAvgSpe/totalMatchesPlayed);
+				setAvgTrap(tempAvgTrap/totalMatchesPlayed);
+				setAvgClimb(tempAvgClimb/totalMatchesPlayed);
+				// set er's for comments
+				listOfComments = new ArrayList<>();
+				addToCommentsList(commentList);
+				// set er's for human player stuff
+				setTimesHumAmp(importTimesHumAmp);
+				setTimesHumSco(importTimesHumSco);
+				setAvgHumAmpPostion();
+				setAvgHumScoPostion();
+				setAvgHumNonePostion();
+				setAvgHumScoSkill(avgHumScoSkill/timesHumSco);
+				setAvgHumAmpSkill(avgHumAmpSkill/timesHumSco);
+				setAvgHumAmpNotes(avgHumAmpNotes/timesHumSco);
 	}
 	
 	public int setTeamNum(int tempTeamNum){
@@ -131,17 +155,18 @@ public class Team {
 		return listOfHumPostions;
 	}
 	
-	public double setAvgHumScoSkill(int tempHumScoSkill) {
-		return avgHumScoSkill = (tempHumScoSkill/timesHumSco);
+	public double setAvgHumScoSkill(double tempHumScoSkill) {
+		return avgHumScoSkill = (tempHumScoSkill);
 	}
 	
-	public double setAvgHumAmpSkill(int tempHumAmpSkill) {
-		return avgHumAmpSkill = (tempHumAmpSkill/timesHumAmp);
+	public double setAvgHumAmpSkill(double tempHumAmpSkill) {
+		return avgHumAmpSkill = (tempHumAmpSkill);
 	}
 	
-	public double setAvgHumAmpNotes(int tempHumAmpNotes) {
-		return avgHumAmpNotes = (tempHumAmpNotes/timesHumAmp);
+	public double setAvgHumAmpNotes(double tempHumAmpNotes) {
+		return avgHumAmpNotes = (tempHumAmpNotes);
 	}
+	
 	
 	public void addToCommentsList(List<String> commentList) {
 		for (int i = 0; i < commentList.size(); i++) {

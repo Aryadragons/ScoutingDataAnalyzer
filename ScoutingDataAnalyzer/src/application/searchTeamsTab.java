@@ -57,7 +57,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		}
 	}
 	
-	public void addCharts(int team, int avgCy, int avgAmp, int avgSpe, int avgTrap, int avgCli) {
+	public void addCharts(int team, double avgCy, double avgAmp, double avgSpe, double avgTrap, double avgCli) {
 		System.out.println("Team: " + team + "Cycles: " + avgCy + "Amp: " + avgAmp + "Speaker: " + avgSpe + "Trap: " + avgTrap + "Climb: " + avgCli);
 		String[] avgThings = {"Cycles", "Amp", "Speaker", "Trap", "Climb"};
 		XYChart.Series<String,Number> avgBarC = new XYChart.Series<String,Number>();

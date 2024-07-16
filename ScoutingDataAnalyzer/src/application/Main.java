@@ -244,15 +244,26 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		String fileMatchesS;
 		String fileCyclesS;
 		String fileNumOfCommsS;
+		String fileHumAmpSkillS;
+		String fileHumScoSkillS;
+		String fileHumAmpNotesS;
+		String fileTimesHumAmpS;
+		String fileTimesHumScoS;
 		int fileTeamNum;
-		int fileAmp;
-		int fileSpe;
-		int fileTrap;
-		int fileClimb;
+		double fileAmp;
+		double fileSpe;
+		double fileTrap;
+		double fileClimb;
 		int fileMatches;
-		int fileCycles;
-		int fileNumOfComms;
-		List<String> commentList = new ArrayList<>();;
+		double fileCycles;
+		double fileNumOfComms;
+		double fileHumAmpSkill;
+		double fileHumScoSkill;
+		double fileHumAmpNotes;
+		int fileTimesHumAmp;
+		int fileTimesHumSco;
+		List<String> commentList = new ArrayList<>();
+		List<String> fileHumPostionsList  = new ArrayList<>();
 		while(fileInput.hasNext() == true) {
 			fileTeamNumS = fileInput.next();
 			fileMatchesS  = fileInput.next();
@@ -266,15 +277,29 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			for(int i = 0; i < fileNumOfComms; i++) {
 				commentList.add(fileInput.next());
 			}
+			fileMatches = Integer.parseInt(fileMatchesS);
+			for(int i = 0; i < fileMatches; i++) {
+				fileHumPostionsList.add(fileInput.next());
+			}
+			fileHumAmpSkillS = fileInput.next();
+			fileHumScoSkillS = fileInput.next();
+			fileHumAmpNotesS = fileInput.next();
+			fileTimesHumAmpS = fileInput.next();
+			fileTimesHumScoS = fileInput.next();
 			fileTeamNum = Integer.parseInt(fileTeamNumS);
-			fileAmp = Integer.parseInt(fileAmpS);
-			fileSpe = Integer.parseInt(fileSpeS);
-			fileTrap = Integer.parseInt(fileTrapS);
-			fileClimb = Integer.parseInt(fileClimbS);
+			fileAmp = Double.parseDouble(fileAmpS);
+			fileSpe = Double.parseDouble(fileSpeS);
+			fileTrap = Double.parseDouble(fileTrapS);
+			fileClimb = Double.parseDouble(fileClimbS);
 			fileMatches  = Integer.parseInt(fileMatchesS);
-			fileCycles  = Integer.parseInt(fileCyclesS);
+			fileCycles  = Double.parseDouble(fileCyclesS);
+			fileHumAmpSkill = Double.parseDouble(fileHumAmpSkillS);
+			fileHumScoSkill = Double.parseDouble(fileHumScoSkillS);
+			fileHumAmpNotes = Double.parseDouble(fileHumAmpNotesS);
+			fileTimesHumAmp = Integer.parseInt(fileTimesHumAmpS);
+			fileTimesHumSco = Integer.parseInt(fileTimesHumScoS);
 			listOfTeamNums.add(fileTeamNum);
-			mainTeamList.addTempTeam(fileTeamNum, fileCycles, fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, commentList);
+			mainTeamList.addTempTeam(fileTeamNum, fileCycles, fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, commentList, fileHumPostionsList, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes, fileTimesHumAmp, fileTimesHumSco);
 		}
 		sortListOfTeamNums();
 	}
