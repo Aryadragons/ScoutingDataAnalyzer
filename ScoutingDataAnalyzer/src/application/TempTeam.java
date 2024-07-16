@@ -18,9 +18,10 @@ public class TempTeam {
 	private int totalHumAmpNotes = 0;
 	private int timesHumAmp = 0;
 	private int timesHumSco = 0;
-	private List<String> listOfHumPostions;
+	private List<String> listOfHumPostions = new ArrayList<>();
 	
 	TempTeam(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, String comment, String tempHumPostion, int tempHumAmpSkill, int tempHumScoSkill, int tempHumAmpNotes){
+		System.out.println("boop5");
 		setTeamNum(tempTeamNum);
 		setTotalCycles(tempTotalCycles);
 		setTotalMatchesPlayed(tempTotalMatchesPlayed);
@@ -30,17 +31,22 @@ public class TempTeam {
 		setTotalClimb(tempTotalClimb);
 		listOfComments = new ArrayList<>();
 		addOnCommentList(comment);
+		System.out.println("boop6");
 		setHumPostion(tempHumPostion);
+		System.out.println("boop7");
 		setHumPostionList();
+		System.out.println("boop8");
 		if (humPostion.compareTo("Amp") == 0) {
 			timesHumAmp++;
 			setHumAmpSkill(tempHumAmpSkill);
 			setTotalHumAmpNotes(tempHumAmpNotes);
 		}
+		System.out.println("boop9");
 		if (humPostion.compareTo("Scoure") == 0) {
 			timesHumSco++;
 			setHumScoSkill(tempHumScoSkill);
 		}
+		System.out.println("boop10");
 	}
 	
 	public String setHumPostion(String tempHumanPostion) {

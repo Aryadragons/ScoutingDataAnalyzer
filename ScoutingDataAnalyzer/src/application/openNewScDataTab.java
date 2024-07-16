@@ -84,8 +84,8 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 			double csvHumAmpSkill;
 			double csvHumScoSkill;
 			double csvHumAmpNotes;
-			double csvTimesHumAmp;
-			double csvTimesHumSco;
+			int csvTimesHumAmp;
+			int csvTimesHumSco;
 			new FileWriter("MainScoutingDataFiles.txt", false).close();
 			for(int i = 0; i < fileTeamList.listOfTeams.size(); i++) {
 				csvTeamNum = fileTeamList.listOfTeams.get(i).getTeamNum();
@@ -112,8 +112,8 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				csvHumAmpSkillS= Double.toString(csvHumAmpSkill);
 				csvHumScoSkillS= Double.toString(csvHumScoSkill);
 				csvHumAmpNotesS= Double.toString(csvHumAmpNotes);
-				csvTimesHumAmpS= Double.toString(csvTimesHumAmp);
-				csvTimesHumScoS= Double.toString(csvTimesHumSco);
+				csvTimesHumAmpS= Integer.toString(csvTimesHumAmp);
+				csvTimesHumScoS= Integer.toString(csvTimesHumSco);
 				
 				FileWriter fw = new FileWriter("MainScoutingDataFiles.txt", true);
 					    BufferedWriter bw = new BufferedWriter(fw);
@@ -131,10 +131,14 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					    	out.println(csvCommentList.get(e));
 					    	
 					    }
-					    out.println(csvHumPostionsList.size());
-					    for (int e = 0; e < csvHumPostionsList.size(); e++) {
-					    	out.println(csvHumPostionsList.get(e));
-					    	
+					    if (csvHumPostionsList != null) {
+						    out.println(csvHumPostionsList.size());
+						    for (int e = 0; e < csvHumPostionsList.size(); e++) {
+						    	out.println(csvHumPostionsList.get(e));
+						    	
+						    }
+					    } else {
+					    	out.println("0");
 					    }
 					    out.println(csvHumAmpSkillS);
 					    out.println(csvHumScoSkillS);
@@ -226,10 +230,13 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					fileCommentS = fileInput.next();
 					fileHumPostionS = fileInput.next();
 					fileHumSkillS = fileInput.next();
+					System.out.println("boop");
 					int lengthOfFileHumPostion = fileHumPostionS.length() - 1;
-					fileHumPostionSTrue = fileHumSkillS.substring(1, lengthOfFileHumPostion);
+					fileHumPostionSTrue = fileHumPostionS.substring(1, lengthOfFileHumPostion);
+					System.out.println("boop1");
 					int lengthOfFileHumSkill = fileHumSkillS.length() - 1;
 					fileHumSkillSTrue = fileHumSkillS.substring(1, lengthOfFileHumSkill);
+					System.out.println("boop2");
 					// hum postion and skill stuff
 					if (fileHumPostionSTrue.compareTo("Amp") == 0) {
 						fileHumAmpSkill = Integer.parseInt(fileHumSkillSTrue);
@@ -265,6 +272,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					fileSpe = Integer.parseInt(fileSpeSTrue);
 					fileTrap = Integer.parseInt(fileTrapSTrue);
 					fileClimb = Integer.parseInt(fileClimbSTrue);
+					System.out.println("boop3");
 					if (fileTempTeamList.listOfTempTeams.size() == 0) {
 						fileMatches = 1;
 						fileTempTeamList.addTempTeam(fileTeamNum, (fileAmp + fileSpe + fileTrap), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue, fileHumPostionSTrue, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes);
@@ -278,23 +286,31 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 						}
 					}
 				}
+				System.out.println("boop11");
 				for (int i = 0; i < fileTempTeamList.listOfTempTeams.size(); i++) {
+					System.out.println("boop12");
 					fileTeamNumT = fileTempTeamList.listOfTempTeams.get(i).getTeamNum();
+					System.out.println("boop13" + fileTeamNumT);
 					fileMatchesT = fileTempTeamList.listOfTempTeams.get(i).getTotalMatchesPlayed();
+					System.out.println("boop14" + fileMatchesT);
 					fileCyclesT = fileTempTeamList.listOfTempTeams.get(i).getTotalCycles();
 					fileAmpT = fileTempTeamList.listOfTempTeams.get(i).getTotalAmp();
 					fileSpeT = fileTempTeamList.listOfTempTeams.get(i).getTotalSpe();
 					fileTrapT = fileTempTeamList.listOfTempTeams.get(i).getTotalTrap();
 					fileClimbT = fileTempTeamList.listOfTempTeams.get(i).getTotalClimb();
 					commentListT = fileTempTeamList.listOfTempTeams.get(i).getCommentList();
+					System.out.println("boop15");
 					fileHumAmpSkillT = fileTempTeamList.listOfTempTeams.get(i).getHumAmpSkill();
 					fileHumScoSkillT = fileTempTeamList.listOfTempTeams.get(i).getHumScoSkill();
 					fileHumAmpNotesT = fileTempTeamList.listOfTempTeams.get(i).getHumAmpNotes();
+					System.out.println("boop16");
 					humPostionsListT = fileTempTeamList.listOfTempTeams.get(i).getHumanPostionList();
+					System.out.println("boop17");
 					timesHumAmpT = fileTempTeamList.listOfTempTeams.get(i).getTimesHumAmp();
 					timesHumScoT = fileTempTeamList.listOfTempTeams.get(i).getTimesHumSco();
-					
+					System.out.println("boop18");
 					fileTeamList.addTempTeam(fileTeamNumT, fileCyclesT, fileMatchesT, fileAmpT, fileSpeT, fileTrapT, fileClimbT, commentListT, humPostionsListT, fileHumAmpSkillT, fileHumScoSkillT, fileHumAmpNotesT, timesHumAmpT, timesHumScoT);
+					System.out.println("boop19");
 				}
 				this.exportDataToCSV();	
 				fileInput.close();
@@ -405,9 +421,13 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 						}
 					}
 				}
+				System.out.println("boop11");
 				for (int i = 0; i < fileTempTeamList.listOfTempTeams.size(); i++) {
+					System.out.println("boop12");
 					fileTeamNumT = fileTempTeamList.listOfTempTeams.get(i).getTeamNum();
+					System.out.println("boop13" + fileTeamNumT);
 					fileMatchesT = fileTempTeamList.listOfTempTeams.get(i).getTotalMatchesPlayed();
+					System.out.println("boop14" + fileMatchesT);
 					fileCyclesT = fileTempTeamList.listOfTempTeams.get(i).getTotalCycles();
 					fileAmpT = fileTempTeamList.listOfTempTeams.get(i).getTotalAmp();
 					fileSpeT = fileTempTeamList.listOfTempTeams.get(i).getTotalSpe();

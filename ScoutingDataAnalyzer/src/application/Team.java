@@ -34,6 +34,7 @@ public class Team {
 	}
 	
 	Team(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, List<String> commentList, List<String> tempHumPostionsList, int totalHumScoSkill, int totalHumAmpSkill, int totalHumAmpNotes, int importTimesHumAmp, int importTimesHumSco){
+		System.out.println("boop18.11");
 		setTeamNum(tempTeamNum);
 		setTotalCycles(tempTotalCycles);
 		setTotalMatchesPlayed(tempTotalMatchesPlayed);
@@ -41,24 +42,39 @@ public class Team {
 		setTotalSpe(tempTotalSpe);
 		setTotalTrap(tempTotalTrap);
 		setTotalClimb(tempTotalClimb);
+		System.out.println("boop18.12");
 		// set er's for avg
 		setAvgCycles(tempTotalCycles/totalMatchesPlayed);
 		setAvgAmp(tempTotalAmp/totalMatchesPlayed);
 		setAvgSpe(tempTotalSpe/totalMatchesPlayed);
 		setAvgTrap(tempTotalTrap/totalMatchesPlayed);
 		setAvgClimb(tempTotalClimb/totalMatchesPlayed);
+		System.out.println("boop18.13");
 		// set er's for comments
 		listOfComments = new ArrayList<>();
 		addToCommentsList(commentList);
+		System.out.println("boop18.14");
 		// set er's for human player stuff
 		setTimesHumAmp(importTimesHumAmp);
 		setTimesHumSco(importTimesHumSco);
+		System.out.println("boop18.15");
 		setAvgHumAmpPostion();
 		setAvgHumScoPostion();
 		setAvgHumNonePostion();
-		setAvgHumScoSkill(totalHumScoSkill/timesHumSco);
-		setAvgHumAmpSkill(totalHumAmpSkill/timesHumSco);
-		setAvgHumAmpNotes(totalHumAmpNotes/timesHumSco);
+		System.out.println("boop18.16");
+		if (timesHumSco != 0) {
+			setAvgHumScoSkill(totalHumScoSkill/timesHumSco);
+		}else {
+			setAvgHumScoSkill(0);
+		}
+		if (timesHumAmp != 0) {
+			setAvgHumAmpSkill(totalHumAmpSkill/timesHumAmp);
+			setAvgHumAmpNotes(totalHumAmpNotes/timesHumAmp);
+		}else {
+			setAvgHumAmpSkill(totalHumAmpSkill/timesHumAmp);
+			setAvgHumAmpNotes(totalHumAmpNotes/timesHumAmp);
+		}
+		System.out.println("boop18.17");
 	}
 	
 	public void setTeamInMain(int tempTeamNum, double tempAvgCycles, int tempTotalMatchesPlayed, double tempAvgAmp, double tempAvgSpe, double tempAvgClimb, double tempAvgTrap, List<String> commentList, List<String> tempHumPostionsList, double avgHumScoSkill, double avgHumAmpSkill, double avgHumAmpNotes, int importTimesHumAmp, int importTimesHumSco) {

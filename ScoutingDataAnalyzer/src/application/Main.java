@@ -229,12 +229,15 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	}
 	
 	private void updateDataList() {
+		System.out.println("Boop20");
 		File file = new File("MainScoutingDataFiles.txt");
+		System.out.println("Boop21");
 		try {
 			fileInput = new Scanner(file);
 		} catch (FileNotFoundException e) {
 			System.out.println("Error" + e);
 		}
+		System.out.println("Boop22");
 		mainTeamList.listOfTeams.clear();
 		String fileTeamNumS = "0";
 		String fileAmpS = null;
@@ -263,7 +266,8 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		int fileTimesHumAmp;
 		int fileTimesHumSco;
 		List<String> commentList = new ArrayList<>();
-		List<String> fileHumPostionsList  = new ArrayList<>();
+		List<String> fileHumPostionsList = new ArrayList<>();
+		System.out.println("Boop23");
 		while(fileInput.hasNext() == true) {
 			fileTeamNumS = fileInput.next();
 			fileMatchesS  = fileInput.next();
@@ -277,15 +281,18 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			for(int i = 0; i < fileNumOfComms; i++) {
 				commentList.add(fileInput.next());
 			}
+			System.out.println("Boop24");
 			fileMatches = Integer.parseInt(fileMatchesS);
 			for(int i = 0; i < fileMatches; i++) {
 				fileHumPostionsList.add(fileInput.next());
 			}
+			System.out.println("Boop25");
 			fileHumAmpSkillS = fileInput.next();
 			fileHumScoSkillS = fileInput.next();
 			fileHumAmpNotesS = fileInput.next();
 			fileTimesHumAmpS = fileInput.next();
 			fileTimesHumScoS = fileInput.next();
+			System.out.println("Boop26");
 			fileTeamNum = Integer.parseInt(fileTeamNumS);
 			fileAmp = Double.parseDouble(fileAmpS);
 			fileSpe = Double.parseDouble(fileSpeS);
@@ -293,13 +300,21 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			fileClimb = Double.parseDouble(fileClimbS);
 			fileMatches  = Integer.parseInt(fileMatchesS);
 			fileCycles  = Double.parseDouble(fileCyclesS);
+			System.out.println("Boop26.5");
 			fileHumAmpSkill = Double.parseDouble(fileHumAmpSkillS);
+			System.out.println("Boop26.6");
 			fileHumScoSkill = Double.parseDouble(fileHumScoSkillS);
+			System.out.println("Boop26.7");
 			fileHumAmpNotes = Double.parseDouble(fileHumAmpNotesS);
+			System.out.println("Boop26.8");
 			fileTimesHumAmp = Integer.parseInt(fileTimesHumAmpS);
+			System.out.println("Boop26.9");
 			fileTimesHumSco = Integer.parseInt(fileTimesHumScoS);
+			System.out.println("Boop27");
 			listOfTeamNums.add(fileTeamNum);
+			System.out.println("Boop28");
 			mainTeamList.addTempTeamInMain(fileTeamNum, fileCycles, fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, commentList, fileHumPostionsList, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes, fileTimesHumAmp, fileTimesHumSco);
+			System.out.println("Boop29");
 		}
 		sortListOfTeamNums();
 	}
@@ -368,7 +383,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		seAutos.setMaxWidth(1400);
 		FileInputStream inputSeAutos;
 		try {
-			inputSeAutos = new FileInputStream("TabsBackground.png");
+			inputSeAutos = new FileInputStream("TabsBackground600.png");
 			Image imageSeAutos = new Image(inputSeAutos); 
 	        BackgroundImage backgroundimageSeAutos = new BackgroundImage(imageSeAutos, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -389,7 +404,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		seMatch.setMaxWidth(1400);
 		FileInputStream inputSeMacth;
 		try {
-			inputSeMacth = new FileInputStream("TabsBackground.png");
+			inputSeMacth = new FileInputStream("TabsBackground600.png");
 			Image imageSeMacth = new Image(inputSeMacth); 
 	        BackgroundImage backgroundimageSeMacth = new BackgroundImage(imageSeMacth, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -410,7 +425,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		comTeams.setMaxWidth(1400);
 		FileInputStream inputComTeams;
 		try {
-			inputComTeams = new FileInputStream("TabsBackground.png");
+			inputComTeams = new FileInputStream("TabsBackground600.png");
 			Image imageComTeams = new Image(inputComTeams); 
 	        BackgroundImage backgroundimageComTeams = new BackgroundImage(imageComTeams, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -431,7 +446,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		comAlliances.setMaxWidth(1400);
 		FileInputStream inputComAlliances;
 		try {
-			inputComAlliances = new FileInputStream("TabsBackground.png");
+			inputComAlliances = new FileInputStream("TabsBackground600.png");
 			Image imageComAlliances = new Image(inputComAlliances); 
 	        BackgroundImage backgroundimageComAlliances = new BackgroundImage(imageComAlliances, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -452,7 +467,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		comAutos.setMaxWidth(1400);
 		FileInputStream inputComAutos;
 		try {
-			inputComAutos = new FileInputStream("TabsBackground.png");
+			inputComAutos = new FileInputStream("TabsBackground600.png");
 			Image imageComAutos = new Image(inputComAutos); 
 	        BackgroundImage backgroundimageComAutos = new BackgroundImage(imageComAutos, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -473,7 +488,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		comMatches.setMaxWidth(1400);
 		FileInputStream inputComMatches;
 		try {
-			inputComMatches = new FileInputStream("TabsBackground.png");
+			inputComMatches = new FileInputStream("TabsBackground600.png");
 			Image imageComMatches = new Image(inputComMatches); 
 	        BackgroundImage backgroundimageComMatches = new BackgroundImage(imageComMatches, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -494,7 +509,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		findTeam.setMaxWidth(1400);
 		FileInputStream inputFindTeam;
 		try {
-			inputFindTeam = new FileInputStream("TabsBackground.png");
+			inputFindTeam = new FileInputStream("TabsBackground600.png");
 			Image imageFindTeam = new Image(inputFindTeam); 
 	        BackgroundImage backgroundimageFindTeam = new BackgroundImage(imageFindTeam, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -515,7 +530,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		findAlliance.setMaxWidth(1400);
 		FileInputStream inputFindAlliance;
 		try {
-			inputFindAlliance = new FileInputStream("TabsBackground.png");
+			inputFindAlliance = new FileInputStream("TabsBackground600.png");
 			Image imageFindAlliance = new Image(inputFindAlliance); 
 	        BackgroundImage backgroundimageFindAlliance = new BackgroundImage(imageFindAlliance, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -536,7 +551,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		findAuto.setMaxWidth(1400);
 		FileInputStream inputFindAuto;
 		try {
-			inputFindAuto = new FileInputStream("TabsBackground.png");
+			inputFindAuto = new FileInputStream("TabsBackground600.png");
 			Image imageFindAuto = new Image(inputFindAuto); 
 	        BackgroundImage backgroundimageFindAuto = new BackgroundImage(imageFindAuto, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -557,7 +572,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		findStat.setMaxWidth(1400);
 		FileInputStream inputFindStat;
 		try {
-			inputFindStat = new FileInputStream("TabsBackground.png");
+			inputFindStat = new FileInputStream("TabsBackground600.png");
 			Image imageFindStat = new Image(inputFindStat); 
 	        BackgroundImage backgroundimageFindStat = new BackgroundImage(imageFindStat, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -578,7 +593,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		findArchetype.setMaxWidth(1400);
 		FileInputStream inputFindArchetype;
 		try {
-			inputFindArchetype = new FileInputStream("TabsBackground.png");
+			inputFindArchetype = new FileInputStream("TabsBackground600.png");
 			Image imageFindArchetype = new Image(inputFindArchetype); 
 	        BackgroundImage backgroundimageFindArchetype = new BackgroundImage(imageFindArchetype, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -599,7 +614,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		creAlliance.setMaxWidth(1400);
 		FileInputStream inputCreAlliance;
 		try {
-			inputCreAlliance = new FileInputStream("TabsBackground.png");
+			inputCreAlliance = new FileInputStream("TabsBackground600.png");
 			Image imageCreAlliance = new Image(inputCreAlliance); 
 	        BackgroundImage backgroundimageCreAlliance = new BackgroundImage(imageCreAlliance, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -620,7 +635,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		creMatch.setMaxWidth(1400);
 		FileInputStream inputCreMatch;
 		try {
-			inputCreMatch = new FileInputStream("TabsBackground.png");
+			inputCreMatch = new FileInputStream("TabsBackground600.png");
 			Image imageCreMatch = new Image(inputCreMatch); 
 	        BackgroundImage backgroundimageCreMatch = new BackgroundImage(imageCreMatch, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -641,7 +656,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		creAutoPlan.setMaxWidth(1400);
 		FileInputStream inputCreAutoPlan;
 		try {
-			inputCreAutoPlan = new FileInputStream("TabsBackground.png");
+			inputCreAutoPlan = new FileInputStream("TabsBackground600.png");
 			Image imageCreAutoPlan = new Image(inputCreAutoPlan); 
 	        BackgroundImage backgroundimageCreAutoPlan = new BackgroundImage(imageCreAutoPlan, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -662,7 +677,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		creMatchPlan.setMaxWidth(1400);
 		FileInputStream inputCreMatchPlan;
 		try {
-			inputCreMatchPlan = new FileInputStream("TabsBackground.png");
+			inputCreMatchPlan = new FileInputStream("TabsBackground600.png");
 			Image imageCreMatchPlan = new Image(inputCreMatchPlan); 
 	        BackgroundImage backgroundimageCreMatchPlan = new BackgroundImage(imageCreMatchPlan, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -683,7 +698,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		setPlayOff.setMaxWidth(1400);
 		FileInputStream inputSetPlayOff;
 		try {
-			inputSetPlayOff = new FileInputStream("TabsBackground.png");
+			inputSetPlayOff = new FileInputStream("TabsBackground600.png");
 			Image imageSetPlayOff = new Image(inputSetPlayOff); 
 	        BackgroundImage backgroundimageSetPlayOff = new BackgroundImage(imageSetPlayOff, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -704,7 +719,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		editPlayOff.setMaxWidth(1400);
 		FileInputStream inputEditPlayOff;
 		try {
-			inputEditPlayOff = new FileInputStream("TabsBackground.png");
+			inputEditPlayOff = new FileInputStream("TabsBackground600.png");
 			Image imageEditPlayOff = new Image(inputEditPlayOff); 
 	        BackgroundImage backgroundimageEditPlayOff = new BackgroundImage(imageEditPlayOff, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -725,7 +740,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		deletePlayOff.setMaxWidth(1400);
 		FileInputStream inputDeletePlayOff;
 		try {
-			inputDeletePlayOff = new FileInputStream("TabsBackground.png");
+			inputDeletePlayOff = new FileInputStream("TabsBackground600.png");
 			Image imageDeletePlayOff = new Image(inputDeletePlayOff); 
 	        BackgroundImage backgroundimageDeletePlayOff = new BackgroundImage(imageDeletePlayOff, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -746,7 +761,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		openScData.setMaxWidth(1400);
 		FileInputStream inputOpenScData;
 		try {
-			inputOpenScData = new FileInputStream("TabsBackground.png");
+			inputOpenScData = new FileInputStream("TabsBackground600.png");
 			Image imageOpenScData = new Image(inputOpenScData); 
 	        BackgroundImage backgroundimageOpenScData = new BackgroundImage(imageOpenScData, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -767,7 +782,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		openPitData.setMaxWidth(1400);
 		FileInputStream inputOpenPitData;
 		try {
-			inputOpenPitData = new FileInputStream("TabsBackground.png");
+			inputOpenPitData = new FileInputStream("TabsBackground600.png");
 			Image imageOpenPitData = new Image(inputOpenPitData); 
 	        BackgroundImage backgroundimageOpenPitData = new BackgroundImage(imageOpenPitData, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -788,7 +803,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		openDriveTeamData.setMaxWidth(1400);
 		FileInputStream inputOpenDriveTeamData;
 		try {
-			inputOpenDriveTeamData = new FileInputStream("TabsBackground.png");
+			inputOpenDriveTeamData = new FileInputStream("TabsBackground600.png");
 			Image imageOpenDriveTeamData = new Image(inputOpenDriveTeamData); 
 	        BackgroundImage backgroundimageOpenDriveTeamData = new BackgroundImage(imageOpenDriveTeamData, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -809,7 +824,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		openDriveTeamComs.setMaxWidth(1400);
 		FileInputStream inputOpenDriveTeamComs;
 		try {
-			inputOpenDriveTeamComs = new FileInputStream("TabsBackground.png");
+			inputOpenDriveTeamComs = new FileInputStream("TabsBackground600.png");
 			Image imageOpenDriveTeamComs = new Image(inputOpenDriveTeamComs); 
 	        BackgroundImage backgroundimageOpenDriveTeamComs = new BackgroundImage(imageOpenDriveTeamComs, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -830,7 +845,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		edScData.setMaxWidth(1400);
 		FileInputStream inputEdScData;
 		try {
-			inputEdScData = new FileInputStream("TabsBackground.png");
+			inputEdScData = new FileInputStream("TabsBackground600.png");
 			Image imageEdScData = new Image(inputEdScData); 
 	        BackgroundImage backgroundimageEdScData = new BackgroundImage(imageEdScData, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -851,7 +866,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		edPitData.setMaxWidth(1400);
 		FileInputStream inputEdPitData;
 		try {
-			inputEdPitData = new FileInputStream("TabsBackground.png");
+			inputEdPitData = new FileInputStream("TabsBackground600.png");
 			Image imageEdPitData = new Image(inputEdPitData); 
 	        BackgroundImage backgroundimageEdPitData = new BackgroundImage(imageEdPitData, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -872,7 +887,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		edDriveTeamData.setMaxWidth(1400);
 		FileInputStream inputEdDriveTeamData;
 		try {
-			inputEdDriveTeamData = new FileInputStream("TabsBackground.png");
+			inputEdDriveTeamData = new FileInputStream("TabsBackground600.png");
 			Image imageEdDriveTeamData = new Image(inputEdDriveTeamData); 
 	        BackgroundImage backgroundimageEdDriveTeamData = new BackgroundImage(imageEdDriveTeamData, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -893,7 +908,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		edDriveTeamComs.setMaxWidth(1400);
 		FileInputStream inputEdDriveTeamComs;
 		try {
-			inputEdDriveTeamComs = new FileInputStream("TabsBackground.png");
+			inputEdDriveTeamComs = new FileInputStream("TabsBackground600.png");
 			Image imageEdDriveTeamComs = new Image(inputEdDriveTeamComs); 
 	        BackgroundImage backgroundimageEdDriveTeamComs = new BackgroundImage(imageEdDriveTeamComs, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -914,7 +929,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		exScData.setMaxWidth(1400);
 		FileInputStream inputExScData;
 		try {
-			inputExScData = new FileInputStream("TabsBackground.png");
+			inputExScData = new FileInputStream("TabsBackground600.png");
 			Image imageExScData = new Image(inputExScData); 
 	        BackgroundImage backgroundimageExScData = new BackgroundImage(imageExScData, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -935,7 +950,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		exPitData.setMaxWidth(1400);
 		FileInputStream inputExPitData;
 		try {
-			inputExPitData = new FileInputStream("TabsBackground.png");
+			inputExPitData = new FileInputStream("TabsBackground600.png");
 			Image imageExPitData = new Image(inputExPitData); 
 	        BackgroundImage backgroundimageExPitData = new BackgroundImage(imageExPitData, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -956,7 +971,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		exDriveTeamData.setMaxWidth(1400);
 		FileInputStream inputExDriveTeamData;
 		try {
-			inputExDriveTeamData = new FileInputStream("TabsBackground.png");
+			inputExDriveTeamData = new FileInputStream("TabsBackground600.png");
 			Image imageExDriveTeamData = new Image(inputExDriveTeamData); 
 	        BackgroundImage backgroundimageExDriveTeamData = new BackgroundImage(imageExDriveTeamData, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -978,7 +993,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		exDriveTeamComs.setMaxWidth(1400);
 		FileInputStream inputExDriveTeamComs;
 		try {
-			inputExDriveTeamComs = new FileInputStream("TabsBackground.png");
+			inputExDriveTeamComs = new FileInputStream("TabsBackground600.png");
 			Image imageExDriveTeamComs = new Image(inputExDriveTeamComs); 
 	        BackgroundImage backgroundimageExDriveTeamComs = new BackgroundImage(imageExDriveTeamComs, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -999,7 +1014,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		home.setMaxWidth(1400);
 		FileInputStream inputHome;
 		try {
-			inputHome = new FileInputStream("TabsBackground.png");
+			inputHome = new FileInputStream("TabsBackground600.png");
 			Image imageHome = new Image(inputHome); 
 	        BackgroundImage backgroundimageHome = new BackgroundImage(imageHome, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
