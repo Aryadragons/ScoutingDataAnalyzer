@@ -335,13 +335,13 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	private void makeSearchTeams() {
 		searchTeamsTab seTeams = new searchTeamsTab(mainTeamList, listOfTeamNumsSorted);
 		seTeams.setId("seTeamsStyle");
-		seTeams.setMinHeight(400);
+		seTeams.setMinHeight(600);
 		seTeams.setMinWidth(1400);
-		seTeams.setMaxHeight(400);
+		seTeams.setMaxHeight(600);
 		seTeams.setMaxWidth(1400);
 		FileInputStream inputSeTeams;
 		try {
-			inputSeTeams = new FileInputStream("TabsBackground.png");
+			inputSeTeams = new FileInputStream("TabsBackground600.png");
 			Image imageSeTeams = new Image(inputSeTeams); 
 	        BackgroundImage backgroundimageSeTeams = new BackgroundImage(imageSeTeams, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -356,13 +356,13 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeSearchAllinces() {
 		searchAllincesTab seAllinces = new searchAllincesTab();
-		seAllinces.setMinHeight(400);
+		seAllinces.setMinHeight(600);
 		seAllinces.setMinWidth(1400);
-		seAllinces.setMaxHeight(400);
+		seAllinces.setMaxHeight(600);
 		seAllinces.setMaxWidth(1400);
 		FileInputStream inputSeAllinces;
 		try {
-			inputSeAllinces = new FileInputStream("TabsBackground.png");
+			inputSeAllinces = new FileInputStream("TabsBackground600.png");
 			Image imageSeAllinces = new Image(inputSeAllinces); 
 	        BackgroundImage backgroundimageSeAllinces = new BackgroundImage(imageSeAllinces, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 
@@ -377,9 +377,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeSearchAutos() {
 		searchAutosTab seAutos = new searchAutosTab();
-		seAutos.setMinHeight(400);
+		seAutos.setMinHeight(600);
 		seAutos.setMinWidth(1400);
-		seAutos.setMaxHeight(400);
+		seAutos.setMaxHeight(600);
 		seAutos.setMaxWidth(1400);
 		FileInputStream inputSeAutos;
 		try {
@@ -398,9 +398,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeSearchMatch() {
 		searchMatchTab seMatch = new searchMatchTab();
-		seMatch.setMinHeight(400);
+		seMatch.setMinHeight(600);
 		seMatch.setMinWidth(1400);
-		seMatch.setMaxHeight(400);
+		seMatch.setMaxHeight(600);
 		seMatch.setMaxWidth(1400);
 		FileInputStream inputSeMacth;
 		try {
@@ -419,9 +419,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeCompareTeams() {
 		compareTeamsTab comTeams = new compareTeamsTab();
-		comTeams.setMinHeight(400);
+		comTeams.setMinHeight(600);
 		comTeams.setMinWidth(1400);
-		comTeams.setMaxHeight(400);
+		comTeams.setMaxHeight(600);
 		comTeams.setMaxWidth(1400);
 		FileInputStream inputComTeams;
 		try {
@@ -440,9 +440,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeCompareAllinces() {
 		compareAlliancesTab comAlliances = new compareAlliancesTab();
-		comAlliances.setMinHeight(400);
+		comAlliances.setMinHeight(600);
 		comAlliances.setMinWidth(1400);
-		comAlliances.setMaxHeight(400);
+		comAlliances.setMaxHeight(600);
 		comAlliances.setMaxWidth(1400);
 		FileInputStream inputComAlliances;
 		try {
@@ -461,9 +461,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeCompareAutos() {
 		compareAutosTab comAutos = new compareAutosTab();
-		comAutos.setMinHeight(400);
+		comAutos.setMinHeight(600);
 		comAutos.setMinWidth(1400);
-		comAutos.setMaxHeight(400);
+		comAutos.setMaxHeight(600);
 		comAutos.setMaxWidth(1400);
 		FileInputStream inputComAutos;
 		try {
@@ -482,9 +482,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeCompareMatches() {
 		compareMatchesTab comMatches = new compareMatchesTab();
-		comMatches.setMinHeight(400);
+		comMatches.setMinHeight(600);
 		comMatches.setMinWidth(1400);
-		comMatches.setMaxHeight(400);
+		comMatches.setMaxHeight(600);
 		comMatches.setMaxWidth(1400);
 		FileInputStream inputComMatches;
 		try {
@@ -503,9 +503,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeFindBestTeam() {
 		findBestTeamTab findTeam = new findBestTeamTab();
-		findTeam.setMinHeight(400);
+		findTeam.setMinHeight(600);
 		findTeam.setMinWidth(1400);
-		findTeam.setMaxHeight(400);
+		findTeam.setMaxHeight(600);
 		findTeam.setMaxWidth(1400);
 		FileInputStream inputFindTeam;
 		try {
@@ -524,9 +524,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeFindBestAllince() {
 		findBestAllianceTab findAlliance = new findBestAllianceTab();
-		findAlliance.setMinHeight(400);
+		findAlliance.setMinHeight(600);
 		findAlliance.setMinWidth(1400);
-		findAlliance.setMaxHeight(400);
+		findAlliance.setMaxHeight(600);
 		findAlliance.setMaxWidth(1400);
 		FileInputStream inputFindAlliance;
 		try {
@@ -545,9 +545,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeFindBestAuto() {
 		findBestAutoTab findAuto = new findBestAutoTab();
-		findAuto.setMinHeight(400);
+		findAuto.setMinHeight(600);
 		findAuto.setMinWidth(1400);
-		findAuto.setMaxHeight(400);
+		findAuto.setMaxHeight(600);
 		findAuto.setMaxWidth(1400);
 		FileInputStream inputFindAuto;
 		try {
@@ -566,9 +566,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeFindBestStat() {
 		findBestStatTab findStat = new findBestStatTab();
-		findStat.setMinHeight(400);
+		findStat.setMinHeight(600);
 		findStat.setMinWidth(1400);
-		findStat.setMaxHeight(400);
+		findStat.setMaxHeight(600);
 		findStat.setMaxWidth(1400);
 		FileInputStream inputFindStat;
 		try {
@@ -587,9 +587,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeFindBestRobotArchatype() {
 		findBestRobotArchetype findArchetype = new findBestRobotArchetype();
-		findArchetype.setMinHeight(400);
+		findArchetype.setMinHeight(600);
 		findArchetype.setMinWidth(1400);
-		findArchetype.setMaxHeight(400);
+		findArchetype.setMaxHeight(600);
 		findArchetype.setMaxWidth(1400);
 		FileInputStream inputFindArchetype;
 		try {
@@ -608,9 +608,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeCreateAllince() {
 		createAllianceTab creAlliance = new createAllianceTab();
-		creAlliance.setMinHeight(400);
+		creAlliance.setMinHeight(600);
 		creAlliance.setMinWidth(1400);
-		creAlliance.setMaxHeight(400);
+		creAlliance.setMaxHeight(600);
 		creAlliance.setMaxWidth(1400);
 		FileInputStream inputCreAlliance;
 		try {
@@ -629,9 +629,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeCreateMatch() {
 		createMatchTab creMatch = new createMatchTab();
-		creMatch.setMinHeight(400);
+		creMatch.setMinHeight(600);
 		creMatch.setMinWidth(1400);
-		creMatch.setMaxHeight(400);
+		creMatch.setMaxHeight(600);
 		creMatch.setMaxWidth(1400);
 		FileInputStream inputCreMatch;
 		try {
@@ -650,9 +650,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeCreateAutoPlan() {
 		createAutoPlanTab creAutoPlan = new createAutoPlanTab();
-		creAutoPlan.setMinHeight(400);
+		creAutoPlan.setMinHeight(600);
 		creAutoPlan.setMinWidth(1400);
-		creAutoPlan.setMaxHeight(400);
+		creAutoPlan.setMaxHeight(600);
 		creAutoPlan.setMaxWidth(1400);
 		FileInputStream inputCreAutoPlan;
 		try {
@@ -671,9 +671,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeCreateMatchPlan() {
 		createMatchPlanTab creMatchPlan = new createMatchPlanTab();
-		creMatchPlan.setMinHeight(400);
+		creMatchPlan.setMinHeight(600);
 		creMatchPlan.setMinWidth(1400);
-		creMatchPlan.setMaxHeight(400);
+		creMatchPlan.setMaxHeight(600);
 		creMatchPlan.setMaxWidth(1400);
 		FileInputStream inputCreMatchPlan;
 		try {
@@ -692,9 +692,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeSetPlayOffAlliance() {
 		setPlayOffAlliancesTab setPlayOff = new setPlayOffAlliancesTab();
-		setPlayOff.setMinHeight(400);
+		setPlayOff.setMinHeight(600);
 		setPlayOff.setMinWidth(1400);
-		setPlayOff.setMaxHeight(400);
+		setPlayOff.setMaxHeight(600);
 		setPlayOff.setMaxWidth(1400);
 		FileInputStream inputSetPlayOff;
 		try {
@@ -713,9 +713,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeEditPlayOffAlliance() {
 		editPlayOffAlliancesTab editPlayOff = new editPlayOffAlliancesTab();
-		editPlayOff.setMinHeight(400);
+		editPlayOff.setMinHeight(600);
 		editPlayOff.setMinWidth(1400);
-		editPlayOff.setMaxHeight(400);
+		editPlayOff.setMaxHeight(600);
 		editPlayOff.setMaxWidth(1400);
 		FileInputStream inputEditPlayOff;
 		try {
@@ -734,9 +734,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeDeletePlayOffAlliance() {
 		deletePlayOffAlliancesTab deletePlayOff = new deletePlayOffAlliancesTab();
-		deletePlayOff.setMinHeight(400);
+		deletePlayOff.setMinHeight(600);
 		deletePlayOff.setMinWidth(1400);
-		deletePlayOff.setMaxHeight(400);
+		deletePlayOff.setMaxHeight(600);
 		deletePlayOff.setMaxWidth(1400);
 		FileInputStream inputDeletePlayOff;
 		try {
@@ -755,9 +755,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeOpenNewScData(TempTeamList mainTempTeamList, TeamList mainTeamList) {
 		openNewScDataTab openScData = new openNewScDataTab(mainTempTeamList, mainTeamList);
-		openScData.setMinHeight(400);
+		openScData.setMinHeight(600);
 		openScData.setMinWidth(1400);
-		openScData.setMaxHeight(400);
+		openScData.setMaxHeight(600);
 		openScData.setMaxWidth(1400);
 		FileInputStream inputOpenScData;
 		try {
@@ -776,9 +776,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeOpenNewPitData() {
 		openNewPitDataTab openPitData = new openNewPitDataTab();
-		openPitData.setMinHeight(400);
+		openPitData.setMinHeight(600);
 		openPitData.setMinWidth(1400);
-		openPitData.setMaxHeight(400);
+		openPitData.setMaxHeight(600);
 		openPitData.setMaxWidth(1400);
 		FileInputStream inputOpenPitData;
 		try {
@@ -797,9 +797,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeOpenNewDriveTeamData() {
 		openNewDriveTeamDataTab openDriveTeamData = new openNewDriveTeamDataTab();
-		openDriveTeamData.setMinHeight(400);
+		openDriveTeamData.setMinHeight(600);
 		openDriveTeamData.setMinWidth(1400);
-		openDriveTeamData.setMaxHeight(400);
+		openDriveTeamData.setMaxHeight(600);
 		openDriveTeamData.setMaxWidth(1400);
 		FileInputStream inputOpenDriveTeamData;
 		try {
@@ -818,9 +818,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeOpenNewDriveTeamComs() {
 		openNewDriveTeamComsTab openDriveTeamComs = new openNewDriveTeamComsTab();
-		openDriveTeamComs.setMinHeight(400);
+		openDriveTeamComs.setMinHeight(600);
 		openDriveTeamComs.setMinWidth(1400);
-		openDriveTeamComs.setMaxHeight(400);
+		openDriveTeamComs.setMaxHeight(600);
 		openDriveTeamComs.setMaxWidth(1400);
 		FileInputStream inputOpenDriveTeamComs;
 		try {
@@ -839,9 +839,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeEditScData() {
 		editScDataTab edScData = new editScDataTab();
-		edScData.setMinHeight(400);
+		edScData.setMinHeight(600);
 		edScData.setMinWidth(1400);
-		edScData.setMaxHeight(400);
+		edScData.setMaxHeight(600);
 		edScData.setMaxWidth(1400);
 		FileInputStream inputEdScData;
 		try {
@@ -860,9 +860,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeEditPitData() {
 		editPitDataTab edPitData = new editPitDataTab();
-		edPitData.setMinHeight(400);
+		edPitData.setMinHeight(600);
 		edPitData.setMinWidth(1400);
-		edPitData.setMaxHeight(400);
+		edPitData.setMaxHeight(600);
 		edPitData.setMaxWidth(1400);
 		FileInputStream inputEdPitData;
 		try {
@@ -881,9 +881,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeEditDriveTeamData() {
 		editDriveTeamDataTab edDriveTeamData = new editDriveTeamDataTab();
-		edDriveTeamData.setMinHeight(400);
+		edDriveTeamData.setMinHeight(600);
 		edDriveTeamData.setMinWidth(1400);
-		edDriveTeamData.setMaxHeight(400);
+		edDriveTeamData.setMaxHeight(600);
 		edDriveTeamData.setMaxWidth(1400);
 		FileInputStream inputEdDriveTeamData;
 		try {
@@ -902,9 +902,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeEditDriveTeamComs() {
 		editDriveTeamComsTab edDriveTeamComs = new editDriveTeamComsTab();
-		edDriveTeamComs.setMinHeight(400);
+		edDriveTeamComs.setMinHeight(600);
 		edDriveTeamComs.setMinWidth(1400);
-		edDriveTeamComs.setMaxHeight(400);
+		edDriveTeamComs.setMaxHeight(600);
 		edDriveTeamComs.setMaxWidth(1400);
 		FileInputStream inputEdDriveTeamComs;
 		try {
@@ -923,9 +923,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeExportScData() {
 		exportScDataTab exScData = new exportScDataTab();
-		exScData.setMinHeight(400);
+		exScData.setMinHeight(600);
 		exScData.setMinWidth(1400);
-		exScData.setMaxHeight(400);
+		exScData.setMaxHeight(600);
 		exScData.setMaxWidth(1400);
 		FileInputStream inputExScData;
 		try {
@@ -944,9 +944,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeExportPitData() {
 		exportPitDataTab exPitData = new exportPitDataTab();
-		exPitData.setMinHeight(400);
+		exPitData.setMinHeight(600);
 		exPitData.setMinWidth(1400);
-		exPitData.setMaxHeight(400);
+		exPitData.setMaxHeight(600);
 		exPitData.setMaxWidth(1400);
 		FileInputStream inputExPitData;
 		try {
@@ -965,9 +965,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeExportDriveTeamData() {
 		exportDriveTeamDataTab exDriveTeamData = new exportDriveTeamDataTab();
-		exDriveTeamData.setMinHeight(400);
+		exDriveTeamData.setMinHeight(600);
 		exDriveTeamData.setMinWidth(1400);
-		exDriveTeamData.setMaxHeight(400);
+		exDriveTeamData.setMaxHeight(600);
 		exDriveTeamData.setMaxWidth(1400);
 		FileInputStream inputExDriveTeamData;
 		try {
@@ -987,9 +987,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeExportDriveTeamComs() {
 		exportDriveTeamComsTab exDriveTeamComs = new exportDriveTeamComsTab();
-		exDriveTeamComs.setMinHeight(400);
+		exDriveTeamComs.setMinHeight(600);
 		exDriveTeamComs.setMinWidth(1400);
-		exDriveTeamComs.setMaxHeight(400);
+		exDriveTeamComs.setMaxHeight(600);
 		exDriveTeamComs.setMaxWidth(1400);
 		FileInputStream inputExDriveTeamComs;
 		try {
@@ -1008,9 +1008,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeHomePage() {
 		homePageTab home = new homePageTab();
-		home.setMinHeight(400);
+		home.setMinHeight(600);
 		home.setMinWidth(1400);
-		home.setMaxHeight(400);
+		home.setMaxHeight(600);
 		home.setMaxWidth(1400);
 		FileInputStream inputHome;
 		try {
