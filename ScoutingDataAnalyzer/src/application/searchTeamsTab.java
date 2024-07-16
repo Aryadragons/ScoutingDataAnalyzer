@@ -57,12 +57,11 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		}
 	}
 	
-	public void addCharts(int team, double avgCy, double avgAmp, double avgSpe, double avgTrap, double avgCli) {
+	public void addCharts(int team, double avgCy, double avgAmp, double avgSpe, double avgTrap, double avgCli, double avgHumAmpPostion, double avgHumScoPostion, double avgHumAmpSkill, double avgHumScoSkill, double avgHumAmpNotes, int timesAmp, int timesSco) {
 		System.out.println("Team: " + team + "Cycles: " + avgCy + "Amp: " + avgAmp + "Speaker: " + avgSpe + "Trap: " + avgTrap + "Climb: " + avgCli);
 		String[] avgThings = {"Cycles", "Amp", "Speaker", "Trap", "Climb"};
 		XYChart.Series<String,Number> avgBarC = new XYChart.Series<String,Number>();
 		avgBarC.setName("Avg:");
-		avgBarC.getData().add(new XYChart.Data<String,Number>("Cycles", 10));
 		CategoryAxis typeXAxisBarC = new CategoryAxis();
 	    NumberAxis numScaleAxisBarC = new NumberAxis(0, 20, 4);
 	    BarChart<String,Number> avgBCBarC = new BarChart<String,Number>(typeXAxisBarC, numScaleAxisBarC);
@@ -84,9 +83,44 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	    cliData.getData().add(new XYChart.Data<String,Number>("Climb", avgCli));
 	    avgBCBarC.getData().addAll(cyData, ampData, speData, trapData, cliData);
 	    avgBCBarC.setBarGap(5);
-	    avgBCBarC.setMinSize(300, 200);
+	    avgBCBarC.setMinSize(200, 100);
 	    this.add(avgBCBarC, 0, 1);
 	    
+	    //Human Player Data
+	    String[] humThings = {"Percent Amp", "Times Scoure", "Amp Skill", "ScoureSkill", "High Notes",};
+	    XYChart.Series<String,Number> humBarC = new XYChart.Series<String,Number>();
+		humBarC.setName("Human Player:");
+		CategoryAxis typeXAxisHumBarC = new CategoryAxis();
+		NumberAxis numScaleAxisHumBarC;
+		if (timesAmp > timesSco & timesAmp > 3) {
+			numScaleAxisHumBarC = new NumberAxis(0, timesAmp, 2);
+		}else if(timesAmp < timesSco & timesSco > 3) {
+			numScaleAxisHumBarC = new NumberAxis(0, timesSco, 2);
+		} else {
+			numScaleAxisHumBarC = new NumberAxis(0, 4, 2);
+		}
+		BarChart<String,Number> humBCBarC = new BarChart<String,Number>(typeXAxisHumBarC, numScaleAxisHumBarC);
+		typeXAxisBarC.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(avgThings)));
+		XYChart.Series<String,Number> timesAmpData = new XYChart.Series<String,Number>();
+		timesAmpData.setName("Times At Amp");
+		timesAmpData.getData().add(new XYChart.Data<String,Number>("Times Amp", timesAmp));
+		XYChart.Series<String,Number> timesScoData = new XYChart.Series<String,Number>();
+		timesScoData.setName("Times at Scoure");
+		timesScoData.getData().add(new XYChart.Data<String,Number>("Times Scoure", timesSco));
+		XYChart.Series<String,Number> avgHumAmpSkillData = new XYChart.Series<String,Number>();
+		avgHumAmpSkillData.setName("Avg Amp Skill");
+		avgHumAmpSkillData.getData().add(new XYChart.Data<String,Number>("Amp Skill", avgHumAmpSkill));
+		XYChart.Series<String,Number> avgHumScoSkillData = new XYChart.Series<String,Number>();
+		avgHumScoSkillData.setName("Avg Scoure Skill");
+		avgHumScoSkillData.getData().add(new XYChart.Data<String,Number>("Sco Skill", avgHumScoSkill));
+		XYChart.Series<String,Number> avgHumAmpNotesData = new XYChart.Series<String,Number>();
+		avgHumAmpNotesData.setName("Avg High Notes");
+		avgHumAmpNotesData.getData().add(new XYChart.Data<String,Number>("Amp Notes", avgHumAmpNotes));
+		humBCBarC.getData().addAll(timesAmpData, timesScoData, avgHumAmpSkillData, avgHumScoSkillData, avgHumAmpNotesData);
+		humBCBarC.setBarGap(5);
+		humBCBarC.setMinSize(200, 100);
+		this.add(new Label(), timesAmp, timesSco);
+	    this.add(humBCBarC, 0, 2);
 		 // add data
 	   /* XYChart.Series<String,Number> series1 = new XYChart.Series<String,Number>();
 	    series1.setName("Data Series 1");
@@ -138,7 +172,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				} else {
 					this.add(new Label("Did " + theTeam.getTotalMatchesPlayed() + " Matches"), 1, 2);
 				}
-				addCharts(theTeam.getTeamNum(), theTeam.getAvgCycles(), theTeam.getAvgAmp(), theTeam.getAvgSpe(), theTeam.getAvgTrap(), theTeam.getAvgClimb());
+				addCharts(theTeam.getTeamNum(), theTeam.getAvgCycles(), theTeam.getAvgAmp(), theTeam.getAvgSpe(), theTeam.getAvgTrap(), theTeam.getAvgClimb(), theTeam.getAvgHumAmpPostion(), theTeam.getAvgHumScoPostion(), theTeam.getHumAmpSkill(), theTeam.getHumScoSkill(), theTeam.getHumAmpNotes(), theTeam.getTimesHumAmp(), theTeam.getTimesHumSco());
 			}
 		} catch(Exception e) {
 			System.out.println("Error: " + e);

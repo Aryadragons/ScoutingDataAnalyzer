@@ -299,7 +299,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			fileTimesHumAmp = Integer.parseInt(fileTimesHumAmpS);
 			fileTimesHumSco = Integer.parseInt(fileTimesHumScoS);
 			listOfTeamNums.add(fileTeamNum);
-			mainTeamList.addTempTeam(fileTeamNum, fileCycles, fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, commentList, fileHumPostionsList, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes, fileTimesHumAmp, fileTimesHumSco);
+			mainTeamList.addTempTeamInMain(fileTeamNum, fileCycles, fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, commentList, fileHumPostionsList, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes, fileTimesHumAmp, fileTimesHumSco);
 		}
 		sortListOfTeamNums();
 	}
