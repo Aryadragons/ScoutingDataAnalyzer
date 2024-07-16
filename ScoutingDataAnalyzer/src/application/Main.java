@@ -302,7 +302,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			fileCycles  = Double.parseDouble(fileCyclesS);
 			System.out.println("Boop26.5");
 			fileHumAmpSkill = Double.parseDouble(fileHumAmpSkillS);
-			System.out.println("Boop26.6");
+			System.out.println("Boop26.6" + fileHumAmpSkill);
 			fileHumScoSkill = Double.parseDouble(fileHumScoSkillS);
 			System.out.println("Boop26.7");
 			fileHumAmpNotes = Double.parseDouble(fileHumAmpNotesS);

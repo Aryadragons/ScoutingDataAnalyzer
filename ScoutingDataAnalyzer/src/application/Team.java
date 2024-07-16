@@ -34,7 +34,7 @@ public class Team {
 	}
 	
 	Team(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, List<String> commentList, List<String> tempHumPostionsList, int totalHumScoSkill, int totalHumAmpSkill, int totalHumAmpNotes, int importTimesHumAmp, int importTimesHumSco){
-		System.out.println("boop18.11");
+		System.out.println("boop18.11 " + totalHumAmpSkill);
 		setTeamNum(tempTeamNum);
 		setTotalCycles(tempTotalCycles);
 		setTotalMatchesPlayed(tempTotalMatchesPlayed);
@@ -71,31 +71,39 @@ public class Team {
 			setAvgHumAmpSkill(totalHumAmpSkill/timesHumAmp);
 			setAvgHumAmpNotes(totalHumAmpNotes/timesHumAmp);
 		}else {
-			setAvgHumAmpSkill(totalHumAmpSkill/timesHumAmp);
-			setAvgHumAmpNotes(totalHumAmpNotes/timesHumAmp);
+			setAvgHumAmpSkill(0);
+			setAvgHumAmpNotes(0);
 		}
 		System.out.println("boop18.17");
 	}
 	
 	public void setTeamInMain(int tempTeamNum, double tempAvgCycles, int tempTotalMatchesPlayed, double tempAvgAmp, double tempAvgSpe, double tempAvgClimb, double tempAvgTrap, List<String> commentList, List<String> tempHumPostionsList, double avgHumScoSkill, double avgHumAmpSkill, double avgHumAmpNotes, int importTimesHumAmp, int importTimesHumSco) {
+		System.out.println("Boop28.21");
 		// set er's for avg
-				setAvgCycles(tempAvgCycles/totalMatchesPlayed);
-				setAvgAmp(tempAvgAmp/totalMatchesPlayed);
-				setAvgSpe(tempAvgSpe/totalMatchesPlayed);
-				setAvgTrap(tempAvgTrap/totalMatchesPlayed);
-				setAvgClimb(tempAvgClimb/totalMatchesPlayed);
-				// set er's for comments
-				listOfComments = new ArrayList<>();
-				addToCommentsList(commentList);
-				// set er's for human player stuff
-				setTimesHumAmp(importTimesHumAmp);
-				setTimesHumSco(importTimesHumSco);
-				setAvgHumAmpPostion();
-				setAvgHumScoPostion();
-				setAvgHumNonePostion();
-				setAvgHumScoSkill(avgHumScoSkill/timesHumSco);
-				setAvgHumAmpSkill(avgHumAmpSkill/timesHumSco);
-				setAvgHumAmpNotes(avgHumAmpNotes/timesHumSco);
+		setTeamNum(tempTeamNum);
+		setTotalMatchesPlayed(tempTotalMatchesPlayed);
+		setAvgCycles(tempAvgCycles);
+		setAvgAmp(tempAvgAmp);
+		setAvgSpe(tempAvgSpe);
+		setAvgTrap(tempAvgTrap);
+		setAvgClimb(tempAvgClimb);
+		System.out.println("Boop28.22");
+		// set er's for comments
+		listOfComments = new ArrayList<>();
+		addToCommentsList(commentList);
+		System.out.println("Boop28.23");
+		// set er's for human player stuff
+		setTimesHumAmp(importTimesHumAmp);
+		setTimesHumSco(importTimesHumSco);
+		System.out.println("Boop28.24");
+		setAvgHumAmpPostion();
+		setAvgHumScoPostion();
+		setAvgHumNonePostion();
+		System.out.println("Boop28.25");
+		setAvgHumScoSkill(avgHumScoSkill);
+		setAvgHumAmpSkill(avgHumAmpSkill);
+		setAvgHumAmpNotes(avgHumAmpNotes);
+		System.out.println("Boop28.26");
 	}
 	
 	public int setTeamNum(int tempTeamNum){

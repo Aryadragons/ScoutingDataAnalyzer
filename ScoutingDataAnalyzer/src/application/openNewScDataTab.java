@@ -140,6 +140,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					    } else {
 					    	out.println("0");
 					    }
+					    System.out.println(csvHumAmpSkillS);
 					    out.println(csvHumAmpSkillS);
 					    out.println(csvHumScoSkillS);
 					    out.println(csvHumAmpNotesS);
@@ -240,6 +241,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					// hum postion and skill stuff
 					if (fileHumPostionSTrue.compareTo("Amp") == 0) {
 						fileHumAmpSkill = Integer.parseInt(fileHumSkillSTrue);
+						System.out.println(fileHumAmpSkill);
 						fileHumAmpNotesS = fileInput.next();
 						int lengthOfFileHumAmpNotes = fileHumAmpNotesS.length() - 1;
 						fileHumAmpNotesSTrue = fileHumAmpNotesS.substring(1, lengthOfFileHumAmpNotes);
@@ -301,6 +303,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					commentListT = fileTempTeamList.listOfTempTeams.get(i).getCommentList();
 					System.out.println("boop15");
 					fileHumAmpSkillT = fileTempTeamList.listOfTempTeams.get(i).getHumAmpSkill();
+					System.out.println(fileHumAmpSkillT);
 					fileHumScoSkillT = fileTempTeamList.listOfTempTeams.get(i).getHumScoSkill();
 					fileHumAmpNotesT = fileTempTeamList.listOfTempTeams.get(i).getHumAmpNotes();
 					System.out.println("boop16");

@@ -87,6 +87,14 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	    this.add(avgBCBarC, 0, 1);
 	    
 	    //Human Player Data
+	    System.out.println(avgHumAmpPostion);
+	    System.out.println(avgHumScoPostion);
+	    System.out.println(avgHumAmpSkill);
+	    System.out.println(avgHumScoSkill);
+	    System.out.println(avgHumAmpNotes);
+	    System.out.println(timesAmp);
+	    System.out.println(timesSco);
+	    
 	    String[] humThings = {"Percent Amp", "Times Scoure", "Amp Skill", "ScoureSkill", "High Notes",};
 	    XYChart.Series<String,Number> humBarC = new XYChart.Series<String,Number>();
 		humBarC.setName("Human Player:");
@@ -148,12 +156,18 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	public void handle(ActionEvent event) {
 		try {
 			if(event.getSource() == seTeamsB) {
+				System.out.println("Boop30");
 				Team theTeam;
 				this.getChildren().clear();
-				String selectedTeamS = teamListCB.getSelectionModel().getSelectedItem();; 
+				System.out.println("Boop31");
+				String selectedTeamS = teamListCB.getSelectionModel().getSelectedItem();
+				System.out.println("Boop31.1");
 				int selectedTeam = Integer.parseInt(selectedTeamS);
+				System.out.println("Boop31.2");
 				theTeam = theTeamList.getATeam(selectedTeam);
+				System.out.println("Boop31.3");
 				this.getChildren().clear();
+				System.out.println("Boop32");
 				String teamNumS = Integer.toString(theTeam.getTeamNum());
 				String title = (teamNumS +"'s Stats:");
 				this.add(new Label(title), 0, 0);
@@ -167,12 +181,22 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				}
 				this.add(commentsTA, 1, 1);
 				commentsTA.setText(commentsS);
+				System.out.println("Boop33");
 				if (theTeam.getTotalMatchesPlayed() == 1) {
 					this.add(new Label("Did 1 Match"), 1, 2);
 				} else {
 					this.add(new Label("Did " + theTeam.getTotalMatchesPlayed() + " Matches"), 1, 2);
 				}
+				System.out.println("Boop34");
+				System.out.println(theTeam.getAvgHumAmpPostion());
+			    System.out.println(theTeam.getAvgHumScoPostion());
+			    System.out.println(theTeam.getHumAmpSkill());
+			    System.out.println(theTeam.getHumScoSkill());
+			    System.out.println(theTeam.getHumAmpNotes());
+			    System.out.println(theTeam.getTimesHumAmp());
+			    System.out.println(theTeam.getTimesHumSco());
 				addCharts(theTeam.getTeamNum(), theTeam.getAvgCycles(), theTeam.getAvgAmp(), theTeam.getAvgSpe(), theTeam.getAvgTrap(), theTeam.getAvgClimb(), theTeam.getAvgHumAmpPostion(), theTeam.getAvgHumScoPostion(), theTeam.getHumAmpSkill(), theTeam.getHumScoSkill(), theTeam.getHumAmpNotes(), theTeam.getTimesHumAmp(), theTeam.getTimesHumSco());
+				System.out.println("Boop35");
 			}
 		} catch(Exception e) {
 			System.out.println("Error: " + e);

@@ -12,8 +12,8 @@ public class TeamList {
 	}
 	
 	public void addTempTeam(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalTrap, int tempTotalClimb, List<String> commentList, List<String> tempHumPostionsList, int tempHumAmpSkill, int tempHumScoSkill, int tempHumAmpNotes, int importTimesHumAmp, int importTimesHumSco) {
-		System.out.println("boop18.1");
-		Team T = new Team(tempTeamNum, tempTotalCycles, tempTotalMatchesPlayed, tempTotalAmp, tempTotalSpe, tempTotalClimb, tempTotalTrap, commentList, tempHumPostionsList, tempHumAmpSkill, tempHumScoSkill, tempHumAmpNotes, importTimesHumAmp, importTimesHumSco);
+		System.out.println("boop18.1" + tempHumAmpSkill);
+		Team T = new Team(tempTeamNum, tempTotalCycles, tempTotalMatchesPlayed, tempTotalAmp, tempTotalSpe, tempTotalClimb, tempTotalTrap, commentList, tempHumPostionsList, tempHumScoSkill, tempHumAmpSkill, tempHumAmpNotes, importTimesHumAmp, importTimesHumSco);
 		System.out.println("boop18.2");
 		listOfTeams.add(T);
 		System.out.println("boop18.3");
@@ -30,22 +30,31 @@ public class TeamList {
 	}
 	
 	public Team getATeam(int teamNum) {
+		System.out.println("Boop31.21 Team Num:" + teamNum);
 		int found = 0;
 		int theTeam = -1;
 		int teamsSearched = 0;
 		int i = 0;
+		System.out.println("Boop31.22");
 		Team tempT;
+		System.out.println("Boop31.23");
 		tempT = listOfTeams.get(i);
+		System.out.println("Boop31.24 Size: " + listOfTeams.size());
 		while(found < 1) {
+			System.out.println("Boop31.25" + " I: " + i);
 			tempT = listOfTeams.get(i);
+			System.out.println("Boop31.26");
 			if(tempT.getTeamNum() == teamNum) {
+				System.out.println("Boop31.27");
 				found = 1;
 				theTeam = i;
 			} else {
+				System.out.println("Boop31.28");
 				i++;
 				teamsSearched++;
 			}
 		}
+		System.out.println("Boop31.29");
 		return tempT;
 	}
 }
