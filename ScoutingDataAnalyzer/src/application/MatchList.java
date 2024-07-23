@@ -15,6 +15,10 @@ public class MatchList {
 		listOfMatches.add(M);
 	}
 	
+	public void addPreMadeMatch(Match tempMatch) {
+		listOfMatches.add(tempMatch);
+	}
+	
 	public Match getAMatch(int MatchNum) {
 		int found = 0;
 		int i = 0;
@@ -22,8 +26,12 @@ public class MatchList {
 		while(found == 0 & i < size) {
 			Match tempM = listOfMatches.get(i);
 			if (tempM.getMatchNum() == MatchNum) {
+				found = 1;
 				return tempM;
+			} else {
+				i++;
 			}
 		}
+		return null;
 	}
 }

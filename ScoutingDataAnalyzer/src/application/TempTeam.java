@@ -19,8 +19,9 @@ public class TempTeam {
 	private int timesHumAmp = 0;
 	private int timesHumSco = 0;
 	private List<String> listOfHumPostions = new ArrayList<>();
+	private MatchList theMatchList;
 	
-	TempTeam(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, String comment, String tempHumPostion, int tempHumAmpSkill, int tempHumScoSkill, int tempHumAmpNotes){
+	TempTeam(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, String comment, String tempHumPostion, int tempHumAmpSkill, int tempHumScoSkill, int tempHumAmpNotes, Match importMatch){
 		System.out.println("boop5");
 		setTeamNum(tempTeamNum);
 		setTotalCycles(tempTotalCycles);
@@ -46,6 +47,8 @@ public class TempTeam {
 			timesHumSco++;
 			setHumScoSkill(tempHumScoSkill);
 		}
+		//match stuff
+		addToMatchList(importMatch);
 		System.out.println("boop10");
 	}
 	
@@ -108,6 +111,14 @@ public class TempTeam {
 		return listOfHumPostions;
 	}
 	
+	public void setMatchList(MatchList tempMatchList) {
+		theMatchList = tempMatchList;
+	}
+	
+	public void addToMatchList(Match tempMatch) {
+		theMatchList.addPreMadeMatch(tempMatch);
+	}
+	//
 	public void clearCommentsList(){
 		listOfComments.clear();
 	}
@@ -115,7 +126,7 @@ public class TempTeam {
 	public void clearHumPostionList(){
 		listOfComments.clear();
 	}
-	
+	//
 	public String getHumPostion() {
 		return humPostion;
 	}
@@ -173,6 +184,10 @@ public class TempTeam {
 	
 	public List<String> getCommentList() {
 		return listOfComments;
+	}
+	
+	public MatchList getMatchList() {
+		return theMatchList;
 	}
 	
 	public String toString() {

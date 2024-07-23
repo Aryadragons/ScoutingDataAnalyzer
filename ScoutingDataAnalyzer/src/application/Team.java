@@ -29,11 +29,12 @@ public class Team {
 	private int timesHumAmp = 0;
 	private int timesHumSco = 0;
 	private List<String> listOfHumPostions;
+	private MatchList theMatchList;
 	
 	Team(){
 	}
 	
-	Team(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, List<String> commentList, List<String> tempHumPostionsList, int totalHumScoSkill, int totalHumAmpSkill, int totalHumAmpNotes, int importTimesHumAmp, int importTimesHumSco){
+	Team(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, List<String> commentList, List<String> tempHumPostionsList, int totalHumScoSkill, int totalHumAmpSkill, int totalHumAmpNotes, int importTimesHumAmp, int importTimesHumSco, MatchList importMatchList){
 		System.out.println("boop18.11 " + totalHumAmpSkill);
 		setTeamNum(tempTeamNum);
 		setTotalCycles(tempTotalCycles);
@@ -74,10 +75,12 @@ public class Team {
 			setAvgHumAmpSkill(0);
 			setAvgHumAmpNotes(0);
 		}
+		//setting the match list
+		setMatchList(importMatchList);
 		System.out.println("boop18.17");
 	}
 	
-	public void setTeamInMain(int tempTeamNum, double tempAvgCycles, int tempTotalMatchesPlayed, double tempAvgAmp, double tempAvgSpe, double tempAvgClimb, double tempAvgTrap, List<String> commentList, List<String> tempHumPostionsList, double avgHumScoSkill, double avgHumAmpSkill, double avgHumAmpNotes, int importTimesHumAmp, int importTimesHumSco) {
+	public void setTeamInMain(int tempTeamNum, double tempAvgCycles, int tempTotalMatchesPlayed, double tempAvgAmp, double tempAvgSpe, double tempAvgClimb, double tempAvgTrap, List<String> commentList, List<String> tempHumPostionsList, double avgHumScoSkill, double avgHumAmpSkill, double avgHumAmpNotes, int importTimesHumAmp, int importTimesHumSco, MatchList importMatchList) {
 		System.out.println("Boop28.21");
 		// set er's for avg
 		setTeamNum(tempTeamNum);
@@ -103,6 +106,7 @@ public class Team {
 		setAvgHumScoSkill(avgHumScoSkill);
 		setAvgHumAmpSkill(avgHumAmpSkill);
 		setAvgHumAmpNotes(avgHumAmpNotes);
+		setMatchList(importMatchList);
 		System.out.println("Boop28.26");
 	}
 	
@@ -197,6 +201,15 @@ public class Team {
 			listOfComments.add(commentList.get(i));
 		}
 	}
+	
+	public void setMatchList(MatchList tempMatchList) {
+		theMatchList = tempMatchList;
+	}
+	
+	public void addToMatchList(Match tempMatch) {
+		theMatchList.addPreMadeMatch(tempMatch);
+	}
+	
 	//clear list er's
 	public void clearCommentsList(){
 		listOfComments.clear();
@@ -290,6 +303,10 @@ public class Team {
 	
 	public int getTimesHumSco() {
 		return timesHumSco;
+	}
+	
+	public MatchList getMatchList() {
+		return theMatchList;
 	}
 	
 	public String toString() {
