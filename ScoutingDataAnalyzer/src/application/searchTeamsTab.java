@@ -34,6 +34,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	private TextField avgCommentListTF;
 	private TextArea commentsTA;
 	private List<Integer> listOfTeamNums;
+	private ComboBox<String> statListCB;
+	private ComboBox<String> matchListCB;
 	
 	public searchTeamsTab(TeamList mainTeamList, List<Integer> importedListOfTeamNums) {
 		this.add(new Label("Select Team to Look Up"), 0, 0);
@@ -57,7 +59,29 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		}
 	}
 	
-	public void addCharts(int team, double avgCy, double avgAmp, double avgSpe, double avgTrap, double avgCli, double avgHumAmpPostion, double avgHumScoPostion, double avgHumAmpSkill, double avgHumScoSkill, double avgHumAmpNotes, int timesAmp, int timesSco) {
+	private void addStatAndMatchCB(int teamNum) {
+		//Stat CB
+		statListCB = new ComboBox<String>();
+		statListCB.getItems().add("Cycles");
+		statListCB.getItems().add("Amp");
+		statListCB.getItems().add("Specker");
+		statListCB.getItems().add("Trap");
+		statListCB.getItems().add("Climb");
+		statListCB.getItems().add("Amp Skill");
+		statListCB.getItems().add("Scource Skill");
+		statListCB.getItems().add("Amp Notes");
+		//Match CB
+		matchListCB = new ComboBox<String>();
+		MatchList teamML = theTeamList.getATeam(teamNum).getMatchList();
+		int teamMLSize = teamML.listOfMatches.size();
+		for (int i = 0; i < teamMLSize; i++) {
+			int mNum = teamML.getAMatch(i).getMatchNum();
+			String mNumS = Integer.toString(mNum);
+			matchListCB.getItems().add(mNumS);
+		}
+	}
+	
+	private void addCharts(int team, double avgCy, double avgAmp, double avgSpe, double avgTrap, double avgCli, double avgHumAmpPostion, double avgHumScoPostion, double avgHumAmpSkill, double avgHumScoSkill, double avgHumAmpNotes, int timesAmp, int timesSco) {
 		System.out.println("Team: " + team + "Cycles: " + avgCy + "Amp: " + avgAmp + "Speaker: " + avgSpe + "Trap: " + avgTrap + "Climb: " + avgCli);
 		String[] avgThings = {"Cycles", "Amp", "Speaker", "Trap", "Climb"};
 		XYChart.Series<String,Number> avgBarC = new XYChart.Series<String,Number>();
@@ -151,6 +175,13 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	    */
 	}
 	
+	private void addStatChart(String stat) {
+		
+	}
+	
+	private void addMatchChart(int Match) {
+		
+	}
 	
 	@Override
 	public void handle(ActionEvent event) {

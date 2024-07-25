@@ -149,6 +149,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					    out.println(csvTimesHumAmpS);
 					    out.println(csvTimesHumScoS);
 					    int MLSize = csvMatchList.listOfMatches.size();
+					    out.println(MLSize);
 					    for(int e = 0; e < MLSize; e++ ) {
 					    	Match tempM = csvMatchList.listOfMatches.get(i);
 					    	int MTeamNum = tempM.getMatchTeamNum();
@@ -157,12 +158,32 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					    	int MSpe = tempM.getMatchSpe();
 					    	int MTrap = tempM.getMatchTrap();
 					    	int MClimb = tempM.getMatchClimb();
-					    	String MHumPos = tempM.getMatchHumPos();
+					    	String MHumPosS = tempM.getMatchHumPos();
 					    	int MAmpSkill = tempM.getMatchAmpSkill();
-					    	
-					    	for (int u = 0; u < 8; u++) {
-					    		
-					    	}
+					    	int MScoSkill = tempM.getMatchScoSkill();
+					    	int MAmpNotes = tempM.getMatchAmpNotes();
+					    	String MCommentS = tempM.getMatchComment();
+					    	//convert to strings
+					    	String MTeamNumS = Integer.toString(MTeamNum);
+					    	String MMatchNumS = Integer.toString(MMatchNum);
+					    	String MAmpS = Integer.toString(MAmp);
+					    	String MSpeS = Integer.toString(MSpe);
+					    	String MTrapS = Integer.toString(MTrap);
+					    	String MClimbS = Integer.toString(MClimb);
+					    	String MAmpSkillS = Integer.toString(MAmpSkill);
+					    	String MScoSkillS = Integer.toString(MScoSkill);
+					    	String MAmpNotesS = Integer.toString(MAmpNotes);
+					    	out.println(MTeamNumS);
+					    	out.println(MMatchNumS);
+					    	out.println(MAmpS);
+					    	out.println(MSpeS);
+					    	out.println(MTrapS);
+					    	out.println(MClimbS);
+					    	out.println(MHumPosS);
+					    	out.println(MAmpSkillS);
+					    	out.println(MScoSkillS);
+					    	out.println(MAmpNotesS);
+					    	out.println(MCommentS);
 					    }
 					    out.close();
 			}

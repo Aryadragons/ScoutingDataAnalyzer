@@ -293,6 +293,36 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			fileTimesHumAmpS = fileInput.next();
 			fileTimesHumScoS = fileInput.next();
 			System.out.println("Boop26");
+			//Matches Sutff
+			MatchList fileMatchList = new MatchList();
+			String TotalMsS = fileInput.next();
+			int TotalMs = Integer.parseInt(TotalMsS);
+			for (int i = 0; i < TotalMs; i++) {
+				String MTeamNumS = fileInput.next();
+		    	String MMatchNumS = fileInput.next();
+		    	String MAmpS = fileInput.next();
+		    	String MSpeS = fileInput.next();
+		    	String MTrapS = fileInput.next();
+		    	String MClimbS = fileInput.next();
+		    	String MHumPosS = fileInput.next();
+		    	String MAmpSkillS = fileInput.next();
+		    	String MScoSkillS = fileInput.next();
+		    	String MAmpNotesS = fileInput.next();
+		    	String MCommentS = fileInput.next();
+		    	int MTeamNum = Integer.parseInt(MTeamNumS);
+		    	int MMatchNum = Integer.parseInt(MMatchNumS);
+		    	int MAmp = Integer.parseInt(MAmpS);
+		    	int MSpe = Integer.parseInt(MSpeS);
+		    	int MTrap = Integer.parseInt(MTrapS);
+		    	int MClimb = Integer.parseInt(MClimbS);
+		    	int MAmpSkill = Integer.parseInt(MAmpSkillS);
+		    	int MScoSkill = Integer.parseInt(MScoSkillS);
+		    	int MAmpNotes = Integer.parseInt(MAmpNotesS);
+		    	Match fileMatch = new Match(MTeamNum, MMatchNum, MAmp, MSpe, MTrap, MClimb, MHumPosS, MAmpSkill, MScoSkill, MAmpNotes, MCommentS);
+		    	fileMatchList.addPreMadeMatch(fileMatch);
+			}
+			
+			
 			fileTeamNum = Integer.parseInt(fileTeamNumS);
 			fileAmp = Double.parseDouble(fileAmpS);
 			fileSpe = Double.parseDouble(fileSpeS);
@@ -313,7 +343,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			System.out.println("Boop27");
 			listOfTeamNums.add(fileTeamNum);
 			System.out.println("Boop28");
-			mainTeamList.addTempTeamInMain(fileTeamNum, fileCycles, fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, commentList, fileHumPostionsList, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes, fileTimesHumAmp, fileTimesHumSco);
+			mainTeamList.addTempTeamInMain(fileTeamNum, fileCycles, fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, commentList, fileHumPostionsList, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes, fileTimesHumAmp, fileTimesHumSco, fileMatchList);
 			System.out.println("Boop29");
 		}
 		sortListOfTeamNums();
