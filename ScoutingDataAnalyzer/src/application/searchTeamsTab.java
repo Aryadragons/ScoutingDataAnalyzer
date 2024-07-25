@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
@@ -36,7 +37,11 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	private List<Integer> listOfTeamNums;
 	private ComboBox<String> statListCB;
 	private ComboBox<String> matchListCB;
-	private Button statMatchSubB;
+	private Button statSubB;
+	private Button matchSubB;
+	private Team selectTeam;
+	private BarChart<String,Number> matchBCBarC;
+	private LineChart<String,Number> lineChart;
 	
 	public searchTeamsTab(TeamList mainTeamList, List<Integer> importedListOfTeamNums) {
 		this.add(new Label("Select Team to Look Up"), 0, 0);
@@ -77,15 +82,18 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		MatchList teamML = theTeamList.getATeam(teamNum).getMatchList();
 		int teamMLSize = teamML.listOfMatches.size();
 		for (int i = 0; i < teamMLSize; i++) {
-			int mNum = teamML.getAMatch(i).getMatchNum();
+			int mNum = teamML.listOfMatches.get(i).getMatchNum();
 			String mNumS = Integer.toString(mNum);
 			matchListCB.getItems().add(mNumS);
 		}
-		this.add(matchListCB, 3, 0);
-		//adding button
-		statMatchSubB = new Button("Submit");
-		statMatchSubB.setOnAction(this);
-		this.add(statMatchSubB, 4, 0);
+		this.add(matchListCB, 4, 0);
+		//adding buttons
+		statSubB = new Button("Submit");
+		statSubB.setOnAction(this);
+		this.add(statSubB, 3, 0);
+		matchSubB = new Button("Submit");
+		matchSubB.setOnAction(this);
+		this.add(matchSubB, 5, 0);
 	}
 	
 	private void addCharts(int team, double avgCy, double avgAmp, double avgSpe, double avgTrap, double avgCli, double avgHumAmpPostion, double avgHumScoPostion, double avgHumAmpSkill, double avgHumScoSkill, double avgHumAmpNotes, int timesAmp, int timesSco) {
@@ -181,31 +189,196 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	    this.add(bc, 2, 0);
 	    */
 	}
-	
+	/*
+	 * final CategoryAxis xAxis = new CategoryAxis();
+        final NumberAxis yAxis = new NumberAxis();
+        xAxis.setLabel("Month");       
+        
+        final LineChart<String,Number> lineChart = 
+                new LineChart<String,Number>(xAxis,yAxis);
+                
+        lineChart.setTitle("Stock Monitoring, 2010");
+                                
+        XYChart.Series series = new XYChart.Series();
+        series.setName("My portfolio");
+        
+        series.getData().add(new XYChart.Data("Jan", 23));
+        series.getData().add(new XYChart.Data("Feb", 14));
+        series.getData().add(new XYChart.Data("Mar", 15));
+        series.getData().add(new XYChart.Data("Apr", 24));
+        series.getData().add(new XYChart.Data("May", 34));
+        series.getData().add(new XYChart.Data("Jun", 36));
+        series.getData().add(new XYChart.Data("Jul", 22));
+        series.getData().add(new XYChart.Data("Aug", 45));
+        series.getData().add(new XYChart.Data("Sep", 43));
+        series.getData().add(new XYChart.Data("Oct", 17));
+        series.getData().add(new XYChart.Data("Nov", 29));
+        series.getData().add(new XYChart.Data("Dec", 25));
+        
+        
+        Scene scene  = new Scene(lineChart,800,600);
+        lineChart.getData().add(series);
+	 */
 	private void addStatChart(String stat) {
 		if(stat.compareTo("Cycle") == 0) {
-			
+			final CategoryAxis xAxis = new CategoryAxis();
+			final NumberAxis yAxis = new NumberAxis();
+			yAxis.setLabel("Cycles");
+			xAxis.setLabel("Match");
+			lineChart = new LineChart<String,Number>(xAxis,yAxis);
+			lineChart.setTitle("Cycles over Match");
+			XYChart.Series series = new XYChart.Series();
+			series.setName("Cycles");
+			int size = selectTeam.getMatchList().listOfMatches.size();
+			for(int i = 0; i < size; i++) {
+				Match tempM = selectTeam.getMatchList().listOfMatches.get(i);
+				int mN = tempM.getMatchNum();
+				String mNS = Integer.toString(mN);
+				int mData = (tempM.getMatchAmp() + tempM.getMatchSpe() + tempM.getMatchTrap());
+				series.getData().add(new XYChart.Data(mNS,mData));
+			}
+			lineChart.getData().add(series);
+			this.add(lineChart, 2, 2);
 		}
-		if(stat.compareTo("Cycle") == 0) {
-					
-				}
-		if(stat.compareTo("Cycle") == 0) {
-			
+		if(stat.compareTo("Amp") == 0) {
+			final CategoryAxis xAxis = new CategoryAxis();
+			final NumberAxis yAxis = new NumberAxis();
+			yAxis.setLabel("Amps");
+			xAxis.setLabel("Match");
+			lineChart = new LineChart<String,Number>(xAxis,yAxis);
+			lineChart.setTitle("Amps over Match");
+			XYChart.Series series = new XYChart.Series();
+			series.setName("Amps");
+			int size = selectTeam.getMatchList().listOfMatches.size();
+			for(int i = 0; i < size; i++) {
+				Match tempM = selectTeam.getMatchList().listOfMatches.get(i);
+				int mN = tempM.getMatchNum();
+				String mNS = Integer.toString(mN);
+				int mData = (tempM.getMatchAmp());
+				series.getData().add(new XYChart.Data(mNS,mData));
+			}
+			lineChart.getData().add(series);
+			this.add(lineChart, 2, 2);
 		}
-		if(stat.compareTo("Cycle") == 0) {
-			
+		if(stat.compareTo("Specker") == 0) {
+			final CategoryAxis xAxis = new CategoryAxis();
+			final NumberAxis yAxis = new NumberAxis();
+			yAxis.setLabel("Speckers");
+			xAxis.setLabel("Match");
+			lineChart = new LineChart<String,Number>(xAxis,yAxis);
+			lineChart.setTitle("Speckers over Match");
+			XYChart.Series series = new XYChart.Series();
+			series.setName("Speckers");
+			int size = selectTeam.getMatchList().listOfMatches.size();
+			for(int i = 0; i < size; i++) {
+				Match tempM = selectTeam.getMatchList().listOfMatches.get(i);
+				int mN = tempM.getMatchNum();
+				String mNS = Integer.toString(mN);
+				int mData = (tempM.getMatchSpe());
+				series.getData().add(new XYChart.Data(mNS,mData));
+			}
+			lineChart.getData().add(series);
+			this.add(lineChart, 2, 2);
 		}
-		if(stat.compareTo("Cycle") == 0) {
-			
+		if(stat.compareTo("Trap") == 0) {
+			final CategoryAxis xAxis = new CategoryAxis();
+			final NumberAxis yAxis = new NumberAxis();
+			yAxis.setLabel("Traps");
+			xAxis.setLabel("Match");
+			lineChart = new LineChart<String,Number>(xAxis,yAxis);
+			lineChart.setTitle("Traps over Match");
+			XYChart.Series series = new XYChart.Series();
+			series.setName("Traps");
+			int size = selectTeam.getMatchList().listOfMatches.size();
+			for(int i = 0; i < size; i++) {
+				Match tempM = selectTeam.getMatchList().listOfMatches.get(i);
+				int mN = tempM.getMatchNum();
+				String mNS = Integer.toString(mN);
+				int mData = (tempM.getMatchTrap());
+				series.getData().add(new XYChart.Data(mNS,mData));
+			}
+			lineChart.getData().add(series);
+			this.add(lineChart, 2, 2);
 		}
-		if(stat.compareTo("Cycle") == 0) {
-			
+		if(stat.compareTo("Climb") == 0) {
+			final CategoryAxis xAxis = new CategoryAxis();
+			final NumberAxis yAxis = new NumberAxis();
+			yAxis.setLabel("Climbs");
+			xAxis.setLabel("Match");
+			lineChart = new LineChart<String,Number>(xAxis,yAxis);
+			lineChart.setTitle("Climbs over Match");
+			XYChart.Series series = new XYChart.Series();
+			series.setName("Climbs");
+			int size = selectTeam.getMatchList().listOfMatches.size();
+			for(int i = 0; i < size; i++) {
+				Match tempM = selectTeam.getMatchList().listOfMatches.get(i);
+				int mN = tempM.getMatchNum();
+				String mNS = Integer.toString(mN);
+				int mData = (tempM.getMatchClimb());
+				series.getData().add(new XYChart.Data(mNS,mData));
+			}
+			lineChart.getData().add(series);
+			this.add(lineChart, 2, 2);
 		}
-		if(stat.compareTo("Cycle") == 0) {
-			
+		if(stat.compareTo("Amp Skill") == 0) {
+			final CategoryAxis xAxis = new CategoryAxis();
+			final NumberAxis yAxis = new NumberAxis();
+			yAxis.setLabel("Amp Skill");
+			xAxis.setLabel("Match");
+			lineChart = new LineChart<String,Number>(xAxis,yAxis);
+			lineChart.setTitle("Amp Skill over Match");
+			XYChart.Series series = new XYChart.Series();
+			series.setName("Amp Skill");
+			int size = selectTeam.getMatchList().listOfMatches.size();
+			for(int i = 0; i < size; i++) {
+				Match tempM = selectTeam.getMatchList().listOfMatches.get(i);
+				int mN = tempM.getMatchNum();
+				String mNS = Integer.toString(mN);
+				int mData = (tempM.getMatchAmpSkill());
+				series.getData().add(new XYChart.Data(mNS,mData));
+			}
+			lineChart.getData().add(series);
+			this.add(lineChart, 2, 2);
 		}
-		if(stat.compareTo("Cycle") == 0) {
-			
+		if(stat.compareTo("Scoure Skill") == 0) {
+			final CategoryAxis xAxis = new CategoryAxis();
+			final NumberAxis yAxis = new NumberAxis();
+			yAxis.setLabel("Scoure Skill");
+			xAxis.setLabel("Match");
+			lineChart = new LineChart<String,Number>(xAxis,yAxis);
+			lineChart.setTitle("Scoure Skill over Match");
+			XYChart.Series series = new XYChart.Series();
+			series.setName("Scoure Skill");
+			int size = selectTeam.getMatchList().listOfMatches.size();
+			for(int i = 0; i < size; i++) {
+				Match tempM = selectTeam.getMatchList().listOfMatches.get(i);
+				int mN = tempM.getMatchNum();
+				String mNS = Integer.toString(mN);
+				int mData = (tempM.getMatchScoSkill());
+				series.getData().add(new XYChart.Data(mNS,mData));
+			}
+			lineChart.getData().add(series);
+			this.add(lineChart, 2, 2);
+		}
+		if(stat.compareTo("Amp Notes") == 0) {
+			final CategoryAxis xAxis = new CategoryAxis();
+			final NumberAxis yAxis = new NumberAxis();
+			yAxis.setLabel("Amp Notes");
+			xAxis.setLabel("Match");
+			lineChart = new LineChart<String,Number>(xAxis,yAxis);
+			lineChart.setTitle("AmpNotes over Match");
+			XYChart.Series series = new XYChart.Series();
+			series.setName("Amp Notes");
+			int size = selectTeam.getMatchList().listOfMatches.size();
+			for(int i = 0; i < size; i++) {
+				Match tempM = selectTeam.getMatchList().listOfMatches.get(i);
+				int mN = tempM.getMatchNum();
+				String mNS = Integer.toString(mN);
+				int mData = (tempM.getMatchAmpNotes());
+				series.getData().add(new XYChart.Data(mNS,mData));
+			}
+			lineChart.getData().add(series);
+			this.add(lineChart, 2, 2);
 		}
 	}
 	
@@ -237,7 +410,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			matchBarC.setName("Stat:");
 			CategoryAxis typeXAxisBarC = new CategoryAxis();
 		    NumberAxis numScaleAxisBarC = new NumberAxis(0, 20, 4);
-		    BarChart<String,Number> matchBCBarC = new BarChart<String,Number>(typeXAxisBarC, numScaleAxisBarC);
+		    matchBCBarC = new BarChart<String,Number>(typeXAxisBarC, numScaleAxisBarC);
 		    typeXAxisBarC.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(matchThings)));
 		    XYChart.Series<String,Number> cyData = new XYChart.Series<String,Number>();
 		    cyData.setName("Cycle Data");
@@ -278,7 +451,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			matchBarC.setName("Stat:");
 			CategoryAxis typeXAxisBarC = new CategoryAxis();
 		    NumberAxis numScaleAxisBarC = new NumberAxis(0, 20, 4);
-		    BarChart<String,Number> matchBCBarC = new BarChart<String,Number>(typeXAxisBarC, numScaleAxisBarC);
+		    matchBCBarC = new BarChart<String,Number>(typeXAxisBarC, numScaleAxisBarC);
 		    typeXAxisBarC.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(matchThings)));
 		    XYChart.Series<String,Number> cyData = new XYChart.Series<String,Number>();
 		    cyData.setName("Cycle Data");
@@ -315,7 +488,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			matchBarC.setName("Stat:");
 			CategoryAxis typeXAxisBarC = new CategoryAxis();
 		    NumberAxis numScaleAxisBarC = new NumberAxis(0, 20, 4);
-		    BarChart<String,Number> matchBCBarC = new BarChart<String,Number>(typeXAxisBarC, numScaleAxisBarC);
+		    matchBCBarC = new BarChart<String,Number>(typeXAxisBarC, numScaleAxisBarC);
 		    typeXAxisBarC.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(matchThings)));
 		    XYChart.Series<String,Number> cyData = new XYChart.Series<String,Number>();
 		    cyData.setName("Cycle Data");
@@ -352,6 +525,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				int selectedTeam = Integer.parseInt(selectedTeamS);
 				System.out.println("Boop31.2");
 				theTeam = theTeamList.getATeam(selectedTeam);
+				selectTeam = theTeam;
 				System.out.println("Boop31.3");
 				this.getChildren().clear();
 				System.out.println("Boop32");
@@ -388,6 +562,17 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				int matchNum = theTeam.getMatchList().listOfMatches.get(0).getMatchNum();
 				addMatchChart(matchNum, theTeam.getTeamNum());
 				addStatChart("Cycle");
+			}
+			if(event.getSource() == statSubB) {
+				this.getChildren().remove(lineChart);
+				String selectedStatS = statListCB.getSelectionModel().getSelectedItem();
+				addStatChart(selectedStatS);
+			}
+			if(event.getSource() == matchSubB) {
+				this.getChildren().remove(matchBCBarC);
+				String selectedMatchS = matchListCB.getSelectionModel().getSelectedItem();
+				int selectedMatch= Integer.parseInt(selectedMatchS);
+				addMatchChart(selectedMatch ,selectTeam.getTeamNum());
 			}
 		} catch(Exception e) {
 			System.out.println("Error: " + e);
