@@ -99,6 +99,9 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				csvClimb = fileTeamList.listOfTeams.get(i).getAvgClimb();
 				csvCommentList = fileTeamList.listOfTeams.get(i).getCommentsList();
 				csvHumPostionsList = fileTeamList.listOfTeams.get(i).getHumanPostionList();
+				if(fileTeamList.listOfTeams.get(i).getHumanPostionList() == null) {
+					System.out.println("boop19.12");
+				}
 				csvHumAmpSkill = fileTeamList.listOfTeams.get(i).getHumAmpSkill();
 				csvHumScoSkill = fileTeamList.listOfTeams.get(i).getHumScoSkill();
 				csvHumAmpNotes = fileTeamList.listOfTeams.get(i).getHumAmpNotes();
@@ -134,11 +137,13 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					    	out.println(csvCommentList.get(e));
 					    	
 					    }
+					    System.out.println("Boop19.23");
 					    if (csvHumPostionsList != null) {
+					    	System.out.println("Boop19.24");
 						    out.println(csvHumPostionsList.size());
-						    for (int e = 0; e < csvHumPostionsList.size(); e++) {
-						    	System.out.println("Boop19.25" + csvHumAmpSkillS);
-						    	out.println(csvHumPostionsList.get(e));
+						    for (int u = 0; u < csvHumPostionsList.size(); u++) {
+						    	System.out.println("Boop19.25" + csvHumPostionsList.get(u));
+						    	out.println(csvHumPostionsList.get(u));
 						    	
 						    }
 					    } else {
@@ -363,14 +368,20 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					fileHumScoSkillT = fileTempTeamList.listOfTempTeams.get(i).getHumScoSkill();
 					fileHumAmpNotesT = fileTempTeamList.listOfTempTeams.get(i).getHumAmpNotes();
 					System.out.println("boop16");
-					humPostionsListT = fileTempTeamList.listOfTempTeams.get(i).getHumanPostionList();
+					if(fileTempTeamList.listOfTempTeams.get(i).getHumanPostionList() == null) {
+						System.out.println("boop16.5");
+					}
+					humPostionsListT = fileTempTeamList.listOfTempTeams.get(i).getHumanPostionList(); 
+					if(humPostionsListT == null) {
+						System.out.println("boop16.6");
+					}
 					System.out.println("boop17");
 					timesHumAmpT = fileTempTeamList.listOfTempTeams.get(i).getTimesHumAmp();
 					timesHumScoT = fileTempTeamList.listOfTempTeams.get(i).getTimesHumSco();
 					System.out.println("boop18");
 					MatchList tempMatchListT = fileTempTeamList.listOfTempTeams.get(i).getMatchList();
 					fileTeamList.addTempTeam(fileTeamNumT, fileCyclesT, fileMatchesT, fileAmpT, fileSpeT, fileTrapT, fileClimbT, commentListT, humPostionsListT, fileHumAmpSkillT, fileHumScoSkillT, fileHumAmpNotesT, timesHumAmpT, timesHumScoT, tempMatchListT);
-					System.out.println("boop19");
+					System.out.println("boop19" + fileTeamList.listOfTeams.get(i).getHumanPostionList().get(0));
 				}
 				this.exportDataToCSV();	
 				fileInput.close();

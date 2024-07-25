@@ -56,6 +56,8 @@ public class Team {
 		addToCommentsList(commentList);
 		System.out.println("boop18.14");
 		// set er's for human player stuff
+		listOfHumPostions = new ArrayList<>();
+		setHumPostionList(tempHumPostionsList);
 		setTimesHumAmp(importTimesHumAmp);
 		setTimesHumSco(importTimesHumSco);
 		System.out.println("boop18.15");
@@ -96,6 +98,8 @@ public class Team {
 		addToCommentsList(commentList);
 		System.out.println("Boop28.23");
 		// set er's for human player stuff
+		listOfHumPostions = new ArrayList<>();
+		setHumPostionList(tempHumPostionsList);
 		setTimesHumAmp(importTimesHumAmp);
 		setTimesHumSco(importTimesHumSco);
 		System.out.println("Boop28.24");
