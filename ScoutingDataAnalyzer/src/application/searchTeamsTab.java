@@ -577,7 +577,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				System.out.println("Boop37");
 				addMatchChart(matchNum, theTeam.getTeamNum());
 				System.out.println("Boop38");
-				addStatChart("Cycle");
+				addStatChart("Cycles");
 				System.out.println("Boop39");
 			}
 			if(event.getSource() == statSubB) {
