@@ -283,8 +283,13 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			}
 			System.out.println("Boop24");
 			fileMatches = Integer.parseInt(fileMatchesS);
-			for(int i = 0; i < fileMatches; i++) {
-				fileHumPostionsList.add(fileInput.next());
+			String posListSizeS = fileInput.next();
+			int posListSize = Integer.parseInt(posListSizeS);
+			System.out.println("Boop24.1 " + fileMatchesS + "" + fileMatches);
+			for(int i = 0; i < posListSize; i++) {
+				String pos = fileInput.next();
+				System.out.println("Boop24.2 " + pos);
+				fileHumPostionsList.add(pos);
 			}
 			System.out.println("Boop25");
 			fileHumAmpSkillS = fileInput.next();

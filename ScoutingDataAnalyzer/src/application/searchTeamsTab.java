@@ -222,6 +222,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	 */
 	private void addStatChart(String stat) {
 		if(stat.compareTo("Cycles") == 0) {
+			System.out.println("Boop got here1");
 			final CategoryAxis xAxis = new CategoryAxis();
 			final NumberAxis yAxis = new NumberAxis();
 			yAxis.setLabel("Cycles");
