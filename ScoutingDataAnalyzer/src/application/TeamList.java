@@ -54,7 +54,7 @@ public class TeamList {
 				teamsSearched++;
 			}
 		}
-		System.out.println("Boop31.29");
+		System.out.println("Boop31.29" + found);
 		return tempT;
 	}
 }

@@ -53,6 +53,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		seTeamsB.setOnAction(this);
 		this.add(seTeamsB, 1, 1);
 		theTeamList = mainTeamList;
+		System.out.println(theTeamList.listOfTeams.get(0).getTeamNum());
 	}
 	
 	private void addComboBoxItems() {
@@ -220,7 +221,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
         lineChart.getData().add(series);
 	 */
 	private void addStatChart(String stat) {
-		if(stat.compareTo("Cycle") == 0) {
+		if(stat.compareTo("Cycles") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
 			final NumberAxis yAxis = new NumberAxis();
 			yAxis.setLabel("Cycles");
@@ -383,20 +384,32 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	}
 	
 	private void addMatchChart(int matchNum, int teamNum) {
+		System.out.println("Boop37.1");
 		Match theMatch = null;
 		int i = 0;
 		int found = 0;
-		int size = theTeamList.listOfTeams.get(teamNum).getMatchList().listOfMatches.size();
+		Team tempT = theTeamList.getATeam(teamNum);
+		System.out.println(theTeamList.getATeam(teamNum));
+		System.out.println("Boop" + tempT);
+		int size = tempT.getMatchList().listOfMatches.size();
+		System.out.println("Boop1" + tempT);
 		while (found == 0 & i < size) {
-			if(theTeamList.listOfTeams.get(teamNum).getMatchList().getAMatch(i).getMatchNum() == matchNum) {
+			System.out.println("Boop2" + tempT);
+			if(tempT.getMatchList().listOfMatches.get(i).getMatchNum() == matchNum) {
+				System.out.println("Boop2.5" + tempT);
 				found = 1;
-				theMatch = theTeamList.listOfTeams.get(teamNum).getMatchList().getAMatch(i);
+				theMatch = tempT.getMatchList().listOfMatches.get(i);
 			} else {
 				i++;
 			}
 		}
+		System.out.println("Boop3" + theMatch);
+		System.out.println("Boop3" + tempT);
+		System.out.println("Boop37.2");
 		String matchPos = theMatch.getMatchHumPos();
+		System.out.println("Boop37.3" + matchPos);
 		if(matchPos.compareTo("Amp") == 0) {
+			System.out.println("Boop37.4");
 			int matchCy = (theMatch.getMatchAmp() + theMatch.getMatchSpe() + theMatch.getMatchTrap());
 			int matchAmp = theMatch.getMatchAmp();
 			int matchSpe = theMatch.getMatchSpe();
@@ -404,7 +417,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			int matchCli = theMatch.getMatchClimb();
 			int matchASk = theMatch.getMatchAmpSkill();
 			int matchAN = theMatch.getMatchAmpNotes();
-			theTeamList.listOfTeams.get(teamNum).getMatchList().getAMatch(i);
+			System.out.println("Boop37.5");
 			String[] matchThings = {"Cycles", "Amp", "Speaker", "Trap", "Climb", "Amp Skill", "Amp Notes"};
 			XYChart.Series<String,Number> matchBarC = new XYChart.Series<String,Number>();
 			matchBarC.setName("Stat:");
@@ -437,6 +450,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    matchBCBarC.setBarGap(5);
 		    matchBCBarC.setMinSize(200, 100);
 		    this.add(matchBCBarC, 2, 2);
+		    System.out.println("Boop37.6");
 		}
 		if(matchPos.compareTo("Scoure") == 0) {
 			int matchCy = (theMatch.getMatchAmp() + theMatch.getMatchSpe() + theMatch.getMatchTrap());
@@ -445,7 +459,6 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			int matchTrap = theMatch.getMatchTrap();
 			int matchCli = theMatch.getMatchClimb();
 			int matchSSk = theMatch.getMatchScoSkill();
-			theTeamList.listOfTeams.get(teamNum).getMatchList().getAMatch(i);
 			String[] matchThings = {"Cycles", "Amp", "Speaker", "Trap", "Climb", "Scoure Skill"};
 			XYChart.Series<String,Number> matchBarC = new XYChart.Series<String,Number>();
 			matchBarC.setName("Stat:");
@@ -482,7 +495,6 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			int matchSpe = theMatch.getMatchSpe();
 			int matchTrap = theMatch.getMatchTrap();
 			int matchCli = theMatch.getMatchClimb();
-			theTeamList.listOfTeams.get(teamNum).getMatchList().getAMatch(i);
 			String[] matchThings = {"Cycles", "Amp", "Speaker", "Trap", "Climb"};
 			XYChart.Series<String,Number> matchBarC = new XYChart.Series<String,Number>();
 			matchBarC.setName("Stat:");
@@ -559,9 +571,13 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				addCharts(theTeam.getTeamNum(), theTeam.getAvgCycles(), theTeam.getAvgAmp(), theTeam.getAvgSpe(), theTeam.getAvgTrap(), theTeam.getAvgClimb(), theTeam.getAvgHumAmpPostion(), theTeam.getAvgHumScoPostion(), theTeam.getHumAmpSkill(), theTeam.getHumScoSkill(), theTeam.getHumAmpNotes(), theTeam.getTimesHumAmp(), theTeam.getTimesHumSco());
 				System.out.println("Boop35");
 				addStatAndMatchCB(theTeam.getTeamNum());
+				System.out.println("Boop36");
 				int matchNum = theTeam.getMatchList().listOfMatches.get(0).getMatchNum();
+				System.out.println("Boop37");
 				addMatchChart(matchNum, theTeam.getTeamNum());
+				System.out.println("Boop38");
 				addStatChart("Cycle");
+				System.out.println("Boop39");
 			}
 			if(event.getSource() == statSubB) {
 				this.getChildren().remove(lineChart);

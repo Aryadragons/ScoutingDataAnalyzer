@@ -137,6 +137,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					    if (csvHumPostionsList != null) {
 						    out.println(csvHumPostionsList.size());
 						    for (int e = 0; e < csvHumPostionsList.size(); e++) {
+						    	System.out.println("Boop19.25" + csvHumAmpSkillS);
 						    	out.println(csvHumPostionsList.get(e));
 						    	
 						    }

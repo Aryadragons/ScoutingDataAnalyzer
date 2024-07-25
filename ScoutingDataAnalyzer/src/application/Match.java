@@ -118,4 +118,7 @@ public class Match {
 		return matchComment;
 	}
 	
+	public String toString() {
+		return ("Match: " + matchNum);
+	}
 }
