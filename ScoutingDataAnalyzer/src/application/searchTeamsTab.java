@@ -450,7 +450,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    matchBCBarC.getData().addAll(cyData, ampData, speData, trapData, cliData, ampSkData, ampNData);
 		    matchBCBarC.setBarGap(5);
 		    matchBCBarC.setMinSize(200, 100);
-		    this.add(matchBCBarC, 2, 2);
+		    this.add(matchBCBarC, 2, 1);
 		    System.out.println("Boop37.6");
 		}
 		if(matchPos.compareTo("Scoure") == 0) {
@@ -488,7 +488,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    matchBCBarC.getData().addAll(cyData, ampData, speData, trapData, cliData, scoSkData);
 		    matchBCBarC.setBarGap(5);
 		    matchBCBarC.setMinSize(200, 100);
-		    this.add(matchBCBarC, 2, 2);
+		    this.add(matchBCBarC, 2, 1);
 		}
 		if(matchPos.compareTo("None") == 0) {
 			int matchCy = (theMatch.getMatchAmp() + theMatch.getMatchSpe() + theMatch.getMatchTrap());
@@ -521,7 +521,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    matchBCBarC.getData().addAll(cyData, ampData, speData, trapData, cliData);
 		    matchBCBarC.setBarGap(5);
 		    matchBCBarC.setMinSize(200, 100);
-		    this.add(matchBCBarC, 2, 2);
+		    this.add(matchBCBarC, 2, 1);
 		}
 	}
 	
