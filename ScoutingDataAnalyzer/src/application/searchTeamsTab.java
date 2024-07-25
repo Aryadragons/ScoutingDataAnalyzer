@@ -36,6 +36,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	private List<Integer> listOfTeamNums;
 	private ComboBox<String> statListCB;
 	private ComboBox<String> matchListCB;
+	private Button statMatchSubB;
 	
 	public searchTeamsTab(TeamList mainTeamList, List<Integer> importedListOfTeamNums) {
 		this.add(new Label("Select Team to Look Up"), 0, 0);
@@ -70,6 +71,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		statListCB.getItems().add("Amp Skill");
 		statListCB.getItems().add("Scource Skill");
 		statListCB.getItems().add("Amp Notes");
+		this.add(statListCB, 2, 0);
 		//Match CB
 		matchListCB = new ComboBox<String>();
 		MatchList teamML = theTeamList.getATeam(teamNum).getMatchList();
@@ -79,6 +81,11 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			String mNumS = Integer.toString(mNum);
 			matchListCB.getItems().add(mNumS);
 		}
+		this.add(matchListCB, 3, 0);
+		//adding button
+		statMatchSubB = new Button("Submit");
+		statMatchSubB.setOnAction(this);
+		this.add(statMatchSubB, 4, 0);
 	}
 	
 	private void addCharts(int team, double avgCy, double avgAmp, double avgSpe, double avgTrap, double avgCli, double avgHumAmpPostion, double avgHumScoPostion, double avgHumAmpSkill, double avgHumScoSkill, double avgHumAmpNotes, int timesAmp, int timesSco) {
@@ -176,11 +183,160 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	}
 	
 	private void addStatChart(String stat) {
-		
+		if(stat.compareTo("Cycle") == 0) {
+			
+		}
+		if(stat.compareTo("Cycle") == 0) {
+					
+				}
+		if(stat.compareTo("Cycle") == 0) {
+			
+		}
+		if(stat.compareTo("Cycle") == 0) {
+			
+		}
+		if(stat.compareTo("Cycle") == 0) {
+			
+		}
+		if(stat.compareTo("Cycle") == 0) {
+			
+		}
+		if(stat.compareTo("Cycle") == 0) {
+			
+		}
+		if(stat.compareTo("Cycle") == 0) {
+			
+		}
 	}
 	
-	private void addMatchChart(int Match) {
-		
+	private void addMatchChart(int matchNum, int teamNum) {
+		Match theMatch = null;
+		int i = 0;
+		int found = 0;
+		int size = theTeamList.listOfTeams.get(teamNum).getMatchList().listOfMatches.size();
+		while (found == 0 & i < size) {
+			if(theTeamList.listOfTeams.get(teamNum).getMatchList().getAMatch(i).getMatchNum() == matchNum) {
+				found = 1;
+				theMatch = theTeamList.listOfTeams.get(teamNum).getMatchList().getAMatch(i);
+			} else {
+				i++;
+			}
+		}
+		String matchPos = theMatch.getMatchHumPos();
+		if(matchPos.compareTo("Amp") == 0) {
+			int matchCy = (theMatch.getMatchAmp() + theMatch.getMatchSpe() + theMatch.getMatchTrap());
+			int matchAmp = theMatch.getMatchAmp();
+			int matchSpe = theMatch.getMatchSpe();
+			int matchTrap = theMatch.getMatchTrap();
+			int matchCli = theMatch.getMatchClimb();
+			int matchASk = theMatch.getMatchAmpSkill();
+			int matchAN = theMatch.getMatchAmpNotes();
+			theTeamList.listOfTeams.get(teamNum).getMatchList().getAMatch(i);
+			String[] matchThings = {"Cycles", "Amp", "Speaker", "Trap", "Climb", "Amp Skill", "Amp Notes"};
+			XYChart.Series<String,Number> matchBarC = new XYChart.Series<String,Number>();
+			matchBarC.setName("Stat:");
+			CategoryAxis typeXAxisBarC = new CategoryAxis();
+		    NumberAxis numScaleAxisBarC = new NumberAxis(0, 20, 4);
+		    BarChart<String,Number> matchBCBarC = new BarChart<String,Number>(typeXAxisBarC, numScaleAxisBarC);
+		    typeXAxisBarC.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(matchThings)));
+		    XYChart.Series<String,Number> cyData = new XYChart.Series<String,Number>();
+		    cyData.setName("Cycle Data");
+		    cyData.getData().add(new XYChart.Data<String,Number>("Cycles", matchCy));
+		    XYChart.Series<String,Number> ampData = new XYChart.Series<String,Number>();
+		    ampData.setName("Amp Data");
+		    ampData.getData().add(new XYChart.Data<String,Number>("Amp", matchAmp));
+		    XYChart.Series<String,Number> speData = new XYChart.Series<String,Number>();
+		    speData.setName("Speaker Data");
+		    speData.getData().add(new XYChart.Data<String,Number>("Speaker", matchSpe));
+		    XYChart.Series<String,Number> trapData = new XYChart.Series<String,Number>();
+		    trapData.setName("Trap Data");
+		    trapData.getData().add(new XYChart.Data<String,Number>("Trap", matchTrap));
+		    XYChart.Series<String,Number> cliData = new XYChart.Series<String,Number>();
+		    cliData.setName("Climb Data");
+		    cliData.getData().add(new XYChart.Data<String,Number>("Climb", matchCli));
+		    XYChart.Series<String,Number> ampSkData = new XYChart.Series<String,Number>();
+		    ampSkData.setName("Amp Skill Data");
+		    ampSkData.getData().add(new XYChart.Data<String,Number>("Climb", matchASk));
+		    XYChart.Series<String,Number> ampNData = new XYChart.Series<String,Number>();
+		    ampNData.setName("Amp Notes Data");
+		    ampNData.getData().add(new XYChart.Data<String,Number>("Climb", matchAN));
+		    matchBCBarC.getData().addAll(cyData, ampData, speData, trapData, cliData, ampSkData, ampNData);
+		    matchBCBarC.setBarGap(5);
+		    matchBCBarC.setMinSize(200, 100);
+		    this.add(matchBCBarC, 2, 2);
+		}
+		if(matchPos.compareTo("Scoure") == 0) {
+			int matchCy = (theMatch.getMatchAmp() + theMatch.getMatchSpe() + theMatch.getMatchTrap());
+			int matchAmp = theMatch.getMatchAmp();
+			int matchSpe = theMatch.getMatchSpe();
+			int matchTrap = theMatch.getMatchTrap();
+			int matchCli = theMatch.getMatchClimb();
+			int matchSSk = theMatch.getMatchScoSkill();
+			theTeamList.listOfTeams.get(teamNum).getMatchList().getAMatch(i);
+			String[] matchThings = {"Cycles", "Amp", "Speaker", "Trap", "Climb", "Scoure Skill"};
+			XYChart.Series<String,Number> matchBarC = new XYChart.Series<String,Number>();
+			matchBarC.setName("Stat:");
+			CategoryAxis typeXAxisBarC = new CategoryAxis();
+		    NumberAxis numScaleAxisBarC = new NumberAxis(0, 20, 4);
+		    BarChart<String,Number> matchBCBarC = new BarChart<String,Number>(typeXAxisBarC, numScaleAxisBarC);
+		    typeXAxisBarC.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(matchThings)));
+		    XYChart.Series<String,Number> cyData = new XYChart.Series<String,Number>();
+		    cyData.setName("Cycle Data");
+		    cyData.getData().add(new XYChart.Data<String,Number>("Cycles", matchCy));
+		    XYChart.Series<String,Number> ampData = new XYChart.Series<String,Number>();
+		    ampData.setName("Amp Data");
+		    ampData.getData().add(new XYChart.Data<String,Number>("Amp", matchAmp));
+		    XYChart.Series<String,Number> speData = new XYChart.Series<String,Number>();
+		    speData.setName("Speaker Data");
+		    speData.getData().add(new XYChart.Data<String,Number>("Speaker", matchSpe));
+		    XYChart.Series<String,Number> trapData = new XYChart.Series<String,Number>();
+		    trapData.setName("Trap Data");
+		    trapData.getData().add(new XYChart.Data<String,Number>("Trap", matchTrap));
+		    XYChart.Series<String,Number> cliData = new XYChart.Series<String,Number>();
+		    cliData.setName("Climb Data");
+		    cliData.getData().add(new XYChart.Data<String,Number>("Climb", matchCli));
+		    XYChart.Series<String,Number> scoSkData = new XYChart.Series<String,Number>();
+		    scoSkData.setName("Amp Skill Data");
+		    scoSkData.getData().add(new XYChart.Data<String,Number>("Climb", matchSSk));
+		    matchBCBarC.getData().addAll(cyData, ampData, speData, trapData, cliData, scoSkData);
+		    matchBCBarC.setBarGap(5);
+		    matchBCBarC.setMinSize(200, 100);
+		    this.add(matchBCBarC, 2, 2);
+		}
+		if(matchPos.compareTo("None") == 0) {
+			int matchCy = (theMatch.getMatchAmp() + theMatch.getMatchSpe() + theMatch.getMatchTrap());
+			int matchAmp = theMatch.getMatchAmp();
+			int matchSpe = theMatch.getMatchSpe();
+			int matchTrap = theMatch.getMatchTrap();
+			int matchCli = theMatch.getMatchClimb();
+			theTeamList.listOfTeams.get(teamNum).getMatchList().getAMatch(i);
+			String[] matchThings = {"Cycles", "Amp", "Speaker", "Trap", "Climb"};
+			XYChart.Series<String,Number> matchBarC = new XYChart.Series<String,Number>();
+			matchBarC.setName("Stat:");
+			CategoryAxis typeXAxisBarC = new CategoryAxis();
+		    NumberAxis numScaleAxisBarC = new NumberAxis(0, 20, 4);
+		    BarChart<String,Number> matchBCBarC = new BarChart<String,Number>(typeXAxisBarC, numScaleAxisBarC);
+		    typeXAxisBarC.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(matchThings)));
+		    XYChart.Series<String,Number> cyData = new XYChart.Series<String,Number>();
+		    cyData.setName("Cycle Data");
+		    cyData.getData().add(new XYChart.Data<String,Number>("Cycles", matchCy));
+		    XYChart.Series<String,Number> ampData = new XYChart.Series<String,Number>();
+		    ampData.setName("Amp Data");
+		    ampData.getData().add(new XYChart.Data<String,Number>("Amp", matchAmp));
+		    XYChart.Series<String,Number> speData = new XYChart.Series<String,Number>();
+		    speData.setName("Speaker Data");
+		    speData.getData().add(new XYChart.Data<String,Number>("Speaker", matchSpe));
+		    XYChart.Series<String,Number> trapData = new XYChart.Series<String,Number>();
+		    trapData.setName("Trap Data");
+		    trapData.getData().add(new XYChart.Data<String,Number>("Trap", matchTrap));
+		    XYChart.Series<String,Number> cliData = new XYChart.Series<String,Number>();
+		    cliData.setName("Climb Data");
+		    cliData.getData().add(new XYChart.Data<String,Number>("Climb", matchCli));
+		    matchBCBarC.getData().addAll(cyData, ampData, speData, trapData, cliData);
+		    matchBCBarC.setBarGap(5);
+		    matchBCBarC.setMinSize(200, 100);
+		    this.add(matchBCBarC, 2, 2);
+		}
 	}
 	
 	@Override
@@ -228,6 +384,10 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			    System.out.println(theTeam.getTimesHumSco());
 				addCharts(theTeam.getTeamNum(), theTeam.getAvgCycles(), theTeam.getAvgAmp(), theTeam.getAvgSpe(), theTeam.getAvgTrap(), theTeam.getAvgClimb(), theTeam.getAvgHumAmpPostion(), theTeam.getAvgHumScoPostion(), theTeam.getHumAmpSkill(), theTeam.getHumScoSkill(), theTeam.getHumAmpNotes(), theTeam.getTimesHumAmp(), theTeam.getTimesHumSco());
 				System.out.println("Boop35");
+				addStatAndMatchCB(theTeam.getTeamNum());
+				int matchNum = theTeam.getMatchList().listOfMatches.get(0).getMatchNum();
+				addMatchChart(matchNum, theTeam.getTeamNum());
+				addStatChart("Cycle");
 			}
 		} catch(Exception e) {
 			System.out.println("Error: " + e);

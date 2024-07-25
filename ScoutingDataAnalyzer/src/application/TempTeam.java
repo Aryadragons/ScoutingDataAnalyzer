@@ -19,7 +19,7 @@ public class TempTeam {
 	private int timesHumAmp = 0;
 	private int timesHumSco = 0;
 	private List<String> listOfHumPostions = new ArrayList<>();
-	private MatchList theMatchList;
+	private MatchList theMatchList = new MatchList();
 	
 	TempTeam(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, String comment, String tempHumPostion, int tempHumAmpSkill, int tempHumScoSkill, int tempHumAmpNotes, Match importMatch){
 		System.out.println("boop5");

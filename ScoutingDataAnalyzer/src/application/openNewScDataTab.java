@@ -87,6 +87,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 			int csvTimesHumAmp;
 			int csvTimesHumSco;
 			MatchList csvMatchList;
+			System.out.println("boop19.1");
 			new FileWriter("MainScoutingDataFiles.txt", false).close();
 			for(int i = 0; i < fileTeamList.listOfTeams.size(); i++) {
 				csvTeamNum = fileTeamList.listOfTeams.get(i).getTeamNum();
@@ -116,7 +117,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				csvHumAmpNotesS= Double.toString(csvHumAmpNotes);
 				csvTimesHumAmpS= Integer.toString(csvTimesHumAmp);
 				csvTimesHumScoS= Integer.toString(csvTimesHumSco);
-				
+				System.out.println("boop19.2");
 				FileWriter fw = new FileWriter("MainScoutingDataFiles.txt", true);
 					    BufferedWriter bw = new BufferedWriter(fw);
 					    PrintWriter out = new PrintWriter(bw);
@@ -143,15 +144,19 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					    	out.println("0");
 					    }
 					    System.out.println(csvHumAmpSkillS);
+					    System.out.println("boop19.3");
 					    out.println(csvHumAmpSkillS);
 					    out.println(csvHumScoSkillS);
 					    out.println(csvHumAmpNotesS);
 					    out.println(csvTimesHumAmpS);
 					    out.println(csvTimesHumScoS);
+					    System.out.println("boop19.4");
 					    int MLSize = csvMatchList.listOfMatches.size();
 					    out.println(MLSize);
+					    System.out.println("boop19.5" + MLSize);
 					    for(int e = 0; e < MLSize; e++ ) {
-					    	Match tempM = csvMatchList.listOfMatches.get(i);
+					    	System.out.println("boop19.6" + csvTeamNum);
+					    	Match tempM = csvMatchList.listOfMatches.get(e);
 					    	int MTeamNum = tempM.getMatchTeamNum();
 					    	int MMatchNum = tempM.getMatchNum();
 					    	int MAmp = tempM.getMatchAmp();
@@ -164,6 +169,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					    	int MAmpNotes = tempM.getMatchAmpNotes();
 					    	String MCommentS = tempM.getMatchComment();
 					    	//convert to strings
+					    	System.out.println("boop19.7");
 					    	String MTeamNumS = Integer.toString(MTeamNum);
 					    	String MMatchNumS = Integer.toString(MMatchNum);
 					    	String MAmpS = Integer.toString(MAmp);
@@ -173,6 +179,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					    	String MAmpSkillS = Integer.toString(MAmpSkill);
 					    	String MScoSkillS = Integer.toString(MScoSkill);
 					    	String MAmpNotesS = Integer.toString(MAmpNotes);
+					    	System.out.println("boop19.8");
 					    	out.println(MTeamNumS);
 					    	out.println(MMatchNumS);
 					    	out.println(MAmpS);
@@ -184,6 +191,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					    	out.println(MScoSkillS);
 					    	out.println(MAmpNotesS);
 					    	out.println(MCommentS);
+					    	System.out.println("boop19.9");
 					    }
 					    out.close();
 			}
