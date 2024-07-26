@@ -17,3 +17,12 @@
 	-fx-tab-min-width: 1400;
 	-fx-tab-min-height: 400;
 }
+.bar-chart{
+	-fx-category-gap: 1;
+}
+.axis-tick-mark{
+	-fx-tick-label-fill: rgb(219,178,255);
+}
+#Axis{
+	-fx-tick-label-fill: rgb(219,178,255);
+}

@@ -22,6 +22,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 
 public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent>{
 	private ComboBox<String> teamListCB;
@@ -42,6 +44,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	private Team selectTeam;
 	private BarChart<String,Number> matchBCBarC;
 	private LineChart<String,Number> lineChart;
+	private Color lightPurC = Color.web("rgb(219,178,255)");
 	
 	public searchTeamsTab(TeamList mainTeamList, List<Integer> importedListOfTeamNums) {
 		this.add(new Label("Select Team to Look Up"), 0, 0);
@@ -104,6 +107,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		avgBarC.setName("Avg:");
 		CategoryAxis typeXAxisBarC = new CategoryAxis();
 	    NumberAxis numScaleAxisBarC = new NumberAxis(0, 20, 4);
+	    typeXAxisBarC.setTickLabelFill(lightPurC);
+	    numScaleAxisBarC.setTickLabelFill(lightPurC);
 	    BarChart<String,Number> avgBCBarC = new BarChart<String,Number>(typeXAxisBarC, numScaleAxisBarC);
 	    typeXAxisBarC.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(avgThings)));
 	    XYChart.Series<String,Number> cyData = new XYChart.Series<String,Number>();
@@ -147,6 +152,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		} else {
 			numScaleAxisHumBarC = new NumberAxis(0, 4, 2);
 		}
+		typeXAxisHumBarC.setTickLabelFill(lightPurC);
+		numScaleAxisHumBarC.setTickLabelFill(lightPurC);
 		BarChart<String,Number> humBCBarC = new BarChart<String,Number>(typeXAxisHumBarC, numScaleAxisHumBarC);
 		typeXAxisBarC.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(avgThings)));
 		XYChart.Series<String,Number> timesAmpData = new XYChart.Series<String,Number>();
@@ -227,6 +234,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			final NumberAxis yAxis = new NumberAxis();
 			yAxis.setLabel("Cycles");
 			xAxis.setLabel("Match");
+			xAxis.setTickLabelFill(lightPurC);
+			yAxis.setTickLabelFill(lightPurC);
 			lineChart = new LineChart<String,Number>(xAxis,yAxis);
 			lineChart.setTitle("Cycles over Match");
 			XYChart.Series series = new XYChart.Series();
@@ -247,6 +256,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			final NumberAxis yAxis = new NumberAxis();
 			yAxis.setLabel("Amps");
 			xAxis.setLabel("Match");
+			xAxis.setTickLabelFill(lightPurC);
+			yAxis.setTickLabelFill(lightPurC);
 			lineChart = new LineChart<String,Number>(xAxis,yAxis);
 			lineChart.setTitle("Amps over Match");
 			XYChart.Series series = new XYChart.Series();
@@ -267,6 +278,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			final NumberAxis yAxis = new NumberAxis();
 			yAxis.setLabel("Speckers");
 			xAxis.setLabel("Match");
+			xAxis.setTickLabelFill(lightPurC);
+			yAxis.setTickLabelFill(lightPurC);
 			lineChart = new LineChart<String,Number>(xAxis,yAxis);
 			lineChart.setTitle("Speckers over Match");
 			XYChart.Series series = new XYChart.Series();
@@ -287,6 +300,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			final NumberAxis yAxis = new NumberAxis();
 			yAxis.setLabel("Traps");
 			xAxis.setLabel("Match");
+			xAxis.setTickLabelFill(lightPurC);
+			yAxis.setTickLabelFill(lightPurC);
 			lineChart = new LineChart<String,Number>(xAxis,yAxis);
 			lineChart.setTitle("Traps over Match");
 			XYChart.Series series = new XYChart.Series();
@@ -307,6 +322,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			final NumberAxis yAxis = new NumberAxis();
 			yAxis.setLabel("Climbs");
 			xAxis.setLabel("Match");
+			xAxis.setTickLabelFill(lightPurC);
+			yAxis.setTickLabelFill(lightPurC);
 			lineChart = new LineChart<String,Number>(xAxis,yAxis);
 			lineChart.setTitle("Climbs over Match");
 			XYChart.Series series = new XYChart.Series();
@@ -327,6 +344,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			final NumberAxis yAxis = new NumberAxis();
 			yAxis.setLabel("Amp Skill");
 			xAxis.setLabel("Match");
+			xAxis.setTickLabelFill(lightPurC);
+			yAxis.setTickLabelFill(lightPurC);
 			lineChart = new LineChart<String,Number>(xAxis,yAxis);
 			lineChart.setTitle("Amp Skill over Match");
 			XYChart.Series series = new XYChart.Series();
@@ -347,6 +366,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			final NumberAxis yAxis = new NumberAxis();
 			yAxis.setLabel("Scoure Skill");
 			xAxis.setLabel("Match");
+			xAxis.setTickLabelFill(lightPurC);
+			yAxis.setTickLabelFill(lightPurC);
 			lineChart = new LineChart<String,Number>(xAxis,yAxis);
 			lineChart.setTitle("Scoure Skill over Match");
 			XYChart.Series series = new XYChart.Series();
@@ -367,6 +388,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			final NumberAxis yAxis = new NumberAxis();
 			yAxis.setLabel("Amp Notes");
 			xAxis.setLabel("Match");
+			xAxis.setTickLabelFill(lightPurC);
+			yAxis.setTickLabelFill(lightPurC);
 			lineChart = new LineChart<String,Number>(xAxis,yAxis);
 			lineChart.setTitle("AmpNotes over Match");
 			XYChart.Series series = new XYChart.Series();
@@ -426,6 +449,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    NumberAxis numScaleAxisBarC = new NumberAxis(0, 20, 4);
 		    matchBCBarC = new BarChart<String,Number>(typeXAxisBarC, numScaleAxisBarC);
 		    typeXAxisBarC.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(matchThings)));
+		    typeXAxisBarC.setTickLabelFill(lightPurC);
+		    numScaleAxisBarC.setTickLabelFill(lightPurC);
 		    XYChart.Series<String,Number> cyData = new XYChart.Series<String,Number>();
 		    cyData.setName("Cycle Data");
 		    cyData.getData().add(new XYChart.Data<String,Number>("Cycles", matchCy));
@@ -443,12 +468,12 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    cliData.getData().add(new XYChart.Data<String,Number>("Climb", matchCli));
 		    XYChart.Series<String,Number> ampSkData = new XYChart.Series<String,Number>();
 		    ampSkData.setName("Amp Skill Data");
-		    ampSkData.getData().add(new XYChart.Data<String,Number>("Climb", matchASk));
+		    ampSkData.getData().add(new XYChart.Data<String,Number>("Amp Skill", matchASk));
 		    XYChart.Series<String,Number> ampNData = new XYChart.Series<String,Number>();
 		    ampNData.setName("Amp Notes Data");
-		    ampNData.getData().add(new XYChart.Data<String,Number>("Climb", matchAN));
+		    ampNData.getData().add(new XYChart.Data<String,Number>("Amp Notes", matchAN));
 		    matchBCBarC.getData().addAll(cyData, ampData, speData, trapData, cliData, ampSkData, ampNData);
-		    matchBCBarC.setBarGap(5);
+		    matchBCBarC.setBarGap(2);
 		    matchBCBarC.setMinSize(200, 100);
 		    this.add(matchBCBarC, 2, 1);
 		    System.out.println("Boop37.6");
@@ -467,6 +492,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    NumberAxis numScaleAxisBarC = new NumberAxis(0, 20, 4);
 		    matchBCBarC = new BarChart<String,Number>(typeXAxisBarC, numScaleAxisBarC);
 		    typeXAxisBarC.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(matchThings)));
+		    typeXAxisBarC.setTickLabelFill(lightPurC);
+		    numScaleAxisBarC.setTickLabelFill(lightPurC);
 		    XYChart.Series<String,Number> cyData = new XYChart.Series<String,Number>();
 		    cyData.setName("Cycle Data");
 		    cyData.getData().add(new XYChart.Data<String,Number>("Cycles", matchCy));
@@ -484,9 +511,9 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    cliData.getData().add(new XYChart.Data<String,Number>("Climb", matchCli));
 		    XYChart.Series<String,Number> scoSkData = new XYChart.Series<String,Number>();
 		    scoSkData.setName("Amp Skill Data");
-		    scoSkData.getData().add(new XYChart.Data<String,Number>("Climb", matchSSk));
+		    scoSkData.getData().add(new XYChart.Data<String,Number>("Scoure Skill", matchSSk));
 		    matchBCBarC.getData().addAll(cyData, ampData, speData, trapData, cliData, scoSkData);
-		    matchBCBarC.setBarGap(5);
+		    matchBCBarC.setBarGap(2);
 		    matchBCBarC.setMinSize(200, 100);
 		    this.add(matchBCBarC, 2, 1);
 		}
@@ -503,6 +530,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    NumberAxis numScaleAxisBarC = new NumberAxis(0, 20, 4);
 		    matchBCBarC = new BarChart<String,Number>(typeXAxisBarC, numScaleAxisBarC);
 		    typeXAxisBarC.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(matchThings)));
+		    typeXAxisBarC.setTickLabelFill(lightPurC);
+		    numScaleAxisBarC.setTickLabelFill(lightPurC);
 		    XYChart.Series<String,Number> cyData = new XYChart.Series<String,Number>();
 		    cyData.setName("Cycle Data");
 		    cyData.getData().add(new XYChart.Data<String,Number>("Cycles", matchCy));
@@ -519,7 +548,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    cliData.setName("Climb Data");
 		    cliData.getData().add(new XYChart.Data<String,Number>("Climb", matchCli));
 		    matchBCBarC.getData().addAll(cyData, ampData, speData, trapData, cliData);
-		    matchBCBarC.setBarGap(5);
+		    matchBCBarC.setBarGap(2);
 		    matchBCBarC.setMinSize(200, 100);
 		    this.add(matchBCBarC, 2, 1);
 		}
