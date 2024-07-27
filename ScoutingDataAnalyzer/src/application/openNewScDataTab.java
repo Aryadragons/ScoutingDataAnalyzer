@@ -220,8 +220,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					fileNameReTF.setText(fileChosen.toString());
 				}
 			}
-			if(event.getSource() == goForReplaceB) {
-				fileTempTeamList.clearTempTeamList();
+			if(event.getSource() == goForAddB) {
 				FileChooser chooser = new FileChooser();
 				File fileChosen = chooser.showOpenDialog(null);
 				if (fileChosen != null) {
