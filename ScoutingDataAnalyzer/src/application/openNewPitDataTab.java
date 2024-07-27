@@ -20,8 +20,10 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 	private TextField fileNameReTF;
 	private TextField fileNameAddTF;
 	private Scanner fileInput;
+	private TeamPitsList fileTPL;
 	
 	public openNewPitDataTab() {
+		fileTPL = new TeamPitsList();
 		this.add(new Label("Open New Data That Will Replace All Pit Data"), 0, 0);
 		this.add(new Label("Choosen File Name"), 0, 1);
 		fileNameReTF = new TextField();
@@ -62,7 +64,133 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 	}
 	
 	public void readInPitDataFile() {
-		
+		String teamNumS;
+		String teamNameS;
+		String numOfStudS;
+		String numOfMentS;
+		String numOfRobotBatS;
+		String programLanS;
+		String doHaveVisS;
+		String numOfVisCamS;
+		String numOfDriverCamsS;
+		String drTrTypeS;
+		String swevTypeS;
+		String swevGearingS;
+		String drTrMotorTypeS;
+		String teamNumSTrue;
+		String teamNameSTrue;
+		String numOfStudSTrue;
+		String numOfMentSTrue;
+		String numOfRobotBatSTrue;
+		String programLanSTrue;
+		String doHaveVisSTrue;
+		String numOfVisCamSTrue;
+		String numOfDriverCamsSTrue;
+		String drTrTypeSTrue;
+		String swevTypeSTrue;
+		String swevGearingSTrue;
+		String drTrMotorTypeSTrue;
+		int teamNum;
+		int numOfStud;
+		int numOfMent;
+		int numOfRobotBat;
+		int numOfVisCam;
+		int numOfDriverCams;
+		while(fileInput.hasNextLine()) {
+			teamNumS = fileInput.next();
+			teamNameS = fileInput.next();
+			numOfStudS = fileInput.next();
+			numOfMentS = fileInput.next();
+			numOfRobotBatS = fileInput.next();
+			programLanS = fileInput.next();
+			doHaveVisS = fileInput.next();
+			numOfVisCamS = fileInput.next();
+			numOfDriverCamsS = fileInput.next();
+			drTrTypeS = fileInput.next();
+			swevTypeS = fileInput.next();
+			swevGearingS = fileInput.next();
+			drTrMotorTypeS = fileInput.next();
+			//detleing ""s
+			int lengthOfTeamNum = teamNumS.length() - 1;
+			teamNumSTrue = teamNumS.substring(1, lengthOfTeamNum);
+			int lengthOfTeamName = teamNameS.length() - 1;
+			teamNameSTrue = teamNameS.substring(1, lengthOfTeamName);
+			int lengthOfNumOfStud = numOfStudS.length() - 1;
+			numOfStudSTrue = numOfStudS.substring(1, lengthOfNumOfStud);
+			int lengthOfNumOfMent = numOfMentS.length() - 1;
+			numOfMentSTrue = numOfMentS.substring(1, lengthOfNumOfMent);
+			int lengthOfNumOfRobotBat = numOfRobotBatS.length() - 1;
+			numOfRobotBatSTrue = numOfRobotBatS.substring(1, lengthOfNumOfRobotBat);
+			int lengthOfProgramLan = programLanS.length() - 1;
+			programLanSTrue = programLanS.substring(1, lengthOfProgramLan);
+			int lengthOfDoHaveVis = doHaveVisS.length() - 1;
+			doHaveVisSTrue = doHaveVisS.substring(1, lengthOfDoHaveVis);
+			int lengthOfNumOfVisCam = numOfVisCamS.length() - 1;
+			numOfVisCamSTrue = numOfVisCamS.substring(1, lengthOfNumOfVisCam);
+			int lengthOfNumOfDriverCams = numOfDriverCamsS.length() - 1;
+			numOfDriverCamsSTrue = numOfDriverCamsS.substring(1, lengthOfNumOfDriverCams);
+			int lengthOfDrTrTypeS = drTrTypeS.length() - 1;
+			drTrTypeSTrue = drTrTypeS.substring(1, lengthOfDrTrTypeS);
+			int lengthOfSwevType = swevTypeS.length() - 1;
+			swevTypeSTrue = swevTypeS.substring(1, lengthOfSwevType);
+			int lengthOfSwevGearing = swevGearingS.length() - 1;
+			swevGearingSTrue = swevGearingS.substring(1, lengthOfSwevGearing);
+			int lengthOfDrTrMotorType =drTrMotorTypeS.length() - 1;
+			drTrMotorTypeSTrue = drTrMotorTypeS.substring(1, lengthOfDrTrMotorType);
+			// making ints, ints
+			teamNum = Integer.parseInt(teamNumSTrue);
+			numOfStud = Integer.parseInt(numOfStudSTrue);
+			numOfMent = Integer.parseInt(numOfMentSTrue);
+			numOfRobotBat = Integer.parseInt(numOfRobotBatSTrue);
+			numOfVisCam = Integer.parseInt(numOfVisCamSTrue);
+			numOfDriverCams = Integer.parseInt(numOfDriverCamsSTrue);
+			// adding to team pits list
+			fileTPL.addTeamPit(teamNum, teamNameSTrue, numOfStud, numOfMent, numOfRobotBat, programLanSTrue, doHaveVisSTrue, numOfVisCam, numOfDriverCams, drTrTypeSTrue, swevTypeSTrue, swevGearingSTrue, drTrMotorTypeSTrue);
+		}
+	}
+	
+	public void exportPitData() {
+		int teamNum;
+		int numOfStud;
+		int numOfMent;
+		int numOfRobotBat;
+		int numOfVisCam;
+		int numOfDriverCams;
+		String teamNumS;
+		String teamNameS;
+		String numOfStudS;
+		String numOfMentS;
+		String numOfRobotBatS;
+		String programLanS;
+		String doHaveVisS;
+		String numOfVisCamS;
+		String numOfDriverCamsS;
+		String drTrTypeS;
+		String swevTypeS;
+		String swevGearingS;
+		String drTrMotorTypeS;
+		for(int i = 0; i < fileTPL.listOfTeamPits.size(); i++) {
+			// setting variables
+			teamNum = fileTPL.listOfTeamPits.get(i).getTeamNum();
+			numOfStud = fileTPL.listOfTeamPits.get(i).getNumOfStud();
+			numOfMent = fileTPL.listOfTeamPits.get(i).getNumOfMent();
+			numOfRobotBat = fileTPL.listOfTeamPits.get(i).getNumOfRobotBat();
+			numOfVisCam = fileTPL.listOfTeamPits.get(i).getNumOfVisCam();
+			numOfDriverCams = fileTPL.listOfTeamPits.get(i).getNumOfDriverCams();
+			teamNumS = Integer.toString(teamNum);
+			teamNameS = fileTPL.listOfTeamPits.get(i).getTeamName();
+			numOfStudS = Integer.toString(numOfStud);
+			numOfMentS = Integer.toString(numOfMent);
+			numOfRobotBatS = Integer.toString(numOfRobotBat);
+			programLanS = fileTPL.listOfTeamPits.get(i).getProgramLan();
+			doHaveVisS = fileTPL.listOfTeamPits.get(i).getDoHaveVis();
+			numOfVisCamS = Integer.toString(numOfVisCam);
+			numOfDriverCamsS = Integer.toString(numOfDriverCams);
+			drTrTypeS = fileTPL.listOfTeamPits.get(i).getDrTrType();
+			swevTypeS = fileTPL.listOfTeamPits.get(i).getSwevType();
+			swevGearingS = fileTPL.listOfTeamPits.get(i).getSwevGearing();
+			drTrMotorTypeS = fileTPL.listOfTeamPits.get(i).getDrTrMotorType();
+		}
 	}
 	
 	@Override

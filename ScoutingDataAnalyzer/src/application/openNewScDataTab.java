@@ -478,7 +478,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					} else {
 						fileCommentSTrue = fileCommentS.substring(1, lengthOfFileComment);
 					}
-					fileTeamNum = Integer.parseInt(fileTeamNumS);
+					fileTeamNum = Integer.parseInt(fileTeamNumSTrue);
 					fileMatchNum = Integer.parseInt(fileMatchNumSTrue);
 					fileAmp = Integer.parseInt(fileAmpSTrue);
 					fileSpe = Integer.parseInt(fileSpeSTrue);
