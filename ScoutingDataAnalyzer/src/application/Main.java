@@ -419,7 +419,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	}
 	
 	private void makeSearchTeams() {
-		searchTeamsTab seTeams = new searchTeamsTab(mainTeamList, listOfTeamNumsSorted);
+		searchTeamsTab seTeams = new searchTeamsTab(mainTeamList, listOfTeamNumsSorted, fileTPL);
 		seTeams.setId("seTeamsStyle");
 		seTeams.setMinHeight(600);
 		seTeams.setMinWidth(1400);

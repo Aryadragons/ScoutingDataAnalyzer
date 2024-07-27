@@ -31,6 +31,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	private ComboBox<String> teamListCB;
 	private Button seTeamsB;
 	private TeamList theTeamList;
+	private TeamPitsList theTeamPitList;
 	private TextField avgCyclesTF;
 	private TextField avgAmpTF;
 	private TextField avgSpeTF;
@@ -47,8 +48,9 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	private BarChart<String,Number> matchBCBarC;
 	private LineChart<String,Number> lineChart;
 	private Color lightPurC = Color.web("rgb(219,178,255)");
+	private Color midPurC = Color.web("rgb(170,0,255)");
 	
-	public searchTeamsTab(TeamList mainTeamList, List<Integer> importedListOfTeamNums) {
+	public searchTeamsTab(TeamList mainTeamList, List<Integer> importedListOfTeamNums, TeamPitsList importedListOfTeamPits) {
 		this.add(new Label("Select Team to Look Up"), 0, 0);
 		teamListCB = new ComboBox<String>();
 		listOfTeamNums = importedListOfTeamNums;
@@ -58,6 +60,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		seTeamsB.setOnAction(this);
 		this.add(seTeamsB, 1, 1);
 		theTeamList = mainTeamList;
+		theTeamPitList = importedListOfTeamPits;
 		System.out.println(theTeamList.listOfTeams.get(0).getTeamNum());
 		ScrollPane sp = new ScrollPane();
 		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
@@ -562,25 +565,94 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	}
 	
 	public void addPitDataStuff(int teamNum) {
-		this.add(new Label("Number Of Student on Team " + teamNum + ":"), 0, 5);
-		this.add(new Label("Number Of Mentors on Team " + teamNum + ":"), 0, 5);
-		this.add(new Label("Number Of Battiers they have:"), 0, 5);
-		this.add(new Label("What Programing langue they use:"), 0, 5);
-		if(theTeamPitList .compareTo("Yes") == 0) {
-			this.add(new Label("They do use Vision"), 0, 5);
-			this.add(new Label("Number of Vision Cameras:"), 0, 5);
+		this.add(new Label("Number Of Student on Team " + teamNum + ": "), 0, 5);
+		this.add(new Label("Number Of Mentors on Team " + teamNum + ": "), 0, 6);
+		this.add(new Label("Number Of Battiers they have: "), 0, 7);
+		this.add(new Label("What Programing langue they use: "), 2, 5);
+		if(theTeamPitList.getATeamPit(teamNum).getDoHaveVis().compareTo("Yes") == 0) {
+			this.add(new Label("They do use Vision"), 2, 6);
+			this.add(new Label("Number of Vision Cameras: "), 2, 7);
 		} else {
-			this.add(new Label("They do not use Vision"), 0, 5);
+			this.add(new Label("They do not use Vision"), 2, 6);
 		}
-		this.add(new Label("Number of Driver Cameras:"), 0, 5);
-		this.add(new Label("Their Robot's Drive Train is:"), 0, 5);
-		if(theTeamPitList .compareTo("Swerve") == 0) {
-			this.add(new Label("Their Robot uses this kind of Swerve:"), 0, 5);
-			if(theTeamPitList .compareTo("Custom") == 0) {
+		this.add(new Label("Number of Driver Cameras: "), 2, 8);
+		this.add(new Label("Their Robot's Drive Train is: "), 0, 8);
+		this.add(new Label("Their Robot's Drive Train uses This Motors: "), 0, 9);
+		if(theTeamPitList.getATeamPit(teamNum).getDrTrType().compareTo("Swerve") == 0) {
+			this.add(new Label("Their Robot uses this kind of Swerve: "), 0, 10);
+			if(theTeamPitList.getATeamPit(teamNum).getSwevType().compareTo("Custom") == 0) {
 			} else {
-				this.add(new Label("Their Robot Uses this Gearing:"), 0, 5);
+				this.add(new Label("Their Robot Uses this Gearing: "), 0, 11);
 			}
 		}
+		//adding labels with the Values
+		//students
+		String studs = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfStud());
+		Label studsL = new Label(studs);
+		studsL.setTextFill(midPurC);
+		studsL.setMinHeight(20);
+		this.add(studsL, 1, 5);
+		//mentors
+		String ments = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfMent());
+		Label mentsL = new Label(ments);
+		mentsL.setTextFill(midPurC);
+		mentsL.setMinHeight(20);
+		this.add(mentsL, 1, 6);
+		//Robot Battiers
+		String rBs = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfRobotBat());
+		Label rBsL = new Label(rBs);
+		rBsL.setTextFill(midPurC);
+		rBsL.setMinHeight(20);
+		this.add(rBsL, 1, 7);
+		//Program Lan
+		String progLans = theTeamPitList.getATeamPit(teamNum).getProgramLan();
+		Label progLansL = new Label(progLans);
+		progLansL.setTextFill(midPurC);
+		progLansL.setMinHeight(20);
+		this.add(progLansL, 3, 5);
+		//VisCamera
+		if(theTeamPitList.getATeamPit(teamNum).getDoHaveVis().compareTo("Yes") == 0) {
+			String visCams = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfVisCam());
+			Label visCamsL = new Label(visCams);
+			visCamsL.setTextFill(midPurC);
+			visCamsL.setMinHeight(20);
+			this.add(visCamsL, 3, 7);
+		}
+		//Drive Cameras
+		String drCams = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfDriverCams());
+		Label drCamsL = new Label(drCams);
+		drCamsL.setTextFill(midPurC);
+		drCamsL.setMinHeight(20);
+		this.add(drCamsL, 3, 8);
+		//Drive Train Type
+		String drTypes = theTeamPitList.getATeamPit(teamNum).getDrTrType();
+		Label drTypesL = new Label(drTypes);
+		drTypesL.setTextFill(midPurC);
+		drTypesL.setMinHeight(20);
+		this.add(drTypesL, 1, 8);
+		//Swerve Kind
+		if(theTeamPitList.getATeamPit(teamNum).getDrTrType().compareTo("Swerve") == 0) {
+			String swTypes = theTeamPitList.getATeamPit(teamNum).getSwevType();
+			Label swTypesL = new Label(swTypes);
+			swTypesL.setTextFill(midPurC);
+			swTypesL.setMinHeight(20);
+			this.add(swTypesL, 1, 10);
+		//Swerve Gearing
+			if(theTeamPitList.getATeamPit(teamNum).getSwevType().compareTo("Custom") == 0) {
+				String swGears = theTeamPitList.getATeamPit(teamNum).getSwevGearing();
+				Label swGearsL = new Label(swGears);
+				swGearsL.setTextFill(midPurC);
+				swGearsL.setMinHeight(20);
+				this.add(swGearsL, 1, 11);
+			}
+		}
+		//Drive Train Motors
+		String drMots = theTeamPitList.getATeamPit(teamNum).getDrTrMotorType();
+		Label drMotsL = new Label(drMots);
+		drMotsL.setTextFill(midPurC);
+		drMotsL.setMinHeight(20);
+		this.add(drMotsL, 1, 9);
+		
 	}
 	
 	@Override
