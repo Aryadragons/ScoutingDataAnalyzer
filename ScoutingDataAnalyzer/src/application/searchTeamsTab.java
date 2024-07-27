@@ -18,8 +18,10 @@ import javafx.scene.chart.XYChart.Data;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -57,6 +59,11 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		this.add(seTeamsB, 1, 1);
 		theTeamList = mainTeamList;
 		System.out.println(theTeamList.listOfTeams.get(0).getTeamNum());
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setMaxWidth(2);
+		sp.setContent(this);
 	}
 	
 	private void addComboBoxItems() {
@@ -551,6 +558,28 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    matchBCBarC.setBarGap(2);
 		    matchBCBarC.setMinSize(200, 100);
 		    this.add(matchBCBarC, 2, 1);
+		}
+	}
+	
+	public void addPitDataStuff(int teamNum) {
+		this.add(new Label("Number Of Student on Team " + teamNum + ":"), 0, 5);
+		this.add(new Label("Number Of Mentors on Team " + teamNum + ":"), 0, 5);
+		this.add(new Label("Number Of Battiers they have:"), 0, 5);
+		this.add(new Label("What Programing langue they use:"), 0, 5);
+		if(theTeamPitList .compareTo("Yes") == 0) {
+			this.add(new Label("They do use Vision"), 0, 5);
+			this.add(new Label("Number of Vision Cameras:"), 0, 5);
+		} else {
+			this.add(new Label("They do not use Vision"), 0, 5);
+		}
+		this.add(new Label("Number of Driver Cameras:"), 0, 5);
+		this.add(new Label("Their Robot's Drive Train is:"), 0, 5);
+		if(theTeamPitList .compareTo("Swerve") == 0) {
+			this.add(new Label("Their Robot uses this kind of Swerve:"), 0, 5);
+			if(theTeamPitList .compareTo("Custom") == 0) {
+			} else {
+				this.add(new Label("Their Robot Uses this Gearing:"), 0, 5);
+			}
 		}
 	}
 	

@@ -1,6 +1,10 @@
 package application;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 import javafx.event.ActionEvent;
@@ -169,6 +173,8 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 		String swevTypeS;
 		String swevGearingS;
 		String drTrMotorTypeS;
+		try {
+		new FileWriter("MainPitDataFiles.txt", false).close();
 		for(int i = 0; i < fileTPL.listOfTeamPits.size(); i++) {
 			// setting variables
 			teamNum = fileTPL.listOfTeamPits.get(i).getTeamNum();
@@ -190,6 +196,27 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 			swevTypeS = fileTPL.listOfTeamPits.get(i).getSwevType();
 			swevGearingS = fileTPL.listOfTeamPits.get(i).getSwevGearing();
 			drTrMotorTypeS = fileTPL.listOfTeamPits.get(i).getDrTrMotorType();
+			FileWriter fw;
+			fw = new FileWriter("MainPitDataFiles.txt", true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			PrintWriter out = new PrintWriter(bw);
+			out.println(teamNumS);
+			out.println(teamNameS);
+			out.println(numOfStudS);
+			out.println(numOfMentS);
+			out.println(numOfRobotBatS);
+			out.println(programLanS);
+			out.println(doHaveVisS);
+			out.println(numOfVisCamS);
+			out.println(numOfDriverCamsS);
+			out.println(drTrTypeS);
+			out.println(swevTypeS);
+			out.println(swevGearingS);
+			out.println(drTrMotorTypeS);
+			out.close();
+		}
+		} catch (IOException e) {
+			System.out.println("Error" + e);
 		}
 	}
 	

@@ -78,9 +78,12 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	// adding save data files stuff
 	private Button saveDataB;
 	private Scanner fileInput;
+	private Scanner fileInputP;
 	//
 	private List<Integer> listOfTeamNums;
 	private List<Integer> listOfTeamNumsSorted;
+	//Pit data stuff
+	private TeamPitsList fileTPL;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -92,6 +95,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			MenuBar MB = createMenuBar();
 			mainTempTeamList = new TempTeamList();
 			mainTeamList = new TeamList();
+			fileTPL = new TeamPitsList();
 			root.setTop(MB);
 			//adding the Tab panes
 			mainTP = new TabPane();
@@ -352,6 +356,53 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			System.out.println("Boop29");
 		}
 		sortListOfTeamNums();
+	}
+	private void updatePitData() {
+		String teamNumS;
+		String teamNameS;
+		String numOfStudS;
+		String numOfMentS;
+		String numOfRobotBatS;
+		String programLanS;
+		String doHaveVisS;
+		String numOfVisCamS;
+		String numOfDriverCamsS;
+		String drTrTypeS;
+		String swevTypeS;
+		String swevGearingS;
+		String drTrMotorTypeS;
+		int teamNum;
+		int numOfStud;
+		int numOfMent;
+		int numOfRobotBat;
+		int numOfVisCam;
+		int numOfDriverCams;
+		File file = new File("MainPitDataFiles.txt");
+		try {
+			fileInputP = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error" + e);
+		}
+		teamNumS = fileInputP.next();
+		teamNameS = fileInputP.next();
+		numOfStudS = fileInputP.next();
+		numOfMentS = fileInputP.next();
+		numOfRobotBatS = fileInputP.next();
+		programLanS = fileInputP.next();
+		doHaveVisS = fileInputP.next();
+		numOfVisCamS = fileInputP.next();
+		numOfDriverCamsS = fileInputP.next();
+		drTrTypeS = fileInputP.next();
+		swevTypeS = fileInputP.next();
+		swevGearingS = fileInputP.next();
+		drTrMotorTypeS = fileInputP.next();
+		teamNum = Integer.parseInt(teamNumS);
+		numOfStud = Integer.parseInt(numOfStudS);
+		numOfMent = Integer.parseInt(numOfMentS);
+		numOfRobotBat = Integer.parseInt(numOfRobotBatS);
+		numOfVisCam = Integer.parseInt(numOfVisCamS);
+		numOfDriverCams = Integer.parseInt(numOfDriverCamsS);
+		fileTPL.addTeamPit(teamNum, teamNameS, numOfStud, numOfMent, numOfRobotBat, programLanS, doHaveVisS, numOfVisCam, numOfDriverCams, drTrTypeS, swevTypeS, swevGearingS, drTrMotorTypeS);
 	}
 	
 	private void sortListOfTeamNums() {
