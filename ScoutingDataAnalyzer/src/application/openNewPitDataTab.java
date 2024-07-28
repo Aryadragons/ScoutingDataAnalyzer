@@ -229,7 +229,7 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 	public void handle(ActionEvent event) {
 		try {
 			if(event.getSource() == goForReplaceB) {
-				//clear list of pit scouting data
+				fileTPL.listOfTeamPits.clear();
 				openPitDataFile();
 			}
 			if(event.getSource() == goForAddB) {

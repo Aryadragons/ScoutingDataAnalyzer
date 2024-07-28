@@ -169,4 +169,8 @@ public class DriveTeamData {
 	public String getTimeDriveCoach() {
 		return timeDriveCoach;
 	}
+	
+	public int getHumHoursPracitce() {
+		return humHoursPracitce;
+	}
 }
