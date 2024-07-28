@@ -63,6 +63,10 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 		try {
 			String csvTeamNumS;
 			String csvMatchesS;
+			String csvTotalCyclesS;
+			String csvTotalAmpS;
+			String csvTotalSpeS;
+			String csvTotalTrapS;
 			String csvCyclesS;
 			String csvAmpS;
 			String csvSpeS;
@@ -78,6 +82,10 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 			List<String> csvHumPostionsList;
 			int csvTeamNum;
 			int csvMatches;
+			int csvTotalCycles;
+			int csvTotalAmp;
+			int csvTotalSpe;
+			int csvTotalTrap;
 			double csvCycles;
 			double csvAmp;
 			double csvSpe;
@@ -94,6 +102,10 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 			for(int i = 0; i < fileTeamList.listOfTeams.size(); i++) {
 				csvTeamNum = fileTeamList.listOfTeams.get(i).getTeamNum();
 				csvMatches = fileTeamList.listOfTeams.get(i).getTotalMatchesPlayed();
+				csvTotalCycles = fileTeamList.listOfTeams.get(i).getTotalCycles();
+				csvTotalAmp = fileTeamList.listOfTeams.get(i).getTotalAmp();
+				csvTotalSpe = fileTeamList.listOfTeams.get(i).getTotalSpe();
+				csvTotalTrap = fileTeamList.listOfTeams.get(i).getTotalTrap();
 				csvCycles = fileTeamList.listOfTeams.get(i).getAvgCycles();
 				csvAmp = fileTeamList.listOfTeams.get(i).getAvgAmp();
 				csvSpe = fileTeamList.listOfTeams.get(i).getAvgSpe();
@@ -112,6 +124,10 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				csvMatchList = fileTeamList.listOfTeams.get(i).getMatchList();
 				csvTeamNumS = Integer.toString(csvTeamNum);
 				csvMatchesS = Integer.toString(csvMatches);
+				csvTotalCyclesS = Integer.toString(csvTotalCycles);
+				csvTotalAmpS = Integer.toString(csvTotalAmp);
+				csvTotalSpeS = Integer.toString(csvTotalSpe);
+				csvTotalTrapS = Integer.toString(csvTotalTrap);
 				csvCyclesS = Double.toString(csvCycles);
 				csvAmpS = Double.toString(csvAmp);
 				csvSpeS = Double.toString(csvSpe);
@@ -128,6 +144,10 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					    PrintWriter out = new PrintWriter(bw);
 					    out.println(csvTeamNumS);
 					    out.println(csvMatchesS);
+					    out.println(csvTotalCyclesS);
+					    out.println(csvTotalAmpS);
+					    out.println(csvTotalSpeS);
+					    out.println(csvTotalTrapS);
 					    out.println(csvCyclesS);
 					    out.println(csvAmpS);
 					    out.println(csvSpeS);

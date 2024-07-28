@@ -668,14 +668,29 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	}
 	
 	public void addPieCharts(Team theTeam) {
-		PieChart.Data cyclesData[] = new PieChart.Data[3];
+		System.out.println("Boop40");
+		int ampValue = (theTeam.getTotalAmp()/theTeam.getTotalCycles());
+		System.out.println("Boop41");
+		int speValue = (theTeam.getTotalSpe()/theTeam.getTotalCycles());
+		System.out.println("Boop42");
+		int trapValue = (theTeam.getTotalTrap()/theTeam.getTotalCycles());
+		System.out.println("Boop43");
+		while (ampValue + speValue + trapValue != 100) {
+			speValue++;
+		}
+		ObservableList<PieChart.Data> pieChartData =FXCollections.observableArrayList(new PieChart.Data("Amp", ampValue), new PieChart.Data("Specker", speValue), new PieChart.Data("Trap", trapValue));
+		/*
+		 PieChart.Data cyclesData[] = new PieChart.Data[3];
 		String typesOfCycles[] = {"Amp", "Speaker", "Trap"};
 		int cyclesTotals[] = {theTeam.getTotalAmp(), theTeam.getTotalSpe(), theTeam.getTotalTrap()};
 		for (int i = 0; i < 3; i++) {
 			cyclesData[i] = new PieChart.Data(typesOfCycles[i], cyclesTotals[i]);
 	    }
 		PieChart cyclePieC = new PieChart(FXCollections.observableArrayList(cyclesData));
+		*/
+		PieChart cyclePieC = new PieChart(pieChartData);
 		cyclePieC.setMinSize(500, 500);
+		cyclePieC.setLabelsVisible(true);
 		this.add(cyclePieC, 0, 4);
 	}
 	

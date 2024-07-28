@@ -251,6 +251,10 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		String fileTrapS;
 		String fileClimbS;
 		String fileMatchesS;
+		String fileTotalCyclesS;
+		String fileTotalAmpS;
+		String fileTotalSpeS;
+		String fileTotalTrapS;
 		String fileCyclesS;
 		String fileNumOfCommsS;
 		String fileHumAmpSkillS;
@@ -259,6 +263,10 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		String fileTimesHumAmpS;
 		String fileTimesHumScoS;
 		int fileTeamNum;
+		int fileTotalCycles;
+		int fileTotalAmp;
+		int fileTotalSpe;
+		int fileTotalTrap;
 		double fileAmp;
 		double fileSpe;
 		double fileTrap;
@@ -277,6 +285,10 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		while(fileInput.hasNext() == true) {
 			fileTeamNumS = fileInput.next();
 			fileMatchesS  = fileInput.next();
+			fileTotalCyclesS = fileInput.next();
+			fileTotalAmpS = fileInput.next();
+			fileTotalSpeS = fileInput.next();
+			fileTotalTrapS = fileInput.next();
 			fileCyclesS = fileInput.next();
 			fileAmpS = fileInput.next();
 			fileSpeS = fileInput.next();
@@ -335,6 +347,10 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			
 			
 			fileTeamNum = Integer.parseInt(fileTeamNumS);
+			fileTotalCycles = Integer.parseInt(fileTotalCyclesS);
+			fileTotalAmp = Integer.parseInt(fileTotalAmpS);
+			fileTotalSpe = Integer.parseInt(fileTotalSpeS);
+			fileTotalTrap = Integer.parseInt(fileTotalTrapS);
 			fileAmp = Double.parseDouble(fileAmpS);
 			fileSpe = Double.parseDouble(fileSpeS);
 			fileTrap = Double.parseDouble(fileTrapS);
@@ -354,7 +370,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			System.out.println("Boop27");
 			listOfTeamNums.add(fileTeamNum);
 			System.out.println("Boop28");
-			mainTeamList.addTempTeamInMain(fileTeamNum, fileCycles, fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, commentList, fileHumPostionsList, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes, fileTimesHumAmp, fileTimesHumSco, fileMatchList);
+			mainTeamList.addTempTeamInMain(fileTeamNum, fileTotalCycles, fileTotalAmp, fileTotalSpe, fileTotalTrap, fileCycles, fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, commentList, fileHumPostionsList, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes, fileTimesHumAmp, fileTimesHumSco, fileMatchList);
 			System.out.println("Boop29");
 		}
 		sortListOfTeamNums();
@@ -428,7 +444,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		seTeams.setMinWidth(1400);
 		FileInputStream inputSeTeams;
 		try {
-			inputSeTeams = new FileInputStream("TabsBackground600.png");
+			inputSeTeams = new FileInputStream("tabsbackground2000Tall.png");
 			Image imageSeTeams = new Image(inputSeTeams); 
 	        BackgroundImage backgroundimageSeTeams = new BackgroundImage(imageSeTeams, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 	        // create Background 

@@ -19,11 +19,11 @@ public class TeamList {
 		System.out.println("boop18.3");
 	}
 	
-	public void addTempTeamInMain(int tempTeamNum, double tempAvgCycles, int tempTotalMatchesPlayed, double tempAvgAmp, double tempAvgSpe, double tempAvgTrap, double tempAvgClimb, List<String> commentList, List<String> tempHumPostionsList, double tempHumAmpSkill, double tempHumScoSkill, double tempHumAmpNotes, int importTimesHumAmp, int importTimesHumSco,  MatchList importMatchList) {
+	public void addTempTeamInMain(int tempTeamNum, int tempTotalCycles, int tempTotalAmp, int tempTotalSpe, int tempTotalTrap, double tempAvgCycles, int tempTotalMatchesPlayed, double tempAvgAmp, double tempAvgSpe, double tempAvgTrap, double tempAvgClimb, List<String> commentList, List<String> tempHumPostionsList, double tempHumAmpSkill, double tempHumScoSkill, double tempHumAmpNotes, int importTimesHumAmp, int importTimesHumSco,  MatchList importMatchList) {
 		System.out.println("Boop28.1");
 		Team T = new Team();
 		System.out.println("Boop28.2");
-		T.setTeamInMain(tempTeamNum, tempAvgCycles, tempTotalMatchesPlayed, tempAvgAmp, tempAvgSpe, tempAvgClimb, tempAvgTrap, commentList, tempHumPostionsList, tempHumAmpSkill, tempHumScoSkill, tempHumAmpNotes, importTimesHumAmp, importTimesHumSco,  importMatchList);
+		T.setTeamInMain(tempTeamNum,  tempTotalCycles,  tempTotalAmp,  tempTotalSpe,  tempTotalTrap, tempAvgCycles, tempTotalMatchesPlayed, tempAvgAmp, tempAvgSpe, tempAvgClimb, tempAvgTrap, commentList, tempHumPostionsList, tempHumAmpSkill, tempHumScoSkill, tempHumAmpNotes, importTimesHumAmp, importTimesHumSco,  importMatchList);
 		System.out.println("Boop28.3");
 		listOfTeams.add(T);
 		System.out.println("Boop28.4");

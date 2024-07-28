@@ -82,10 +82,14 @@ public class Team {
 		System.out.println("boop18.17");
 	}
 	
-	public void setTeamInMain(int tempTeamNum, double tempAvgCycles, int tempTotalMatchesPlayed, double tempAvgAmp, double tempAvgSpe, double tempAvgClimb, double tempAvgTrap, List<String> commentList, List<String> tempHumPostionsList, double avgHumScoSkill, double avgHumAmpSkill, double avgHumAmpNotes, int importTimesHumAmp, int importTimesHumSco, MatchList importMatchList) {
+	public void setTeamInMain(int tempTeamNum, int tempTotalCycles, int tempTotalAmp, int tempTotalSpe, int tempTotalTrap, double tempAvgCycles, int tempTotalMatchesPlayed, double tempAvgAmp, double tempAvgSpe, double tempAvgClimb, double tempAvgTrap, List<String> commentList, List<String> tempHumPostionsList, double avgHumScoSkill, double avgHumAmpSkill, double avgHumAmpNotes, int importTimesHumAmp, int importTimesHumSco, MatchList importMatchList) {
 		System.out.println("Boop28.21");
 		// set er's for avg
 		setTeamNum(tempTeamNum);
+		setTotalCycles(tempTotalCycles);
+		setTotalAmp(tempTotalAmp);
+		setTotalSpe(tempTotalSpe);
+		setTotalTrap(tempTotalTrap);
 		setTotalMatchesPlayed(tempTotalMatchesPlayed);
 		setAvgCycles(tempAvgCycles);
 		setAvgAmp(tempAvgAmp);

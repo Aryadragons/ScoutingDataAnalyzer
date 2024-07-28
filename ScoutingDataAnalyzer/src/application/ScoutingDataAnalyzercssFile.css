@@ -28,3 +28,22 @@
 #Axis{
 	-fx-tick-label-fill: rgb(219,178,255);
 }
+.default-color0.chart-pie { -fx-pie-color: rgb(183,38,255); }
+.default-color1.chart-pie { -fx-pie-color: rgb(195,83,255); }
+.default-color3.chart-pie { -fx-pie-color: rgb(170,0,255); }
+.default-color4.chart-pie { -fx-pie-color: rgb(144,0,216); }
+.default-color2.chart-pie { -fx-pie-color: rgb(119,0,178); }
+ 
+.chart-pie-label-line {
+    -fx-stroke: rgb(219,178,255);
+    -fx-fill: rgb(219,178,255);
+}
+ 
+.chart-pie-label {
+    -fx-fill: rgb(219,178,255);
+    -fx-font-size: 1em;
+} 
+.chart-legend {
+   -fx-background-color:  rgb(72,72,72);
+   -fx-stroke: rgb(219,178,255);
+}
