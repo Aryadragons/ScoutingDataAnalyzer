@@ -47,3 +47,8 @@
    -fx-background-color:  rgb(72,72,72);
    -fx-stroke: rgb(219,178,255);
 }
+
+#studslabel{
+	-fx-text-fill: rgb(170,0,255);
+	-fx-font-size: 20;
+}

@@ -351,6 +351,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			fileTotalAmp = Integer.parseInt(fileTotalAmpS);
 			fileTotalSpe = Integer.parseInt(fileTotalSpeS);
 			fileTotalTrap = Integer.parseInt(fileTotalTrapS);
+			System.out.println("Boop26.5" + fileTotalCycles + fileTotalAmp + fileTotalSpe + fileTotalTrap);
 			fileAmp = Double.parseDouble(fileAmpS);
 			fileSpe = Double.parseDouble(fileSpeS);
 			fileTrap = Double.parseDouble(fileTrapS);

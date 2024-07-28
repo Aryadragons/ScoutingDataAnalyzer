@@ -579,7 +579,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		this.add(new Label("Number Of Mentors on Team " + teamNum + ": "), 0, 6);
 		this.add(new Label("Number Of Battiers they have: "), 0, 7);
 		this.add(new Label("What Programing langue they use: "), 2, 5);
-		if(theTeamPitList.getATeamPit(teamNum).getDoHaveVis().compareTo("Yes") == 0) {
+		if(theTeamPitList.getATeamPit(teamNum).getDoHaveVis().compareTo("yes") == 0) {
 			this.add(new Label("They do use Vision"), 2, 6);
 			this.add(new Label("Number of Vision Cameras: "), 2, 7);
 		} else {
@@ -598,69 +598,61 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		//adding labels with the Values
 		//students
 		String studs = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfStud());
-		Label studsL = new Label(studs);
-		studsL.setStyle("#seLabelTeamsStyle");
-		this.add(studsL, 1, 5);
+		Label studsL = new Label("                                           " + studs);
+		studsL.setId("studslabel");
+		this.add(studsL, 0, 5);
 		//mentors
 		String ments = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfMent());
-		Label mentsL = new Label(ments);
-		mentsL.setTextFill(midPurC);
-		mentsL.setMinHeight(20);
-		this.add(mentsL, 1, 6);
+		Label mentsL = new Label("                                           " + ments);
+		mentsL.setId("studslabel");
+		this.add(mentsL, 0, 6);
 		//Robot Battiers
 		String rBs = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfRobotBat());
-		Label rBsL = new Label(rBs);
-		rBsL.setTextFill(midPurC);
-		rBsL.setMinHeight(20);
-		this.add(rBsL, 1, 7);
+		Label rBsL = new Label("                                     " + rBs);
+		rBsL.setId("studslabel");
+		this.add(rBsL, 0, 7);
 		//Program Lan
 		String progLans = theTeamPitList.getATeamPit(teamNum).getProgramLan();
-		Label progLansL = new Label(progLans);
-		progLansL.setTextFill(midPurC);
-		progLansL.setMinHeight(20);
-		this.add(progLansL, 3, 5);
+		Label progLansL = new Label("                                           " + progLans);
+		progLansL.setId("studslabel");
+		this.add(progLansL, 2, 5);
 		//VisCamera
-		if(theTeamPitList.getATeamPit(teamNum).getDoHaveVis().compareTo("Yes") == 0) {
+		if(theTeamPitList.getATeamPit(teamNum).getDoHaveVis().compareTo("yes") == 0) {
 			String visCams = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfVisCam());
-			Label visCamsL = new Label(visCams);
-			visCamsL.setTextFill(midPurC);
-			visCamsL.setMinHeight(20);
-			this.add(visCamsL, 3, 7);
+			Label visCamsL = new Label("                                  " + visCams);
+			visCamsL.setId("studslabel");
+			this.add(visCamsL, 2, 7);
 		}
 		//Drive Cameras
 		String drCams = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfDriverCams());
-		Label drCamsL = new Label(drCams);
-		drCamsL.setTextFill(midPurC);
-		drCamsL.setMinHeight(20);
-		this.add(drCamsL, 3, 8);
+		Label drCamsL = new Label("                                  " + drCams);
+		drCamsL.setId("studslabel");
+		this.add(drCamsL, 2, 8);
 		//Drive Train Type
 		String drTypes = theTeamPitList.getATeamPit(teamNum).getDrTrType();
-		Label drTypesL = new Label(drTypes);
-		drTypesL.setTextFill(midPurC);
-		drTypesL.setMinHeight(20);
-		this.add(drTypesL, 1, 8);
+		Label drTypesL = new Label("                                  " + drTypes);
+		drTypesL.setId("studslabel");
+		this.add(drTypesL, 0, 8);
 		//Swerve Kind
 		if(theTeamPitList.getATeamPit(teamNum).getDrTrType().compareTo("Swerve") == 0) {
 			String swTypes = theTeamPitList.getATeamPit(teamNum).getSwevType();
-			Label swTypesL = new Label(swTypes);
-			swTypesL.setTextFill(midPurC);
-			swTypesL.setMinHeight(20);
-			this.add(swTypesL, 1, 10);
+			Label swTypesL = new Label("                                             " + swTypes);
+			swTypesL.setId("studslabel");
+			this.add(swTypesL, 0, 10);
 		//Swerve Gearing
 			if(theTeamPitList.getATeamPit(teamNum).getSwevType().compareTo("Custom") == 0) {
+			} else {
 				String swGears = theTeamPitList.getATeamPit(teamNum).getSwevGearing();
-				Label swGearsL = new Label(swGears);
-				swGearsL.setTextFill(midPurC);
-				swGearsL.setMinHeight(20);
-				this.add(swGearsL, 1, 11);
+				Label swGearsL = new Label("                                     " + swGears);
+				swGearsL.setId("studslabel");
+				this.add(swGearsL, 0, 11);
 			}
 		}
 		//Drive Train Motors
 		String drMots = theTeamPitList.getATeamPit(teamNum).getDrTrMotorType();
-		Label drMotsL = new Label(drMots);
-		drMotsL.setTextFill(midPurC);
-		drMotsL.setMinHeight(20);
-		this.add(drMotsL, 1, 9);
+		Label drMotsL = new Label("                                                    " + drMots);
+		drMotsL.setId("studslabel");
+		this.add(drMotsL, 0, 9);
 		
 		this.add(new Label(""), 0, 12);
 		this.add(new Label(""), 0, 13);
@@ -668,30 +660,32 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	}
 	
 	public void addPieCharts(Team theTeam) {
-		System.out.println("Boop40");
-		int ampValue = (theTeam.getTotalAmp()/theTeam.getTotalCycles());
-		System.out.println("Boop41");
-		int speValue = (theTeam.getTotalSpe()/theTeam.getTotalCycles());
-		System.out.println("Boop42");
-		int trapValue = (theTeam.getTotalTrap()/theTeam.getTotalCycles());
-		System.out.println("Boop43");
-		while (ampValue + speValue + trapValue != 100) {
-			speValue++;
+		System.out.println("Boop40" + theTeam.getTotalAmp() + theTeam.getTotalSpe() + theTeam.getTotalTrap());
+		int ampValue = ((theTeam.getTotalAmp() * 100)/theTeam.getTotalCycles());
+		System.out.println("Boop41" + ampValue);
+		int speValue = ((theTeam.getTotalSpe() * 100)/theTeam.getTotalCycles());
+		System.out.println("Boop42" + speValue);
+		int trapValue = ((theTeam.getTotalTrap() * 100)/theTeam.getTotalCycles());
+		System.out.println("Boop43" + trapValue);
+		if ((ampValue + speValue + trapValue)!= 100) {
+			int missingValue = (100- (ampValue + speValue + trapValue));
+			speValue = (speValue + missingValue);
+			System.out.println("Boop43.5");
 		}
+		System.out.println("Boop44 A:" + ampValue + "S:" + speValue + "T:" + trapValue);
 		ObservableList<PieChart.Data> pieChartData =FXCollections.observableArrayList(new PieChart.Data("Amp", ampValue), new PieChart.Data("Specker", speValue), new PieChart.Data("Trap", trapValue));
-		/*
-		 PieChart.Data cyclesData[] = new PieChart.Data[3];
-		String typesOfCycles[] = {"Amp", "Speaker", "Trap"};
-		int cyclesTotals[] = {theTeam.getTotalAmp(), theTeam.getTotalSpe(), theTeam.getTotalTrap()};
-		for (int i = 0; i < 3; i++) {
-			cyclesData[i] = new PieChart.Data(typesOfCycles[i], cyclesTotals[i]);
-	    }
-		PieChart cyclePieC = new PieChart(FXCollections.observableArrayList(cyclesData));
-		*/
 		PieChart cyclePieC = new PieChart(pieChartData);
 		cyclePieC.setMinSize(500, 500);
 		cyclePieC.setLabelsVisible(true);
 		this.add(cyclePieC, 0, 4);
+		//adding human player pie chart
+		int ampHumValue = ((theTeam.getTimesHumAmp() * 100)/theTeam.getTotalMatchesPlayed());
+		int scoHumValue = ((theTeam.getTimesHumSco() * 100)/theTeam.getTotalMatchesPlayed());
+		ObservableList<PieChart.Data> humPieChartData =FXCollections.observableArrayList(new PieChart.Data("Amp", ampHumValue), new PieChart.Data("Scoure", scoHumValue));
+		PieChart humPieC = new PieChart(humPieChartData);
+		humPieC.setMinSize(500, 500);
+		humPieC.setLabelsVisible(true);
+		this.add(humPieC, 2, 4);
 	}
 	
 	@Override

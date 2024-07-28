@@ -83,7 +83,7 @@ public class Team {
 	}
 	
 	public void setTeamInMain(int tempTeamNum, int tempTotalCycles, int tempTotalAmp, int tempTotalSpe, int tempTotalTrap, double tempAvgCycles, int tempTotalMatchesPlayed, double tempAvgAmp, double tempAvgSpe, double tempAvgClimb, double tempAvgTrap, List<String> commentList, List<String> tempHumPostionsList, double avgHumScoSkill, double avgHumAmpSkill, double avgHumAmpNotes, int importTimesHumAmp, int importTimesHumSco, MatchList importMatchList) {
-		System.out.println("Boop28.21");
+		System.out.println("Boop28.21" + tempTotalCycles + tempTotalAmp + tempTotalSpe + tempTotalTrap);
 		// set er's for avg
 		setTeamNum(tempTeamNum);
 		setTotalCycles(tempTotalCycles);
@@ -96,7 +96,7 @@ public class Team {
 		setAvgSpe(tempAvgSpe);
 		setAvgTrap(tempAvgTrap);
 		setAvgClimb(tempAvgClimb);
-		System.out.println("Boop28.22");
+		System.out.println("Boop28.22" + totalCycles + totalAmp + totalSpe + totalTrap);
 		// set er's for comments
 		listOfComments = new ArrayList<>();
 		addToCommentsList(commentList);
