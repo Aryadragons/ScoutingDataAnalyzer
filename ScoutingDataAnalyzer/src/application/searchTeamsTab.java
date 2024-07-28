@@ -13,6 +13,7 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.control.Button;
@@ -23,6 +24,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -62,11 +64,6 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		theTeamList = mainTeamList;
 		theTeamPitList = importedListOfTeamPits;
 		System.out.println(theTeamList.listOfTeams.get(0).getTeamNum());
-		ScrollPane sp = new ScrollPane();
-		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
-		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
-		sp.setMaxWidth(2);
-		sp.setContent(this);
 	}
 	
 	private void addComboBoxItems() {
@@ -138,7 +135,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	    cliData.getData().add(new XYChart.Data<String,Number>("Climb", avgCli));
 	    avgBCBarC.getData().addAll(cyData, ampData, speData, trapData, cliData);
 	    avgBCBarC.setBarGap(5);
-	    avgBCBarC.setMinSize(200, 100);
+	    avgBCBarC.setMinSize(150, 100);
+	    avgBCBarC.setMaxSize(500, 250);
 	    this.add(avgBCBarC, 0, 1);
 	    
 	    //Human Player Data
@@ -183,7 +181,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		avgHumAmpNotesData.getData().add(new XYChart.Data<String,Number>("Amp Notes", avgHumAmpNotes));
 		humBCBarC.getData().addAll(timesAmpData, timesScoData, avgHumAmpSkillData, avgHumScoSkillData, avgHumAmpNotesData);
 		humBCBarC.setBarGap(5);
-		humBCBarC.setMinSize(200, 100);
+		humBCBarC.setMinSize(150, 100);
+		humBCBarC.setMaxSize(500, 250);
 		this.add(new Label(), timesAmp, timesSco);
 	    this.add(humBCBarC, 0, 2);
 		 // add data
@@ -258,6 +257,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				int mData = (tempM.getMatchAmp() + tempM.getMatchSpe() + tempM.getMatchTrap());
 				series.getData().add(new XYChart.Data(mNS,mData));
 			}
+			lineChart.setMaxSize(500, 250);
 			lineChart.getData().add(series);
 			this.add(lineChart, 2, 2);
 		}
@@ -280,6 +280,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				int mData = (tempM.getMatchAmp());
 				series.getData().add(new XYChart.Data(mNS,mData));
 			}
+			lineChart.setMaxSize(500, 250);
 			lineChart.getData().add(series);
 			this.add(lineChart, 2, 2);
 		}
@@ -302,6 +303,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				int mData = (tempM.getMatchSpe());
 				series.getData().add(new XYChart.Data(mNS,mData));
 			}
+			lineChart.setMaxSize(500, 250);
 			lineChart.getData().add(series);
 			this.add(lineChart, 2, 2);
 		}
@@ -324,6 +326,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				int mData = (tempM.getMatchTrap());
 				series.getData().add(new XYChart.Data(mNS,mData));
 			}
+			lineChart.setMaxSize(500, 250);
 			lineChart.getData().add(series);
 			this.add(lineChart, 2, 2);
 		}
@@ -346,6 +349,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				int mData = (tempM.getMatchClimb());
 				series.getData().add(new XYChart.Data(mNS,mData));
 			}
+			lineChart.setMaxSize(500, 250);
 			lineChart.getData().add(series);
 			this.add(lineChart, 2, 2);
 		}
@@ -368,6 +372,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				int mData = (tempM.getMatchAmpSkill());
 				series.getData().add(new XYChart.Data(mNS,mData));
 			}
+			lineChart.setMaxSize(500, 250);
 			lineChart.getData().add(series);
 			this.add(lineChart, 2, 2);
 		}
@@ -390,6 +395,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				int mData = (tempM.getMatchScoSkill());
 				series.getData().add(new XYChart.Data(mNS,mData));
 			}
+			lineChart.setMaxSize(500, 250);
 			lineChart.getData().add(series);
 			this.add(lineChart, 2, 2);
 		}
@@ -412,6 +418,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				int mData = (tempM.getMatchAmpNotes());
 				series.getData().add(new XYChart.Data(mNS,mData));
 			}
+			lineChart.setMaxSize(500, 250);
 			lineChart.getData().add(series);
 			this.add(lineChart, 2, 2);
 		}
@@ -484,7 +491,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    ampNData.getData().add(new XYChart.Data<String,Number>("Amp Notes", matchAN));
 		    matchBCBarC.getData().addAll(cyData, ampData, speData, trapData, cliData, ampSkData, ampNData);
 		    matchBCBarC.setBarGap(2);
-		    matchBCBarC.setMinSize(200, 100);
+		    matchBCBarC.setMinSize(150, 100);
+		    matchBCBarC.setMaxSize(500, 250);
 		    this.add(matchBCBarC, 2, 1);
 		    System.out.println("Boop37.6");
 		}
@@ -524,7 +532,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    scoSkData.getData().add(new XYChart.Data<String,Number>("Scoure Skill", matchSSk));
 		    matchBCBarC.getData().addAll(cyData, ampData, speData, trapData, cliData, scoSkData);
 		    matchBCBarC.setBarGap(2);
-		    matchBCBarC.setMinSize(200, 100);
+		    matchBCBarC.setMinSize(150, 100);
+		    matchBCBarC.setMaxSize(500, 250);
 		    this.add(matchBCBarC, 2, 1);
 		}
 		if(matchPos.compareTo("None") == 0) {
@@ -559,7 +568,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    cliData.getData().add(new XYChart.Data<String,Number>("Climb", matchCli));
 		    matchBCBarC.getData().addAll(cyData, ampData, speData, trapData, cliData);
 		    matchBCBarC.setBarGap(2);
-		    matchBCBarC.setMinSize(200, 100);
+		    matchBCBarC.setMinSize(150, 100);
+		    matchBCBarC.setMaxSize(500, 250);
 		    this.add(matchBCBarC, 2, 1);
 		}
 	}
@@ -589,8 +599,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		//students
 		String studs = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfStud());
 		Label studsL = new Label(studs);
-		studsL.setTextFill(midPurC);
-		studsL.setMinHeight(20);
+		studsL.setStyle("#seLabelTeamsStyle");
 		this.add(studsL, 1, 5);
 		//mentors
 		String ments = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfMent());
@@ -653,6 +662,21 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		drMotsL.setMinHeight(20);
 		this.add(drMotsL, 1, 9);
 		
+		this.add(new Label(""), 0, 12);
+		this.add(new Label(""), 0, 13);
+		this.add(new Label(""), 0, 14);
+	}
+	
+	public void addPieCharts(Team theTeam) {
+		PieChart.Data cyclesData[] = new PieChart.Data[3];
+		String typesOfCycles[] = {"Amp", "Speaker", "Trap"};
+		int cyclesTotals[] = {theTeam.getTotalAmp(), theTeam.getTotalSpe(), theTeam.getTotalTrap()};
+		for (int i = 0; i < 3; i++) {
+			cyclesData[i] = new PieChart.Data(typesOfCycles[i], cyclesTotals[i]);
+	    }
+		PieChart cyclePieC = new PieChart(FXCollections.observableArrayList(cyclesData));
+		cyclePieC.setMinSize(500, 500);
+		this.add(cyclePieC, 0, 4);
 	}
 	
 	@Override
@@ -673,7 +697,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				this.getChildren().clear();
 				System.out.println("Boop32");
 				String teamNumS = Integer.toString(theTeam.getTeamNum());
-				String title = (teamNumS +"'s Stats:");
+				String title = (teamNumS + theTeamPitList.getATeamPit(theTeam.getTeamNum()).getTeamName()+"'s Stats:");
 				this.add(new Label(title), 0, 0);
 				this.add(new Label("Comments:  "), 1, 0);
 				List<String> commentList = theTeam.getCommentsList();
@@ -709,6 +733,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				System.out.println("Boop38");
 				addStatChart("Cycles");
 				System.out.println("Boop39");
+				addPitDataStuff(theTeam.getTeamNum());
+				addPieCharts(theTeam);
 			}
 			if(event.getSource() == statSubB) {
 				this.getChildren().remove(lineChart);

@@ -26,9 +26,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.image.Image;
 
 
@@ -403,6 +405,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		numOfVisCam = Integer.parseInt(numOfVisCamS);
 		numOfDriverCams = Integer.parseInt(numOfDriverCamsS);
 		fileTPL.addTeamPit(teamNum, teamNameS, numOfStud, numOfMent, numOfRobotBat, programLanS, doHaveVisS, numOfVisCam, numOfDriverCams, drTrTypeS, swevTypeS, swevGearingS, drTrMotorTypeS);
+		System.out.println("Boop" + fileTPL.toString());
 	}
 	
 	private void sortListOfTeamNums() {
@@ -423,8 +426,6 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		seTeams.setId("seTeamsStyle");
 		seTeams.setMinHeight(600);
 		seTeams.setMinWidth(1400);
-		seTeams.setMaxHeight(600);
-		seTeams.setMaxWidth(1400);
 		FileInputStream inputSeTeams;
 		try {
 			inputSeTeams = new FileInputStream("TabsBackground600.png");
@@ -436,7 +437,12 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab seTeamsTab = new Tab("Search Teams", seTeams);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(seTeams);
+		sp.setMinHeight(600);
+		Tab seTeamsTab = new Tab("Search Teams", sp);
 		mainTP.getTabs().addAll(seTeamsTab);
 	}
 	
@@ -1221,6 +1227,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			}
 			if(event.getSource() == saveDataB) {
 				updateDataList();
+				updatePitData();
 			}
 		} catch(Exception e) {
 			System.out.println("error: " + e);

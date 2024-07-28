@@ -8,7 +8,9 @@
 .button{
     -fx-background-color: rgb(219,178,255) ;
 }
-#seTeamsStyle{
+#seLabelTeamsStyle{
+	-fx-text-fill: rgb(219,178,255);
+	-fx-font-size: 20;
 }
 .label{
 	-fx-text-fill: rgb(219,178,255);

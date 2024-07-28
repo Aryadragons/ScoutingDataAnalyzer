@@ -100,6 +100,7 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 		int numOfRobotBat;
 		int numOfVisCam;
 		int numOfDriverCams;
+		System.out.println("Boop1");
 		while(fileInput.hasNextLine()) {
 			teamNumS = fileInput.next();
 			teamNameS = fileInput.next();
@@ -114,6 +115,7 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 			swevTypeS = fileInput.next();
 			swevGearingS = fileInput.next();
 			drTrMotorTypeS = fileInput.next();
+			System.out.println("Boop2");
 			//detleing ""s
 			int lengthOfTeamNum = teamNumS.length() - 1;
 			teamNumSTrue = teamNumS.substring(1, lengthOfTeamNum);
@@ -141,6 +143,7 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 			swevGearingSTrue = swevGearingS.substring(1, lengthOfSwevGearing);
 			int lengthOfDrTrMotorType =drTrMotorTypeS.length() - 1;
 			drTrMotorTypeSTrue = drTrMotorTypeS.substring(1, lengthOfDrTrMotorType);
+			System.out.println("Boop3" + teamNumSTrue);
 			// making ints, ints
 			teamNum = Integer.parseInt(teamNumSTrue);
 			numOfStud = Integer.parseInt(numOfStudSTrue);
@@ -148,8 +151,10 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 			numOfRobotBat = Integer.parseInt(numOfRobotBatSTrue);
 			numOfVisCam = Integer.parseInt(numOfVisCamSTrue);
 			numOfDriverCams = Integer.parseInt(numOfDriverCamsSTrue);
+			System.out.println("Boop4");
 			// adding to team pits list
 			fileTPL.addTeamPit(teamNum, teamNameSTrue, numOfStud, numOfMent, numOfRobotBat, programLanSTrue, doHaveVisSTrue, numOfVisCam, numOfDriverCams, drTrTypeSTrue, swevTypeSTrue, swevGearingSTrue, drTrMotorTypeSTrue);
+			System.out.println("Boop5");
 		}
 	}
 	
@@ -231,10 +236,13 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 				openPitDataFile();			
 			}
 			if(event.getSource() == submitReB) {
+				System.out.println("Boop0");
 				readInPitDataFile();
+				exportPitData();
 			}
 			if(event.getSource() == submitAddB) {
 				readInPitDataFile();
+				exportPitData();
 			}
 		}catch(Exception e) {
 			System.out.println("Error:  " + e);
