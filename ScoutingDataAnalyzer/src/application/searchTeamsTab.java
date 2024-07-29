@@ -34,6 +34,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	private Button seTeamsB;
 	private TeamList theTeamList;
 	private TeamPitsList theTeamPitList;
+	private DriveTeamDataList theDTDList;
 	private TextField avgCyclesTF;
 	private TextField avgAmpTF;
 	private TextField avgSpeTF;
@@ -52,7 +53,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	private Color lightPurC = Color.web("rgb(219,178,255)");
 	private Color midPurC = Color.web("rgb(170,0,255)");
 	
-	public searchTeamsTab(TeamList mainTeamList, List<Integer> importedListOfTeamNums, TeamPitsList importedListOfTeamPits) {
+	public searchTeamsTab(TeamList mainTeamList, List<Integer> importedListOfTeamNums, TeamPitsList importedListOfTeamPits, DriveTeamDataList imListOfDTD) {
 		this.add(new Label("Select Team to Look Up"), 0, 0);
 		teamListCB = new ComboBox<String>();
 		listOfTeamNums = importedListOfTeamNums;
@@ -63,6 +64,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		this.add(seTeamsB, 1, 1);
 		theTeamList = mainTeamList;
 		theTeamPitList = importedListOfTeamPits;
+		theDTDList = imListOfDTD;
 		System.out.println(theTeamList.listOfTeams.get(0).getTeamNum());
 	}
 	
@@ -688,6 +690,15 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		this.add(humPieC, 2, 4);
 	}
 	
+	public void addDTDStuff(int teamNum) {
+		if(theDTDList.getATeamPit(teamNum).getIsAdult() == true) {
+			Label adultWarningL = new Label("                                       " + "Adult Drive Coach");
+			adultWarningL.setId("ADC");
+			this.add(adultWarningL, 0, 0);
+		}
+		this.add(new Label(""), 0, 12);
+	}
+	
 	@Override
 	public void handle(ActionEvent event) {
 		try {
@@ -742,7 +753,9 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				System.out.println("Boop38");
 				addStatChart("Cycles");
 				System.out.println("Boop39");
-				addPitDataStuff(theTeam.getTeamNum());
+				if(theTeamPitList != null) {
+					addPitDataStuff(theTeam.getTeamNum());
+				}
 				addPieCharts(theTeam);
 			}
 			if(event.getSource() == statSubB) {

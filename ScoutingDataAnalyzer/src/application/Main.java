@@ -86,6 +86,8 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	private List<Integer> listOfTeamNumsSorted;
 	//Pit data stuff
 	private TeamPitsList fileTPL;
+	//Drive team Data stuff
+	private DriveTeamDataList fileDTDL;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -402,27 +404,101 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error" + e);
 		}
-		teamNumS = fileInputP.next();
-		teamNameS = fileInputP.next();
-		numOfStudS = fileInputP.next();
-		numOfMentS = fileInputP.next();
-		numOfRobotBatS = fileInputP.next();
-		programLanS = fileInputP.next();
-		doHaveVisS = fileInputP.next();
-		numOfVisCamS = fileInputP.next();
-		numOfDriverCamsS = fileInputP.next();
-		drTrTypeS = fileInputP.next();
-		swevTypeS = fileInputP.next();
-		swevGearingS = fileInputP.next();
-		drTrMotorTypeS = fileInputP.next();
-		teamNum = Integer.parseInt(teamNumS);
-		numOfStud = Integer.parseInt(numOfStudS);
-		numOfMent = Integer.parseInt(numOfMentS);
-		numOfRobotBat = Integer.parseInt(numOfRobotBatS);
-		numOfVisCam = Integer.parseInt(numOfVisCamS);
-		numOfDriverCams = Integer.parseInt(numOfDriverCamsS);
-		fileTPL.addTeamPit(teamNum, teamNameS, numOfStud, numOfMent, numOfRobotBat, programLanS, doHaveVisS, numOfVisCam, numOfDriverCams, drTrTypeS, swevTypeS, swevGearingS, drTrMotorTypeS);
-		System.out.println("Boop" + fileTPL.toString());
+		while(fileInput.hasNext() == true) {
+			teamNumS = fileInputP.next();
+			teamNameS = fileInputP.next();
+			numOfStudS = fileInputP.next();
+			numOfMentS = fileInputP.next();
+			numOfRobotBatS = fileInputP.next();
+			programLanS = fileInputP.next();
+			doHaveVisS = fileInputP.next();
+			numOfVisCamS = fileInputP.next();
+			numOfDriverCamsS = fileInputP.next();
+			drTrTypeS = fileInputP.next();
+			swevTypeS = fileInputP.next();
+			swevGearingS = fileInputP.next();
+			drTrMotorTypeS = fileInputP.next();
+			teamNum = Integer.parseInt(teamNumS);
+			numOfStud = Integer.parseInt(numOfStudS);
+			numOfMent = Integer.parseInt(numOfMentS);
+			numOfRobotBat = Integer.parseInt(numOfRobotBatS);
+			numOfVisCam = Integer.parseInt(numOfVisCamS);
+			numOfDriverCams = Integer.parseInt(numOfDriverCamsS);
+			fileTPL.addTeamPit(teamNum, teamNameS, numOfStud, numOfMent, numOfRobotBat, programLanS, doHaveVisS, numOfVisCam, numOfDriverCams, drTrTypeS, swevTypeS, swevGearingS, drTrMotorTypeS);
+			System.out.println("Boop" + fileTPL.toString());
+		}
+	}
+	
+	private void updateDriveTeamDataList() {
+		String teamNumS;
+		String saDrThisTourS;
+		String saDrPastTourS;
+		String saDrLastYearS;
+		String drHourThisBotS;
+		String drHourSameDrTrS;
+		String drHourAnyBotS;
+		String opRoleS;
+		String saOpThisTourS;
+		String saOpPastTourS;
+		String saOpLastYearS;
+		String opHourThisBotS;
+		String opHourAnyBotS;
+		String isAdultS;
+		String timeDriveCoachS;
+		String humHoursPracitceS;
+		int teamNum;
+		boolean saDrThisTour;
+		boolean saDrPastTour;
+		boolean saDrLastYear;
+		int drHourThisBot;
+		int drHourSameDrTr;
+		int drHourAnyBot;
+		boolean saOpThisTour;
+		boolean saOpPastTour;
+		boolean saOpLastYear;
+		int opHourThisBot;
+		int opHourAnyBot;
+		boolean isAdult;
+		int humHoursPracitce;
+		File file = new File("MainDriveTeamDataFiles.txt");
+		try {
+			fileInputP = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error" + e);
+		}
+		while(fileInput.hasNext() == true) {
+			teamNumS = fileInput.next();
+			saDrThisTourS = fileInput.next();
+			saDrPastTourS = fileInput.next();
+			saDrLastYearS = fileInput.next();
+			drHourThisBotS = fileInput.next();
+			drHourSameDrTrS = fileInput.next();
+			drHourAnyBotS = fileInput.next();
+			opRoleS = fileInput.next();
+			saOpThisTourS = fileInput.next();
+			saOpPastTourS = fileInput.next();
+			saOpLastYearS = fileInput.next();
+			opHourThisBotS = fileInput.next();
+			opHourAnyBotS = fileInput.next();
+			isAdultS = fileInput.next();
+			timeDriveCoachS = fileInput.next();
+			humHoursPracitceS = fileInput.next();
+			teamNum = Integer.parseInt(teamNumS);
+			saDrThisTour = Boolean.parseBoolean(saDrThisTourS);
+			saDrPastTour = Boolean.parseBoolean(saDrPastTourS);
+			saDrLastYear = Boolean.parseBoolean(saDrLastYearS);
+			drHourThisBot = Integer.parseInt(drHourThisBotS);
+			drHourSameDrTr = Integer.parseInt(drHourSameDrTrS);
+			drHourAnyBot = Integer.parseInt(drHourAnyBotS);
+			saOpThisTour = Boolean.parseBoolean(saOpThisTourS);
+			saOpPastTour = Boolean.parseBoolean(saOpPastTourS);
+			saOpLastYear = Boolean.parseBoolean(saOpLastYearS);
+			opHourThisBot = Integer.parseInt(opHourThisBotS);
+			opHourAnyBot = Integer.parseInt(opHourAnyBotS);
+			isAdult = Boolean.parseBoolean(isAdultS);
+			humHoursPracitce = Integer.parseInt(humHoursPracitceS);
+			fileDTDL.addDriveTeamData(teamNum, saDrThisTour, saDrPastTour, saDrLastYear, drHourThisBot, drHourSameDrTr, drHourAnyBot, opRoleS, saOpThisTour, saOpPastTour, saOpLastYear, opHourThisBot, opHourAnyBot, isAdult, timeDriveCoachS, humHoursPracitce);
+		}
 	}
 	
 	private void sortListOfTeamNums() {
@@ -439,7 +515,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	}
 	
 	private void makeSearchTeams() {
-		searchTeamsTab seTeams = new searchTeamsTab(mainTeamList, listOfTeamNumsSorted, fileTPL);
+		searchTeamsTab seTeams = new searchTeamsTab(mainTeamList, listOfTeamNumsSorted, fileTPL, fileDTDL);
 		seTeams.setId("seTeamsStyle");
 		seTeams.setMinHeight(600);
 		seTeams.setMinWidth(1400);

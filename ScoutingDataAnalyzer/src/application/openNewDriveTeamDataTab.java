@@ -1,6 +1,10 @@
 package application;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 import javafx.event.ActionEvent;
@@ -181,7 +185,93 @@ public class openNewDriveTeamDataTab extends GridPane implements EventHandler<Ac
 	}
 	
 	public void exportDTDData() {
-		
+		int teamNumEx;
+		boolean saDrThisTourEx;
+		boolean saDrPastTourEx;
+		boolean saDrLastYearExEx;
+		int drHourThisBotEx;
+		int drHourSameDrTrEx;
+		int drHourAnyBotEx;
+		boolean saOpThisTourEx;
+		boolean saOpPastTourEx;
+		boolean saOpLastYearEx;
+		int opHourThisBotEx;
+		int opHourAnyBotEx;
+		boolean isAdultEx;
+		int humHoursPracitceEx;
+		String teamNumExS;
+		String saDrThisTourExS;
+		String saDrPastTourExS;
+		String saDrLastYearExS;
+		String drHourThisBotExS;
+		String drHourSameDrTrExS;
+		String drHourAnyBotExS;
+		String opRoleExS;
+		String saOpThisTourExS;
+		String saOpPastTourExS;
+		String saOpLastYearExS;
+		String opHourThisBotExS;
+		String opHourAnyBotExS;
+		String isAdultExS;
+		String timeDriveCoachExS;
+		String humHoursPracitceExS;
+		try {
+			new FileWriter("MainDriveTeamDataFiles.txt", false).close();
+			for(int i = 0; i < fileDTD.listOfDriveTeamData.size(); i++) {
+				teamNumEx = fileDTD.listOfDriveTeamData.get(i).getTeamNum();
+				saDrThisTourEx = fileDTD.listOfDriveTeamData.get(i).getSaDrThisTour();
+				saDrPastTourEx = fileDTD.listOfDriveTeamData.get(i).getSaDrPastTour();
+				saDrLastYearExEx = fileDTD.listOfDriveTeamData.get(i).getSaDrLastYear();
+				drHourThisBotEx = fileDTD.listOfDriveTeamData.get(i).getDrHourThisBot();
+				drHourSameDrTrEx = fileDTD.listOfDriveTeamData.get(i).getDrHourSameDrTr();
+				drHourAnyBotEx = fileDTD.listOfDriveTeamData.get(i).getDrHourAnyBot();
+				opRoleExS = fileDTD.listOfDriveTeamData.get(i).getOpRole();
+				saOpThisTourEx = fileDTD.listOfDriveTeamData.get(i).getSaOpThisTour();
+				saOpPastTourEx = fileDTD.listOfDriveTeamData.get(i).getSaOpPastTour();
+				saOpLastYearEx = fileDTD.listOfDriveTeamData.get(i).getSaOpLastYear();
+				opHourThisBotEx = fileDTD.listOfDriveTeamData.get(i).getOpHourThisBot();
+				opHourAnyBotEx = fileDTD.listOfDriveTeamData.get(i).getOpHourAnyBot();
+				isAdultEx = fileDTD.listOfDriveTeamData.get(i).getIsAdult();
+				timeDriveCoachExS = fileDTD.listOfDriveTeamData.get(i).getTimeDriveCoach();
+				humHoursPracitceEx = fileDTD.listOfDriveTeamData.get(i).getHumHoursPracitce();
+				teamNumExS = Integer.toString(teamNumEx);
+				saDrThisTourExS = Boolean.toString(saDrThisTourEx);
+				saDrPastTourExS = Boolean.toString(saDrPastTourEx);
+				saDrLastYearExS = Boolean.toString(saDrLastYearExEx);
+				drHourThisBotExS = Integer.toString(drHourThisBotEx);
+				drHourSameDrTrExS = Integer.toString(drHourSameDrTrEx);
+				drHourAnyBotExS = Integer.toString(drHourAnyBotEx);
+				saOpThisTourExS = Boolean.toString(saOpThisTourEx);
+				saOpPastTourExS = Boolean.toString(saOpPastTourEx);
+				saOpLastYearExS = Boolean.toString(saDrLastYearExEx);
+				opHourThisBotExS = Integer.toString(opHourThisBotEx);
+				opHourAnyBotExS = Integer.toString(opHourAnyBotEx);
+				isAdultExS = Boolean.toString(isAdultEx);
+				humHoursPracitceExS = Integer.toString(humHoursPracitceEx);
+				FileWriter fw;
+				fw = new FileWriter("MainPitDataFiles.txt", true);
+				BufferedWriter bw = new BufferedWriter(fw);
+				PrintWriter out = new PrintWriter(bw);
+				out.println(teamNumExS);
+				out.println(saDrThisTourExS);
+				out.println(saDrPastTourExS);
+				out.println(saDrLastYearExS);
+				out.println(drHourThisBotExS);
+				out.println(drHourSameDrTrExS);
+				out.println(drHourAnyBotExS);
+				out.println(opRoleExS);
+				out.println(saOpThisTourExS);
+				out.println(saOpPastTourExS);
+				out.println(saOpLastYearExS);
+				out.println(opHourThisBotExS);
+				out.println(opHourAnyBotExS);
+				out.println(isAdultExS);
+				out.println(timeDriveCoachExS);
+				out.println(humHoursPracitceExS);
+			}
+		} catch (IOException e) {
+			System.out.println("Error" + e);
+		}
 	}
 	
 	@Override
