@@ -52,3 +52,11 @@
 	-fx-text-fill: rgb(170,0,255);
 	-fx-font-size: 20;
 }
+
+#ADC{
+	-fx-text-fill: rgb(201,2,2);
+}
+#TitleLabel{
+	-fx-text-fill: rgb(219,178,255);
+	-fx-font-size: 25;
+}

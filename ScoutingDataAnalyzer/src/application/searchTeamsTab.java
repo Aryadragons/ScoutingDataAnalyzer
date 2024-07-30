@@ -696,7 +696,131 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			adultWarningL.setId("ADC");
 			this.add(adultWarningL, 0, 0);
 		}
-		this.add(new Label(""), 0, 12);
+		//driver stuff
+		Label driverInfoL = new Label("Driver Info:");
+		this.add(driverInfoL, 0, 12);
+		driverInfoL.setId("TitleLabel");
+		this.add(new Label("Same Driver Throughout the Tourment?"), 0, 13);
+		this.add(new Label("Same Driver as Last Tourment?"), 0, 14);
+		this.add(new Label("Same Driver as Last Year?"), 0, 15);
+		this.add(new Label("Hours Practicing With This Bot:"), 0, 16);
+		this.add(new Label("Hours Practicing With The Same Drive Train:"), 0, 17);
+		this.add(new Label("Hours Practicing With Any Bot"), 0, 18);
+		//add stats
+		String saDrTour;
+		if(theDTDList.getATeamPit(teamNum).getSaDrThisTour() == true) {
+			saDrTour = "Yes";
+		} else {
+			saDrTour = "No";
+		}
+		Label saDrTourL = new Label("                         " + saDrTour);
+		saDrTourL.setId("studslabel");
+		this.add(saDrTourL, 0, 13);
+		String saDrPast;
+		if(theDTDList.getATeamPit(teamNum).getSaDrPastTour() == true) {
+			saDrPast = "Yes";
+		} else {
+			saDrPast = "No";
+		}
+		Label saDrPastL = new Label("                         " + saDrPast);
+		saDrPastL.setId("studslabel");
+		this.add(saDrPastL, 0, 14);
+		String saDrLast;
+		if(theDTDList.getATeamPit(teamNum).getSaDrLastYear() == true) {
+			saDrLast = "Yes";
+		} else {
+			saDrLast = "No";
+		}
+		Label saDrLastL = new Label("                         " + saDrLast);
+		saDrLastL.setId("studslabel");
+		this.add(saDrLastL, 0, 15);
+		String saDrThis = Integer.toString(theDTDList.getATeamPit(teamNum).getDrHourThisBot());
+		Label saDrThisL = new Label("                         " + saDrThis);
+		saDrThisL.setId("studslabel");
+		this.add(saDrThisL, 0, 16);
+		String saDrSame = Integer.toString(theDTDList.getATeamPit(teamNum).getDrHourSameDrTr());
+		Label saDrSameL = new Label("                         " + saDrSame);
+		saDrSameL.setId("studslabel");
+		this.add(saDrSameL, 0, 17);
+		String saDrAny = Integer.toString(theDTDList.getATeamPit(teamNum).getDrHourAnyBot());
+		Label saDrAnyL = new Label("                         " + saDrAny);
+		saDrAnyL.setId("studslabel");
+		this.add(saDrAnyL, 0, 18);
+		//operator stuff
+		Label opInfoL = new Label("Operator Info:");
+		this.add(opInfoL, 0, 12);
+		opInfoL.setId("TitleLabel");
+		this.add(new Label("Same Operator Throughout the Tourment?"), 2, 13);
+		this.add(new Label("Same Operator as Last Tourment?"), 2, 14);
+		this.add(new Label("Same Operator as Last Year?"), 2, 15);
+		this.add(new Label("Hours Practicing With This Bot:"), 2, 16);
+		this.add(new Label("Hours Practicing With Any Bot"), 2, 17);
+		//add stats
+		String saOpTour;
+		if(theDTDList.getATeamPit(teamNum).getSaOpThisTour() == true){
+			saOpTour = "Yes";
+		} else {
+			saOpTour = "No";
+		}
+		Label saOpTourL = new Label("                         " + saOpTour);
+		saOpTourL.setId("studslabel");
+		this.add(saOpTourL, 2, 13);
+		String saOpPast;
+		if(theDTDList.getATeamPit(teamNum).getSaOpPastTour() == true) {
+			saOpPast = "Yes";
+		} else {
+			saOpPast = "No";
+		}
+		Label saOpPastL = new Label("                         " + saOpPast);
+		saOpPastL.setId("studslabel");
+		this.add(saOpPastL, 2, 14);
+		String saOpLast;
+		if(theDTDList.getATeamPit(teamNum).getSaOpLastYear() == true) {
+			saOpLast = "Yes";
+		} else {
+			saOpLast = "No";
+		}
+		Label saOpLastL = new Label("                         " + saOpLast);
+		saOpLastL.setId("studslabel");
+		this.add(saOpLastL, 2, 15);
+		String saOpThis = Integer.toString(theDTDList.getATeamPit(teamNum).getOpHourThisBot());
+		Label saOpThisL = new Label("                         " + saOpThis);
+		saOpThisL.setId("studslabel");
+		this.add(saOpThisL, 2, 16);
+		String saOpAny = Integer.toString(theDTDList.getATeamPit(teamNum).getOpHourAnyBot());
+		Label saOpAnyL = new Label("                         " + saOpAny);
+		saOpAnyL.setId("studslabel");
+		this.add(saOpAnyL, 2, 17);
+		//drive coach stuff
+		Label drCoInfoL = new Label("Drive Coach Info:");
+		this.add(drCoInfoL, 2, 18);
+		drCoInfoL.setId("TitleLabel");
+		this.add(new Label("Is Drive Coach an Adult?"), 2, 19);
+		this.add(new Label("How Long Have Thye Drive Coached:"), 2, 20);
+		//add stats
+		String adultDC;
+		if(theDTDList.getATeamPit(teamNum).getIsAdult() == true) {
+			adultDC = "Yes";
+		} else {
+			adultDC = "No";
+		}
+		Label adultDCL = new Label("                         " + adultDC);
+		adultDCL.setId("studslabel");
+		this.add(adultDCL, 2, 19);
+		String timeDC = theDTDList.getATeamPit(teamNum).getTimeDriveCoach();
+		Label timeDCL = new Label("                         " + timeDC);
+		timeDCL.setId("studslabel");
+		this.add(timeDCL, 2, 17);
+		//Human Player stuff
+		Label humInfoL = new Label("Human Player Info:");
+		this.add(humInfoL, 0, 19);
+		humInfoL.setId("TitleLabel");
+		this.add(new Label("Hours Human Player Practiced"), 0, 20);
+		//add stats
+		String humPrac = Integer.toString(theDTDList.getATeamPit(teamNum).getHumHoursPracitce());
+		Label humPracL = new Label("                         " + humPrac);
+		humPracL.setId("studslabel");
+		this.add(humPracL, 2, 17);
 	}
 	
 	@Override
