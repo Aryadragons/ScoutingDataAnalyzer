@@ -698,7 +698,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	
 	public void addDTDStuff(int teamNum) {
 		if(theDTDList.getATeamPit(teamNum).getIsAdult() == true) {
-			Label adultWarningL = new Label("                                       " + "Adult Drive Coach");
+			Label adultWarningL = new Label("                                                             " + "Adult Drive Coach");
 			adultWarningL.setId("ADC");
 			this.add(adultWarningL, 0, 0);
 		}
@@ -711,7 +711,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		this.add(new Label("Same Driver as Last Year?"), 0, 15);
 		this.add(new Label("Hours Practicing With This Bot:"), 0, 16);
 		this.add(new Label("Hours Practicing With The Same Drive Train:"), 0, 17);
-		this.add(new Label("Hours Practicing With Any Bot"), 0, 18);
+		this.add(new Label("Hours Practicing With Any Bot:"), 0, 18);
 		//add stats
 		String saDrTour;
 		if(theDTDList.getATeamPit(teamNum).getSaDrThisTour() == true) {
@@ -719,7 +719,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		} else {
 			saDrTour = "No";
 		}
-		Label saDrTourL = new Label("                         " + saDrTour);
+		Label saDrTourL = new Label("                                                " + saDrTour);
 		saDrTourL.setId("studslabel");
 		this.add(saDrTourL, 0, 13);
 		String saDrPast;
@@ -728,7 +728,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		} else {
 			saDrPast = "No";
 		}
-		Label saDrPastL = new Label("                         " + saDrPast);
+		Label saDrPastL = new Label("                                     " + saDrPast);
 		saDrPastL.setId("studslabel");
 		this.add(saDrPastL, 0, 14);
 		String saDrLast;
@@ -737,38 +737,42 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		} else {
 			saDrLast = "No";
 		}
-		Label saDrLastL = new Label("                         " + saDrLast);
+		Label saDrLastL = new Label("                                " + saDrLast);
 		saDrLastL.setId("studslabel");
 		this.add(saDrLastL, 0, 15);
 		String saDrThis = Integer.toString(theDTDList.getATeamPit(teamNum).getDrHourThisBot());
-		Label saDrThisL = new Label("                         " + saDrThis);
+		Label saDrThisL = new Label("                                      " + saDrThis);
 		saDrThisL.setId("studslabel");
 		this.add(saDrThisL, 0, 16);
 		String saDrSame = Integer.toString(theDTDList.getATeamPit(teamNum).getDrHourSameDrTr());
-		Label saDrSameL = new Label("                         " + saDrSame);
+		Label saDrSameL = new Label("                                                     " + saDrSame);
 		saDrSameL.setId("studslabel");
 		this.add(saDrSameL, 0, 17);
 		String saDrAny = Integer.toString(theDTDList.getATeamPit(teamNum).getDrHourAnyBot());
-		Label saDrAnyL = new Label("                         " + saDrAny);
+		Label saDrAnyL = new Label("                                      " + saDrAny);
 		saDrAnyL.setId("studslabel");
 		this.add(saDrAnyL, 0, 18);
 		//operator stuff
 		Label opInfoL = new Label("Operator Info:");
-		this.add(opInfoL, 0, 12);
 		opInfoL.setId("TitleLabel");
+		this.add(opInfoL, 2, 12);
 		this.add(new Label("Same Operator Throughout the Tourment?"), 2, 13);
 		this.add(new Label("Same Operator as Last Tourment?"), 2, 14);
 		this.add(new Label("Same Operator as Last Year?"), 2, 15);
 		this.add(new Label("Hours Practicing With This Bot:"), 2, 16);
 		this.add(new Label("Hours Practicing With Any Bot"), 2, 17);
 		//add stats
+		String opInfoType = theDTDList.getATeamPit(teamNum).getOpRole();
+		Label opInfoTypeL = new Label("                        " + opInfoType);
+		opInfoTypeL.setId("TitleLabel");
+		this.add(opInfoTypeL, 2, 12);
 		String saOpTour;
 		if(theDTDList.getATeamPit(teamNum).getSaOpThisTour() == true){
 			saOpTour = "Yes";
 		} else {
 			saOpTour = "No";
 		}
-		Label saOpTourL = new Label("                         " + saOpTour);
+		Label saOpTourL = new Label("                                                    " + saOpTour);
 		saOpTourL.setId("studslabel");
 		this.add(saOpTourL, 2, 13);
 		String saOpPast;
@@ -777,7 +781,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		} else {
 			saOpPast = "No";
 		}
-		Label saOpPastL = new Label("                         " + saOpPast);
+		Label saOpPastL = new Label("                                         " + saOpPast);
 		saOpPastL.setId("studslabel");
 		this.add(saOpPastL, 2, 14);
 		String saOpLast;
@@ -786,15 +790,15 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		} else {
 			saOpLast = "No";
 		}
-		Label saOpLastL = new Label("                         " + saOpLast);
+		Label saOpLastL = new Label("                                   " + saOpLast);
 		saOpLastL.setId("studslabel");
 		this.add(saOpLastL, 2, 15);
 		String saOpThis = Integer.toString(theDTDList.getATeamPit(teamNum).getOpHourThisBot());
-		Label saOpThisL = new Label("                         " + saOpThis);
+		Label saOpThisL = new Label("                                     " + saOpThis);
 		saOpThisL.setId("studslabel");
 		this.add(saOpThisL, 2, 16);
 		String saOpAny = Integer.toString(theDTDList.getATeamPit(teamNum).getOpHourAnyBot());
-		Label saOpAnyL = new Label("                         " + saOpAny);
+		Label saOpAnyL = new Label("                                     " + saOpAny);
 		saOpAnyL.setId("studslabel");
 		this.add(saOpAnyL, 2, 17);
 		//drive coach stuff
@@ -810,13 +814,13 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		} else {
 			adultDC = "No";
 		}
-		Label adultDCL = new Label("                         " + adultDC);
+		Label adultDCL = new Label("                              " + adultDC);
 		adultDCL.setId("studslabel");
 		this.add(adultDCL, 2, 19);
 		String timeDC = theDTDList.getATeamPit(teamNum).getTimeDriveCoach();
-		Label timeDCL = new Label("                         " + timeDC);
+		Label timeDCL = new Label("                                             " + timeDC);
 		timeDCL.setId("studslabel");
-		this.add(timeDCL, 2, 17);
+		this.add(timeDCL, 2, 20);
 		//Human Player stuff
 		Label humInfoL = new Label("Human Player Info:");
 		this.add(humInfoL, 0, 19);
@@ -824,9 +828,9 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		this.add(new Label("Hours Human Player Practiced"), 0, 20);
 		//add stats
 		String humPrac = Integer.toString(theDTDList.getATeamPit(teamNum).getHumHoursPracitce());
-		Label humPracL = new Label("                         " + humPrac);
+		Label humPracL = new Label("                                    " + humPrac);
 		humPracL.setId("studslabel");
-		this.add(humPracL, 2, 17);
+		this.add(humPracL, 0, 20);
 	}
 	
 	@Override

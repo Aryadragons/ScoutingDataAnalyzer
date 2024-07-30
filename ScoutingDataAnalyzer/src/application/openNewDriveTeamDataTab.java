@@ -182,7 +182,8 @@ public class openNewDriveTeamDataTab extends GridPane implements EventHandler<Ac
 			humHoursPracitce = Integer.parseInt(humHoursPracitceSTrue);
 			System.out.println("Boop 4");
 			fileDTD.addDriveTeamData(teamNum, saDrThisTour, saDrPastTour, saDrLastYear, drHourThisBot, drHourSameDrTr, drHourAnyBot, opRoleSTrue, saOpThisTour, saOpPastTour, saOpLastYear, opHourThisBot, opHourAnyBot, isAdult, timeDriveCoachSTrue, humHoursPracitce);
-			System.out.println("Boop 5");
+			System.out.println("Boop 5" + opRoleSTrue);
+			System.out.println("Boop 5.1" + fileDTD.listOfDriveTeamData.get(0).getOpRole());
 		}
 	}
 	

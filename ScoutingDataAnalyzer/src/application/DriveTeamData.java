@@ -32,6 +32,7 @@ public class DriveTeamData {
 		setDrHourSameDrTr(imDrHourSameDrTr);
 		setDrHourAnyBot(imDrHourAnyBot);
 		//operator
+		setOpRole(imOpRole);
 		setSaOpThisTour(imSaOpThisTour);
 		setSaOpPastTour(imSaOpThisTour);
 		setSaOpLastYear(imSaOpThisTour);
