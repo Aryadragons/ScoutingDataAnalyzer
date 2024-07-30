@@ -23,6 +23,7 @@ import java.util.ArrayList;
 			int i = 0;
 			System.out.println("Boop32.2");
 			TeamPit tempTP;
+			System.out.println("Boop32.2.");
 			tempTP = listOfTeamPits.get(i);
 			System.out.println("Boop32.3");
 			while(found < 1) {

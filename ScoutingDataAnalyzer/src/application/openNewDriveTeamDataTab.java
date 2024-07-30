@@ -27,6 +27,7 @@ public class openNewDriveTeamDataTab extends GridPane implements EventHandler<Ac
 	private DriveTeamDataList fileDTD;
 	
 	public openNewDriveTeamDataTab() {
+		fileDTD = new DriveTeamDataList();
 		this.add(new Label("Open New Data That Will Replace All Drive Team Data"), 0, 0);
 		this.add(new Label("Choosen File Name"), 0, 1);
 		fileNameReTF = new TextField();
@@ -113,7 +114,7 @@ public class openNewDriveTeamDataTab extends GridPane implements EventHandler<Ac
 		int opHourAnyBot;
 		boolean isAdult;
 		int humHoursPracitce;
-		
+		System.out.println("Boop 1");
 		while(fileInput.hasNextLine()) {
 			teamNumS = fileInput.next();
 			saDrThisTourS = fileInput.next();
@@ -131,7 +132,7 @@ public class openNewDriveTeamDataTab extends GridPane implements EventHandler<Ac
 			isAdultS = fileInput.next();
 			timeDriveCoachS = fileInput.next();
 			humHoursPracitceS = fileInput.next();
-			
+			System.out.println("Boop 2");
 			int lengthOfTeamNum = teamNumS.length() - 1;
 			teamNumSTrue = teamNumS.substring(1, lengthOfTeamNum);
 			int lengthOfsaDrThisTourS = saDrThisTourS.length() - 1;
@@ -164,7 +165,7 @@ public class openNewDriveTeamDataTab extends GridPane implements EventHandler<Ac
 			timeDriveCoachSTrue = timeDriveCoachS.substring(1, lengthOftimeDriveCoachS);
 			int lengthOfhumHoursPracitceS = humHoursPracitceS.length() - 1;
 			humHoursPracitceSTrue = humHoursPracitceS.substring(1, lengthOfhumHoursPracitceS);
-			
+			System.out.println("Boop 3");
 			teamNum = Integer.parseInt(teamNumSTrue);
 			saDrThisTour = Boolean.parseBoolean(saDrThisTourSTrue);
 			saDrPastTour = Boolean.parseBoolean(saDrPastTourSTrue);
@@ -179,8 +180,9 @@ public class openNewDriveTeamDataTab extends GridPane implements EventHandler<Ac
 			opHourAnyBot = Integer.parseInt(opHourAnyBotSTrue);
 			isAdult = Boolean.parseBoolean(isAdultSTrue);
 			humHoursPracitce = Integer.parseInt(humHoursPracitceSTrue);
-			
+			System.out.println("Boop 4");
 			fileDTD.addDriveTeamData(teamNum, saDrThisTour, saDrPastTour, saDrLastYear, drHourThisBot, drHourSameDrTr, drHourAnyBot, opRoleSTrue, saOpThisTour, saOpPastTour, saOpLastYear, opHourThisBot, opHourAnyBot, isAdult, timeDriveCoachSTrue, humHoursPracitce);
+			System.out.println("Boop 5");
 		}
 	}
 	
@@ -215,8 +217,10 @@ public class openNewDriveTeamDataTab extends GridPane implements EventHandler<Ac
 		String isAdultExS;
 		String timeDriveCoachExS;
 		String humHoursPracitceExS;
+		System.out.println("Boop 7");
 		try {
 			new FileWriter("MainDriveTeamDataFiles.txt", false).close();
+			System.out.println("Boop 8");
 			for(int i = 0; i < fileDTD.listOfDriveTeamData.size(); i++) {
 				teamNumEx = fileDTD.listOfDriveTeamData.get(i).getTeamNum();
 				saDrThisTourEx = fileDTD.listOfDriveTeamData.get(i).getSaDrThisTour();
@@ -234,6 +238,7 @@ public class openNewDriveTeamDataTab extends GridPane implements EventHandler<Ac
 				isAdultEx = fileDTD.listOfDriveTeamData.get(i).getIsAdult();
 				timeDriveCoachExS = fileDTD.listOfDriveTeamData.get(i).getTimeDriveCoach();
 				humHoursPracitceEx = fileDTD.listOfDriveTeamData.get(i).getHumHoursPracitce();
+				System.out.println("Boop 9");
 				teamNumExS = Integer.toString(teamNumEx);
 				saDrThisTourExS = Boolean.toString(saDrThisTourEx);
 				saDrPastTourExS = Boolean.toString(saDrPastTourEx);
@@ -248,10 +253,12 @@ public class openNewDriveTeamDataTab extends GridPane implements EventHandler<Ac
 				opHourAnyBotExS = Integer.toString(opHourAnyBotEx);
 				isAdultExS = Boolean.toString(isAdultEx);
 				humHoursPracitceExS = Integer.toString(humHoursPracitceEx);
+				System.out.println("Boop 10" + humHoursPracitceExS);
 				FileWriter fw;
-				fw = new FileWriter("MainPitDataFiles.txt", true);
+				fw = new FileWriter("MainDriveTeamDataFiles.txt", true);
 				BufferedWriter bw = new BufferedWriter(fw);
 				PrintWriter out = new PrintWriter(bw);
+				System.out.println("Boop 11");
 				out.println(teamNumExS);
 				out.println(saDrThisTourExS);
 				out.println(saDrPastTourExS);
@@ -268,17 +275,20 @@ public class openNewDriveTeamDataTab extends GridPane implements EventHandler<Ac
 				out.println(isAdultExS);
 				out.println(timeDriveCoachExS);
 				out.println(humHoursPracitceExS);
+				System.out.println("Boop 12");
+				out.close();
 			}
 		} catch (IOException e) {
 			System.out.println("Error" + e);
 		}
+		System.out.println("Boop 13");
 	}
 	
 	@Override
 	public void handle(ActionEvent event) {
 		try {
 			if(event.getSource() == goForReplaceB) {
-				//clear list of Drive Team data
+				fileDTD.listOfDriveTeamData.clear();
 				openDTDFile();
 			}
 			if(event.getSource() == goForAddB) {
@@ -287,7 +297,9 @@ public class openNewDriveTeamDataTab extends GridPane implements EventHandler<Ac
 			if(event.getSource() == submitReB) {
 				System.out.println("Boop0");
 				readInDTDFile();
+				System.out.println("Boop 6");
 				exportDTDData();
+				System.out.println("Boop 14");
 			}
 			if(event.getSource() == submitAddB) {
 				readInDTDFile();

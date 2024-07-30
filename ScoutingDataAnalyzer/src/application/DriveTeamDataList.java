@@ -22,6 +22,7 @@ public class DriveTeamDataList {
 		int i = 0;
 		System.out.println("Boop32.2");
 		DriveTeamData tempDTD;
+		System.out.println("Boop32.2.");
 		tempDTD = listOfDriveTeamData.get(i);
 		System.out.println("Boop32.3");
 		while(found < 1) {

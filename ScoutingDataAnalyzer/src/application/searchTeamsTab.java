@@ -64,6 +64,12 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		this.add(seTeamsB, 1, 1);
 		theTeamList = mainTeamList;
 		theTeamPitList = importedListOfTeamPits;
+		if (importedListOfTeamPits == null) {
+			System.out.println("Boop!!!!Pits");
+		}
+		if (imListOfDTD == null) {
+			System.out.println("Boop!!!!");
+		}
 		theDTDList = imListOfDTD;
 		System.out.println(theTeamList.listOfTeams.get(0).getTeamNum());
 	}
@@ -881,6 +887,13 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 					addPitDataStuff(theTeam.getTeamNum());
 				}
 				addPieCharts(theTeam);
+				System.out.println("Boop45");
+				if(theDTDList != null) {
+					System.out.println("Boop46");
+					addDTDStuff(theTeam.getTeamNum());
+					System.out.println("Boop47");
+				}
+				System.out.println("Boop48");
 			}
 			if(event.getSource() == statSubB) {
 				this.getChildren().remove(lineChart);
