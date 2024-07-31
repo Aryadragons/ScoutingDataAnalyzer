@@ -289,20 +289,67 @@ public class openNewDriveTeamComsTab extends GridPane implements EventHandler<Ac
 	}
 	
 	public void addDTCEntery() {
+		int match = 0;
+		int yellLevel = 0;
+		int controlLevel = 0;
+		int physicalLevel = 0;
+		int discrimLevel = 0;
+		int otherBLevel = 0;
+		int totalBLevel = 0;
+		int funLevel = 0;
+		int strategyLevel = 0;
+		int otherGLevel = 0;
+		String discrimTypeS = null;
+		String commentsS = null;
 		String teamNumS = enterTeamNum.getText();
 		String matchS = enterMatch.getText();
 		String yellLevelS = enterYell.getText();
 		String controlLevelS = enterControl.getText();
 		String physicalLevelS = enterPhysical.getText();
 		String discrimLevelS = enterDiscrim.getText();
-		String discrimTypeS = enterDisCrimType.getText();
+		if(enterDisCrimType.getText() != "") {
+			discrimTypeS = enterDisCrimType.getText();
+		}
 		String otherBLevelS = enterOtherB.getText();
 		String totalBLevelS = enterTeamNum.getText();
 		String funLevelS = enterFun.getText();
 		String strategyLevelS = enterStrategy.getText();
 		String otherGLevelS = enterOhterG.getText();
-		String commentsS = enterOhterG.getText();
-		
+		if(enterOhterG.getText() != "") {
+			commentsS = enterOhterG.getText();
+		}
+		int teamNum = Integer.parseInt(teamNumS);
+		if(matchS != null) {
+			match = Integer.parseInt(matchS);
+		}
+		if(yellLevelS != null) {
+			yellLevel = Integer.parseInt(yellLevelS);
+		}
+		if(controlLevelS != null) {
+			controlLevel = Integer.parseInt(controlLevelS);
+		}
+		if(physicalLevelS != null) {
+			physicalLevel = Integer.parseInt(physicalLevelS);
+		}
+		if(discrimLevelS != null) {
+			discrimLevel = Integer.parseInt(discrimLevelS);
+		}
+		if(otherBLevelS != null) {
+			otherBLevel = Integer.parseInt(otherBLevelS);
+		}
+		if(totalBLevelS != null) {
+			totalBLevel = Integer.parseInt(totalBLevelS);
+		}
+		if(funLevelS != null) {
+			funLevel = Integer.parseInt(funLevelS);
+		}
+		if(strategyLevelS != null) {
+			strategyLevel = Integer.parseInt(strategyLevelS);
+		}
+		if(otherGLevelS != null) {
+			otherGLevel = Integer.parseInt(otherGLevelS);
+		}
+		fileDTC.addDriveTeamComments(teamNum, match, yellLevel, controlLevel, physicalLevel, discrimLevel, discrimTypeS, otherBLevel, totalBLevel, funLevel, strategyLevel, otherGLevel, commentsS);
 	}
 	
 	@Override
@@ -327,6 +374,7 @@ public class openNewDriveTeamComsTab extends GridPane implements EventHandler<Ac
 				exportDTCData();
 			}
 			if(event.getSource() == addEnterB) {
+				addDTCEntery();
 			}
 		}catch(Exception e) {
 			System.out.println("Error:  " + e);

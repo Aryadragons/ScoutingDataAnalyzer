@@ -56,7 +56,28 @@
 #ADC{
 	-fx-text-fill: rgb(201,2,2);
 }
+
 #TitleLabel{
 	-fx-text-fill: rgb(219,178,255);
 	-fx-font-size: 25;
+}
+
+#warn1{
+	-fx-text-fill: rgb(232,229,28);
+	-fx-font-size: 20;
+}
+
+#warn2{
+	-fx-text-fill: rgb(252,92,18);
+	-fx-font-size: 20;
+}
+
+#warn3{
+	-fx-text-fill: rgb(201,2,2);
+	-fx-font-size: 20;
+}
+
+#strat{
+	-fx-text-fill: rgb(4,179,6);
+	-fx-font-size: 20;
 }
