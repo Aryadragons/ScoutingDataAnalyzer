@@ -105,6 +105,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			mainTeamList = new TeamList();
 			fileTPL = new TeamPitsList();
 			fileDTDL = new DriveTeamDataList();
+			fileDTCL = new DriveTeamCommentsList();
 			root.setTop(MB);
 			//adding the Tab panes
 			mainTP = new TabPane();
@@ -549,7 +550,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		int funLevel;
 		int strategyLevel;
 		int otherGLevel;
-		File file = new File("MainDriveTeamDataFiles.txt");
+		File file = new File("MainDriveTeamCommentsFiles.txt");
 		try {
 			fileInputDTC = new Scanner(file);
 		} catch (FileNotFoundException e) {
@@ -557,6 +558,33 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		}
 		while(fileInputDTD.hasNext() == true) {
 			teamNumS = fileInputDTC.next();
+			matchS = fileInputDTC.next();
+			yellLevelS = fileInputDTC.next();
+			controlLevelS = fileInputDTC.next();
+			physicalLevelS = fileInputDTC.next();
+			discrimLevelS = fileInputDTC.next();
+			discrimTypeS = fileInputDTC.next();
+			otherBLevelS = fileInputDTC.next();
+			totalBLevelS = fileInputDTC.next();
+			funLevelS = fileInputDTC.next();
+			strategyLevelS = fileInputDTC.next();
+			otherGLevelS = fileInputDTC.next();
+			commentsS = fileInputDTC.next();
+			teamNum = Integer.parseInt(teamNumS);
+			match = Integer.parseInt(matchS);
+			yellLevel = Integer.parseInt(yellLevelS);
+			controlLevel = Integer.parseInt(controlLevelS);
+			physicalLevel = Integer.parseInt(physicalLevelS);
+			discrimLevel = Integer.parseInt(discrimLevelS);
+			otherBLevel = Integer.parseInt(otherBLevelS);
+			totalBLevel = Integer.parseInt(totalBLevelS);
+			funLevel = Integer.parseInt(funLevelS);
+			strategyLevel = Integer.parseInt(strategyLevelS);
+			otherGLevel = Integer.parseInt(otherGLevelS);
+			fileDTCL.addDriveTeamComments(teamNum, match, yellLevel, controlLevel, physicalLevel, discrimLevel, discrimTypeS, otherBLevel, totalBLevel, funLevel, strategyLevel, otherGLevel, commentsS);
+		}
+		if(fileDTCL == null) {
+			System.out.println("BoopBoopDTC!!!!!");
 		}
 	}
 	
@@ -1381,6 +1409,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 				updateDataList();
 				updatePitData();
 				updateDriveTeamDataList();
+				updateDriveTeamCommentsList();
 			}
 		} catch(Exception e) {
 			System.out.println("error: " + e);

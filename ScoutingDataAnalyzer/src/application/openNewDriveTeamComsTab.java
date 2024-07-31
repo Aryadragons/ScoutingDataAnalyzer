@@ -23,8 +23,21 @@ public class openNewDriveTeamComsTab extends GridPane implements EventHandler<Ac
 	private Button submitAddB;
 	private TextField fileNameReTF;
 	private TextField fileNameAddTF;
+	private TextField enterTeamNum;
+	private TextField enterMatch;
+	private TextField enterYell;
+	private TextField enterControl;
+	private TextField enterPhysical;
+	private TextField enterDiscrim;
+	private TextField enterDisCrimType;
+	private TextField enterOtherB;
+	private TextField enterFun;
+	private TextField enterStrategy;
+	private TextField enterOhterG;
+	private TextField enterComments;
 	private Scanner fileInput;
 	private DriveTeamCommentsList fileDTC;
+	private Button addEnterB;
 	
 	public openNewDriveTeamComsTab() {
 		this.add(new Label("Open New Data That Will Replace All Pit Data"), 0, 0);
@@ -47,9 +60,7 @@ public class openNewDriveTeamComsTab extends GridPane implements EventHandler<Ac
 		this.add(goForAddB, 1, 2);
 		this.add(submitReB, 2, 1);
 		this.add(submitAddB, 2, 3);
-		for (int i = 0; i < 23; i++) {
-			this.add(new Label(""), 0, i);
-		}
+		addDTCEnterySetUp();
 	}
 	
 	public void openDTCFile() {
@@ -185,7 +196,7 @@ public class openNewDriveTeamComsTab extends GridPane implements EventHandler<Ac
 		String otherGLevelS;
 		String commentsS;
 		try {
-			new FileWriter("MainDriveTeamDataFiles.txt", false).close();
+			new FileWriter("MainDriveTeamCommentsFiles.txt", false).close();
 			System.out.println("Boop 8");
 			for(int i = 0; i < fileDTC.listOfDriveTeamComments.size(); i++) {
 				teamNum = fileDTC.listOfDriveTeamComments.get(i).getTeamNum();
@@ -235,6 +246,65 @@ public class openNewDriveTeamComsTab extends GridPane implements EventHandler<Ac
 		}
 	}
 	
+	public void addDTCEnterySetUp() {
+		this.add(new Label("Enter a Comment: "), 0, 5);
+		this.add(new Label("Team Number:"), 0, 6);
+		this.add(new Label("Match:"), 1, 6);
+		this.add(new Label("Yell Level:"), 0, 7);
+		this.add(new Label("Control Level:"), 1, 7);
+		this.add(new Label("Physical Level:"), 3, 7);
+		this.add(new Label("Discrimination Level:"), 0, 8);
+		this.add(new Label("Discrimination Type:"), 1, 8);
+		this.add(new Label("Other Level:"), 3, 8);
+		this.add(new Label("Fun Level:"), 0, 9);
+		this.add(new Label("Strategy Level:"), 1, 9);
+		this.add(new Label("Other Level:"), 3, 9);
+		enterTeamNum = new TextField();
+		enterMatch = new TextField();
+		enterYell = new TextField();
+		enterControl = new TextField();
+		enterPhysical = new TextField();
+		enterDiscrim = new TextField();
+		enterDisCrimType = new TextField();
+		enterOtherB = new TextField();
+		enterFun = new TextField();
+		enterStrategy = new TextField();
+		enterOhterG = new TextField();
+		enterComments = new TextField();
+		this.add(enterTeamNum, 0, 6);
+		this.add(enterMatch, 2, 6);
+		this.add(enterYell, 0, 7);
+		this.add(enterControl, 2, 7);
+		this.add(enterPhysical, 4, 7);
+		this.add(enterDiscrim, 0, 8);
+		this.add(enterDisCrimType, 2, 8);
+		this.add(enterOtherB, 4, 8);
+		this.add(enterFun, 0, 9);
+		this.add(enterStrategy, 2, 9);
+		this.add(enterOhterG, 4, 9);
+		this.add(enterComments, 0, 10);
+		addEnterB = new Button("Enter");
+		addEnterB.setOnAction(this);
+		this.add(addEnterB, 0, 11);
+	}
+	
+	public void addDTCEntery() {
+		String teamNumS = enterTeamNum.getText();
+		String matchS = enterMatch.getText();
+		String yellLevelS = enterYell.getText();
+		String controlLevelS = enterControl.getText();
+		String physicalLevelS = enterPhysical.getText();
+		String discrimLevelS = enterDiscrim.getText();
+		String discrimTypeS = enterDisCrimType.getText();
+		String otherBLevelS = enterOtherB.getText();
+		String totalBLevelS = enterTeamNum.getText();
+		String funLevelS = enterFun.getText();
+		String strategyLevelS = enterStrategy.getText();
+		String otherGLevelS = enterOhterG.getText();
+		String commentsS = enterOhterG.getText();
+		
+	}
+	
 	@Override
 	public void handle(ActionEvent event) {
 		try {
@@ -255,6 +325,8 @@ public class openNewDriveTeamComsTab extends GridPane implements EventHandler<Ac
 			if(event.getSource() == submitAddB) {
 				readInDTCFile();
 				exportDTCData();
+			}
+			if(event.getSource() == addEnterB) {
 			}
 		}catch(Exception e) {
 			System.out.println("Error:  " + e);
