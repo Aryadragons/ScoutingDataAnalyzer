@@ -82,6 +82,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	private Scanner fileInput;
 	private Scanner fileInputP;
 	private Scanner fileInputDTD;
+	private Scanner fileInputDTC;
 	//
 	private List<Integer> listOfTeamNums;
 	private List<Integer> listOfTeamNumsSorted;
@@ -89,6 +90,8 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	private TeamPitsList fileTPL;
 	//Drive team Data stuff
 	private DriveTeamDataList fileDTDL;
+	//Drive team Comments Stuff
+	private DriveTeamCommentsList fileDTCL;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -518,6 +521,42 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		}
 		if(fileDTDL == null) {
 			System.out.println("BoopBoop!!!!!");
+		}
+	}
+	
+	private void updateDriveTeamCommentsList() {
+		String teamNumS;
+		String matchS;
+		String yellLevelS;
+		String controlLevelS;
+		String physicalLevelS;
+		String discrimLevelS;
+		String discrimTypeS;
+		String otherBLevelS;
+		String totalBLevelS;
+		String funLevelS;
+		String strategyLevelS;
+		String otherGLevelS;
+		String commentsS;
+		int teamNum;
+		int match;
+		int yellLevel;
+		int controlLevel;
+		int physicalLevel;
+		int discrimLevel;
+		int otherBLevel;
+		int totalBLevel;
+		int funLevel;
+		int strategyLevel;
+		int otherGLevel;
+		File file = new File("MainDriveTeamDataFiles.txt");
+		try {
+			fileInputDTC = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			System.out.println("Error" + e);
+		}
+		while(fileInputDTD.hasNext() == true) {
+			teamNumS = fileInputDTC.next();
 		}
 	}
 	
