@@ -837,70 +837,73 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	
 	public void addDTCStuff(int teamNum){
 		if(theDTCList.getADriveTeamComments(teamNum).gettotalBLevel() >= 2) {
-			Label warning1 = new Label("Warning Level 1");
+			Label warning1 = new Label("                         Warning Level 1");
 			warning1.setId("warn1");
-			this.add(warning1, 0, 0);
+			this.add(warning1, 2, 0);
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).gettotalBLevel() >= 5) {
-			Label warning2 = new Label("Warning Level 2");
+			Label warning2 = new Label("                         Warning Level 2");
 			warning2.setId("warn2");
-			this.add(warning2, 0, 0);
+			this.add(warning2, 2, 0);
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).gettotalBLevel() >= 10) {
-			Label warning3 = new Label("Warning Level 3");
+			Label warning3 = new Label("                         Warning Level 3");
 			warning3.setId("warn3");
-			this.add(warning3, 0, 0);
+			this.add(warning3, 2, 0);
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).getStrategyLevel() >= 2) {
-			Label strat = new Label("Good at Strategy");
+			Label strat = new Label("                                                    Good at Strategy");
 			strat.setId("strat");
-			this.add(strat, 0, 0);
+			this.add(strat, 2, 0);
 		}
+		Label dtcC = new Label("Comments From Drive Team:");
+		dtcC.setId("TitleLabel");
+		this.add(dtcC, 0, 21);
 		int stuff = 22;
 		int numOfB = 0;
-		if (theDTCList.getADriveTeamComments(teamNum).getYellLevel() != 0) {
+		if(theDTCList.getADriveTeamComments(teamNum).getYellLevel() != 0) {
 			stuff++;
 			numOfB++;
 			this.add(new Label("Yell Level: " + theDTCList.getADriveTeamComments(teamNum).getYellLevel()), 0, stuff);
 		}
-		if (theDTCList.getADriveTeamComments(teamNum).getControlLevel() != 0) {
+		if(theDTCList.getADriveTeamComments(teamNum).getControlLevel() != 0) {
 			stuff++;
 			numOfB++;
 			this.add(new Label("Control Level: " + theDTCList.getADriveTeamComments(teamNum).getControlLevel()), 0, stuff);
 		}
-		if (theDTCList.getADriveTeamComments(teamNum).getPhysicalLevel() != 0) {
+		if(theDTCList.getADriveTeamComments(teamNum).getPhysicalLevel() != 0) {
 			stuff++;
 			numOfB++;
 			this.add(new Label("Physical Level: " + theDTCList.getADriveTeamComments(teamNum).getPhysicalLevel()), 0, stuff);
 		}
-		if (theDTCList.getADriveTeamComments(teamNum).getDiscrimLevel() != 0) {
+		if(theDTCList.getADriveTeamComments(teamNum).getDiscrimLevel() != 0) {
 			stuff++;
 			numOfB++;
 			this.add(new Label("Discrimination Level: " + theDTCList.getADriveTeamComments(teamNum).getDiscrimLevel()), 0, stuff);
 		}
-		if (theDTCList.getADriveTeamComments(teamNum).getDisCrimType() != null) {
+		if(theDTCList.getADriveTeamComments(teamNum).getDisCrimType() != null) {
 			stuff++;
 			numOfB++;
 			this.add(new Label("Type/s of Discrimination: " + theDTCList.getADriveTeamComments(teamNum).getDisCrimType()), 0, stuff);
 		}
-		if (theDTCList.getADriveTeamComments(teamNum).getOtherBLevel() != 0) {
+		if(theDTCList.getADriveTeamComments(teamNum).getOtherBLevel() != 0) {
 			stuff++;
 			numOfB++;
 			this.add(new Label("Other Bad Stuff Level: " + theDTCList.getADriveTeamComments(teamNum).getOtherBLevel()), 0, stuff);
 		}
-		if (theDTCList.getADriveTeamComments(teamNum).getFunLevel() != 0) {
+		if(theDTCList.getADriveTeamComments(teamNum).getFunLevel() != 0) {
 			stuff++;
 			this.add(new Label("Fun Level: " + theDTCList.getADriveTeamComments(teamNum).getFunLevel()), 2, (stuff - numOfB));
 		}
-		if (theDTCList.getADriveTeamComments(teamNum).getStrategyLevel() != 0) {
+		if(theDTCList.getADriveTeamComments(teamNum).getStrategyLevel() != 0) {
 			stuff++;
 			this.add(new Label("Strategy Level: " + theDTCList.getADriveTeamComments(teamNum).getStrategyLevel()), 2, (stuff - numOfB));
 		}
-		if (theDTCList.getADriveTeamComments(teamNum).getOtherGLevel() != 0) {
+		if(theDTCList.getADriveTeamComments(teamNum).getOtherGLevel() != 0) {
 			stuff++;
 			this.add(new Label("Ohter Good Stuff Level: " + theDTCList.getADriveTeamComments(teamNum).getOtherGLevel()), 2, (stuff - numOfB));
 		}
-		if (theDTCList.getADriveTeamComments(teamNum).getComments() != null) {
+		if(theDTCList.getADriveTeamComments(teamNum).getComments() != null) {
 			stuff++;
 			this.add(new Label("Comments: "), 0, stuff);
 			stuff++;
@@ -926,7 +929,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				this.getChildren().clear();
 				System.out.println("Boop32");
 				String teamNumS = Integer.toString(theTeam.getTeamNum());
-				String title = (teamNumS + theTeamPitList.getATeamPit(theTeam.getTeamNum()).getTeamName()+"'s Stats:");
+				String title = (teamNumS + " " + theTeamPitList.getATeamPit(theTeam.getTeamNum()).getTeamName()+"'s Stats:");
 				this.add(new Label(title), 0, 0);
 				this.add(new Label("Comments:  "), 1, 0);
 				List<String> commentList = theTeam.getCommentsList();
@@ -974,8 +977,11 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				}
 				System.out.println("Boop48");
 				if(theDTCList != null) {
+					System.out.println("Boop49");
 					if(theDTCList.getADriveTeamComments(theTeam.getTeamNum()) != null) {
+						System.out.println("Boop50");
 						addDTCStuff(theTeam.getTeamNum());
+						System.out.println("Boop51");
 					}
 				}
 			}

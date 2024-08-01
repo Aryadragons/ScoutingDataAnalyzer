@@ -550,19 +550,26 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		int funLevel;
 		int strategyLevel;
 		int otherGLevel;
-		File file = new File("MainDriveTeamCommentsFiles.txt");
+		System.out.println("Boop DTC 0");
+		File file = new File("MainDriveTeamCommentsFile.txt");
+		System.out.println("Boop DTC 0.1");
 		try {
+			System.out.println("Boop DTC 0.2");
 			fileInputDTC = new Scanner(file);
+			System.out.println("Boop DTC 0.3");
 		} catch (FileNotFoundException e) {
 			System.out.println("Error" + e);
 		}
-		while(fileInputDTD.hasNext() == true) {
+		System.out.println("Boop DTC 0.4");
+		while(fileInputDTC.hasNext() == true) {
+			System.out.println("Boop DTC 1");
 			teamNumS = fileInputDTC.next();
 			matchS = fileInputDTC.next();
 			yellLevelS = fileInputDTC.next();
 			controlLevelS = fileInputDTC.next();
 			physicalLevelS = fileInputDTC.next();
 			discrimLevelS = fileInputDTC.next();
+			System.out.println("Boop DTC 2");
 			discrimTypeS = fileInputDTC.next();
 			otherBLevelS = fileInputDTC.next();
 			totalBLevelS = fileInputDTC.next();
@@ -570,6 +577,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			strategyLevelS = fileInputDTC.next();
 			otherGLevelS = fileInputDTC.next();
 			commentsS = fileInputDTC.next();
+			System.out.println("Boop DTC 3");
 			teamNum = Integer.parseInt(teamNumS);
 			match = Integer.parseInt(matchS);
 			yellLevel = Integer.parseInt(yellLevelS);
@@ -581,7 +589,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			funLevel = Integer.parseInt(funLevelS);
 			strategyLevel = Integer.parseInt(strategyLevelS);
 			otherGLevel = Integer.parseInt(otherGLevelS);
+			System.out.println("Boop DTC 4");
 			fileDTCL.addDriveTeamComments(teamNum, match, yellLevel, controlLevel, physicalLevel, discrimLevel, discrimTypeS, otherBLevel, totalBLevel, funLevel, strategyLevel, otherGLevel, commentsS);
+			System.out.println("Boop DTC 5");
 		}
 		if(fileDTCL == null) {
 			System.out.println("BoopBoopDTC!!!!!");

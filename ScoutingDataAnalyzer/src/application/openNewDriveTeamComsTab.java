@@ -40,6 +40,7 @@ public class openNewDriveTeamComsTab extends GridPane implements EventHandler<Ac
 	private Button addEnterB;
 	
 	public openNewDriveTeamComsTab() {
+		fileDTC = new DriveTeamCommentsList();
 		this.add(new Label("Open New Data That Will Replace All Pit Data"), 0, 0);
 		this.add(new Label("Choosen File Name"), 0, 1);
 		fileNameReTF = new TextField();
@@ -196,7 +197,7 @@ public class openNewDriveTeamComsTab extends GridPane implements EventHandler<Ac
 		String otherGLevelS;
 		String commentsS;
 		try {
-			new FileWriter("MainDriveTeamCommentsFiles.txt", false).close();
+			new FileWriter("MainDriveTeamCommentsFile.txt", false).close();
 			System.out.println("Boop 8");
 			for(int i = 0; i < fileDTC.listOfDriveTeamComments.size(); i++) {
 				teamNum = fileDTC.listOfDriveTeamComments.get(i).getTeamNum();
@@ -224,7 +225,7 @@ public class openNewDriveTeamComsTab extends GridPane implements EventHandler<Ac
 				otherGLevelS = Integer.toString(otherGLevel);
 				commentsS = fileDTC.listOfDriveTeamComments.get(i).getComments();
 				FileWriter fw;
-				fw = new FileWriter("MainDriveTeamDataFiles.txt", true);
+				fw = new FileWriter("MainDriveTeamCommentsFile.txt", true);
 				BufferedWriter bw = new BufferedWriter(fw);
 				PrintWriter out = new PrintWriter(bw);
 				out.println(teamNumS);
@@ -240,6 +241,7 @@ public class openNewDriveTeamComsTab extends GridPane implements EventHandler<Ac
 				out.println(strategyLevelS);
 				out.println(otherGLevelS);
 				out.println(commentsS);
+				out.close();
 			}
 		} catch (IOException e) {
 			System.out.println("Error" + e);
@@ -247,18 +249,18 @@ public class openNewDriveTeamComsTab extends GridPane implements EventHandler<Ac
 	}
 	
 	public void addDTCEnterySetUp() {
-		this.add(new Label("Enter a Comment: "), 0, 5);
-		this.add(new Label("Team Number:"), 0, 6);
-		this.add(new Label("Match:"), 1, 6);
-		this.add(new Label("Yell Level:"), 0, 7);
+		this.add(new Label("Enter a Comment: "), 1, 5);
+		this.add(new Label("Team Number:"), 1, 6);
+		this.add(new Label("Match:"), 3, 6);
+		this.add(new Label("Yell Level:"), 1, 7);
 		this.add(new Label("Control Level:"), 1, 7);
-		this.add(new Label("Physical Level:"), 3, 7);
-		this.add(new Label("Discrimination Level:"), 0, 8);
-		this.add(new Label("Discrimination Type:"), 1, 8);
-		this.add(new Label("Other Level:"), 3, 8);
-		this.add(new Label("Fun Level:"), 0, 9);
-		this.add(new Label("Strategy Level:"), 1, 9);
-		this.add(new Label("Other Level:"), 3, 9);
+		this.add(new Label("Physical Level:"), 5, 7);
+		this.add(new Label("Discrimination Level:"), 1, 8);
+		this.add(new Label("Discrimination Type:"), 3, 8);
+		this.add(new Label("Other Level:"), 5, 8);
+		this.add(new Label("Fun Level:"), 1, 9);
+		this.add(new Label("Strategy Level:"), 3, 9);
+		this.add(new Label("Other Level:"), 5, 9);
 		enterTeamNum = new TextField();
 		enterMatch = new TextField();
 		enterYell = new TextField();
@@ -271,21 +273,21 @@ public class openNewDriveTeamComsTab extends GridPane implements EventHandler<Ac
 		enterStrategy = new TextField();
 		enterOhterG = new TextField();
 		enterComments = new TextField();
-		this.add(enterTeamNum, 0, 6);
-		this.add(enterMatch, 2, 6);
-		this.add(enterYell, 0, 7);
-		this.add(enterControl, 2, 7);
-		this.add(enterPhysical, 4, 7);
-		this.add(enterDiscrim, 0, 8);
-		this.add(enterDisCrimType, 2, 8);
-		this.add(enterOtherB, 4, 8);
-		this.add(enterFun, 0, 9);
-		this.add(enterStrategy, 2, 9);
-		this.add(enterOhterG, 4, 9);
-		this.add(enterComments, 0, 10);
+		this.add(enterTeamNum, 2, 6);
+		this.add(enterMatch, 4, 6);
+		this.add(enterYell, 2, 7);
+		this.add(enterControl, 4, 7);
+		this.add(enterPhysical, 6, 7);
+		this.add(enterDiscrim, 2, 8);
+		this.add(enterDisCrimType, 4, 8);
+		this.add(enterOtherB, 6, 8);
+		this.add(enterFun, 2, 9);
+		this.add(enterStrategy, 4, 9);
+		this.add(enterOhterG, 6, 9);
+		this.add(enterComments, 2, 10);
 		addEnterB = new Button("Enter");
 		addEnterB.setOnAction(this);
-		this.add(addEnterB, 0, 11);
+		this.add(addEnterB, 2, 11);
 	}
 	
 	public void addDTCEntery() {
@@ -299,8 +301,8 @@ public class openNewDriveTeamComsTab extends GridPane implements EventHandler<Ac
 		int funLevel = 0;
 		int strategyLevel = 0;
 		int otherGLevel = 0;
-		String discrimTypeS = null;
-		String commentsS = null;
+		String discrimTypeS = "null";
+		String commentsS = "null";
 		String teamNumS = enterTeamNum.getText();
 		String matchS = enterMatch.getText();
 		String yellLevelS = enterYell.getText();
@@ -319,34 +321,34 @@ public class openNewDriveTeamComsTab extends GridPane implements EventHandler<Ac
 			commentsS = enterOhterG.getText();
 		}
 		int teamNum = Integer.parseInt(teamNumS);
-		if(matchS != null) {
+		if(matchS.compareTo("0") != 0) {
 			match = Integer.parseInt(matchS);
 		}
-		if(yellLevelS != null) {
+		if(yellLevelS.compareTo("0") != 0) {
 			yellLevel = Integer.parseInt(yellLevelS);
 		}
-		if(controlLevelS != null) {
+		if(controlLevelS.compareTo("0") != 0) {
 			controlLevel = Integer.parseInt(controlLevelS);
 		}
-		if(physicalLevelS != null) {
+		if(physicalLevelS.compareTo("0") != 0) {
 			physicalLevel = Integer.parseInt(physicalLevelS);
 		}
-		if(discrimLevelS != null) {
+		if(discrimLevelS.compareTo("0") != 0) {
 			discrimLevel = Integer.parseInt(discrimLevelS);
 		}
-		if(otherBLevelS != null) {
+		if(otherBLevelS.compareTo("0") != 0) {
 			otherBLevel = Integer.parseInt(otherBLevelS);
 		}
-		if(totalBLevelS != null) {
+		if(totalBLevelS.compareTo("0") != 0) {
 			totalBLevel = Integer.parseInt(totalBLevelS);
 		}
-		if(funLevelS != null) {
+		if(funLevelS.compareTo("0") != 0) {
 			funLevel = Integer.parseInt(funLevelS);
 		}
-		if(strategyLevelS != null) {
+		if(strategyLevelS.compareTo("0") != 0) {
 			strategyLevel = Integer.parseInt(strategyLevelS);
 		}
-		if(otherGLevelS != null) {
+		if(otherGLevelS.compareTo("0") != 0) {
 			otherGLevel = Integer.parseInt(otherGLevelS);
 		}
 		fileDTC.addDriveTeamComments(teamNum, match, yellLevel, controlLevel, physicalLevel, discrimLevel, discrimTypeS, otherBLevel, totalBLevel, funLevel, strategyLevel, otherGLevel, commentsS);
