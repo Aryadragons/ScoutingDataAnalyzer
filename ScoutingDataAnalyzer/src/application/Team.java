@@ -30,11 +30,11 @@ public class Team {
 	private int timesHumSco = 0;
 	private List<String> listOfHumPostions;
 	private MatchList theMatchList;
-	
+	private AutoList theAutoList;
 	Team(){
 	}
 	
-	Team(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, List<String> commentList, List<String> tempHumPostionsList, int totalHumScoSkill, int totalHumAmpSkill, int totalHumAmpNotes, int importTimesHumAmp, int importTimesHumSco, MatchList importMatchList){
+	Team(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, List<String> commentList, List<String> tempHumPostionsList, int totalHumScoSkill, int totalHumAmpSkill, int totalHumAmpNotes, int importTimesHumAmp, int importTimesHumSco, MatchList importMatchList, AutoList imAutoList){
 		System.out.println("boop18.11 " + totalHumAmpSkill);
 		setTeamNum(tempTeamNum);
 		setTotalCycles(tempTotalCycles);
@@ -80,9 +80,10 @@ public class Team {
 		//setting the match list
 		setMatchList(importMatchList);
 		System.out.println("boop18.17");
+		setAutoList(imAutoList);
 	}
 	
-	public void setTeamInMain(int tempTeamNum, int tempTotalCycles, int tempTotalAmp, int tempTotalSpe, int tempTotalTrap, double tempAvgCycles, int tempTotalMatchesPlayed, double tempAvgAmp, double tempAvgSpe, double tempAvgClimb, double tempAvgTrap, List<String> commentList, List<String> tempHumPostionsList, double avgHumScoSkill, double avgHumAmpSkill, double avgHumAmpNotes, int importTimesHumAmp, int importTimesHumSco, MatchList importMatchList) {
+	public void setTeamInMain(int tempTeamNum, int tempTotalCycles, int tempTotalAmp, int tempTotalSpe, int tempTotalTrap, double tempAvgCycles, int tempTotalMatchesPlayed, double tempAvgAmp, double tempAvgSpe, double tempAvgClimb, double tempAvgTrap, List<String> commentList, List<String> tempHumPostionsList, double avgHumScoSkill, double avgHumAmpSkill, double avgHumAmpNotes, int importTimesHumAmp, int importTimesHumSco, MatchList importMatchList, AutoList imAutoList) {
 		System.out.println("Boop28.21" + tempTotalCycles + tempTotalAmp + tempTotalSpe + tempTotalTrap);
 		// set er's for avg
 		setTeamNum(tempTeamNum);
@@ -116,6 +117,7 @@ public class Team {
 		setAvgHumAmpNotes(avgHumAmpNotes);
 		setMatchList(importMatchList);
 		System.out.println("Boop28.26");
+		setAutoList(imAutoList);
 	}
 	
 	public int setTeamNum(int tempTeamNum){
@@ -218,6 +220,9 @@ public class Team {
 		theMatchList.addPreMadeMatch(tempMatch);
 	}
 	
+	public void setAutoList(AutoList temp) {
+		theAutoList = temp;
+	}
 	//clear list er's
 	public void clearCommentsList(){
 		listOfComments.clear();
@@ -315,6 +320,10 @@ public class Team {
 	
 	public MatchList getMatchList() {
 		return theMatchList;
+	}
+	
+	public AutoList getAutoList() {
+		return theAutoList;
 	}
 	
 	public String toString() {

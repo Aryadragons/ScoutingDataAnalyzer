@@ -296,12 +296,64 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				List<String> humPostionsListT;
 				int timesHumAmpT;
 				int timesHumScoT;
+				// auto stuff
+				String autoStartPosS;
+				String autoANControlS;
+				String autoASpeckerS;
+				String autoAAmpS;
+				String autoNControlS;
+				String autoSpeckerS;
+				String autoAmpS;
+				String autoStartPosSTrue;
+				String autoANControlSTrue;
+				String autoASpeckerSTrue;
+				String autoAAmpSTrue;
+				String autoNControlSTrue;
+				String autoSpeckerSTrue;
+				String autoAmpSTrue;
+				int autoStartPos;
+				int autoANControl;
+				int autoASpecker;
+				int autoAAmp;
+				int autoNControl;
+				int autoSpecker;
+				int autoAmp;
 				//for(int i = 0; i < 5; i++) {
 					//fileInput.next();
 			//	}
 				while(fileInput.hasNextLine()) {
 					fileTeamNumS = fileInput.next();
 					fileMatchNumS = fileInput.next();
+					//auto stuff
+					autoStartPosS = fileInput.next();
+					autoANControlS = fileInput.next();
+					autoASpeckerS = fileInput.next();
+					autoAAmpS = fileInput.next();
+					autoNControlS = fileInput.next();
+					autoSpeckerS = fileInput.next();
+					autoAmpS = fileInput.next();
+					int lengthOfAutoStartPos = autoStartPosS.length() - 1;
+					autoStartPosSTrue = autoStartPosS.substring(1, lengthOfAutoStartPos);
+					int lengthOfAutoANControl = autoANControlS.length() - 1;
+					autoANControlSTrue = autoANControlS.substring(1, lengthOfAutoANControl);
+					int lengthOfAutoASpecker = autoASpeckerS.length() - 1;
+					autoASpeckerSTrue = autoASpeckerS.substring(1, lengthOfAutoASpecker);
+					int lengthOfAutoAAmp = autoAAmpS.length() - 1;
+					autoAAmpSTrue = autoAAmpS.substring(1, lengthOfAutoAAmp);
+					int lengthOfAutoNControl = autoNControlS.length() - 1;
+					autoNControlSTrue = autoNControlS.substring(1, lengthOfAutoNControl);
+					int lengthOfAutoSpecker = autoSpeckerS.length() - 1;
+					autoSpeckerSTrue = autoSpeckerS.substring(1, lengthOfAutoSpecker);
+					int lengthOfAutoAmp = autoAmpS.length() - 1;
+					autoAmpSTrue = autoAmpS.substring(1, lengthOfAutoAmp);
+					autoStartPos = Integer.parseInt(autoStartPosSTrue);
+					autoANControl = Integer.parseInt(autoANControlSTrue);
+					autoASpecker = Integer.parseInt(autoASpeckerSTrue);
+					autoAAmp = Integer.parseInt(autoAAmpSTrue);
+					autoNControl = Integer.parseInt(autoNControlSTrue);
+					autoSpecker = Integer.parseInt(autoSpeckerSTrue);
+					autoAmp = Integer.parseInt(autoAmpSTrue);
+					
 					fileAmpS = fileInput.next();
 					fileSpeS = fileInput.next();
 					fileTrapS = fileInput.next();
@@ -357,6 +409,8 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					System.out.println("boop3");
 					// Match stuff
 					Match tempM = new Match(fileTeamNum, fileMatchNum, fileAmp, fileSpe, fileTrap, fileClimb, fileHumPostionSTrue, fileHumAmpSkill, fileHumAmpSkill, fileHumAmpNotes, fileCommentSTrue);
+					// more auto stuff
+					Auto fileAuto = new Auto(fileTeamNum, autoStartPos, autoANControl, autoASpecker, autoAAmp, autoNControl, autoSpecker, autoAmp);
 					if (fileTempTeamList.listOfTempTeams.size() == 0) {
 						fileMatches = 1;
 						fileTempTeamList.addTempTeam(fileTeamNum, (fileAmp + fileSpe + fileTrap), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue, fileHumPostionSTrue, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes, tempM);
