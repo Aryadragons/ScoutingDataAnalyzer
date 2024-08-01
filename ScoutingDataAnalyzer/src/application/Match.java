@@ -12,9 +12,10 @@ public class Match {
 	private int matchScoSkill;
 	private int matchAmpNotes;
 	private String matchComment;
+	private AutoAttempt theAA;
 	
 	//constructor
-	public Match(int tempTeamNum, int tempMatchNum, int tempAmp, int tempSpe, int tempTrap, int tempClimb, String tempHumPos, int tempAmpSkill, int tempScoSkill, int tempAmpNotes, String tempComment) {
+	public Match(int tempTeamNum, int tempMatchNum, int tempAmp, int tempSpe, int tempTrap, int tempClimb, String tempHumPos, int tempAmpSkill, int tempScoSkill, int tempAmpNotes, String tempComment, AutoAttempt imAA) {
 		setMatchTeamNum(tempTeamNum);
 		setMatchNum(tempMatchNum);
 		setMatchAmp(tempAmp);
@@ -26,6 +27,7 @@ public class Match {
 		setMatchScoSkill(tempScoSkill);
 		setMatchAmpNotes(tempAmpNotes);
 		setMatchComment(tempComment);
+		setTheAA(imAA);
 	}
 	
 	//setters
@@ -73,6 +75,10 @@ public class Match {
 		matchComment = tempVaule;
 	}
 	
+	public void setTheAA(AutoAttempt temp) {
+		theAA = temp;
+	}
+	
 	//getters
 	public int getMatchTeamNum() {
 		return matchTeamNum;
@@ -118,7 +124,12 @@ public class Match {
 		return matchComment;
 	}
 	
+	public AutoAttempt getTheAA() {
+		return theAA;
+	}
+	
 	public String toString() {
 		return ("Match: " + matchNum);
 	}
+	
 }

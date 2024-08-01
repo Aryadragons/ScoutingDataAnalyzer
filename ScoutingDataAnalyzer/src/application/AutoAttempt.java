@@ -54,39 +54,39 @@ public class AutoAttempt {
 	
 	
 	//get'ers
-	public int getTeamNum(int tempTeamNum){
-		return teamNum = tempTeamNum;
+	public int getTeamNum(){
+		return teamNum;
 	}
 	
-	public int getMatchmNum(int temp){
-		return matchNum = temp;
+	public int getMatchmNum(){
+		return matchNum;
 	}
 	
-	public int getAutoStartPos(int temp) {
-		autoStartPos = temp;
+	public int getAutoStartPos() {
+		return autoStartPos;
 	}
 	
-	public int getAutoANControl(int temp) {
-		autoANControl = temp;
+	public int getAutoANControl() {
+		return autoANControl;
 	}
 	
-	public void setAutoASpecker(int temp) {
-		autoASpecker = temp;
+	public int getAutoASpecker() {
+		return autoASpecker;
 	}
 	
-	public void setAutoAAmp(int temp) {
-		autoAAmp = temp;
+	public int getAutoAAmp() {
+		return autoAAmp;
 	}
 	
-	public void setAutoNControl(int temp) {
-		autoNControl = temp;
+	public int getAutoNControl() {
+		return autoNControl;
 	}
 	
-	public void setAutoSpecker(int temp) {
-		autoSpecker = temp;
+	public int getAutoSpecker() {
+		return autoSpecker;
 	}
 	
-	public void setAutoAmp(int temp) {
-		autoAmp = temp;
+	public int getAutoAmp() {
+		return autoAmp;
 	}
 }

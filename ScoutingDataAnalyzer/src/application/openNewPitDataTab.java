@@ -25,6 +25,7 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 	private TextField fileNameAddTF;
 	private Scanner fileInput;
 	private TeamPitsList fileTPL;
+	private AutoList fileAL;
 	
 	public openNewPitDataTab() {
 		fileTPL = new TeamPitsList();
@@ -100,6 +101,25 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 		int numOfRobotBat;
 		int numOfVisCam;
 		int numOfDriverCams;
+		//auto Stuff 
+		String numOfAutosS;
+		String numOfAutosSTrue;
+		int numOfAutos;
+		String autoStartPosS;
+		String totalControlS;
+		String totalSpeckerS;
+		String totalAmpS;
+		String numCenNotesS;
+		String autoStartPosSTrue;
+		String totalControlSTrue;
+		String totalSpeckerSTrue;
+		String totalAmpSTrue;
+		String numCenNotesSTrue;
+		int autoStartPos;
+		int totalControl;
+		int totalSpecker;
+		int totalAmp;
+		int numCenNotes;
 		System.out.println("Boop1");
 		while(fileInput.hasNextLine()) {
 			teamNumS = fileInput.next();
@@ -115,10 +135,40 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 			swevTypeS = fileInput.next();
 			swevGearingS = fileInput.next();
 			drTrMotorTypeS = fileInput.next();
-			System.out.println("Boop2");
-			//detleing ""s
+			//team Num
 			int lengthOfTeamNum = teamNumS.length() - 1;
 			teamNumSTrue = teamNumS.substring(1, lengthOfTeamNum);
+			teamNum = Integer.parseInt(teamNumSTrue);
+			//auto stuff
+			numOfAutosS = fileInput.next();
+			int lengthOfNumOfAutos = numOfAutosS.length() - 1;
+			numOfAutosSTrue = numOfAutosS.substring(1, lengthOfNumOfAutos);
+			numOfAutos = Integer.parseInt(numOfAutosSTrue);
+			for(int i = 0; i < numOfAutos; i++) {
+				autoStartPosS = fileInput.next();
+				totalControlS = fileInput.next();
+				totalSpeckerS = fileInput.next();
+				totalAmpS = fileInput.next();
+				numCenNotesS = fileInput.next();
+				int lengthOfAutoStartPos = autoStartPosS.length() - 1;
+				autoStartPosSTrue = autoStartPosS.substring(1, lengthOfAutoStartPos);
+				int lengthOfTotalControl = totalControlS.length() - 1;
+				totalControlSTrue = totalControlS.substring(1, lengthOfTotalControl);
+				int lengthOfTotalSpecker = totalSpeckerS.length() - 1;
+				totalSpeckerSTrue = totalSpeckerS.substring(1, lengthOfTotalSpecker);
+				int lengthOfTotalAmp = totalAmpS.length() - 1;
+				totalAmpSTrue = totalAmpS.substring(1, lengthOfTotalAmp);
+				int lengthOfNumCenNotes = numCenNotesS.length() - 1;
+				numCenNotesSTrue = numCenNotesS.substring(1, lengthOfNumCenNotes);
+				autoStartPos = Integer.parseInt(autoStartPosSTrue);
+				totalControl = Integer.parseInt(totalControlSTrue);
+				totalControl  = Integer.parseInt(totalSpeckerSTrue);
+				totalAmp = Integer.parseInt(totalAmpSTrue);
+				numCenNotes = Integer.parseInt(numCenNotesSTrue);
+				fileAL.addPitAuto(teamNum, autoStartPos, totalControl, totalControl, totalAmp, numCenNotes);
+			}
+			System.out.println("Boop2");
+			//detleing ""s
 			int lengthOfTeamName = teamNameS.length() - 1;
 			teamNameSTrue = teamNameS.substring(1, lengthOfTeamName);
 			int lengthOfNumOfStud = numOfStudS.length() - 1;
@@ -145,7 +195,6 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 			drTrMotorTypeSTrue = drTrMotorTypeS.substring(1, lengthOfDrTrMotorType);
 			System.out.println("Boop3" + teamNumSTrue);
 			// making ints, ints
-			teamNum = Integer.parseInt(teamNumSTrue);
 			numOfStud = Integer.parseInt(numOfStudSTrue);
 			numOfMent = Integer.parseInt(numOfMentSTrue);
 			numOfRobotBat = Integer.parseInt(numOfRobotBatSTrue);

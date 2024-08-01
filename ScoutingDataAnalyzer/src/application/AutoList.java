@@ -10,8 +10,13 @@ public class AutoList {
 		listOfAutos = new ArrayList<Auto>();
 	}
 	
-	public void addAuto(int imTeamNum, int imAutoStartPos, int imTotalControl, int imTotalSpecker, int imTotalAmp, int imNumCenNotes, int imTimesUsed, int imTotalMadeInSpe, int imTotalMadeInAmp, int imTotalControled, double imAvgSpe, double imAvgAmp, double imAvgControl) {
+	public void addFullAuto(int imTeamNum, int imAutoStartPos, int imTotalControl, int imTotalSpecker, int imTotalAmp, int imNumCenNotes, int imTimesUsed, int imTotalMadeInSpe, int imTotalMadeInAmp, int imTotalControled, double imAvgSpe, double imAvgAmp, double imAvgControl) {
 		Auto A = new Auto(imTeamNum, imAutoStartPos, imTotalControl, imTotalSpecker, imTotalAmp, imNumCenNotes, imTimesUsed, imTotalMadeInSpe, imTotalMadeInAmp, imTotalControled, imAvgSpe, imAvgAmp, imAvgControl);
+		listOfAutos.add(A);
+	}
+	
+	public void addPitAuto(int imTeamNum, int imAutoStartPos, int imTotalControl, int imTotalSpecker, int imTotalAmp, int imNumCenNotes) {
+		Auto A = new Auto(imTeamNum, imAutoStartPos, imTotalControl, imTotalSpecker, imTotalAmp, imNumCenNotes);
 		listOfAutos.add(A);
 	}
 	

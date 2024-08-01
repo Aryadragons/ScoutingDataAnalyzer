@@ -17,6 +17,7 @@ public class TeamPit {
 	private String swevType;
 	private String swevGearing;
 	private String drTrMotorType;
+	private AutoList theAutoList;
 	// 
 	public TeamPit(int imTeamNum, String imTeamName, int imNumOfStud, int imNumOfMent, int imNumOfRobotBat, String imProgramLan, String imDoHaveVis, int imNumOfVisCam, int imNumOfDriverCams, String imDrTrType, String imSwevType, String imSwevGearing, String imDrTrMotorType) {
 		setTeamNum(imTeamNum);
@@ -87,6 +88,9 @@ public class TeamPit {
 		drTrMotorType = imDrTrMotorType;
 	}
 	
+	public void setTheAutoList(AutoList temp) {
+		theAutoList = temp;
+	}
 	
 	// get'ers
 	public int getTeamNum() {
@@ -139,5 +143,9 @@ public class TeamPit {
 	
 	public String getDrTrMotorType() {
 		return drTrMotorType;
+	}
+	
+	public AutoList getTheAutoList() {
+		return theAutoList;
 	}
 }

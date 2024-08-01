@@ -19,6 +19,15 @@ public class Auto {
 		
 	}
 	
+	Auto(int imTeamNum, int imAutoStartPos, int imTotalControl, int imTotalSpecker, int imTotalAmp, int imNumCenNotes){
+		setTeamNum(imTeamNum);
+		setAutoStartPos(imAutoStartPos);
+		setTotalControl(imTotalControl);
+		setTotalSpecker(imTotalSpecker);
+		setTotalAmp(imTotalAmp);
+		setNumCenNotes(imNumCenNotes);
+	}
+	
 	Auto(int imTeamNum, int imAutoStartPos, int imTotalControl, int imTotalSpecker, int imTotalAmp, int imNumCenNotes, int imTimesUsed, int imTotalMadeInSpe, int imTotalMadeInAmp, int imTotalControled, double imAvgSpe, double imAvgAmp, double imAvgControl){
 		setTeamNum(imTeamNum);
 		setAutoStartPos(imAutoStartPos);

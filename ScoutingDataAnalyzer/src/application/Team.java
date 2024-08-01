@@ -34,7 +34,7 @@ public class Team {
 	Team(){
 	}
 	
-	Team(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, List<String> commentList, List<String> tempHumPostionsList, int totalHumScoSkill, int totalHumAmpSkill, int totalHumAmpNotes, int importTimesHumAmp, int importTimesHumSco, MatchList importMatchList, AutoList imAutoList){
+	Team(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalClimb, int tempTotalTrap, List<String> commentList, List<String> tempHumPostionsList, int totalHumScoSkill, int totalHumAmpSkill, int totalHumAmpNotes, int importTimesHumAmp, int importTimesHumSco, MatchList importMatchList){
 		System.out.println("boop18.11 " + totalHumAmpSkill);
 		setTeamNum(tempTeamNum);
 		setTotalCycles(tempTotalCycles);
@@ -80,7 +80,6 @@ public class Team {
 		//setting the match list
 		setMatchList(importMatchList);
 		System.out.println("boop18.17");
-		setAutoList(imAutoList);
 	}
 	
 	public void setTeamInMain(int tempTeamNum, int tempTotalCycles, int tempTotalAmp, int tempTotalSpe, int tempTotalTrap, double tempAvgCycles, int tempTotalMatchesPlayed, double tempAvgAmp, double tempAvgSpe, double tempAvgClimb, double tempAvgTrap, List<String> commentList, List<String> tempHumPostionsList, double avgHumScoSkill, double avgHumAmpSkill, double avgHumAmpNotes, int importTimesHumAmp, int importTimesHumSco, MatchList importMatchList, AutoList imAutoList) {
