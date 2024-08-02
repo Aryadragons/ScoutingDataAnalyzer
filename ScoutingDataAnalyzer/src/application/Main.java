@@ -367,6 +367,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 				int autoNControl = Integer.parseInt(autoNControlS);
 				int autoSpecker = Integer.parseInt(autoSpeckerS);
 				int autoAmp = Integer.parseInt(autoAmpS);
+				System.out.println("Boop26.3" + autoANControl);
 				AutoAttempt fileAuto = new AutoAttempt(fileTeamNum, MMatchNum, autoStartPos, autoANControl, autoASpecker, autoAAmp, autoNControl, autoSpecker, autoAmp);
 		    	Match fileMatch = new Match(MTeamNum, MMatchNum, MAmp, MSpe, MTrap, MClimb, MHumPosS, MAmpSkill, MScoSkill, MAmpNotes, MCommentS, fileAuto);
 		    	fileMatchList.addPreMadeMatch(fileMatch);
@@ -410,9 +411,13 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 						if(aAL.getAnAuto(fileStartPos, fileAControl, fileAAutoSpe) != null) {
 							aAL.getAnAuto(fileStartPos, fileAControl, fileAAutoSpe).submitAnUse(fileAutoSpeaker, fileAutoAmp, fileAutoControl);;
 						} else {
+							System.out.println("Boop30" + fileAControl);
 							Auto theA = fileTPL.getATeamPit(fileTeamNum).getTheAutoList().getAnAuto(fileStartPos, fileAControl, fileAAutoSpe);
+							System.out.println("Boop31");
 							theA.submitAnUse(fileAutoSpeaker, fileAutoAmp, fileAutoControl);
+							System.out.println("Boop32");
 							aAL.listOfAutos.add(theA);
+							System.out.println("Boop33");
 						}
 					}
 				}
@@ -479,16 +484,25 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			swevTypeS = fileInputP.next();
 			swevGearingS = fileInputP.next();
 			drTrMotorTypeS = fileInputP.next();
+			System.out.println("Boop boop3");
 			teamNum = Integer.parseInt(teamNumS);
+			System.out.println("Boop boop3.1");
 			numOfStud = Integer.parseInt(numOfStudS);
+			System.out.println("Boop boop3.2");
 			numOfMent = Integer.parseInt(numOfMentS);
+			System.out.println("Boop boop3.3");
 			numOfRobotBat = Integer.parseInt(numOfRobotBatS);
+			System.out.println("Boop boop3.4");
 			numOfVisCam = Integer.parseInt(numOfVisCamS);
+			System.out.println("Boop boop3.5");
 			numOfDriverCams = Integer.parseInt(numOfDriverCamsS);
+			System.out.println("Boop boop3.6");
 			//auto stuff
 			numOfAutosS = fileInputP.next();
 			numOfAutos = Integer.parseInt(numOfAutosS);
+			System.out.println("Boop boop4");
 			for(int i = 0; i < numOfAutos; i++) {
+				System.out.println("Boop boop5");
 				autoStartPosS = fileInputP.next();
 				totalControlS = fileInputP.next();
 				totalSpeckerS = fileInputP.next();
@@ -500,6 +514,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 				totalAmp = Integer.parseInt(totalAmpS);
 				numCenNotes = Integer.parseInt(numCenNotesS);
 				fileAL.addPitAuto(teamNum, autoStartPos, totalControl, totalSpecker, totalAmp, numCenNotes);
+				System.out.println("Boop boop6");
 			}
 			
 			fileTPL.addTeamPit(teamNum, teamNameS, numOfStud, numOfMent, numOfRobotBat, programLanS, doHaveVisS, numOfVisCam, numOfDriverCams, drTrTypeS, swevTypeS, swevGearingS, drTrMotorTypeS, fileAL);

@@ -147,6 +147,7 @@ public class TeamPit {
 	}
 	
 	public AutoList getTheAutoList() {
+		System.out.println("Boop30.3");
 		return theAutoList;
 	}
 }

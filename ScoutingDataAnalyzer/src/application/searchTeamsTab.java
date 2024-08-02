@@ -1143,6 +1143,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 						System.out.println("Boop51");
 					}
 				}
+				addAutoStuff(theTeam.getTeamNum(), 0);
 			}
 			if(event.getSource() == statSubB) {
 				this.getChildren().remove(lineChart);

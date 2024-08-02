@@ -11,8 +11,16 @@ public class AutoAttempt {
 	private int autoSpecker;
 	private int autoAmp;
 	
-	AutoAttempt(int teamNum, int matchNum, int autoStartPos, int autoANControl, int autoASpecker, int autoAAmp, int autoNControl, int autoSpecker, int autoAmp){
-		
+	AutoAttempt(int imteamNum, int immatchNum, int imautoStartPos, int imautoANControl, int imautoASpecker, int imautoAAmp, int imautoNControl, int imautoSpecker, int imautoAmp){
+		setTeamNum(imteamNum);
+		setMatchNum(immatchNum);
+		setAutoStartPos(imautoStartPos);
+		setAutoANControl(imautoANControl);
+		setAutoASpecker(imautoASpecker);
+		setAutoAAmp(imautoAAmp);
+		setAutoNControl(imautoNControl);
+		setAutoSpecker(imautoSpecker);
+		setAutoAmp(imautoAmp);
 	}
 	
 	//set'ers
@@ -20,7 +28,7 @@ public class AutoAttempt {
 		teamNum = tempTeamNum;
 	}
 	
-	public void setMatchmNum(int temp){
+	public void setMatchNum(int temp){
 		matchNum = temp;
 	}
 	

@@ -25,7 +25,6 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 	private TextField fileNameAddTF;
 	private Scanner fileInput;
 	private TeamPitsList fileTPL;
-	private AutoList fileAL;
 	
 	public openNewPitDataTab() {
 		fileTPL = new TeamPitsList();
@@ -122,6 +121,7 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 		int numCenNotes;
 		System.out.println("Boop1");
 		while(fileInput.hasNextLine()) {
+			AutoList fileAL = new AutoList();
 			teamNumS = fileInput.next();
 			teamNameS = fileInput.next();
 			numOfStudS = fileInput.next();
@@ -208,6 +208,7 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 	}
 	
 	public void exportPitData() {
+		System.out.println("Boop6");
 		int teamNum;
 		int numOfStud;
 		int numOfMent;
@@ -240,68 +241,80 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 		int totalSpecker;
 		int totalAmp;
 		int numCenNotes;
+		System.out.println("Boop7");
 		try {
-		new FileWriter("MainPitDataFiles.txt", false).close();
-		for(int i = 0; i < fileTPL.listOfTeamPits.size(); i++) {
-			// setting variables
-			teamNum = fileTPL.listOfTeamPits.get(i).getTeamNum();
-			numOfStud = fileTPL.listOfTeamPits.get(i).getNumOfStud();
-			numOfMent = fileTPL.listOfTeamPits.get(i).getNumOfMent();
-			numOfRobotBat = fileTPL.listOfTeamPits.get(i).getNumOfRobotBat();
-			numOfVisCam = fileTPL.listOfTeamPits.get(i).getNumOfVisCam();
-			numOfDriverCams = fileTPL.listOfTeamPits.get(i).getNumOfDriverCams();
-			teamNumS = Integer.toString(teamNum);
-			teamNameS = fileTPL.listOfTeamPits.get(i).getTeamName();
-			numOfStudS = Integer.toString(numOfStud);
-			numOfMentS = Integer.toString(numOfMent);
-			numOfRobotBatS = Integer.toString(numOfRobotBat);
-			programLanS = fileTPL.listOfTeamPits.get(i).getProgramLan();
-			doHaveVisS = fileTPL.listOfTeamPits.get(i).getDoHaveVis();
-			numOfVisCamS = Integer.toString(numOfVisCam);
-			numOfDriverCamsS = Integer.toString(numOfDriverCams);
-			drTrTypeS = fileTPL.listOfTeamPits.get(i).getDrTrType();
-			swevTypeS = fileTPL.listOfTeamPits.get(i).getSwevType();
-			swevGearingS = fileTPL.listOfTeamPits.get(i).getSwevGearing();
-			drTrMotorTypeS = fileTPL.listOfTeamPits.get(i).getDrTrMotorType();
-			numOfAutos = fileTPL.listOfTeamPits.get(i).getTheAutoList().listOfAutos.size();
-			numOfAutosS = Integer.toString(numOfAutos);
-			for(int u = 0; u < numOfAutos; u++) {
-				autoStartPos = fileTPL.listOfTeamPits.get(i).getTheAutoList().listOfAutos.get(u).getAutoStartPos();
-				totalControl = fileTPL.listOfTeamPits.get(i).getTheAutoList().listOfAutos.get(u).getTotalControl();
-				totalSpecker = fileTPL.listOfTeamPits.get(i).getTheAutoList().listOfAutos.get(u).getTotalSpecker();
-				totalAmp = fileTPL.listOfTeamPits.get(i).getTheAutoList().listOfAutos.get(u).getTotalAmp();
-				numCenNotes = fileTPL.listOfTeamPits.get(i).getTheAutoList().listOfAutos.get(u).getNumCenNotes();
-				autoStartPosS = Integer.toString(autoStartPos);
-				totalControlS = Integer.toString(totalControl);
-				totalSpeckerS = Integer.toString(totalSpecker);
-				totalAmpS = Integer.toString(totalAmp);
-				numCenNotesS = Integer.toString(numCenNotes);
+			System.out.println("Boop8");
+			new FileWriter("MainPitDataFiles.txt", false).close();
+			System.out.println("Boop9");
+			for(int i = 0; i < fileTPL.listOfTeamPits.size(); i++) {
+				System.out.println("Boop10");
+				// setting variables
+				teamNum = fileTPL.listOfTeamPits.get(i).getTeamNum();
+				numOfStud = fileTPL.listOfTeamPits.get(i).getNumOfStud();
+				numOfMent = fileTPL.listOfTeamPits.get(i).getNumOfMent();
+				numOfRobotBat = fileTPL.listOfTeamPits.get(i).getNumOfRobotBat();
+				numOfVisCam = fileTPL.listOfTeamPits.get(i).getNumOfVisCam();
+				numOfDriverCams = fileTPL.listOfTeamPits.get(i).getNumOfDriverCams();
+				teamNumS = Integer.toString(teamNum);
+				teamNameS = fileTPL.listOfTeamPits.get(i).getTeamName();
+				numOfStudS = Integer.toString(numOfStud);
+				numOfMentS = Integer.toString(numOfMent);
+				numOfRobotBatS = Integer.toString(numOfRobotBat);
+				programLanS = fileTPL.listOfTeamPits.get(i).getProgramLan();
+				doHaveVisS = fileTPL.listOfTeamPits.get(i).getDoHaveVis();
+				numOfVisCamS = Integer.toString(numOfVisCam);
+				numOfDriverCamsS = Integer.toString(numOfDriverCams);
+				drTrTypeS = fileTPL.listOfTeamPits.get(i).getDrTrType();
+				swevTypeS = fileTPL.listOfTeamPits.get(i).getSwevType();
+				swevGearingS = fileTPL.listOfTeamPits.get(i).getSwevGearing();
+				drTrMotorTypeS = fileTPL.listOfTeamPits.get(i).getDrTrMotorType();
+				System.out.println("Boop11");
+				numOfAutos = fileTPL.listOfTeamPits.get(i).getTheAutoList().listOfAutos.size();
+				numOfAutosS = Integer.toString(numOfAutos);
+				System.out.println("Boop14");
+				FileWriter fw;
+				fw = new FileWriter("MainPitDataFiles.txt", true);
+				BufferedWriter bw = new BufferedWriter(fw);
+				PrintWriter out = new PrintWriter(bw);
+				System.out.println("Boop15");
+				out.println(teamNumS);
+				out.println(teamNameS);
+				out.println(numOfStudS);
+				out.println(numOfMentS);
+				out.println(numOfRobotBatS);
+				out.println(programLanS);
+				out.println(doHaveVisS);
+				out.println(numOfVisCamS);
+				out.println(numOfDriverCamsS);
+				out.println(drTrTypeS);
+				out.println(swevTypeS);
+				out.println(swevGearingS);
+				out.println(drTrMotorTypeS);
+				out.println(numOfAutosS);
+				for(int u = 0; u < numOfAutos; u++) {
+					System.out.println("Boop12");
+					autoStartPos = fileTPL.listOfTeamPits.get(i).getTheAutoList().listOfAutos.get(u).getAutoStartPos();
+					totalControl = fileTPL.listOfTeamPits.get(i).getTheAutoList().listOfAutos.get(u).getTotalControl();
+					totalSpecker = fileTPL.listOfTeamPits.get(i).getTheAutoList().listOfAutos.get(u).getTotalSpecker();
+					totalAmp = fileTPL.listOfTeamPits.get(i).getTheAutoList().listOfAutos.get(u).getTotalAmp();
+					numCenNotes = fileTPL.listOfTeamPits.get(i).getTheAutoList().listOfAutos.get(u).getNumCenNotes();
+					autoStartPosS = Integer.toString(autoStartPos);
+					totalControlS = Integer.toString(totalControl);
+					totalSpeckerS = Integer.toString(totalSpecker);
+					totalAmpS = Integer.toString(totalAmp);
+					numCenNotesS = Integer.toString(numCenNotes);
+					System.out.println("Boop13");
+					System.out.println("Boop2" + numOfAutosS + autoStartPosS + totalControlS + totalSpeckerS + totalAmpS + numCenNotesS);
+					out.println(autoStartPosS);
+					out.println(totalControlS);
+					out.println(totalSpeckerS);
+					out.println(totalAmpS);
+					out.println(numCenNotesS);
+				}
+				System.out.println("Boop16");
+				out.close();
+				System.out.println("Boop17");
 			}
-			FileWriter fw;
-			fw = new FileWriter("MainPitDataFiles.txt", true);
-			BufferedWriter bw = new BufferedWriter(fw);
-			PrintWriter out = new PrintWriter(bw);
-			out.println(teamNumS);
-			out.println(teamNameS);
-			out.println(numOfStudS);
-			out.println(numOfMentS);
-			out.println(numOfRobotBatS);
-			out.println(programLanS);
-			out.println(doHaveVisS);
-			out.println(numOfVisCamS);
-			out.println(numOfDriverCamsS);
-			out.println(drTrTypeS);
-			out.println(swevTypeS);
-			out.println(swevGearingS);
-			out.println(drTrMotorTypeS);
-			out.println(numOfAutosS);
-			out.println(autoStartPosS);
-			out.println(totalControlS);
-			out.println(totalSpeckerS);
-			out.println(totalAmpS);
-			out.println(numCenNotesS);
-			out.close();
-		}
 		} catch (IOException e) {
 			System.out.println("Error" + e);
 		}

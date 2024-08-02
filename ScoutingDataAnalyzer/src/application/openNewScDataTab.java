@@ -204,6 +204,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 							int autoNControl = tempM.getTheAA().getAutoNControl();
 							int autoSpecker = tempM.getTheAA().getAutoASpecker();
 							int autoAmp = tempM.getTheAA().getAutoAmp();
+							System.out.println("boop19.7" + autoStartPos + autoANControl);
 							String autoStartPosS = Integer.toString(autoStartPos);
 							String autoANControlS = Integer.toString(autoANControl);
 							String autoASpeckerS = Integer.toString(autoASpecker);
@@ -212,7 +213,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 							String autoSpeckerS = Integer.toString(autoSpecker);
 							String autoAmpS = Integer.toString(autoAmp);
 					    	//convert to strings
-					    	System.out.println("boop19.7");
+					    	System.out.println("boop19.7" + autoStartPosS + autoANControlS);
 					    	String MTeamNumS = Integer.toString(MTeamNum);
 					    	String MMatchNumS = Integer.toString(MMatchNum);
 					    	String MAmpS = Integer.toString(MAmp);
@@ -354,6 +355,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					autoNControlS = fileInput.next();
 					autoSpeckerS = fileInput.next();
 					autoAmpS = fileInput.next();
+					System.out.println("boop19.7" + autoStartPosS + autoANControlS);
 					int lengthOfAutoStartPos = autoStartPosS.length() - 1;
 					autoStartPosSTrue = autoStartPosS.substring(1, lengthOfAutoStartPos);
 					int lengthOfAutoANControl = autoANControlS.length() - 1;
@@ -367,6 +369,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					int lengthOfAutoSpecker = autoSpeckerS.length() - 1;
 					autoSpeckerSTrue = autoSpeckerS.substring(1, lengthOfAutoSpecker);
 					int lengthOfAutoAmp = autoAmpS.length() - 1;
+					System.out.println("boop19.7" + autoStartPosSTrue + autoANControlSTrue);
 					autoAmpSTrue = autoAmpS.substring(1, lengthOfAutoAmp);
 					autoStartPos = Integer.parseInt(autoStartPosSTrue);
 					autoANControl = Integer.parseInt(autoANControlSTrue);
@@ -375,7 +378,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					autoNControl = Integer.parseInt(autoNControlSTrue);
 					autoSpecker = Integer.parseInt(autoSpeckerSTrue);
 					autoAmp = Integer.parseInt(autoAmpSTrue);
-					
+					System.out.println("boop19.7" + autoStartPos + autoANControl);
 					fileAmpS = fileInput.next();
 					fileSpeS = fileInput.next();
 					fileTrapS = fileInput.next();
