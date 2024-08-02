@@ -7,7 +7,7 @@ public class Auto {
 	private int totalSpecker;
 	private int totalAmp;
 	private int numCenNotes;
-	private int timesUsed;
+	private int timesUsed = 0;
 	private int totalMadeInSpe;
 	private int totalMadeInAmp;
 	private int totalControled;
@@ -42,6 +42,26 @@ public class Auto {
 		setAvgSpe(imAvgSpe);
 		setAvgAmp(imAvgAmp);
 		setAvgControl(imAvgControl);
+	}
+	
+	public void submitAnUse(int imTotalMadeInSpe, int imTotalMadeInAmp, int imTotalControled){
+		if(timesUsed == 0) {
+			setTimesUsed(1);
+			setTotalMadeInSpe(imTotalMadeInSpe);
+			setTotalMadeInAmp(imTotalMadeInAmp);
+			setTotalControled(imTotalControled);
+			setAvgSpe(imTotalMadeInSpe);
+			setAvgAmp(imTotalMadeInAmp);
+			setAvgControl(imTotalControled);
+		} else {
+			setTimesUsed(getTimesUsed() + 1);
+			setTotalMadeInSpe(getTotalMadeInSpe() + imTotalMadeInSpe);
+			setTotalMadeInAmp(getTotalMadeInAmp() + imTotalMadeInAmp);
+			setTotalControled(getTotalControled() + imTotalControled);
+			setAvgSpe(getTotalMadeInSpe()/ getTimesUsed());
+			setAvgAmp(getTotalMadeInAmp()/ getTimesUsed());
+			setAvgControl(getTotalControled()/ getTimesUsed());
+		}
 	}
 	
 	//set'ers

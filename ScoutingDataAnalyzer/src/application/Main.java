@@ -92,6 +92,8 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	private DriveTeamDataList fileDTDL;
 	//Drive team Comments Stuff
 	private DriveTeamCommentsList fileDTCL;
+	// Auto Stuff
+	private AutoList fileAL;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -106,6 +108,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			fileTPL = new TeamPitsList();
 			fileDTDL = new DriveTeamDataList();
 			fileDTCL = new DriveTeamCommentsList();
+			fileAL = new AutoList();
 			root.setTop(MB);
 			//adding the Tab panes
 			mainTP = new TabPane();
@@ -394,7 +397,27 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			System.out.println("Boop27");
 			listOfTeamNums.add(fileTeamNum);
 			System.out.println("Boop28");
-			mainTeamList.addTempTeamInMain(fileTeamNum, fileTotalCycles, fileTotalAmp, fileTotalSpe, fileTotalTrap, fileCycles, fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, commentList, fileHumPostionsList, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes, fileTimesHumAmp, fileTimesHumSco, fileMatchList);
+			AutoList aAL = new AutoList();
+			if(fileTPL != null) {
+				if(fileTPL.getATeamPit(fileTeamNum) != null) {
+					for(int i = 0; i < fileMatchList.listOfMatches.size(); i++) {
+						int fileStartPos = fileMatchList.listOfMatches.get(i).getTheAA().getAutoStartPos();
+						int fileAControl = fileMatchList.listOfMatches.get(i).getTheAA().getAutoANControl();
+						int fileAAutoSpe = fileMatchList.listOfMatches.get(i).getTheAA().getAutoASpecker();
+						int fileAutoSpeaker = fileMatchList.listOfMatches.get(i).getTheAA().getAutoSpecker();
+						int fileAutoAmp = fileMatchList.listOfMatches.get(i).getTheAA().getAutoAmp();
+						int fileAutoControl = fileMatchList.listOfMatches.get(i).getTheAA().getAutoNControl();
+						if(aAL.getAnAuto(fileStartPos, fileAControl, fileAAutoSpe) != null) {
+							aAL.getAnAuto(fileStartPos, fileAControl, fileAAutoSpe).submitAnUse(fileAutoSpeaker, fileAutoAmp, fileAutoControl);;
+						} else {
+							Auto theA = fileTPL.getATeamPit(fileTeamNum).getTheAutoList().getAnAuto(fileStartPos, fileAControl, fileAAutoSpe);
+							theA.submitAnUse(fileAutoSpeaker, fileAutoAmp, fileAutoControl);
+							aAL.listOfAutos.add(theA);
+						}
+					}
+				}
+			}
+			mainTeamList.addTempTeamInMain(fileTeamNum, fileTotalCycles, fileTotalAmp, fileTotalSpe, fileTotalTrap, fileCycles, fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, commentList, fileHumPostionsList, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes, fileTimesHumAmp, fileTimesHumSco, fileMatchList, aAL);
 			System.out.println("Boop29");
 		}
 		sortListOfTeamNums();
@@ -420,6 +443,19 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		int numOfRobotBat;
 		int numOfVisCam;
 		int numOfDriverCams;
+		//auto Stuff 
+		String numOfAutosS;
+		int numOfAutos;
+		String autoStartPosS;
+		String totalControlS;
+		String totalSpeckerS;
+		String totalAmpS;
+		String numCenNotesS;
+		int autoStartPos;
+		int totalControl;
+		int totalSpecker;
+		int totalAmp;
+		int numCenNotes;
 		File file = new File("MainPitDataFiles.txt");
 		try {
 			fileInputP = new Scanner(file);
@@ -428,6 +464,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		}
 		System.out.println("Boop boop1");
 		while(fileInputP.hasNext() == true) {
+			fileAL.listOfAutos.clear();
 			System.out.println("Boop boop2");
 			teamNumS = fileInputP.next();
 			teamNameS = fileInputP.next();
@@ -448,7 +485,24 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			numOfRobotBat = Integer.parseInt(numOfRobotBatS);
 			numOfVisCam = Integer.parseInt(numOfVisCamS);
 			numOfDriverCams = Integer.parseInt(numOfDriverCamsS);
-			fileTPL.addTeamPit(teamNum, teamNameS, numOfStud, numOfMent, numOfRobotBat, programLanS, doHaveVisS, numOfVisCam, numOfDriverCams, drTrTypeS, swevTypeS, swevGearingS, drTrMotorTypeS);
+			//auto stuff
+			numOfAutosS = fileInputP.next();
+			numOfAutos = Integer.parseInt(numOfAutosS);
+			for(int i = 0; i < numOfAutos; i++) {
+				autoStartPosS = fileInputP.next();
+				totalControlS = fileInputP.next();
+				totalSpeckerS = fileInputP.next();
+				totalAmpS = fileInputP.next();
+				numCenNotesS = fileInputP.next();
+				autoStartPos = Integer.parseInt(autoStartPosS);
+				totalControl = Integer.parseInt(totalControlS);
+				totalSpecker = Integer.parseInt(totalSpeckerS);
+				totalAmp = Integer.parseInt(totalAmpS);
+				numCenNotes = Integer.parseInt(numCenNotesS);
+				fileAL.addPitAuto(teamNum, autoStartPos, totalControl, totalSpecker, totalAmp, numCenNotes);
+			}
+			
+			fileTPL.addTeamPit(teamNum, teamNameS, numOfStud, numOfMent, numOfRobotBat, programLanS, doHaveVisS, numOfVisCam, numOfDriverCams, drTrTypeS, swevTypeS, swevGearingS, drTrMotorTypeS, fileAL);
 			System.out.println("Boop" + fileTPL.toString());
 			System.out.println("Boop" + teamNum);
 		}
