@@ -50,9 +50,12 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	private Button matchSubB;
 	private Team selectTeam;
 	private BarChart<String,Number> matchBCBarC;
+	private BarChart<String,Number> autoBCBarC;
 	private LineChart<String,Number> lineChart;
 	private Color lightPurC = Color.web("rgb(219,178,255)");
 	private Color midPurC = Color.web("rgb(170,0,255)");
+	private ComboBox<String> autosListCB;
+	private Button submitAutoB;
 	
 	public searchTeamsTab(TeamList mainTeamList, List<Integer> importedListOfTeamNums, TeamPitsList importedListOfTeamPits, DriveTeamDataList imListOfDTD, DriveTeamCommentsList imListOfDTC) {
 		this.add(new Label("Select Team to Look Up"), 0, 0);
@@ -269,7 +272,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(500, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 2, 2);
+			this.add(lineChart, 1, 2);
 		}
 		if(stat.compareTo("Amp") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -292,7 +295,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(500, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 2, 2);
+			this.add(lineChart, 1, 2);
 		}
 		if(stat.compareTo("Specker") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -315,7 +318,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(500, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 2, 2);
+			this.add(lineChart, 1, 2);
 		}
 		if(stat.compareTo("Trap") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -338,7 +341,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(500, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 2, 2);
+			this.add(lineChart, 1, 2);
 		}
 		if(stat.compareTo("Climb") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -361,7 +364,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(500, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 2, 2);
+			this.add(lineChart, 1, 2);
 		}
 		if(stat.compareTo("Amp Skill") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -384,7 +387,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(500, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 2, 2);
+			this.add(lineChart, 1, 2);
 		}
 		if(stat.compareTo("Scoure Skill") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -407,7 +410,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(500, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 2, 2);
+			this.add(lineChart, 1, 2);
 		}
 		if(stat.compareTo("Amp Notes") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -430,7 +433,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(500, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 2, 2);
+			this.add(lineChart, 1, 2);
 		}
 	}
 	
@@ -503,7 +506,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    matchBCBarC.setBarGap(2);
 		    matchBCBarC.setMinSize(150, 100);
 		    matchBCBarC.setMaxSize(500, 250);
-		    this.add(matchBCBarC, 2, 1);
+		    this.add(matchBCBarC, 1, 1);
 		    System.out.println("Boop37.6");
 		}
 		if(matchPos.compareTo("Scoure") == 0) {
@@ -544,7 +547,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    matchBCBarC.setBarGap(2);
 		    matchBCBarC.setMinSize(150, 100);
 		    matchBCBarC.setMaxSize(500, 250);
-		    this.add(matchBCBarC, 2, 1);
+		    this.add(matchBCBarC, 1, 1);
 		}
 		if(matchPos.compareTo("None") == 0) {
 			int matchCy = (theMatch.getMatchAmp() + theMatch.getMatchSpe() + theMatch.getMatchTrap());
@@ -580,7 +583,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    matchBCBarC.setBarGap(2);
 		    matchBCBarC.setMinSize(150, 100);
 		    matchBCBarC.setMaxSize(500, 250);
-		    this.add(matchBCBarC, 2, 1);
+		    this.add(matchBCBarC, 1, 1);
 		}
 	}
 	
@@ -911,6 +914,64 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		}
 	}
 	
+	public void addAutoStuff(int teamNum, int autoNumber) {
+		if(theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(0) != null) {
+			autosListCB = new ComboBox();
+			for(int i = 0; i < theTeamList.getATeam(teamNum).getAutoList().listOfAutos.size(); i++) {
+				double totalPieces = theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getTotalAmp() + theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getTotalSpecker();
+				if(theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getTotalControl() > totalPieces) {
+					totalPieces = totalPieces + 0.5;
+				}
+				String startPosName = "";
+				if (theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getAutoStartPos() == 0) {
+					startPosName = "Far Side";
+				}
+				if (theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getAutoStartPos() == 1) {
+					startPosName = "Far Side Speaker";
+				}
+				if (theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getAutoStartPos() == 2) {
+					startPosName = "Center Speaker";
+				}
+				if (theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getAutoStartPos() == 3) {
+					startPosName = "Amp Side Speaker";
+				}
+				if (theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getAutoStartPos() == 4) {
+					startPosName = "Amp Side";
+				}
+				String autoName = i + totalPieces + " Piece, " + startPosName;
+				autosListCB.getItems().add(autoName);
+			}
+			submitAutoB = new Button("Submit Auto");
+			Auto A = theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(0);
+			if(A.getTimesUsed() == 0) {
+				this.add(new Label("They Havn't Used This Auto"), 2, 1);
+			}else{
+				double speAvg = A.getAvgSpe();
+				double ampAvg = A.getAvgSpe();
+				double controlAvg = A.getAvgControl();
+				String[] autoThings = {"Avg Speaker", "Avg Amp", "Avg Controled"};
+				XYChart.Series<String,Number> autoBarC = new XYChart.Series<String,Number>();
+				autoBarC.setName("Stat:");
+				CategoryAxis typeXAxisBarC = new CategoryAxis();
+			    NumberAxis numScaleAxisBarC = new NumberAxis(0, 8, 1);
+			    autoBCBarC = new BarChart<String,Number>(typeXAxisBarC, numScaleAxisBarC);
+			    typeXAxisBarC.setCategories(FXCollections.<String>observableArrayList(Arrays.asList(autoThings)));
+			    typeXAxisBarC.setTickLabelFill(lightPurC);
+			    numScaleAxisBarC.setTickLabelFill(lightPurC);
+			    XYChart.Series<String,Number> speData = new XYChart.Series<String,Number>();
+			    speData.setName("Avg Speaker");
+			    speData.getData().add(new XYChart.Data<String,Number>("Avg Speaker", speAvg));
+			    XYChart.Series<String,Number> ampData = new XYChart.Series<String,Number>();
+			    ampData.setName("Avg Amp");
+			    ampData.getData().add(new XYChart.Data<String,Number>("Avg Amp", ampAvg));
+			    XYChart.Series<String,Number> cnData = new XYChart.Series<String,Number>();
+			    cnData.setName("Avg Controled");
+			    cnData.getData().add(new XYChart.Data<String,Number>("Avg Controled", controlAvg));
+			}
+			
+		}
+	}
+	
 	@Override
 	public void handle(ActionEvent event) {
 		try {
@@ -931,7 +992,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				String teamNumS = Integer.toString(theTeam.getTeamNum());
 				String title = (teamNumS + " " + theTeamPitList.getATeamPit(theTeam.getTeamNum()).getTeamName()+"'s Stats:");
 				this.add(new Label(title), 0, 0);
-				this.add(new Label("Comments:  "), 1, 0);
+				this.add(new Label("Comments:  "), 2, 0);
 				List<String> commentList = theTeam.getCommentsList();
 				commentsTA = new TextArea();
 				commentsTA.setMaxSize(100, 100);
@@ -939,7 +1000,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				for(int i = 0; i < commentList.size(); i++) {
 					commentsS = commentsS + "\n" +commentList.get(i);
 				}
-				this.add(commentsTA, 1, 1);
+				this.add(commentsTA, 2, 1);
 				commentsTA.setText(commentsS);
 				System.out.println("Boop33");
 				if (theTeam.getTotalMatchesPlayed() == 1) {

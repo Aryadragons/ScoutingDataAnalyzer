@@ -327,6 +327,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			fileTimesHumAmpS = fileInput.next();
 			fileTimesHumScoS = fileInput.next();
 			System.out.println("Boop26");
+			fileTeamNum = Integer.parseInt(fileTeamNumS);
 			//Matches Sutff
 			MatchList fileMatchList = new MatchList();
 			String TotalMsS = fileInput.next();
@@ -372,7 +373,6 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			}
 			
 			
-			fileTeamNum = Integer.parseInt(fileTeamNumS);
 			fileTotalCycles = Integer.parseInt(fileTotalCyclesS);
 			fileTotalAmp = Integer.parseInt(fileTotalAmpS);
 			fileTotalSpe = Integer.parseInt(fileTotalSpeS);
