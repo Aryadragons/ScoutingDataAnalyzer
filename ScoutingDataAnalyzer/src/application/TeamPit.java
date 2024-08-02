@@ -19,7 +19,7 @@ public class TeamPit {
 	private String drTrMotorType;
 	private AutoList theAutoList;
 	// 
-	public TeamPit(int imTeamNum, String imTeamName, int imNumOfStud, int imNumOfMent, int imNumOfRobotBat, String imProgramLan, String imDoHaveVis, int imNumOfVisCam, int imNumOfDriverCams, String imDrTrType, String imSwevType, String imSwevGearing, String imDrTrMotorType) {
+	public TeamPit(int imTeamNum, String imTeamName, int imNumOfStud, int imNumOfMent, int imNumOfRobotBat, String imProgramLan, String imDoHaveVis, int imNumOfVisCam, int imNumOfDriverCams, String imDrTrType, String imSwevType, String imSwevGearing, String imDrTrMotorType, AutoList imTheAutoList) {
 		setTeamNum(imTeamNum);
 		setTeamName(imTeamName);
 		setNumOfStud(imNumOfStud);
@@ -33,6 +33,7 @@ public class TeamPit {
 		setSwevType(imSwevType);
 		setSwevGearing(imSwevGearing);
 		setDrTrMotorType(imDrTrMotorType);
+		setTheAutoList(imTheAutoList);
 	}
 	
 	//Set'ers

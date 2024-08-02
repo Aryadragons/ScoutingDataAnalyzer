@@ -202,7 +202,7 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 			numOfDriverCams = Integer.parseInt(numOfDriverCamsSTrue);
 			System.out.println("Boop4");
 			// adding to team pits list
-			fileTPL.addTeamPit(teamNum, teamNameSTrue, numOfStud, numOfMent, numOfRobotBat, programLanSTrue, doHaveVisSTrue, numOfVisCam, numOfDriverCams, drTrTypeSTrue, swevTypeSTrue, swevGearingSTrue, drTrMotorTypeSTrue);
+			fileTPL.addTeamPit(teamNum, teamNameSTrue, numOfStud, numOfMent, numOfRobotBat, programLanSTrue, doHaveVisSTrue, numOfVisCam, numOfDriverCams, drTrTypeSTrue, swevTypeSTrue, swevGearingSTrue, drTrMotorTypeSTrue, fileAL);
 			System.out.println("Boop5");
 		}
 	}
@@ -227,6 +227,19 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 		String swevTypeS;
 		String swevGearingS;
 		String drTrMotorTypeS;
+		//auto Stuff 
+		String numOfAutosS;
+		int numOfAutos;
+		String autoStartPosS = "";
+		String totalControlS = "";
+		String totalSpeckerS = "";
+		String totalAmpS = "";
+		String numCenNotesS = "";
+		int autoStartPos;
+		int totalControl;
+		int totalSpecker;
+		int totalAmp;
+		int numCenNotes;
 		try {
 		new FileWriter("MainPitDataFiles.txt", false).close();
 		for(int i = 0; i < fileTPL.listOfTeamPits.size(); i++) {
@@ -250,6 +263,20 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 			swevTypeS = fileTPL.listOfTeamPits.get(i).getSwevType();
 			swevGearingS = fileTPL.listOfTeamPits.get(i).getSwevGearing();
 			drTrMotorTypeS = fileTPL.listOfTeamPits.get(i).getDrTrMotorType();
+			numOfAutos = fileTPL.listOfTeamPits.get(i).getTheAutoList().listOfAutos.size();
+			numOfAutosS = Integer.toString(numOfAutos);
+			for(int u = 0; u < numOfAutos; u++) {
+				autoStartPos = fileTPL.listOfTeamPits.get(i).getTheAutoList().listOfAutos.get(u).getAutoStartPos();
+				totalControl = fileTPL.listOfTeamPits.get(i).getTheAutoList().listOfAutos.get(u).getTotalControl();
+				totalSpecker = fileTPL.listOfTeamPits.get(i).getTheAutoList().listOfAutos.get(u).getTotalSpecker();
+				totalAmp = fileTPL.listOfTeamPits.get(i).getTheAutoList().listOfAutos.get(u).getTotalAmp();
+				numCenNotes = fileTPL.listOfTeamPits.get(i).getTheAutoList().listOfAutos.get(u).getNumCenNotes();
+				autoStartPosS = Integer.toString(autoStartPos);
+				totalControlS = Integer.toString(totalControl);
+				totalSpeckerS = Integer.toString(totalSpecker);
+				totalAmpS = Integer.toString(totalAmp);
+				numCenNotesS = Integer.toString(numCenNotes);
+			}
 			FileWriter fw;
 			fw = new FileWriter("MainPitDataFiles.txt", true);
 			BufferedWriter bw = new BufferedWriter(fw);
@@ -267,6 +294,12 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 			out.println(swevTypeS);
 			out.println(swevGearingS);
 			out.println(drTrMotorTypeS);
+			out.println(numOfAutosS);
+			out.println(autoStartPosS);
+			out.println(totalControlS);
+			out.println(totalSpeckerS);
+			out.println(totalAmpS);
+			out.println(numCenNotesS);
 			out.close();
 		}
 		} catch (IOException e) {

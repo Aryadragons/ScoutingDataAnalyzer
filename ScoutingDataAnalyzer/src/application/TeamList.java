@@ -11,9 +11,9 @@ public class TeamList {
 		listOfTeams = new ArrayList<Team>();
 	}
 	
-	public void addTempTeam(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalTrap, int tempTotalClimb, List<String> commentList, List<String> tempHumPostionsList, int tempHumAmpSkill, int tempHumScoSkill, int tempHumAmpNotes, int importTimesHumAmp, int importTimesHumSco, MatchList importMatchList, AutoList imAutoList) {
+	public void addTempTeam(int tempTeamNum, int tempTotalCycles, int tempTotalMatchesPlayed, int tempTotalAmp, int tempTotalSpe, int tempTotalTrap, int tempTotalClimb, List<String> commentList, List<String> tempHumPostionsList, int tempHumAmpSkill, int tempHumScoSkill, int tempHumAmpNotes, int importTimesHumAmp, int importTimesHumSco, MatchList importMatchList) {
 		System.out.println("boop18.1" + tempHumAmpSkill);
-		Team T = new Team(tempTeamNum, tempTotalCycles, tempTotalMatchesPlayed, tempTotalAmp, tempTotalSpe, tempTotalClimb, tempTotalTrap, commentList, tempHumPostionsList, tempHumScoSkill, tempHumAmpSkill, tempHumAmpNotes, importTimesHumAmp, importTimesHumSco, importMatchList, imAutoList);
+		Team T = new Team(tempTeamNum, tempTotalCycles, tempTotalMatchesPlayed, tempTotalAmp, tempTotalSpe, tempTotalClimb, tempTotalTrap, commentList, tempHumPostionsList, tempHumScoSkill, tempHumAmpSkill, tempHumAmpNotes, importTimesHumAmp, importTimesHumSco, importMatchList);
 		System.out.println("boop18.2");
 		listOfTeams.add(T);
 		System.out.println("boop18.3");

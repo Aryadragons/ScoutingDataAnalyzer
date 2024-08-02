@@ -10,8 +10,8 @@ public class MatchList {
 		listOfMatches = new ArrayList<Match>();
 	}
 	
-	public void addMatch(int tempTeamNum, int tempMatchNum, int tempAmp, int tempSpe, int tempTrap, int tempClimb, String tempHumPos, int tempAmpSkill, int tempScoSkill, int tempAmpNotes, String tempComment){
-		Match M = new Match(tempTeamNum, tempMatchNum, tempAmp, tempSpe, tempTrap, tempClimb, tempHumPos, tempAmpSkill, tempScoSkill, tempAmpNotes, tempComment);
+	public void addMatch(int tempTeamNum, int tempMatchNum, int tempAmp, int tempSpe, int tempTrap, int tempClimb, String tempHumPos, int tempAmpSkill, int tempScoSkill, int tempAmpNotes, String tempComment, AutoAttempt imAutoList){
+		Match M = new Match(tempTeamNum, tempMatchNum, tempAmp, tempSpe, tempTrap, tempClimb, tempHumPos, tempAmpSkill, tempScoSkill, tempAmpNotes, tempComment, imAutoList);
 		listOfMatches.add(M);
 	}
 	

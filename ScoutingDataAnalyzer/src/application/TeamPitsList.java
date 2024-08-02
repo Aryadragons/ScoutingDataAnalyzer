@@ -10,8 +10,8 @@ import java.util.ArrayList;
 			listOfTeamPits = new ArrayList<TeamPit>();
 		}
 		
-		public void addTeamPit(int imTeamNum, String imTeamName, int imNumOfStud, int imNumOfMent, int imNumOfRobotBat, String imProgramLan, String imDoHaveVis, int imNumOfVisCam, int imNumOfDriverCams, String imDrTrType, String imSwevType, String imSwevGearing, String imDrTrMotorType){
-			TeamPit TP = new TeamPit(imTeamNum, imTeamName, imNumOfStud, imNumOfMent, imNumOfRobotBat, imProgramLan, imDoHaveVis, imNumOfVisCam, imNumOfDriverCams, imDrTrType, imSwevType, imSwevGearing, imDrTrMotorType);
+		public void addTeamPit(int imTeamNum, String imTeamName, int imNumOfStud, int imNumOfMent, int imNumOfRobotBat, String imProgramLan, String imDoHaveVis, int imNumOfVisCam, int imNumOfDriverCams, String imDrTrType, String imSwevType, String imSwevGearing, String imDrTrMotorType, AutoList imAutoList){
+			TeamPit TP = new TeamPit(imTeamNum, imTeamName, imNumOfStud, imNumOfMent, imNumOfRobotBat, imProgramLan, imDoHaveVis, imNumOfVisCam, imNumOfDriverCams, imDrTrType, imSwevType, imSwevGearing, imDrTrMotorType, imAutoList);
 			listOfTeamPits.add(TP);
 		}
 		

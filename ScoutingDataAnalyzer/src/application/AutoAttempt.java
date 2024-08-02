@@ -11,7 +11,7 @@ public class AutoAttempt {
 	private int autoSpecker;
 	private int autoAmp;
 	
-	AutoAttempt(){
+	AutoAttempt(int teamNum, int matchNum, int autoStartPos, int autoANControl, int autoASpecker, int autoAAmp, int autoNControl, int autoSpecker, int autoAmp){
 		
 	}
 	

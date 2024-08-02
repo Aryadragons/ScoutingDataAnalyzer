@@ -349,7 +349,22 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		    	int MAmpSkill = Integer.parseInt(MAmpSkillS);
 		    	int MScoSkill = Integer.parseInt(MScoSkillS);
 		    	int MAmpNotes = Integer.parseInt(MAmpNotesS);
-		    	Match fileMatch = new Match(MTeamNum, MMatchNum, MAmp, MSpe, MTrap, MClimb, MHumPosS, MAmpSkill, MScoSkill, MAmpNotes, MCommentS);
+		    	String autoStartPosS = fileInput.next();
+				String autoANControlS = fileInput.next();
+				String autoASpeckerS = fileInput.next();
+				String autoAAmpS = fileInput.next();
+				String autoNControlS = fileInput.next();
+				String autoSpeckerS = fileInput.next();
+				String autoAmpS = fileInput.next();
+				int autoStartPos = Integer.parseInt(autoStartPosS);
+				int autoANControl = Integer.parseInt(autoANControlS);
+				int autoASpecker = Integer.parseInt(autoASpeckerS);
+				int autoAAmp = Integer.parseInt(autoAAmpS);
+				int autoNControl = Integer.parseInt(autoNControlS);
+				int autoSpecker = Integer.parseInt(autoSpeckerS);
+				int autoAmp = Integer.parseInt(autoAmpS);
+				AutoAttempt fileAuto = new AutoAttempt(fileTeamNum, MMatchNum, autoStartPos, autoANControl, autoASpecker, autoAAmp, autoNControl, autoSpecker, autoAmp);
+		    	Match fileMatch = new Match(MTeamNum, MMatchNum, MAmp, MSpe, MTrap, MClimb, MHumPosS, MAmpSkill, MScoSkill, MAmpNotes, MCommentS, fileAuto);
 		    	fileMatchList.addPreMadeMatch(fileMatch);
 			}
 			
@@ -1416,8 +1431,8 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 				makeHomePage();
 			}
 			if(event.getSource() == saveDataB) {
-				updateDataList();
 				updatePitData();
+				updateDataList();
 				updateDriveTeamDataList();
 				updateDriveTeamCommentsList();
 			}
