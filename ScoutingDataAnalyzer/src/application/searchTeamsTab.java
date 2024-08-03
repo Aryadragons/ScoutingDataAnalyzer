@@ -970,7 +970,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				if (theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getAutoStartPos() == 4) {
 					startPosName = "Amp Side";
 				}
-				String autoName = i + totalPieces + " Piece, " + startPosName;
+				String autoName = totalPieces + " Piece, " + startPosName + " Spe: " + theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getTotalSpecker();
 				autosListCB.getItems().add(autoName);
 			}
 			this.add(autosListCB, 2, 2);
@@ -1185,7 +1185,203 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				addMatchChart(selectedMatch ,selectTeam.getTeamNum());
 			}
 			if(event.getSource() == submitAutoB) {
-				
+				this.getChildren().remove(autoBCBarC);
+				String selectedAutoS = autosListCB.getSelectionModel().getSelectedItem();
+				if(selectedAutoS.substring(9, 10).compareTo("Fa") == 0) {
+					if(selectedAutoS.length() > 25) {
+						int conValue = Integer.parseInt(selectedAutoS.substring(0, 0));
+						int speValue = Integer.parseInt(selectedAutoS.substring(31));
+						String selectedTeamS = teamListCB.getSelectionModel().getSelectedItem();
+						int selectedTeam = Integer.parseInt(selectedTeamS);
+						Team theTeam;
+						theTeam = theTeamList.getATeam(selectedTeam);
+						selectTeam = theTeam;
+						int found = 0;
+						int size = theTeam.getAutoList().listOfAutos.size();
+						int i = 0;
+						Auto A = new Auto();
+						System.out.println("Boop30.5");
+						while(i < size & found == 0) {
+							A = theTeam.getAutoList().listOfAutos.get(i);
+							System.out.println("Boop30.6");
+							if(A.getAutoStartPos() == 1) {
+								System.out.println("Boop30.7");
+								if(A.getTotalControl() == conValue) {
+									System.out.println("Boop30.8");
+									if(A.getTotalSpecker() == speValue) {
+										System.out.println("Boop30.9");
+										found = 1;
+									}else {
+										System.out.println("Boop30.9");
+										i++;
+									}
+								}else {
+									System.out.println("Boop30.8");
+									i++;
+								}
+							}else {
+								System.out.println("Boop30.7");
+								i++;
+							}
+						}
+						
+						addAutoStuff(selectedTeam, i);
+					}else{
+						int speValue = Integer.parseInt(selectedAutoS.substring(23));
+						int conValue = Integer.parseInt(selectedAutoS.substring(0, 0));
+						String selectedTeamS = teamListCB.getSelectionModel().getSelectedItem();
+						int selectedTeam = Integer.parseInt(selectedTeamS);
+						Team theTeam;
+						theTeam = theTeamList.getATeam(selectedTeam);
+						selectTeam = theTeam;
+						int found = 0;
+						int size = theTeam.getAutoList().listOfAutos.size();
+						int i = 0;
+						Auto A = new Auto();
+						System.out.println("Boop30.5");
+						while(i < size & found == 0) {
+							A = theTeam.getAutoList().listOfAutos.get(i);
+							System.out.println("Boop30.6");
+							if(A.getAutoStartPos() == 0) {
+								System.out.println("Boop30.7");
+								if(A.getTotalControl() == conValue) {
+									System.out.println("Boop30.8");
+									if(A.getTotalSpecker() == speValue) {
+										System.out.println("Boop30.9");
+										found = 1;
+									}else {
+										System.out.println("Boop30.9");
+										i++;
+									}
+								}else {
+									System.out.println("Boop30.8");
+									i++;
+								}
+							}else {
+								System.out.println("Boop30.7");
+								i++;
+							}
+						}
+						
+						addAutoStuff(selectedTeam, i);
+					}
+				}else if(selectedAutoS.substring(9, 10).compareTo("Ce") == 0) {
+					int conValue = Integer.parseInt(selectedAutoS.substring(0, 0));
+					int speValue = Integer.parseInt(selectedAutoS.substring(29));
+					String selectedTeamS = teamListCB.getSelectionModel().getSelectedItem();
+					int selectedTeam = Integer.parseInt(selectedTeamS);
+					Team theTeam;
+					theTeam = theTeamList.getATeam(selectedTeam);
+					selectTeam = theTeam;
+					int found = 0;
+					int size = theTeam.getAutoList().listOfAutos.size();
+					int i = 0;
+					Auto A = new Auto();
+					System.out.println("Boop30.5");
+					while(i < size & found == 0) {
+						A = theTeam.getAutoList().listOfAutos.get(i);
+						System.out.println("Boop30.6");
+						if(A.getAutoStartPos() == 2) {
+							System.out.println("Boop30.7");
+							if(A.getTotalControl() == conValue) {
+								System.out.println("Boop30.8");
+								if(A.getTotalSpecker() == speValue) {
+									System.out.println("Boop30.9");
+									found = 1;
+								}else {
+									System.out.println("Boop30.9");
+									i++;
+								}
+							}else {
+								System.out.println("Boop30.8");
+								i++;
+							}
+						}else {
+							System.out.println("Boop30.7");
+							i++;
+						}
+					}
+					
+					addAutoStuff(selectedTeam, i);
+				}else{
+					if(selectedAutoS.length() > 25) {
+						int conValue = Integer.parseInt(selectedAutoS.substring(0, 0));
+						int speValue = Integer.parseInt(selectedAutoS.substring(31));
+						String selectedTeamS = teamListCB.getSelectionModel().getSelectedItem();
+						int selectedTeam = Integer.parseInt(selectedTeamS);
+						Team theTeam;
+						theTeam = theTeamList.getATeam(selectedTeam);
+						selectTeam = theTeam;
+						int found = 0;
+						int size = theTeam.getAutoList().listOfAutos.size();
+						int i = 0;
+						Auto A = new Auto();
+						System.out.println("Boop30.5");
+						while(i < size & found == 0) {
+							A = theTeam.getAutoList().listOfAutos.get(i);
+							System.out.println("Boop30.6");
+							if(A.getAutoStartPos() == 3) {
+								System.out.println("Boop30.7");
+								if(A.getTotalControl() == conValue) {
+									System.out.println("Boop30.8");
+									if(A.getTotalSpecker() == speValue) {
+										System.out.println("Boop30.9");
+										found = 1;
+									}else {
+										System.out.println("Boop30.9");
+										i++;
+									}
+								}else {
+									System.out.println("Boop30.8");
+									i++;
+								}
+							}else {
+								System.out.println("Boop30.7");
+								i++;
+							}
+						}
+						
+						addAutoStuff(selectedTeam, i);
+					}else {
+						int conValue = Integer.parseInt(selectedAutoS.substring(0, 0));
+						int speValue = Integer.parseInt(selectedAutoS.substring(23));
+						String selectedTeamS = teamListCB.getSelectionModel().getSelectedItem();
+						int selectedTeam = Integer.parseInt(selectedTeamS);
+						Team theTeam;
+						theTeam = theTeamList.getATeam(selectedTeam);
+						selectTeam = theTeam;
+						int found = 0;
+						int size = theTeam.getAutoList().listOfAutos.size();
+						int i = 0;
+						Auto A = new Auto();
+						System.out.println("Boop30.5");
+						while(i < size & found == 0) {
+							A = theTeam.getAutoList().listOfAutos.get(i);
+							System.out.println("Boop30.6");
+							if(A.getAutoStartPos() == 4) {
+								System.out.println("Boop30.7");
+								if(A.getTotalControl() == conValue) {
+									System.out.println("Boop30.8");
+									if(A.getTotalSpecker() == speValue) {
+										System.out.println("Boop30.9");
+										found = 1;
+									}else {
+										System.out.println("Boop30.9");
+										i++;
+									}
+								}else {
+									System.out.println("Boop30.8");
+									i++;
+								}
+							}else {
+								System.out.println("Boop30.7");
+								i++;
+							}
+						}
+						
+						addAutoStuff(selectedTeam, i);
+					}
+				}
 			}
 		} catch(Exception e) {
 			System.out.println("Error: " + e);
