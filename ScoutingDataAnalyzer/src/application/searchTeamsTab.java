@@ -700,11 +700,40 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		this.add(new Label(""), 0, 12);
 		this.add(new Label(""), 0, 13);
 		this.add(new Label(""), 0, 14);
-		
+		System.out.println("BoopPits");
 		//autos
 		Label autoTitle = new Label("Autos:");
 		autoTitle.setId("TitleLabel");
 		this.add(autoTitle, 2, 5);
+		System.out.println("BoopPits1");
+		int autoInfoPos = 6;
+		for (int i = 0; i < theTeamPitList.getATeamPit(teamNum).getTheAutoList().listOfAutos.size(); i++) {
+			System.out.println("BoopPits2");
+			double totalPieces = theTeamPitList.getATeamPit(teamNum).getTheAutoList().listOfAutos.get(i).getTotalAmp() + theTeamPitList.getATeamPit(teamNum).getTheAutoList().listOfAutos.get(i).getTotalSpecker();
+			if(theTeamPitList.getATeamPit(teamNum).getTheAutoList().listOfAutos.get(i).getTotalControl() > totalPieces) {
+				totalPieces = totalPieces + 0.5;
+			}
+			String startPosName = "";
+			if (theTeamPitList.getATeamPit(teamNum).getTheAutoList().listOfAutos.get(i).getAutoStartPos() == 0) {
+				startPosName = "Far Side";
+			}
+			if (theTeamPitList.getATeamPit(teamNum).getTheAutoList().listOfAutos.get(i).getAutoStartPos() == 1) {
+				startPosName = "Far Side Speaker";
+			}
+			if (theTeamPitList.getATeamPit(teamNum).getTheAutoList().listOfAutos.get(i).getAutoStartPos() == 2) {
+				startPosName = "Center Speaker";
+			}
+			if (theTeamPitList.getATeamPit(teamNum).getTheAutoList().listOfAutos.get(i).getAutoStartPos() == 3) {
+				startPosName = "Amp Side Speaker";
+			}
+			if (theTeamPitList.getATeamPit(teamNum).getTheAutoList().listOfAutos.get(i).getAutoStartPos() == 4) {
+				startPosName = "Amp Side";
+			}
+			System.out.println("BoopPits3");
+			String autoName = totalPieces + " Piece, " + startPosName + " Spe: " + theTeamPitList.getATeamPit(teamNum).getTheAutoList().listOfAutos.get(i).getTotalSpecker();
+			this.add(new Label(autoName), 2, autoInfoPos);
+			autoInfoPos++;
+		}
 	}
 	
 	public void addPieCharts(Team theTeam) {
@@ -1126,7 +1155,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				for(int i = 0; i < commentList.size(); i++) {
 					commentsS = commentsS + "\n" +commentList.get(i);
 				}
-				this.add(commentsTA, 3, 1);
+				this.add(commentsTA, 4, 0);
 				commentsTA.setText(commentsS);
 				System.out.println("Boop33");
 				if (theTeam.getTotalMatchesPlayed() == 1) {
