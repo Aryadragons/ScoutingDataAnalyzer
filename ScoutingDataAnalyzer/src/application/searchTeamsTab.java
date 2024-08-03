@@ -100,7 +100,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		statListCB.getItems().add("Amp Skill");
 		statListCB.getItems().add("Scource Skill");
 		statListCB.getItems().add("Amp Notes");
-		this.add(statListCB, 2, 0);
+		statListCB.snappedTopInset();
+		this.add(statListCB, 3, 2);
 		//Match CB
 		matchListCB = new ComboBox<String>();
 		MatchList teamML = theTeamList.getATeam(teamNum).getMatchList();
@@ -110,14 +111,19 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			String mNumS = Integer.toString(mNum);
 			matchListCB.getItems().add(mNumS);
 		}
-		this.add(matchListCB, 4, 0);
+		matchListCB.snappedBottomInset();
+		this.add(matchListCB, 3, 1);
 		//adding buttons
 		statSubB = new Button("Submit");
+		statSubB.snappedRightInset();
+		statSubB.snappedTopInset();
 		statSubB.setOnAction(this);
-		this.add(statSubB, 3, 0);
+		this.add(statSubB, 4, 2);
 		matchSubB = new Button("Submit");
+		matchSubB.snappedRightInset();
+		matchSubB.snappedBottomInset();
 		matchSubB.setOnAction(this);
-		this.add(matchSubB, 5, 0);
+		this.add(matchSubB, 4, 1);
 	}
 	
 	private void addCharts(int team, double avgCy, double avgAmp, double avgSpe, double avgTrap, double avgCli, double avgHumAmpPostion, double avgHumScoPostion, double avgHumAmpSkill, double avgHumScoSkill, double avgHumAmpNotes, int timesAmp, int timesSco) {
@@ -474,7 +480,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			int matchAutoSpe = theMatch.getTheAA().getAutoSpecker();
 			int matchAutoAmp = theMatch.getTheAA().getAutoSpecker();
 			System.out.println("Boop37.5");
-			String[] matchThings = {"Cycles", "Amp", "Speaker", "Trap", "Climb", "Amp Skill", "Amp Notes", "Auto Speaker", "Auto Amp"};
+			String[] matchThings = {"Cycle", "Amp", "Spe", "Trap", "Climb", "Amp Sk", "Amp Note", "Auto Spe", "Auto Amp"};
 			XYChart.Series<String,Number> matchBarC = new XYChart.Series<String,Number>();
 			matchBarC.setName("Stat:");
 			CategoryAxis typeXAxisBarC = new CategoryAxis();
@@ -485,13 +491,13 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    numScaleAxisBarC.setTickLabelFill(lightPurC);
 		    XYChart.Series<String,Number> cyData = new XYChart.Series<String,Number>();
 		    cyData.setName("Cycle Data");
-		    cyData.getData().add(new XYChart.Data<String,Number>("Cycles", matchCy));
+		    cyData.getData().add(new XYChart.Data<String,Number>("Cycle", matchCy));
 		    XYChart.Series<String,Number> ampData = new XYChart.Series<String,Number>();
 		    ampData.setName("Amp Data");
 		    ampData.getData().add(new XYChart.Data<String,Number>("Amp", matchAmp));
 		    XYChart.Series<String,Number> speData = new XYChart.Series<String,Number>();
 		    speData.setName("Speaker Data");
-		    speData.getData().add(new XYChart.Data<String,Number>("Speaker", matchSpe));
+		    speData.getData().add(new XYChart.Data<String,Number>("Spe", matchSpe));
 		    XYChart.Series<String,Number> trapData = new XYChart.Series<String,Number>();
 		    trapData.setName("Trap Data");
 		    trapData.getData().add(new XYChart.Data<String,Number>("Trap", matchTrap));
@@ -500,13 +506,13 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    cliData.getData().add(new XYChart.Data<String,Number>("Climb", matchCli));
 		    XYChart.Series<String,Number> ampSkData = new XYChart.Series<String,Number>();
 		    ampSkData.setName("Amp Skill Data");
-		    ampSkData.getData().add(new XYChart.Data<String,Number>("Amp Skill", matchASk));
+		    ampSkData.getData().add(new XYChart.Data<String,Number>("Amp Sk", matchASk));
 		    XYChart.Series<String,Number> ampNData = new XYChart.Series<String,Number>();
 		    ampNData.setName("Amp Notes Data");
-		    ampNData.getData().add(new XYChart.Data<String,Number>("Amp Notes", matchAN));
+		    ampNData.getData().add(new XYChart.Data<String,Number>("Amp Note", matchAN));
 		    XYChart.Series<String,Number> autoSpeData = new XYChart.Series<String,Number>();
 		    autoSpeData.setName("Auto Speaker Data");
-		    autoSpeData.getData().add(new XYChart.Data<String,Number>("Auto Speaker", matchAutoSpe));
+		    autoSpeData.getData().add(new XYChart.Data<String,Number>("Auto Spe", matchAutoSpe));
 		    XYChart.Series<String,Number> autoAmpData = new XYChart.Series<String,Number>();
 		    autoAmpData.setName("Auto Amp Data");
 		    autoAmpData.getData().add(new XYChart.Data<String,Number>("Auto Amp", matchAutoAmp));
@@ -526,7 +532,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			int matchSSk = theMatch.getMatchScoSkill();
 			int matchAutoSpe = theMatch.getTheAA().getAutoSpecker();
 			int matchAutoAmp = theMatch.getTheAA().getAutoSpecker();
-			String[] matchThings = {"Cycles", "Amp", "Speaker", "Trap", "Climb", "Scoure Skill", "Auto Speaker", "Auto Amp"};
+			String[] matchThings = {"Cycle", "Amp", "Spe", "Trap", "Climb", "Scoure Sk", "Auto Spe", "Auto Amp"};
 			XYChart.Series<String,Number> matchBarC = new XYChart.Series<String,Number>();
 			matchBarC.setName("Stat:");
 			CategoryAxis typeXAxisBarC = new CategoryAxis();
@@ -537,13 +543,13 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    numScaleAxisBarC.setTickLabelFill(lightPurC);
 		    XYChart.Series<String,Number> cyData = new XYChart.Series<String,Number>();
 		    cyData.setName("Cycle Data");
-		    cyData.getData().add(new XYChart.Data<String,Number>("Cycles", matchCy));
+		    cyData.getData().add(new XYChart.Data<String,Number>("Cycle", matchCy));
 		    XYChart.Series<String,Number> ampData = new XYChart.Series<String,Number>();
 		    ampData.setName("Amp Data");
 		    ampData.getData().add(new XYChart.Data<String,Number>("Amp", matchAmp));
 		    XYChart.Series<String,Number> speData = new XYChart.Series<String,Number>();
 		    speData.setName("Speaker Data");
-		    speData.getData().add(new XYChart.Data<String,Number>("Speaker", matchSpe));
+		    speData.getData().add(new XYChart.Data<String,Number>("Spe", matchSpe));
 		    XYChart.Series<String,Number> trapData = new XYChart.Series<String,Number>();
 		    trapData.setName("Trap Data");
 		    trapData.getData().add(new XYChart.Data<String,Number>("Trap", matchTrap));
@@ -552,16 +558,16 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    cliData.getData().add(new XYChart.Data<String,Number>("Climb", matchCli));
 		    XYChart.Series<String,Number> scoSkData = new XYChart.Series<String,Number>();
 		    scoSkData.setName("Amp Skill Data");
-		    scoSkData.getData().add(new XYChart.Data<String,Number>("Scoure Skill", matchSSk));
+		    scoSkData.getData().add(new XYChart.Data<String,Number>("Scoure Sk", matchSSk));
 		    XYChart.Series<String,Number> autoSpeData = new XYChart.Series<String,Number>();
 		    autoSpeData.setName("Auto Speaker Data");
-		    autoSpeData.getData().add(new XYChart.Data<String,Number>("Auto Speaker", matchAutoSpe));
+		    autoSpeData.getData().add(new XYChart.Data<String,Number>("Auto Spe", matchAutoSpe));
 		    XYChart.Series<String,Number> autoAmpData = new XYChart.Series<String,Number>();
 		    autoAmpData.setName("Auto Amp Data");
 		    autoAmpData.getData().add(new XYChart.Data<String,Number>("Auto Amp", matchAutoAmp));
 		    matchBCBarC.getData().addAll(cyData, ampData, speData, trapData, cliData, scoSkData, autoSpeData, autoAmpData);
 		    matchBCBarC.setBarGap(2);
-		    matchBCBarC.setMinSize(150, 100);
+		    matchBCBarC.setMinSize(150, 150);
 		    matchBCBarC.setMaxSize(500, 250);
 		    this.add(matchBCBarC, 1, 1);
 		}
@@ -573,7 +579,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			int matchCli = theMatch.getMatchClimb();
 			int matchAutoSpe = theMatch.getTheAA().getAutoSpecker();
 			int matchAutoAmp = theMatch.getTheAA().getAutoSpecker();
-			String[] matchThings = {"Cycles", "Amp", "Speaker", "Trap", "Climb", "Auto Speaker", "Auto Amp"};
+			String[] matchThings = {"Cycle", "Amp", "Spe", "Trap", "Climb", "Auto Spe", "Auto Amp"};
 			XYChart.Series<String,Number> matchBarC = new XYChart.Series<String,Number>();
 			matchBarC.setName("Stat:");
 			CategoryAxis typeXAxisBarC = new CategoryAxis();
@@ -584,13 +590,13 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    numScaleAxisBarC.setTickLabelFill(lightPurC);
 		    XYChart.Series<String,Number> cyData = new XYChart.Series<String,Number>();
 		    cyData.setName("Cycle Data");
-		    cyData.getData().add(new XYChart.Data<String,Number>("Cycles", matchCy));
+		    cyData.getData().add(new XYChart.Data<String,Number>("Cycle", matchCy));
 		    XYChart.Series<String,Number> ampData = new XYChart.Series<String,Number>();
 		    ampData.setName("Amp Data");
 		    ampData.getData().add(new XYChart.Data<String,Number>("Amp", matchAmp));
 		    XYChart.Series<String,Number> speData = new XYChart.Series<String,Number>();
 		    speData.setName("Speaker Data");
-		    speData.getData().add(new XYChart.Data<String,Number>("Speaker", matchSpe));
+		    speData.getData().add(new XYChart.Data<String,Number>("Spe", matchSpe));
 		    XYChart.Series<String,Number> trapData = new XYChart.Series<String,Number>();
 		    trapData.setName("Trap Data");
 		    trapData.getData().add(new XYChart.Data<String,Number>("Trap", matchTrap));
@@ -599,13 +605,13 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    cliData.getData().add(new XYChart.Data<String,Number>("Climb", matchCli));
 		    XYChart.Series<String,Number> autoSpeData = new XYChart.Series<String,Number>();
 		    autoSpeData.setName("Auto Speaker Data");
-		    autoSpeData.getData().add(new XYChart.Data<String,Number>("Auto Speaker", matchAutoSpe));
+		    autoSpeData.getData().add(new XYChart.Data<String,Number>("Auto Spe", matchAutoSpe));
 		    XYChart.Series<String,Number> autoAmpData = new XYChart.Series<String,Number>();
 		    autoAmpData.setName("Auto Amp Data");
 		    autoAmpData.getData().add(new XYChart.Data<String,Number>("Auto Amp", matchAutoAmp));
 		    matchBCBarC.getData().addAll(cyData, ampData, speData, trapData, cliData, autoSpeData, autoAmpData);
 		    matchBCBarC.setBarGap(2);
-		    matchBCBarC.setMinSize(150, 100);
+		    matchBCBarC.setMinSize(150, 175);
 		    matchBCBarC.setMaxSize(500, 250);
 		    this.add(matchBCBarC, 1, 1);
 		}
@@ -717,7 +723,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		System.out.println("Boop44 A:" + ampValue + "S:" + speValue + "T:" + trapValue);
 		ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(new PieChart.Data("Amp", ampValue), new PieChart.Data("Specker", speValue), new PieChart.Data("Trap", trapValue));
 		PieChart cyclePieC = new PieChart(pieChartData);
-		cyclePieC.setMinSize(200, 200);
+		cyclePieC.setMinSize(300, 300);
 		cyclePieC.setMaxSize(300, 300);
 		cyclePieC.setLabelsVisible(true);
 		this.add(cyclePieC, 0, 4);
@@ -726,7 +732,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		int scoHumValue = ((theTeam.getTimesHumSco() * 100)/theTeam.getTotalMatchesPlayed());
 		ObservableList<PieChart.Data> humPieChartData = FXCollections.observableArrayList(new PieChart.Data("Amp", ampHumValue), new PieChart.Data("Scoure", scoHumValue));
 		PieChart humPieC = new PieChart(humPieChartData);
-		humPieC.setMinSize(200, 200);
+		humPieC.setMinSize(300, 300);
 		humPieC.setMaxSize(300, 300);
 		humPieC.setLabelsVisible(true);
 		this.add(humPieC, 1, 4);
@@ -734,7 +740,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	
 	public void addDTDStuff(int teamNum) {
 		if(theDTDList.getATeamPit(teamNum).getIsAdult() == true) {
-			Label adultWarningL = new Label("                                                             " + "Adult Drive Coach");
+			Label adultWarningL = new Label("                                                        " + "Adult Drive Coach");
 			adultWarningL.setId("ADC");
 			this.add(adultWarningL, 0, 0);
 		}
@@ -967,7 +973,10 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				String autoName = i + totalPieces + " Piece, " + startPosName;
 				autosListCB.getItems().add(autoName);
 			}
+			this.add(autosListCB, 2, 2);
 			submitAutoB = new Button("Submit Auto");
+			submitAutoB.setOnAction(this);
+			this.add(submitAutoB, 2, 2);
 			Auto A = theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(autoNumber);
 			if(A.getTimesUsed() == 0) {
 				this.add(new Label("They Havn't Used This Auto"), 2, 0);
@@ -995,8 +1004,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			    cnData.getData().add(new XYChart.Data<String,Number>("Avg Controled", controlAvg));
 			    autoBCBarC.getData().addAll(ampData, speData, cnData);
 			    autoBCBarC.setBarGap(2);
-			    autoBCBarC.setMinSize(150, 100);
-			    autoBCBarC.setMaxSize(350, 250);
+			    autoBCBarC.setMinSize(250, 200);
+			    autoBCBarC.setMaxSize(300, 250);
 			    this.add(autoBCBarC, 2, 1);
 			    this.add(new Label("This Auto Has Been Used " + A.getTimesUsed() + " Times"), 2, 0);
 			}
@@ -1012,7 +1021,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    		numOfAutosUsed = numOfAutosUsed + theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getTimesUsed();
 		    	}
 		    }
-		    List<PieChart.Data> autoPCData = null;
+		    PieChart autoPieC = new PieChart();
 		    int totalPercent = 0;
 		    int matches = theTeamList.getATeam(teamNum).getTotalMatchesPlayed();
 		    String startPosName = "";
@@ -1024,6 +1033,11 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    		totalPercent = totalPercent + (usedAutos.listOfAutos.get(i).getTimesUsed() / matches) * 100;
 		    		int add = 100 - totalPercent;
 		    		usePercent = usePercent + add;
+		    		//name stuff
+		    		double totalPieces = theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getTotalAmp() + theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getTotalSpecker();
+					if(theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getTotalControl() > totalPieces) {
+						totalPieces = totalPieces + 0.5;
+					}
 		    		if (theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getAutoStartPos() == 0) {
 						startPosName = "Far Side";
 					}
@@ -1039,12 +1053,20 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 					if (theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getAutoStartPos() == 4) {
 						startPosName = "Amp Side";
 					}
-		    		PieChart.Data temp = new PieChart.Data(startPosName, usePercent);
-		    		autoPCData.add(temp);
+					String name = startPosName + totalPieces;
+					//adding auto pie chart data
+					PieChart.Data autoData = new PieChart.Data(name , totalPercent);
+
+				    autoPieC.getData().add(autoData);
 		    	} else {
 		    		System.out.println("BoopAutoPC4");
 		    		int usePercent = (usedAutos.listOfAutos.get(i).getTimesUsed() / matches) * 100;
 		    		totalPercent = totalPercent + (usedAutos.listOfAutos.get(i).getTimesUsed() / matches) * 100;
+		    		//name stuff
+		    		double totalPieces = theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getTotalAmp() + theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getTotalSpecker();
+					if(theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getTotalControl() > totalPieces) {
+						totalPieces = totalPieces + 0.5;
+					}
 					if (theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getAutoStartPos() == 0) {
 						startPosName = "Far Side";
 					}
@@ -1060,14 +1082,17 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 					if (theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getAutoStartPos() == 4) {
 						startPosName = "Amp Side";
 					}
-		    		PieChart.Data temp = new PieChart.Data(startPosName, usePercent);
-		    		autoPCData.add(temp);
+		    		//adding auto pie chart data
+					String name = startPosName + totalPieces;
+					//adding auto pie chart data
+					PieChart.Data autoData = new PieChart.Data(name , totalPercent);
+
+				    autoPieC.getData().add(autoData);
 		    	}
 		    	
 		    }
-		    ObservableList<PieChart.Data> autoPieChartData= FXCollections.observableArrayList(autoPCData);
-		    PieChart autoPieC = new PieChart(autoPieChartData);
-		    autoPieC.setMinSize(200, 200);
+		    autoPieC.setMinSize(300, 300);
+		    autoPieC.setMaxSize(300, 300);
 		    autoPieC.setLabelsVisible(true);
 			this.add(autoPieC, 2, 4);
 		}
@@ -1158,6 +1183,9 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				String selectedMatchS = matchListCB.getSelectionModel().getSelectedItem();
 				int selectedMatch= Integer.parseInt(selectedMatchS);
 				addMatchChart(selectedMatch ,selectTeam.getTeamNum());
+			}
+			if(event.getSource() == submitAutoB) {
+				
 			}
 		} catch(Exception e) {
 			System.out.println("Error: " + e);
