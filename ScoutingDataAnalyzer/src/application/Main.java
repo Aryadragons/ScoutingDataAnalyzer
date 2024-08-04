@@ -682,6 +682,10 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		}
 	}
 	
+	private void updatePlayoffList() {
+		
+	}
+	
 	private void sortListOfTeamNums() {
 		int place;
 		for (int i = 0; i < listOfTeamNums.size(); i++) {
