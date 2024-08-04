@@ -1057,7 +1057,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	}
 	
 	private void makeSetPlayOffAlliance() {
-		setPlayOffAlliancesTab setPlayOff = new setPlayOffAlliancesTab();
+		setPlayOffAlliancesTab setPlayOff = new setPlayOffAlliancesTab(listOfTeamNumsSorted);
 		setPlayOff.setMinHeight(600);
 		setPlayOff.setMinWidth(1400);
 		setPlayOff.setMaxHeight(600);

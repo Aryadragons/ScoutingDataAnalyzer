@@ -1,10 +1,15 @@
 package application;
 
+import java.util.List;
+
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
-public class setPlayOffAlliancesTab extends GridPane{
+public class setPlayOffAlliancesTab extends GridPane implements EventHandler<ActionEvent>{
 	
 	private ComboBox<String> team1CB;
 	private ComboBox<String> team2CB;
@@ -30,8 +35,11 @@ public class setPlayOffAlliancesTab extends GridPane{
 	private ComboBox<String> team22CB;
 	private ComboBox<String> team23CB;
 	private ComboBox<String> team24CB;
+	private Button submitB;
+	private List<Integer> listOfTeamNums;
 
-	public setPlayOffAlliancesTab() {
+	public setPlayOffAlliancesTab(List<Integer> importedListOfTeamNums) {
+		listOfTeamNums = importedListOfTeamNums;
 		this.add(new Label("Allince 1 Teams:   "), 0, 0);
 		this.add(new Label("Team 1:   "), 1, 0);
 		this.add(new Label("Team 2;   "), 2, 0);
@@ -90,30 +98,30 @@ public class setPlayOffAlliancesTab extends GridPane{
 		team23CB = new ComboBox<String>();
 		team24CB = new ComboBox<String>();
 		//adding team list to them
-		team1CB.getItems().addAll("1234", "5678");
-		team2CB.getItems().addAll("1234", "5678");
-		team3CB.getItems().addAll("1234", "5678");
-		team4CB.getItems().addAll("1234", "5678");
-		team5CB.getItems().addAll("1234", "5678");
-		team6CB.getItems().addAll("1234", "5678");
-		team7CB.getItems().addAll("1234", "5678");
-		team8CB.getItems().addAll("1234", "5678");
-		team9CB.getItems().addAll("1234", "5678");
-		team10CB.getItems().addAll("1234", "5678");
-		team11CB.getItems().addAll("1234", "5678");
-		team12CB.getItems().addAll("1234", "5678");
-		team13CB.getItems().addAll("1234", "5678");
-		team14CB.getItems().addAll("1234", "5678");
-		team15CB.getItems().addAll("1234", "5678");
-		team16CB.getItems().addAll("1234", "5678");
-		team17CB.getItems().addAll("1234", "5678");
-		team18CB.getItems().addAll("1234", "5678");
-		team19CB.getItems().addAll("1234", "5678");
-		team20CB.getItems().addAll("1234", "5678");
-		team21CB.getItems().addAll("1234", "5678");
-		team22CB.getItems().addAll("1234", "5678");
-		team23CB.getItems().addAll("1234", "5678");
-		team24CB.getItems().addAll("1234", "5678");
+		addComboBoxItems(team1CB);
+		addComboBoxItems(team2CB);
+		addComboBoxItems(team3CB);
+		addComboBoxItems(team4CB);
+		addComboBoxItems(team5CB);
+		addComboBoxItems(team6CB);
+		addComboBoxItems(team7CB);
+		addComboBoxItems(team8CB);
+		addComboBoxItems(team9CB);
+		addComboBoxItems(team10CB);
+		addComboBoxItems(team11CB);
+		addComboBoxItems(team12CB);
+		addComboBoxItems(team13CB);
+		addComboBoxItems(team14CB);
+		addComboBoxItems(team15CB);
+		addComboBoxItems(team16CB);
+		addComboBoxItems(team17CB);
+		addComboBoxItems(team18CB);
+		addComboBoxItems(team19CB);
+		addComboBoxItems(team20CB);
+		addComboBoxItems(team21CB);
+		addComboBoxItems(team22CB);
+		addComboBoxItems(team23CB);
+		addComboBoxItems(team24CB);
 		//adding them to the gui
 		this.add(team1CB, 1, 1);
 		this.add(team2CB, 2, 1);
@@ -139,9 +147,24 @@ public class setPlayOffAlliancesTab extends GridPane{
 		this.add(team22CB, 1, 15);
 		this.add(team23CB, 2, 15);
 		this.add(team24CB, 3, 15);
-		for (int i = 0; i < 23; i++) {
-			this.add(new Label(""), 0, i);
+		submitB = new Button("Submit");
+		submitB.setOnAction(this);
+		this.add(submitB, 4, 0);
+	}
+
+	private void addComboBoxItems(ComboBox<String> theCB) {
+		String teamNumS;
+		for (int i = 0; i < listOfTeamNums.size(); i++) {
+			if (listOfTeamNums.get(i) != null) {
+				teamNumS = Integer.toString(listOfTeamNums.get(i));
+				theCB.getItems().add(teamNumS);
+			}
 		}
+	}
+	
+	@Override
+	public void handle(ActionEvent arg0) {
+		// TODO Auto-generated method stub
 		
 	}
 }
