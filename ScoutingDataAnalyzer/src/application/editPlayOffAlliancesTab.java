@@ -1,5 +1,8 @@
 package application;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javafx.event.ActionEvent;
@@ -79,10 +82,13 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 	private ComboBox<String> team32CB;
 	private Button submitB;
 	private List<Integer> listOfTeamNums;
+	private PlayoffAlliances filePOA;
 	
 	public editPlayOffAlliancesTab(PlayoffAlliances thePOA, List<Integer> importedListOfTeamNums) {
 		listOfTeamNums = importedListOfTeamNums;
+		filePOA = thePOA;
 		submitB = new Button("Submit");
+		submitB.setOnAction(this);
 		this.add(submitB, 0, 3);
 		team1TF = new TextField();
 		team2TF = new TextField();
@@ -320,7 +326,7 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 		//Alliance 1 stuff
 		BorderPane borderPaneA1 = new BorderPane();
 		Label A1L = new Label("Allince 1:");
-		A1L.setId("TitleLabel");
+		A1L.setId("TitleLabelPlay");
 		borderPaneA1.setTop(A1L);
 		VBox A1LabelVBox = new VBox(5);
 		Label A1LT1 = new Label("Team 1:   ");
@@ -339,7 +345,7 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 		//Alliance 2 stuff
 		BorderPane borderPaneA2 = new BorderPane();
 		Label A2L = new Label("Allince 1:");
-		A2L.setId("TitleLabel");
+		A2L.setId("TitleLabelPlay");
 		borderPaneA2.setTop(A2L);
 		VBox A2LabelVBox = new VBox(5);
 		Label A2LT1 = new Label("Team 1:   ");
@@ -358,7 +364,7 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 		//Alliance 3 stuff
 		BorderPane borderPaneA3 = new BorderPane();
 		Label A3L = new Label("Allince 1:");
-		A3L.setId("TitleLabel");
+		A3L.setId("TitleLabelPlay");
 		borderPaneA3.setTop(A3L);
 		VBox A3LabelVBox = new VBox(5);
 		Label A3LT1 = new Label("Team 1:   ");
@@ -377,7 +383,7 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 		//Alliance 4 stuff
 		BorderPane borderPaneA4 = new BorderPane();
 		Label A4L = new Label("Allince 1:");
-		A4L.setId("TitleLabel");
+		A4L.setId("TitleLabelPlay");
 		borderPaneA4.setTop(A4L);
 		VBox A4LabelVBox = new VBox(5);
 		Label A4LT1 = new Label("Team 1:   ");
@@ -396,7 +402,7 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 		//Alliance 5 stuff
 		BorderPane borderPaneA5 = new BorderPane();
 		Label A5L = new Label("Allince 1:");
-		A5L.setId("TitleLabel");
+		A5L.setId("TitleLabelPlay");
 		borderPaneA5.setTop(A5L);
 		VBox A5LabelVBox = new VBox(5);
 		Label A5LT1 = new Label("Team 1:   ");
@@ -415,7 +421,7 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 		//Alliance 6 stuff
 		BorderPane borderPaneA6 = new BorderPane();
 		Label A6L = new Label("Allince 1:");
-		A6L.setId("TitleLabel");
+		A6L.setId("TitleLabelPlay");
 		borderPaneA6.setTop(A6L);
 		VBox A6LabelVBox = new VBox(5);
 		Label A6LT1 = new Label("Team 1:   ");
@@ -434,7 +440,7 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 		//Alliance 7 stuff
 		BorderPane borderPaneA7 = new BorderPane();
 		Label A7L = new Label("Allince 1:");
-		A7L.setId("TitleLabel");
+		A7L.setId("TitleLabelPlay");
 		borderPaneA7.setTop(A7L);
 		borderPaneA7.setTop(A7L);
 		VBox A7LabelVBox = new VBox(5);
@@ -454,7 +460,7 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 		//Alliance 8 stuff
 		BorderPane borderPaneA8 = new BorderPane();
 		Label A8L = new Label("Allince 1:");
-		A8L.setId("TitleLabel");
+		A8L.setId("TitleLabelPlay");
 		borderPaneA8.setTop(A8L);
 		VBox A8LabelVBox = new VBox(5);
 		Label A8LT1 = new Label("Team 1:   ");
@@ -494,33 +500,334 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 	@Override
 	public void handle(ActionEvent event) {
 		try {
-			if (event.getSource() == submitSelectB) {
-				String strSelect = selectAllianceCB.getSelectionModel().getSelectedItem();
-				if (strSelect.compareTo("1") == 0) {
-					allianceSelected = 1;
+			if (event.getSource() == submitB) {
+				String editTeam1 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam2 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam3 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam4 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam5 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam6 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam7 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam8 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam9 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam10 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam11 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam12 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam13 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam14 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam15 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam16 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam17 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam18 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam19 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam20 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam21 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam22 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam23 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam24 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam25 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam26 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam27 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam28 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam29 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam30 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam31 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam32 = team1CB.getSelectionModel().getSelectedItem();
+				new FileWriter("PlayAlliancesFile.txt", false).close();
+				FileWriter fw = new FileWriter("PlayAlliancesFile.txt", true);
+			    BufferedWriter bw = new BufferedWriter(fw);
+			    PrintWriter out = new PrintWriter(bw);
+				if(editTeam1 != null) {
+					out.println(editTeam1);
+				} else {
+					if (filePOA.getAlliance1().getTeam1() != null) {
+						out.println(Integer.toString(filePOA.getAlliance1().getTeam1().getTeamNum()));
+					}else {
+						out.println(0);
+					}
 				}
-				if (strSelect.compareTo("2") == 0) {
-					allianceSelected = 2;
+				if(editTeam2 != null) {
+					out.println(editTeam2);
+				} else {
+					if (filePOA.getAlliance1().getTeam2() != null) {
+						out.println(Integer.toString(filePOA.getAlliance1().getTeam2().getTeamNum()));
+					}else {
+						out.println(0);
+					}
 				}
-				if (strSelect.compareTo("3") == 0) {
-					allianceSelected = 3;
+				if(editTeam3 != null) {
+					out.println(editTeam3);
+				} else {
+					if (filePOA.getAlliance1().getTeam3() != null) {
+						out.println(Integer.toString(filePOA.getAlliance1().getTeam3().getTeamNum()));
+					}else {
+						out.println(0);
+					}
 				}
-				if (strSelect.compareTo("4") == 0) {
-					allianceSelected = 4;
+				if(editTeam4 != null) {
+					out.println(editTeam4);
+				} else {
+					if (filePOA.getAlliance2().getTeam1() != null) {
+						out.println(Integer.toString(filePOA.getAlliance2().getTeam1().getTeamNum()));
+					}else {
+						out.println(0);
+					}
 				}
-				if (strSelect.compareTo("5") == 0) {
-					allianceSelected = 5;
+				if(editTeam5 != null) {
+					out.println(editTeam5);
+				} else {
+					if (filePOA.getAlliance2().getTeam2() != null) {
+						out.println(Integer.toString(filePOA.getAlliance2().getTeam2().getTeamNum()));
+					}else {
+						out.println(0);
+					}
 				}
-				if (strSelect.compareTo("6") == 0) {
-					allianceSelected = 6;
+				if(editTeam6 != null) {
+					out.println(editTeam6);
+				} else {
+					if (filePOA.getAlliance2().getTeam3() != null) {
+						out.println(Integer.toString(filePOA.getAlliance2().getTeam3().getTeamNum()));
+					}else {
+						out.println(0);
+					}
 				}
-				if (strSelect.compareTo("7") == 0) {
-					allianceSelected = 7;
+				if(editTeam7 != null) {
+					out.println(editTeam7);
+				} else {
+					if (filePOA.getAlliance3().getTeam1() != null) {
+						out.println(Integer.toString(filePOA.getAlliance3().getTeam1().getTeamNum()));
+					}else {
+						out.println(0);
+					}
 				}
-				if (strSelect.compareTo("8") == 0) {
-					allianceSelected = 8;
+				if(editTeam8 != null) {
+					out.println(editTeam8);
+				} else {
+					if (filePOA.getAlliance3().getTeam2() != null) {
+						out.println(Integer.toString(filePOA.getAlliance3().getTeam2().getTeamNum()));
+					}else {
+						out.println(0);
+					}
 				}
-				this.add(new Label("Alliance: " + allianceSelected + " "), 0, 1);
+				if(editTeam9 != null) {
+					out.println(editTeam9);
+				} else {
+					if (filePOA.getAlliance3().getTeam3() != null) {
+						out.println(Integer.toString(filePOA.getAlliance3().getTeam3().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam10 != null) {
+					out.println(editTeam10);
+				} else {
+					if (filePOA.getAlliance4().getTeam1() != null) {
+						out.println(Integer.toString(filePOA.getAlliance4().getTeam1().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam11!= null) {
+					out.println(editTeam11);
+				} else {
+					if (filePOA.getAlliance4().getTeam2() != null) {
+						out.println(Integer.toString(filePOA.getAlliance4().getTeam3().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam12 != null) {
+					out.println(editTeam12);
+				} else {
+					if (filePOA.getAlliance4().getTeam3() != null) {
+						out.println(Integer.toString(filePOA.getAlliance4().getTeam3().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam13 != null) {
+					out.println(editTeam13);
+				} else {
+					if (filePOA.getAlliance5().getTeam1() != null) {
+						out.println(Integer.toString(filePOA.getAlliance5().getTeam1().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam14 != null) {
+					out.println(editTeam14);
+				} else {
+					if (filePOA.getAlliance5().getTeam2() != null) {
+						out.println(Integer.toString(filePOA.getAlliance5().getTeam2().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam15 != null) {
+					out.println(editTeam15);
+				} else {
+					if (filePOA.getAlliance5().getTeam3() != null) {
+						out.println(Integer.toString(filePOA.getAlliance5().getTeam3().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam16 != null) {
+					out.println(editTeam16);
+				} else {
+					if (filePOA.getAlliance6().getTeam1() != null) {
+						out.println(Integer.toString(filePOA.getAlliance6().getTeam1().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam17 != null) {
+					out.println(editTeam17);
+				} else {
+					if (filePOA.getAlliance6().getTeam2() != null) {
+						out.println(Integer.toString(filePOA.getAlliance6().getTeam2().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam18 != null) {
+					out.println(editTeam18);
+				} else {
+					if (filePOA.getAlliance6().getTeam3() != null) {
+						out.println(Integer.toString(filePOA.getAlliance6().getTeam3().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam19 != null) {
+					out.println(editTeam19);
+				} else {
+					if (filePOA.getAlliance7().getTeam1() != null) {
+						out.println(Integer.toString(filePOA.getAlliance7().getTeam1().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam20 != null) {
+					out.println(editTeam20);
+				} else {
+					if (filePOA.getAlliance7().getTeam2() != null) {
+						out.println(Integer.toString(filePOA.getAlliance7().getTeam2().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam21 != null) {
+					out.println(editTeam21);
+				} else {
+					if (filePOA.getAlliance7().getTeam3() != null) {
+						out.println(Integer.toString(filePOA.getAlliance7().getTeam3().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam22 != null) {
+					out.println(editTeam22);
+				} else {
+					if (filePOA.getAlliance8().getTeam1() != null) {
+						out.println(Integer.toString(filePOA.getAlliance8().getTeam1().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam23 != null) {
+					out.println(editTeam23);
+				} else {
+					if (filePOA.getAlliance8().getTeam2() != null) {
+						out.println(Integer.toString(filePOA.getAlliance8().getTeam2().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam24 != null) {
+					out.println(editTeam24);
+				} else {
+					if (filePOA.getAlliance8().getTeam3() != null) {
+						out.println(Integer.toString(filePOA.getAlliance8().getTeam3().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam25 != null) {
+					out.println(editTeam25);
+				} else {
+					if (filePOA.getAlliance1().getTeam4() != null) {
+						out.println(Integer.toString(filePOA.getAlliance1().getTeam4().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam26 != null) {
+					out.println(editTeam26);
+				} else {
+					if (filePOA.getAlliance2().getTeam4() != null) {
+						out.println(Integer.toString(filePOA.getAlliance2().getTeam4().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam27 != null) {
+					out.println(editTeam27);
+				} else {
+					if (filePOA.getAlliance3().getTeam4() != null) {
+						out.println(Integer.toString(filePOA.getAlliance3().getTeam4().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam28 != null) {
+					out.println(editTeam28);
+				} else {
+					if (filePOA.getAlliance4().getTeam4() != null) {
+						out.println(Integer.toString(filePOA.getAlliance4().getTeam4().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam29 != null) {
+					out.println(editTeam29);
+				} else {
+					if (filePOA.getAlliance5().getTeam4() != null) {
+						out.println(Integer.toString(filePOA.getAlliance5().getTeam4().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam30 != null) {
+					out.println(editTeam30);
+				} else {
+					if (filePOA.getAlliance6().getTeam4() != null) {
+						out.println(Integer.toString(filePOA.getAlliance6().getTeam4().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam31 != null) {
+					out.println(editTeam31);
+				} else {
+					if (filePOA.getAlliance7().getTeam4() != null) {
+						out.println(Integer.toString(filePOA.getAlliance7().getTeam4().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				if(editTeam32 != null) {
+					out.println(editTeam32);
+				} else {
+					if (filePOA.getAlliance8().getTeam4() != null) {
+						out.println(Integer.toString(filePOA.getAlliance8().getTeam4().getTeamNum()));
+					}else {
+						out.println(0);
+					}
+				}
+				Label doneL = new Label("Edited");
+				doneL.setId("EditedPlay");
+				this.add(doneL, 1, 3);
 			}
 		} catch(Exception e) {
 			System.out.println("Error: " + e);
