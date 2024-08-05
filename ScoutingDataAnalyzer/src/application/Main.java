@@ -1486,7 +1486,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	}
 	
 	private void makeEditPlayOffAlliance() {
-		editPlayOffAlliancesTab editPlayOff = new editPlayOffAlliancesTab();
+		editPlayOffAlliancesTab editPlayOff = new editPlayOffAlliancesTab(thePOA);
 		editPlayOff.setMinHeight(600);
 		editPlayOff.setMinWidth(1400);
 		editPlayOff.setMaxHeight(600);
@@ -1912,6 +1912,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 				updateDataList();
 				updateDriveTeamDataList();
 				updateDriveTeamCommentsList();
+				updatePlayoffList();
 			}
 		} catch(Exception e) {
 			System.out.println("error: " + e);
