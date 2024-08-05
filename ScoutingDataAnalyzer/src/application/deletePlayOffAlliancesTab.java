@@ -35,6 +35,7 @@ public class deletePlayOffAlliancesTab extends GridPane implements EventHandler<
 				for(int i = 0; i < 32; i++) {
 					out.println(0);
 				}
+				out.close();
 				Label doneL = new Label("Deteled");
 				doneL.setId("EditedPlay");
 				this.add(doneL, 1, 1);

@@ -85,6 +85,7 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 	private PlayoffAlliances filePOA;
 	
 	public editPlayOffAlliancesTab(PlayoffAlliances thePOA, List<Integer> importedListOfTeamNums) {
+		this.getChildren().clear();
 		listOfTeamNums = importedListOfTeamNums;
 		filePOA = thePOA;
 		submitB = new Button("Submit");
@@ -123,6 +124,38 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 		team30TF = new TextField();
 		team31TF = new TextField();
 		team32TF = new TextField();
+		team1TF.setText("");
+		team2TF.setText("");
+		team3TF.setText("");
+		team4TF.setText("");
+		team5TF.setText("");
+		team6TF.setText("");
+		team7TF.setText("");
+		team8TF.setText("");
+		team9TF.setText("");
+		team10TF.setText("");
+		team11TF.setText("");
+		team12TF.setText("");
+		team13TF.setText("");
+		team14TF.setText("");
+		team15TF.setText("");
+		team16TF.setText("");
+		team17TF.setText("");
+		team18TF.setText("");
+		team19TF.setText("");
+		team20TF.setText("");
+		team21TF.setText("");
+		team22TF.setText("");
+		team23TF.setText("");
+		team24TF.setText("");
+		team25TF.setText("");
+		team26TF.setText("");
+		team27TF.setText("");
+		team28TF.setText("");
+		team29TF.setText("");
+		team30TF.setText("");
+		team31TF.setText("");
+		team32TF.setText("");
 		//alliance 1
 		Team team1 = null;
 		Team team2 = null;
@@ -166,6 +199,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team1 != null) {
 					team1TF.setText(Integer.toString(teamNum1));
 				}
+			}else {
+				team1TF.setText("");
 			}
 			if(thePOA.getAlliance1().getTeam2() != null) {
 				team2 = thePOA.getAlliance1().getTeam2();
@@ -173,6 +208,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team2 != null) {
 					team2TF.setText(Integer.toString(teamNum2));
 				}
+			}else {
+				team2TF.setText("");
 			}
 			if(thePOA.getAlliance1().getTeam3() != null) {
 				team3 = thePOA.getAlliance1().getTeam3();
@@ -180,6 +217,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team3 != null) {
 					team3TF.setText(Integer.toString(teamNum3));
 				}
+			}else {
+				team3TF.setText("");
 			}
 			if(thePOA.getAlliance1().getTeam4() != null) {
 				team25 = thePOA.getAlliance1().getTeam4();
@@ -187,6 +226,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team25 != null) {
 					team25TF.setText(Integer.toString(teamNum25));
 				}
+			}else {
+				team25TF.setText("");
 			}
 		}
 		if(thePOA.getAlliance2() != null) {
@@ -196,6 +237,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team4 != null) {
 					team4TF.setText(Integer.toString(teamNum4));
 				}
+			}else {
+				team4TF.setText("");
 			}
 			if(thePOA.getAlliance2().getTeam2() != null) {
 				team5 = thePOA.getAlliance2().getTeam2();
@@ -203,6 +246,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team5 != null) {
 					team5TF.setText(Integer.toString(teamNum5));
 				}
+			}else {
+				team5TF.setText("");
 			}
 			if(thePOA.getAlliance2().getTeam3() != null) {
 				team6 = thePOA.getAlliance2().getTeam3();
@@ -210,6 +255,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team6 != null) {
 					team6TF.setText(Integer.toString(teamNum6));
 				}
+			}else {
+				team6TF.setText("");
 			}
 			if(thePOA.getAlliance2().getTeam4() != null) {
 				team26 = thePOA.getAlliance2().getTeam4();
@@ -217,6 +264,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team26 != null) {
 					team26TF.setText(Integer.toString(teamNum26));
 				}
+			}else {
+				team26TF.setText("");
 			}
 		}
 		if(thePOA.getAlliance3() != null) {
@@ -226,6 +275,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team7 != null) {
 					team7TF.setText(Integer.toString(teamNum7));
 				}
+			}else {
+				team7TF.setText("");
 			}
 			if(thePOA.getAlliance3().getTeam2() != null) {
 				team8 = thePOA.getAlliance3().getTeam2();
@@ -233,6 +284,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team8 != null) {
 					team8TF.setText(Integer.toString(teamNum8));
 				}
+			}else {
+				team8TF.setText("");
 			}
 			if(thePOA.getAlliance3().getTeam3() != null) {
 				team9 = thePOA.getAlliance3().getTeam3();
@@ -240,6 +293,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team9 != null) {
 					team9TF.setText(Integer.toString(teamNum9));
 				}
+			}else {
+				team9TF.setText("");
 			}
 			if(thePOA.getAlliance3().getTeam4() != null) {
 				team27 = thePOA.getAlliance3().getTeam4();
@@ -247,6 +302,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team27 != null) {
 					team27TF.setText(Integer.toString(teamNum27));
 				}
+			}else {
+				team27TF.setText("");
 			}
 		}
 		if(thePOA.getAlliance4() != null) {
@@ -256,6 +313,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team10 != null) {
 					team10TF.setText(Integer.toString(teamNum10));
 				}
+			}else {
+				team10TF.setText("");
 			}
 			if(thePOA.getAlliance4().getTeam2() != null) {
 				team11 = thePOA.getAlliance4().getTeam2();
@@ -263,6 +322,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team11 != null) {
 					team11TF.setText(Integer.toString(teamNum11));
 				}
+			}else {
+				team11TF.setText("");
 			}
 			if(thePOA.getAlliance4().getTeam3() != null) {
 				team12 = thePOA.getAlliance4().getTeam3();
@@ -270,6 +331,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team12 != null) {
 					team12TF.setText(Integer.toString(teamNum12));
 				}
+			}else {
+				team12TF.setText("");
 			}
 			if(thePOA.getAlliance4().getTeam4() != null) {
 				team28 = thePOA.getAlliance4().getTeam4();
@@ -277,6 +340,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team28 != null) {
 					team28TF.setText(Integer.toString(teamNum28));
 				}
+			}else {
+				team28TF.setText("");
 			}
 		}
 		if(thePOA.getAlliance5() != null) {
@@ -286,6 +351,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team13 != null) {
 					team13TF.setText(Integer.toString(teamNum13));
 				}
+			}else {
+				team13TF.setText("");
 			}
 			if(thePOA.getAlliance5().getTeam2() != null) {
 				team14 = thePOA.getAlliance5().getTeam2();
@@ -293,6 +360,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team14 != null) {
 					team14TF.setText(Integer.toString(teamNum14));
 				}
+			}else {
+				team14TF.setText("");
 			}
 			if(thePOA.getAlliance5().getTeam3() != null) {
 				team15 = thePOA.getAlliance5().getTeam3();
@@ -300,6 +369,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team15 != null) {
 					team15TF.setText(Integer.toString(teamNum15));
 				}
+			}else {
+				team15TF.setText("");
 			}
 			if(thePOA.getAlliance5().getTeam4() != null) {
 				team29 = thePOA.getAlliance5().getTeam4();
@@ -307,6 +378,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team29 != null) {
 					team29TF.setText(Integer.toString(teamNum29));
 				}
+			}else {
+				team29TF.setText("");
 			}
 		}
 		if(thePOA.getAlliance6() != null) {
@@ -316,6 +389,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team16 != null) {
 					team16TF.setText(Integer.toString(teamNum16));
 				}
+			}else {
+				team16TF.setText("");
 			}
 			if(thePOA.getAlliance6().getTeam2() != null) {
 				team17 = thePOA.getAlliance6().getTeam2();
@@ -323,6 +398,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team17 != null) {
 					team17TF.setText(Integer.toString(teamNum17));
 				}
+			}else {
+				team17TF.setText("");
 			}
 			if(thePOA.getAlliance6().getTeam3() != null) {
 				team18 = thePOA.getAlliance6().getTeam3();
@@ -330,6 +407,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team18 != null) {
 					team18TF.setText(Integer.toString(teamNum18));
 				}
+			}else {
+				team18TF.setText("");
 			}
 			if(thePOA.getAlliance6().getTeam4() != null) {
 				team30 = thePOA.getAlliance6().getTeam4();
@@ -337,6 +416,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team30 != null) {
 					team30TF.setText(Integer.toString(teamNum30));
 				}
+			}else {
+				team30TF.setText("");
 			}
 		}
 		if(thePOA.getAlliance7() != null) {
@@ -346,6 +427,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team19 != null) {
 					team19TF.setText(Integer.toString(teamNum19));
 				}
+			}else {
+				team19TF.setText("");
 			}
 			if(thePOA.getAlliance7().getTeam2() != null) {
 				team20 = thePOA.getAlliance7().getTeam2();
@@ -353,6 +436,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team20 != null) {
 					team20TF.setText(Integer.toString(teamNum20));
 				}
+			}else {
+				team20TF.setText("");
 			}
 			if(thePOA.getAlliance7().getTeam3() != null) {
 				team21 = thePOA.getAlliance7().getTeam3();
@@ -360,6 +445,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team21 != null) {
 					team21TF.setText(Integer.toString(teamNum21));
 				}
+			}else {
+				team21TF.setText("");
 			}
 			if(thePOA.getAlliance7().getTeam4() != null) {
 				team31 = thePOA.getAlliance7().getTeam4();
@@ -367,6 +454,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team31 != null) {
 					team31TF.setText(Integer.toString(teamNum31));
 				}
+			}else {
+				team31TF.setText("");
 			}
 		}
 		if(thePOA.getAlliance8() != null) {
@@ -376,6 +465,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team22 != null) {
 					team22TF.setText(Integer.toString(teamNum22));
 				}
+			}else {
+				team22TF.setText("");
 			}
 			if(thePOA.getAlliance8().getTeam2() != null) {
 				team23 = thePOA.getAlliance8().getTeam2();
@@ -383,6 +474,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team23 != null) {
 					team23TF.setText(Integer.toString(teamNum23));
 				}
+			}else {
+				team23TF.setText("");
 			}
 			if(thePOA.getAlliance8().getTeam3() != null) {
 				team24 = thePOA.getAlliance8().getTeam3();
@@ -390,6 +483,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team24 != null) {
 					team24TF.setText(Integer.toString(teamNum24));
 				}
+			}else {
+				team24TF.setText("");
 			}
 			if(thePOA.getAlliance8().getTeam4() != null) {
 				team32 = thePOA.getAlliance8().getTeam4();
@@ -397,8 +492,11 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(team32 != null) {
 					team32TF.setText(Integer.toString(teamNum32));
 				}
+			}else {
+				team32TF.setText("");
 			}
 		}
+		System.out.println("BoopEditPlay3");
 		team1CB = new ComboBox<String>();
 		team2CB = new ComboBox<String>();
 		team3CB = new ComboBox<String>();
@@ -645,47 +743,56 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 	public void handle(ActionEvent event) {
 		try {
 			if (event.getSource() == submitB) {
+				System.out.println("BoopEditPlay4");
 				String editTeam1 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam2 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam3 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam4 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam5 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam6 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam7 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam8 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam9 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam10 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam11 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam12 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam13 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam14 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam15 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam16 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam17 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam18 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam19 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam20 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam21 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam22 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam23 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam24 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam25 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam26 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam27 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam28 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam29 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam30 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam31 = team1CB.getSelectionModel().getSelectedItem();
-				String editTeam32 = team1CB.getSelectionModel().getSelectedItem();
+				String editTeam2 = team2CB.getSelectionModel().getSelectedItem();
+				String editTeam3 = team3CB.getSelectionModel().getSelectedItem();
+				String editTeam4 = team4CB.getSelectionModel().getSelectedItem();
+				String editTeam5 = team5CB.getSelectionModel().getSelectedItem();
+				String editTeam6 = team6CB.getSelectionModel().getSelectedItem();
+				String editTeam7 = team7CB.getSelectionModel().getSelectedItem();
+				String editTeam8 = team8CB.getSelectionModel().getSelectedItem();
+				String editTeam9 = team9CB.getSelectionModel().getSelectedItem();
+				String editTeam10 = team10CB.getSelectionModel().getSelectedItem();
+				String editTeam11 = team11CB.getSelectionModel().getSelectedItem();
+				String editTeam12 = team12CB.getSelectionModel().getSelectedItem();
+				String editTeam13 = team13CB.getSelectionModel().getSelectedItem();
+				String editTeam14 = team14CB.getSelectionModel().getSelectedItem();
+				String editTeam15 = team15CB.getSelectionModel().getSelectedItem();
+				String editTeam16 = team16CB.getSelectionModel().getSelectedItem();
+				String editTeam17 = team17CB.getSelectionModel().getSelectedItem();
+				String editTeam18 = team18CB.getSelectionModel().getSelectedItem();
+				String editTeam19 = team19CB.getSelectionModel().getSelectedItem();
+				String editTeam20 = team20CB.getSelectionModel().getSelectedItem();
+				String editTeam21 = team21CB.getSelectionModel().getSelectedItem();
+				String editTeam22 = team22CB.getSelectionModel().getSelectedItem();
+				String editTeam23 = team23CB.getSelectionModel().getSelectedItem();
+				String editTeam24 = team24CB.getSelectionModel().getSelectedItem();
+				String editTeam25 = team25CB.getSelectionModel().getSelectedItem();
+				String editTeam26 = team26CB.getSelectionModel().getSelectedItem();
+				String editTeam27 = team27CB.getSelectionModel().getSelectedItem();
+				String editTeam28 = team28CB.getSelectionModel().getSelectedItem();
+				String editTeam29 = team29CB.getSelectionModel().getSelectedItem();
+				String editTeam30 = team30CB.getSelectionModel().getSelectedItem();
+				String editTeam31 = team31CB.getSelectionModel().getSelectedItem();
+				String editTeam32 = team32CB.getSelectionModel().getSelectedItem();
+				System.out.println("BoopEditPlay5");
 				new FileWriter("PlayAlliancesFile.txt", false).close();
 				FileWriter fw = new FileWriter("PlayAlliancesFile.txt", true);
 			    BufferedWriter bw = new BufferedWriter(fw);
 			    PrintWriter out = new PrintWriter(bw);
+			    System.out.println("BoopEditPlay6");
 				if(editTeam1 != null) {
+					System.out.println("BoopEditPlay6.1");
 					out.println(editTeam1);
 				} else {
-					if (filePOA.getAlliance1().getTeam1() != null) {
-						out.println(Integer.toString(filePOA.getAlliance1().getTeam1().getTeamNum()));
+					System.out.println("BoopEditPlay6.2");
+					if (filePOA.getAlliance1() != null) {
+						if (filePOA.getAlliance1().getTeam1() != null) {
+							out.println(Integer.toString(filePOA.getAlliance1().getTeam1().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -693,8 +800,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam2 != null) {
 					out.println(editTeam2);
 				} else {
-					if (filePOA.getAlliance1().getTeam2() != null) {
-						out.println(Integer.toString(filePOA.getAlliance1().getTeam2().getTeamNum()));
+					if (filePOA.getAlliance1() != null) {
+						if (filePOA.getAlliance1().getTeam2() != null) {
+							out.println(Integer.toString(filePOA.getAlliance1().getTeam2().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -702,8 +813,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam3 != null) {
 					out.println(editTeam3);
 				} else {
-					if (filePOA.getAlliance1().getTeam3() != null) {
-						out.println(Integer.toString(filePOA.getAlliance1().getTeam3().getTeamNum()));
+					if (filePOA.getAlliance1() != null) {
+						if (filePOA.getAlliance1().getTeam3() != null) {
+							out.println(Integer.toString(filePOA.getAlliance1().getTeam3().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -711,8 +826,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam4 != null) {
 					out.println(editTeam4);
 				} else {
-					if (filePOA.getAlliance2().getTeam1() != null) {
-						out.println(Integer.toString(filePOA.getAlliance2().getTeam1().getTeamNum()));
+					if (filePOA.getAlliance2() != null) {
+						if (filePOA.getAlliance2().getTeam1() != null) {
+							out.println(Integer.toString(filePOA.getAlliance2().getTeam1().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -720,8 +839,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam5 != null) {
 					out.println(editTeam5);
 				} else {
-					if (filePOA.getAlliance2().getTeam2() != null) {
-						out.println(Integer.toString(filePOA.getAlliance2().getTeam2().getTeamNum()));
+					if (filePOA.getAlliance2() != null) {
+						if (filePOA.getAlliance2().getTeam2() != null) {
+							out.println(Integer.toString(filePOA.getAlliance2().getTeam2().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -729,8 +852,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam6 != null) {
 					out.println(editTeam6);
 				} else {
-					if (filePOA.getAlliance2().getTeam3() != null) {
-						out.println(Integer.toString(filePOA.getAlliance2().getTeam3().getTeamNum()));
+					if (filePOA.getAlliance2() != null) {
+						if (filePOA.getAlliance2().getTeam3() != null) {
+							out.println(Integer.toString(filePOA.getAlliance2().getTeam3().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -738,8 +865,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam7 != null) {
 					out.println(editTeam7);
 				} else {
-					if (filePOA.getAlliance3().getTeam1() != null) {
-						out.println(Integer.toString(filePOA.getAlliance3().getTeam1().getTeamNum()));
+					if (filePOA.getAlliance3() != null) {
+						if (filePOA.getAlliance3().getTeam1() != null) {
+							out.println(Integer.toString(filePOA.getAlliance3().getTeam1().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -747,8 +878,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam8 != null) {
 					out.println(editTeam8);
 				} else {
-					if (filePOA.getAlliance3().getTeam2() != null) {
-						out.println(Integer.toString(filePOA.getAlliance3().getTeam2().getTeamNum()));
+					if (filePOA.getAlliance3() != null) {
+						if (filePOA.getAlliance3().getTeam2() != null) {
+							out.println(Integer.toString(filePOA.getAlliance3().getTeam2().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -756,8 +891,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam9 != null) {
 					out.println(editTeam9);
 				} else {
-					if (filePOA.getAlliance3().getTeam3() != null) {
-						out.println(Integer.toString(filePOA.getAlliance3().getTeam3().getTeamNum()));
+					if (filePOA.getAlliance3() != null) {
+						if (filePOA.getAlliance3().getTeam3() != null) {
+							out.println(Integer.toString(filePOA.getAlliance3().getTeam3().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -765,8 +904,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam10 != null) {
 					out.println(editTeam10);
 				} else {
-					if (filePOA.getAlliance4().getTeam1() != null) {
-						out.println(Integer.toString(filePOA.getAlliance4().getTeam1().getTeamNum()));
+					if (filePOA.getAlliance4() != null) {
+						if (filePOA.getAlliance4().getTeam1() != null) {
+							out.println(Integer.toString(filePOA.getAlliance4().getTeam1().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -774,8 +917,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam11!= null) {
 					out.println(editTeam11);
 				} else {
-					if (filePOA.getAlliance4().getTeam2() != null) {
-						out.println(Integer.toString(filePOA.getAlliance4().getTeam3().getTeamNum()));
+					if (filePOA.getAlliance4() != null) {
+						if (filePOA.getAlliance4().getTeam2() != null) {
+							out.println(Integer.toString(filePOA.getAlliance4().getTeam3().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -783,8 +930,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam12 != null) {
 					out.println(editTeam12);
 				} else {
-					if (filePOA.getAlliance4().getTeam3() != null) {
-						out.println(Integer.toString(filePOA.getAlliance4().getTeam3().getTeamNum()));
+					if (filePOA.getAlliance4() != null) {
+						if (filePOA.getAlliance4().getTeam3() != null) {
+							out.println(Integer.toString(filePOA.getAlliance4().getTeam3().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -792,8 +943,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam13 != null) {
 					out.println(editTeam13);
 				} else {
-					if (filePOA.getAlliance5().getTeam1() != null) {
-						out.println(Integer.toString(filePOA.getAlliance5().getTeam1().getTeamNum()));
+					if (filePOA.getAlliance5() != null) {
+						if (filePOA.getAlliance5().getTeam1() != null) {
+							out.println(Integer.toString(filePOA.getAlliance5().getTeam1().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -801,8 +956,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam14 != null) {
 					out.println(editTeam14);
 				} else {
-					if (filePOA.getAlliance5().getTeam2() != null) {
-						out.println(Integer.toString(filePOA.getAlliance5().getTeam2().getTeamNum()));
+					if (filePOA.getAlliance5() != null) {
+						if (filePOA.getAlliance5().getTeam2() != null) {
+							out.println(Integer.toString(filePOA.getAlliance5().getTeam2().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -810,8 +969,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam15 != null) {
 					out.println(editTeam15);
 				} else {
-					if (filePOA.getAlliance5().getTeam3() != null) {
-						out.println(Integer.toString(filePOA.getAlliance5().getTeam3().getTeamNum()));
+					if (filePOA.getAlliance5() != null) {
+						if (filePOA.getAlliance5().getTeam3() != null) {
+							out.println(Integer.toString(filePOA.getAlliance5().getTeam3().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -819,8 +982,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam16 != null) {
 					out.println(editTeam16);
 				} else {
-					if (filePOA.getAlliance6().getTeam1() != null) {
-						out.println(Integer.toString(filePOA.getAlliance6().getTeam1().getTeamNum()));
+					if (filePOA.getAlliance6() != null) {
+						if (filePOA.getAlliance6().getTeam1() != null) {
+							out.println(Integer.toString(filePOA.getAlliance6().getTeam1().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -828,8 +995,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam17 != null) {
 					out.println(editTeam17);
 				} else {
-					if (filePOA.getAlliance6().getTeam2() != null) {
-						out.println(Integer.toString(filePOA.getAlliance6().getTeam2().getTeamNum()));
+					if (filePOA.getAlliance6() != null) {
+						if (filePOA.getAlliance6().getTeam2() != null) {
+							out.println(Integer.toString(filePOA.getAlliance6().getTeam2().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -837,8 +1008,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam18 != null) {
 					out.println(editTeam18);
 				} else {
-					if (filePOA.getAlliance6().getTeam3() != null) {
-						out.println(Integer.toString(filePOA.getAlliance6().getTeam3().getTeamNum()));
+					if (filePOA.getAlliance6() != null) {
+						if (filePOA.getAlliance6().getTeam3() != null) {
+							out.println(Integer.toString(filePOA.getAlliance6().getTeam3().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -846,8 +1021,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam19 != null) {
 					out.println(editTeam19);
 				} else {
-					if (filePOA.getAlliance7().getTeam1() != null) {
-						out.println(Integer.toString(filePOA.getAlliance7().getTeam1().getTeamNum()));
+					if (filePOA.getAlliance7() != null) {
+						if (filePOA.getAlliance7().getTeam1() != null) {
+							out.println(Integer.toString(filePOA.getAlliance7().getTeam1().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -855,8 +1034,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam20 != null) {
 					out.println(editTeam20);
 				} else {
-					if (filePOA.getAlliance7().getTeam2() != null) {
-						out.println(Integer.toString(filePOA.getAlliance7().getTeam2().getTeamNum()));
+					if (filePOA.getAlliance7() != null) {
+						if (filePOA.getAlliance7().getTeam2() != null) {
+							out.println(Integer.toString(filePOA.getAlliance7().getTeam2().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -864,8 +1047,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam21 != null) {
 					out.println(editTeam21);
 				} else {
-					if (filePOA.getAlliance7().getTeam3() != null) {
-						out.println(Integer.toString(filePOA.getAlliance7().getTeam3().getTeamNum()));
+					if (filePOA.getAlliance7() != null) {
+						if (filePOA.getAlliance7().getTeam3() != null) {
+							out.println(Integer.toString(filePOA.getAlliance7().getTeam3().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -873,8 +1060,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam22 != null) {
 					out.println(editTeam22);
 				} else {
-					if (filePOA.getAlliance8().getTeam1() != null) {
-						out.println(Integer.toString(filePOA.getAlliance8().getTeam1().getTeamNum()));
+					if (filePOA.getAlliance8() != null) {
+						if (filePOA.getAlliance8().getTeam1() != null) {
+							out.println(Integer.toString(filePOA.getAlliance8().getTeam1().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -882,8 +1073,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam23 != null) {
 					out.println(editTeam23);
 				} else {
-					if (filePOA.getAlliance8().getTeam2() != null) {
-						out.println(Integer.toString(filePOA.getAlliance8().getTeam2().getTeamNum()));
+					if (filePOA.getAlliance8() != null) {
+						if (filePOA.getAlliance8().getTeam2() != null) {
+							out.println(Integer.toString(filePOA.getAlliance8().getTeam2().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -891,8 +1086,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam24 != null) {
 					out.println(editTeam24);
 				} else {
-					if (filePOA.getAlliance8().getTeam3() != null) {
-						out.println(Integer.toString(filePOA.getAlliance8().getTeam3().getTeamNum()));
+					if (filePOA.getAlliance8() != null) {
+						if (filePOA.getAlliance8().getTeam3() != null) {
+							out.println(Integer.toString(filePOA.getAlliance8().getTeam3().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -900,8 +1099,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam25 != null) {
 					out.println(editTeam25);
 				} else {
-					if (filePOA.getAlliance1().getTeam4() != null) {
-						out.println(Integer.toString(filePOA.getAlliance1().getTeam4().getTeamNum()));
+					if (filePOA.getAlliance1() != null) {
+						if (filePOA.getAlliance1().getTeam4() != null) {
+							out.println(Integer.toString(filePOA.getAlliance1().getTeam4().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -909,8 +1112,12 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam26 != null) {
 					out.println(editTeam26);
 				} else {
-					if (filePOA.getAlliance2().getTeam4() != null) {
-						out.println(Integer.toString(filePOA.getAlliance2().getTeam4().getTeamNum()));
+					if (filePOA.getAlliance2() != null) {
+						if (filePOA.getAlliance2().getTeam4() != null) {
+							out.println(Integer.toString(filePOA.getAlliance2().getTeam4().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
@@ -918,57 +1125,88 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				if(editTeam27 != null) {
 					out.println(editTeam27);
 				} else {
-					if (filePOA.getAlliance3().getTeam4() != null) {
-						out.println(Integer.toString(filePOA.getAlliance3().getTeam4().getTeamNum()));
+					if (filePOA.getAlliance3() != null) {
+						if (filePOA.getAlliance3().getTeam4() != null) {
+							out.println(Integer.toString(filePOA.getAlliance3().getTeam4().getTeamNum()));
+						}else {
+							out.println(0);
+						}
 					}else {
 						out.println(0);
 					}
+					
 				}
 				if(editTeam28 != null) {
 					out.println(editTeam28);
 				} else {
-					if (filePOA.getAlliance4().getTeam4() != null) {
-						out.println(Integer.toString(filePOA.getAlliance4().getTeam4().getTeamNum()));
-					}else {
+					if (filePOA.getAlliance4() != null) {
+						if (filePOA.getAlliance4().getTeam4() != null) {
+							out.println(Integer.toString(filePOA.getAlliance4().getTeam4().getTeamNum()));
+						}else {
+							out.println(0);
+						}
+					}
+					else {
 						out.println(0);
 					}
 				}
 				if(editTeam29 != null) {
 					out.println(editTeam29);
 				} else {
-					if (filePOA.getAlliance5().getTeam4() != null) {
-						out.println(Integer.toString(filePOA.getAlliance5().getTeam4().getTeamNum()));
-					}else {
+					if (filePOA.getAlliance5() != null) {
+						if (filePOA.getAlliance5().getTeam4() != null) {
+							out.println(Integer.toString(filePOA.getAlliance5().getTeam4().getTeamNum()));
+						}else {
+							out.println(0);
+						}
+					}
+					else {
 						out.println(0);
 					}
 				}
 				if(editTeam30 != null) {
 					out.println(editTeam30);
 				} else {
-					if (filePOA.getAlliance6().getTeam4() != null) {
-						out.println(Integer.toString(filePOA.getAlliance6().getTeam4().getTeamNum()));
-					}else {
+					if (filePOA.getAlliance6() != null) {
+						if (filePOA.getAlliance6().getTeam4() != null) {
+							out.println(Integer.toString(filePOA.getAlliance6().getTeam4().getTeamNum()));
+						}else {
+							out.println(0);
+						}
+					}
+					else {
 						out.println(0);
 					}
 				}
 				if(editTeam31 != null) {
 					out.println(editTeam31);
 				} else {
-					if (filePOA.getAlliance7().getTeam4() != null) {
-						out.println(Integer.toString(filePOA.getAlliance7().getTeam4().getTeamNum()));
-					}else {
+					if (filePOA.getAlliance7() != null) {
+						if (filePOA.getAlliance7().getTeam4() != null) {
+							out.println(Integer.toString(filePOA.getAlliance7().getTeam4().getTeamNum()));
+						}else {
+							out.println(0);
+						}
+					}
+					else {
 						out.println(0);
 					}
 				}
 				if(editTeam32 != null) {
 					out.println(editTeam32);
 				} else {
-					if (filePOA.getAlliance8().getTeam4() != null) {
-						out.println(Integer.toString(filePOA.getAlliance8().getTeam4().getTeamNum()));
-					}else {
+					if (filePOA.getAlliance8() != null) {
+						if (filePOA.getAlliance8().getTeam4() != null) {
+							out.println(Integer.toString(filePOA.getAlliance8().getTeam4().getTeamNum()));
+						}else {
+							out.println(0);
+						}
+					}
+					else {
 						out.println(0);
 					}
 				}
+				out.close();
 				Label doneL = new Label("Edited");
 				doneL.setId("EditedPlay");
 				this.add(doneL, 2, 3);
