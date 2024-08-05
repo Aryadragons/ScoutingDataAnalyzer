@@ -87,4 +87,56 @@
 	-fx-max-height: 100;
 	-fx-min-width: 100;
 	-fx-max-width: 100;
+	-fx-background-color: rgb(128, 255, 219);
 }
+#BPA2{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 100;
+	-fx-max-width: 100;
+	-fx-background-color: rgb(114, 239, 221);
+}
+#BPA3{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 100;
+	-fx-max-width: 100;
+	-fx-background-color: rgb(100, 223, 223);
+}
+#BPA4{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 100;
+	-fx-max-width: 100;
+	-fx-background-color: rgb(86, 207, 225);
+}
+#BPA5{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 100;
+	-fx-max-width: 100;
+	-fx-background-color: rgb(72, 191, 227);
+}
+#BPA6{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 100;
+	-fx-max-width: 100;
+	-fx-background-color: rgb(78, 168, 222);
+}
+#BPA7{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 100;
+	-fx-max-width: 100;
+	-fx-background-color: rgb(83, 144, 217);
+}
+#BPA8{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 100;
+	-fx-max-width: 100;
+	-fx-background-color: rgb(94, 96, 206);
+}
+
+	}
