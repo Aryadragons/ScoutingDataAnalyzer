@@ -1486,7 +1486,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	}
 	
 	private void makeEditPlayOffAlliance() {
-		editPlayOffAlliancesTab editPlayOff = new editPlayOffAlliancesTab(thePOA);
+		editPlayOffAlliancesTab editPlayOff = new editPlayOffAlliancesTab(thePOA, listOfTeamNumsSorted);
 		editPlayOff.setMinHeight(600);
 		editPlayOff.setMinWidth(1400);
 		editPlayOff.setMaxHeight(600);
