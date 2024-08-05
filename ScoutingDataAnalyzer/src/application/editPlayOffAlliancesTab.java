@@ -89,7 +89,8 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 		filePOA = thePOA;
 		submitB = new Button("Submit");
 		submitB.setOnAction(this);
-		this.add(submitB, 0, 3);
+		this.add(submitB, 0, 2);
+		System.out.println("BoopEditPlay0");
 		team1TF = new TextField();
 		team2TF = new TextField();
 		team3TF = new TextField();
@@ -123,139 +124,173 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 		team31TF = new TextField();
 		team32TF = new TextField();
 		//alliance 1
+		System.out.println("BoopEditPlay1");
+		Team team1 = thePOA.getAlliance1().getTeam1();
+		Team team2 = thePOA.getAlliance1().getTeam2();
+		Team team3 = thePOA.getAlliance1().getTeam3();
+		Team team4 = thePOA.getAlliance2().getTeam1();
+		Team team5 = thePOA.getAlliance2().getTeam2();
+		Team team6 = thePOA.getAlliance2().getTeam3();
+		Team team7 = thePOA.getAlliance3().getTeam1();
+		Team team8 = thePOA.getAlliance3().getTeam2();
+		Team team9 = thePOA.getAlliance3().getTeam3();
+		Team team10 = thePOA.getAlliance4().getTeam1();
+		Team team11 = thePOA.getAlliance4().getTeam2();
+		Team team12 = thePOA.getAlliance4().getTeam3();
+		Team team13 = thePOA.getAlliance5().getTeam1();
+		Team team14 = thePOA.getAlliance5().getTeam2();
+		Team team15 = thePOA.getAlliance5().getTeam3();
+		Team team16 = thePOA.getAlliance6().getTeam1();
+		Team team17 = thePOA.getAlliance6().getTeam2();
+		Team team18 = thePOA.getAlliance6().getTeam3();
+		Team team19 = thePOA.getAlliance7().getTeam1();
+		Team team20 = thePOA.getAlliance7().getTeam2();
+		Team team21 = thePOA.getAlliance7().getTeam3();
+		Team team22 = thePOA.getAlliance8().getTeam1();
+		Team team23 = thePOA.getAlliance8().getTeam2();
+		Team team24 = thePOA.getAlliance8().getTeam3();
+		Team team25 = thePOA.getAlliance1().getTeam4();
+		Team team26 = thePOA.getAlliance2().getTeam4();
+		Team team27 = thePOA.getAlliance3().getTeam4();
+		Team team28 = thePOA.getAlliance4().getTeam4();
+		Team team29 = thePOA.getAlliance5().getTeam4();
+		Team team30 = thePOA.getAlliance6().getTeam4();
+		Team team31 = thePOA.getAlliance7().getTeam4();
+		Team team32 = thePOA.getAlliance8().getTeam4();
 		int teamNum1 = thePOA.getAlliance1().getTeam1().getTeamNum();
-		if(teamNum1 == 0) {
+		System.out.println("BoopEditPlay2");
+		if(team1 != null) {
 			team1TF.setText(Integer.toString(teamNum1));
 		}
 		int teamNum2 = thePOA.getAlliance1().getTeam2().getTeamNum();
-		if(teamNum2 == 0) {
+		if(team2 != null) {
 			team2TF.setText(Integer.toString(teamNum2));
 		}
 		int teamNum3 = thePOA.getAlliance1().getTeam3().getTeamNum();
-		if(teamNum3 == 0) {
+		if(team3 != null) {
 			team3TF.setText(Integer.toString(teamNum3));
 		}
 		int teamNum25 = thePOA.getAlliance1().getTeam4().getTeamNum();
-		if(teamNum25 == 0) {
+		if(team25 != null) {
 			team25TF.setText(Integer.toString(teamNum25));
 		}
 		//alliance 2
 		int teamNum4 = thePOA.getAlliance2().getTeam1().getTeamNum();
-		if(teamNum4 == 0) {
+		if(team4 != null) {
 			team4TF.setText(Integer.toString(teamNum4));
 		}
 		int teamNum5 = thePOA.getAlliance2().getTeam2().getTeamNum();
-		if(teamNum5 == 0) {
+		if(team5 != null) {
 			team5TF.setText(Integer.toString(teamNum5));
 		}
 		int teamNum6 = thePOA.getAlliance2().getTeam3().getTeamNum();
-		if(teamNum6 == 0) {
+		if(team6 != null) {
 			team6TF.setText(Integer.toString(teamNum6));
 		}
 		int teamNum26 = thePOA.getAlliance2().getTeam4().getTeamNum();
-		if(teamNum26 == 0) {
+		if(team26 != null) {
 			team26TF.setText(Integer.toString(teamNum26));
 		}
 		//alliance 3
 		int teamNum7 = thePOA.getAlliance3().getTeam1().getTeamNum();
-		if(teamNum7 == 0) {
+		if(team7 != null) {
 			team7TF.setText(Integer.toString(teamNum7));
 		}
 		int teamNum8 = thePOA.getAlliance3().getTeam2().getTeamNum();
-		if(teamNum8 == 0) {
+		if(team8 != null) {
 			team8TF.setText(Integer.toString(teamNum8));
 		}
 		int teamNum9 = thePOA.getAlliance3().getTeam3().getTeamNum();
-		if(teamNum9 == 0) {
+		if(team9 != null) {
 			team9TF.setText(Integer.toString(teamNum9));
 		}
 		int teamNum27 = thePOA.getAlliance3().getTeam4().getTeamNum();
-		if(teamNum27 == 0) {
+		if(team27 != null) {
 			team27TF.setText(Integer.toString(teamNum27));
 		}
 		//alliance 4
 		int teamNum10 = thePOA.getAlliance4().getTeam1().getTeamNum();
-		if(teamNum10 == 0) {
+		if(team10 != null) {
 			team10TF.setText(Integer.toString(teamNum10));
 		}
 		int teamNum11 = thePOA.getAlliance4().getTeam2().getTeamNum();
-		if(teamNum11 == 0) {
+		if(team11 != null) {
 			team11TF.setText(Integer.toString(teamNum11));
 		}
 		int teamNum12 = thePOA.getAlliance4().getTeam3().getTeamNum();
-		if(teamNum12== 0) {
+		if(team12 != null) {
 			team12TF.setText(Integer.toString(teamNum12));
 		}
 		int teamNum28 = thePOA.getAlliance4().getTeam4().getTeamNum();
-		if(teamNum28 == 0) {
+		if(team28 != null) {
 			team28TF.setText(Integer.toString(teamNum28));
 		}
 		//alliance 5
 		int teamNum13 = thePOA.getAlliance5().getTeam1().getTeamNum();
-		if(teamNum13 == 0) {
+		if(team13 != null) {
 			team13TF.setText(Integer.toString(teamNum11));
 		}
 		int teamNum14 = thePOA.getAlliance5().getTeam2().getTeamNum();
-		if(teamNum14 == 0) {
+		if(team14 != null) {
 			team14TF.setText(Integer.toString(teamNum14));
 		}
 		int teamNum15 = thePOA.getAlliance5().getTeam3().getTeamNum();
-		if(teamNum15== 0) {
+		if(team15 != null) {
 			team15TF.setText(Integer.toString(teamNum15));
 		}
 		int teamNum29 = thePOA.getAlliance5().getTeam4().getTeamNum();
-		if(teamNum29 == 0) {
+		if(team29 != null) {
 			team29TF.setText(Integer.toString(teamNum29));
 		}
 		//alliance 6
 		int teamNum16 = thePOA.getAlliance6().getTeam1().getTeamNum();
-		if(teamNum16 == 0) {
+		if(team16 != null) {
 			team16TF.setText(Integer.toString(teamNum16));
 		}
 		int teamNum17 = thePOA.getAlliance6().getTeam2().getTeamNum();
-		if(teamNum17 == 0) {
+		if(team17 != null) {
 			team17TF.setText(Integer.toString(teamNum17));
 		}
 		int teamNum18 = thePOA.getAlliance6().getTeam3().getTeamNum();
-		if(teamNum18== 0) {
+		if(team18 != null) {
 			team18TF.setText(Integer.toString(teamNum18));
 		}
 		int teamNum30 = thePOA.getAlliance6().getTeam4().getTeamNum();
-		if(teamNum30 == 0) {
+		if(team30 != null) {
 			team30TF.setText(Integer.toString(teamNum30));
 		}
 		//alliance 7
 		int teamNum19 = thePOA.getAlliance7().getTeam1().getTeamNum();
-		if(teamNum19 == 0) {
+		if(team19 != null) {
 			team19TF.setText(Integer.toString(teamNum19));
 		}
 		int teamNum20 = thePOA.getAlliance7().getTeam2().getTeamNum();
-		if(teamNum20 == 0) {
+		if(team20 != null) {
 			team20TF.setText(Integer.toString(teamNum20));
 		}
 		int teamNum21 = thePOA.getAlliance7().getTeam3().getTeamNum();
-		if(teamNum21== 0) {
+		if(team21 != null) {
 			team21TF.setText(Integer.toString(teamNum21));
 		}
 		int teamNum31 = thePOA.getAlliance7().getTeam4().getTeamNum();
-		if(teamNum31 == 0) {
+		if(team31 != null) {
 			team31TF.setText(Integer.toString(teamNum31));
 		}
 		//alliance 8
 		int teamNum22 = thePOA.getAlliance8().getTeam1().getTeamNum();
-		if(teamNum22 == 0) {
+		if(team22 != null) {
 			team22TF.setText(Integer.toString(teamNum22));
 		}
 		int teamNum23 = thePOA.getAlliance8().getTeam2().getTeamNum();
-		if(teamNum23 == 0) {
+		if(team23 != null) {
 			team23TF.setText(Integer.toString(teamNum23));
 		}
 		int teamNum24 = thePOA.getAlliance8().getTeam3().getTeamNum();
-		if(teamNum24== 0) {
+		if(team24 != null) {
 			team24TF.setText(Integer.toString(teamNum24));
 		}
 		int teamNum32 = thePOA.getAlliance8().getTeam4().getTeamNum();
-		if(teamNum32 == 0) {
+		if(team32 != null) {
 			team32TF.setText(Integer.toString(teamNum32));
 		}
 		team1CB = new ComboBox<String>();
@@ -827,7 +862,7 @@ public class editPlayOffAlliancesTab extends GridPane implements EventHandler<Ac
 				}
 				Label doneL = new Label("Edited");
 				doneL.setId("EditedPlay");
-				this.add(doneL, 1, 3);
+				this.add(doneL, 1, 2);
 			}
 		} catch(Exception e) {
 			System.out.println("Error: " + e);

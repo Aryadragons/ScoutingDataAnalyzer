@@ -20,6 +20,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Pos;
 import javafx.stage.FileChooser;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -97,6 +98,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	private AutoList fileAL;
 	//playoff Alliances stuff
 	PlayoffAlliances thePOA;
+	private Button savePlayoffB;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -120,7 +122,12 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			//adding save files stuff
 			saveDataB = new Button("Save All Data");
 			saveDataB.setOnAction(this);
-			root.setCenter(saveDataB);
+			savePlayoffB = new Button("Save PlayOff Alliances");
+			savePlayoffB.setOnAction(this);
+			HBox saveHBox = new HBox(5);
+			saveHBox.getChildren().addAll(saveDataB, savePlayoffB);
+			saveHBox.setAlignment(Pos.CENTER);
+			root.setCenter(saveHBox);
 			//background stuff
 			FileInputStream input = new FileInputStream("tempMainBackground.png"); 
             Image image = new Image(input); 
@@ -687,13 +694,15 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	}
 	
 	private void updatePlayoffList() {
+		System.out.println("BoopPlay0");
 		File file = new File("PlayAlliancesFile.txt");
-		System.out.println("Boop21");
+		System.out.println("BoopPlay1");
 		try {
 			fileInputPlay = new Scanner(file);
 		} catch (FileNotFoundException e) {
 			System.out.println("Error" + e);
 		}
+		System.out.println("BoopPlay2");
 		String team1S;
 		String team2S;
 		String team3S;
@@ -798,296 +807,299 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		int teamsOnA6 = 0;
 		int teamsOnA7 = 0;
 		int teamsOnA8 = 0;
-		while(fileInputPlay.hasNextLine() == true) {
-			team1S = fileInputPlay.next();
-			team2S = fileInputPlay.next();
-			team3S = fileInputPlay.next();
-			team4S = fileInputPlay.next();
-			team5S = fileInputPlay.next();
-			team6S = fileInputPlay.next();
-			team7S = fileInputPlay.next();
-			team8S = fileInputPlay.next();
-			team9S = fileInputPlay.next();
-			team10S = fileInputPlay.next();
-			team11S = fileInputPlay.next();
-			team12S = fileInputPlay.next();
-			team13S = fileInputPlay.next();
-			team14S = fileInputPlay.next();
-			team15S = fileInputPlay.next();
-			team16S = fileInputPlay.next();
-			team17S = fileInputPlay.next();
-			team18S = fileInputPlay.next();
-			team19S = fileInputPlay.next();
-			team20S = fileInputPlay.next();
-			team21S = fileInputPlay.next();
-			team22S = fileInputPlay.next();
-			team23S = fileInputPlay.next();
-			team24S = fileInputPlay.next();
-			team25S = fileInputPlay.next();
-			team26S = fileInputPlay.next();
-			team27S = fileInputPlay.next();
-			team28S = fileInputPlay.next();
-			team29S = fileInputPlay.next();
-			team30S = fileInputPlay.next();
-			team31S = fileInputPlay.next();
-			team32S = fileInputPlay.next();
-			team1 = Integer.parseInt(team1S);
-			team2 = Integer.parseInt(team2S);
-			team3 = Integer.parseInt(team3S);
-			team4 = Integer.parseInt(team4S);
-			team5 = Integer.parseInt(team5S);
-			team6 = Integer.parseInt(team6S);
-			team7 = Integer.parseInt(team7S);
-			team8 = Integer.parseInt(team8S);
-			team9 = Integer.parseInt(team9S);
-			team10 = Integer.parseInt(team10S);
-			team11 = Integer.parseInt(team11S);
-			team12 = Integer.parseInt(team12S);
-			team13 = Integer.parseInt(team13S);
-			team14 = Integer.parseInt(team14S);
-			team15 = Integer.parseInt(team15S);
-			team16 = Integer.parseInt(team16S);
-			team17 = Integer.parseInt(team17S);
-			team18 = Integer.parseInt(team18S);
-			team19 = Integer.parseInt(team19S);
-			team20 = Integer.parseInt(team20S);
-			team21 = Integer.parseInt(team21S);
-			team22 = Integer.parseInt(team22S);
-			team23 = Integer.parseInt(team23S);
-			team24 = Integer.parseInt(team24S);
-			team25 = Integer.parseInt(team25S);
-			team26 = Integer.parseInt(team26S);
-			team27 = Integer.parseInt(team27S);
-			team28 = Integer.parseInt(team28S);
-			team29 = Integer.parseInt(team29S);
-			team30 = Integer.parseInt(team30S);
-			team31 = Integer.parseInt(team31S);
-			team32 = Integer.parseInt(team32S);
-			if(team1 != 0) {
-				teamsOnA1++;
-				team1T = mainTeamList.getATeam(team1);
-			}
-			if(team2 != 0) {
-				teamsOnA1++;
-				team2T = mainTeamList.getATeam(team2);
-			}
-			if(team3 != 0) {
-				teamsOnA1++;
-				team3T = mainTeamList.getATeam(team3);
-			}
-			if(team4 != 0) {
-				teamsOnA2++;
-				team4T = mainTeamList.getATeam(team4);
-			}
-			if(team5 != 0) {
-				teamsOnA2++;
-				team5T = mainTeamList.getATeam(team5);
-			}
-			if(team6 != 0) {
-				teamsOnA2++;
-				team6T = mainTeamList.getATeam(team6);
-			}
-			if(team7 != 0) {
-				teamsOnA3++;
-				team7T = mainTeamList.getATeam(team7);
-			}
-			if(team8 != 0) {
-				teamsOnA3++;
-				team8T = mainTeamList.getATeam(team8);
-			}
-			if(team9 != 0) {
-				teamsOnA3++;
-				team9T = mainTeamList.getATeam(team9);
-			}
-			if(team10 != 0) {
-				teamsOnA4++;
-				team10T = mainTeamList.getATeam(team10);
-			}
-			if(team11 != 0) {
-				teamsOnA4++;
-				team11T = mainTeamList.getATeam(team12);
-			}
-			if(team12 != 0) {
-				teamsOnA4++;
-				team12T = mainTeamList.getATeam(team12);
-			}
-			if(team13 != 0) {
-				teamsOnA5++;
-				team13T = mainTeamList.getATeam(team13);
-			}
-			if(team14 != 0) {
-				teamsOnA5++;
-				team14T = mainTeamList.getATeam(team14);
-			}
-			if(team15 != 0) {
-				teamsOnA5++;
-				team15T = mainTeamList.getATeam(team15);
-			}
-			if(team16 != 0) {
-				teamsOnA6++;
-				team16T = mainTeamList.getATeam(team16);
-			}
-			if(team17 != 0) {
-				teamsOnA6++;
-				team17T = mainTeamList.getATeam(team17);
-			}
-			if(team18 != 0) {
-				teamsOnA6++;
-				team18T = mainTeamList.getATeam(team18);
-			}
-			if(team19 != 0) {
-				teamsOnA7++;
-				team19T = mainTeamList.getATeam(team19);
-			}
-			if(team20 != 0) {
-				teamsOnA7++;
-				team20T = mainTeamList.getATeam(team20);
-			}
-			if(team21 != 0) {
-				teamsOnA7++;
-				team21T = mainTeamList.getATeam(team21);
-			}
-			if(team22 != 0) {
-				teamsOnA8++;
-				team22T = mainTeamList.getATeam(team22);
-			}
-			if(team23 != 0) {
-				teamsOnA8++;
-				team23T = mainTeamList.getATeam(team23);
-			}
-			if(team24 != 0) {
-				teamsOnA8++;
-				team24T = mainTeamList.getATeam(team24);
-			}
-			if(team25 != 0) {
-				teamsOnA1++;
-				team25T = mainTeamList.getATeam(team25);
-			}
-			if(team26 != 0) {
-				teamsOnA2++;
-				team26T = mainTeamList.getATeam(team26);
-			}
-			if(team27 != 0) {
-				teamsOnA3++;
-				team27T = mainTeamList.getATeam(team27);
-			}
-			if(team28 != 0) {
-				teamsOnA4++;
-				team28T = mainTeamList.getATeam(team28);
-			}
-			if(team29 != 0) {
-				teamsOnA5++;
-				team29T = mainTeamList.getATeam(team29);
-			}
-			if(team30 != 0) {
-				teamsOnA6++;
-				team30T = mainTeamList.getATeam(team30);
-			}
-			if(team31 != 0) {
-				teamsOnA7++;
-				team31T = mainTeamList.getATeam(team31);
-			}
-			if(team32 != 0) {
-				teamsOnA8++;
-				team32T = mainTeamList.getATeam(team32);
-			}
-			if(teamsOnA1 == 4) {
-				thePOA.setAlliance1(team1T, team2T, team3T, team25T);
-			}
-			if(teamsOnA1 == 3) {
-				thePOA.setAlliance1(team1T, team2T, team3T);
-			}
-			if(teamsOnA1 == 2) {
-				thePOA.setAlliance1(team1T, team2T);
-			}
-			if(teamsOnA1 == 1) {
-				thePOA.setAlliance1(team1T);
-			}
-			if(teamsOnA2 == 4) {
-				thePOA.setAlliance1(team4T, team5T, team6T, team26T);
-			}
-			if(teamsOnA2 == 3) {
-				thePOA.setAlliance1(team4T, team5T, team6T);
-			}
-			if(teamsOnA2 == 2) {
-				thePOA.setAlliance1(team4T, team5T);
-			}
-			if(teamsOnA2 == 1) {
-				thePOA.setAlliance1(team5T);
-			}
-			if(teamsOnA3 == 4) {
-				thePOA.setAlliance1(team7T, team8T, team9T, team27T);
-			}
-			if(teamsOnA3 == 3) {
-				thePOA.setAlliance1(team7T, team8T, team9T);
-			}
-			if(teamsOnA3 == 2) {
-				thePOA.setAlliance1(team7T, team8T);
-			}
-			if(teamsOnA3 == 1) {
-				thePOA.setAlliance1(team7T);
-			}
-			if(teamsOnA4 == 4) {
-				thePOA.setAlliance1(team10T, team11T, team12T, team28T);
-			}
-			if(teamsOnA4 == 3) {
-				thePOA.setAlliance1(team10T, team11T, team12T);
-			}
-			if(teamsOnA4 == 2) {
-				thePOA.setAlliance1(team10T, team11T);
-			}
-			if(teamsOnA4 == 1) {
-				thePOA.setAlliance1(team10T);
-			}
-			if(teamsOnA5 == 4) {
-				thePOA.setAlliance1(team13T, team14T, team15T, team29T);
-			}
-			if(teamsOnA5 == 3) {
-				thePOA.setAlliance1(team13T, team14T, team15T);
-			}
-			if(teamsOnA5 == 2) {
-				thePOA.setAlliance1(team13T, team14T);
-			}
-			if(teamsOnA5 == 1) {
-				thePOA.setAlliance1(team13T);
-			}
-			if(teamsOnA6 == 4) {
-				thePOA.setAlliance1(team16T, team17T, team18T, team30T);
-			}
-			if(teamsOnA6 == 3) {
-				thePOA.setAlliance1(team16T, team17T, team18T);
-			}
-			if(teamsOnA6 == 2) {
-				thePOA.setAlliance1(team16T, team17T);
-			}
-			if(teamsOnA6 == 1) {
-				thePOA.setAlliance1(team16T);
-			}
-			if(teamsOnA7 == 4) {
-				thePOA.setAlliance1(team19T, team20T, team21T, team31T);
-			}
-			if(teamsOnA7 == 3) {
-				thePOA.setAlliance1(team19T, team20T, team21T);
-			}
-			if(teamsOnA7 == 2) {
-				thePOA.setAlliance1(team19T, team20T);
-			}
-			if(teamsOnA7 == 1) {
-				thePOA.setAlliance1(team19T);
-			}
-			if(teamsOnA8 == 4) {
-				thePOA.setAlliance1(team22T, team23T, team24T, team32T);
-			}
-			if(teamsOnA8 == 3) {
-				thePOA.setAlliance1(team22T, team23T, team24T);
-			}
-			if(teamsOnA8 == 2) {
-				thePOA.setAlliance1(team22T, team23T);
-			}
-			if(teamsOnA8 == 1) {
-				thePOA.setAlliance1(team22T);
-			}
-		}	
+		System.out.println("BoopPlay3");
+		System.out.println("BoopPlay4");
+		team1S = fileInputPlay.next();
+		team2S = fileInputPlay.next();
+		team3S = fileInputPlay.next();
+		team4S = fileInputPlay.next();
+		team5S = fileInputPlay.next();
+		team6S = fileInputPlay.next();
+		team7S = fileInputPlay.next();
+		team8S = fileInputPlay.next();
+		team9S = fileInputPlay.next();
+		team10S = fileInputPlay.next();
+		team11S = fileInputPlay.next();
+		team12S = fileInputPlay.next();
+		team13S = fileInputPlay.next();
+		team14S = fileInputPlay.next();
+		team15S = fileInputPlay.next();
+		team16S = fileInputPlay.next();
+		team17S = fileInputPlay.next();
+		team18S = fileInputPlay.next();
+		team19S = fileInputPlay.next();
+		team20S = fileInputPlay.next();
+		team21S = fileInputPlay.next();
+		team22S = fileInputPlay.next();
+		team23S = fileInputPlay.next();
+		team24S = fileInputPlay.next();
+		team25S = fileInputPlay.next();
+		team26S = fileInputPlay.next();
+		team27S = fileInputPlay.next();
+		team28S = fileInputPlay.next();
+		team29S = fileInputPlay.next();
+		team30S = fileInputPlay.next();
+		team31S = fileInputPlay.next();
+		team32S = fileInputPlay.next();
+		team1 = Integer.parseInt(team1S);
+		team2 = Integer.parseInt(team2S);
+		team3 = Integer.parseInt(team3S);
+		team4 = Integer.parseInt(team4S);
+		team5 = Integer.parseInt(team5S);
+		team6 = Integer.parseInt(team6S);
+		team7 = Integer.parseInt(team7S);
+		team8 = Integer.parseInt(team8S);
+		team9 = Integer.parseInt(team9S);
+		team10 = Integer.parseInt(team10S);
+		team11 = Integer.parseInt(team11S);
+		team12 = Integer.parseInt(team12S);
+		team13 = Integer.parseInt(team13S);
+		team14 = Integer.parseInt(team14S);
+		team15 = Integer.parseInt(team15S);
+		team16 = Integer.parseInt(team16S);
+		team17 = Integer.parseInt(team17S);
+		team18 = Integer.parseInt(team18S);
+		team19 = Integer.parseInt(team19S);
+		team20 = Integer.parseInt(team20S);
+		team21 = Integer.parseInt(team21S);
+		team22 = Integer.parseInt(team22S);
+		team23 = Integer.parseInt(team23S);
+		team24 = Integer.parseInt(team24S);
+		team25 = Integer.parseInt(team25S);
+		team26 = Integer.parseInt(team26S);
+		team27 = Integer.parseInt(team27S);
+		team28 = Integer.parseInt(team28S);
+		team29 = Integer.parseInt(team29S);
+		team30 = Integer.parseInt(team30S);
+		team31 = Integer.parseInt(team31S);
+		team32 = Integer.parseInt(team32S);
+		System.out.println("BoopPlay5");
+		if(team1 != 0) {
+			teamsOnA1++;
+			team1T = mainTeamList.getATeam(team1);
+		}
+		if(team2 != 0) {
+			teamsOnA1++;
+			team2T = mainTeamList.getATeam(team2);
+		}
+		if(team3 != 0) {
+			teamsOnA1++;
+			team3T = mainTeamList.getATeam(team3);
+		}
+		if(team4 != 0) {
+			teamsOnA2++;
+			team4T = mainTeamList.getATeam(team4);
+		}
+		if(team5 != 0) {
+			teamsOnA2++;
+			team5T = mainTeamList.getATeam(team5);
+		}
+		if(team6 != 0) {
+			teamsOnA2++;
+			team6T = mainTeamList.getATeam(team6);
+		}
+		if(team7 != 0) {
+			teamsOnA3++;
+			team7T = mainTeamList.getATeam(team7);
+		}
+		if(team8 != 0) {
+			teamsOnA3++;
+			team8T = mainTeamList.getATeam(team8);
+		}
+		if(team9 != 0) {
+			teamsOnA3++;
+			team9T = mainTeamList.getATeam(team9);
+		}
+		if(team10 != 0) {
+			teamsOnA4++;
+			team10T = mainTeamList.getATeam(team10);
+		}
+		if(team11 != 0) {
+			teamsOnA4++;
+			team11T = mainTeamList.getATeam(team12);
+		}
+		if(team12 != 0) {
+			teamsOnA4++;
+			team12T = mainTeamList.getATeam(team12);
+		}
+		if(team13 != 0) {
+			teamsOnA5++;
+			team13T = mainTeamList.getATeam(team13);
+		}
+		if(team14 != 0) {
+			teamsOnA5++;
+			team14T = mainTeamList.getATeam(team14);
+		}
+		if(team15 != 0) {
+			teamsOnA5++;
+			team15T = mainTeamList.getATeam(team15);
+		}
+		if(team16 != 0) {
+			teamsOnA6++;
+			team16T = mainTeamList.getATeam(team16);
+		}
+		if(team17 != 0) {
+			teamsOnA6++;
+			team17T = mainTeamList.getATeam(team17);
+		}
+		if(team18 != 0) {
+			teamsOnA6++;
+			team18T = mainTeamList.getATeam(team18);
+		}
+		if(team19 != 0) {
+			teamsOnA7++;
+			team19T = mainTeamList.getATeam(team19);
+		}
+		if(team20 != 0) {
+			teamsOnA7++;
+			team20T = mainTeamList.getATeam(team20);
+		}
+		if(team21 != 0) {
+			teamsOnA7++;
+			team21T = mainTeamList.getATeam(team21);
+		}
+		if(team22 != 0) {
+			teamsOnA8++;
+			team22T = mainTeamList.getATeam(team22);
+		}
+		if(team23 != 0) {
+			teamsOnA8++;
+			team23T = mainTeamList.getATeam(team23);
+		}
+		if(team24 != 0) {
+			teamsOnA8++;
+			team24T = mainTeamList.getATeam(team24);
+		}
+		if(team25 != 0) {
+			teamsOnA1++;
+			team25T = mainTeamList.getATeam(team25);
+		}
+		if(team26 != 0) {
+			teamsOnA2++;
+			team26T = mainTeamList.getATeam(team26);
+		}
+		if(team27 != 0) {
+			teamsOnA3++;
+			team27T = mainTeamList.getATeam(team27);
+		}
+		if(team28 != 0) {
+			teamsOnA4++;
+			team28T = mainTeamList.getATeam(team28);
+		}
+		if(team29 != 0) {
+			teamsOnA5++;
+			team29T = mainTeamList.getATeam(team29);
+		}
+		if(team30 != 0) {
+			teamsOnA6++;
+			team30T = mainTeamList.getATeam(team30);
+		}
+		if(team31 != 0) {
+			teamsOnA7++;
+			team31T = mainTeamList.getATeam(team31);
+		}
+		if(team32 != 0) {
+			teamsOnA8++;
+			team32T = mainTeamList.getATeam(team32);
+		}
+		System.out.println("BoopPlay6");
+		if(teamsOnA1 == 4) {
+			thePOA.setAlliance1(team1T, team2T, team3T, team25T);
+		}
+		if(teamsOnA1 == 3) {
+			thePOA.setAlliance1(team1T, team2T, team3T);
+		}
+		if(teamsOnA1 == 2) {
+			thePOA.setAlliance1(team1T, team2T);
+		}
+		if(teamsOnA1 == 1) {
+			thePOA.setAlliance1(team1T);
+		}
+		if(teamsOnA2 == 4) {
+			thePOA.setAlliance1(team4T, team5T, team6T, team26T);
+		}
+		if(teamsOnA2 == 3) {
+			thePOA.setAlliance1(team4T, team5T, team6T);
+		}
+		if(teamsOnA2 == 2) {
+			thePOA.setAlliance1(team4T, team5T);
+		}
+		if(teamsOnA2 == 1) {
+			thePOA.setAlliance1(team5T);
+		}
+		if(teamsOnA3 == 4) {
+			thePOA.setAlliance1(team7T, team8T, team9T, team27T);
+		}
+		if(teamsOnA3 == 3) {
+			thePOA.setAlliance1(team7T, team8T, team9T);
+		}
+		if(teamsOnA3 == 2) {
+			thePOA.setAlliance1(team7T, team8T);
+		}
+		if(teamsOnA3 == 1) {
+			thePOA.setAlliance1(team7T);
+		}
+		if(teamsOnA4 == 4) {
+			thePOA.setAlliance1(team10T, team11T, team12T, team28T);
+		}
+		if(teamsOnA4 == 3) {
+			thePOA.setAlliance1(team10T, team11T, team12T);
+		}
+		if(teamsOnA4 == 2) {
+			thePOA.setAlliance1(team10T, team11T);
+		}
+		if(teamsOnA4 == 1) {
+			thePOA.setAlliance1(team10T);
+		}
+		if(teamsOnA5 == 4) {
+			thePOA.setAlliance1(team13T, team14T, team15T, team29T);
+		}
+		if(teamsOnA5 == 3) {
+			thePOA.setAlliance1(team13T, team14T, team15T);
+		}
+		if(teamsOnA5 == 2) {
+			thePOA.setAlliance1(team13T, team14T);
+		}
+		if(teamsOnA5 == 1) {
+			thePOA.setAlliance1(team13T);
+		}
+		if(teamsOnA6 == 4) {
+			thePOA.setAlliance1(team16T, team17T, team18T, team30T);
+		}
+		if(teamsOnA6 == 3) {
+			thePOA.setAlliance1(team16T, team17T, team18T);
+		}
+		if(teamsOnA6 == 2) {
+			thePOA.setAlliance1(team16T, team17T);
+		}
+		if(teamsOnA6 == 1) {
+			thePOA.setAlliance1(team16T);
+		}
+		if(teamsOnA7 == 4) {
+			thePOA.setAlliance1(team19T, team20T, team21T, team31T);
+		}
+		if(teamsOnA7 == 3) {
+			thePOA.setAlliance1(team19T, team20T, team21T);
+		}
+		if(teamsOnA7 == 2) {
+			thePOA.setAlliance1(team19T, team20T);
+		}
+		if(teamsOnA7 == 1) {
+			thePOA.setAlliance1(team19T);
+		}
+		if(teamsOnA8 == 4) {
+			thePOA.setAlliance1(team22T, team23T, team24T, team32T);
+		}
+		if(teamsOnA8 == 3) {
+			thePOA.setAlliance1(team22T, team23T, team24T);
+		}
+		if(teamsOnA8 == 2) {
+			thePOA.setAlliance1(team22T, team23T);
+		}
+		if(teamsOnA8 == 1) {
+			thePOA.setAlliance1(team22T);
+		}
+		System.out.println("BoopPlay7");	
 	}
 	
 	private void sortListOfTeamNums() {
@@ -1912,6 +1924,8 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 				updateDataList();
 				updateDriveTeamDataList();
 				updateDriveTeamCommentsList();
+			}
+			if(event.getSource() == savePlayoffB) {
 				updatePlayoffList();
 			}
 		} catch(Exception e) {
