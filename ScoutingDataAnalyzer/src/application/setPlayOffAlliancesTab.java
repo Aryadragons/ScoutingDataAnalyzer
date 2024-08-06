@@ -92,6 +92,7 @@ public class setPlayOffAlliancesTab extends GridPane implements EventHandler<Act
 		Label A6L = new Label("Allince 6 Teams:");
 		Label A7L = new Label("Allince 7 Teams:");
 		Label A8L = new Label("Allince 8 Teams:");
+		/*Label A1T1L = new Label("Team 1:");
 		Label A1T1L = new Label("Team 1:");
 		Label A1T1L = new Label("Team 1:");
 		Label A1T1L = new Label("Team 1:");
@@ -102,8 +103,7 @@ public class setPlayOffAlliancesTab extends GridPane implements EventHandler<Act
 		Label A1T1L = new Label("Team 1:");
 		Label A1T1L = new Label("Team 1:");
 		Label A1T1L = new Label("Team 1:");
-		Label A1T1L = new Label("Team 1:");
-		
+		*/
 		this.add(new Label("Allince 1 Teams:   "), 0, 0);
 		this.add(new Label("Team 1:   "), 1, 0);
 		this.add(new Label("Team 2;   "), 2, 0);
