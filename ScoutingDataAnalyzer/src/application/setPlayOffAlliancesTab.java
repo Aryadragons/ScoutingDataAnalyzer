@@ -84,6 +84,26 @@ public class setPlayOffAlliancesTab extends GridPane implements EventHandler<Act
 
 	public setPlayOffAlliancesTab(List<Integer> importedListOfTeamNums) {
 		listOfTeamNums = importedListOfTeamNums;
+		Label A1L = new Label("Allince 1 Teams:");
+		Label A2L = new Label("Allince 2 Teams:");
+		Label A3L = new Label("Allince 3 Teams:");
+		Label A4L = new Label("Allince 4 Teams:");
+		Label A5L = new Label("Allince 5 Teams:");
+		Label A6L = new Label("Allince 6 Teams:");
+		Label A7L = new Label("Allince 7 Teams:");
+		Label A8L = new Label("Allince 8 Teams:");
+		Label A1T1L = new Label("Team 1:");
+		Label A1T1L = new Label("Team 1:");
+		Label A1T1L = new Label("Team 1:");
+		Label A1T1L = new Label("Team 1:");
+		Label A1T1L = new Label("Team 1:");
+		Label A1T1L = new Label("Team 1:");
+		Label A1T1L = new Label("Team 1:");
+		Label A1T1L = new Label("Team 1:");
+		Label A1T1L = new Label("Team 1:");
+		Label A1T1L = new Label("Team 1:");
+		Label A1T1L = new Label("Team 1:");
+		
 		this.add(new Label("Allince 1 Teams:   "), 0, 0);
 		this.add(new Label("Team 1:   "), 1, 0);
 		this.add(new Label("Team 2;   "), 2, 0);

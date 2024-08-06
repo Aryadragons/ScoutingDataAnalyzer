@@ -163,3 +163,95 @@
 #EditedPlay{
 	-fx-text-fill: rgb(128, 255, 219);
 }
+
+#saveDVB{
+	-fx-min-height: 75;
+	-fx-max-height: 75;
+	-fx-min-width: 150;
+	-fx-max-width: 150;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+
+#savePlayVB{
+	-fx-min-height: 75;
+	-fx-max-height: 75;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#saveDL0{
+	-fx-text-fill: rgb(94, 96, 206);
+	-fx-font-size: 15;
+}
+#saveDL1{
+	-fx-text-fill: rgb(255,71,71);
+	-fx-font-size: 15;
+}
+#saveDL2{
+	-fx-text-fill: rgb(255,172,71);
+	-fx-font-size: 15;
+}
+#saveDL3{
+	-fx-text-fill: rgb(250,255,92);
+	-fx-font-size: 15;
+}
+#saveDL4{
+	-fx-text-fill: rgb(136,255,112);
+	-fx-font-size: 15;
+}
+#saveDL5{
+	-fx-text-fill: rgb(92,241,255);
+	-fx-font-size: 15;
+}
+#saveDL6{
+	-fx-text-fill: rgb(92,154,255);
+	-fx-font-size: 15;
+}
+#saveDL7{
+	-fx-text-fill: rgb(166,92,255);
+	-fx-font-size: 15;
+}
+#saveDL8{
+	-fx-text-fill: rgb(163,0,163);
+	-fx-font-size: 15;
+}
+#savePlayL0{
+	-fx-text-fill: rgb(83, 144, 217);
+	-fx-font-size: 15;
+}
+#savePlayL1{
+	-fx-text-fill: rgb(255,71,71);
+	-fx-font-size: 15;
+}
+#savePlayL2{
+	-fx-text-fill: rgb(255,172,71);
+	-fx-font-size: 15;
+}
+#savePlayL3{
+	-fx-text-fill: rgb(250,255,92);
+	-fx-font-size: 15;
+}
+#savePlayL4{
+	-fx-text-fill: rgb(136,255,112);
+	-fx-font-size: 15;
+}
+#savePlayL5{
+	-fx-text-fill: rgb(92,241,255);
+	-fx-font-size: 15;
+}
+#savePlayL6{
+	-fx-text-fill: rgb(92,154,255);
+	-fx-font-size: 15;
+}
+#savePlayL7{
+	-fx-text-fill: rgb(166,92,255);
+	-fx-font-size: 15;
+}
+#savePlayL8{
+	-fx-text-fill: rgb(163,0,163);
+	-fx-font-size: 15;
+}

@@ -18,12 +18,14 @@ import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.stage.FileChooser;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -85,6 +87,10 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	private Scanner fileInputDTD;
 	private Scanner fileInputDTC;
 	private Scanner fileInputPlay;
+	private Label savedDataL;
+	private Label savedPlayoffL;
+	private int timesSavedD = 0;
+	private int timesSavedPlay = 0;
 	//
 	private List<Integer> listOfTeamNums;
 	private List<Integer> listOfTeamNumsSorted;
@@ -124,12 +130,24 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			saveDataB.setOnAction(this);
 			savePlayoffB = new Button("Save PlayOff Alliances");
 			savePlayoffB.setOnAction(this);
-			HBox saveHBox = new HBox(5);
-			saveHBox.getChildren().addAll(saveDataB, savePlayoffB);
+			savedDataL = new Label("Saved Data");
+			savedPlayoffL = new Label("Saved Playoff Allinces");
+			savedDataL.setId("saveDL0");
+			savedPlayoffL.setId("savePlayL0");
+			VBox saveDataVB = new VBox(5);
+			saveDataVB.getChildren().addAll(saveDataB, savedDataL);
+			saveDataVB.setId("saveDVB");
+			saveDataVB.setAlignment(Pos.CENTER);
+			VBox savePlayoffVB = new VBox(5);
+			savePlayoffVB.getChildren().addAll(savePlayoffB, savedPlayoffL);
+			savePlayoffVB.setId("savePlayVB");
+			savePlayoffVB.setAlignment(Pos.CENTER);
+			HBox saveHBox = new HBox(10);
+			saveHBox.getChildren().addAll(saveDataVB, savePlayoffVB);
 			saveHBox.setAlignment(Pos.CENTER);
 			root.setCenter(saveHBox);
 			//background stuff
-			FileInputStream input = new FileInputStream("tempMainBackground.png"); 
+			FileInputStream input = new FileInputStream("BackgroundV4.png"); 
             Image image = new Image(input); 
             BackgroundImage backgroundimage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
             // create Background 
@@ -139,7 +157,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			//
 			listOfTeamNums = new ArrayList<Integer>();
 			listOfTeamNumsSorted = new ArrayList<Integer>();
-			for (int i = 0; i < 60; i++) {
+			for (int i = 0; i < 80; i++) {
 				listOfTeamNumsSorted.add(null);
 			}
 			// adding css file stuff
@@ -1817,6 +1835,62 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		mainTeamList = incoming;
 	}
 	
+	public void setSavedDataLabel(int times) {
+		if(times == 1) {
+			savedDataL.setId("saveDL1");
+		}
+		if(times == 2) {
+			savedDataL.setId("saveDL2");
+		}
+		if(times == 3) {
+			savedDataL.setId("saveDL3");
+		}
+		if(times == 4) {
+			savedDataL.setId("saveDL4");
+		}
+		if(times == 5) {
+			savedDataL.setId("saveDL5");
+		}
+		if(times == 6) {
+			savedDataL.setId("saveDL6");
+		}
+		if(times == 7) {
+			savedDataL.setId("saveDL7");
+		}
+		if(times == 8) {
+			savedDataL.setId("saveDL8");
+			timesSavedD = 0;
+		}
+	}
+	
+	public void setSavedPlayoffLabel(int times) {
+		if(times == 1) {
+			savedPlayoffL.setId("savePlayL1");
+		}
+		if(times == 2) {
+			savedPlayoffL.setId("savePlayL2");
+		}
+		if(times == 3) {
+			savedPlayoffL.setId("savePlayL3");
+		}
+		if(times == 4) {
+			savedPlayoffL.setId("savePlayL4");
+		}
+		if(times == 5) {
+			savedPlayoffL.setId("savePlayL5");
+		}
+		if(times == 6) {
+			savedPlayoffL.setId("savePlayL6");
+		}
+		if(times == 7) {
+			savedPlayoffL.setId("savePlayL7");
+		}
+		if(times == 8) {
+			savedPlayoffL.setId("savePlayL8");
+			timesSavedPlay = 0;
+		}
+	}
+	
 	@Override
 	public void handle(ActionEvent event) {
 		try {
@@ -1924,9 +1998,14 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 				updateDataList();
 				updateDriveTeamDataList();
 				updateDriveTeamCommentsList();
+				timesSavedD++;
+				setSavedDataLabel(timesSavedD);
+				timesSavedPlay++;
 			}
 			if(event.getSource() == savePlayoffB) {
 				updatePlayoffList();
+				timesSavedPlay++;
+				setSavedPlayoffLabel(timesSavedPlay);
 			}
 		} catch(Exception e) {
 			System.out.println("error: " + e);
