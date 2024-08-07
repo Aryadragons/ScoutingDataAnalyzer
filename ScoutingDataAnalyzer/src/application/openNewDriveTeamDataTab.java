@@ -41,7 +41,7 @@ public class openNewDriveTeamDataTab extends GridPane implements EventHandler<Ac
 		submitReB.setOnAction(this);
 		submitAddB.setOnAction(this);
 		VBox replaceLVB = new VBox(5);
-		Label openReL = new Label("Open New Data That Will Replace All Pit Data");
+		Label openReL = new Label("Open New Data That Will Replace All Drive Team Data");
 		Label fileChoosenReL = new Label("Choosen File Name");
 		VBox replaceBVB = new VBox(5);
 		replaceBVB.getChildren().addAll(goForReplaceB, submitReB);
@@ -51,7 +51,7 @@ public class openNewDriveTeamDataTab extends GridPane implements EventHandler<Ac
 		replaceBP.setRight(replaceBVB);
 		replaceBP.setId("BPA4open");
 		VBox addLVB = new VBox(5);
-		Label openAddL = new Label("Open New Data That Will Start Or Add On To Current Pit Data");
+		Label openAddL = new Label("Open New Data That Will Start Or Add On To Current Drive Team Data");
 		Label fileChoosenAddL = new Label("Choosen File Name");
 		openAddL.setId("TitleLabelPlay");
 		fileChoosenAddL.setId("TitleLabelPlay");
