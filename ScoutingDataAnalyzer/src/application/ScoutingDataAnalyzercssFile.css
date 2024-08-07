@@ -2,11 +2,12 @@
 	-fx-text-fill: rgb(219,178,255);
 	-fx-font-size: 15;
 }
+
 .menu-bar {
     -fx-background-color: rgb(72,72,72) ;
 }
 .button{
-    -fx-background-color: rgb(219,178,255) ;
+    -fx-background-color: rgb(193,177,255) ;
 }
 #seLabelTeamsStyle{
 	-fx-text-fill: rgb(219,178,255);
@@ -253,5 +254,10 @@
 }
 #savePlayL8{
 	-fx-text-fill: rgb(163,0,163);
+	-fx-font-size: 15;
+}
+
+#setPlayL{
+	-fx-text-fill: rgb(55, 0, 93);
 	-fx-font-size: 15;
 }
