@@ -261,3 +261,30 @@
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-font-size: 15;
 }
+#BPA4open{
+	-fx-min-height: 150;
+	-fx-max-height: 150;
+	-fx-min-width: 800;
+	-fx-max-width: 800;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#BPA5open{
+	-fx-min-height: 150;
+	-fx-max-height: 150;
+	-fx-min-width: 800;
+	-fx-max-width: 800;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#BPA6open{
+	-fx-min-height: 150;
+	-fx-max-height: 150;
+	-fx-min-width: 900;
+	-fx-max-width: 900;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}

@@ -9,6 +9,7 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
 public class deletePlayOffAlliancesTab extends GridPane implements EventHandler<ActionEvent>{
@@ -17,11 +18,16 @@ public class deletePlayOffAlliancesTab extends GridPane implements EventHandler<
 	private TextField doneTF;
 	
 	public deletePlayOffAlliancesTab() {
-		this.add(new Label("Clear out all Playoff Alliances?"), 0, 0);
+		BorderPane delBP = new BorderPane();
+		Label clearL = new Label("Clear out all Playoff Alliances?");
+		clearL.setId("TitleLabelPlay");
+		this.add(new Label("    "), 0, 0);
 		yesB = new Button("Yes");
 		yesB.setOnAction(this);
-		this.add(yesB, 1, 0);
-		
+		delBP.setTop(clearL);
+		delBP.setCenter(yesB);
+		delBP.setId("BPA4");
+		this.add(delBP, 1, 1);
 	}
 
 	@Override

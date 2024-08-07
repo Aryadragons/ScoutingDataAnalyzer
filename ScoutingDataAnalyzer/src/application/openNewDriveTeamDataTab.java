@@ -12,7 +12,9 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 
 public class openNewDriveTeamDataTab extends GridPane implements EventHandler<ActionEvent>{
@@ -28,14 +30,8 @@ public class openNewDriveTeamDataTab extends GridPane implements EventHandler<Ac
 	
 	public openNewDriveTeamDataTab() {
 		fileDTD = new DriveTeamDataList();
-		this.add(new Label("Open New Data That Will Replace All Drive Team Data"), 0, 0);
-		this.add(new Label("Choosen File Name"), 0, 1);
 		fileNameReTF = new TextField();
-		this.add(fileNameReTF, 1, 1);
-		this.add(new Label("Open New Data That Will Start Or Add On To Current Drive Team Data"), 0, 2);
-		this.add(new Label("Choosen File Name"), 0, 3);
 		fileNameAddTF = new TextField();
-		this.add(fileNameAddTF, 1, 3);
 		goForReplaceB = new Button("Go");
 		goForAddB = new Button("Go");
 		submitReB = new Button("Submit");
@@ -44,13 +40,33 @@ public class openNewDriveTeamDataTab extends GridPane implements EventHandler<Ac
 		goForAddB.setOnAction(this);
 		submitReB.setOnAction(this);
 		submitAddB.setOnAction(this);
-		this.add(goForReplaceB, 1, 0);
-		this.add(goForAddB, 1, 2);
-		this.add(submitReB, 2, 1);
-		this.add(submitAddB, 2, 3);
-		for (int i = 0; i < 23; i++) {
-			this.add(new Label(""), 0, i);
-		}
+		VBox replaceLVB = new VBox(5);
+		Label openReL = new Label("Open New Data That Will Replace All Pit Data");
+		Label fileChoosenReL = new Label("Choosen File Name");
+		VBox replaceBVB = new VBox(5);
+		replaceBVB.getChildren().addAll(goForReplaceB, submitReB);
+		BorderPane replaceBP = new BorderPane();
+		replaceBP.setLeft(replaceLVB);
+		replaceBP.setCenter(fileNameReTF);
+		replaceBP.setRight(replaceBVB);
+		replaceBP.setId("BPA4open");
+		VBox addLVB = new VBox(5);
+		Label openAddL = new Label("Open New Data That Will Start Or Add On To Current Pit Data");
+		Label fileChoosenAddL = new Label("Choosen File Name");
+		openAddL.setId("TitleLabelPlay");
+		fileChoosenAddL.setId("TitleLabelPlay");
+		addLVB.getChildren().addAll(openAddL, fileChoosenAddL);
+		VBox addBVB = new VBox(5);
+		addBVB.getChildren().addAll(goForAddB, submitAddB);
+		BorderPane addBP = new BorderPane();
+		addBP.setLeft(addLVB);
+		addBP.setCenter(fileNameAddTF);
+		addBP.setRight(addBVB);
+		addBP.setId("BPA6open");
+		this.add(new Label("    "), 0, 0);
+		this.add(new Label("    "), 0, 2);
+		this.add(replaceBP, 1, 1);
+		this.add(addBP, 1, 3);
 	}
 	
 	public void openDTDFile() {
