@@ -25,7 +25,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
@@ -58,14 +60,18 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	private Button submitAutoB;
 	
 	public searchTeamsTab(TeamList mainTeamList, List<Integer> importedListOfTeamNums, TeamPitsList importedListOfTeamPits, DriveTeamDataList imListOfDTD, DriveTeamCommentsList imListOfDTC) {
-		this.add(new Label("Select Team to Look Up"), 0, 0);
+		Label selectTeamL = new Label("Select Team to Look Up");
+		selectTeamL.setId("TitleLabelPlay");
 		teamListCB = new ComboBox<String>();
 		listOfTeamNums = importedListOfTeamNums;
 		addComboBoxItems();
-		this.add(teamListCB, 0, 1);
 		seTeamsB = new Button("Submit");
 		seTeamsB.setOnAction(this);
-		this.add(seTeamsB, 1, 1);
+		BorderPane selectTeamBP = new BorderPane();
+		selectTeamBP.setTop(selectTeamL);
+		selectTeamBP.setRight(seTeamsB);
+		selectTeamBP.setLeft(teamListCB);
+		selectTeamBP.setId("searchTeamsSelTBP");
 		theTeamList = mainTeamList;
 		theTeamPitList = importedListOfTeamPits;
 		if (importedListOfTeamPits == null) {
@@ -618,26 +624,27 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	}
 	
 	public void addPitDataStuff(int teamNum) {
-		this.add(new Label("Number Of Student on Team " + teamNum + ": "), 0, 5);
-		this.add(new Label("Number Of Mentors on Team " + teamNum + ": "), 0, 6);
-		this.add(new Label("Number Of Battiers they have: "), 0, 7);
-		this.add(new Label("What Programing langue they use: "), 1, 5);
+		Label numStudsQL = new Label("Number Of Student on Team " + teamNum + ": ");
+		Label numMentsQL = new Label("Number Of Mentors on Team " + teamNum + ": ");
+		Label numBattsQL = new Label("Number Of Battiers they have: ");
+		Label proLanQL = new Label("What Programing langue they use: ");
+		Label haveVisQL = new Label("They do use Vision");
+		Label dontVisQL = new Label("They do not use Vision");
+		Label numVisCamsQL = new Label("Number of Vision Cameras: ");
+		Label numDriveCamsQL = new Label("Number of Driver Cameras: ");
+		Label drTrQL = new Label("Their Robot's Drive Train is: ");
+		Label drTrMotorQL = new Label("Their Robot's Drive Train uses This Motors: ");
+		Label sweKindQL = new Label("Their Robot uses this kind of Swerve: ");
+		Label sweGearQL = new Label("Their Robot Uses this Gearing: ");
 		if(theTeamPitList.getATeamPit(teamNum).getDoHaveVis().compareTo("yes") == 0) {
-			this.add(new Label("They do use Vision"), 1, 6);
-			this.add(new Label("Number of Vision Cameras: "), 1, 7);
 		} else {
-			this.add(new Label("They do not use Vision"), 1, 6);
 		}
-		this.add(new Label("Number of Driver Cameras: "), 1, 8);
-		this.add(new Label("Their Robot's Drive Train is: "), 0, 8);
-		this.add(new Label("Their Robot's Drive Train uses This Motors: "), 0, 9);
 		if(theTeamPitList.getATeamPit(teamNum).getDrTrType().compareTo("Swerve") == 0) {
-			this.add(new Label("Their Robot uses this kind of Swerve: "), 0, 10);
 			if(theTeamPitList.getATeamPit(teamNum).getSwevType().compareTo("Custom") == 0) {
 			} else {
-				this.add(new Label("Their Robot Uses this Gearing: "), 0, 11);
 			}
 		}
+		VBox studsMentsQVB = new VBox(5);
 		//adding labels with the Values
 		//students
 		String studs = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfStud());

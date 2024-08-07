@@ -43,6 +43,8 @@ public class openNewDriveTeamDataTab extends GridPane implements EventHandler<Ac
 		VBox replaceLVB = new VBox(5);
 		Label openReL = new Label("Open New Data That Will Replace All Drive Team Data");
 		Label fileChoosenReL = new Label("Choosen File Name");
+		fileChoosenReL.setId("TitleLabelPlay");
+		replaceLVB.getChildren().addAll(openReL, fileChoosenReL);
 		VBox replaceBVB = new VBox(5);
 		replaceBVB.getChildren().addAll(goForReplaceB, submitReB);
 		BorderPane replaceBP = new BorderPane();
