@@ -636,74 +636,116 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		Label drTrMotorQL = new Label("Their Robot's Drive Train uses This Motors: ");
 		Label sweKindQL = new Label("Their Robot uses this kind of Swerve: ");
 		Label sweGearQL = new Label("Their Robot Uses this Gearing: ");
-		if(theTeamPitList.getATeamPit(teamNum).getDoHaveVis().compareTo("yes") == 0) {
-		} else {
-		}
-		if(theTeamPitList.getATeamPit(teamNum).getDrTrType().compareTo("Swerve") == 0) {
-			if(theTeamPitList.getATeamPit(teamNum).getSwevType().compareTo("Custom") == 0) {
-			} else {
-			}
-		}
-		VBox studsMentsQVB = new VBox(5);
 		//adding labels with the Values
 		//students
 		String studs = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfStud());
-		Label studsL = new Label("                                           " + studs);
+		Label studsL = new Label(studs);
 		studsL.setId("studslabel");
 		this.add(studsL, 0, 5);
 		//mentors
 		String ments = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfMent());
-		Label mentsL = new Label("                                           " + ments);
+		Label mentsL = new Label(ments);
 		mentsL.setId("studslabel");
 		this.add(mentsL, 0, 6);
 		//Robot Battiers
 		String rBs = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfRobotBat());
-		Label rBsL = new Label("                                     " + rBs);
+		Label rBsL = new Label(rBs);
 		rBsL.setId("studslabel");
 		this.add(rBsL, 0, 7);
 		//Program Lan
 		String progLans = theTeamPitList.getATeamPit(teamNum).getProgramLan();
-		Label progLansL = new Label("                                           " + progLans);
+		Label progLansL = new Label(progLans);
 		progLansL.setId("studslabel");
 		this.add(progLansL, 1, 5);
 		//VisCamera
+		Label visCamsL = null;
 		if(theTeamPitList.getATeamPit(teamNum).getDoHaveVis().compareTo("yes") == 0) {
 			String visCams = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfVisCam());
-			Label visCamsL = new Label("                                  " + visCams);
+			visCamsL = new Label(visCams);
 			visCamsL.setId("studslabel");
 			this.add(visCamsL, 1, 7);
 		}
 		//Drive Cameras
 		String drCams = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfDriverCams());
-		Label drCamsL = new Label("                                  " + drCams);
+		Label drCamsL = new Label(drCams);
 		drCamsL.setId("studslabel");
 		this.add(drCamsL, 1, 8);
 		//Drive Train Type
 		String drTypes = theTeamPitList.getATeamPit(teamNum).getDrTrType();
-		Label drTypesL = new Label("                                  " + drTypes);
+		Label drTypesL = new Label(drTypes);
 		drTypesL.setId("studslabel");
 		this.add(drTypesL, 0, 8);
 		//Swerve Kind
+		Label swTypesL = null;
+		Label swGearsL = null;
 		if(theTeamPitList.getATeamPit(teamNum).getDrTrType().compareTo("Swerve") == 0) {
 			String swTypes = theTeamPitList.getATeamPit(teamNum).getSwevType();
-			Label swTypesL = new Label("                                             " + swTypes);
+			swTypesL = new Label(swTypes);
 			swTypesL.setId("studslabel");
 			this.add(swTypesL, 0, 10);
 		//Swerve Gearing
 			if(theTeamPitList.getATeamPit(teamNum).getSwevType().compareTo("Custom") == 0) {
 			} else {
 				String swGears = theTeamPitList.getATeamPit(teamNum).getSwevGearing();
-				Label swGearsL = new Label("                                     " + swGears);
+				swGearsL = new Label(swGears);
 				swGearsL.setId("studslabel");
 				this.add(swGearsL, 0, 11);
 			}
 		}
 		//Drive Train Motors
 		String drMots = theTeamPitList.getATeamPit(teamNum).getDrTrMotorType();
-		Label drMotsL = new Label("                                                    " + drMots);
+		Label drMotsL = new Label(drMots);
 		drMotsL.setId("studslabel");
 		this.add(drMotsL, 0, 9);
-		
+		//questions Vboxes
+		VBox studsMentsQVB = new VBox(5);
+		studsMentsQVB.getChildren().addAll(numStudsQL, numMentsQL);
+		VBox programingQVB = new VBox(5);
+		VBox driveTrQVB = new VBox(5);
+		//answer VBoxes
+		VBox studsMentsVB = new VBox(5);
+		studsMentsVB.getChildren().addAll(studsL, mentsL);
+		VBox programingVB = new VBox(5);
+		VBox driveTrVB = new VBox(5);
+		if(theTeamPitList.getATeamPit(teamNum).getDoHaveVis().compareTo("yes") == 0) {
+			programingQVB.getChildren().addAll(proLanQL, haveVisQL, numVisCamsQL, numDriveCamsQL);
+			programingVB.getChildren().addAll(progLansL, visCamsL, drCamsL);
+		} else {
+			programingQVB.getChildren().addAll(proLanQL, dontVisQL, numDriveCamsQL);
+			programingVB.getChildren().addAll(progLansL, drCamsL);
+		}
+		if(theTeamPitList.getATeamPit(teamNum).getDrTrType().compareTo("Swerve") == 0) {
+			if(theTeamPitList.getATeamPit(teamNum).getSwevType().compareTo("Custom") == 0) {
+				driveTrQVB.getChildren().addAll(drTrQL, drTrMotorQL, sweKindQL);
+				driveTrVB.getChildren().addAll(drTypesL, drMotsL, swTypesL);
+			} else {
+				driveTrQVB.getChildren().addAll(drTrQL, drTrMotorQL, sweKindQL, sweGearQL);
+				driveTrVB.getChildren().addAll(drTypesL, drMotsL, swTypesL, swGearsL);
+			}
+		}else {
+			driveTrQVB.getChildren().addAll(drTrQL, drTrMotorQL);
+			driveTrVB.getChildren().addAll(drTypesL, drMotsL);
+		}
+		BorderPane studsMentsBP = new BorderPane();
+		BorderPane battsBP = new BorderPane();
+		BorderPane progBP = new BorderPane();
+		BorderPane driveBP = new BorderPane();
+		studsMentsBP.setLeft(studsMentsQVB);
+		studsMentsBP.setRight(studsMentsVB);
+		battsBP.setLeft(numBattsQL);
+		battsBP.setRight(rBsL);
+		progBP.setLeft(programingQVB);
+		progBP.setRight(programingVB);
+		driveBP.setLeft(driveTrQVB);
+		driveBP.setRight(driveTrVB);
+		studsMentsBP.setId("seTeamsStudMentsBP");
+		battsBP.setId("seTeamsBattsBP");
+		progBP.setId("seTeamsProgramBP");
+		driveBP.setId("seTeamsDriveTrBP");
+		this.add(studsMentsBP, 0, 12);
+		this.add(battsBP, 0, 13);
+		this.add(progBP, 0, 14);
+		this.add(driveBP, 0, 15);
 		this.add(new Label(""), 0, 12);
 		this.add(new Label(""), 0, 13);
 		this.add(new Label(""), 0, 14);
@@ -714,6 +756,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		this.add(autoTitle, 2, 5);
 		System.out.println("BoopPits1");
 		int autoInfoPos = 6;
+		int autoNumBP = 1;
 		for (int i = 0; i < theTeamPitList.getATeamPit(teamNum).getTheAutoList().listOfAutos.size(); i++) {
 			System.out.println("BoopPits2");
 			double totalPieces = theTeamPitList.getATeamPit(teamNum).getTheAutoList().listOfAutos.get(i).getTotalAmp() + theTeamPitList.getATeamPit(teamNum).getTheAutoList().listOfAutos.get(i).getTotalSpecker();
@@ -738,8 +781,16 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			System.out.println("BoopPits3");
 			String autoName = totalPieces + " Piece, " + startPosName + " Spe: " + theTeamPitList.getATeamPit(teamNum).getTheAutoList().listOfAutos.get(i).getTotalSpecker();
-			this.add(new Label(autoName), 2, autoInfoPos);
+			Label autoNameL = new Label("autoName");
+			BorderPane autoPane = new BorderPane();
+			autoPane.setId("seTeamsAutoBP" + autoNumBP);
+			autoPane.setCenter(autoNameL);
+			this.add(autoPane, 2, autoInfoPos);
 			autoInfoPos++;
+			autoNumBP++;
+			if(autoNumBP > 9) {
+				autoNumBP = 1;
+			}
 		}
 	}
 	
