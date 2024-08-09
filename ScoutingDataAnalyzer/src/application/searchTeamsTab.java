@@ -132,10 +132,11 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		matchSubB.snappedBottomInset();
 		matchSubB.setOnAction(this);
 		this.add(matchSubB, 4, 1);
+		
 	}
 	
 	
-	private void addAvgsStats(int team, double avgCy, double avgAmp, double avgSpe, double avgTrap, double avgCli, double avgHumAmpPostion, double avgHumScoPostion, double avgHumAmpSkill, double avgHumScoSkill, double avgHumAmpNotes, int timesAmp, int timesSco) {
+	private void addAvgsStats(int team, double avgCy, double avgAmp, double avgSpe, double avgTrap, double avgCli, double avgHumAmpPostion, double avgHumScoPostion, double avgHumAmpSkill, double avgHumScoSkill, double avgHumAmpNotes, int timesAmp, int timesSco, Team theTeam) {
 		Label avgCyclesL = new Label("Avg Cycles:");
 		Label avgSpeL = new Label("Avg Spe:");
 		Label avgAmpL = new Label("Avg Amp:");
@@ -216,12 +217,26 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		avgScoSkillBP.setId("avgScoSkillBP");
 		avgAmpSkillBP.setId("avgAmpSkillBP");
 		avgAmpNotesBP.setId("avgAmpNotesBP");
+		Label empty1L = new Label("    ");
+		Label empty2L = new Label("    ");
+		Label empty3L = new Label(" ");
 		VBox avgRobotVB = new VBox(5);
-		avgRobotVB.getChildren().addAll(avgCyclesBP, avgSpeBP, avgAmpBP, avgTrapBP, avgClimbBP);
+		avgRobotVB.getChildren().addAll(empty1L, avgCyclesBP, avgSpeBP, avgAmpBP, avgTrapBP, avgClimbBP);
 		VBox avgHumanVB = new VBox(5);
-		avgHumanVB.getChildren().addAll(timesScoBP, timesAmpBP, avgScoSkillBP, avgAmpSkillBP, avgAmpNotesBP);
-		this.add(avgRobotVB, 1, 2);
-		this.add(avgHumanVB, 2, 2);
+		avgHumanVB.getChildren().addAll(empty2L, timesScoBP, timesAmpBP, avgScoSkillBP, avgAmpSkillBP, avgAmpNotesBP);
+		String teamNumS = Integer.toString(theTeam.getTeamNum());
+		Label title = new Label(teamNumS + " " + theTeamPitList.getATeamPit(theTeam.getTeamNum()).getTeamName()+"'s Stats:");
+		title.setId("smallTitle");
+		BorderPane teamTitleBP = new BorderPane();
+		teamTitleBP.setTop(title);
+		BorderPane teamBP = new BorderPane();
+		teamBP.setLeft(avgRobotVB);
+		teamBP.setRight(avgHumanVB);
+		teamBP.setTop(teamTitleBP);
+		teamBP.setCenter(empty3L);
+		teamTitleBP.setId("teamTitleBP");
+		this.add(new Label("    "), 0, 0);
+		this.add(teamBP, 1, 1);
 	}
 	private void addCharts(int team, double avgCy, double avgAmp, double avgSpe, double avgTrap, double avgCli, double avgHumAmpPostion, double avgHumScoPostion, double avgHumAmpSkill, double avgHumScoSkill, double avgHumAmpNotes, int timesAmp, int timesSco) {
 		System.out.println("Team: " + team + "Cycles: " + avgCy + "Amp: " + avgAmp + "Speaker: " + avgSpe + "Trap: " + avgTrap + "Climb: " + avgCli);
@@ -352,7 +367,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
         Scene scene  = new Scene(lineChart,800,600);
         lineChart.getData().add(series);
 	 */
-	private void addStatChart(String stat) {
+	private void addStatChart(String stat, int teamNum, int matchNum) {
+		BorderPane matchBarChartBP = new BorderPane();
 		if(stat.compareTo("Cycles") == 0) {
 			System.out.println("Boop got here1");
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -375,7 +391,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(350, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 2, 2);
+			matchBarChartBP.setBottom(lineChart);
 		}
 		if(stat.compareTo("Amp") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -398,7 +414,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(350, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 2, 2);
+			matchBarChartBP.setBottom(lineChart);
 		}
 		if(stat.compareTo("Specker") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -421,7 +437,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(350, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 2, 2);
+			matchBarChartBP.setBottom(lineChart);
 		}
 		if(stat.compareTo("Trap") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -444,7 +460,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(350, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 2, 2);
+			matchBarChartBP.setBottom(lineChart);
 		}
 		if(stat.compareTo("Climb") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -467,7 +483,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(350, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 2, 2);
+			matchBarChartBP.setBottom(lineChart);
 		}
 		if(stat.compareTo("Amp Skill") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -490,7 +506,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(350, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 2, 2);
+			matchBarChartBP.setBottom(lineChart);
 		}
 		if(stat.compareTo("Scoure Skill") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -513,7 +529,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(350, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 2, 2);
+			matchBarChartBP.setBottom(lineChart);
 		}
 		if(stat.compareTo("Amp Notes") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -536,11 +552,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(350, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 2, 2);
+			matchBarChartBP.setBottom(lineChart);
 		}
-	}
-	
-	private void addMatchChart(int matchNum, int teamNum) {
 		System.out.println("Boop37.1");
 		Match theMatch = null;
 		int i = 0;
@@ -615,9 +628,10 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    autoAmpData.getData().add(new XYChart.Data<String,Number>("Auto Amp", matchAutoAmp));
 		    matchBCBarC.getData().addAll(cyData, ampData, speData, trapData, cliData, ampSkData, ampNData, autoSpeData, autoAmpData);
 		    matchBCBarC.setBarGap(2);
-		    matchBCBarC.setMinSize(150, 100);
-		    matchBCBarC.setMaxSize(500, 250);
-		    this.add(matchBCBarC, 2, 1);
+		    matchBCBarC.setMinSize(150, 300);
+		    matchBCBarC.setMaxSize(500, 300);
+		    matchBarChartBP.setLeft(matchBCBarC);
+		    this.add(matchBarChartBP, 2, 1);
 		    System.out.println("Boop37.6");
 		}
 		if(matchPos.compareTo("Scoure") == 0) {
@@ -666,7 +680,9 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    matchBCBarC.setBarGap(2);
 		    matchBCBarC.setMinSize(150, 150);
 		    matchBCBarC.setMaxSize(500, 250);
-		    this.add(matchBCBarC, 2, 1);
+		    matchBarChartBP.setTop(matchBCBarC);
+		    matchBarChartBP.setId("MatchBarChartBP");
+		    this.add(matchBarChartBP, 2, 1);
 		}
 		if(matchPos.compareTo("None") == 0) {
 			int matchCy = (theMatch.getMatchAmp() + theMatch.getMatchSpe() + theMatch.getMatchTrap());
@@ -710,8 +726,13 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    matchBCBarC.setBarGap(2);
 		    matchBCBarC.setMinSize(150, 175);
 		    matchBCBarC.setMaxSize(500, 250);
-		    this.add(matchBCBarC, 2, 1);
+		    matchBarChartBP.setTop(matchBCBarC);
+		    this.add(matchBarChartBP, 2, 1);
 		}
+	}
+	
+	private void addMatchChart(int matchNum, int teamNum) {
+
 	}
 	
 	public void addPitDataStuff(int teamNum) {
@@ -833,18 +854,15 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		battsBP.setId("seTeamsBattsBP");
 		progBP.setId("seTeamsProgramBP");
 		driveBP.setId("seTeamsDriveTrBP");
-		this.add(studsMentsBP, 1, 10);
-		this.add(battsBP, 1, 11);
-		this.add(progBP, 1, 12);
-		this.add(driveBP, 1, 13);
-		this.add(new Label(""), 1, 10);
-		this.add(new Label(""), 1, 11);
-		this.add(new Label(""), 1, 12);
+		this.add(studsMentsBP, 1, 6);
+		this.add(battsBP, 1, 7);
+		this.add(progBP, 2, 6);
+		this.add(driveBP, 1, 9);
 		System.out.println("BoopPits");
 		//autos
 		Label autoTitle = new Label("Autos:");
 		autoTitle.setId("TitleLabel");
-		this.add(autoTitle, 2, 5);
+		this.add(autoTitle, 3, 5);
 		System.out.println("BoopPits1");
 		int autoInfoPos = 6;
 		int autoNumBP = 1;
@@ -876,7 +894,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			BorderPane autoPane = new BorderPane();
 			autoPane.setId("seTeamsAutoBP" + autoNumBP);
 			autoPane.setCenter(autoNameL);
-			this.add(autoPane, 2, autoInfoPos);
+			this.add(autoPane, 3, autoInfoPos);
 			autoInfoPos++;
 			autoNumBP++;
 			if(autoNumBP > 9) {
@@ -918,7 +936,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	
 	public void addDTDStuff(int teamNum) {
 		if(theDTDList.getATeamPit(teamNum).getIsAdult() == true) {
-			Label adultWarningL = new Label("                                                        " + "Adult Drive Coach");
+			Label adultWarningL = new Label("Adult Drive Coach");
 			adultWarningL.setId("ADC");
 			this.add(adultWarningL, 1, 0);
 		}
@@ -1090,17 +1108,17 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	
 	public void addDTCStuff(int teamNum){
 		if(theDTCList.getADriveTeamComments(teamNum).gettotalBLevel() >= 2) {
-			Label warning1 = new Label("                         Warning Level 1");
+			Label warning1 = new Label("Warning Level 1");
 			warning1.setId("warn1");
 			this.add(warning1, 2, 0);
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).gettotalBLevel() >= 5) {
-			Label warning2 = new Label("                         Warning Level 2");
+			Label warning2 = new Label("Warning Level 2");
 			warning2.setId("warn2");
 			this.add(warning2, 2, 0);
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).gettotalBLevel() >= 10) {
-			Label warning3 = new Label("                         Warning Level 3");
+			Label warning3 = new Label("Warning Level 3");
 			warning3.setId("warn3");
 			this.add(warning3, 2, 0);
 		}
@@ -1186,13 +1204,13 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				String autoName = totalPieces + " Piece, " + startPosName + " Spe: " + theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getTotalSpecker();
 				autosListCB.getItems().add(autoName);
 			}
-			this.add(autosListCB, 2, 2);
+			this.add(autosListCB, 4, 2);
 			submitAutoB = new Button("Submit Auto");
 			submitAutoB.setOnAction(this);
 			this.add(submitAutoB, 2, 2);
 			Auto A = theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(autoNumber);
 			if(A.getTimesUsed() == 0) {
-				this.add(new Label("They Havn't Used This Auto"), 2, 0);
+				this.add(new Label("They Havn't Used This Auto"), 3, 1);
 			}else{
 				double speAvg = A.getAvgSpe();
 				double ampAvg = A.getAvgSpe();
@@ -1219,7 +1237,9 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			    autoBCBarC.setBarGap(2);
 			    autoBCBarC.setMinSize(250, 200);
 			    autoBCBarC.setMaxSize(300, 250);
-			    this.add(autoBCBarC, 2, 1);
+			    BorderPane autoBarChartBP = new BorderPane();
+			    autoBarChartBP.setTop(matchBCBarC);
+			    this.add(autoBarChartBP, 3, 1);
 			    this.add(new Label("This Auto Has Been Used " + A.getTimesUsed() + " Times"), 2, 0);
 			}
 			// pie chart
@@ -1328,14 +1348,6 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				System.out.println("Boop31.3");
 				this.getChildren().clear();
 				System.out.println("Boop32");
-				String teamNumS = Integer.toString(theTeam.getTeamNum());
-				Label title = new Label(teamNumS + " " + theTeamPitList.getATeamPit(theTeam.getTeamNum()).getTeamName()+"'s Stats:");
-				title.setId("smallTitle");
-				BorderPane teamTitleBP = new BorderPane();
-				teamTitleBP.setLeft(title);
-				teamTitleBP.setId("teamTitleBP");
-				this.add(new Label("    "), 0, 0);
-				this.add(teamTitleBP, 1, 1);
 				this.add(new Label("Comments:  "), 3, 0);
 				List<String> commentList = theTeam.getCommentsList();
 				commentsTA = new TextArea();
@@ -1360,7 +1372,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			    System.out.println(theTeam.getHumAmpNotes());
 			    System.out.println(theTeam.getTimesHumAmp());
 			    System.out.println(theTeam.getTimesHumSco());
-			    addAvgsStats(theTeam.getTeamNum(), theTeam.getAvgCycles(), theTeam.getAvgAmp(), theTeam.getAvgSpe(), theTeam.getAvgTrap(), theTeam.getAvgClimb(), theTeam.getAvgHumAmpPostion(), theTeam.getAvgHumScoPostion(), theTeam.getHumAmpSkill(), theTeam.getHumScoSkill(), theTeam.getHumAmpNotes(), theTeam.getTimesHumAmp(), theTeam.getTimesHumSco());
+			    addAvgsStats(theTeam.getTeamNum(), theTeam.getAvgCycles(), theTeam.getAvgAmp(), theTeam.getAvgSpe(), theTeam.getAvgTrap(), theTeam.getAvgClimb(), theTeam.getAvgHumAmpPostion(), theTeam.getAvgHumScoPostion(), theTeam.getHumAmpSkill(), theTeam.getHumScoSkill(), theTeam.getHumAmpNotes(), theTeam.getTimesHumAmp(), theTeam.getTimesHumSco(), theTeam);
 				System.out.println("Boop35");
 				addStatAndMatchCB(theTeam.getTeamNum());
 				System.out.println("Boop36");
@@ -1368,7 +1380,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				System.out.println("Boop37");
 				addMatchChart(matchNum, theTeam.getTeamNum());
 				System.out.println("Boop38");
-				addStatChart("Cycles");
+				addStatChart("Cycles", theTeam.getTeamNum(), matchNum);
 				System.out.println("Boop39");
 				if(theTeamPitList != null) {
 					addPitDataStuff(theTeam.getTeamNum());
@@ -1392,9 +1404,15 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				addAutoStuff(theTeam.getTeamNum(), 0);
 			}
 			if(event.getSource() == statSubB) {
+				Team theTeam;
+				String selectedTeamS = teamListCB.getSelectionModel().getSelectedItem();
+				System.out.println("Boop31.1");
+				int selectedTeam = Integer.parseInt(selectedTeamS);
+				theTeam = theTeamList.getATeam(selectedTeam);
+				int matchNum = theTeam.getMatchList().listOfMatches.get(0).getMatchNum();
 				this.getChildren().remove(lineChart);
 				String selectedStatS = statListCB.getSelectionModel().getSelectedItem();
-				addStatChart(selectedStatS);
+				addStatChart(selectedStatS, theTeam.getTeamNum(), matchNum);
 			}
 			if(event.getSource() == matchSubB) {
 				this.getChildren().remove(matchBCBarC);

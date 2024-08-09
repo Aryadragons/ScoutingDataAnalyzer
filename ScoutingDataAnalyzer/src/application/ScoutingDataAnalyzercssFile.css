@@ -45,7 +45,7 @@
     -fx-font-size: 1em;
 } 
 .chart-legend {
-   -fx-background-color:  rgb(72,72,72);
+   -fx-background-color:  rgb(105, 48, 195);
    -fx-stroke: rgb(219,178,255);
 }
 
@@ -461,44 +461,44 @@
 	-fx-background-radius:10;
 }
 #seTeamsStudMentsBP{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 350;
+	-fx-max-width: 350;
 	-fx-background-color: rgb(105, 48, 195);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
 #seTeamsBattsBP{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-height: 75;
+	-fx-max-height: 75;
+	-fx-min-width: 350;
+	-fx-max-width: 350;
 	-fx-background-color: rgb(94, 96, 206);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
 #seTeamsProgramBP{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 300;
+	-fx-max-width: 300;
 	-fx-background-color: rgb(83, 144, 217);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
 #seTeamsDriveTrBP{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-height: 125;
+	-fx-max-height: 125;
+	-fx-min-width: 350;
+	-fx-max-width: 350;
 	-fx-background-color: rgb(78, 168, 222);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
 #seTeamsAutoBP1{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
+	-fx-min-height: 50;
+	-fx-max-height: 50;
 	-fx-min-width: 200;
 	-fx-max-width: 200;
 	-fx-background-color: rgb(128, 255, 219);
@@ -506,8 +506,8 @@
 	-fx-background-radius:10;
 }
 #seTeamsAutoBP2{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
+	-fx-min-height: 50;
+	-fx-max-height: 50;
 	-fx-min-width: 200;
 	-fx-max-width: 200;
 	-fx-background-color: rgb(114, 239, 221);
@@ -515,8 +515,8 @@
 	-fx-background-radius:10;
 }
 #seTeamsAutoBP3{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
+	-fx-min-height: 50;
+	-fx-max-height: 50;
 	-fx-min-width: 200;
 	-fx-max-width: 200;
 	-fx-background-color: rgb(100, 223, 223);
@@ -524,8 +524,8 @@
 	-fx-background-radius:10;
 }
 #seTeamsAutoBP4{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
+	-fx-min-height: 50;
+	-fx-max-height: 50;
 	-fx-min-width: 200;
 	-fx-max-width: 200;
 	-fx-background-color: rgb(86, 207, 225);
@@ -533,8 +533,8 @@
 	-fx-background-radius:10;
 }
 #seTeamsAutoBP5{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
+	-fx-min-height: 50;
+	-fx-max-height: 50;
 	-fx-min-width: 200;
 	-fx-max-width: 200;
 	-fx-background-color: rgb(72, 191, 227);
@@ -542,8 +542,8 @@
 	-fx-background-radius:10;
 }
 #seTeamsAutoBP6{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
+	-fx-min-height: 50;
+	-fx-max-height: 50;
 	-fx-min-width: 200;
 	-fx-max-width: 200;
 	-fx-background-color: rgb(78, 168, 222);
@@ -551,8 +551,8 @@
 	-fx-background-radius:10;
 }
 #seTeamsAutoBP7{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
+	-fx-min-height: 50;
+	-fx-max-height: 50;
 	-fx-min-width: 200;
 	-fx-max-width: 200;
 	-fx-background-color: rgb(83, 144, 217);
@@ -560,8 +560,8 @@
 	-fx-background-radius:10;
 }
 #seTeamsAutoBP8{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
+	-fx-min-height: 50;
+	-fx-max-height: 50;
 	-fx-min-width: 200;
 	-fx-max-width: 200;
 	-fx-background-color: rgb(94, 96, 206);
@@ -569,8 +569,8 @@
 	-fx-background-radius:10;
 }
 #seTeamsAutoBP9{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
+	-fx-min-height: 50;
+	-fx-max-height: 50;
 	-fx-min-width: 200;
 	-fx-max-width: 200;
 	-fx-background-color: rgb(105, 48, 195);
@@ -651,9 +651,15 @@
 #teamTitleBP{
 	-fx-min-height: 50;
 	-fx-max-height: 50;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-width: 250;
+	-fx-max-width: 250;
 	-fx-background-color: rgb(72, 191, 227);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
+}
+#MatchBarChartBP{
+	-fx-min-height: 300;
+	-fx-max-height: 300;
+	-fx-min-width: 300;
+	-fx-max-width: 300;
 }
