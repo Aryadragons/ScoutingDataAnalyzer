@@ -61,7 +61,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	
 	public searchTeamsTab(TeamList mainTeamList, List<Integer> importedListOfTeamNums, TeamPitsList importedListOfTeamPits, DriveTeamDataList imListOfDTD, DriveTeamCommentsList imListOfDTC) {
 		Label selectTeamL = new Label("Select Team to Look Up");
-		selectTeamL.setId("TitleLabelPlay");
+		selectTeamL.setId("smallTitle");
 		teamListCB = new ComboBox<String>();
 		listOfTeamNums = importedListOfTeamNums;
 		addComboBoxItems();
@@ -72,6 +72,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		selectTeamBP.setRight(seTeamsB);
 		selectTeamBP.setLeft(teamListCB);
 		selectTeamBP.setId("searchTeamsSelTBP");
+		this.add(new Label("    "), 0, 0);
+		this.add(selectTeamBP, 1, 1);
 		theTeamList = mainTeamList;
 		theTeamPitList = importedListOfTeamPits;
 		if (importedListOfTeamPits == null) {
@@ -144,6 +146,16 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		Label avgScoSkillL = new Label("Avg Scoure Skill:");
 		Label avgAmpSkillL = new Label("Avg Amp Skill:");
 		Label avgAmpNotesL = new Label("Avg Amp Notes:");
+		avgCyclesL.setId("smallTitle");
+		avgSpeL.setId("smallTitle");
+		avgAmpL.setId("smallTitle");
+		avgTrapL.setId("smallTitle");
+		avgCliL.setId("smallTitle");
+		timesScoL.setId("smallTitle");
+		timesAmpL.setId("smallTitle");
+		avgScoSkillL.setId("smallTitle");
+		avgAmpSkillL.setId("smallTitle");
+		avgAmpNotesL.setId("smallTitle");
 		BorderPane avgCyclesBP = new BorderPane();
 		BorderPane avgSpeBP = new BorderPane();
 		BorderPane avgAmpBP = new BorderPane();
@@ -154,6 +166,52 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		BorderPane avgScoSkillBP = new BorderPane();
 		BorderPane avgAmpSkillBP = new BorderPane();
 		BorderPane avgAmpNotesBP = new BorderPane();
+		avgCyclesBP.setTop(avgCyclesL);
+		avgSpeBP.setTop(avgSpeL);
+		avgAmpBP.setTop(avgAmpL);
+		avgTrapBP.setTop(avgTrapL);
+		avgClimbBP.setTop(avgCliL);
+		timesScoBP.setTop(timesScoL);
+		timesAmpBP.setTop(timesAmpL);
+		avgScoSkillBP.setTop(avgScoSkillL);
+		avgAmpSkillBP.setTop(avgAmpSkillL);
+		avgAmpNotesBP.setTop(avgAmpNotesL);
+		Label avgCyclesAL = new Label(Double.toString(avgCy));
+		Label avgSpeAL = new Label(Double.toString(avgSpe));
+		Label avgAmpAL = new Label(Double.toString(avgAmp));
+		Label avgTrapAL = new Label(Double.toString(avgTrap));
+		Label avgCliAL = new Label(Double.toString(avgCli));
+		Label timesScoAL = new Label(Double.toString(timesAmp));
+		Label timesAmpAL = new Label(Double.toString(timesSco));
+		Label avgScoSkillAL = new Label(Double.toString(avgHumScoSkill));
+		Label avgAmpSkillAL = new Label(Double.toString(avgHumAmpSkill));
+		Label avgAmpNotesAL = new Label(Double.toString(avgHumAmpNotes));
+		avgCyclesBP.setCenter(avgCyclesAL);
+		avgSpeBP.setCenter(avgSpeAL);
+		avgAmpBP.setCenter(avgAmpAL);
+		avgTrapBP.setCenter(avgTrapAL);
+		avgClimbBP.setCenter(avgCliAL);
+		timesScoBP.setCenter(timesScoAL);
+		timesAmpBP.setCenter(timesAmpAL);
+		avgScoSkillBP.setCenter(avgScoSkillAL);
+		avgAmpSkillBP.setCenter(avgAmpSkillAL);
+		avgAmpNotesBP.setCenter(avgAmpNotesAL);
+		avgCyclesBP.setId("avgCyclesBP");
+		avgSpeBP.setId("avgSpeBP");
+		avgAmpBP.setId("avgAmpBP");
+		avgTrapBP.setId("avgTrapBP");
+		avgClimbBP.setId("avgClimbBP");
+		timesScoBP.setId("timesScoBP");
+		timesAmpBP.setId("timesAmpBP");
+		avgScoSkillBP.setId("avgScoSkillBP");
+		avgAmpSkillBP.setId("avgAmpSkillBP");
+		avgAmpNotesBP.setId("avgAmpNotesBP");
+		VBox avgRobotVB = new VBox(5);
+		avgRobotVB.getChildren().addAll(avgCyclesBP, avgSpeBP, avgAmpBP, avgTrapBP, avgClimbBP);
+		VBox avgHumanVB = new VBox(5);
+		avgHumanVB.getChildren().addAll(timesScoBP, timesAmpBP, avgScoSkillBP, avgAmpSkillBP, avgAmpNotesBP);
+		this.add(avgRobotVB, 1, 1);
+		this.add(avgHumanVB, 2, 1);
 	}
 	private void addCharts(int team, double avgCy, double avgAmp, double avgSpe, double avgTrap, double avgCli, double avgHumAmpPostion, double avgHumScoPostion, double avgHumAmpSkill, double avgHumScoSkill, double avgHumAmpNotes, int timesAmp, int timesSco) {
 		System.out.println("Team: " + team + "Cycles: " + avgCy + "Amp: " + avgAmp + "Speaker: " + avgSpe + "Trap: " + avgTrap + "Climb: " + avgCli);
@@ -1300,7 +1358,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			    System.out.println(theTeam.getHumAmpNotes());
 			    System.out.println(theTeam.getTimesHumAmp());
 			    System.out.println(theTeam.getTimesHumSco());
-				addCharts(theTeam.getTeamNum(), theTeam.getAvgCycles(), theTeam.getAvgAmp(), theTeam.getAvgSpe(), theTeam.getAvgTrap(), theTeam.getAvgClimb(), theTeam.getAvgHumAmpPostion(), theTeam.getAvgHumScoPostion(), theTeam.getHumAmpSkill(), theTeam.getHumScoSkill(), theTeam.getHumAmpNotes(), theTeam.getTimesHumAmp(), theTeam.getTimesHumSco());
+			    addAvgsStats(theTeam.getTeamNum(), theTeam.getAvgCycles(), theTeam.getAvgAmp(), theTeam.getAvgSpe(), theTeam.getAvgTrap(), theTeam.getAvgClimb(), theTeam.getAvgHumAmpPostion(), theTeam.getAvgHumScoPostion(), theTeam.getHumAmpSkill(), theTeam.getHumScoSkill(), theTeam.getHumAmpNotes(), theTeam.getTimesHumAmp(), theTeam.getTimesHumSco());
 				System.out.println("Boop35");
 				addStatAndMatchCB(theTeam.getTeamNum());
 				System.out.println("Boop36");
