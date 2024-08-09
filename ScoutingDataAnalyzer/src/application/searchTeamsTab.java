@@ -186,6 +186,16 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		Label avgScoSkillAL = new Label(Double.toString(avgHumScoSkill));
 		Label avgAmpSkillAL = new Label(Double.toString(avgHumAmpSkill));
 		Label avgAmpNotesAL = new Label(Double.toString(avgHumAmpNotes));
+		avgCyclesAL.setId("avgStat");
+		avgSpeAL.setId("avgStat");
+		avgAmpAL.setId("avgStat");
+		avgTrapAL.setId("avgStat");
+		avgCliAL.setId("avgStat");
+		timesScoAL.setId("avgStat");
+		timesAmpAL.setId("avgStat");
+		avgScoSkillAL.setId("avgStat");
+		avgAmpSkillAL.setId("avgStat");
+		avgAmpNotesAL.setId("avgStat");
 		avgCyclesBP.setCenter(avgCyclesAL);
 		avgSpeBP.setCenter(avgSpeAL);
 		avgAmpBP.setCenter(avgAmpAL);
@@ -210,8 +220,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		avgRobotVB.getChildren().addAll(avgCyclesBP, avgSpeBP, avgAmpBP, avgTrapBP, avgClimbBP);
 		VBox avgHumanVB = new VBox(5);
 		avgHumanVB.getChildren().addAll(timesScoBP, timesAmpBP, avgScoSkillBP, avgAmpSkillBP, avgAmpNotesBP);
-		this.add(avgRobotVB, 1, 1);
-		this.add(avgHumanVB, 2, 1);
+		this.add(avgRobotVB, 1, 2);
+		this.add(avgHumanVB, 2, 2);
 	}
 	private void addCharts(int team, double avgCy, double avgAmp, double avgSpe, double avgTrap, double avgCli, double avgHumAmpPostion, double avgHumScoPostion, double avgHumAmpSkill, double avgHumScoSkill, double avgHumAmpNotes, int timesAmp, int timesSco) {
 		System.out.println("Team: " + team + "Cycles: " + avgCy + "Amp: " + avgAmp + "Speaker: " + avgSpe + "Trap: " + avgTrap + "Climb: " + avgCli);
@@ -365,7 +375,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(350, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 1, 2);
+			this.add(lineChart, 2, 2);
 		}
 		if(stat.compareTo("Amp") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -388,7 +398,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(350, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 1, 2);
+			this.add(lineChart, 2, 2);
 		}
 		if(stat.compareTo("Specker") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -411,7 +421,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(350, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 1, 2);
+			this.add(lineChart, 2, 2);
 		}
 		if(stat.compareTo("Trap") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -434,7 +444,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(350, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 1, 2);
+			this.add(lineChart, 2, 2);
 		}
 		if(stat.compareTo("Climb") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -457,7 +467,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(350, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 1, 2);
+			this.add(lineChart, 2, 2);
 		}
 		if(stat.compareTo("Amp Skill") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -480,7 +490,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(350, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 1, 2);
+			this.add(lineChart, 2, 2);
 		}
 		if(stat.compareTo("Scoure Skill") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -503,7 +513,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(350, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 1, 2);
+			this.add(lineChart, 2, 2);
 		}
 		if(stat.compareTo("Amp Notes") == 0) {
 			final CategoryAxis xAxis = new CategoryAxis();
@@ -526,7 +536,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			lineChart.setMaxSize(350, 250);
 			lineChart.getData().add(series);
-			this.add(lineChart, 1, 2);
+			this.add(lineChart, 2, 2);
 		}
 	}
 	
@@ -607,7 +617,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    matchBCBarC.setBarGap(2);
 		    matchBCBarC.setMinSize(150, 100);
 		    matchBCBarC.setMaxSize(500, 250);
-		    this.add(matchBCBarC, 1, 1);
+		    this.add(matchBCBarC, 2, 1);
 		    System.out.println("Boop37.6");
 		}
 		if(matchPos.compareTo("Scoure") == 0) {
@@ -656,7 +666,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    matchBCBarC.setBarGap(2);
 		    matchBCBarC.setMinSize(150, 150);
 		    matchBCBarC.setMaxSize(500, 250);
-		    this.add(matchBCBarC, 1, 1);
+		    this.add(matchBCBarC, 2, 1);
 		}
 		if(matchPos.compareTo("None") == 0) {
 			int matchCy = (theMatch.getMatchAmp() + theMatch.getMatchSpe() + theMatch.getMatchTrap());
@@ -700,7 +710,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    matchBCBarC.setBarGap(2);
 		    matchBCBarC.setMinSize(150, 175);
 		    matchBCBarC.setMaxSize(500, 250);
-		    this.add(matchBCBarC, 1, 1);
+		    this.add(matchBCBarC, 2, 1);
 		}
 	}
 	
@@ -722,40 +732,40 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		String studs = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfStud());
 		Label studsL = new Label(studs);
 		studsL.setId("studslabel");
-		this.add(studsL, 0, 5);
+		
 		//mentors
 		String ments = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfMent());
 		Label mentsL = new Label(ments);
 		mentsL.setId("studslabel");
-		this.add(mentsL, 0, 6);
+
 		//Robot Battiers
 		String rBs = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfRobotBat());
 		Label rBsL = new Label(rBs);
 		rBsL.setId("studslabel");
-		this.add(rBsL, 0, 7);
+		
 		//Program Lan
 		String progLans = theTeamPitList.getATeamPit(teamNum).getProgramLan();
 		Label progLansL = new Label(progLans);
 		progLansL.setId("studslabel");
-		this.add(progLansL, 1, 5);
+
 		//VisCamera
 		Label visCamsL = null;
 		if(theTeamPitList.getATeamPit(teamNum).getDoHaveVis().compareTo("yes") == 0) {
 			String visCams = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfVisCam());
 			visCamsL = new Label(visCams);
 			visCamsL.setId("studslabel");
-			this.add(visCamsL, 1, 7);
+			
 		}
 		//Drive Cameras
 		String drCams = Integer.toString(theTeamPitList.getATeamPit(teamNum).getNumOfDriverCams());
 		Label drCamsL = new Label(drCams);
 		drCamsL.setId("studslabel");
-		this.add(drCamsL, 1, 8);
+		
 		//Drive Train Type
 		String drTypes = theTeamPitList.getATeamPit(teamNum).getDrTrType();
 		Label drTypesL = new Label(drTypes);
 		drTypesL.setId("studslabel");
-		this.add(drTypesL, 0, 8);
+		
 		//Swerve Kind
 		Label swTypesL = null;
 		Label swGearsL = null;
@@ -763,21 +773,21 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			String swTypes = theTeamPitList.getATeamPit(teamNum).getSwevType();
 			swTypesL = new Label(swTypes);
 			swTypesL.setId("studslabel");
-			this.add(swTypesL, 0, 10);
+			
 		//Swerve Gearing
 			if(theTeamPitList.getATeamPit(teamNum).getSwevType().compareTo("Custom") == 0) {
 			} else {
 				String swGears = theTeamPitList.getATeamPit(teamNum).getSwevGearing();
 				swGearsL = new Label(swGears);
 				swGearsL.setId("studslabel");
-				this.add(swGearsL, 0, 11);
+				
 			}
 		}
 		//Drive Train Motors
 		String drMots = theTeamPitList.getATeamPit(teamNum).getDrTrMotorType();
 		Label drMotsL = new Label(drMots);
 		drMotsL.setId("studslabel");
-		this.add(drMotsL, 0, 9);
+		
 		//questions Vboxes
 		VBox studsMentsQVB = new VBox(5);
 		studsMentsQVB.getChildren().addAll(numStudsQL, numMentsQL);
@@ -823,13 +833,13 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		battsBP.setId("seTeamsBattsBP");
 		progBP.setId("seTeamsProgramBP");
 		driveBP.setId("seTeamsDriveTrBP");
-		this.add(studsMentsBP, 0, 12);
-		this.add(battsBP, 0, 13);
-		this.add(progBP, 0, 14);
-		this.add(driveBP, 0, 15);
-		this.add(new Label(""), 0, 12);
-		this.add(new Label(""), 0, 13);
-		this.add(new Label(""), 0, 14);
+		this.add(studsMentsBP, 1, 10);
+		this.add(battsBP, 1, 11);
+		this.add(progBP, 1, 12);
+		this.add(driveBP, 1, 13);
+		this.add(new Label(""), 1, 10);
+		this.add(new Label(""), 1, 11);
+		this.add(new Label(""), 1, 12);
 		System.out.println("BoopPits");
 		//autos
 		Label autoTitle = new Label("Autos:");
@@ -862,7 +872,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			}
 			System.out.println("BoopPits3");
 			String autoName = totalPieces + " Piece, " + startPosName + " Spe: " + theTeamPitList.getATeamPit(teamNum).getTheAutoList().listOfAutos.get(i).getTotalSpecker();
-			Label autoNameL = new Label("autoName");
+			Label autoNameL = new Label(autoName);
 			BorderPane autoPane = new BorderPane();
 			autoPane.setId("seTeamsAutoBP" + autoNumBP);
 			autoPane.setCenter(autoNameL);
@@ -894,7 +904,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		cyclePieC.setMinSize(300, 300);
 		cyclePieC.setMaxSize(300, 300);
 		cyclePieC.setLabelsVisible(true);
-		this.add(cyclePieC, 0, 4);
+		this.add(cyclePieC, 1, 4);
 		//adding human player pie chart
 		int ampHumValue = ((theTeam.getTimesHumAmp() * 100)/theTeam.getTotalMatchesPlayed());
 		int scoHumValue = ((theTeam.getTimesHumSco() * 100)/theTeam.getTotalMatchesPlayed());
@@ -910,11 +920,11 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		if(theDTDList.getATeamPit(teamNum).getIsAdult() == true) {
 			Label adultWarningL = new Label("                                                        " + "Adult Drive Coach");
 			adultWarningL.setId("ADC");
-			this.add(adultWarningL, 0, 0);
+			this.add(adultWarningL, 1, 0);
 		}
 		//driver stuff
 		Label driverInfoL = new Label("Driver Info:");
-		this.add(driverInfoL, 0, 12);
+		this.add(driverInfoL, 1, 12);
 		driverInfoL.setId("TitleLabel");
 		Label saDriverTourQL = new Label("Same Driver Throughout the Tourment?");
 		Label saDriverLastQL = new Label("Same Driver as Last Tourment?");
@@ -944,7 +954,6 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		}
 		Label saDrTourL = new Label(saDrTour);
 		saDrTourL.setId("studslabel");
-		this.add(saDrTourL, 0, 13);
 		String saDrPast;
 		if(theDTDList.getATeamPit(teamNum).getSaDrPastTour() == true) {
 			saDrPast = "Yes";
@@ -953,7 +962,6 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		}
 		Label saDrPastL = new Label(saDrPast);
 		saDrPastL.setId("studslabel");
-		this.add(saDrPastL, 0, 14);
 		String saDrLast;
 		if(theDTDList.getATeamPit(teamNum).getSaDrLastYear() == true) {
 			saDrLast = "Yes";
@@ -962,28 +970,22 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		}
 		Label saDrLastL = new Label(saDrLast);
 		saDrLastL.setId("studslabel");
-		this.add(saDrLastL, 0, 15);
 		String saDrThis = Integer.toString(theDTDList.getATeamPit(teamNum).getDrHourThisBot());
 		Label saDrThisL = new Label(saDrThis);
 		saDrThisL.setId("studslabel");
-		this.add(saDrThisL, 0, 16);
 		String saDrSame = Integer.toString(theDTDList.getATeamPit(teamNum).getDrHourSameDrTr());
 		Label saDrSameL = new Label(saDrSame);
 		saDrSameL.setId("studslabel");
-		this.add(saDrSameL, 0, 17);
 		String saDrAny = Integer.toString(theDTDList.getATeamPit(teamNum).getDrHourAnyBot());
 		Label saDrAnyL = new Label(saDrAny);
 		saDrAnyL.setId("studslabel");
-		this.add(saDrAnyL, 0, 18);
 		//operator stuff
 		Label opInfoL = new Label("Operator Info:");
 		opInfoL.setId("TitleLabel");
-		this.add(opInfoL, 1, 12);
 		//add stats
 		String opInfoType = theDTDList.getATeamPit(teamNum).getOpRole();
 		Label opInfoTypeL = new Label(opInfoType);
 		opInfoTypeL.setId("TitleLabel");
-		this.add(opInfoTypeL, 1, 12);
 		String saOpTour;
 		if(theDTDList.getATeamPit(teamNum).getSaOpThisTour() == true){
 			saOpTour = "Yes";
@@ -1010,15 +1012,12 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		}
 		Label saOpLastL = new Label(saOpLast);
 		saOpLastL.setId("studslabel");
-		this.add(saOpLastL, 1, 15);
 		String saOpThis = Integer.toString(theDTDList.getATeamPit(teamNum).getOpHourThisBot());
 		Label saOpThisL = new Label(saOpThis);
 		saOpThisL.setId("studslabel");
-		this.add(saOpThisL, 1, 16);
 		String saOpAny = Integer.toString(theDTDList.getATeamPit(teamNum).getOpHourAnyBot());
 		Label saOpAnyL = new Label(saOpAny);
 		saOpAnyL.setId("studslabel");
-		this.add(saOpAnyL, 1, 17);
 		VBox saDriverVB = new VBox(5);
 		saDriverVB.getChildren().addAll(saDrTourL, saDrPastL, saDrLastL);
 		VBox hourDriverVB = new VBox(5);
@@ -1043,8 +1042,8 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		hourOperatorBP.setLeft(hourOperatorQVB);
 		hourOperatorBP.setRight(hourOperatorVB);
 		hourOperatorBP.setId("hourOperatorBP");
-		this.add(saDriverBP, 0, 15);
-		this.add(hourDriverBP, 0, 16);
+		this.add(saDriverBP, 1, 15);
+		this.add(hourDriverBP, 1, 16);
 		this.add(saOperatorBP, 1, 15);
 		this.add(hourOperatorBP, 1, 16);
 		//drive coach stuff
@@ -1064,11 +1063,9 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		}
 		Label adultDCL = new Label(adultDC);
 		adultDCL.setId("studslabel");
-		this.add(adultDCL, 1, 19);
 		String timeDC = theDTDList.getATeamPit(teamNum).getTimeDriveCoach();
 		Label timeDCL = new Label(timeDC);
 		timeDCL.setId("studslabel");
-		this.add(timeDCL, 1, 20);
 		VBox drCoachVB = new VBox(5);
 		drCoachVB.getChildren().addAll(adultDCL, timeDCL);
 		BorderPane drCoachBP = new BorderPane();
@@ -1077,88 +1074,88 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		drCoachBP.setId("drCoachVB");
 		//Human Player stuff
 		Label humInfoL = new Label("Human Player Info:");
-		this.add(humInfoL, 0, 19);
 		humInfoL.setId("TitleLabel");
 		Label humHoursQL = new Label("Hours Human Player Practiced");
 		//add stats
 		String humPrac = Integer.toString(theDTDList.getATeamPit(teamNum).getHumHoursPracitce());
 		Label humPracL = new Label("                                    " + humPrac);
 		humPracL.setId("studslabel");
-		this.add(humPracL, 0, 20);
 		BorderPane humPlayerBP = new BorderPane();
 		humPlayerBP.setLeft(humHoursQL);
 		humPlayerBP.setRight(humPracL);
 		humPlayerBP.setId("humPlayerBP");
+		this.add(drCoachBP, 1, 18);
+		this.add(humPlayerBP, 1, 19);
 	}
 	
 	public void addDTCStuff(int teamNum){
 		if(theDTCList.getADriveTeamComments(teamNum).gettotalBLevel() >= 2) {
 			Label warning1 = new Label("                         Warning Level 1");
 			warning1.setId("warn1");
-			this.add(warning1, 1, 0);
+			this.add(warning1, 2, 0);
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).gettotalBLevel() >= 5) {
 			Label warning2 = new Label("                         Warning Level 2");
 			warning2.setId("warn2");
-			this.add(warning2, 1, 0);
+			this.add(warning2, 2, 0);
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).gettotalBLevel() >= 10) {
 			Label warning3 = new Label("                         Warning Level 3");
 			warning3.setId("warn3");
-			this.add(warning3, 1, 0);
+			this.add(warning3, 2, 0);
 		}
 		Label dtcC = new Label("Comments From Drive Team:");
 		dtcC.setId("TitleLabel");
-		this.add(dtcC, 0, 21);
+		this.add(dtcC, 1, 21);
 		int stuff = 22;
 		int numOfB = 0;
 		if(theDTCList.getADriveTeamComments(teamNum).getYellLevel() != 0) {
 			stuff++;
 			numOfB++;
-			this.add(new Label("Yell Level: " + theDTCList.getADriveTeamComments(teamNum).getYellLevel()), 0, stuff);
+			Label yellL = new Label("Yell Level: " + theDTCList.getADriveTeamComments(teamNum).getYellLevel());
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).getControlLevel() != 0) {
 			stuff++;
 			numOfB++;
-			this.add(new Label("Control Level: " + theDTCList.getADriveTeamComments(teamNum).getControlLevel()), 0, stuff);
+			Label controlL = new Label("Control Level: " + theDTCList.getADriveTeamComments(teamNum).getControlLevel());
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).getPhysicalLevel() != 0) {
 			stuff++;
 			numOfB++;
-			this.add(new Label("Physical Level: " + theDTCList.getADriveTeamComments(teamNum).getPhysicalLevel()), 0, stuff);
+			Label physicalL = new Label("Physical Level: " + theDTCList.getADriveTeamComments(teamNum).getPhysicalLevel());
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).getDiscrimLevel() != 0) {
 			stuff++;
 			numOfB++;
-			this.add(new Label("Discrimination Level: " + theDTCList.getADriveTeamComments(teamNum).getDiscrimLevel()), 0, stuff);
+			Label disLevelL = new Label("Discrimination Level: " + theDTCList.getADriveTeamComments(teamNum).getDiscrimLevel());
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).getDisCrimType() != null) {
 			stuff++;
 			numOfB++;
-			this.add(new Label("Type/s of Discrimination: " + theDTCList.getADriveTeamComments(teamNum).getDisCrimType()), 0, stuff);
+			Label disTypeL = new Label("Type/s of Discrimination: " + theDTCList.getADriveTeamComments(teamNum).getDisCrimType());
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).getOtherBLevel() != 0) {
 			stuff++;
 			numOfB++;
-			this.add(new Label("Other Bad Stuff Level: " + theDTCList.getADriveTeamComments(teamNum).getOtherBLevel()), 0, stuff);
+			Label otherBL = new Label("Other Bad Stuff Level: " + theDTCList.getADriveTeamComments(teamNum).getOtherBLevel());
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).getFunLevel() != 0) {
 			stuff++;
-			this.add(new Label("Fun Level: " + theDTCList.getADriveTeamComments(teamNum).getFunLevel()), 1, (stuff - numOfB));
+			Label FunL = new Label("Fun Level: " + theDTCList.getADriveTeamComments(teamNum).getFunLevel());
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).getStrategyLevel() != 0) {
 			stuff++;
-			this.add(new Label("Strategy Level: " + theDTCList.getADriveTeamComments(teamNum).getStrategyLevel()), 1, (stuff - numOfB));
+			Label stratL = new Label("Strategy Level: " + theDTCList.getADriveTeamComments(teamNum).getStrategyLevel());
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).getOtherGLevel() != 0) {
 			stuff++;
-			this.add(new Label("Ohter Good Stuff Level: " + theDTCList.getADriveTeamComments(teamNum).getOtherGLevel()), 1, (stuff - numOfB));
+			Label otherGL = new Label("Ohter Good Stuff Level: " + theDTCList.getADriveTeamComments(teamNum).getOtherGLevel());
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).getComments() != null) {
 			stuff++;
-			this.add(new Label("Comments: "), 0, stuff);
+			Label commentsTitleL = new Label("Comments: ");
 			stuff++;
-			this.add(new Label(theDTCList.getADriveTeamComments(teamNum).getComments()), 0, stuff);
+			Label commentL = new Label(theDTCList.getADriveTeamComments(teamNum).getComments());
 		}
 	}
 	
@@ -1332,8 +1329,13 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				this.getChildren().clear();
 				System.out.println("Boop32");
 				String teamNumS = Integer.toString(theTeam.getTeamNum());
-				String title = (teamNumS + " " + theTeamPitList.getATeamPit(theTeam.getTeamNum()).getTeamName()+"'s Stats:");
-				this.add(new Label(title), 0, 0);
+				Label title = new Label(teamNumS + " " + theTeamPitList.getATeamPit(theTeam.getTeamNum()).getTeamName()+"'s Stats:");
+				title.setId("smallTitle");
+				BorderPane teamTitleBP = new BorderPane();
+				teamTitleBP.setLeft(title);
+				teamTitleBP.setId("teamTitleBP");
+				this.add(new Label("    "), 0, 0);
+				this.add(teamTitleBP, 1, 1);
 				this.add(new Label("Comments:  "), 3, 0);
 				List<String> commentList = theTeam.getCommentsList();
 				commentsTA = new TextArea();

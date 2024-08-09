@@ -371,91 +371,91 @@
 	-fx-background-radius:10;
 }
 #avgCyclesBP{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
 	-fx-background-color: rgb(128, 255, 219);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
 #avgSpeBP{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
 	-fx-background-color: rgb(114, 239, 221);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
 #avgAmpBP{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
 	-fx-background-color: rgb(100, 223, 223);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
 #avgTrapBP{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
 	-fx-background-color: rgb(86, 207, 225);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
 #avgClimbBP{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
 	-fx-background-color: rgb(72, 191, 227);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
 #timesScoBP{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
 	-fx-background-color: rgb(114, 239, 221);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
 #timesAmpBP{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
 	-fx-background-color: rgb(100, 223, 223);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
 #avgScoSkillBP{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
 	-fx-background-color: rgb(86, 207, 225);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
 #avgAmpSkillBP{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
 	-fx-background-color: rgb(72, 191, 227);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
 #avgAmpNotesBP{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
 	-fx-background-color: rgb(78, 168, 222);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
@@ -642,9 +642,18 @@
 }
 #smallTitle{
 	-fx-text-fill: rgb(55, 0, 93);
-	-fx-font-size: 18;
+	-fx-font-size: 22;
 }
 #avgStat{
-	-fx-font-size: 30;
+	-fx-font-size: 35;
 	-fx-text-fill: rgb(219,178,255);
+}
+#teamTitleBP{
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
 }
