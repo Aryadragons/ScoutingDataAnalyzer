@@ -1,6 +1,7 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AutoList {
 	
@@ -60,6 +61,19 @@ public class AutoList {
 		}else {
 			System.out.println("Boop30.11");
 			return null;
+		}
+	}
+	
+	public List<Auto> getAllAutos(int startPos, int control, int spe){
+		System.out.println("BoopGAA0");
+		int found = 0;
+		int searched = 0;
+		int size = listOfAutos.size();
+		int i = 0;
+		Auto A = new Auto();
+		System.out.println("BoopGAA1");
+		while(i < size & found == 0) {
+			
 		}
 	}
 }
