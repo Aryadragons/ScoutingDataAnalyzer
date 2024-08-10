@@ -578,55 +578,55 @@
 	-fx-background-radius:10;
 }
 #saDriverBP{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 350;
+	-fx-max-width: 350;
 	-fx-background-color: rgb(83, 144, 217);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
 #hourDriverBP{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 350;
+	-fx-max-width: 350;
 	-fx-background-color: rgb(94, 96, 206);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
 #saOperatorBP{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 350;
+	-fx-max-width: 350;
 	-fx-background-color: rgb(94, 96, 206);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
 #hourOperatorBP{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 350;
+	-fx-max-width: 350;
 	-fx-background-color: rgb(105, 48, 195);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
 #drCoachVB{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-height: 80;
+	-fx-max-height: 80;
+	-fx-min-width: 350;
+	-fx-max-width: 350;
 	-fx-background-color: rgb(105, 48, 195);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
 #humPlayerBP{
-	-fx-min-height: 200;
-	-fx-max-height: 200;
-	-fx-min-width: 200;
-	-fx-max-width: 200;
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-min-width: 350;
+	-fx-max-width: 350;
 	-fx-background-color: rgb(94, 96, 206);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
@@ -662,4 +662,13 @@
 	-fx-max-height: 300;
 	-fx-min-width: 300;
 	-fx-max-width: 300;
+}
+#commentsBP{
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
 }
