@@ -1,5 +1,7 @@
 package application;
 
+import java.util.List;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
@@ -7,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 
 public class searchAutosTab extends GridPane implements EventHandler<ActionEvent>{
 	
@@ -77,11 +80,49 @@ public class searchAutosTab extends GridPane implements EventHandler<ActionEvent
 				int autoControled;
 				int autoSpe;
 				int autoAmp;
+				List<Auto> autos;
 				autoStartPosS = startPosTF.getText();
 				autoControledS = notesPickedTF.getText();
 				autoSpeS = notesSpeTF.getText();
 				autoAmpS = notesAmpTF.getText();
-				
+				autoStartPos = Integer.parseInt(autoStartPosS);
+				autoControled = Integer.parseInt(autoControledS);
+				autoSpe = Integer.parseInt(autoSpeS);
+				autoAmp = Integer.parseInt(autoAmpS);
+				autos = theAutoList.getAllAutos(autoStartPos, autoControled, autoSpe);
+				for(int i = 0; i < autos.size(); i++) {
+					Auto a = autos.get(i);
+					int teamNum = a.getTeamNum();
+					int numCenNotes = a.getNumCenNotes();
+					int timesUsed = a.getTimesUsed();
+					double avgSpe = a.getAvgSpe();
+					double avgAmp = a.getAvgAmp();
+					double avgControl = a.getAvgControl();
+					Label teamNumL = new Label(Integer.toString(teamNum));
+					Label numCenNotesL = new Label(Integer.toString(numCenNotes));
+					Label timesUsedL = new Label(Integer.toString(timesUsed));
+					Label avgSpeL = new Label(Double.toString(avgSpe));
+					Label avgAmpL = new Label(Double.toString(avgAmp));
+					Label avgControlL = new Label(Double.toString(avgControl));
+					teamNumL.setId("smallTitle");
+					numCenNotesL.setId("avgStat");
+					timesUsedL.setId("avgStat");
+					avgSpeL.setId("avgStat");
+					avgAmpL.setId("avgStat");
+					avgControlL.setId("avgStat");
+					Label numCenNotesQL = new Label("Num Of Center Notes:");
+					Label timesUsedQL = new Label("Times Used:");
+					Label avgSpeQL = new Label("Avg Speaker:");
+					Label avgAmpQL = new Label("Avg Amp:");
+					Label avgControlQL = new Label("Avg Notes Controled:");
+					numCenNotesQL.setId("smallTitle");
+					timesUsedQL.setId("smallTitle");
+					avgSpeQL.setId("smallTitle");
+					avgAmpQL.setId("smallTitle");
+					avgControlQL.setId("smallTitle");
+					VBox autoStats = new VBox(5);
+					autoStats.getChildren().addAll(teamNumL, numCenNotesQL, numCenNotesL, timesUsedQL, timesUsedL, avgSpeQL, avgSpeL, avgAmpQL, avgAmpL, avgControlQL, avgControl);
+				}
 			}
 		}catch(Exception e) {
 			System.out.println("Error: " + e);
