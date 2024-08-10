@@ -58,6 +58,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	private Color midPurC = Color.web("rgb(170,0,255)");
 	private ComboBox<String> autosListCB;
 	private Button submitAutoB;
+	private BorderPane statCBBP = new BorderPane();
 	
 	public searchTeamsTab(TeamList mainTeamList, List<Integer> importedListOfTeamNums, TeamPitsList importedListOfTeamPits, DriveTeamDataList imListOfDTD, DriveTeamCommentsList imListOfDTC) {
 		Label selectTeamL = new Label("Select Team to Look Up");
@@ -108,8 +109,6 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		statListCB.getItems().add("Amp Skill");
 		statListCB.getItems().add("Scource Skill");
 		statListCB.getItems().add("Amp Notes");
-		statListCB.snappedTopInset();
-		this.add(statListCB, 3, 2);
 		//Match CB
 		matchListCB = new ComboBox<String>();
 		MatchList teamML = theTeamList.getATeam(teamNum).getMatchList();
@@ -119,19 +118,11 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			String mNumS = Integer.toString(mNum);
 			matchListCB.getItems().add(mNumS);
 		}
-		matchListCB.snappedBottomInset();
-		this.add(matchListCB, 3, 1);
 		//adding buttons
 		statSubB = new Button("Submit");
-		statSubB.snappedRightInset();
-		statSubB.snappedTopInset();
 		statSubB.setOnAction(this);
-		this.add(statSubB, 4, 2);
 		matchSubB = new Button("Submit");
-		matchSubB.snappedRightInset();
-		matchSubB.snappedBottomInset();
 		matchSubB.setOnAction(this);
-		this.add(matchSubB, 4, 1);
 		
 	}
 	
@@ -730,7 +721,12 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    matchBCBarC.setMaxSize(500, 250);
 		    matchChartVB.getChildren().add(matchBCBarC);
 		}
-		this.add(matchChartVB, 2, 1);
+		BorderPane matchStatChartBP = new BorderPane();
+		matchStatChartBP.setLeft(matchChartVB);
+		matchStatChartBP.setTop(statListCB);
+		matchStatChartBP.setBottom(matchListCB);
+		this.add(matchStatChartBP, 2, 1);
+		this.add(statSubB, 2, 2);
 		
 	}
 	
@@ -965,7 +961,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		VBox saOperatorQVB = new VBox(5);
 		saOperatorQVB.getChildren().addAll(saOperatorTourQL, saOperatorLastQL, saOperatorYearQL);
 		VBox hourOperatorQVB = new VBox(5);
-		hourDriverQVB.getChildren().addAll(hoursThisOpQL, hoursAnyOpQL);
+		hourOperatorQVB.getChildren().addAll(hoursThisOpQL, hoursAnyOpQL);
 		//add stats
 		String saDrTour;
 		if(theDTDList.getATeamPit(teamNum).getSaDrThisTour() == true) {
@@ -1207,13 +1203,12 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				String autoName = totalPieces + " Piece, " + startPosName + " Spe: " + theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(i).getTotalSpecker();
 				autosListCB.getItems().add(autoName);
 			}
-			this.add(autosListCB, 4, 2);
+			
 			submitAutoB = new Button("Submit Auto");
 			submitAutoB.setOnAction(this);
-			this.add(submitAutoB, 2, 2);
 			Auto A = theTeamList.getATeam(teamNum).getAutoList().listOfAutos.get(autoNumber);
 			if(A.getTimesUsed() == 0) {
-				this.add(new Label("They Havn't Used This Auto"), 4, 1);
+				this.add(new Label("They Havn't Used This Auto"), 3, 1);
 			}else{
 				double speAvg = A.getAvgSpe();
 				double ampAvg = A.getAvgSpe();
@@ -1242,9 +1237,11 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 			    autoBCBarC.setMaxSize(300, 250);
 			    BorderPane autoBarChartBP = new BorderPane();
 			    autoBarChartBP.setTop(autoBCBarC);
-			    this.add(autoBarChartBP, 3, 1);
-			    this.add(new Label("This Auto Has Been Used " + A.getTimesUsed() + " Times"), 4, 0);
+			    this.add(new Label("This Auto Has Been Used " + A.getTimesUsed() + " Times"), 3, 0);
 			}
+			VBox autoVB = new VBox(5);
+			autoVB.getChildren().addAll(autosListCB, autoBCBarC,submitAutoB);
+			this.add(autoVB, 3, 1);
 			// pie chart
 		    int numOfAutosUsed = 0;
 		    System.out.println("BoopAutoPC");
@@ -1361,11 +1358,12 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 					commentsS = commentsS + "\n" +commentList.get(i);
 				}
 				BorderPane commentBP = new BorderPane();
-				commentBP.getChildren().addAll(commentsL, commentsTA);
+				commentBP.setTop(commentsL);
+				commentBP.setLeft(commentsTA);
 				
 				commentBP.setId("commentsBP");
 				commentsTA.setText(commentsS);
-				this.add(commentBP, 3, 2);
+				this.add(commentBP, 4, 2);
 				System.out.println("Boop33");
 				if (theTeam.getTotalMatchesPlayed() == 1) {
 					this.add(new Label("Did 1 Match"), 1, 2);
@@ -1417,10 +1415,12 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				System.out.println("Boop31.1");
 				int selectedTeam = Integer.parseInt(selectedTeamS);
 				theTeam = theTeamList.getATeam(selectedTeam);
-				int matchNum = theTeam.getMatchList().listOfMatches.get(0).getMatchNum();
 				this.getChildren().remove(lineChart);
 				String selectedStatS = statListCB.getSelectionModel().getSelectedItem();
-				addStatChart(selectedStatS, theTeam.getTeamNum(), matchNum);
+				this.getChildren().remove(matchBCBarC);
+				String selectedMatchS = matchListCB.getSelectionModel().getSelectedItem();
+				int selectedMatch= Integer.parseInt(selectedMatchS);
+				addStatChart(selectedStatS, theTeam.getTeamNum(), selectedMatch);
 			}
 			if(event.getSource() == matchSubB) {
 				this.getChildren().remove(matchBCBarC);
