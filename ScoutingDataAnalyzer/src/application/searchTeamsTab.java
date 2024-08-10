@@ -1127,53 +1127,86 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		this.add(dtcC, 1, 21);
 		int stuff = 22;
 		int numOfB = 0;
+		VBox badStuffVB = new VBox(5);
+		VBox goodStuffVB = new VBox(5);
 		if(theDTCList.getADriveTeamComments(teamNum).getYellLevel() != 0) {
 			stuff++;
 			numOfB++;
-			Label yellL = new Label("Yell Level: " + theDTCList.getADriveTeamComments(teamNum).getYellLevel());
+			Label yell1L = new Label("Yell Level: ");
+			Label yell2L = new Label(Integer.toString(theDTCList.getADriveTeamComments(teamNum).getYellLevel()));
+			BorderPane yellBP = new BorderPane();
+			yellBP.setTop(yell1L);
+			yellBP.setCenter(yell2L);
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).getControlLevel() != 0) {
 			stuff++;
 			numOfB++;
 			Label controlL = new Label("Control Level: " + theDTCList.getADriveTeamComments(teamNum).getControlLevel());
+			BorderPane controlBP = new BorderPane();
+			controlBP.setTop(control1L);
+			controlBP.setCenter(control2L);
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).getPhysicalLevel() != 0) {
 			stuff++;
 			numOfB++;
 			Label physicalL = new Label("Physical Level: " + theDTCList.getADriveTeamComments(teamNum).getPhysicalLevel());
+			BorderPane physicalBP = new BorderPane();
+			physicalBP.setTop(physical1L);
+			physicalBP.setCenter(physical2L);
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).getDiscrimLevel() != 0) {
 			stuff++;
 			numOfB++;
 			Label disLevelL = new Label("Discrimination Level: " + theDTCList.getADriveTeamComments(teamNum).getDiscrimLevel());
+			BorderPane disLevelBP = new BorderPane();
+			disLevelBP.setTop(disLevel1L);
+			disLevelBP.setCenter(disLevel2L);
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).getDisCrimType() != null) {
 			stuff++;
 			numOfB++;
 			Label disTypeL = new Label("Type/s of Discrimination: " + theDTCList.getADriveTeamComments(teamNum).getDisCrimType());
+			BorderPane disTypeBP = new BorderPane();
+			disTypeBP.setTop(disType1L);
+			disTypeBP.setCenter(disType2L);
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).getOtherBLevel() != 0) {
 			stuff++;
 			numOfB++;
 			Label otherBL = new Label("Other Bad Stuff Level: " + theDTCList.getADriveTeamComments(teamNum).getOtherBLevel());
+			BorderPane otherBBP = new BorderPane();
+			otherBBP.setTop(otherB1L);
+			otherBBP.setCenter(otherB2L);
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).getFunLevel() != 0) {
 			stuff++;
 			Label FunL = new Label("Fun Level: " + theDTCList.getADriveTeamComments(teamNum).getFunLevel());
+			BorderPane otherBBP = new BorderPane();
+			otherBBP.setTop(otherB1L);
+			otherBBP.setCenter(otherB2L);
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).getStrategyLevel() != 0) {
 			stuff++;
 			Label stratL = new Label("Strategy Level: " + theDTCList.getADriveTeamComments(teamNum).getStrategyLevel());
+			BorderPane stratBP = new BorderPane();
+			stratBP.setTop(strat1L);
+			stratBP.setCenter(strat2L);
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).getOtherGLevel() != 0) {
 			stuff++;
 			Label otherGL = new Label("Ohter Good Stuff Level: " + theDTCList.getADriveTeamComments(teamNum).getOtherGLevel());
+			BorderPane otherGBP = new BorderPane();
+			otherGBP.setTop(otherG1L);
+			otherGBP.setCenter(otherG2L);
 		}
 		if(theDTCList.getADriveTeamComments(teamNum).getComments() != null) {
 			stuff++;
 			Label commentsTitleL = new Label("Comments: ");
 			stuff++;
 			Label commentL = new Label(theDTCList.getADriveTeamComments(teamNum).getComments());
+			BorderPane commentsBP = new BorderPane();
+			commentsBP.setTop(comments1L);
+			commentsBP.setCenter(comments2L);
 		}
 	}
 	

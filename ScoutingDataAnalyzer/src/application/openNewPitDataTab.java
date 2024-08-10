@@ -42,6 +42,7 @@ public class openNewPitDataTab extends GridPane implements EventHandler<ActionEv
 		submitAddB.setOnAction(this);
 		VBox replaceLVB = new VBox(5);
 		Label openReL = new Label("Open New Data That Will Replace All Pit Data");
+		openReL.setId("TitleLabelPlay");
 		Label fileChoosenReL = new Label("Choosen File Name");
 		fileChoosenReL.setId("TitleLabelPlay");
 		replaceLVB.getChildren().addAll(openReL, fileChoosenReL);
