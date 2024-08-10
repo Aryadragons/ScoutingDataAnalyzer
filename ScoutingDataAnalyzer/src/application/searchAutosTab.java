@@ -90,6 +90,8 @@ public class searchAutosTab extends GridPane implements EventHandler<ActionEvent
 				autoSpe = Integer.parseInt(autoSpeS);
 				autoAmp = Integer.parseInt(autoAmpS);
 				autos = theAutoList.getAllAutos(autoStartPos, autoControled, autoSpe);
+				int color = 1;
+				Boolean inDecreaseMode = false;
 				for(int i = 0; i < autos.size(); i++) {
 					Auto a = autos.get(i);
 					int teamNum = a.getTeamNum();
@@ -104,7 +106,7 @@ public class searchAutosTab extends GridPane implements EventHandler<ActionEvent
 					Label avgSpeL = new Label(Double.toString(avgSpe));
 					Label avgAmpL = new Label(Double.toString(avgAmp));
 					Label avgControlL = new Label(Double.toString(avgControl));
-					teamNumL.setId("smallTitle");
+					teamNumL.setId("TitleLabel");
 					numCenNotesL.setId("avgStat");
 					timesUsedL.setId("avgStat");
 					avgSpeL.setId("avgStat");
@@ -120,8 +122,22 @@ public class searchAutosTab extends GridPane implements EventHandler<ActionEvent
 					avgSpeQL.setId("smallTitle");
 					avgAmpQL.setId("smallTitle");
 					avgControlQL.setId("smallTitle");
-					VBox autoStats = new VBox(5);
-					autoStats.getChildren().addAll(teamNumL, numCenNotesQL, numCenNotesL, timesUsedQL, timesUsedL, avgSpeQL, avgSpeL, avgAmpQL, avgAmpL, avgControlQL, avgControl);
+					VBox autoStatsVB = new VBox(5);
+					autoStatsVB.getChildren().addAll(numCenNotesQL, numCenNotesL, timesUsedQL, timesUsedL, avgSpeQL, avgSpeL, avgAmpQL, avgAmpL, avgControlQL, avgControlL);
+					BorderPane autoStatBP = new BorderPane();
+					autoStatBP.setTop(teamNumL);
+					autoStatBP.setCenter(autoStatsVB);
+					int posWidth = 1 + (i * 2);
+					int posHeight = 2 ;
+					if(posWidth > 7) {
+						posHeight = (i / 7) * 2;
+						posWidth = 1 + ((i - (7 * posHeight)) * 2);
+					}
+					if(i > 9) {
+						
+					}
+					autoStatBP.setId("seAutoStatBP");
+					this.add(autoStatsVB, posWidth, posHeight);
 				}
 			}
 		}catch(Exception e) {
