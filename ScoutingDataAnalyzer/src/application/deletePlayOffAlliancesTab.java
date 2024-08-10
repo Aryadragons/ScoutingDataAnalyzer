@@ -26,7 +26,7 @@ public class deletePlayOffAlliancesTab extends GridPane implements EventHandler<
 		yesB.setOnAction(this);
 		delBP.setTop(clearL);
 		delBP.setCenter(yesB);
-		delBP.setId("BPA4");
+		delBP.setId("deleteBP");
 		this.add(delBP, 1, 1);
 	}
 

@@ -1136,7 +1136,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	private void makeSearchTeams() {
 		searchTeamsTab seTeams = new searchTeamsTab(mainTeamList, listOfTeamNumsSorted, fileTPL, fileDTDL, fileDTCL);
 		seTeams.setId("seTeamsStyle");
-		seTeams.setMinHeight(600);
+		seTeams.setMinHeight(800);
 		seTeams.setMinWidth(1400);
 		FileInputStream inputSeTeams;
 		try {
@@ -1160,9 +1160,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeSearchAllinces() {
 		searchAllincesTab seAllinces = new searchAllincesTab();
-		seAllinces.setMinHeight(600);
+		seAllinces.setMinHeight(800);
 		seAllinces.setMinWidth(1400);
-		seAllinces.setMaxHeight(600);
+		seAllinces.setMaxHeight(800);
 		seAllinces.setMaxWidth(1400);
 		FileInputStream inputSeAllinces;
 		try {
@@ -1175,15 +1175,20 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab seAllincesTab = new Tab("Search Alliances", seAllinces);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(seAllinces);
+		sp.setMinHeight(600);
+		Tab seAllincesTab = new Tab("Search Alliances", sp);
 		mainTP.getTabs().addAll(seAllincesTab);
 	}
 	
 	private void makeSearchAutos() {
 		searchAutosTab seAutos = new searchAutosTab();
-		seAutos.setMinHeight(600);
+		seAutos.setMinHeight(800);
 		seAutos.setMinWidth(1400);
-		seAutos.setMaxHeight(600);
+		seAutos.setMaxHeight(800);
 		seAutos.setMaxWidth(1400);
 		FileInputStream inputSeAutos;
 		try {
@@ -1196,15 +1201,20 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab seAutosTab = new Tab("Search Autos", seAutos);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(seAutos);
+		sp.setMinHeight(600);
+		Tab seAutosTab = new Tab("Search Autos", sp);
 		mainTP.getTabs().addAll(seAutosTab);
 	}
 	
 	private void makeSearchMatch() {
 		searchMatchTab seMatch = new searchMatchTab();
-		seMatch.setMinHeight(600);
+		seMatch.setMinHeight(800);
 		seMatch.setMinWidth(1400);
-		seMatch.setMaxHeight(600);
+		seMatch.setMaxHeight(800);
 		seMatch.setMaxWidth(1400);
 		FileInputStream inputSeMacth;
 		try {
@@ -1217,15 +1227,19 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab seMatchTab = new Tab("Search Match", seMatch);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(seMatch);
+		Tab seMatchTab = new Tab("Search Match", sp);
 		mainTP.getTabs().addAll(seMatchTab);
 	}
 	
 	private void makeCompareTeams() {
 		compareTeamsTab comTeams = new compareTeamsTab();
-		comTeams.setMinHeight(600);
+		comTeams.setMinHeight(800);
 		comTeams.setMinWidth(1400);
-		comTeams.setMaxHeight(600);
+		comTeams.setMaxHeight(800);
 		comTeams.setMaxWidth(1400);
 		FileInputStream inputComTeams;
 		try {
@@ -1238,15 +1252,19 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab comTeamsTab = new Tab("Compare Teams", comTeams);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(comTeams);
+		Tab comTeamsTab = new Tab("Compare Teams", sp);
 		mainTP.getTabs().addAll(comTeamsTab);
 	}
 	
 	private void makeCompareAllinces() {
 		compareAlliancesTab comAlliances = new compareAlliancesTab();
-		comAlliances.setMinHeight(600);
+		comAlliances.setMinHeight(800);
 		comAlliances.setMinWidth(1400);
-		comAlliances.setMaxHeight(600);
+		comAlliances.setMaxHeight(800);
 		comAlliances.setMaxWidth(1400);
 		FileInputStream inputComAlliances;
 		try {
@@ -1259,7 +1277,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab comAlliancesTab = new Tab("Compare Alliances", comAlliances);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(comAlliances);
+		Tab comAlliancesTab = new Tab("Compare Alliances", sp);
 		mainTP.getTabs().addAll(comAlliancesTab);
 	}
 	
@@ -1280,7 +1302,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab comAutosTab = new Tab("Compare Autos", comAutos);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(comAutos);
+		Tab comAutosTab = new Tab("Compare Autos", sp);
 		mainTP.getTabs().addAll(comAutosTab);
 	}
 	
@@ -1301,7 +1327,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab comMatchesTab = new Tab("Compare Matches", comMatches);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(comMatches);
+		Tab comMatchesTab = new Tab("Compare Matches", sp);
 		mainTP.getTabs().addAll(comMatchesTab);
 	}
 	
@@ -1322,7 +1352,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab findTeamTab = new Tab("Find Best Team", findTeam);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(findTeam);
+		Tab findTeamTab = new Tab("Find Best Team", sp);
 		mainTP.getTabs().addAll(findTeamTab);
 	}
 	
@@ -1343,7 +1377,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab findAllianceTab = new Tab("Find Best Alliance", findAlliance);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(findAlliance);
+		Tab findAllianceTab = new Tab("Find Best Alliance", sp);
 		mainTP.getTabs().addAll(findAllianceTab);
 	}
 	
@@ -1364,7 +1402,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab findAutoTab = new Tab("Find Best auto", findAuto);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(findAuto);
+		Tab findAutoTab = new Tab("Find Best auto", sp);
 		mainTP.getTabs().addAll(findAutoTab);
 	}
 	
@@ -1385,7 +1427,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab findStatTab = new Tab("Find Best Stat", findStat);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(findStat);
+		Tab findStatTab = new Tab("Find Best Stat", sp);
 		mainTP.getTabs().addAll(findStatTab);
 	}
 	
@@ -1406,7 +1452,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab findArchetypeTab = new Tab("Find Best Robot Archetype", findArchetype);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(findArchetype);
+		Tab findArchetypeTab = new Tab("Find Best Robot Archetype", sp);
 		mainTP.getTabs().addAll(findArchetypeTab);
 	}
 	
@@ -1427,7 +1477,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab creAllianceTab = new Tab("Create Alliance", creAlliance);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(creAlliance);
+		Tab creAllianceTab = new Tab("Create Alliance", sp);
 		mainTP.getTabs().addAll(creAllianceTab);
 	}
 	
@@ -1448,7 +1502,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab creMatchTab = new Tab("Create Match", creMatch);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(creMatch);
+		Tab creMatchTab = new Tab("Create Match", sp);
 		mainTP.getTabs().addAll(creMatchTab);
 	}
 	
@@ -1469,7 +1527,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab creAutoPlanTab = new Tab("Create Auto Plan", creAutoPlan);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(creAutoPlan);
+		Tab creAutoPlanTab = new Tab("Create Auto Plan", sp);
 		mainTP.getTabs().addAll(creAutoPlanTab);
 	}
 	
@@ -1490,15 +1552,19 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab creMatchPlanTab = new Tab("Create Match Plan", creMatchPlan);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(creMatchPlan);
+		Tab creMatchPlanTab = new Tab("Create Match Plan", sp);
 		mainTP.getTabs().addAll(creMatchPlanTab);
 	}
 	
 	private void makeSetPlayOffAlliance() {
 		setPlayOffAlliancesTab setPlayOff = new setPlayOffAlliancesTab(listOfTeamNumsSorted);
-		setPlayOff.setMinHeight(600);
+		setPlayOff.setMinHeight(800);
 		setPlayOff.setMinWidth(1400);
-		setPlayOff.setMaxHeight(600);
+		setPlayOff.setMaxHeight(800);
 		setPlayOff.setMaxWidth(1400);
 		FileInputStream inputSetPlayOff;
 		try {
@@ -1511,15 +1577,19 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab setPlayOffTab = new Tab("Set Play Off Alliances", setPlayOff);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(setPlayOff);
+		Tab setPlayOffTab = new Tab("Set Play Off Alliances", sp);
 		mainTP.getTabs().addAll(setPlayOffTab);
 	}
 	
 	private void makeEditPlayOffAlliance() {
 		editPlayOffAlliancesTab editPlayOff = new editPlayOffAlliancesTab(thePOA, listOfTeamNumsSorted);
-		editPlayOff.setMinHeight(600);
+		editPlayOff.setMinHeight(800);
 		editPlayOff.setMinWidth(1400);
-		editPlayOff.setMaxHeight(600);
+		editPlayOff.setMaxHeight(800);
 		editPlayOff.setMaxWidth(1400);
 		FileInputStream inputEditPlayOff;
 		try {
@@ -1532,15 +1602,19 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab editPlayOffTab = new Tab("Edit Play Off Alliances", editPlayOff);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(editPlayOff);
+		Tab editPlayOffTab = new Tab("Edit Play Off Alliances", sp);
 		mainTP.getTabs().addAll(editPlayOffTab);
 	}
 	
 	private void makeDeletePlayOffAlliance() {
 		deletePlayOffAlliancesTab deletePlayOff = new deletePlayOffAlliancesTab();
-		deletePlayOff.setMinHeight(600);
+		deletePlayOff.setMinHeight(800);
 		deletePlayOff.setMinWidth(1400);
-		deletePlayOff.setMaxHeight(600);
+		deletePlayOff.setMaxHeight(800);
 		deletePlayOff.setMaxWidth(1400);
 		FileInputStream inputDeletePlayOff;
 		try {
@@ -1553,7 +1627,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab deletePlayOffTab = new Tab("Delete Play Off Alliances", deletePlayOff);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(deletePlayOff);
+		Tab deletePlayOffTab = new Tab("Delete Play Off Alliances", sp);
 		mainTP.getTabs().addAll(deletePlayOffTab);
 	}
 	
@@ -1574,7 +1652,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab openScDataTab = new Tab("Open New Scouting Data", openScData);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(openScData);
+		Tab openScDataTab = new Tab("Open New Scouting Data", sp);
 		mainTP.getTabs().addAll(openScDataTab);
 	}
 	
@@ -1595,7 +1677,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab openPitDataTab = new Tab("Open New Pit Data", openPitData);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(openPitData);
+		Tab openPitDataTab = new Tab("Open New Pit Data", sp);
 		mainTP.getTabs().addAll(openPitDataTab);
 	}
 	
@@ -1616,7 +1702,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab openDriveTeamDataTab = new Tab("Open New DriveTeam Data", openDriveTeamData);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(openDriveTeamData);
+		Tab openDriveTeamDataTab = new Tab("Open New DriveTeam Data", sp);
 		mainTP.getTabs().addAll(openDriveTeamDataTab);
 	}
 	
@@ -1637,7 +1727,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab openDriveTeamComsTab = new Tab("Open New DriveTeam Comments", openDriveTeamComs);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(openDriveTeamComs);
+		Tab openDriveTeamComsTab = new Tab("Open New DriveTeam Comments", sp);
 		mainTP.getTabs().addAll(openDriveTeamComsTab);
 	}
 	
@@ -1658,7 +1752,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab edScDataTab = new Tab("Edit Scouting Data", edScData);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(edScData);
+		Tab edScDataTab = new Tab("Edit Scouting Data", sp);
 		mainTP.getTabs().addAll(edScDataTab);
 	}
 	
@@ -1679,7 +1777,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab edPitDataTab = new Tab("Edit Pit Data", edPitData);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(edPitData);
+		Tab edPitDataTab = new Tab("Edit Pit Data", sp);
 		mainTP.getTabs().addAll(edPitDataTab);
 	}
 	
@@ -1700,7 +1802,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab edDriveTeamDataTab = new Tab("Edit Drive Team Data", edDriveTeamData);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(edDriveTeamData);
+		Tab edDriveTeamDataTab = new Tab("Edit Drive Team Data", sp);
 		mainTP.getTabs().addAll(edDriveTeamDataTab);
 	}
 	
@@ -1721,7 +1827,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab edDriveTeamComsTab = new Tab("Edit Drive Team Comments", edDriveTeamComs);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(edDriveTeamComs);
+		Tab edDriveTeamComsTab = new Tab("Edit Drive Team Comments", sp);
 		mainTP.getTabs().addAll(edDriveTeamComsTab);
 	}
 	
@@ -1742,7 +1852,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		}
-		Tab exScDataTab = new Tab("Export Scouting Data", exScData);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(exScData);
+		Tab exScDataTab = new Tab("Export Scouting Data", sp);
 		mainTP.getTabs().addAll(exScDataTab);
 	}
 	
@@ -1763,7 +1877,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		}
-		Tab exPitDataTab = new Tab("Export Pit Data", exPitData);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(exPitData);
+		Tab exPitDataTab = new Tab("Export Pit Data", sp);
 		mainTP.getTabs().addAll(exPitDataTab);
 	}
 	
@@ -1784,7 +1902,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab exDriveTeamDataTab = new Tab("Export Drive Team Data", exDriveTeamData);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(exDriveTeamData);
+		Tab exDriveTeamDataTab = new Tab("Export Drive Team Data", sp);
 		mainTP.getTabs().addAll(exDriveTeamDataTab);
 	}
 	
@@ -1806,7 +1928,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab exDriveTeamComsTab = new Tab("Export Drive Team Comments", exDriveTeamComs);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(exDriveTeamComs);
+		Tab exDriveTeamComsTab = new Tab("Export Drive Team Comments", sp);
 		mainTP.getTabs().addAll(exDriveTeamComsTab);
 	}
 	
@@ -1827,7 +1953,11 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} catch (FileNotFoundException e) {
 			System.out.println("Error: " + e);
 		} 
-		Tab homeTab = new Tab("Home Page", home);
+		ScrollPane sp = new ScrollPane();
+		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
+		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setContent(home);
+		Tab homeTab = new Tab("Home Page", sp);
 		mainTP.getTabs().addAll(homeTab);
 	}
 	
