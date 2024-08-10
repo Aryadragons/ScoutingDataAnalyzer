@@ -918,19 +918,20 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		System.out.println("Boop44 A:" + ampValue + "S:" + speValue + "T:" + trapValue);
 		ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(new PieChart.Data("Amp", ampValue), new PieChart.Data("Specker", speValue), new PieChart.Data("Trap", trapValue));
 		PieChart cyclePieC = new PieChart(pieChartData);
-		cyclePieC.setMinSize(300, 300);
-		cyclePieC.setMaxSize(300, 300);
+		cyclePieC.autosize();
+		cyclePieC.setMaxSize(350, 350);
 		cyclePieC.setLabelsVisible(true);
-		this.add(cyclePieC, 1, 4);
+		this.add(cyclePieC, 1, 3);
 		//adding human player pie chart
 		int ampHumValue = ((theTeam.getTimesHumAmp() * 100)/theTeam.getTotalMatchesPlayed());
 		int scoHumValue = ((theTeam.getTimesHumSco() * 100)/theTeam.getTotalMatchesPlayed());
 		ObservableList<PieChart.Data> humPieChartData = FXCollections.observableArrayList(new PieChart.Data("Amp", ampHumValue), new PieChart.Data("Scoure", scoHumValue));
 		PieChart humPieC = new PieChart(humPieChartData);
-		humPieC.setMinSize(300, 300);
-		humPieC.setMaxSize(300, 300);
+		humPieC.setMaxSize(350, 350);
+		humPieC.autosize();
+		
 		humPieC.setLabelsVisible(true);
-		this.add(humPieC, 1, 4);
+		this.add(humPieC, 2, 3);
 	}
 	
 	public void addDTDStuff(int teamNum) {
@@ -1324,10 +1325,11 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 		    	}
 		    	
 		    }
-		    autoPieC.setMinSize(300, 300);
-		    autoPieC.setMaxSize(300, 300);
 		    autoPieC.setLabelsVisible(true);
-			this.add(autoPieC, 2, 4);
+		    autoPieC.setMinSize(350, 350);
+		    autoPieC.setMaxSize(500, 350);
+		    autoPieC.autosize();
+			this.add(autoPieC, 3, 3);
 		}
 	}
 	
@@ -1363,13 +1365,16 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 				
 				commentBP.setId("commentsBP");
 				commentsTA.setText(commentsS);
-				this.add(commentBP, 4, 2);
+				this.add(commentBP, 3, 2);
 				System.out.println("Boop33");
+				Label didMatchesL;
 				if (theTeam.getTotalMatchesPlayed() == 1) {
-					this.add(new Label("Did 1 Match"), 1, 2);
+					didMatchesL = new Label("Did 1 Match");
 				} else {
-					this.add(new Label("Did " + theTeam.getTotalMatchesPlayed() + " Matches"), 1, 2);
+					didMatchesL = new Label("Did " + theTeam.getTotalMatchesPlayed() + " Matches");
 				}
+				didMatchesL.setId("smallTitle");
+				this.add(didMatchesL, 1, 2);
 				System.out.println("Boop34");
 				System.out.println(theTeam.getAvgHumAmpPostion());
 			    System.out.println(theTeam.getAvgHumScoPostion());
