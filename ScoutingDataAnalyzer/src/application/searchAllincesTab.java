@@ -16,17 +16,22 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 	private ComboBox<String> teamCB1;
 	private ComboBox<String> teamCB2;
 	private ComboBox<String> teamCB3;
+	private ComboBox<String> allPlayCB;
 	private Button seNonAllincesB;
 	private List<Integer> listOfTeamNums;
 	private TeamList theTeamList;
+	private PlayoffAlliances thePlayoffAlls;
 	
-	public searchAllincesTab(boolean isPlayoffTime, List<Integer> importedListOfTeamNums, TeamList imTeamList) {
+	public searchAllincesTab(boolean isPlayoffTime, List<Integer> importedListOfTeamNums, TeamList imTeamList, PlayoffAlliances imPlayoffAlls) {
 		theTeamList = imTeamList;
 		if(isPlayoffTime == false) {
 			listOfTeamNums = importedListOfTeamNums;
 			Label team1SelectL = new Label("Select First Team");
 			Label team2SelectL = new Label("Select Second Team");
 			Label team3SelectL = new Label("Select Third Team");
+			team1SelectL.setId("smallTitle");
+			team2SelectL.setId("smallTitle");
+			team3SelectL.setId("smallTitle");
 			teamCB1 = new ComboBox<String>();
 			teamCB2 = new ComboBox<String>();
 			teamCB3 = new ComboBox<String>();
@@ -56,7 +61,40 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 			this.add(team3BP, 5, 1);
 			this.add(seNonAllincesB, 7, 1);
 		}else {
-			
+			thePlayoffAlls = imPlayoffAlls;
+			int numOfAlls = 1;
+			if(thePlayoffAlls.getAlliance1() != null) {
+				numOfAlls++;
+			}
+			if(thePlayoffAlls.getAlliance2() != null) {
+				numOfAlls++;
+			}
+			if(thePlayoffAlls.getAlliance3() != null) {
+				numOfAlls++;
+			}
+			if(thePlayoffAlls.getAlliance4() != null) {
+				numOfAlls++;
+			}
+			if(thePlayoffAlls.getAlliance5() != null) {
+				numOfAlls++;
+			}
+			if(thePlayoffAlls.getAlliance6() != null) {
+				numOfAlls++;
+			}
+			if(thePlayoffAlls.getAlliance7() != null) {
+				numOfAlls++;
+			}
+			if(thePlayoffAlls.getAlliance8() != null) {
+				numOfAlls++;
+			}
+			allPlayCB = new ComboBox<String>();
+			for(int i = 1; i < numOfAlls; i++) {
+				allPlayCB.getItems().add(Integer.toString(i));
+			}
+			Label allSelectL = new Label("Select the Allince");
+			allSelectL.setId("smallTitle");
+			BorderPane allBP = new BorderPane();
+			allBP.setTop(allSelectL);
 		}
 		
 	}
@@ -196,10 +234,10 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 		t1AmpBP.setId("seAllNonBP3");
 		t1TrapBP.setId("seAllNonBP4");
 		t1CliBP.setId("seAllNonBP5");
-		t2CyBP.setId("seAllNonBP9");
-		t2SpeBP.setId("seAllNonBP8");
-		t2AmpBP.setId("seAllNonBP7");
-		t2TrapBP.setId("seAllNonBP6");
+		t2CyBP.setId("seAllNonBP1");
+		t2SpeBP.setId("seAllNonBP2");
+		t2AmpBP.setId("seAllNonBP3");
+		t2TrapBP.setId("seAllNonBP4");
 		t2CliBP.setId("seAllNonBP5");
 		t3CyBP.setId("seAllNonBP1");
 		t3SpeBP.setId("seAllNonBP2");
@@ -230,9 +268,63 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 		this.add(new Label("    "), 0, 0);
 		this.add(new Label("    "), 2, 0);
 		this.add(new Label("    "), 4, 0);
-		this.add(t1VB, 1, 1);
-		this.add(t2VB, 3, 1);
-		this.add(t3VB, 5, 1);
+		this.add(new Label("    "), 6, 0);
+		this.add(t1VB, 3, 1);
+		this.add(t2VB, 5, 1);
+		this.add(t3VB, 7, 1);
+		double a1AvgCy = t1AvgCy + t2AvgCy + t3AvgCy;
+		double a1AvgSpe = t1AvgSpe + t2AvgSpe + t3AvgSpe;
+		double a1AvgAmp = t1AvgCy + t2AvgCy + t3AvgAmp;
+		double a1AvgTrap = t1AvgCy + t2AvgTrap + t3AvgTrap;
+		double a1AvgCli = t1AvgCy + t2AvgCy + t3AvgCy;
+		Label a1AvgCyL = new Label(Double.toString(a1AvgCy));
+		Label a1AvgSpeL = new Label(Double.toString(a1AvgSpe));
+		Label a1AvgAmpL = new Label(Double.toString(a1AvgAmp));
+		Label a1AvgTrapL = new Label(Double.toString(a1AvgTrap));
+		Label a1AvgCliL = new Label(Double.toString(a1AvgCli));
+		Label a1AvgCyQL = new Label("Avg Cycles");
+		Label a1AvgSpeQL = new Label("Avg Speaker");
+		Label a1AvgAmpQL = new Label("Avg Amp");
+		Label a1AvgTrapQL = new Label("Avg Trap");
+		Label a1AvgCliQL = new Label("Avg Climb");
+		a1AvgCyL.setId("avgStat");
+		a1AvgSpeL.setId("avgStat");
+		a1AvgAmpL.setId("avgStat");
+		a1AvgTrapL.setId("avgStat");
+		a1AvgCliL.setId("avgStat");
+		a1AvgCyQL.setId("smallTitle");
+		a1AvgSpeQL.setId("smallTitle");
+		a1AvgAmpQL.setId("smallTitle");
+		a1AvgTrapQL.setId("smallTitle");
+		a1AvgCliQL.setId("smallTitle");
+		BorderPane a1CyBP = new BorderPane();
+		BorderPane a1SpeBP = new BorderPane();
+		BorderPane a1AmpBP = new BorderPane();
+		BorderPane a1TrapBP = new BorderPane();
+		BorderPane a1CliBP = new BorderPane();
+		Label a1TitleL = new Label("The Alliance's Stats");
+		a1TitleL.setId("TitleLabelPlay");
+		BorderPane a1TitleBP = new BorderPane();
+		a1TitleBP.setId("seAlla1TitleBP");
+		t1TitleBP.setCenter(t1TitleL);
+		a1CyBP.setTop(a1AvgCyQL);
+		a1SpeBP.setTop(a1AvgSpeQL);
+		a1AmpBP.setTop(a1AvgAmpQL);
+		a1TrapBP.setTop(a1AvgTrapQL);
+		a1CliBP.setTop(a1AvgCliQL);
+		a1CyBP.setCenter(a1AvgCyL);
+		a1SpeBP.setCenter(a1AvgSpeL);
+		a1AmpBP.setCenter(a1AvgAmpL);
+		a1TrapBP.setCenter(a1AvgTrapL);
+		a1CliBP.setCenter(a1AvgCliL);
+		a1CyBP.setId("seAllNonBP9");
+		a1SpeBP.setId("seAllNonBP8");
+		a1AmpBP.setId("seAllNonBP7");
+		a1TrapBP.setId("seAllNonBP6");
+		a1CliBP.setId("seAllNonBP5");
+		VBox a1NonVB = new VBox();
+		a1NonVB.getChildren().addAll(a1TitleBP, a1CyBP, a1SpeBP, a1AmpBP, a1TrapBP, a1CliBP);
+		this.add(a1NonVB, 1, 1);
 	}
 	
 	@Override
