@@ -1,10 +1,10 @@
 package application;
 
 public class PlayoffAlliance {
-	private Team team1;
-	private Team team2;
-	private Team team3;
-	private Team team4;
+	private Team team1 = null;
+	private Team team2 = null;
+	private Team team3 = null;
+	private Team team4 = null;
 	//constructor for all teams
 	PlayoffAlliance(Team inputedTeam1, Team inputedTeam2, Team inputedTeam3, Team inputedTeam4){
 		setTeam1(inputedTeam1);

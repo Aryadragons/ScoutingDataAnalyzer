@@ -982,3 +982,84 @@
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
+#seAllBP1{
+	-fx-min-height: 500;
+	-fx-max-height: 500;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(128, 255, 219);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllBP2{
+	-fx-min-height: 500;
+	-fx-max-height: 500;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllBP3{
+	-fx-min-height: 500;
+	-fx-max-height: 500;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllBP4{
+	-fx-min-height: 500;
+	-fx-max-height: 500;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllBP5{
+	-fx-min-height: 500;
+	-fx-max-height: 500;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllBP6{
+	-fx-min-height: 500;
+	-fx-max-height: 500;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllBP7{
+	-fx-min-height: 500;
+	-fx-max-height: 500;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllBP8{
+	-fx-min-height: 500;
+	-fx-max-height: 500;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllBP9{
+	-fx-min-height: 500;
+	-fx-max-height: 500;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(105, 48, 195);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
