@@ -21,7 +21,7 @@ public class AutoList {
 		listOfAutos.add(A);
 	}
 	
-	public Auto getAnAuto(int startPos, int control, int spe) {
+	public Auto getAnAuto(int teamNum, int startPos, int control, int spe) {
 		System.out.println("Boop30.4");
 		int found = 0;
 		int searched = 0;
@@ -32,25 +32,31 @@ public class AutoList {
 		while(i < size & found == 0) {
 			A = listOfAutos.get(i);
 			System.out.println("Boop30.6");
-			if(A.getAutoStartPos() == startPos) {
-				System.out.println("Boop30.7");
-				if(A.getTotalControl() == control) {
-					System.out.println("Boop30.8");
-					if(A.getTotalSpecker() == spe) {
-						System.out.println("Boop30.9");
-						found = 1;
+			if(A.getTeamNum() == teamNum) {
+				if(A.getAutoStartPos() == startPos) {
+					System.out.println("Boop30.7");
+					if(A.getTotalControl() == control) {
+						System.out.println("Boop30.8");
+						if(A.getTotalSpecker() == spe) {
+							System.out.println("Boop30.9");
+							found = 1;
+						}else {
+							System.out.println("Boop30.9");
+							i++;
+							searched++;
+						}
 					}else {
-						System.out.println("Boop30.9");
+						System.out.println("Boop30.8");
 						i++;
 						searched++;
 					}
 				}else {
-					System.out.println("Boop30.8");
+					System.out.println("Boop30.7");
 					i++;
 					searched++;
 				}
 			}else {
-				System.out.println("Boop30.7");
+				System.out.println("Boop30.6");
 				i++;
 				searched++;
 			}
@@ -76,6 +82,7 @@ public class AutoList {
 		System.out.println("BoopGAA1");
 		while(i < size) {
 			A = listOfAutos.get(i);
+			System.out.println(A);
 			System.out.println("BoopGAA2");
 			if(A.getAutoStartPos() == startPos) {
 				System.out.println("BoopGAA3");

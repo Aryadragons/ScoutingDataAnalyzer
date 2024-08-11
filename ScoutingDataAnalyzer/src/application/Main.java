@@ -103,6 +103,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	// Auto Stuff
 	private AutoList fileAL;
 	private AutoList theAutoList;
+	private AutoList thePitAutoList;
 	//playoff Alliances stuff
 	PlayoffAlliances thePOA;
 	private Button savePlayoffB;
@@ -123,6 +124,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			fileAL = new AutoList();
 			thePOA = new PlayoffAlliances();
 			theAutoList = new AutoList();
+			thePitAutoList = new AutoList();
 			root.setTop(MB);
 			//adding the Tab panes
 			mainTP = new TabPane();
@@ -439,16 +441,17 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 						int fileAutoSpeaker = fileMatchList.listOfMatches.get(i).getTheAA().getAutoSpecker();
 						int fileAutoAmp = fileMatchList.listOfMatches.get(i).getTheAA().getAutoAmp();
 						int fileAutoControl = fileMatchList.listOfMatches.get(i).getTheAA().getAutoNControl();
-						if(aAL.getAnAuto(fileStartPos, fileAControl, fileAAutoSpe) != null) {
-							aAL.getAnAuto(fileStartPos, fileAControl, fileAAutoSpe).submitAnUse(fileAutoSpeaker, fileAutoAmp, fileAutoControl);;
+						if(aAL.getAnAuto(fileTeamNum, fileStartPos, fileAControl, fileAAutoSpe) != null) {
+							aAL.getAnAuto(fileTeamNum, fileStartPos, fileAControl, fileAAutoSpe).submitAnUse(fileAutoSpeaker, fileAutoAmp, fileAutoControl);;
 						} else {
 							System.out.println("Boop30" + fileAControl);
-							Auto theA = fileTPL.getATeamPit(fileTeamNum).getTheAutoList().getAnAuto(fileStartPos, fileAControl, fileAAutoSpe);
+							Auto theA = fileTPL.getMasterPitAutoList().getAnAuto(fileTeamNum, fileStartPos, fileAControl, fileAAutoSpe);
 							System.out.println("Boop31");
 							theA.submitAnUse(fileAutoSpeaker, fileAutoAmp, fileAutoControl);
-							System.out.println("Boop32");
+							System.out.println("Boop32Boop");
 							aAL.listOfAutos.add(theA);
 							theAutoList.listOfAutos.add(theA);
+							System.out.println(theA);
 							System.out.println("Boop33");
 						}
 					}
@@ -546,6 +549,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 				totalAmp = Integer.parseInt(totalAmpS);
 				numCenNotes = Integer.parseInt(numCenNotesS);
 				fileAL.addPitAuto(teamNum, autoStartPos, totalControl, totalSpecker, totalAmp, numCenNotes);
+				thePitAutoList.addPitAuto(teamNum, autoStartPos, totalControl, totalSpecker, totalAmp, numCenNotes);
 				System.out.println("Boop boop6");
 			}
 			
@@ -554,6 +558,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			System.out.println("Boop" + teamNum);
 		}
 		System.out.println("Boop");
+		fileTPL.setMasterPitAutoList(thePitAutoList);
 	}
 	
 	private void updateDriveTeamDataList() {

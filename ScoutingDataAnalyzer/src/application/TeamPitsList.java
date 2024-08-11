@@ -5,6 +5,7 @@ import java.util.ArrayList;
 	public class TeamPitsList {
 			
 		ArrayList<TeamPit> listOfTeamPits;
+		AutoList masterPitAutoList;
 			
 		TeamPitsList() {
 			listOfTeamPits = new ArrayList<TeamPit>();
@@ -42,5 +43,13 @@ import java.util.ArrayList;
 			}
 			System.out.println("Boop32.8");
 			return tempTP;
+		}
+		
+		public void setMasterPitAutoList(AutoList temp) {
+			masterPitAutoList = temp;
+		}
+		
+		public AutoList getMasterPitAutoList() {
+			return masterPitAutoList;
 		}
 }

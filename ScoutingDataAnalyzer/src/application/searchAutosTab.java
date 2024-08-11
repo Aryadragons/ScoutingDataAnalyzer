@@ -131,8 +131,13 @@ public class searchAutosTab extends GridPane implements EventHandler<ActionEvent
 					int posWidth = 1 + (i * 2);
 					int posHeight = 2 ;
 					if(posWidth > 5) {
-						posHeight = (i / 5) * 2;
-						posWidth = 1 + ((i - (5 * (posHeight/2))) * 2);
+						System.out.println("i:" + i);
+						posHeight = ((posWidth / 5) * 2) + 2;
+						int timesOver = posWidth/5;
+						int b = posWidth - (timesOver * 5);
+						int mius = (posWidth - (5 * posWidth/5) + 1);
+						System.out.println("Boop" + mius);
+						posWidth = mius ;
 					}
 					if(color > 9) {
 						inDecreaseMode = true;
@@ -151,6 +156,8 @@ public class searchAutosTab extends GridPane implements EventHandler<ActionEvent
 						autoStatsBP.setId(id);
 						color++;
 					}
+					System.out.println(posWidth);
+					System.out.println(posHeight);
 					this.add(autoStatsBP, posWidth, posHeight);
 				}
 			}
