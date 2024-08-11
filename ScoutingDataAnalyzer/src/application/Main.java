@@ -1168,12 +1168,15 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	}
 	
 	private void makeSearchAllinces() {
-		if(thePOA.getAlliance1() == null) {
-			searchAllincesTab seAllinces = new searchAllincesTab(false, listOfTeamNumsSorted, );
+		searchAllincesTab seAllinces;
+		if(thePOA.getAlliance1() != null) {
+			seAllinces = new searchAllincesTab(true, listOfTeamNumsSorted, mainTeamList, thePOA);
+		}else {
+			seAllinces = new searchAllincesTab(false, listOfTeamNumsSorted, mainTeamList, thePOA);
 		}
 		seAllinces.setMinHeight(800);
 		seAllinces.setMinWidth(1400);
-		seAllinces.setMaxHeight(800);
+		seAllinces.setMaxHeight(1400);
 		seAllinces.setMaxWidth(1400);
 		FileInputStream inputSeAllinces;
 		try {
