@@ -161,9 +161,6 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			//
 			listOfTeamNums = new ArrayList<Integer>();
 			listOfTeamNumsSorted = new ArrayList<Integer>();
-			for (int i = 0; i < 80; i++) {
-				listOfTeamNumsSorted.add(null);
-			}
 			// adding css file stuff
 			scene.getStylesheets().add(getClass().getResource("ScoutingDataAnalyzercssFile.css").toExternalForm());
 			primaryStage.setScene(scene);
@@ -1129,6 +1126,10 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	}
 	
 	private void sortListOfTeamNums() {
+		listOfTeamNumsSorted.clear();
+		for (int i = 0; i < 80; i++) {
+			listOfTeamNumsSorted.add(null);
+		}
 		int place;
 		for (int i = 0; i < listOfTeamNums.size(); i++) {
 			place = 0;
@@ -1194,7 +1195,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeSearchAutos() {
 		searchAutosTab seAutos = new searchAutosTab(theAutoList);
-		seAutos.setMinHeight(800);
+		seAutos.setMinHeight(1400);
 		seAutos.setMinWidth(1400);
 		seAutos.setMaxWidth(1400);
 		FileInputStream inputSeAutos;

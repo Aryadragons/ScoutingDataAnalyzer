@@ -1,5 +1,6 @@
 package application;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javafx.event.ActionEvent;
@@ -58,7 +59,10 @@ public class searchAutosTab extends GridPane implements EventHandler<ActionEvent
 		this.add(new Label("    "), 2, 0);
 		this.add(new Label("    "), 4, 0);
 		this.add(new Label("    "), 6, 0);
+		this.add(new Label("    "), 8, 0);
+		this.add(new Label("    "), 10, 0);
 		this.add(new Label("    "), 0, 2);
+		
 		this.add(selectPosBP, 1, 1);
 		this.add(selectControledBP, 3, 1);
 		this.add(selectSpeBP, 5, 1);
@@ -72,6 +76,7 @@ public class searchAutosTab extends GridPane implements EventHandler<ActionEvent
 	public void handle(ActionEvent event) {
 		try {
 			if(event.getSource() == submitB) {
+				this.getChildren().remove(submitB);
 				String autoStartPosS;
 				String  autoControledS;
 				String  autoSpeS;
@@ -92,8 +97,33 @@ public class searchAutosTab extends GridPane implements EventHandler<ActionEvent
 				autos = theAutoList.getAllAutos(autoStartPos, autoControled, autoSpe);
 				int color = 1;
 				Boolean inDecreaseMode = false;
-				for(int i = 0; i < autos.size(); i++) {
-					Auto a = autos.get(i);
+				int u = 0;
+				int row = 3;
+				int place;
+				System.out.println("BoopSeAutos1");
+				List<Auto> autosSorted = new ArrayList<>();
+				for (int i = 0; i < 80; i++) {
+					autosSorted.add(null);
+				}
+				System.out.println("BoopSeAutos1.1");
+				for (int i = 0; i < autos.size(); i++) {
+					System.out.println("BoopSeAutos1.2");
+					place = 0;
+					for(int e = 0; e < autos.size(); e++) {
+						System.out.println("BoopSeAutos1.3");
+						if (autos.get(i).getTeamNum() > autos.get(e).getTeamNum()) {
+							System.out.println("BoopSeAutos1.4");
+							place++;
+						}
+					}
+					System.out.println("BoopSeAutos1.5 i:" + i + "place: " + place);
+					autosSorted.set(place, autos.get(i));
+					System.out.println("BoopSeAutos1.6");
+				}
+				System.out.println("BoopSeAutos2");
+				for(int i = 0; i < autosSorted.size(); i++) {
+					System.out.println("BoopSeAutos3");
+					Auto a = autosSorted.get(i);
 					System.out.println(a);
 					int teamNum = a.getTeamNum();
 					int numCenNotes = a.getNumCenNotes();
@@ -128,17 +158,16 @@ public class searchAutosTab extends GridPane implements EventHandler<ActionEvent
 					BorderPane autoStatsBP = new BorderPane();
 					autoStatsBP.setTop(teamNumL);
 					autoStatsBP.setCenter(autoStatsVB);
-					int posWidth = 1 + (i * 2);
-					int posHeight = 2 ;
-					if(posWidth > 5) {
-						System.out.println("i:" + i);
-						posHeight = ((posWidth / 5) * 2) + 2;
-						int timesOver = posWidth/5;
-						int b = posWidth - (timesOver * 5);
-						int mius = (posWidth - (5 * posWidth/5) + 1);
-						System.out.println("Boop" + mius);
-						posWidth = mius ;
+					int posWidth = 1 + (u * 2);
+					int posHeight = row;
+					if(posWidth > 11) {
+						u = 0;
+						posWidth = 1 + (u * 2);
+						row = row + 2;
+						posHeight = row;
+						this.add(new Label("    "), 0, row - 1);
 					}
+					u++;
 					if(color > 9) {
 						inDecreaseMode = true;
 						color = color - 1;
