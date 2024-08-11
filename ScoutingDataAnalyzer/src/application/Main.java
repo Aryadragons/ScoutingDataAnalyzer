@@ -102,6 +102,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	private DriveTeamCommentsList fileDTCL;
 	// Auto Stuff
 	private AutoList fileAL;
+	private AutoList theAutoList;
 	//playoff Alliances stuff
 	PlayoffAlliances thePOA;
 	private Button savePlayoffB;
@@ -121,6 +122,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			fileDTCL = new DriveTeamCommentsList();
 			fileAL = new AutoList();
 			thePOA = new PlayoffAlliances();
+			theAutoList = new AutoList();
 			root.setTop(MB);
 			//adding the Tab panes
 			mainTP = new TabPane();
@@ -446,6 +448,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 							theA.submitAnUse(fileAutoSpeaker, fileAutoAmp, fileAutoControl);
 							System.out.println("Boop32");
 							aAL.listOfAutos.add(theA);
+							theAutoList.listOfAutos.add(theA);
 							System.out.println("Boop33");
 						}
 					}
@@ -1185,10 +1188,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	}
 	
 	private void makeSearchAutos() {
-		searchAutosTab seAutos = new searchAutosTab();
+		searchAutosTab seAutos = new searchAutosTab(theAutoList);
 		seAutos.setMinHeight(800);
 		seAutos.setMinWidth(1400);
-		seAutos.setMaxHeight(800);
 		seAutos.setMaxWidth(1400);
 		FileInputStream inputSeAutos;
 		try {

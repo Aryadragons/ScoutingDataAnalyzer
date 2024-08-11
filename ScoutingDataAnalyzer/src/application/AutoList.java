@@ -70,6 +70,7 @@ public class AutoList {
 		int found = 0;
 		int searched = 0;
 		int size = listOfAutos.size();
+		System.out.println("size");
 		int i = 0;
 		Auto A = new Auto();
 		System.out.println("BoopGAA1");
@@ -84,6 +85,7 @@ public class AutoList {
 						System.out.println("BoopGAA5");
 						found = 1;
 						autosThatWork.add(A);
+						i++;
 					}else {
 						System.out.println("BoopGAA6");
 						i++;

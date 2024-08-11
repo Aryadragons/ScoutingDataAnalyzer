@@ -94,6 +94,7 @@ public class searchAutosTab extends GridPane implements EventHandler<ActionEvent
 				Boolean inDecreaseMode = false;
 				for(int i = 0; i < autos.size(); i++) {
 					Auto a = autos.get(i);
+					System.out.println(a);
 					int teamNum = a.getTeamNum();
 					int numCenNotes = a.getNumCenNotes();
 					int timesUsed = a.getTimesUsed();
@@ -106,7 +107,7 @@ public class searchAutosTab extends GridPane implements EventHandler<ActionEvent
 					Label avgSpeL = new Label(Double.toString(avgSpe));
 					Label avgAmpL = new Label(Double.toString(avgAmp));
 					Label avgControlL = new Label(Double.toString(avgControl));
-					teamNumL.setId("TitleLabel");
+					teamNumL.setId("TitleLabelPlay");
 					numCenNotesL.setId("avgStat");
 					timesUsedL.setId("avgStat");
 					avgSpeL.setId("avgStat");
@@ -124,20 +125,33 @@ public class searchAutosTab extends GridPane implements EventHandler<ActionEvent
 					avgControlQL.setId("smallTitle");
 					VBox autoStatsVB = new VBox(5);
 					autoStatsVB.getChildren().addAll(numCenNotesQL, numCenNotesL, timesUsedQL, timesUsedL, avgSpeQL, avgSpeL, avgAmpQL, avgAmpL, avgControlQL, avgControlL);
-					BorderPane autoStatBP = new BorderPane();
-					autoStatBP.setTop(teamNumL);
-					autoStatBP.setCenter(autoStatsVB);
+					BorderPane autoStatsBP = new BorderPane();
+					autoStatsBP.setTop(teamNumL);
+					autoStatsBP.setCenter(autoStatsVB);
 					int posWidth = 1 + (i * 2);
 					int posHeight = 2 ;
-					if(posWidth > 7) {
-						posHeight = (i / 7) * 2;
-						posWidth = 1 + ((i - (7 * posHeight)) * 2);
+					if(posWidth > 5) {
+						posHeight = (i / 5) * 2;
+						posWidth = 1 + ((i - (5 * (posHeight/2))) * 2);
 					}
-					if(i > 9) {
-						
+					if(color > 9) {
+						inDecreaseMode = true;
+						color = color - 1;
 					}
-					autoStatBP.setId("seAutoStatBP");
-					this.add(autoStatsVB, posWidth, posHeight);
+					if(color < 1) {
+						color = 1;
+					}
+					if(inDecreaseMode == true) {
+						color = color - 1;
+						String id = "seAutoStatBP" + color;
+						autoStatsBP.setId(id);
+					}else{
+						String id = "seAutoStatBP" + color;
+						System.out.println(id);
+						autoStatsBP.setId(id);
+						color++;
+					}
+					this.add(autoStatsBP, posWidth, posHeight);
 				}
 			}
 		}catch(Exception e) {

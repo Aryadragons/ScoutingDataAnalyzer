@@ -171,4 +171,9 @@ public class Auto {
 	public double getAvgControl() {
 		return avgControl;
 	}
+	
+	public String toString() {
+		String S = Integer.toString(teamNum) + timesUsed;
+		return S;
+	}
 }
