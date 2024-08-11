@@ -1169,7 +1169,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeSearchAllinces() {
 		if(thePOA.getAlliance1() == null) {
-			searchAllincesTab seAllinces = new searchAllincesTab(false, listOfTeamNumsSorted);
+			searchAllincesTab seAllinces = new searchAllincesTab(false, listOfTeamNumsSorted, );
 		}
 		seAllinces.setMinHeight(800);
 		seAllinces.setMinWidth(1400);
