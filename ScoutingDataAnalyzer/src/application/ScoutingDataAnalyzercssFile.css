@@ -1202,3 +1202,12 @@
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
+#seAllSelectall{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
