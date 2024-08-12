@@ -1099,3 +1099,34 @@
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
+#smallerTitle{
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-font-size: 19;
+}
+#seAllworks1{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(105, 48, 195);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllworks2{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllworks3{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}

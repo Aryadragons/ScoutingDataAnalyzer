@@ -65,12 +65,15 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 			thePlayoffAlls = imPlayoffAlls;
 			int numOfAlls = 1;
 			if(thePlayoffAlls.getAlliance1() != null) {
+				System.out.println("BoopSeAll0");
 				numOfAlls++;
 			}
 			if(thePlayoffAlls.getAlliance2() != null) {
+				System.out.println("BoopSeAll1");
 				numOfAlls++;
 			}
 			if(thePlayoffAlls.getAlliance3() != null) {
+				System.out.println("BoopSeAll2");
 				numOfAlls++;
 			}
 			if(thePlayoffAlls.getAlliance4() != null) {
@@ -88,9 +91,10 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 			if(thePlayoffAlls.getAlliance8() != null) {
 				numOfAlls++;
 			}
+			System.out.println("BoopSeAll numOfAlls:" + numOfAlls);
 			allPlayCB = new ComboBox<String>();
-			for(int i = 1; i < numOfAlls; i++) {
-				allPlayCB.getItems().add(Integer.toString(i));
+			for(int i = 0; i < numOfAlls; i++) {
+				allPlayCB.getItems().add(Integer.toString(i + 1));
 			}
 			Label allSelectL = new Label("Select the Allince");
 			allSelectL.setId("smallTitle");
@@ -277,6 +281,7 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 		this.add(new Label("    "), 2, 0);
 		this.add(new Label("    "), 4, 0);
 		this.add(new Label("    "), 6, 0);
+		this.add(new Label("    "), 8, 0);
 		this.add(t1VB, 3, 1);
 		this.add(t2VB, 5, 1);
 		this.add(t3VB, 7, 1);
@@ -344,20 +349,60 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 		Boolean workst2 = false;
 		Boolean workst3 = false;
 		VBox ampHumsVB = new VBox(5);
+		BorderPane worksT1BP = null;
+		BorderPane worksT2BP = null;
+		BorderPane worksT3BP = null;
 		if(t1HumAmpNotes >= 1) {
 			doTheyHaveAmpHum = true;
 			workst1 = true;
-			Label worksT1 = new Label(Double.toString(t1HumAmpNotes));
-			worksT1.setId("");
+			Label worksT1L = new Label(Double.toString(t1HumAmpNotes));
+			worksT1L.setId("avgStat");
+			Label workT1QL = new Label("High Notes");
+			workT1QL.setId("smallTitle");
+			Label worksT1TeamL = new Label(Integer.toString(t1.getTeamNum()));
+			worksT1TeamL.setId("smallerTitle");
+			VBox worksT1VB = new VBox(5);
+			worksT1VB.getChildren().addAll(worksT1TeamL, workT1QL);
+			worksT1BP = new BorderPane();
+			worksT1BP.setTop(worksT1VB);
+			worksT1BP.setCenter(worksT1L);
+			worksT1BP.setId("seAllworks1");
 		}
 		if(t2HumAmpNotes >= 1) {
 			doTheyHaveAmpHum = true;
 			workst2 = true;
+			Label worksT2L = new Label(Double.toString(t1HumAmpNotes));
+			worksT2L.setId("avgStat");
+			Label workT2QL = new Label("High Notes");
+			workT2QL.setId("smallTitle");
+			Label worksT2TeamL = new Label(Integer.toString(t2.getTeamNum()));
+			worksT2TeamL.setId("smallerTitle");
+			VBox worksT2VB = new VBox(5);
+			worksT2VB.getChildren().addAll(worksT2TeamL, workT2QL);
+			worksT2BP = new BorderPane();
+			worksT2BP.setTop(worksT2VB);
+			worksT2BP.setCenter(worksT2L);
+			worksT2BP.setId("seAllworks2");
 		}
 		if(t3HumAmpNotes >= 1) {
 			doTheyHaveAmpHum = true;
 			workst3 = true;
+			Label worksT3L = new Label(Double.toString(t1HumAmpNotes));
+			worksT3L.setId("avgStat");
+			Label workT3QL = new Label("High Notes");
+			workT3QL.setId("smallTitle");
+			Label worksT3TeamL = new Label(Integer.toString(t3.getTeamNum()));
+			worksT3TeamL.setId("smallerTitle");
+			VBox worksT3VB = new VBox(5);
+			worksT3VB.getChildren().addAll(worksT3TeamL, workT3QL);
+			worksT3BP = new BorderPane();
+			worksT3BP.setTop(worksT3VB);
+			worksT3BP.setCenter(worksT3L);
+			worksT3BP.setId("seAllworks3");
 		}
+		VBox works = new VBox(5);
+		works.getChildren().addAll(worksT1BP, worksT2BP,worksT3BP);
+		this.add(works, 9, 1);
 		
 	}
 	
@@ -663,7 +708,9 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 				Team t4 = null;
 				PlayoffAlliance all;
 				String allNumS = allPlayCB.getSelectionModel().getSelectedItem();
+				
 				int allNum = Integer.parseInt(allNumS);
+				
 				if(allNum == 1) {
 					all = thePlayoffAlls.getAlliance1();
 					t1 = all.getTeam1();
