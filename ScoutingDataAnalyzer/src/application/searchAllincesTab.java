@@ -22,9 +22,13 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 	private List<Integer> listOfTeamNums;
 	private TeamList theTeamList;
 	private PlayoffAlliances thePlayoffAlls;
+	private DriveTeamDataList theDTD;
+	private DriveTeamCommentsList theDTC;
 	
-	public searchAllincesTab(boolean isPlayoffTime, List<Integer> importedListOfTeamNums, TeamList imTeamList, PlayoffAlliances imPlayoffAlls) {
+	public searchAllincesTab(boolean isPlayoffTime, List<Integer> importedListOfTeamNums, TeamList imTeamList, PlayoffAlliances imPlayoffAlls, DriveTeamDataList imDTD, DriveTeamCommentsList imDTC) {
 		theTeamList = imTeamList;
+		theDTD = imDTD;
+		theDTC = imDTC;
 		if(isPlayoffTime == false) {
 			listOfTeamNums = importedListOfTeamNums;
 			Label team1SelectL = new Label("Select First Team");
@@ -402,7 +406,98 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 			worksT3BP.setId("seAllworks3");
 		}
 		VBox works = new VBox(5);
-		works.getChildren().addAll(worksT1BP, worksT2BP,worksT3BP);
+		DriveTeamData t1DTD = theDTD.getATeamPit(t1.getTeamNum());
+		DriveTeamData t2DTD = theDTD.getATeamPit(t2.getTeamNum());
+		DriveTeamData t3DTD = theDTD.getATeamPit(t3.getTeamNum());
+		BorderPane t1ADCBP = new BorderPane();
+		BorderPane t2ADCBP = new BorderPane();
+		BorderPane t3ADCBP = new BorderPane();
+		BorderPane t1WarnBP = new BorderPane();
+		BorderPane t2WarnBP = new BorderPane();
+		BorderPane t3WarnBP = new BorderPane();
+		if(t1DTD.getIsAdult() == true) {
+			Label TeamNum = new Label(Integer.toString(t1.getTeamNum()));
+			Label hasAdult = new Label("Has an Adult");
+			TeamNum.setId("smallTitle");
+			hasAdult.setId("smallerTitle");
+			t1ADCBP.setTop(TeamNum);
+			t1ADCBP.setCenter(hasAdult);
+			t1ADCBP.setId("seAllt1ADC");
+		}
+		if(t2DTD.getIsAdult() == true) {
+			Label TeamNum = new Label(Integer.toString(t2.getTeamNum()));
+			Label hasAdult = new Label("Has an Adult");
+			TeamNum.setId("smallTitle");
+			hasAdult.setId("smallerTitle");
+			t2ADCBP.setTop(TeamNum);
+			t2ADCBP.setCenter(hasAdult);
+			t2ADCBP.setId("seAllt2ADC");
+		}
+		if(t3DTD.getIsAdult() == true) {
+			Label TeamNum = new Label(Integer.toString(t3.getTeamNum()));
+			Label hasAdult = new Label("Has an Adult");
+			TeamNum.setId("smallTitle");
+			hasAdult.setId("smallerTitle");
+			t3ADCBP.setTop(TeamNum);
+			t3ADCBP.setCenter(hasAdult);
+			t3ADCBP.setId("seAllt3ADC");
+		}
+		if(theDTC != null) {
+			if(theDTC.getADriveTeamComments(t1.getTeamNum()) != null) {
+				if(theDTC.getADriveTeamComments(t1.getTeamNum()).gettotalBLevel() > 0) {
+					if(theDTC.getADriveTeamComments(t1.getTeamNum()).gettotalBLevel() >= 10) {
+						Label t1Warning3 = new Label("Warning Level 3");
+						t1Warning3.setId("warn3");
+					}else if(theDTC.getADriveTeamComments(t1.getTeamNum()).gettotalBLevel() >= 5) {
+						Label t1Warning2 = new Label("Warning Level 2");
+						t1Warning2.setId("warn2");
+					}else if(theDTC.getADriveTeamComments(t1.getTeamNum()).gettotalBLevel() >= 2) {
+						Label t1Warning1 = new Label("Warning Level 1");
+						t1Warning1.setId("warn1");
+					}
+				}
+			}
+			if(theDTC.getADriveTeamComments(t2.getTeamNum()) != null) {
+				if(theDTC.getADriveTeamComments(t2.getTeamNum()).gettotalBLevel() > 0) {
+					if(theDTC.getADriveTeamComments(t2.getTeamNum()).gettotalBLevel() >= 10) {
+						Label t2Warning3 = new Label("Warning Level 3");
+						t2Warning3.setId("warn3");
+					}else if(theDTC.getADriveTeamComments(t2.getTeamNum()).gettotalBLevel() >= 5) {
+						Label t2Warning2 = new Label("Warning Level 2");
+						t2Warning2.setId("warn2");
+					}else if(theDTC.getADriveTeamComments(t2.getTeamNum()).gettotalBLevel() >= 2) {
+						Label t2Warning1 = new Label("Warning Level 1");
+						t2Warning1.setId("warn1");
+					}
+				}
+			}
+			if(theDTC.getADriveTeamComments(t3.getTeamNum()) != null) {
+				if(theDTC.getADriveTeamComments(t3.getTeamNum()).gettotalBLevel() > 0) {
+					Label teamNumL = new Label(Integer.toString(t3.getTeamNum()));
+					teamNumL.setId("smallTitle");
+					if(theDTC.getADriveTeamComments(t3.getTeamNum()).gettotalBLevel() >= 10) {
+						Label t3Warning3 = new Label("Warning Level 3");
+						t3Warning3.setId("warn3");
+						t3WarnBP.setTop(teamNumL);
+						t3WarnBP.setCenter(t3Warning3);
+						
+					}else if(theDTC.getADriveTeamComments(t3.getTeamNum()).gettotalBLevel() >= 5) {
+						Label t3Warning2 = new Label("Warning Level 2");
+						t3Warning2.setId("warn2");
+						t1WarnBP.setTop(teamNumL);
+						t3WarnBP.setTop(teamNumL);
+						t3WarnBP.setCenter(t3Warning2);
+					}else if(theDTC.getADriveTeamComments(t3.getTeamNum()).gettotalBLevel() >= 2) {
+						Label t3Warning1 = new Label("Warning Level 1");
+						t3Warning1.setId("warn1");
+						t1WarnBP.setTop(teamNumL);
+						t3WarnBP.setTop(teamNumL);
+						t3WarnBP.setCenter(t3Warning1);
+					}
+				}
+			}
+		}
+		works.getChildren().addAll(worksT1BP, worksT2BP,worksT3BP, t1ADCBP, t2ADCBP, t3ADCBP, t1WarnBP, t2WarnBP, t3WarnBP);
 		this.add(works, 9, 1);
 		BorderPane meldoyBP;
 		if(a1AvgCy >= 18) {

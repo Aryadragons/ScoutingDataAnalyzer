@@ -1148,3 +1148,30 @@
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
+#seAllt1ADC{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllt2ADC{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllt3ADC{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
