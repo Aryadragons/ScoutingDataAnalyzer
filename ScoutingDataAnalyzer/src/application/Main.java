@@ -912,14 +912,17 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		if(team4 != 0) {
 			teamsOnA2++;
 			team4T = mainTeamList.getATeam(team4);
+			System.out.println("BoopPlay5.1");
 		}
 		if(team5 != 0) {
 			teamsOnA2++;
 			team5T = mainTeamList.getATeam(team5);
+			System.out.println("BoopPlay5.2");
 		}
 		if(team6 != 0) {
 			teamsOnA2++;
 			team6T = mainTeamList.getATeam(team6);
+			System.out.println("BoopPlay5.3 A2:" + teamsOnA2++);
 		}
 		if(team7 != 0) {
 			teamsOnA3++;
@@ -1031,6 +1034,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		}
 		if(teamsOnA1 == 3) {
 			thePOA.setAlliance1(team1T, team2T, team3T);
+			System.out.println("BoopPlay6.1");
 		}
 		if(teamsOnA1 == 2) {
 			thePOA.setAlliance1(team1T, team2T);
@@ -1039,88 +1043,89 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			thePOA.setAlliance1(team1T);
 		}
 		if(teamsOnA2 == 4) {
-			thePOA.setAlliance1(team4T, team5T, team6T, team26T);
+			thePOA.setAlliance2(team4T, team5T, team6T, team26T);
 		}
 		if(teamsOnA2 == 3) {
-			thePOA.setAlliance1(team4T, team5T, team6T);
+			thePOA.setAlliance2(team4T, team5T, team6T);
+			System.out.println("BoopPlay6.2");
 		}
 		if(teamsOnA2 == 2) {
-			thePOA.setAlliance1(team4T, team5T);
+			thePOA.setAlliance2(team4T, team5T);
 		}
 		if(teamsOnA2 == 1) {
-			thePOA.setAlliance1(team5T);
+			thePOA.setAlliance2(team5T);
 		}
 		if(teamsOnA3 == 4) {
-			thePOA.setAlliance1(team7T, team8T, team9T, team27T);
+			thePOA.setAlliance3(team7T, team8T, team9T, team27T);
 		}
 		if(teamsOnA3 == 3) {
-			thePOA.setAlliance1(team7T, team8T, team9T);
+			thePOA.setAlliance3(team7T, team8T, team9T);
 		}
 		if(teamsOnA3 == 2) {
-			thePOA.setAlliance1(team7T, team8T);
+			thePOA.setAlliance3(team7T, team8T);
 		}
 		if(teamsOnA3 == 1) {
-			thePOA.setAlliance1(team7T);
+			thePOA.setAlliance3(team7T);
 		}
 		if(teamsOnA4 == 4) {
-			thePOA.setAlliance1(team10T, team11T, team12T, team28T);
+			thePOA.setAlliance4(team10T, team11T, team12T, team28T);
 		}
 		if(teamsOnA4 == 3) {
-			thePOA.setAlliance1(team10T, team11T, team12T);
+			thePOA.setAlliance4(team10T, team11T, team12T);
 		}
 		if(teamsOnA4 == 2) {
-			thePOA.setAlliance1(team10T, team11T);
+			thePOA.setAlliance4(team10T, team11T);
 		}
 		if(teamsOnA4 == 1) {
-			thePOA.setAlliance1(team10T);
+			thePOA.setAlliance4(team10T);
 		}
 		if(teamsOnA5 == 4) {
-			thePOA.setAlliance1(team13T, team14T, team15T, team29T);
+			thePOA.setAlliance5(team13T, team14T, team15T, team29T);
 		}
 		if(teamsOnA5 == 3) {
-			thePOA.setAlliance1(team13T, team14T, team15T);
+			thePOA.setAlliance5(team13T, team14T, team15T);
 		}
 		if(teamsOnA5 == 2) {
-			thePOA.setAlliance1(team13T, team14T);
+			thePOA.setAlliance5(team13T, team14T);
 		}
 		if(teamsOnA5 == 1) {
-			thePOA.setAlliance1(team13T);
+			thePOA.setAlliance5(team13T);
 		}
 		if(teamsOnA6 == 4) {
-			thePOA.setAlliance1(team16T, team17T, team18T, team30T);
+			thePOA.setAlliance6(team16T, team17T, team18T, team30T);
 		}
 		if(teamsOnA6 == 3) {
-			thePOA.setAlliance1(team16T, team17T, team18T);
+			thePOA.setAlliance6(team16T, team17T, team18T);
 		}
 		if(teamsOnA6 == 2) {
-			thePOA.setAlliance1(team16T, team17T);
+			thePOA.setAlliance6(team16T, team17T);
 		}
 		if(teamsOnA6 == 1) {
-			thePOA.setAlliance1(team16T);
+			thePOA.setAlliance6(team16T);
 		}
 		if(teamsOnA7 == 4) {
-			thePOA.setAlliance1(team19T, team20T, team21T, team31T);
+			thePOA.setAlliance7(team19T, team20T, team21T, team31T);
 		}
 		if(teamsOnA7 == 3) {
-			thePOA.setAlliance1(team19T, team20T, team21T);
+			thePOA.setAlliance7(team19T, team20T, team21T);
 		}
 		if(teamsOnA7 == 2) {
-			thePOA.setAlliance1(team19T, team20T);
+			thePOA.setAlliance7(team19T, team20T);
 		}
 		if(teamsOnA7 == 1) {
-			thePOA.setAlliance1(team19T);
+			thePOA.setAlliance7(team19T);
 		}
 		if(teamsOnA8 == 4) {
-			thePOA.setAlliance1(team22T, team23T, team24T, team32T);
+			thePOA.setAlliance8(team22T, team23T, team24T, team32T);
 		}
 		if(teamsOnA8 == 3) {
-			thePOA.setAlliance1(team22T, team23T, team24T);
+			thePOA.setAlliance8(team22T, team23T, team24T);
 		}
 		if(teamsOnA8 == 2) {
-			thePOA.setAlliance1(team22T, team23T);
+			thePOA.setAlliance8(team22T, team23T);
 		}
 		if(teamsOnA8 == 1) {
-			thePOA.setAlliance1(team22T);
+			thePOA.setAlliance8(team22T);
 		}
 		System.out.println("BoopPlay7");	
 	}

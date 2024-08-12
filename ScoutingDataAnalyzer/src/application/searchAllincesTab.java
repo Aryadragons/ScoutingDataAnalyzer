@@ -63,7 +63,7 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 			this.add(seNonAllincesB, 7, 1);
 		}else {
 			thePlayoffAlls = imPlayoffAlls;
-			int numOfAlls = 1;
+			int numOfAlls = 0;
 			if(thePlayoffAlls.getAlliance1() != null) {
 				System.out.println("BoopSeAll0");
 				numOfAlls++;
@@ -282,14 +282,15 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 		this.add(new Label("    "), 4, 0);
 		this.add(new Label("    "), 6, 0);
 		this.add(new Label("    "), 8, 0);
+		this.add(new Label("    "), 10, 0);
 		this.add(t1VB, 3, 1);
 		this.add(t2VB, 5, 1);
 		this.add(t3VB, 7, 1);
 		double a1AvgCy = t1AvgCy + t2AvgCy + t3AvgCy;
 		double a1AvgSpe = t1AvgSpe + t2AvgSpe + t3AvgSpe;
-		double a1AvgAmp = t1AvgCy + t2AvgCy + t3AvgAmp;
-		double a1AvgTrap = t1AvgCy + t2AvgTrap + t3AvgTrap;
-		double a1AvgCli = t1AvgCy + t2AvgCy + t3AvgCy;
+		double a1AvgAmp = t1AvgAmp + t2AvgAmp + t3AvgAmp;
+		double a1AvgTrap = t1AvgTrap + t2AvgTrap + t3AvgTrap;
+		double a1AvgCli = t1AvgCli + t2AvgCli + t3AvgCli;
 		Label a1AvgCyL = new Label(Double.toString(a1AvgCy));
 		Label a1AvgSpeL = new Label(Double.toString(a1AvgSpe));
 		Label a1AvgAmpL = new Label(Double.toString(a1AvgAmp));
@@ -403,7 +404,35 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 		VBox works = new VBox(5);
 		works.getChildren().addAll(worksT1BP, worksT2BP,worksT3BP);
 		this.add(works, 9, 1);
-		
+		BorderPane meldoyBP;
+		if(a1AvgCy >= 18) {
+			Label canMelL = new Label("Can Do Meldoied");
+			Label can18MelL = new Label("Without Co-op");
+			canMelL.setId("smallTitle");
+			can18MelL.setId("smallerTitle");
+			meldoyBP = new BorderPane();
+			meldoyBP.setTop(canMelL);
+			meldoyBP.setCenter(can18MelL);
+			meldoyBP.setId("seAllMelBP");
+		}else if(a1AvgCy >=15) {
+			Label canMelL = new Label("Can Do Meldoied");
+			Label can15MelL = new Label("With Co-op");
+			canMelL.setId("smallTitle");
+			can15MelL.setId("smallerTitle");
+			meldoyBP = new BorderPane();
+			meldoyBP.setTop(canMelL);
+			meldoyBP.setCenter(can15MelL);
+			meldoyBP.setId("seAllMelBP");
+		}else {
+			Label cantMelL = new Label("Can't Do Meldoied");
+			cantMelL.setId("smallTitle");
+			meldoyBP = new BorderPane();
+			meldoyBP.setTop(cantMelL);
+			meldoyBP.setId("seAllMeltBP");
+		}
+		VBox rankingVB = new VBox(5);
+		rankingVB.getChildren().add(meldoyBP);
+		this.add(rankingVB, 11, 1);
 	}
 	
 	public void displayAllStats(Team t1, Team t2, Team t3, Team t4) {
@@ -572,9 +601,9 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 		this.add(t3VB, 7, 1);
 		double a1AvgCy = t1AvgCy + t2AvgCy + t3AvgCy;
 		double a1AvgSpe = t1AvgSpe + t2AvgSpe + t3AvgSpe;
-		double a1AvgAmp = t1AvgCy + t2AvgCy + t3AvgAmp;
-		double a1AvgTrap = t1AvgCy + t2AvgTrap + t3AvgTrap;
-		double a1AvgCli = t1AvgCy + t2AvgCy + t3AvgCy;
+		double a1AvgAmp = t1AvgAmp + t2AvgAmp + t3AvgAmp;
+		double a1AvgTrap = t1AvgTrap + t2AvgTrap + t3AvgTrap;
+		double a1AvgCli = t1AvgCli + t2AvgCli + t3AvgCli;
 		Label a1AvgCyL = new Label(Double.toString(a1AvgCy));
 		Label a1AvgSpeL = new Label(Double.toString(a1AvgSpe));
 		Label a1AvgAmpL = new Label(Double.toString(a1AvgAmp));
@@ -604,7 +633,7 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 		a1TitleL.setId("smallTitle");
 		BorderPane a1TitleBP = new BorderPane();
 		a1TitleBP.setId("seAlla1TitleBP");
-		t1TitleBP.setCenter(t1TitleL);
+		a1TitleBP.setCenter(a1TitleL);
 		a1CyBP.setTop(a1AvgCyQL);
 		a1SpeBP.setTop(a1AvgSpeQL);
 		a1AmpBP.setTop(a1AvgAmpQL);
@@ -620,7 +649,7 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 		a1AmpBP.setId("seAllBP7");
 		a1TrapBP.setId("seAllBP6");
 		a1CliBP.setId("seAllBP5");
-		VBox a1NonVB = new VBox();
+		VBox a1NonVB = new VBox(5);
 		a1NonVB.getChildren().addAll(a1TitleBP, a1CyBP, a1SpeBP, a1AmpBP, a1TrapBP, a1CliBP);
 		this.add(a1NonVB, 1, 1);
 		if(t4 != null) {
@@ -710,7 +739,9 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 				String allNumS = allPlayCB.getSelectionModel().getSelectedItem();
 				
 				int allNum = Integer.parseInt(allNumS);
-				
+				if(thePlayoffAlls.getAlliance2() == null) {
+					System.out.println("BoopSeAllError");
+				}
 				if(allNum == 1) {
 					all = thePlayoffAlls.getAlliance1();
 					t1 = all.getTeam1();
