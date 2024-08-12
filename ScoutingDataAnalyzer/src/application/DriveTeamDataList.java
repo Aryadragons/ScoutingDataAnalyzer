@@ -25,7 +25,7 @@ public class DriveTeamDataList {
 		System.out.println("Boop32.2.");
 		tempDTD = listOfDriveTeamData.get(i);
 		System.out.println("Boop32.3");
-		while(found < 1) {
+		while(found < 1  & i < listOfDriveTeamData.size()) {
 			System.out.println("Boop32.4");
 			tempDTD = listOfDriveTeamData.get(i);
 			if(tempDTD.getTeamNum() == teamNum) {
@@ -39,7 +39,11 @@ public class DriveTeamDataList {
 			}
 			System.out.println("Boop32.7");
 		}
-		System.out.println("Boop32.8");
-		return tempDTD;
+		if (found == 1) {
+			System.out.println("Boop32.8DTD");
+			return tempDTD;
+		}else {
+			return null;
+		}
 	}
 }

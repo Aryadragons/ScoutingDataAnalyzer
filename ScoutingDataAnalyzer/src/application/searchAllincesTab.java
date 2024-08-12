@@ -340,9 +340,11 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 		a1AmpBP.setId("seAllNonBP7");
 		a1TrapBP.setId("seAllNonBP6");
 		a1CliBP.setId("seAllNonBP5");
+		System.out.println("BoopSeAlls-5");
 		VBox a1NonVB = new VBox(5);
 		a1NonVB.getChildren().addAll(a1TitleBP, a1CyBP, a1SpeBP, a1AmpBP, a1TrapBP, a1CliBP);
 		this.add(a1NonVB, 1, 1);
+		System.out.println("BoopSeAlls-4");
 		double t1HumAmpNotes = t1.getHumAmpNotes();
 		double t2HumAmpNotes = t2.getHumAmpNotes();
 		double t3HumAmpNotes = t3.getHumAmpNotes();
@@ -357,6 +359,7 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 		BorderPane worksT1BP = null;
 		BorderPane worksT2BP = null;
 		BorderPane worksT3BP = null;
+		System.out.println("BoopSeAlls-3");
 		if(t1HumAmpNotes >= 1) {
 			doTheyHaveAmpHum = true;
 			workst1 = true;
@@ -373,6 +376,7 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 			worksT1BP.setCenter(worksT1L);
 			worksT1BP.setId("seAllworks1");
 		}
+		System.out.println("BoopSeAlls-3");
 		if(t2HumAmpNotes >= 1) {
 			doTheyHaveAmpHum = true;
 			workst2 = true;
@@ -389,6 +393,7 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 			worksT2BP.setCenter(worksT2L);
 			worksT2BP.setId("seAllworks2");
 		}
+		System.out.println("BoopSeAlls-2");
 		if(t3HumAmpNotes >= 1) {
 			doTheyHaveAmpHum = true;
 			workst3 = true;
@@ -405,6 +410,7 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 			worksT3BP.setCenter(worksT3L);
 			worksT3BP.setId("seAllworks3");
 		}
+		System.out.println("BoopSeAlls-1");
 		VBox works = new VBox(5);
 		DriveTeamData t1DTD = theDTD.getATeamPit(t1.getTeamNum());
 		DriveTeamData t2DTD = theDTD.getATeamPit(t2.getTeamNum());
@@ -415,59 +421,93 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 		BorderPane t1WarnBP = new BorderPane();
 		BorderPane t2WarnBP = new BorderPane();
 		BorderPane t3WarnBP = new BorderPane();
-		if(t1DTD.getIsAdult() == true) {
-			Label TeamNum = new Label(Integer.toString(t1.getTeamNum()));
-			Label hasAdult = new Label("Has an Adult");
-			TeamNum.setId("smallTitle");
-			hasAdult.setId("smallerTitle");
-			t1ADCBP.setTop(TeamNum);
-			t1ADCBP.setCenter(hasAdult);
-			t1ADCBP.setId("seAllt1ADC");
+		System.out.println("BoopSeAlls0");
+		if(t1DTD != null) {
+			if(t1DTD.getIsAdult() == true) {
+				Label TeamNum = new Label(Integer.toString(t1.getTeamNum()));
+				Label hasAdult = new Label("Has an Adult");
+				TeamNum.setId("smallTitle");
+				hasAdult.setId("smallerTitle");
+				t1ADCBP.setTop(TeamNum);
+				t1ADCBP.setCenter(hasAdult);
+				t1ADCBP.setId("seAllt1ADC");
+			}
 		}
-		if(t2DTD.getIsAdult() == true) {
-			Label TeamNum = new Label(Integer.toString(t2.getTeamNum()));
-			Label hasAdult = new Label("Has an Adult");
-			TeamNum.setId("smallTitle");
-			hasAdult.setId("smallerTitle");
-			t2ADCBP.setTop(TeamNum);
-			t2ADCBP.setCenter(hasAdult);
-			t2ADCBP.setId("seAllt2ADC");
+		if(t2DTD != null) {
+			if(t2DTD.getIsAdult() == true) {
+				Label TeamNum = new Label(Integer.toString(t2.getTeamNum()));
+				Label hasAdult = new Label("Has an Adult");
+				TeamNum.setId("smallTitle");
+				hasAdult.setId("smallerTitle");
+				t2ADCBP.setTop(TeamNum);
+				t2ADCBP.setCenter(hasAdult);
+				t2ADCBP.setId("seAllt2ADC");
+			}
 		}
-		if(t3DTD.getIsAdult() == true) {
-			Label TeamNum = new Label(Integer.toString(t3.getTeamNum()));
-			Label hasAdult = new Label("Has an Adult");
-			TeamNum.setId("smallTitle");
-			hasAdult.setId("smallerTitle");
-			t3ADCBP.setTop(TeamNum);
-			t3ADCBP.setCenter(hasAdult);
-			t3ADCBP.setId("seAllt3ADC");
+		if(t3DTD != null) {
+			if(t3DTD.getIsAdult() == true) {
+				Label TeamNum = new Label(Integer.toString(t3.getTeamNum()));
+				Label hasAdult = new Label("Has an Adult");
+				TeamNum.setId("smallTitle");
+				hasAdult.setId("smallerTitle");
+				t3ADCBP.setTop(TeamNum);
+				t3ADCBP.setCenter(hasAdult);
+				t3ADCBP.setId("seAllt3ADC");
+			}
 		}
+		System.out.println("BoopSeAlls");
 		if(theDTC != null) {
+			System.out.println("BoopSeAlls1");
 			if(theDTC.getADriveTeamComments(t1.getTeamNum()) != null) {
+				System.out.println("BoopSeAlls2");
 				if(theDTC.getADriveTeamComments(t1.getTeamNum()).gettotalBLevel() > 0) {
+					System.out.println("BoopSeAlls3");
+					Label teamNumL = new Label(Integer.toString(t1.getTeamNum()));
+					teamNumL.setId("smallTitle");
 					if(theDTC.getADriveTeamComments(t1.getTeamNum()).gettotalBLevel() >= 10) {
 						Label t1Warning3 = new Label("Warning Level 3");
 						t1Warning3.setId("warn3");
+						t1WarnBP.setTop(teamNumL);
+						t1WarnBP.setCenter(t1Warning3);
+						t1WarnBP.setId("seAllWarnBPT1");
 					}else if(theDTC.getADriveTeamComments(t1.getTeamNum()).gettotalBLevel() >= 5) {
 						Label t1Warning2 = new Label("Warning Level 2");
 						t1Warning2.setId("warn2");
+						t1WarnBP.setTop(teamNumL);
+						t1WarnBP.setCenter(t1Warning2);
+						t1WarnBP.setId("seAllWarnBPT1");
 					}else if(theDTC.getADriveTeamComments(t1.getTeamNum()).gettotalBLevel() >= 2) {
+						System.out.println("BoopSeAlls4");
 						Label t1Warning1 = new Label("Warning Level 1");
 						t1Warning1.setId("warn1");
+						t1WarnBP.setTop(teamNumL);
+						t1WarnBP.setCenter(t1Warning1);
+						t1WarnBP.setId("seAllWarnBPT1");
 					}
 				}
 			}
 			if(theDTC.getADriveTeamComments(t2.getTeamNum()) != null) {
 				if(theDTC.getADriveTeamComments(t2.getTeamNum()).gettotalBLevel() > 0) {
+					Label teamNumL = new Label(Integer.toString(t2.getTeamNum()));
+					teamNumL.setId("smallTitle");
 					if(theDTC.getADriveTeamComments(t2.getTeamNum()).gettotalBLevel() >= 10) {
 						Label t2Warning3 = new Label("Warning Level 3");
 						t2Warning3.setId("warn3");
+						t2WarnBP.setTop(teamNumL);
+						t2WarnBP.setCenter(t2Warning3);
+						t2WarnBP.setId("seAllWarnBPT2");
 					}else if(theDTC.getADriveTeamComments(t2.getTeamNum()).gettotalBLevel() >= 5) {
 						Label t2Warning2 = new Label("Warning Level 2");
 						t2Warning2.setId("warn2");
+						t2WarnBP.setTop(teamNumL);
+						t2WarnBP.setCenter(t2Warning2);
+						t2WarnBP.setId("seAllWarnBPT2");
 					}else if(theDTC.getADriveTeamComments(t2.getTeamNum()).gettotalBLevel() >= 2) {
 						Label t2Warning1 = new Label("Warning Level 1");
 						t2Warning1.setId("warn1");
+						t2WarnBP.setTop(teamNumL);
+						t2WarnBP.setCenter(t2Warning1);
+						t2WarnBP.setId("seAllWarnBPT2");
 					}
 				}
 			}
@@ -480,19 +520,19 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 						t3Warning3.setId("warn3");
 						t3WarnBP.setTop(teamNumL);
 						t3WarnBP.setCenter(t3Warning3);
-						
+						t3WarnBP.setId("seAllWarnBPT3");
 					}else if(theDTC.getADriveTeamComments(t3.getTeamNum()).gettotalBLevel() >= 5) {
 						Label t3Warning2 = new Label("Warning Level 2");
 						t3Warning2.setId("warn2");
-						t1WarnBP.setTop(teamNumL);
 						t3WarnBP.setTop(teamNumL);
 						t3WarnBP.setCenter(t3Warning2);
+						t3WarnBP.setId("seAllWarnBPT3");
 					}else if(theDTC.getADriveTeamComments(t3.getTeamNum()).gettotalBLevel() >= 2) {
 						Label t3Warning1 = new Label("Warning Level 1");
 						t3Warning1.setId("warn1");
-						t1WarnBP.setTop(teamNumL);
 						t3WarnBP.setTop(teamNumL);
 						t3WarnBP.setCenter(t3Warning1);
+						t3WarnBP.setId("seAllWarnBPT3");
 					}
 				}
 			}
@@ -809,6 +849,7 @@ public class searchAllincesTab extends GridPane implements EventHandler<ActionEv
 	public void handle(ActionEvent event) {
 		try {
 			if(event.getSource() == seNonAllincesB) {
+				System.out.println("BoopSeAlls");
 				this.getChildren().clear();
 				Team t1;
 				Team t2;

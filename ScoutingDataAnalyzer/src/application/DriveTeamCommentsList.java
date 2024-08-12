@@ -25,7 +25,7 @@ public class DriveTeamCommentsList {
 		System.out.println("Boop32.2.DTC");
 		tempDTC = listOfDriveTeamComments.get(i);
 		System.out.println("Boop32.3DTC");
-		while(found < 1) {
+		while(found < 1 & i < listOfDriveTeamComments.size()) {
 			System.out.println("Boop32.4DTC");
 			tempDTC = listOfDriveTeamComments.get(i);
 			if(tempDTC.getTeamNum() == teamNum) {
@@ -39,7 +39,11 @@ public class DriveTeamCommentsList {
 			}
 			System.out.println("Boop32.7DTC");
 		}
-		System.out.println("Boop32.8DTC");
-		return tempDTC;
+		if (found == 1) {
+			System.out.println("Boop32.8DTC");
+			return tempDTC;
+		}else {
+			return null;
+		}
 	}
 }

@@ -1175,9 +1175,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	private void makeSearchAllinces() {
 		searchAllincesTab seAllinces;
 		if(thePOA.getAlliance1() != null) {
-			seAllinces = new searchAllincesTab(true, listOfTeamNumsSorted, mainTeamList, thePOA);
+			seAllinces = new searchAllincesTab(true, listOfTeamNumsSorted, mainTeamList, thePOA, fileDTDL, fileDTCL);
 		}else {
-			seAllinces = new searchAllincesTab(false, listOfTeamNumsSorted, mainTeamList, thePOA);
+			seAllinces = new searchAllincesTab(false, listOfTeamNumsSorted, mainTeamList, thePOA, fileDTDL, fileDTCL);
 		}
 		seAllinces.setMinHeight(800);
 		seAllinces.setMinWidth(1400);
