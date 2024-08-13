@@ -21,9 +21,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 	private ComboBox<String> isPracCB;
 	private ComboBox<String> isReplayCB;
 	private List<Integer> listOfTeamNums;
+	private MatchList mainML;
 	
-	public searchMatchTab(List<Integer> importedListOfTeamNums, boolean imIsPlayoff) {
+	public searchMatchTab(List<Integer> importedListOfTeamNums, boolean imIsPlayoff, MatchList imML) {
 		listOfTeamNums = importedListOfTeamNums;
+		mainML = imML;
 		if(imIsPlayoff == false) {
 			Label selTeamL = new Label("Select Team:  ");
 			Label selMatchNumL = new Label("Select Match Number:  ");
@@ -100,6 +102,20 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 		try {
 			if(event.getSource() == submitNonB){
 				this.getChildren().clear();
+				String selTeamNumS = teamCB.getSelectionModel().getSelectedItem();
+				String matchNumS = matchNumTF.getText();
+				String isPracS = isPracCB.getSelectionModel().getSelectedItem();
+				String isReplayS = isReplayCB.getSelectionModel().getSelectedItem();
+				int selTeamNum = Integer.parseInt(selTeamNumS);
+				int matchNum = Integer.parseInt(matchNumS);
+				boolean isPrac = Boolean.parseBoolean(isPracS);
+				boolean isReplay = Boolean.parseBoolean(isReplayS);
+				List<Match> teamsMatch = mainML.getMatchFromFullList(matchNum);
+				List<Match> blueTeams;
+				List<Match> redTeams;
+				for(int i = 0; i < teamsMatch.size(); i++) {
+					
+				}
 			}
 			if(event.getSource() == submitPlayB) {
 				this.getChildren().clear();

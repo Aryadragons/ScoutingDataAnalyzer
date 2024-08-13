@@ -367,8 +367,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			for (int i = 0; i < TotalMs; i++) {
 				String MTeamNumS = fileInput.next();
 		    	String MMatchNumS = fileInput.next();
-		    	String MAllColorS = fileInput.next();
 		    	String MIsPracS = fileInput.next();
+		    	String MAllColorS = fileInput.next();
+		    	String MIsReplayS = fileInput.next();
 		    	String MAmpS = fileInput.next();
 		    	String MSpeS = fileInput.next();
 		    	String MTrapS = fileInput.next();
@@ -389,6 +390,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		    	int MAmpNotes = Integer.parseInt(MAmpNotesS);
 		    	Boolean MAllColor = Boolean.parseBoolean(MAllColorS);
 		    	Boolean MIsPrac = Boolean.parseBoolean(MIsPracS);
+		    	Boolean MIsReplay = Boolean.parseBoolean(MIsReplayS);
 		    	String autoStartPosS = fileInput.next();
 				String autoANControlS = fileInput.next();
 				String autoASpeckerS = fileInput.next();
@@ -405,7 +407,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 				int autoAmp = Integer.parseInt(autoAmpS);
 				System.out.println("Boop26.3" + autoANControl);
 				AutoAttempt fileAuto = new AutoAttempt(fileTeamNum, MMatchNum, autoStartPos, autoANControl, autoASpecker, autoAAmp, autoNControl, autoSpecker, autoAmp);
-		    	Match fileMatch = new Match(MTeamNum, MMatchNum, MAmp, MSpe, MTrap, MClimb, MHumPosS, MAmpSkill, MScoSkill, MAmpNotes, MCommentS, fileAuto, MAllColor, MIsPrac);
+		    	Match fileMatch = new Match(MTeamNum, MMatchNum, MAmp, MSpe, MTrap, MClimb, MHumPosS, MAmpSkill, MScoSkill, MAmpNotes, MCommentS, fileAuto, MAllColor, MIsPrac, MIsReplay);
 		    	fileMatchList.addPreMadeMatch(fileMatch);
 		    	mainMatchList.addPreMadeMatch(fileMatch);
 			}
@@ -1236,8 +1238,12 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	}
 	
 	private void makeSearchMatch() {
-		if()
-		searchMatchTab seMatch = new searchMatchTab(listOfTeamNumsSorted, false);
+		searchMatchTab seMatch;
+		if(thePOA.getAlliance1() != null) {
+			seMatch = new searchMatchTab(listOfTeamNumsSorted, true);
+		} else {
+			seMatch = new searchMatchTab(listOfTeamNumsSorted, false);
+		}
 		seMatch.setMinHeight(800);
 		seMatch.setMinWidth(1400);
 		seMatch.setMaxHeight(800);

@@ -15,9 +15,10 @@ public class Match {
 	private AutoAttempt theAA;
 	private Boolean allianceColor;
 	private Boolean isPracMatch;
+	private Boolean isReplay;
 	
 	//constructor
-	public Match(int tempTeamNum, int tempMatchNum, int tempAmp, int tempSpe, int tempTrap, int tempClimb, String tempHumPos, int tempAmpSkill, int tempScoSkill, int tempAmpNotes, String tempComment, AutoAttempt imAA, Boolean tempAllColor, Boolean tempIsPrac) {
+	public Match(int tempTeamNum, int tempMatchNum, int tempAmp, int tempSpe, int tempTrap, int tempClimb, String tempHumPos, int tempAmpSkill, int tempScoSkill, int tempAmpNotes, String tempComment, AutoAttempt imAA, Boolean tempAllColor, Boolean tempIsPrac, Boolean tempIsReplay) {
 		setMatchTeamNum(tempTeamNum);
 		setMatchNum(tempMatchNum);
 		setMatchAmp(tempAmp);
@@ -32,6 +33,7 @@ public class Match {
 		setTheAA(imAA);
 		setAllianceColor(tempAllColor);
 		setIsPracMatch(tempIsPrac);
+		setIsReplay(tempIsReplay);
 	}
 	
 	//setters
@@ -91,6 +93,10 @@ public class Match {
 		isPracMatch = temp;
 	}
 	
+	public void setIsReplay(Boolean temp) {
+		isReplay = temp;
+	}
+	
 	//getters
 	public int getMatchTeamNum() {
 		return matchTeamNum;
@@ -146,6 +152,10 @@ public class Match {
 	
 	public Boolean getIsPracMatch() {
 		return isPracMatch;
+	}
+	
+	public Boolean getIsReplay() {
+		return isReplay;
 	}
 	
 	public String toString() {
