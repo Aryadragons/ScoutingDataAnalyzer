@@ -60,6 +60,7 @@ public class searchTeamsTab extends GridPane implements EventHandler<ActionEvent
 	private Button submitAutoB;
 	private BorderPane statCBBP = new BorderPane();
 	
+	
 	public searchTeamsTab(TeamList mainTeamList, List<Integer> importedListOfTeamNums, TeamPitsList importedListOfTeamPits, DriveTeamDataList imListOfDTD, DriveTeamCommentsList imListOfDTC) {
 		Label selectTeamL = new Label("Select Team to Look Up");
 		selectTeamL.setId("smallTitle");
