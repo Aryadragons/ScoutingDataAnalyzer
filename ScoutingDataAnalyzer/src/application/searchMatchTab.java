@@ -81,7 +81,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			this.add(new Label("    "), 0, 0);
 			this.add(new Label("    "), 2, 0);
 			this.add(selHB, 1, 1);
-			this.add(submitNonB, 1, 3);
+			this.add(submitPlayB, 1, 3);
 		}
 	}
 	
@@ -98,8 +98,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 	@Override
 	public void handle(ActionEvent event) {
 		try {
-			if(event.getSource() == submitB){
-				
+			if(event.getSource() == submitNonB){
+				this.getChildren().clear();
+			}
+			if(event.getSource() == submitPlayB) {
+				this.getChildren().clear();
 			}
 		} catch(Exception e) {
 			System.out.println("Error: " + e);
