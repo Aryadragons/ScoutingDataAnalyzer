@@ -130,6 +130,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			root.setTop(MB);
 			//adding the Tab panes
 			mainTP = new TabPane();
+			mainTP.setMinSize(1400, 600);
 			root.setBottom(mainTP);
 			//adding save files stuff
 			saveDataB = new Button("Save All Data");
