@@ -1244,9 +1244,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		} else {
 			seMatch = new searchMatchTab(listOfTeamNumsSorted, false, mainMatchList, mainTeamList);
 		}
-		seMatch.setMinHeight(800);
+		seMatch.setMinHeight(1400);
 		seMatch.setMinWidth(1400);
-		seMatch.setMaxHeight(800);
+		seMatch.setMaxHeight(1400);
 		seMatch.setMaxWidth(1400);
 		FileInputStream inputSeMacth;
 		try {

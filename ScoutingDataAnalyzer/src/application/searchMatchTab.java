@@ -31,10 +31,14 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 		mainML = imML;
 		theTL = imTeamList;
 		if(imIsPlayoff == false) {
-			Label selTeamL = new Label("Select Team:  ");
-			Label selMatchNumL = new Label("Select Match Number:  ");
+			Label selTeamL = new Label("Select Team:");
+			Label selMatchNumL = new Label("Select Match Number:");
 			Label selPracMatchL = new Label("Is It a Practice Match?");
 			Label selRePlayL = new Label("Is It a Match Replay");
+			selTeamL.setId("smallTitle");
+			selMatchNumL.setId("smallTitle");
+			selPracMatchL.setId("smallTitle");
+			selRePlayL.setId("smallTitle");
 			submitNonB = new Button("Submit");
 			submitNonB.setOnAction(this);
 			BorderPane selTeamBP = new BorderPane();
@@ -52,10 +56,14 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			selMatchNumBP.setTop(selMatchNumL);
 			selPracBP.setTop(selPracMatchL);
 			selRePlayBP.setTop(selRePlayL);
-			selTeamBP.setTop(teamCB);
-			selMatchNumBP.setTop(matchNumTF);
-			selPracBP.setTop(isPracCB);
-			selRePlayBP.setTop(isReplayCB);
+			selTeamBP.setCenter(teamCB);
+			selMatchNumBP.setCenter(matchNumTF);
+			selPracBP.setCenter(isPracCB);
+			selRePlayBP.setCenter(isReplayCB);
+			selTeamBP.setId("seMSelBp1");
+			selMatchNumBP.setId("seMSelBp2");
+			selPracBP.setId("seMSelBp3");
+			selRePlayBP.setId("seMSelBp4");
 			HBox selHB = new HBox(5);
 			selHB.getChildren().addAll(selTeamBP, selMatchNumBP, selPracBP, selRePlayBP);
 			this.add(new Label("    "), 0, 0);
@@ -66,6 +74,9 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			Label selTeamL = new Label("Select Team:  ");
 			Label selMatchNumL = new Label("Select Match Number:  ");
 			Label selRePlayL = new Label("Is It a Match Replay");
+			selTeamL.setId("smallTitle");
+			selMatchNumL.setId("smallTitle");
+			selRePlayL.setId("smallTitle");
 			submitPlayB = new Button("Submit");
 			submitPlayB.setOnAction(this);
 			BorderPane selTeamBP = new BorderPane();
@@ -79,13 +90,25 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			selTeamBP.setTop(selTeamL);
 			selMatchNumBP.setTop(selMatchNumL);
 			selRePlayBP.setTop(selRePlayL);
-			selTeamBP.setTop(teamCB);
-			selMatchNumBP.setTop(matchNumTF);
-			selRePlayBP.setTop(isReplayCB);
+			selTeamBP.setCenter(teamCB);
+			selMatchNumBP.setCenter(matchNumTF);
+			selRePlayBP.setCenter(isReplayCB);
+			selTeamBP.setId("seMSelBp1");
+			selMatchNumBP.setId("seMSelBp2");
+			selRePlayBP.setId("seMSelBp3");
 			HBox selHB = new HBox(5);
 			selHB.getChildren().addAll(selTeamBP, selMatchNumBP, selRePlayBP);
 			this.add(new Label("    "), 0, 0);
 			this.add(new Label("    "), 2, 0);
+			this.add(new Label("    "), 2, 1);
+			this.add(new Label("    "), 2, 2);
+			this.add(new Label("    "), 2, 3);
+			this.add(new Label("    "), 2, 4);
+			this.add(new Label("    "), 2, 5);
+			this.add(new Label("    "), 2, 6);
+			this.add(new Label("    "), 2, 7);
+			this.add(new Label("    "), 2, 8);
+			this.add(new Label("    "), 2, 9);
 			this.add(selHB, 1, 1);
 			this.add(submitPlayB, 1, 3);
 		}
@@ -107,6 +130,17 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			//Blue = false, Red = true
 			if(event.getSource() == submitNonB){
 				this.getChildren().clear();
+				this.add(new Label("    "), 0, 0);
+				this.add(new Label("    "), 2, 0);
+				this.add(new Label("    "), 2, 1);
+				this.add(new Label("    "), 2, 2);
+				this.add(new Label("    "), 2, 3);
+				this.add(new Label("    "), 2, 4);
+				this.add(new Label("    "), 2, 5);
+				this.add(new Label("    "), 2, 6);
+				this.add(new Label("    "), 2, 7);
+				this.add(new Label("    "), 2, 8);
+				this.add(new Label("    "), 2, 9);
 				System.out.print("BoopseM0");
 				String selTeamNumS = teamCB.getSelectionModel().getSelectedItem();
 				String matchNumS = matchNumTF.getText();
@@ -351,7 +385,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					blue3AmpAvgBP.setTop(blue3AvgAmpQL);
 					blue3TrapAvgBP.setTop(blue3AvgTrapQL);
 					blue3CliAvgBP.setTop(blue3AvgCliQL);
-					blue1CyBP.setCenter(blue2Cy);
+					blue1CyBP.setCenter(blue1Cy);
 					blue1SpeBP.setCenter(blue1Spe);
 					blue1AmpBP.setCenter(blue1Amp);
 					blue1TrapBP.setCenter(blue1Trap);
@@ -1035,7 +1069,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					red3AmpAvgBP.setTop(red3AvgAmpQL);
 					red3TrapAvgBP.setTop(red3AvgTrapQL);
 					red3CliAvgBP.setTop(red3AvgCliQL);
-					red1CyBP.setCenter(red2Cy);
+					red1CyBP.setCenter(red1Cy);
 					red1SpeBP.setCenter(red1Spe);
 					red1AmpBP.setCenter(red1Amp);
 					red1TrapBP.setCenter(red1Trap);
@@ -1102,7 +1136,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						red1VB.getChildren().addAll(red1TeamNumBP, red1CyBP, red1SpeBP, red1AmpBP, red1TrapBP, red1CliBP);
 						red2VB.getChildren().addAll(red2TeamNumBP, red2CyBP, red2SpeBP, red2AmpBP, red2TrapBP, red2CliBP);
 						red3VB.getChildren().addAll(red3TeamNumBP, red3CyBP, red3SpeBP, red3AmpBP, red3TrapBP, red3CliBP);
-						blueHB.getChildren().addAll(red1VB, red2VB, red3VB);
+						redHB.getChildren().addAll(red1VB, red2VB, red3VB);
 					}else {
 						red1CyBP.setId("seMStatBP9");
 						red1SpeBP.setId("seMStatBP7");
@@ -1140,7 +1174,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						red1VB.getChildren().addAll(red1TeamNumBP, red1CyBP, red1SpeBP, red1AmpBP, red1TrapBP, red1CliBP);
 						red2VB.getChildren().addAll(red2TeamNumBP, red2CyBP, red2SpeBP, red2AmpBP, red2TrapBP, red2CliBP);
 						red3VB.getChildren().addAll(red3TeamNumBP, red3CyBP, red3SpeBP, red3AmpBP, red3TrapBP, red3CliBP);
-						blueHB.getChildren().addAll(red1VB, red2VB, red3VB);
+						redHB.getChildren().addAll(red1VB, red2VB, red3VB);
 					}
 				}else if(redTeams.size() == 2) {
 					System.out.print("BoopseM13red2");
@@ -1522,7 +1556,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					}
 				}
 				this.add(blueHB, 0, 0);
-				this.add(blueHB, 1, 0);
+				this.add(redHB, 1, 0);
 
 			}
 			if(event.getSource() == submitPlayB) {
