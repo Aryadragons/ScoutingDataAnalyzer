@@ -107,40 +107,55 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			//Blue = false, Red = true
 			if(event.getSource() == submitNonB){
 				this.getChildren().clear();
+				System.out.print("BoopseM0");
 				String selTeamNumS = teamCB.getSelectionModel().getSelectedItem();
 				String matchNumS = matchNumTF.getText();
 				String isPracS = isPracCB.getSelectionModel().getSelectedItem();
 				String isReplayS = isReplayCB.getSelectionModel().getSelectedItem();
+				System.out.print("BoopseM1");
 				int selTeamNum = Integer.parseInt(selTeamNumS);
 				int matchNum = Integer.parseInt(matchNumS);
 				boolean isPrac = Boolean.parseBoolean(isPracS);
 				boolean isReplay = Boolean.parseBoolean(isReplayS);
+				System.out.print("BoopseM2");
 				List<Match> teamsMatch = mainML.getMatchFromFullList(matchNum);
+				System.out.print("BoopseM3");
 				List<Match> blueTeams =  new ArrayList<>();
 				List<Match> redTeams =  new ArrayList<>();
 				TeamList redTs = new TeamList();
 				TeamList blueTs = new TeamList();
 				Boolean mainColor = null;
+				System.out.print("BoopseM4");
 				for(int i = 0; i < teamsMatch.size(); i++) {
+					System.out.print("BoopseM5");
 					Match m = teamsMatch.get(i);
 					boolean mColor = m.getAllianceColor();
+					System.out.print("BoopseM6");
 					if(mColor == false) {
+						System.out.print("BoopseM7");
 						blueTeams.add(m);
 						blueTs.listOfTeams.add(theTL.getATeam(m.getMatchTeamNum()));
 						if(m.getMatchTeamNum() == selTeamNum) {
+							System.out.print("BoopseM8");
 							mainColor = false;
 						}
 					}else {
+						System.out.print("BoopseM9");
 						redTeams.add(m);
 						redTs.listOfTeams.add(theTL.getATeam(m.getMatchTeamNum()));
 						if(m.getMatchTeamNum() == selTeamNum) {
+							System.out.print("BoopseM10");
 							mainColor = true;
 						}
 					}
 				}
+				System.out.print("BoopseM11");
 				HBox blueHB = new HBox(5);
 				HBox redHB = new HBox(5);
+				System.out.print("BoopseM12Blue:" + blueTeams.size() + "Red:" + redTeams.size());
+				
 				if(blueTeams.size() == 3) {
+					System.out.print("BoopseM13Blue3");
 					int teamNum1 = blueTeams.get(0).getMatchTeamNum();
 					int teamNum2 = blueTeams.get(1).getMatchTeamNum();
 					int teamNum3 = blueTeams.get(2).getMatchTeamNum();
@@ -405,6 +420,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						blue3VB.getChildren().addAll(blue3TeamNumBP, blue3CyBP, blue3SpeBP, blue3AmpBP, blue3TrapBP, blue3CliBP);
 						blueHB.getChildren().addAll(blue1VB, blue2VB, blue3VB);
 					}else {
+						System.out.print("BoopseM0");
 						blue1CyBP.setId("seMStatBP9");
 						blue1SpeBP.setId("seMStatBP7");
 						blue1AmpBP.setId("seMStatBP5");
@@ -444,6 +460,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						blueHB.getChildren().addAll(blue1VB, blue2VB, blue3VB);
 					}
 				}else if(blueTeams.size() == 2) {
+					System.out.print("BoopseM13Blue2");
 					int teamNum1 = blueTeams.get(0).getMatchTeamNum();
 					int teamNum2 = blueTeams.get(1).getMatchTeamNum();
 					Label blue1TeamNumL = new Label(Integer.toString(teamNum1));
@@ -658,6 +675,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						blueHB.getChildren().addAll(blue1VB, blue2VB, blue3VB);
 					}
 				}else if(blueTeams.size() == 1) {
+					System.out.print("BoopseM13Blue1");
 					int teamNum1 = blueTeams.get(0).getMatchTeamNum();
 					Label blue1TeamNumL = new Label(Integer.toString(teamNum1));
 					Label noDataLabel1L = new Label("No Data");
@@ -783,6 +801,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						blueHB.getChildren().addAll(blue1VB, blue2VB, blue3VB);
 					}
 				}else if(blueTeams.size() == 0) {
+					System.out.print("BoopseM13Blue0");
 					Label noDataLabel1L = new Label("No Data");
 					Label noDataLabel2L = new Label("No Data");
 					Label noDataLabel3L = new Label("No Data");
@@ -820,6 +839,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					}
 				}
 				if(redTeams.size() == 3) {
+					System.out.print("BoopseM13red3");
 					int teamNum1 = redTeams.get(0).getMatchTeamNum();
 					int teamNum2 = redTeams.get(1).getMatchTeamNum();
 					int teamNum3 = redTeams.get(2).getMatchTeamNum();
@@ -1123,6 +1143,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						blueHB.getChildren().addAll(red1VB, red2VB, red3VB);
 					}
 				}else if(redTeams.size() == 2) {
+					System.out.print("BoopseM13red2");
 					int teamNum1 = redTeams.get(0).getMatchTeamNum();
 					int teamNum2 = redTeams.get(1).getMatchTeamNum();
 					Label red1TeamNumL = new Label(Integer.toString(teamNum1));
@@ -1336,132 +1357,134 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						red3VB.getChildren().add(noData1BP);
 						redHB.getChildren().addAll(red1VB, red2VB, red3VB);
 					}
-				}else if(blueTeams.size() == 1) {
-					int teamNum1 = blueTeams.get(0).getMatchTeamNum();
-					Label blue1TeamNumL = new Label(Integer.toString(teamNum1));
+				}else if(redTeams.size() == 1) {
+					System.out.print("BoopseM13red1");
+					int teamNum1 = redTeams.get(0).getMatchTeamNum();
+					Label red1TeamNumL = new Label(Integer.toString(teamNum1));
 					Label noDataLabel1L = new Label("No Data");
 					Label noDataLabel2L = new Label("No Data");
-					blue1TeamNumL.setId("smallTitle");
+					red1TeamNumL.setId("smallTitle");
 					noDataLabel1L.setId("smallTitle");
 					noDataLabel2L.setId("smallTitle");
-					BorderPane blue1TeamNumBP = new BorderPane();
+					BorderPane red1TeamNumBP = new BorderPane();
 					BorderPane noData1BP = new BorderPane();
 					BorderPane noData2BP = new BorderPane();
-					blue1TeamNumBP.setCenter(blue1TeamNumL);
+					red1TeamNumBP.setCenter(red1TeamNumL);
 					noData1BP.setCenter(noDataLabel1L);
 					noData2BP.setCenter(noDataLabel2L);
-					Label blue1Cy = new Label(Integer.toString(blueTeams.get(0).getMatchAmp() + blueTeams.get(0).getMatchSpe() + blueTeams.get(0).getMatchTrap()));
-					blue1Cy.setId("avgStat");
-					Label blue1Amp = new Label(Integer.toString(blueTeams.get(0).getMatchAmp()));
-					Label blue1Spe = new Label(Integer.toString(blueTeams.get(0).getMatchSpe()));
-					Label blue1Trap = new Label(Integer.toString(blueTeams.get(0).getMatchTrap()));
-					blue1Amp.setId("avgStat");
-					blue1Spe.setId("avgStat");
-					blue1Trap.setId("avgStat");
-					Label blue1AvgCy = new Label(Double.toString(theTL.getATeam(teamNum1).getAvgCycles()));
-					Label blue1AvgSpe = new Label(Double.toString(theTL.getATeam(teamNum1).getAvgSpe()));
-					Label blue1AvgAmp = new Label(Double.toString(theTL.getATeam(teamNum1).getAvgAmp()));
-					Label blue1AvgTrap = new Label(Double.toString(theTL.getATeam(teamNum1).getAvgTrap()));
-					blue1AvgCy.setId("avgStat");
-					blue1AvgSpe.setId("avgStat");
-					blue1AvgAmp.setId("avgStat");
-					blue1AvgTrap.setId("avgStat");
-					Label blue1Cli = new Label(Integer.toString(blueTeams.get(0).getMatchClimb()));
-					Label blue1AvgCli = new Label(Double.toString(theTL.getATeam(teamNum1).getAvgClimb()));
-					blue1Cli.setId("avgStat");
-					blue1AvgCli.setId("avgStat");
-					Label blue1CyQL = new Label("Match Cycles");
-					Label blue1SpeQL = new Label("Match Speaker");
-					Label blue1AmpQL = new Label("Match Amp");
-					Label blue1TrapQL = new Label("Match Trap");
-					Label blue1CliQL = new Label("Match Climb");
-					Label blue1AvgCyQL = new Label("Avg Cycles");
-					Label blue1AvgSpeQL = new Label("Avg Speaker");
-					Label blue1AvgAmpQL = new Label("Avg Amp");
-					Label blue1AvgTrapQL = new Label("Avg Trap");
-					Label blue1AvgCliQL = new Label("Avg Climb");
-					blue1CyQL.setId("smallTitle");
-					blue1SpeQL.setId("smallTitle");
-					blue1AmpQL.setId("smallTitle");
-					blue1TrapQL.setId("smallTitle");
-					blue1CliQL.setId("smallTitle");
-					blue1AvgCyQL.setId("smallTitle");
-					blue1AvgSpeQL.setId("smallTitle");
-					blue1AvgAmpQL.setId("smallTitle");
-					blue1AvgTrapQL.setId("smallTitle");
-					blue1AvgCliQL.setId("smallTitle");
-					BorderPane blue1CyBP = new BorderPane();
-					BorderPane blue1SpeBP = new BorderPane();
-					BorderPane blue1AmpBP = new BorderPane();
-					BorderPane blue1TrapBP = new BorderPane();
-					BorderPane blue1CliBP = new BorderPane();
-					BorderPane blue1CyAvgBP = new BorderPane();
-					BorderPane blue1SpeAvgBP = new BorderPane();
-					BorderPane blue1AmpAvgBP = new BorderPane();
-					BorderPane blue1TrapAvgBP = new BorderPane();
-					BorderPane blue1CliAvgBP = new BorderPane();
-					blue1CyBP.setTop(blue1CyQL);
-					blue1SpeBP.setTop(blue1SpeQL);
-					blue1AmpBP.setTop(blue1AmpQL);
-					blue1TrapBP.setTop(blue1TrapQL);
-					blue1CliBP.setTop(blue1CliQL);
-					blue1CyAvgBP.setTop(blue1AvgCyQL);
-					blue1SpeAvgBP.setTop(blue1AvgSpeQL);
-					blue1AmpAvgBP.setTop(blue1AvgAmpQL);
-					blue1TrapAvgBP.setTop(blue1AvgTrapQL);
-					blue1CliAvgBP.setTop(blue1AvgCliQL);
-					blue1CyBP.setCenter(blue1Cy);
-					blue1SpeBP.setCenter(blue1Spe);
-					blue1AmpBP.setCenter(blue1Amp);
-					blue1TrapBP.setCenter(blue1Trap);
-					blue1CliBP.setCenter(blue1Cli);
-					blue1CyAvgBP.setCenter(blue1AvgCy);
-					blue1SpeAvgBP.setCenter(blue1AvgSpe);
-					blue1AmpAvgBP.setCenter(blue1AvgAmp);
-					blue1TrapAvgBP.setCenter(blue1AvgTrap);
-					blue1CliAvgBP.setCenter(blue1AvgCli);
+					Label red1Cy = new Label(Integer.toString(redTeams.get(0).getMatchAmp() + redTeams.get(0).getMatchSpe() + redTeams.get(0).getMatchTrap()));
+					red1Cy.setId("avgStat");
+					Label red1Amp = new Label(Integer.toString(redTeams.get(0).getMatchAmp()));
+					Label red1Spe = new Label(Integer.toString(redTeams.get(0).getMatchSpe()));
+					Label red1Trap = new Label(Integer.toString(redTeams.get(0).getMatchTrap()));
+					red1Amp.setId("avgStat");
+					red1Spe.setId("avgStat");
+					red1Trap.setId("avgStat");
+					Label red1AvgCy = new Label(Double.toString(theTL.getATeam(teamNum1).getAvgCycles()));
+					Label red1AvgSpe = new Label(Double.toString(theTL.getATeam(teamNum1).getAvgSpe()));
+					Label red1AvgAmp = new Label(Double.toString(theTL.getATeam(teamNum1).getAvgAmp()));
+					Label red1AvgTrap = new Label(Double.toString(theTL.getATeam(teamNum1).getAvgTrap()));
+					red1AvgCy.setId("avgStat");
+					red1AvgSpe.setId("avgStat");
+					red1AvgAmp.setId("avgStat");
+					red1AvgTrap.setId("avgStat");
+					Label red1Cli = new Label(Integer.toString(redTeams.get(0).getMatchClimb()));
+					Label red1AvgCli = new Label(Double.toString(theTL.getATeam(teamNum1).getAvgClimb()));
+					red1Cli.setId("avgStat");
+					red1AvgCli.setId("avgStat");
+					Label red1CyQL = new Label("Match Cycles");
+					Label red1SpeQL = new Label("Match Speaker");
+					Label red1AmpQL = new Label("Match Amp");
+					Label red1TrapQL = new Label("Match Trap");
+					Label red1CliQL = new Label("Match Climb");
+					Label red1AvgCyQL = new Label("Avg Cycles");
+					Label red1AvgSpeQL = new Label("Avg Speaker");
+					Label red1AvgAmpQL = new Label("Avg Amp");
+					Label red1AvgTrapQL = new Label("Avg Trap");
+					Label red1AvgCliQL = new Label("Avg Climb");
+					red1CyQL.setId("smallTitle");
+					red1SpeQL.setId("smallTitle");
+					red1AmpQL.setId("smallTitle");
+					red1TrapQL.setId("smallTitle");
+					red1CliQL.setId("smallTitle");
+					red1AvgCyQL.setId("smallTitle");
+					red1AvgSpeQL.setId("smallTitle");
+					red1AvgAmpQL.setId("smallTitle");
+					red1AvgTrapQL.setId("smallTitle");
+					red1AvgCliQL.setId("smallTitle");
+					BorderPane red1CyBP = new BorderPane();
+					BorderPane red1SpeBP = new BorderPane();
+					BorderPane red1AmpBP = new BorderPane();
+					BorderPane red1TrapBP = new BorderPane();
+					BorderPane red1CliBP = new BorderPane();
+					BorderPane red1CyAvgBP = new BorderPane();
+					BorderPane red1SpeAvgBP = new BorderPane();
+					BorderPane red1AmpAvgBP = new BorderPane();
+					BorderPane red1TrapAvgBP = new BorderPane();
+					BorderPane red1CliAvgBP = new BorderPane();
+					red1CyBP.setTop(red1CyQL);
+					red1SpeBP.setTop(red1SpeQL);
+					red1AmpBP.setTop(red1AmpQL);
+					red1TrapBP.setTop(red1TrapQL);
+					red1CliBP.setTop(red1CliQL);
+					red1CyAvgBP.setTop(red1AvgCyQL);
+					red1SpeAvgBP.setTop(red1AvgSpeQL);
+					red1AmpAvgBP.setTop(red1AvgAmpQL);
+					red1TrapAvgBP.setTop(red1AvgTrapQL);
+					red1CliAvgBP.setTop(red1AvgCliQL);
+					red1CyBP.setCenter(red1Cy);
+					red1SpeBP.setCenter(red1Spe);
+					red1AmpBP.setCenter(red1Amp);
+					red1TrapBP.setCenter(red1Trap);
+					red1CliBP.setCenter(red1Cli);
+					red1CyAvgBP.setCenter(red1AvgCy);
+					red1SpeAvgBP.setCenter(red1AvgSpe);
+					red1AmpAvgBP.setCenter(red1AvgAmp);
+					red1TrapAvgBP.setCenter(red1AvgTrap);
+					red1CliAvgBP.setCenter(red1AvgCli);
 					if(mainColor == false) {
-						blue1CyBP.setId("seMStatBP1");
-						blue1SpeBP.setId("seMStatBP3");
-						blue1AmpBP.setId("seMStatBP5");
-						blue1TrapBP.setId("seMStatBP7");
-						blue1CliBP.setId("seMStatBP9");
-						blue1CyAvgBP.setId("seMStatBP2");
-						blue1SpeAvgBP.setId("seMStatBP4");
-						blue1AmpAvgBP.setId("seMStatBP6");
-						blue1TrapAvgBP.setId("seMStatBP8");
-						blue1CliAvgBP.setId("seMStatBP8");
+						red1CyBP.setId("seMStatBP1");
+						red1SpeBP.setId("seMStatBP3");
+						red1AmpBP.setId("seMStatBP5");
+						red1TrapBP.setId("seMStatBP7");
+						red1CliBP.setId("seMStatBP9");
+						red1CyAvgBP.setId("seMStatBP2");
+						red1SpeAvgBP.setId("seMStatBP4");
+						red1AmpAvgBP.setId("seMStatBP6");
+						red1TrapAvgBP.setId("seMStatBP8");
+						red1CliAvgBP.setId("seMStatBP8");
 						noData1BP.setId("seMStatBP9");
 						noData2BP.setId("seMStatBP1");
-						VBox blue1VB = new VBox(5);
-						VBox blue2VB = new VBox(5);
-						VBox blue3VB = new VBox(5);
-						blue1VB.getChildren().addAll(blue1TeamNumBP, blue1CyBP, blue1SpeBP, blue1AmpBP, blue1TrapBP, blue1CliBP);
-						blue2VB.getChildren().add(noData1BP);
-						blue3VB.getChildren().add(noData2BP);
-						blueHB.getChildren().addAll(blue1VB, blue2VB, blue3VB);
+						VBox red1VB = new VBox(5);
+						VBox red2VB = new VBox(5);
+						VBox red3VB = new VBox(5);
+						red1VB.getChildren().addAll(red1TeamNumBP, red1CyBP, red1SpeBP, red1AmpBP, red1TrapBP, red1CliBP);
+						red2VB.getChildren().add(noData1BP);
+						red3VB.getChildren().add(noData2BP);
+						redHB.getChildren().addAll(red1VB, red2VB, red3VB);
 					}else {
-						blue1CyBP.setId("seMStatBP9");
-						blue1SpeBP.setId("seMStatBP7");
-						blue1AmpBP.setId("seMStatBP5");
-						blue1TrapBP.setId("seMStatBP3");
-						blue1CliBP.setId("seMStatBP1");
-						blue1CyAvgBP.setId("seMStatBP8");
-						blue1SpeAvgBP.setId("seMStatBP6");
-						blue1AmpAvgBP.setId("seMStatBP4");
-						blue1TrapAvgBP.setId("seMStatBP2");
-						blue1CliAvgBP.setId("seMStatBP2");
+						red1CyBP.setId("seMStatBP9");
+						red1SpeBP.setId("seMStatBP7");
+						red1AmpBP.setId("seMStatBP5");
+						red1TrapBP.setId("seMStatBP3");
+						red1CliBP.setId("seMStatBP1");
+						red1CyAvgBP.setId("seMStatBP8");
+						red1SpeAvgBP.setId("seMStatBP6");
+						red1AmpAvgBP.setId("seMStatBP4");
+						red1TrapAvgBP.setId("seMStatBP2");
+						red1CliAvgBP.setId("seMStatBP2");
 						noData1BP.setId("seMStatBP1");
 						noData2BP.setId("seMStatBP9");
-						VBox blue1VB = new VBox(5);
-						VBox blue2VB = new VBox(5);
-						VBox blue3VB = new VBox(5);
-						blue1VB.getChildren().addAll(blue1TeamNumBP, blue1CyBP, blue1SpeBP, blue1AmpBP, blue1TrapBP, blue1CliBP);
-						blue2VB.getChildren().add(noData1BP);
-						blue3VB.getChildren().add(noData1BP);
-						blueHB.getChildren().addAll(blue1VB, blue2VB, blue3VB);
+						VBox red1VB = new VBox(5);
+						VBox red2VB = new VBox(5);
+						VBox red3VB = new VBox(5);
+						red1VB.getChildren().addAll(red1TeamNumBP, red1CyBP, red1SpeBP, red1AmpBP, red1TrapBP, red1CliBP);
+						red2VB.getChildren().add(noData1BP);
+						red3VB.getChildren().add(noData1BP);
+						redHB.getChildren().addAll(red1VB, red2VB, red3VB);
 					}
-				}else if(blueTeams.size() == 0) {
+				}else if(redTeams.size() == 0) {
+					System.out.print("BoopseM13red0");
 					Label noDataLabel1L = new Label("No Data");
 					Label noDataLabel2L = new Label("No Data");
 					Label noDataLabel3L = new Label("No Data");
@@ -1478,26 +1501,28 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						noData1BP.setId("seMStatBP9");
 						noData2BP.setId("seMStatBP1");
 						noData2BP.setId("seMStatBP9");
-						VBox blue1VB = new VBox(5);
-						VBox blue2VB = new VBox(5);
-						VBox blue3VB = new VBox(5);
-						blue1VB.getChildren().addAll(noData1BP);
-						blue2VB.getChildren().add(noData2BP);
-						blue3VB.getChildren().add(noData3BP);
-						blueHB.getChildren().addAll(blue1VB, blue2VB, blue3VB);
+						VBox red1VB = new VBox(5);
+						VBox red2VB = new VBox(5);
+						VBox red3VB = new VBox(5);
+						red1VB.getChildren().addAll(noData1BP);
+						red2VB.getChildren().add(noData2BP);
+						red3VB.getChildren().add(noData3BP);
+						redHB.getChildren().addAll(red1VB, red2VB, red3VB);
 					}else {
 						noData1BP.setId("seMStatBP1");
 						noData2BP.setId("seMStatBP9");
 						noData2BP.setId("seMStatBP1");
-						VBox blue1VB = new VBox(5);
-						VBox blue2VB = new VBox(5);
-						VBox blue3VB = new VBox(5);
-						blue1VB.getChildren().addAll(noData1BP);
-						blue2VB.getChildren().add(noData2BP);
-						blue3VB.getChildren().add(noData3BP);
-						blueHB.getChildren().addAll(blue1VB, blue2VB, blue3VB);
+						VBox red1VB = new VBox(5);
+						VBox red2VB = new VBox(5);
+						VBox red3VB = new VBox(5);
+						red1VB.getChildren().addAll(noData1BP);
+						red2VB.getChildren().add(noData2BP);
+						red3VB.getChildren().add(noData3BP);
+						redHB.getChildren().addAll(red1VB, red2VB, red3VB);
 					}
 				}
+				this.add(blueHB, 0, 0);
+				this.add(blueHB, 1, 0);
 
 			}
 			if(event.getSource() == submitPlayB) {

@@ -1240,9 +1240,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	private void makeSearchMatch() {
 		searchMatchTab seMatch;
 		if(thePOA.getAlliance1() != null) {
-			seMatch = new searchMatchTab(listOfTeamNumsSorted, true);
+			seMatch = new searchMatchTab(listOfTeamNumsSorted, true, mainMatchList, mainTeamList);
 		} else {
-			seMatch = new searchMatchTab(listOfTeamNumsSorted, false);
+			seMatch = new searchMatchTab(listOfTeamNumsSorted, false, mainMatchList, mainTeamList);
 		}
 		seMatch.setMinHeight(800);
 		seMatch.setMinWidth(1400);
