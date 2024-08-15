@@ -228,17 +228,60 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 		TeamList redTs = new TeamList();
 		TeamList blueTs = new TeamList();
 		Boolean mainColor = null;
+		boolean isRedTeam1 = false;
+		boolean isRedTeam2 = false;
+		boolean isRedTeam3 = false;
+		boolean isRedTeam4 = false;
+		boolean isBlueTeam1 = false;
+		boolean isBlueTeam2 = false;
+		boolean isBlueTeam3 = false;
+		boolean isBlueTeam4 = false;
 		for(int i = 0; i < allsMatch.size(); i++) {
 			Match m = allsMatch.get(i);
 			boolean mColor = m.getAllianceColor();
-			if(m.getMatchTeamNum() == mainTeamNum1 || m.getMatchTeamNum() == mainTeamNum2 || m.getMatchTeamNum() == mainTeamNum3 || m.getMatchTeamNum() == mainTeamNum4 ) {
+			if(m.getMatchTeamNum() == mainTeamNum1) {
 				mainColor = mColor;
 				if(mainColor == false) {
 					blueTeams.add(m);
 					blueTs.listOfTeams.add(theTL.getATeam(m.getMatchTeamNum()));
+					isBlueTeam1 = true;
 				}else {
 					redTeams.add(m);
 					redTs.listOfTeams.add(theTL.getATeam(m.getMatchTeamNum()));
+					isRedTeam1 = true;
+				}
+			}else if(m.getMatchTeamNum() == mainTeamNum2){
+				mainColor = mColor;
+				if(mainColor == false) {
+					blueTeams.add(m);
+					blueTs.listOfTeams.add(theTL.getATeam(m.getMatchTeamNum()));
+					isBlueTeam2 = true;
+				}else {
+					redTeams.add(m);
+					redTs.listOfTeams.add(theTL.getATeam(m.getMatchTeamNum()));
+					isRedTeam2 = true;
+				}
+			}else if(m.getMatchTeamNum() == mainTeamNum3){
+				mainColor = mColor;
+				if(mainColor == false) {
+					blueTeams.add(m);
+					blueTs.listOfTeams.add(theTL.getATeam(m.getMatchTeamNum()));
+					isBlueTeam3 = true;
+				}else {
+					redTeams.add(m);
+					redTs.listOfTeams.add(theTL.getATeam(m.getMatchTeamNum()));
+					isRedTeam3 = true;
+				}
+			}else if(m.getMatchTeamNum() == mainTeamNum4){
+				mainColor = mColor;
+				if(mainColor == false) {
+					blueTeams.add(m);
+					blueTs.listOfTeams.add(theTL.getATeam(m.getMatchTeamNum()));
+					isBlueTeam4 = true;
+				}else {
+					redTeams.add(m);
+					redTs.listOfTeams.add(theTL.getATeam(m.getMatchTeamNum()));
+					isRedTeam4 = true;
 				}
 			}else {
 				if(mColor == false) {
@@ -250,24 +293,112 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				}
 			}
 		}
+		int nonAllNum;
 		HBox blueHB = new HBox(6);
 		HBox redHB = new HBox(6);
-		boolean isRedTeam1 = false;
-		boolean isRedTeam2 = false;
-		boolean isRedTeam3 = false;
-		boolean isRedTeam4 = false;
-		boolean isBlueTeam1 = false;
-		boolean isBlueTeam2 = false;
-		boolean isBlueTeam3 = false;
-		boolean isBlueTeam4 = false;
-		int isRedTeam1 = false;
-		int isRedTeam2 = false;
-		int isRedTeam3 = false;
-		int isRedTeam4 = false;
-		int isBlueTeam1 = false;
-		int isBlueTeam2 = false;
-		int isBlueTeam3 = false;
-		int isBlueTeam4 = false;
+		if(mainColor = false) {
+			findNonAll()
+		}
+	}
+	
+	public int findNonAll(int tempTeamNum) {
+		if(thePOA.getAlliance1().getTeam1().getTeamNum() == tempTeamNum) {
+			return 1;
+		}
+		if(thePOA.getAlliance1().getTeam2().getTeamNum() == tempTeamNum) {
+			return 1;
+		}
+		if(thePOA.getAlliance1().getTeam3().getTeamNum() == tempTeamNum) {
+			return 1;
+		}
+		if(thePOA.getAlliance1().getTeam4().getTeamNum() == tempTeamNum) {
+			return 1;
+		}
+		if(thePOA.getAlliance2().getTeam1().getTeamNum() == tempTeamNum) {
+			return 2;
+		}
+		if(thePOA.getAlliance2().getTeam2().getTeamNum() == tempTeamNum) {
+			return 2;
+		}
+		if(thePOA.getAlliance2().getTeam3().getTeamNum() == tempTeamNum) {
+			return 2;
+		}
+		if(thePOA.getAlliance2().getTeam4().getTeamNum() == tempTeamNum) {
+			return 2;
+		}
+		if(thePOA.getAlliance3().getTeam1().getTeamNum() == tempTeamNum) {
+			return 3;
+		}
+		if(thePOA.getAlliance3().getTeam2().getTeamNum() == tempTeamNum) {
+			return 3;
+		}
+		if(thePOA.getAlliance3().getTeam3().getTeamNum() == tempTeamNum) {
+			return 3;
+		}
+		if(thePOA.getAlliance3().getTeam4().getTeamNum() == tempTeamNum) {
+			return 3;
+		}
+		if(thePOA.getAlliance4().getTeam1().getTeamNum() == tempTeamNum) {
+			return 4;
+		}
+		if(thePOA.getAlliance4().getTeam2().getTeamNum() == tempTeamNum) {
+			return 4;
+		}
+		if(thePOA.getAlliance4().getTeam3().getTeamNum() == tempTeamNum) {
+			return 4;
+		}
+		if(thePOA.getAlliance4().getTeam4().getTeamNum() == tempTeamNum) {
+			return 4;
+		}
+		if(thePOA.getAlliance5().getTeam1().getTeamNum() == tempTeamNum) {
+			return 5;
+		}
+		if(thePOA.getAlliance5().getTeam2().getTeamNum() == tempTeamNum) {
+			return 5;
+		}
+		if(thePOA.getAlliance5().getTeam3().getTeamNum() == tempTeamNum) {
+			return 5;
+		}
+		if(thePOA.getAlliance5().getTeam4().getTeamNum() == tempTeamNum) {
+			return 5;
+		}
+		if(thePOA.getAlliance6().getTeam1().getTeamNum() == tempTeamNum) {
+			return 6;
+		}
+		if(thePOA.getAlliance6().getTeam2().getTeamNum() == tempTeamNum) {
+			return 6;
+		}
+		if(thePOA.getAlliance6().getTeam3().getTeamNum() == tempTeamNum) {
+			return 6;
+		}
+		if(thePOA.getAlliance6().getTeam4().getTeamNum() == tempTeamNum) {
+			return 6;
+		}
+		if(thePOA.getAlliance7().getTeam1().getTeamNum() == tempTeamNum) {
+			return 7;
+		}
+		if(thePOA.getAlliance7().getTeam2().getTeamNum() == tempTeamNum) {
+			return 7;
+		}
+		if(thePOA.getAlliance7().getTeam3().getTeamNum() == tempTeamNum) {
+			return 7;
+		}
+		if(thePOA.getAlliance7().getTeam4().getTeamNum() == tempTeamNum) {
+			return 7;
+		}
+		if(thePOA.getAlliance8().getTeam1().getTeamNum() == tempTeamNum) {
+			return 8;
+		}
+		if(thePOA.getAlliance8().getTeam2().getTeamNum() == tempTeamNum) {
+			return 8;
+		}
+		if(thePOA.getAlliance8().getTeam3().getTeamNum() == tempTeamNum) {
+			return 8;
+		}
+		if(thePOA.getAlliance8().getTeam4().getTeamNum() == tempTeamNum) {
+			return 8;
+		}
+		return 0;
 	}
 	
 	@Override
