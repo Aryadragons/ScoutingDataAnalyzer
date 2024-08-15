@@ -11,8 +11,8 @@ public class MatchList {
 		listOfMatches = new ArrayList<Match>();
 	}
 	
-	public void addMatch(int tempTeamNum, int tempMatchNum, int tempAmp, int tempSpe, int tempTrap, int tempClimb, String tempHumPos, int tempAmpSkill, int tempScoSkill, int tempAmpNotes, String tempComment, AutoAttempt imAutoList, Boolean imAllColor, Boolean imIsPrac, Boolean imIsReplay){
-		Match M = new Match(tempTeamNum, tempMatchNum, tempAmp, tempSpe, tempTrap, tempClimb, tempHumPos, tempAmpSkill, tempScoSkill, tempAmpNotes, tempComment, imAutoList, imAllColor, imIsPrac, imIsReplay);
+	public void addMatch(int tempTeamNum, int tempMatchNum, int tempAmp, int tempSpe, int tempTrap, int tempClimb, String tempHumPos, int tempAmpSkill, int tempScoSkill, int tempAmpNotes, String tempComment, AutoAttempt imAutoList, Boolean imAllColor, Boolean imIsPrac, Boolean imIsReplay, Boolean imIsPlayoff){
+		Match M = new Match(tempTeamNum, tempMatchNum, tempAmp, tempSpe, tempTrap, tempClimb, tempHumPos, tempAmpSkill, tempScoSkill, tempAmpNotes, tempComment, imAutoList, imAllColor, imIsPrac, imIsReplay, imIsPlayoff);
 		listOfMatches.add(M);
 	}
 	
@@ -36,14 +36,16 @@ public class MatchList {
 		return null;
 	}
 	
-	public List<Match> getMatchFromFullList(int matchNum){
+	public List<Match> getMatchFromFullList(int matchNum, Boolean isPlay){
 		List<Match> teamsInThisMatch  = new ArrayList<>();
 		int found = 0;
 		for(int i = 0; i <listOfMatches.size(); i++) {
 			Match tempM = listOfMatches.get(i);
-			if (tempM.getMatchNum() == matchNum) {
-				teamsInThisMatch.add(tempM);
-				found = 1;
+			if(tempM.getIsPlayoff() == isPlay) {
+				if (tempM.getMatchNum() == matchNum) {
+					teamsInThisMatch.add(tempM);
+					found = 1;
+				}
 			}
 		}
 		if(found == 1) {

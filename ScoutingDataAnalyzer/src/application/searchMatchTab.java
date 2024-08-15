@@ -19,17 +19,20 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 	private Button submitNonB;
 	private Button submitPlayB;
 	private ComboBox<String> teamCB;
+	private ComboBox<String> allCB;
 	private TextField matchNumTF;
 	private ComboBox<String> isPracCB;
 	private ComboBox<String> isReplayCB;
 	private List<Integer> listOfTeamNums;
 	private MatchList mainML;
 	private TeamList theTL;
+	private PlayoffAlliances thePOA;
 	
-	public searchMatchTab(List<Integer> importedListOfTeamNums, boolean imIsPlayoff, MatchList imML, TeamList imTeamList) {
+	public searchMatchTab(List<Integer> importedListOfTeamNums, boolean imIsPlayoff, MatchList imML, TeamList imTeamList, PlayoffAlliances imPlayAll) {
 		listOfTeamNums = importedListOfTeamNums;
 		mainML = imML;
 		theTL = imTeamList;
+		thePOA = imPlayAll;
 		if(imIsPlayoff == false) {
 			Label selTeamL = new Label("Select Team:");
 			Label selMatchNumL = new Label("Select Match Number:");
@@ -71,7 +74,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			this.add(selHB, 1, 1);
 			this.add(submitNonB, 1, 3);
 		}else {
-			Label selTeamL = new Label("Select Team:  ");
+			Label selTeamL = new Label("Select Alliance:  ");
 			Label selMatchNumL = new Label("Select Match Number:  ");
 			Label selRePlayL = new Label("Is It a Match Replay");
 			selTeamL.setId("smallTitle");
@@ -82,8 +85,8 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			BorderPane selTeamBP = new BorderPane();
 			BorderPane selMatchNumBP = new BorderPane();
 			BorderPane selRePlayBP = new BorderPane();
-			teamCB = new ComboBox<String>();
-			addComboBoxItems();
+			allCB = new ComboBox<String>();
+			addAllComboBoxItems();
 			matchNumTF = new TextField();
 			isReplayCB = new ComboBox<String>();
 			isReplayCB.getItems().addAll("Yes", "No");
@@ -123,7 +126,15 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			}
 		}
 	}
-
+	
+	public void addAllComboBoxItems() {
+		
+	}
+	
+	public void setPlayoffStuff(int selAll) {
+		
+	}
+	
 	@Override
 	public void handle(ActionEvent event) {
 		try {
@@ -152,7 +163,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				boolean isPrac = Boolean.parseBoolean(isPracS);
 				boolean isReplay = Boolean.parseBoolean(isReplayS);
 				System.out.print("BoopseM2");
-				List<Match> teamsMatch = mainML.getMatchFromFullList(matchNum);
+				List<Match> teamsMatch = mainML.getMatchFromFullList(matchNum, false);
 				System.out.print("BoopseM3");
 				List<Match> blueTeams =  new ArrayList<>();
 				List<Match> redTeams =  new ArrayList<>();
@@ -2157,6 +2168,8 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			}
 			if(event.getSource() == submitPlayB) {
 				this.getChildren().clear();
+				String matchNumS = matchNumTF.getText();
+				String isReplayS = isReplayCB.getSelectionModel().getSelectedItem();
 			}
 		} catch(Exception e) {
 			System.out.println("Error: " + e);

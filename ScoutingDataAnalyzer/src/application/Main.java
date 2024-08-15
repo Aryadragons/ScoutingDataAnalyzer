@@ -369,6 +369,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 				String MTeamNumS = fileInput.next();
 		    	String MMatchNumS = fileInput.next();
 		    	String MIsPracS = fileInput.next();
+		    	String MIsPlayS = fileInput.next();
 		    	String MAllColorS = fileInput.next();
 		    	String MIsReplayS = fileInput.next();
 		    	String MAmpS = fileInput.next();
@@ -391,6 +392,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		    	int MAmpNotes = Integer.parseInt(MAmpNotesS);
 		    	Boolean MAllColor = Boolean.parseBoolean(MAllColorS);
 		    	Boolean MIsPrac = Boolean.parseBoolean(MIsPracS);
+		    	Boolean MIsPlay = Boolean.parseBoolean(MIsPlayS);
 		    	Boolean MIsReplay = Boolean.parseBoolean(MIsReplayS);
 		    	String autoStartPosS = fileInput.next();
 				String autoANControlS = fileInput.next();
@@ -408,7 +410,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 				int autoAmp = Integer.parseInt(autoAmpS);
 				System.out.println("Boop26.3" + autoANControl);
 				AutoAttempt fileAuto = new AutoAttempt(fileTeamNum, MMatchNum, autoStartPos, autoANControl, autoASpecker, autoAAmp, autoNControl, autoSpecker, autoAmp);
-		    	Match fileMatch = new Match(MTeamNum, MMatchNum, MAmp, MSpe, MTrap, MClimb, MHumPosS, MAmpSkill, MScoSkill, MAmpNotes, MCommentS, fileAuto, MAllColor, MIsPrac, MIsReplay);
+		    	Match fileMatch = new Match(MTeamNum, MMatchNum, MAmp, MSpe, MTrap, MClimb, MHumPosS, MAmpSkill, MScoSkill, MAmpNotes, MCommentS, fileAuto, MAllColor, MIsPrac, MIsReplay, MIsPlay);
 		    	fileMatchList.addPreMadeMatch(fileMatch);
 		    	mainMatchList.addPreMadeMatch(fileMatch);
 			}
@@ -1241,9 +1243,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	private void makeSearchMatch() {
 		searchMatchTab seMatch;
 		if(thePOA.getAlliance1() != null) {
-			seMatch = new searchMatchTab(listOfTeamNumsSorted, true, mainMatchList, mainTeamList);
+			seMatch = new searchMatchTab(listOfTeamNumsSorted, true, mainMatchList, mainTeamList, thePOA);
 		} else {
-			seMatch = new searchMatchTab(listOfTeamNumsSorted, false, mainMatchList, mainTeamList);
+			seMatch = new searchMatchTab(listOfTeamNumsSorted, false, mainMatchList, mainTeamList, thePOA);
 		}
 		seMatch.setMinHeight(1400);
 		seMatch.setMinWidth(1400);

@@ -207,6 +207,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					    	int MTeamNum = tempM.getMatchTeamNum();
 					    	int MMatchNum = tempM.getMatchNum();
 					    	Boolean MIsPrac = tempM.getIsPracMatch();
+					    	Boolean MIsPlay = tempM.getIsPlayoff();
 					    	Boolean MAllColor = tempM.getAllianceColor();
 					    	Boolean MIsReplay = tempM.getIsReplay();
 					    	int MAmp = tempM.getMatchAmp();
@@ -239,6 +240,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					    	String MTeamNumS = Integer.toString(MTeamNum);
 					    	String MMatchNumS = Integer.toString(MMatchNum);
 					    	String MIsPracS = Boolean.toString(MIsPrac);
+					    	String MIsPlayS = Boolean.toString(MIsPlay);
 					    	String MAllColorS = Boolean.toString(MAllColor);
 					    	String MIsReplayS = Boolean.toString(MIsReplay);
 					    	String MAmpS = Integer.toString(MAmp);
@@ -252,6 +254,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					    	out.println(MTeamNumS);
 					    	out.println(MMatchNumS);
 					    	out.println(MIsPracS);
+					    	out.println(MIsPlayS);
 					    	out.println(MAllColorS);
 					    	out.println(MIsReplayS);
 					    	out.println(MAmpS);
@@ -327,6 +330,8 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				String fileAllColorSTrue;
 				String fileIsPracS;
 				String fileIsPracSTrue;
+				String fileIsPlayS;
+				String fileIsPlaySTrue;
 				String fileIsReplayS;
 				String fileIsReplaySTrue;
 				int fileTeamNum;
@@ -355,6 +360,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				int timesHumScoT;
 				Boolean fileAllColor;
 				Boolean fileIsPrac;
+				Boolean fileIsPlay;
 				Boolean fileIsReplay;
 				// auto stuff
 				String autoStartPosS;
@@ -385,6 +391,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					fileTeamNumS = fileInput.next();
 					fileMatchNumS = fileInput.next();
 					fileIsPracS  = fileInput.next();
+					fileIsPlayS  = fileInput.next();
 					fileAllColorS = fileInput.next();
 					fileIsReplayS  = fileInput.next();
 					//auto stuff
@@ -452,6 +459,8 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					fileMatchNumSTrue = fileMatchNumS.substring(1, lengthOfFileMatchNum);
 					int lengthOfIsPracSFile = fileIsPracS.length() - 1;
 					fileIsPracSTrue = fileIsPracS.substring(1, lengthOfIsPracSFile);
+					int lengthOfIsPlaySFile = fileIsPlayS.length() - 1;
+					fileIsPlaySTrue = fileIsPlayS.substring(1, lengthOfIsPlaySFile);
 					int lengthOfFileAllColor = fileAllColorS.length() - 1;
 					fileAllColorSTrue = fileAllColorS.substring(1, lengthOfFileAllColor);
 					int lengthOfIsReplaySFile = fileIsReplayS.length() - 1;
@@ -474,6 +483,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					fileTeamNum = Integer.parseInt(fileTeamNumSTrue);
 					fileMatchNum = Integer.parseInt(fileMatchNumSTrue);
 					fileIsPrac = Boolean.parseBoolean(fileIsPracSTrue);
+					fileIsPlay = Boolean.parseBoolean(fileIsPlaySTrue);
 					fileAllColor = Boolean.parseBoolean(fileAllColorSTrue);
 					fileIsReplay = Boolean.parseBoolean(fileIsReplaySTrue);
 					fileAmp = Integer.parseInt(fileAmpSTrue);
@@ -483,7 +493,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					System.out.println("boop3");
 					// Match stuff
 					AutoAttempt fileAuto = new AutoAttempt(fileTeamNum, fileMatchNum, autoStartPos, autoANControl, autoASpecker, autoAAmp, autoNControl, autoSpecker, autoAmp);
-					Match tempM = new Match(fileTeamNum, fileMatchNum, fileAmp, fileSpe, fileTrap, fileClimb, fileHumPostionSTrue, fileHumAmpSkill, fileHumAmpSkill, fileHumAmpNotes, fileCommentSTrue, fileAuto, fileAllColor, fileIsPrac, fileIsReplay);
+					Match tempM = new Match(fileTeamNum, fileMatchNum, fileAmp, fileSpe, fileTrap, fileClimb, fileHumPostionSTrue, fileHumAmpSkill, fileHumAmpSkill, fileHumAmpNotes, fileCommentSTrue, fileAuto, fileAllColor, fileIsPrac, fileIsReplay, fileIsPlay);
 					if (fileTempTeamList.listOfTempTeams.size() == 0) {
 						fileMatches = 1;
 						fileTempTeamList.addTempTeam(fileTeamNum, (fileAmp + fileSpe + fileTrap), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue, fileHumPostionSTrue, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes, tempM);
@@ -559,6 +569,8 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				String fileAllColorSTrue;
 				String fileIsPracS;
 				String fileIsPracSTrue;
+				String fileIsPlayS;
+				String fileIsPlaySTrue;
 				String fileIsReplayS;
 				String fileIsReplaySTrue;
 				int fileTeamNum;
@@ -587,6 +599,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 				int timesHumScoT;
 				Boolean fileAllColor;
 				Boolean fileIsPrac;
+				Boolean fileIsPlay;
 				Boolean fileIsReplay;
 				// auto stuff
 				String autoStartPosS;
@@ -617,6 +630,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					fileTeamNumS = fileInput.next();
 					fileMatchNumS = fileInput.next();
 					fileIsPracS  = fileInput.next();
+					fileIsPlayS  = fileInput.next();
 					fileAllColorS = fileInput.next();
 					fileIsReplayS  = fileInput.next();
 					//auto stuff
@@ -685,6 +699,8 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					fileMatchNumSTrue = fileMatchNumS.substring(1, lengthOfFileMatchNum);
 					int lengthOfIsPracSFile = fileIsPracS.length() - 1;
 					fileIsPracSTrue = fileIsPracS.substring(1, lengthOfIsPracSFile);
+					int lengthOfIsPlaySFile = fileIsPlayS.length() - 1;
+					fileIsPlaySTrue = fileIsPlayS.substring(1, lengthOfIsPlaySFile);
 					int lengthOfFileAllColor = fileAllColorS.length() - 1;
 					fileAllColorSTrue = fileAllColorS.substring(1, lengthOfFileAllColor);
 					int lengthOfIsReplaySFile = fileIsReplayS.length() - 1;
@@ -707,6 +723,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					fileTeamNum = Integer.parseInt(fileTeamNumSTrue);
 					fileMatchNum = Integer.parseInt(fileMatchNumSTrue);
 					fileIsPrac = Boolean.parseBoolean(fileIsPracSTrue);
+					fileIsPlay = Boolean.parseBoolean(fileIsPlaySTrue);
 					fileAllColor = Boolean.parseBoolean(fileAllColorSTrue);
 					fileIsReplay = Boolean.parseBoolean(fileIsReplaySTrue);
 					fileAmp = Integer.parseInt(fileAmpSTrue);
@@ -716,7 +733,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					//match stuff
 					System.out.println("Boop");
 					AutoAttempt fileAuto = new AutoAttempt(fileTeamNum, fileMatchNum, autoStartPos, autoANControl, autoASpecker, autoAAmp, autoNControl, autoSpecker, autoAmp);
-					Match tempM = new Match(fileTeamNum, fileMatchNum, fileAmp, fileSpe, fileTrap, fileClimb, fileHumPostionSTrue, fileHumAmpSkill, fileHumAmpSkill, fileHumAmpNotes, fileCommentSTrue, fileAuto, fileAllColor, fileIsPrac, fileIsReplay);
+					Match tempM = new Match(fileTeamNum, fileMatchNum, fileAmp, fileSpe, fileTrap, fileClimb, fileHumPostionSTrue, fileHumAmpSkill, fileHumAmpSkill, fileHumAmpNotes, fileCommentSTrue, fileAuto, fileAllColor, fileIsPrac, fileIsReplay, fileIsPlay);
 					if (fileTempTeamList.listOfTempTeams.size() == 0) {
 						fileMatches = 1;
 						fileTempTeamList.addTempTeam(fileTeamNum, (fileAmp + fileSpe + fileTrap), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue, fileHumPostionSTrue, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes, tempM);
