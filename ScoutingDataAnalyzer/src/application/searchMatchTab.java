@@ -128,11 +128,146 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 	}
 	
 	public void addAllComboBoxItems() {
-		
+		if(thePOA.getAlliance1() != null) {
+			System.out.println("BoopSeAll0");
+			allCB.getItems().add("1");
+		}
+		if(thePOA.getAlliance2() != null) {
+			System.out.println("BoopSeAll1");
+			allCB.getItems().add("2");
+		}
+		if(thePOA.getAlliance3() != null) {
+			System.out.println("BoopSeAll2");
+			allCB.getItems().add("3");
+		}
+		if(thePOA.getAlliance4() != null) {
+			allCB.getItems().add("4");
+		}
+		if(thePOA.getAlliance5() != null) {
+			allCB.getItems().add("5");
+		}
+		if(thePOA.getAlliance6() != null) {
+			allCB.getItems().add("6");
+		}
+		if(thePOA.getAlliance7() != null) {
+			allCB.getItems().add("7");
+		}
+		if(thePOA.getAlliance8() != null) {
+			allCB.getItems().add("8");
+		}
 	}
 	
-	public void setPlayoffStuff(int selAll) {
-		
+	public void setPlayoffStuff(int selAll, int matchNum, boolean isRePlay) {
+		int mainTeamNum1 = 0;
+		int mainTeamNum2 = 0;
+		int mainTeamNum3 = 0;
+		int mainTeamNum4 = 0;
+		Team mainTeam1;
+		Team mainTeam2;
+		Team mainTeam3;
+		Team mainTeam4;
+		int nonTeamNum1;
+		int nonTeamNum2;
+		int nonTeamNum3;
+		int nonTeamNum4;
+		Team nonTeam1;
+		Team nonTeam2;
+		Team nonTeam3;
+		Team nonTeam4;
+		if(selAll == 1) {
+			mainTeamNum1 = thePOA.getAlliance1().getTeam1().getTeamNum();
+			mainTeamNum2 = thePOA.getAlliance1().getTeam2().getTeamNum();
+			mainTeamNum3 = thePOA.getAlliance1().getTeam3().getTeamNum();
+			mainTeamNum4 = thePOA.getAlliance1().getTeam4().getTeamNum();
+		}
+		if(selAll == 2) {
+			mainTeamNum1 = thePOA.getAlliance2().getTeam1().getTeamNum();
+			mainTeamNum2 = thePOA.getAlliance2().getTeam2().getTeamNum();
+			mainTeamNum3 = thePOA.getAlliance2().getTeam3().getTeamNum();
+			mainTeamNum4 = thePOA.getAlliance2().getTeam4().getTeamNum();
+		}
+		if(selAll == 3) {
+			mainTeamNum1 = thePOA.getAlliance3().getTeam1().getTeamNum();
+			mainTeamNum2 = thePOA.getAlliance3().getTeam2().getTeamNum();
+			mainTeamNum3 = thePOA.getAlliance3().getTeam3().getTeamNum();
+			mainTeamNum4 = thePOA.getAlliance3().getTeam4().getTeamNum();
+		}
+		if(selAll == 4) {
+			mainTeamNum1 = thePOA.getAlliance4().getTeam1().getTeamNum();
+			mainTeamNum2 = thePOA.getAlliance4().getTeam2().getTeamNum();
+			mainTeamNum3 = thePOA.getAlliance4().getTeam3().getTeamNum();
+			mainTeamNum4 = thePOA.getAlliance4().getTeam4().getTeamNum();
+		}
+		if(selAll == 5) {
+			mainTeamNum1 = thePOA.getAlliance5().getTeam1().getTeamNum();
+			mainTeamNum2 = thePOA.getAlliance5().getTeam2().getTeamNum();
+			mainTeamNum3 = thePOA.getAlliance5().getTeam3().getTeamNum();
+			mainTeamNum4 = thePOA.getAlliance5().getTeam4().getTeamNum();
+		}
+		if(selAll == 6) {
+			mainTeamNum1 = thePOA.getAlliance6().getTeam1().getTeamNum();
+			mainTeamNum2 = thePOA.getAlliance6().getTeam2().getTeamNum();
+			mainTeamNum3 = thePOA.getAlliance6().getTeam3().getTeamNum();
+			mainTeamNum4 = thePOA.getAlliance6().getTeam4().getTeamNum();
+		}
+		if(selAll == 7) {
+			mainTeamNum1 = thePOA.getAlliance7().getTeam1().getTeamNum();
+			mainTeamNum2 = thePOA.getAlliance7().getTeam2().getTeamNum();
+			mainTeamNum3 = thePOA.getAlliance7().getTeam3().getTeamNum();
+			mainTeamNum4 = thePOA.getAlliance7().getTeam4().getTeamNum();
+		}
+		if(selAll == 8) {
+			mainTeamNum1 = thePOA.getAlliance8().getTeam1().getTeamNum();
+			mainTeamNum2 = thePOA.getAlliance8().getTeam2().getTeamNum();
+			mainTeamNum3 = thePOA.getAlliance8().getTeam3().getTeamNum();
+			mainTeamNum4 = thePOA.getAlliance8().getTeam4().getTeamNum();
+		}
+		List<Match> allsMatch = mainML.getMatchFromFullList(matchNum, true);
+		List<Match> blueTeams =  new ArrayList<>();
+		List<Match> redTeams =  new ArrayList<>();
+		TeamList redTs = new TeamList();
+		TeamList blueTs = new TeamList();
+		Boolean mainColor = null;
+		for(int i = 0; i < allsMatch.size(); i++) {
+			Match m = allsMatch.get(i);
+			boolean mColor = m.getAllianceColor();
+			if(m.getMatchTeamNum() == mainTeamNum1 || m.getMatchTeamNum() == mainTeamNum2 || m.getMatchTeamNum() == mainTeamNum3 || m.getMatchTeamNum() == mainTeamNum4 ) {
+				mainColor = mColor;
+				if(mainColor == false) {
+					blueTeams.add(m);
+					blueTs.listOfTeams.add(theTL.getATeam(m.getMatchTeamNum()));
+				}else {
+					redTeams.add(m);
+					redTs.listOfTeams.add(theTL.getATeam(m.getMatchTeamNum()));
+				}
+			}else {
+				if(mColor == false) {
+					blueTeams.add(m);
+					blueTs.listOfTeams.add(theTL.getATeam(m.getMatchTeamNum()));
+				}else {
+					redTeams.add(m);
+					redTs.listOfTeams.add(theTL.getATeam(m.getMatchTeamNum()));
+				}
+			}
+		}
+		HBox blueHB = new HBox(6);
+		HBox redHB = new HBox(6);
+		boolean isRedTeam1 = false;
+		boolean isRedTeam2 = false;
+		boolean isRedTeam3 = false;
+		boolean isRedTeam4 = false;
+		boolean isBlueTeam1 = false;
+		boolean isBlueTeam2 = false;
+		boolean isBlueTeam3 = false;
+		boolean isBlueTeam4 = false;
+		int isRedTeam1 = false;
+		int isRedTeam2 = false;
+		int isRedTeam3 = false;
+		int isRedTeam4 = false;
+		int isBlueTeam1 = false;
+		int isBlueTeam2 = false;
+		int isBlueTeam3 = false;
+		int isBlueTeam4 = false;
 	}
 	
 	@Override
@@ -2168,8 +2303,12 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			}
 			if(event.getSource() == submitPlayB) {
 				this.getChildren().clear();
+				String allNumS = allCB.getSelectionModel().getSelectedItem();
 				String matchNumS = matchNumTF.getText();
 				String isReplayS = isReplayCB.getSelectionModel().getSelectedItem();
+				int allNum = Integer.parseInt(allNumS);
+				int matchNum = Integer.parseInt(matchNumS);
+				boolean IsReplay = Boolean.parseBoolean(isReplayS);
 			}
 		} catch(Exception e) {
 			System.out.println("Error: " + e);
