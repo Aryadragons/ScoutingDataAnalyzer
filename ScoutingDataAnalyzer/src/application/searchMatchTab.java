@@ -184,8 +184,8 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					}
 				}
 				System.out.print("BoopseM11");
-				HBox blueHB = new HBox(5);
-				HBox redHB = new HBox(5);
+				HBox blueHB = new HBox(6);
+				HBox redHB = new HBox(6);
 				System.out.print("BoopseM12Blue:" + blueTeams.size() + "Red:" + redTeams.size());
 				
 				if(blueTeams.size() == 3) {
@@ -497,8 +497,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						BlueAmpBP.setId("seMStatBP3");
 						BlueTrapBP.setId("seMStatBP2");
 						BlueCliBP.setId("seMStatBP1");
+						BorderPane blueAllNameBP = new BorderPane();
+						blueAllNameBP.setCenter(blueAll);
+						blueAllNameBP.setId("seMStatBP6");
 						VBox blueAllBP = new VBox(5);
-						blueAllBP.getChildren().addAll(BlueCyBP, BlueSpeBP, BlueAmpBP, BlueTrapBP, BlueCliBP);
+						blueAllBP.getChildren().addAll(blueAllNameBP, BlueCyBP, BlueSpeBP, BlueAmpBP, BlueTrapBP, BlueCliBP);
 						blueHB.getChildren().addAll(blueAllBP, blue1VB, blue2VB, blue3VB);
 					}else {
 						System.out.print("BoopseM0");
@@ -580,8 +583,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						BlueAmpBP.setId("seMStatBP3");
 						BlueTrapBP.setId("seMStatBP2");
 						BlueCliBP.setId("seMStatBP1");
+						BorderPane blueAllNameBP = new BorderPane();
+						blueAllNameBP.setCenter(blueAll);
+						blueAllNameBP.setId("seMStatBP6");
 						VBox blueAllBP = new VBox(5);
-						blueAllBP.getChildren().addAll(BlueCyBP, BlueSpeBP, BlueAmpBP, BlueTrapBP, BlueCliBP);
+						blueAllBP.getChildren().addAll(blueAllNameBP, BlueCyBP, BlueSpeBP, BlueAmpBP, BlueTrapBP, BlueCliBP);
 						blue1VB.getChildren().addAll(blue1TeamNumBP, blue1CyBP, blue1CyAvgBP, blue1SpeBP, blue1SpeAvgBP, blue1AmpBP, blue1AmpAvgBP, blue1TrapBP, blue1TrapAvgBP, blue1CliBP, blue1CliAvgBP);
 						blue2VB.getChildren().addAll(blue2TeamNumBP, blue2CyBP, blue2CyAvgBP, blue2SpeBP, blue2SpeAvgBP, blue2AmpBP, blue2AmpAvgBP, blue2TrapBP, blue2TrapAvgBP, blue2CliBP, blue2CliAvgBP);
 						blue3VB.getChildren().addAll(blue3TeamNumBP, blue3CyBP, blue3CyAvgBP, blue3SpeBP, blue3SpeAvgBP, blue3AmpBP, blue3AmpAvgBP, blue3TrapBP, blue3TrapAvgBP, blue3CliBP, blue3CliAvgBP);
@@ -812,8 +818,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						BlueAmpBP.setId("seMStatBP3");
 						BlueTrapBP.setId("seMStatBP2");
 						BlueCliBP.setId("seMStatBP1");
+						BorderPane blueAllNameBP = new BorderPane();
+						blueAllNameBP.setCenter(blueAll);
+						blueAllNameBP.setId("seMStatBP6");
 						VBox blueAllBP = new VBox(5);
-						blueAllBP.getChildren().addAll(BlueCyBP, BlueSpeBP, BlueAmpBP, BlueTrapBP, BlueCliBP);
+						blueAllBP.getChildren().addAll(blueAllNameBP, BlueCyBP, BlueSpeBP, BlueAmpBP, BlueTrapBP, BlueCliBP);
 						blue1VB.getChildren().addAll(blue1TeamNumBP, blue1CyBP, blue1CyAvgBP, blue1SpeBP, blue1SpeAvgBP, blue1AmpBP, blue1AmpAvgBP, blue1TrapBP, blue1TrapAvgBP, blue1CliBP, blue1CliAvgBP);
 						blue2VB.getChildren().addAll(blue2TeamNumBP, blue2CyBP, blue2CyAvgBP, blue2SpeBP, blue2SpeAvgBP, blue2AmpBP, blue2AmpAvgBP, blue2TrapBP, blue2TrapAvgBP, blue2CliBP, blue2CliAvgBP);
 						blue3VB.getChildren().add(noData1BP);
@@ -887,8 +896,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						BlueAmpBP.setId("seMStatBP3");
 						BlueTrapBP.setId("seMStatBP2");
 						BlueCliBP.setId("seMStatBP1");
+						BorderPane blueAllNameBP = new BorderPane();
+						blueAllNameBP.setCenter(blueAll);
+						blueAllNameBP.setId("seMStatBP6");
 						VBox blueAllBP = new VBox(5);
-						blueAllBP.getChildren().addAll(BlueCyBP, BlueSpeBP, BlueAmpBP, BlueTrapBP, BlueCliBP);
+						blueAllBP.getChildren().addAll(blueAllNameBP, BlueCyBP, BlueSpeBP, BlueAmpBP, BlueTrapBP, BlueCliBP);
 						blue1VB.getChildren().addAll(blue1TeamNumBP, blue1CyBP, blue1CyAvgBP, blue1SpeBP, blue1SpeAvgBP, blue1AmpBP, blue1AmpAvgBP, blue1TrapBP, blue1TrapAvgBP, blue1CliBP, blue1CliAvgBP);
 						blue2VB.getChildren().addAll(blue2TeamNumBP, blue2CyBP, blue2CyAvgBP, blue2SpeBP, blue2SpeAvgBP, blue2AmpBP, blue2AmpAvgBP, blue2TrapBP, blue2TrapAvgBP, blue2CliBP, blue2CliAvgBP);
 						blue3VB.getChildren().add(noData1BP);
@@ -1038,8 +1050,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						BlueAmpBP.setId("seMStatBP3");
 						BlueTrapBP.setId("seMStatBP2");
 						BlueCliBP.setId("seMStatBP1");
+						BorderPane blueAllNameBP = new BorderPane();
+						blueAllNameBP.setCenter(blueAll);
+						blueAllNameBP.setId("seMStatBP6");
 						VBox blueAllBP = new VBox(5);
-						blueAllBP.getChildren().addAll(BlueCyBP, BlueSpeBP, BlueAmpBP, BlueTrapBP, BlueCliBP);
+						blueAllBP.getChildren().addAll(blueAllNameBP, BlueCyBP, BlueSpeBP, BlueAmpBP, BlueTrapBP, BlueCliBP);
 						blue1VB.getChildren().addAll(blue1TeamNumBP, blue1CyBP, blue1CyAvgBP, blue1SpeBP, blue1SpeAvgBP, blue1AmpBP, blue1AmpAvgBP, blue1TrapBP, blue1TrapAvgBP, blue1CliBP, blue1CliAvgBP);
 						blue2VB.getChildren().add(noData1BP);
 						blue3VB.getChildren().add(noData2BP);
@@ -1103,8 +1118,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						BlueAmpBP.setId("seMStatBP3");
 						BlueTrapBP.setId("seMStatBP2");
 						BlueCliBP.setId("seMStatBP1");
+						BorderPane blueAllNameBP = new BorderPane();
+						blueAllNameBP.setCenter(blueAll);
+						blueAllNameBP.setId("seMStatBP6");
 						VBox blueAllBP = new VBox(5);
-						blueAllBP.getChildren().addAll(BlueCyBP, BlueSpeBP, BlueAmpBP, BlueTrapBP, BlueCliBP);
+						blueAllBP.getChildren().addAll(blueAllNameBP, BlueCyBP, BlueSpeBP, BlueAmpBP, BlueTrapBP, BlueCliBP);
 						blue1VB.getChildren().addAll(blue1TeamNumBP, blue1CyBP, blue1CyAvgBP, blue1SpeBP, blue1SpeAvgBP, blue1AmpBP, blue1AmpAvgBP, blue1TrapBP, blue1TrapAvgBP, blue1CliBP, blue1CliAvgBP);
 						blue2VB.getChildren().add(noData1BP);
 						blue3VB.getChildren().add(noData1BP);
@@ -1412,12 +1430,12 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						VBox red1VB = new VBox(5);
 						VBox red2VB = new VBox(5);
 						VBox red3VB = new VBox(5);
-						Label redCy = new Label(Integer.toString(blueTeams.get(0).getMatchAmp() + blueTeams.get(1).getMatchAmp() + blueTeams.get(2).getMatchAmp() + blueTeams.get(0).getMatchSpe() + blueTeams.get(1).getMatchSpe() + blueTeams.get(2).getMatchSpe()) + blueTeams.get(0).getMatchTrap() + blueTeams.get(1).getMatchTrap() + blueTeams.get(2).getMatchTrap());
-						Label redSpe = new Label(Integer.toString(blueTeams.get(0).getMatchSpe() + blueTeams.get(1).getMatchSpe() + blueTeams.get(2).getMatchSpe()));;
-						Label redAmp = new Label(Integer.toString(blueTeams.get(0).getMatchAmp() + blueTeams.get(1).getMatchAmp() + blueTeams.get(2).getMatchAmp()));;
-						Label redTrap = new Label(Integer.toString(blueTeams.get(0).getMatchTrap() + blueTeams.get(1).getMatchTrap() + blueTeams.get(2).getMatchTrap()));;
-						Label redCli = new Label(Integer.toString(blueTeams.get(0).getMatchClimb() + blueTeams.get(1).getMatchClimb() + blueTeams.get(2).getMatchClimb()));;
-						Label redAll = new Label("Blue Alliance");
+						Label redCy = new Label(Integer.toString(redTeams.get(0).getMatchAmp() + redTeams.get(1).getMatchAmp() + redTeams.get(2).getMatchAmp() + redTeams.get(0).getMatchSpe() + redTeams.get(1).getMatchSpe() + redTeams.get(2).getMatchSpe() + redTeams.get(0).getMatchTrap() + redTeams.get(1).getMatchTrap() + redTeams.get(2).getMatchTrap()));
+						Label redSpe = new Label(Integer.toString(redTeams.get(0).getMatchSpe() + redTeams.get(1).getMatchSpe() + redTeams.get(2).getMatchSpe()));;
+						Label redAmp = new Label(Integer.toString(redTeams.get(0).getMatchAmp() + redTeams.get(1).getMatchAmp() + redTeams.get(2).getMatchAmp()));;
+						Label redTrap = new Label(Integer.toString(redTeams.get(0).getMatchTrap() + redTeams.get(1).getMatchTrap() + redTeams.get(2).getMatchTrap()));;
+						Label redCli = new Label(Integer.toString(redTeams.get(0).getMatchClimb() + redTeams.get(1).getMatchClimb() + redTeams.get(2).getMatchClimb()));;
+						Label redAll = new Label("Red Alliance");
 						Label redAllCyQL = new Label("Match Cycles");
 						Label redAllSpeQL = new Label("Match Speaker");
 						Label redAllAmpQL = new Label("Match Amp");
@@ -1454,8 +1472,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						RedAmpBP.setId("seMStatBP3");
 						RedTrapBP.setId("seMStatBP2");
 						RedCliBP.setId("seMStatBP1");
+						BorderPane redAllNameBP = new BorderPane();
+						redAllNameBP.setCenter(redAll);
+						redAllNameBP.setId("seMStatBP6");
 						VBox redAllBP = new VBox(5);
-						redAllBP.getChildren().addAll(RedCyBP, RedSpeBP, RedAmpBP, RedTrapBP, RedCliBP);
+						redAllBP.getChildren().addAll(redAllNameBP, RedCyBP, RedSpeBP, RedAmpBP, RedTrapBP, RedCliBP);
 						red1VB.getChildren().addAll(red1TeamNumBP, red1CyBP, red1CyAvgBP, red1SpeBP, red1SpeAvgBP, red1AmpBP, red1AmpAvgBP, red1TrapBP, red1TrapAvgBP, red1CliBP, red1CliAvgBP);
 						red2VB.getChildren().addAll(red2TeamNumBP, red2CyBP, red2CyAvgBP, red2SpeBP, red2SpeAvgBP, red2AmpBP, red2AmpAvgBP, red2TrapBP, red2TrapAvgBP, red2CliBP, red2CliAvgBP);
 						red3VB.getChildren().addAll(red3TeamNumBP, red3CyBP, red3CyAvgBP, red3SpeBP, red3SpeAvgBP, red3AmpBP, red3AmpAvgBP, red3TrapBP, red3TrapAvgBP, red3CliBP, red3CliAvgBP);
@@ -1497,12 +1518,12 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						VBox red1VB = new VBox(5);
 						VBox red2VB = new VBox(5);
 						VBox red3VB = new VBox(5);
-						Label redCy = new Label(Integer.toString(blueTeams.get(0).getMatchAmp() + blueTeams.get(1).getMatchAmp() + blueTeams.get(2).getMatchAmp() + blueTeams.get(0).getMatchSpe() + blueTeams.get(1).getMatchSpe() + blueTeams.get(2).getMatchSpe()) + blueTeams.get(0).getMatchTrap() + blueTeams.get(1).getMatchTrap() + blueTeams.get(2).getMatchTrap());
-						Label redSpe = new Label(Integer.toString(blueTeams.get(0).getMatchSpe() + blueTeams.get(1).getMatchSpe() + blueTeams.get(2).getMatchSpe()));;
-						Label redAmp = new Label(Integer.toString(blueTeams.get(0).getMatchAmp() + blueTeams.get(1).getMatchAmp() + blueTeams.get(2).getMatchAmp()));;
-						Label redTrap = new Label(Integer.toString(blueTeams.get(0).getMatchTrap() + blueTeams.get(1).getMatchTrap() + blueTeams.get(2).getMatchTrap()));;
-						Label redCli = new Label(Integer.toString(blueTeams.get(0).getMatchClimb() + blueTeams.get(1).getMatchClimb() + blueTeams.get(2).getMatchClimb()));;
-						Label redAll = new Label("Blue Alliance");
+						Label redCy = new Label(Integer.toString(redTeams.get(0).getMatchAmp() + redTeams.get(1).getMatchAmp() + redTeams.get(2).getMatchAmp() + redTeams.get(0).getMatchSpe() + redTeams.get(1).getMatchSpe() + redTeams.get(2).getMatchSpe() + redTeams.get(0).getMatchTrap() + redTeams.get(1).getMatchTrap() + redTeams.get(2).getMatchTrap()));
+						Label redSpe = new Label(Integer.toString(redTeams.get(0).getMatchSpe() + redTeams.get(1).getMatchSpe() + redTeams.get(2).getMatchSpe()));;
+						Label redAmp = new Label(Integer.toString(redTeams.get(0).getMatchAmp() + redTeams.get(1).getMatchAmp() + redTeams.get(2).getMatchAmp()));;
+						Label redTrap = new Label(Integer.toString(redTeams.get(0).getMatchTrap() + redTeams.get(1).getMatchTrap() + redTeams.get(2).getMatchTrap()));;
+						Label redCli = new Label(Integer.toString(redTeams.get(0).getMatchClimb() + redTeams.get(1).getMatchClimb() + redTeams.get(2).getMatchClimb()));;
+						Label redAll = new Label("Red Alliance");
 						Label redAllCyQL = new Label("Match Cycles");
 						Label redAllSpeQL = new Label("Match Speaker");
 						Label redAllAmpQL = new Label("Match Amp");
@@ -1539,8 +1560,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						RedAmpBP.setId("seMStatBP3");
 						RedTrapBP.setId("seMStatBP2");
 						RedCliBP.setId("seMStatBP1");
+						BorderPane redAllNameBP = new BorderPane();
+						redAllNameBP.setCenter(redAll);
+						redAllNameBP.setId("seMStatBP6");
 						VBox redAllBP = new VBox(5);
-						redAllBP.getChildren().addAll(RedCyBP, RedSpeBP, RedAmpBP, RedTrapBP, RedCliBP);
+						redAllBP.getChildren().addAll(redAllNameBP, RedCyBP, RedSpeBP, RedAmpBP, RedTrapBP, RedCliBP);
 						red1VB.getChildren().addAll(red1TeamNumBP, red1CyBP, red1CyAvgBP, red1SpeBP, red1SpeAvgBP, red1AmpBP, red1AmpAvgBP, red1TrapBP, red1TrapAvgBP, red1CliBP, red1CliAvgBP);
 						red2VB.getChildren().addAll(red2TeamNumBP, red2CyBP, red2CyAvgBP, red2SpeBP, red2SpeAvgBP, red2AmpBP, red2AmpAvgBP, red2TrapBP, red2TrapAvgBP, red2CliBP, red2CliAvgBP);
 						red3VB.getChildren().addAll(red3TeamNumBP, red3CyBP, red3CyAvgBP, red3SpeBP, red3SpeAvgBP, red3AmpBP, red3AmpAvgBP, red3TrapBP, red3TrapAvgBP, red3CliBP, red3CliAvgBP);
@@ -1729,12 +1753,12 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						VBox red1VB = new VBox(5);
 						VBox red2VB = new VBox(5);
 						VBox red3VB = new VBox(5);
-						Label redCy = new Label(Integer.toString(blueTeams.get(0).getMatchAmp() + blueTeams.get(1).getMatchAmp() + blueTeams.get(0).getMatchSpe() + blueTeams.get(1).getMatchSpe() + blueTeams.get(0).getMatchTrap() + blueTeams.get(1).getMatchTrap()));
-						Label redSpe = new Label(Integer.toString(blueTeams.get(0).getMatchSpe() + blueTeams.get(1).getMatchSpe()));
-						Label redAmp = new Label(Integer.toString(blueTeams.get(0).getMatchAmp() + blueTeams.get(1).getMatchAmp()));
-						Label redTrap = new Label(Integer.toString(blueTeams.get(0).getMatchTrap() + blueTeams.get(1).getMatchTrap()));
-						Label redCli = new Label(Integer.toString(blueTeams.get(0).getMatchClimb() + blueTeams.get(1).getMatchClimb()));
-						Label redAll = new Label("Blue Alliance");
+						Label redCy = new Label(Integer.toString(redTeams.get(0).getMatchAmp() + redTeams.get(1).getMatchAmp() + redTeams.get(0).getMatchSpe() + redTeams.get(1).getMatchSpe() + redTeams.get(0).getMatchTrap() + redTeams.get(1).getMatchTrap()));
+						Label redSpe = new Label(Integer.toString(redTeams.get(0).getMatchSpe() + redTeams.get(1).getMatchSpe()));
+						Label redAmp = new Label(Integer.toString(redTeams.get(0).getMatchAmp() + redTeams.get(1).getMatchAmp()));
+						Label redTrap = new Label(Integer.toString(redTeams.get(0).getMatchTrap() + redTeams.get(1).getMatchTrap()));
+						Label redCli = new Label(Integer.toString(redTeams.get(0).getMatchClimb() + redTeams.get(1).getMatchClimb()));
+						Label redAll = new Label("Red Alliance");
 						Label redAllCyQL = new Label("Match Cycles");
 						Label redAllSpeQL = new Label("Match Speaker");
 						Label redAllAmpQL = new Label("Match Amp");
@@ -1771,8 +1795,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						RedAmpBP.setId("seMStatBP3");
 						RedTrapBP.setId("seMStatBP2");
 						RedCliBP.setId("seMStatBP1");
+						BorderPane redAllNameBP = new BorderPane();
+						redAllNameBP.setCenter(redAll);
+						redAllNameBP.setId("seMStatBP6");
 						VBox redAllBP = new VBox(5);
-						redAllBP.getChildren().addAll(RedCyBP, RedSpeBP, RedAmpBP, RedTrapBP, RedCliBP);
+						redAllBP.getChildren().addAll(redAllNameBP, RedCyBP, RedSpeBP, RedAmpBP, RedTrapBP, RedCliBP);
 						red1VB.getChildren().addAll(red1TeamNumBP, red1CyBP, red1CyAvgBP, red1SpeBP, red1SpeAvgBP, red1AmpBP, red1AmpAvgBP, red1TrapBP, red1TrapAvgBP, red1CliBP, red1CliAvgBP);
 						red2VB.getChildren().addAll(red2TeamNumBP, red2CyBP, red2CyAvgBP, red2SpeBP, red2SpeAvgBP, red2AmpBP, red2AmpAvgBP, red2TrapBP, red2TrapAvgBP, red2CliBP, red2CliAvgBP);
 						red3VB.getChildren().add(noData1BP);
@@ -1804,12 +1831,12 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						VBox red1VB = new VBox(5);
 						VBox red2VB = new VBox(5);
 						VBox red3VB = new VBox(5);
-						Label redCy = new Label(Integer.toString(blueTeams.get(0).getMatchAmp() + blueTeams.get(1).getMatchAmp() + blueTeams.get(0).getMatchSpe() + blueTeams.get(1).getMatchSpe() + blueTeams.get(0).getMatchTrap() + blueTeams.get(1).getMatchTrap()));
-						Label redSpe = new Label(Integer.toString(blueTeams.get(0).getMatchSpe() + blueTeams.get(1).getMatchSpe()));
-						Label redAmp = new Label(Integer.toString(blueTeams.get(0).getMatchAmp() + blueTeams.get(1).getMatchAmp()));
-						Label redTrap = new Label(Integer.toString(blueTeams.get(0).getMatchTrap() + blueTeams.get(1).getMatchTrap()));
-						Label redCli = new Label(Integer.toString(blueTeams.get(0).getMatchClimb() + blueTeams.get(1).getMatchClimb()));
-						Label redAll = new Label("Blue Alliance");
+						Label redCy = new Label(Integer.toString(redTeams.get(0).getMatchAmp() + redTeams.get(1).getMatchAmp() + redTeams.get(0).getMatchSpe() + redTeams.get(1).getMatchSpe() + redTeams.get(0).getMatchTrap() + redTeams.get(1).getMatchTrap()));
+						Label redSpe = new Label(Integer.toString(redTeams.get(0).getMatchSpe() + redTeams.get(1).getMatchSpe()));
+						Label redAmp = new Label(Integer.toString(redTeams.get(0).getMatchAmp() + redTeams.get(1).getMatchAmp()));
+						Label redTrap = new Label(Integer.toString(redTeams.get(0).getMatchTrap() + redTeams.get(1).getMatchTrap()));
+						Label redCli = new Label(Integer.toString(redTeams.get(0).getMatchClimb() + redTeams.get(1).getMatchClimb()));
+						Label redAll = new Label("Red Alliance");
 						Label redAllCyQL = new Label("Match Cycles");
 						Label redAllSpeQL = new Label("Match Speaker");
 						Label redAllAmpQL = new Label("Match Amp");
@@ -1846,8 +1873,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						RedAmpBP.setId("seMStatBP3");
 						RedTrapBP.setId("seMStatBP2");
 						RedCliBP.setId("seMStatBP1");
+						BorderPane redAllNameBP = new BorderPane();
+						redAllNameBP.setCenter(redAll);
+						redAllNameBP.setId("seMStatBP6");
 						VBox redAllBP = new VBox(5);
-						redAllBP.getChildren().addAll(RedCyBP, RedSpeBP, RedAmpBP, RedTrapBP, RedCliBP);
+						redAllBP.getChildren().addAll(redAllNameBP, RedCyBP, RedSpeBP, RedAmpBP, RedTrapBP, RedCliBP);
 						red1VB.getChildren().addAll(red1TeamNumBP, red1CyBP, red1CyAvgBP, red1SpeBP, red1SpeAvgBP, red1AmpBP, red1AmpAvgBP, red1TrapBP, red1TrapAvgBP, red1CliBP, red1CliAvgBP);
 						red2VB.getChildren().addAll(red2TeamNumBP, red2CyBP, red2CyAvgBP, red2SpeBP, red2SpeAvgBP, red2AmpBP, red2AmpAvgBP, red2TrapBP, red2TrapAvgBP, red2CliBP, red2CliAvgBP);
 						red3VB.getChildren().add(noData1BP);
@@ -1955,12 +1985,12 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						VBox red1VB = new VBox(5);
 						VBox red2VB = new VBox(5);
 						VBox red3VB = new VBox(5);
-						Label redCy = new Label(Integer.toString(blueTeams.get(0).getMatchAmp() + blueTeams.get(0).getMatchSpe() + blueTeams.get(0).getMatchTrap()));
-						Label redSpe = new Label(Integer.toString(blueTeams.get(0).getMatchSpe()));
-						Label redAmp = new Label(Integer.toString(blueTeams.get(0).getMatchAmp()));
-						Label redTrap = new Label(Integer.toString(blueTeams.get(0).getMatchTrap()));
-						Label redCli = new Label(Integer.toString(blueTeams.get(0).getMatchClimb()));
-						Label redAll = new Label("Blue Alliance");
+						Label redCy = new Label(Integer.toString(redTeams.get(0).getMatchAmp() + redTeams.get(0).getMatchSpe() + redTeams.get(0).getMatchTrap()));
+						Label redSpe = new Label(Integer.toString(redTeams.get(0).getMatchSpe()));
+						Label redAmp = new Label(Integer.toString(redTeams.get(0).getMatchAmp()));
+						Label redTrap = new Label(Integer.toString(redTeams.get(0).getMatchTrap()));
+						Label redCli = new Label(Integer.toString(redTeams.get(0).getMatchClimb()));
+						Label redAll = new Label("Red Alliance");
 						Label redAllCyQL = new Label("Match Cycles");
 						Label redAllSpeQL = new Label("Match Speaker");
 						Label redAllAmpQL = new Label("Match Amp");
@@ -1997,8 +2027,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						RedAmpBP.setId("seMStatBP3");
 						RedTrapBP.setId("seMStatBP2");
 						RedCliBP.setId("seMStatBP1");
+						BorderPane redAllNameBP = new BorderPane();
+						redAllNameBP.setCenter(redAll);
+						redAllNameBP.setId("seMStatBP6");
 						VBox redAllBP = new VBox(5);
-						redAllBP.getChildren().addAll(RedCyBP, RedSpeBP, RedAmpBP, RedTrapBP, RedCliBP);
+						redAllBP.getChildren().addAll(redAllNameBP, RedCyBP, RedSpeBP, RedAmpBP, RedTrapBP, RedCliBP);
 						red1VB.getChildren().addAll(red1TeamNumBP, red1CyBP, red1CyAvgBP, red1SpeBP, red1SpeAvgBP, red1AmpBP, red1AmpAvgBP, red1TrapBP, red1TrapAvgBP, red1CliBP, red1CliAvgBP);
 						red2VB.getChildren().add(noData1BP);
 						red3VB.getChildren().add(noData2BP);
@@ -2020,12 +2053,12 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						VBox red1VB = new VBox(5);
 						VBox red2VB = new VBox(5);
 						VBox red3VB = new VBox(5);
-						Label redCy = new Label(Integer.toString(blueTeams.get(0).getMatchAmp() + blueTeams.get(0).getMatchSpe() + blueTeams.get(0).getMatchTrap()));
-						Label redSpe = new Label(Integer.toString(blueTeams.get(0).getMatchSpe()));
-						Label redAmp = new Label(Integer.toString(blueTeams.get(0).getMatchAmp()));
-						Label redTrap = new Label(Integer.toString(blueTeams.get(0).getMatchTrap()));
-						Label redCli = new Label(Integer.toString(blueTeams.get(0).getMatchClimb()));
-						Label redAll = new Label("Blue Alliance");
+						Label redCy = new Label(Integer.toString(redTeams.get(0).getMatchAmp() + redTeams.get(0).getMatchSpe() + redTeams.get(0).getMatchTrap()));
+						Label redSpe = new Label(Integer.toString(redTeams.get(0).getMatchSpe()));
+						Label redAmp = new Label(Integer.toString(redTeams.get(0).getMatchAmp()));
+						Label redTrap = new Label(Integer.toString(redTeams.get(0).getMatchTrap()));
+						Label redCli = new Label(Integer.toString(redTeams.get(0).getMatchClimb()));
+						Label redAll = new Label("Red Alliance");
 						Label redAllCyQL = new Label("Match Cycles");
 						Label redAllSpeQL = new Label("Match Speaker");
 						Label redAllAmpQL = new Label("Match Amp");
@@ -2062,8 +2095,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 						RedAmpBP.setId("seMStatBP3");
 						RedTrapBP.setId("seMStatBP2");
 						RedCliBP.setId("seMStatBP1");
+						BorderPane redAllNameBP = new BorderPane();
+						redAllNameBP.setCenter(redAll);
+						redAllNameBP.setId("seMStatBP6");
 						VBox redAllBP = new VBox(5);
-						redAllBP.getChildren().addAll(RedCyBP, RedSpeBP, RedAmpBP, RedTrapBP, RedCliBP);
+						redAllBP.getChildren().addAll(redAllNameBP, redAllNameBP, RedCyBP, RedSpeBP, RedAmpBP, RedTrapBP, RedCliBP);
 						red1VB.getChildren().addAll(red1TeamNumBP, red1CyBP, red1CyAvgBP, red1SpeBP, red1SpeAvgBP, red1AmpBP, red1AmpAvgBP, red1TrapBP, red1TrapAvgBP, red1CliBP, red1CliAvgBP);
 						red2VB.getChildren().add(noData1BP);
 						red3VB.getChildren().add(noData1BP);
@@ -2109,8 +2145,14 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				}
 				this.add(new Label("    "), 0, 0);
 				this.add(new Label("    "), 2, 0);
-				this.add(blueHB, 1, 1);
-				this.add(redHB, 2, 1);
+				this.add(new Label("    "), 3, 0);
+				if(mainColor = false) {
+					this.add(blueHB, 1, 1);
+					this.add(redHB, 4, 1);
+				}else {
+					this.add(blueHB, 4, 1);
+					this.add(redHB, 1, 1);
+				}
 
 			}
 			if(event.getSource() == submitPlayB) {
