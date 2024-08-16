@@ -851,6 +851,10 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 		blueTeam2TitleL.setId("smallerTitle");
 		blueTeam3TitleL.setId("smallerTitle");
 		blueTeam4TitleL.setId("smallerTitle");
+		VBox blue1VB = new VBox(5);
+		VBox blue2VB = new VBox(5);
+		VBox blue3VB = new VBox(5);
+		VBox blue4VB = new VBox(5);
 		if(nonTeamNum1 != 0) {
 			Label blueTeam1NumL = new Label(Integer.toString(nonTeamNum1));
 			Label blue1MatchCyTitleL = new Label("Cycles");
@@ -899,21 +903,46 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			BorderPane blue1AmpBP = new BorderPane();
 			BorderPane blue1TrapBP = new BorderPane();
 			BorderPane blue1CliBP = new BorderPane();
-			blue1CyBP
-			blue1SpeBP
-			blue1AmpBP
-			blue1TrapBP
-			blue1CliBP
-			blue1CyBP
-			blue1SpeBP
-			blue1AmpBP
-			blue1TrapBP
-			blue1CliBP
-			blue1CyBP
-			blue1SpeBP
-			blue1AmpBP
-			blue1TrapBP
-			blue1CliBP
+			blue1CyBP.setTop(blue1MatchCyTitleL);
+			blue1SpeBP.setTop(blue1MatchSpeTitleL);
+			blue1AmpBP.setTop(blue1MatchAmpTitleL);
+			blue1TrapBP.setTop(blue1MatchTrapTitleL);
+			blue1CliBP.setTop(blue1MatchCliTitleL);
+			blue1CyBP.setCenter(blue1MatchCyStatL);
+			blue1SpeBP.setCenter(blue1MatchSpeStatL);
+			blue1AmpBP.setCenter(blue1MatchAmpStatL);
+			blue1TrapBP.setCenter(blue1MatchTrapStatL);
+			blue1CliBP.setCenter(blue1MatchCliStatL);
+			blue1CyBP.setId("seMStatBP1");
+			blue1SpeBP.setId("seMStatBP2");
+			blue1AmpBP.setId("seMStatBP3");
+			blue1TrapBP.setId("seMStatBP4");
+			blue1CliBP.setId("seMStatBP5");
+			BorderPane blue1AvgCyBP = new BorderPane();
+			BorderPane blue1AvgSpeBP = new BorderPane();
+			BorderPane blue1AvgAmpBP = new BorderPane();
+			BorderPane blue1AvgTrapBP = new BorderPane();
+			BorderPane blue1AvgCliBP = new BorderPane();
+			blue1AvgCyBP.setTop(blue1MatchCyTitleL);
+			blue1AvgSpeBP.setTop(blue1MatchSpeTitleL);
+			blue1AvgAmpBP.setTop(blue1MatchAmpTitleL);
+			blue1AvgTrapBP.setTop(blue1MatchTrapTitleL);
+			blue1AvgCliBP.setTop(blue1MatchCliTitleL);
+			blue1AvgCyBP.setCenter(blue1MatchCyStatL);
+			blue1AvgSpeBP.setCenter(blue1MatchSpeStatL);
+			blue1AvgAmpBP.setCenter(blue1MatchAmpStatL);
+			blue1AvgTrapBP.setCenter(blue1MatchTrapStatL);
+			blue1AvgCliBP.setCenter(blue1MatchCliStatL);
+			blue1AvgCyBP.setId("seMStatBP1");
+			blue1AvgSpeBP.setId("seMStatBP2");
+			blue1AvgAmpBP.setId("seMStatBP3");
+			blue1AvgTrapBP.setId("seMStatBP4");
+			blue1AvgCliBP.setId("seMStatBP5");
+			BorderPane blueTitle1BP = new BorderPane();
+			blueTitle1BP.setCenter(blueTeam1NumL);
+			blueTitle1BP.setBottom(blueTeam1TitleL);
+			blueTitle1BP.setId("seMStatBP6");
+			blue1VB.getChildren().addAll(blueTitle1BP, blue1CyBP, blue1AvgCyBP, blue1SpeBP, blue1AvgSpeBP, blue1AmpBP, blue1AvgAmpBP, blue1TrapBP, blue1AvgTrapBP, blue1CliBP, blue1AvgCliBP);
 		}
 		if(nonTeamNum1 != 0) {
 			Label blueTeam2NumL = new Label(Integer.toString(nonTeamNum2));
@@ -958,6 +987,52 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			blue2AvgAmpStatL.setId("smallTitle");
 			blue2AvgTrapStatL.setId("smallTitle");
 			blue2AvgCliStatL.setId("smallTitle");
+			BorderPane blue2CyBP = new BorderPane();
+			BorderPane blue2SpeBP = new BorderPane();
+			BorderPane blue2AmpBP = new BorderPane();
+			BorderPane blue2TrapBP = new BorderPane();
+			BorderPane blue2CliBP = new BorderPane();
+			blue2CyBP.setTop(blue2MatchCyTitleL);
+			blue2SpeBP.setTop(blue2MatchSpeTitleL);
+			blue2AmpBP.setTop(blue2MatchAmpTitleL);
+			blue2TrapBP.setTop(blue2MatchTrapTitleL);
+			blue2CliBP.setTop(blue2MatchCliTitleL);
+			blue2CyBP.setCenter(blue2MatchCyStatL);
+			blue2SpeBP.setCenter(blue2MatchSpeStatL);
+			blue2AmpBP.setCenter(blue2MatchAmpStatL);
+			blue2TrapBP.setCenter(blue2MatchTrapStatL);
+			blue2CliBP.setCenter(blue2MatchCliStatL);
+			blue2CyBP.setId("seMStatBP1");
+			blue2SpeBP.setId("seMStatBP2");
+			blue2AmpBP.setId("seMStatBP3");
+			blue2TrapBP.setId("seMStatBP4");
+			blue2CliBP.setId("seMStatBP5");
+			BorderPane blue2AvgCyBP = new BorderPane();
+			BorderPane blue2AvgSpeBP = new BorderPane();
+			BorderPane blue2AvgAmpBP = new BorderPane();
+			BorderPane blue2AvgTrapBP = new BorderPane();
+			BorderPane blue2AvgCliBP = new BorderPane();
+			blue2AvgCyBP.setTop(blue2MatchCyTitleL);
+			blue2AvgSpeBP.setTop(blue2MatchSpeTitleL);
+			blue2AvgAmpBP.setTop(blue2MatchAmpTitleL);
+			blue2AvgTrapBP.setTop(blue2MatchTrapTitleL);
+			blue2AvgCliBP.setTop(blue2MatchCliTitleL);
+			blue2AvgCyBP.setCenter(blue2MatchCyStatL);
+			blue2AvgSpeBP.setCenter(blue2MatchSpeStatL);
+			blue2AvgAmpBP.setCenter(blue2MatchAmpStatL);
+			blue2AvgTrapBP.setCenter(blue2MatchTrapStatL);
+			blue2AvgCliBP.setCenter(blue2MatchCliStatL);
+			blue2AvgCyBP.setId("seMStatBP1");
+			blue2AvgSpeBP.setId("seMStatBP2");
+			blue2AvgAmpBP.setId("seMStatBP3");
+			blue2AvgTrapBP.setId("seMStatBP4");
+			blue2AvgCliBP.setId("seMStatBP5");
+			BorderPane blueTitle2BP = new BorderPane();
+			blueTitle2BP.setCenter(blueTeam2NumL);
+			blueTitle2BP.setBottom(blueTeam2TitleL);
+			blueTitle2BP.setId("seMStatBP6");
+			blue2VB.getChildren().addAll(blueTitle2BP, blue2CyBP, blue2AvgCyBP, blue2SpeBP, blue2AvgSpeBP, blue2AmpBP, blue2AvgAmpBP, blue2TrapBP, blue2AvgTrapBP, blue2CliBP, blue2AvgCliBP);
+			
 		}
 		if(nonTeamNum1 != 0) {
 			Label blueTeam3NumL = new Label(Integer.toString(nonTeamNum3));
@@ -1002,6 +1077,52 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			blue3AvgAmpStatL.setId("smallTitle");
 			blue3AvgTrapStatL.setId("smallTitle");
 			blue3AvgCliStatL.setId("smallTitle");
+			BorderPane blue3CyBP = new BorderPane();
+			BorderPane blue3SpeBP = new BorderPane();
+			BorderPane blue3AmpBP = new BorderPane();
+			BorderPane blue3TrapBP = new BorderPane();
+			BorderPane blue3CliBP = new BorderPane();
+			blue3CyBP.setTop(blue3MatchCyTitleL);
+			blue3SpeBP.setTop(blue3MatchSpeTitleL);
+			blue3AmpBP.setTop(blue3MatchAmpTitleL);
+			blue3TrapBP.setTop(blue3MatchTrapTitleL);
+			blue3CliBP.setTop(blue3MatchCliTitleL);
+			blue3CyBP.setCenter(blue3MatchCyStatL);
+			blue3SpeBP.setCenter(blue3MatchSpeStatL);
+			blue3AmpBP.setCenter(blue3MatchAmpStatL);
+			blue3TrapBP.setCenter(blue3MatchTrapStatL);
+			blue3CliBP.setCenter(blue3MatchCliStatL);
+			blue3CyBP.setId("seMStatBP1");
+			blue3SpeBP.setId("seMStatBP2");
+			blue3AmpBP.setId("seMStatBP3");
+			blue3TrapBP.setId("seMStatBP4");
+			blue3CliBP.setId("seMStatBP5");
+			BorderPane blue3AvgCyBP = new BorderPane();
+			BorderPane blue3AvgSpeBP = new BorderPane();
+			BorderPane blue3AvgAmpBP = new BorderPane();
+			BorderPane blue3AvgTrapBP = new BorderPane();
+			BorderPane blue3AvgCliBP = new BorderPane();
+			blue3AvgCyBP.setTop(blue3MatchCyTitleL);
+			blue3AvgSpeBP.setTop(blue3MatchSpeTitleL);
+			blue3AvgAmpBP.setTop(blue3MatchAmpTitleL);
+			blue3AvgTrapBP.setTop(blue3MatchTrapTitleL);
+			blue3AvgCliBP.setTop(blue3MatchCliTitleL);
+			blue3AvgCyBP.setCenter(blue3MatchCyStatL);
+			blue3AvgSpeBP.setCenter(blue3MatchSpeStatL);
+			blue3AvgAmpBP.setCenter(blue3MatchAmpStatL);
+			blue3AvgTrapBP.setCenter(blue3MatchTrapStatL);
+			blue3AvgCliBP.setCenter(blue3MatchCliStatL);
+			blue3AvgCyBP.setId("seMStatBP1");
+			blue3AvgSpeBP.setId("seMStatBP2");
+			blue3AvgAmpBP.setId("seMStatBP3");
+			blue3AvgTrapBP.setId("seMStatBP4");
+			blue3AvgCliBP.setId("seMStatBP5");
+			BorderPane blueTitle3BP = new BorderPane();
+			blueTitle3BP.setCenter(blueTeam3NumL);
+			blueTitle3BP.setBottom(blueTeam3TitleL);
+			blueTitle3BP.setId("seMStatBP6");
+			blue3VB.getChildren().addAll(blueTitle3BP, blue3CyBP, blue3AvgCyBP, blue3SpeBP, blue3AvgSpeBP, blue3AmpBP, blue3AvgAmpBP, blue3TrapBP, blue3AvgTrapBP, blue3CliBP, blue3AvgCliBP);
+			
 		}
 		if(nonTeamNum1 != 0) {
 			Label blueTeam4NumL = new Label(Integer.toString(nonTeamNum4));
@@ -1046,6 +1167,52 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			blue4AvgAmpStatL.setId("smallTitle");
 			blue4AvgTrapStatL.setId("smallTitle");
 			blue4AvgCliStatL.setId("smallTitle");
+			BorderPane blue4CyBP = new BorderPane();
+			BorderPane blue4SpeBP = new BorderPane();
+			BorderPane blue4AmpBP = new BorderPane();
+			BorderPane blue4TrapBP = new BorderPane();
+			BorderPane blue4CliBP = new BorderPane();
+			blue4CyBP.setTop(blue4MatchCyTitleL);
+			blue4SpeBP.setTop(blue4MatchSpeTitleL);
+			blue4AmpBP.setTop(blue4MatchAmpTitleL);
+			blue4TrapBP.setTop(blue4MatchTrapTitleL);
+			blue4CliBP.setTop(blue4MatchCliTitleL);
+			blue4CyBP.setCenter(blue4MatchCyStatL);
+			blue4SpeBP.setCenter(blue4MatchSpeStatL);
+			blue4AmpBP.setCenter(blue4MatchAmpStatL);
+			blue4TrapBP.setCenter(blue4MatchTrapStatL);
+			blue4CliBP.setCenter(blue4MatchCliStatL);
+			blue4CyBP.setId("seMStatBP1");
+			blue4SpeBP.setId("seMStatBP2");
+			blue4AmpBP.setId("seMStatBP3");
+			blue4TrapBP.setId("seMStatBP4");
+			blue4CliBP.setId("seMStatBP5");
+			BorderPane blue4AvgCyBP = new BorderPane();
+			BorderPane blue4AvgSpeBP = new BorderPane();
+			BorderPane blue4AvgAmpBP = new BorderPane();
+			BorderPane blue4AvgTrapBP = new BorderPane();
+			BorderPane blue4AvgCliBP = new BorderPane();
+			blue4AvgCyBP.setTop(blue4MatchCyTitleL);
+			blue4AvgSpeBP.setTop(blue4MatchSpeTitleL);
+			blue4AvgAmpBP.setTop(blue4MatchAmpTitleL);
+			blue4AvgTrapBP.setTop(blue4MatchTrapTitleL);
+			blue4AvgCliBP.setTop(blue4MatchCliTitleL);
+			blue4AvgCyBP.setCenter(blue4MatchCyStatL);
+			blue4AvgSpeBP.setCenter(blue4MatchSpeStatL);
+			blue4AvgAmpBP.setCenter(blue4MatchAmpStatL);
+			blue4AvgTrapBP.setCenter(blue4MatchTrapStatL);
+			blue4AvgCliBP.setCenter(blue4MatchCliStatL);
+			blue4AvgCyBP.setId("seMStatBP1");
+			blue4AvgSpeBP.setId("seMStatBP2");
+			blue4AvgAmpBP.setId("seMStatBP3");
+			blue4AvgTrapBP.setId("seMStatBP4");
+			blue4AvgCliBP.setId("seMStatBP5");
+			BorderPane blueTitle4BP = new BorderPane();
+			blueTitle4BP.setCenter(blueTeam4NumL);
+			blueTitle4BP.setBottom(blueTeam4TitleL);
+			blueTitle4BP.setId("seMStatBP6");
+			blueCyVB.getChildren().addAll(blueTitle4BP, blue4CyBP, blue4AvgCyBP, blue4SpeBP, blue4AvgSpeBP, blue4AmpBP, blue4AvgAmpBP, blue4TrapBP, blue4AvgTrapBP, blue4CliBP, blue4AvgCliBP);
+			
 		}
 	}
 	
