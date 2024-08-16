@@ -162,18 +162,18 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 		int mainTeamNum2 = 0;
 		int mainTeamNum3 = 0;
 		int mainTeamNum4 = 0;
-		Team mainTeam1;
-		Team mainTeam2;
-		Team mainTeam3;
-		Team mainTeam4;
+		Team mainTeam1 = null;
+		Team mainTeam2 = null;
+		Team mainTeam3 = null;
+		Team mainTeam4 = null;
 		int nonTeamNum1 = 0;
 		int nonTeamNum2 = 0;
 		int nonTeamNum3 = 0;
 		int nonTeamNum4 = 0;
-		Team nonTeam1;
-		Team nonTeam2;
-		Team nonTeam3;
-		Team nonTeam4;
+		Team nonTeam1 = null;
+		Team nonTeam2 = null;
+		Team nonTeam3 = null;
+		Team nonTeam4 = null;
 		if(selAll == 1) {
 			mainTeamNum1 = thePOA.getAlliance1().getTeam1().getTeamNum();
 			mainTeamNum2 = thePOA.getAlliance1().getTeam2().getTeamNum();
@@ -847,6 +847,10 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 		Label blueTeam2TitleL = new Label("1st Pick");
 		Label blueTeam3TitleL = new Label("2nd Pick");
 		Label blueTeam4TitleL = new Label("Backup");
+		blueTeam1TitleL.setId("smallerTitle");
+		blueTeam2TitleL.setId("smallerTitle");
+		blueTeam3TitleL.setId("smallerTitle");
+		blueTeam4TitleL.setId("smallerTitle");
 		if(nonTeamNum1 != 0) {
 			Label blueTeam1NumL = new Label(Integer.toString(nonTeamNum1));
 			Label blue1MatchCyTitleL = new Label("Cycles");
@@ -864,6 +868,52 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			Label blue1AvgAmpTitleL = new Label("Avg Amp");
 			Label blue1AvgTrapTitleL = new Label("Avg Trap");
 			Label blue1AvgCliTitleL = new Label("Avg Climb");
+			Label blue1AvgCyStatL = new Label(Double.toString(nonTeam1.getAvgSpe() + nonTeam1.getAvgAmp() + nonTeam1.getAvgTrap()));
+			Label blue1AvgSpeStatL = new Label(Double.toString(nonTeam1.getAvgSpe()));
+			Label blue1AvgAmpStatL = new Label(Double.toString(nonTeam1.getAvgAmp()));
+			Label blue1AvgTrapStatL = new Label(Double.toString(nonTeam1.getAvgTrap()));
+			Label blue1AvgCliStatL = new Label(Double.toString(nonTeam1.getAvgClimb()));
+			blueTeam1NumL.setId("smallTitle");
+			blue1MatchCyTitleL.setId("smallTitle");
+			blue1MatchSpeTitleL.setId("smallTitle");
+			blue1MatchAmpTitleL.setId("smallTitle");
+			blue1MatchTrapTitleL.setId("smallTitle");
+			blue1MatchCliTitleL.setId("smallTitle");
+			blue1MatchCyStatL.setId("smallTitle");
+			blue1MatchSpeStatL.setId("smallTitle");
+			blue1MatchAmpStatL.setId("smallTitle");
+			blue1MatchTrapStatL.setId("smallTitle");
+			blue1MatchCliStatL.setId("smallTitle");
+			blue1AvgCyTitleL.setId("smallTitle");
+			blue1AvgSpeTitleL.setId("smallTitle");
+			blue1AvgAmpTitleL.setId("smallTitle");
+			blue1AvgTrapTitleL.setId("smallTitle");
+			blue1AvgCliTitleL.setId("smallTitle");
+			blue1AvgCyStatL.setId("smallTitle");
+			blue1AvgSpeStatL.setId("smallTitle");
+			blue1AvgAmpStatL.setId("smallTitle");
+			blue1AvgTrapStatL.setId("smallTitle");
+			blue1AvgCliStatL.setId("smallTitle");
+			BorderPane blue1CyBP = new BorderPane();
+			BorderPane blue1SpeBP = new BorderPane();
+			BorderPane blue1AmpBP = new BorderPane();
+			BorderPane blue1TrapBP = new BorderPane();
+			BorderPane blue1CliBP = new BorderPane();
+			blue1CyBP
+			blue1SpeBP
+			blue1AmpBP
+			blue1TrapBP
+			blue1CliBP
+			blue1CyBP
+			blue1SpeBP
+			blue1AmpBP
+			blue1TrapBP
+			blue1CliBP
+			blue1CyBP
+			blue1SpeBP
+			blue1AmpBP
+			blue1TrapBP
+			blue1CliBP
 		}
 		if(nonTeamNum1 != 0) {
 			Label blueTeam2NumL = new Label(Integer.toString(nonTeamNum2));
@@ -877,6 +927,37 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			Label blue2MatchAmpStatL = new Label(Integer.toString(blueSortedTeams.get(1).getMatchAmp()));
 			Label blue2MatchTrapStatL = new Label(Integer.toString(blueSortedTeams.get(1).getMatchTrap()));
 			Label blue2MatchCliStatL = new Label(Integer.toString(blueSortedTeams.get(1).getMatchClimb()));
+			Label blue2AvgCyTitleL = new Label("Avg Cycles");
+			Label blue2AvgSpeTitleL = new Label("Avg Speakers");
+			Label blue2AvgAmpTitleL = new Label("Avg Amp");
+			Label blue2AvgTrapTitleL = new Label("Avg Trap");
+			Label blue2AvgCliTitleL = new Label("Avg Climb");
+			Label blue2AvgCyStatL = new Label(Double.toString(nonTeam2.getAvgSpe() + nonTeam1.getAvgAmp() + nonTeam1.getAvgTrap()));
+			Label blue2AvgSpeStatL = new Label(Double.toString(nonTeam2.getAvgSpe()));
+			Label blue2AvgAmpStatL = new Label(Double.toString(nonTeam2.getAvgAmp()));
+			Label blue2AvgTrapStatL = new Label(Double.toString(nonTeam2.getAvgTrap()));
+			Label blue2AvgCliStatL = new Label(Double.toString(nonTeam2.getAvgClimb()));
+			blueTeam2NumL.setId("smallTitle");
+			blue2MatchCyTitleL.setId("smallTitle");
+			blue2MatchSpeTitleL.setId("smallTitle");
+			blue2MatchAmpTitleL.setId("smallTitle");
+			blue2MatchTrapTitleL.setId("smallTitle");
+			blue2MatchCliTitleL.setId("smallTitle");
+			blue2MatchCyStatL.setId("smallTitle");
+			blue2MatchSpeStatL.setId("smallTitle");
+			blue2MatchAmpStatL.setId("smallTitle");
+			blue2MatchTrapStatL.setId("smallTitle");
+			blue2MatchCliStatL.setId("smallTitle");
+			blue2AvgCyTitleL.setId("smallTitle");
+			blue2AvgSpeTitleL.setId("smallTitle");
+			blue2AvgAmpTitleL.setId("smallTitle");
+			blue2AvgTrapTitleL.setId("smallTitle");
+			blue2AvgCliTitleL.setId("smallTitle");
+			blue2AvgCyStatL.setId("smallTitle");
+			blue2AvgSpeStatL.setId("smallTitle");
+			blue2AvgAmpStatL.setId("smallTitle");
+			blue2AvgTrapStatL.setId("smallTitle");
+			blue2AvgCliStatL.setId("smallTitle");
 		}
 		if(nonTeamNum1 != 0) {
 			Label blueTeam3NumL = new Label(Integer.toString(nonTeamNum3));
@@ -890,6 +971,37 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			Label blue3MatchAmpStatL = new Label(Integer.toString(blueSortedTeams.get(2).getMatchAmp()));
 			Label blue3MatchTrapStatL = new Label(Integer.toString(blueSortedTeams.get(2).getMatchTrap()));
 			Label blue3MatchCliStatL = new Label(Integer.toString(blueSortedTeams.get(2).getMatchClimb()));
+			Label blue3AvgCyTitleL = new Label("Avg Cycles");
+			Label blue3AvgSpeTitleL = new Label("Avg Speakers");
+			Label blue3AvgAmpTitleL = new Label("Avg Amp");
+			Label blue3AvgTrapTitleL = new Label("Avg Trap");
+			Label blue3AvgCliTitleL = new Label("Avg Climb");
+			Label blue3AvgCyStatL = new Label(Double.toString(nonTeam3.getAvgSpe() + nonTeam1.getAvgAmp() + nonTeam1.getAvgTrap()));
+			Label blue3AvgSpeStatL = new Label(Double.toString(nonTeam3.getAvgSpe()));
+			Label blue3AvgAmpStatL = new Label(Double.toString(nonTeam3.getAvgAmp()));
+			Label blue3AvgTrapStatL = new Label(Double.toString(nonTeam3.getAvgTrap()));
+			Label blue3AvgCliStatL = new Label(Double.toString(nonTeam3.getAvgClimb()));
+			blueTeam3NumL.setId("smallTitle");
+			blue3MatchCyTitleL.setId("smallTitle");
+			blue3MatchSpeTitleL.setId("smallTitle");
+			blue3MatchAmpTitleL.setId("smallTitle");
+			blue3MatchTrapTitleL.setId("smallTitle");
+			blue3MatchCliTitleL.setId("smallTitle");
+			blue3MatchCyStatL.setId("smallTitle");
+			blue3MatchSpeStatL.setId("smallTitle");
+			blue3MatchAmpStatL.setId("smallTitle");
+			blue3MatchTrapStatL.setId("smallTitle");
+			blue3MatchCliStatL.setId("smallTitle");
+			blue3AvgCyTitleL.setId("smallTitle");
+			blue3AvgSpeTitleL.setId("smallTitle");
+			blue3AvgAmpTitleL.setId("smallTitle");
+			blue3AvgTrapTitleL.setId("smallTitle");
+			blue3AvgCliTitleL.setId("smallTitle");
+			blue3AvgCyStatL.setId("smallTitle");
+			blue3AvgSpeStatL.setId("smallTitle");
+			blue3AvgAmpStatL.setId("smallTitle");
+			blue3AvgTrapStatL.setId("smallTitle");
+			blue3AvgCliStatL.setId("smallTitle");
 		}
 		if(nonTeamNum1 != 0) {
 			Label blueTeam4NumL = new Label(Integer.toString(nonTeamNum4));
@@ -903,6 +1015,37 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			Label blue4MatchAmpStatL = new Label(Integer.toString(blueSortedTeams.get(3).getMatchAmp()));
 			Label blue4MatchTrapStatL = new Label(Integer.toString(blueSortedTeams.get(3).getMatchTrap()));
 			Label blue4MatchCliStatL = new Label(Integer.toString(blueSortedTeams.get(3).getMatchClimb()));
+			Label blue4AvgCyTitleL = new Label("Avg Cycles");
+			Label blue4AvgSpeTitleL = new Label("Avg Speakers");
+			Label blue4AvgAmpTitleL = new Label("Avg Amp");
+			Label blue4AvgTrapTitleL = new Label("Avg Trap");
+			Label blue4AvgCliTitleL = new Label("Avg Climb");
+			Label blue4AvgCyStatL = new Label(Double.toString(nonTeam4.getAvgSpe() + nonTeam1.getAvgAmp() + nonTeam1.getAvgTrap()));
+			Label blue4AvgSpeStatL = new Label(Double.toString(nonTeam4.getAvgSpe()));
+			Label blue4AvgAmpStatL = new Label(Double.toString(nonTeam4.getAvgAmp()));
+			Label blue4AvgTrapStatL = new Label(Double.toString(nonTeam4.getAvgTrap()));
+			Label blue4AvgCliStatL = new Label(Double.toString(nonTeam4.getAvgClimb()));
+			blueTeam4NumL.setId("smallTitle");
+			blue4MatchCyTitleL.setId("smallTitle");
+			blue4MatchSpeTitleL.setId("smallTitle");
+			blue4MatchAmpTitleL.setId("smallTitle");
+			blue4MatchTrapTitleL.setId("smallTitle");
+			blue4MatchCliTitleL.setId("smallTitle");
+			blue4MatchCyStatL.setId("smallTitle");
+			blue4MatchSpeStatL.setId("smallTitle");
+			blue4MatchAmpStatL.setId("smallTitle");
+			blue4MatchTrapStatL.setId("smallTitle");
+			blue4MatchCliStatL.setId("smallTitle");
+			blue4AvgCyTitleL.setId("smallTitle");
+			blue4AvgSpeTitleL.setId("smallTitle");
+			blue4AvgAmpTitleL.setId("smallTitle");
+			blue4AvgTrapTitleL.setId("smallTitle");
+			blue4AvgCliTitleL.setId("smallTitle");
+			blue4AvgCyStatL.setId("smallTitle");
+			blue4AvgSpeStatL.setId("smallTitle");
+			blue4AvgAmpStatL.setId("smallTitle");
+			blue4AvgTrapStatL.setId("smallTitle");
+			blue4AvgCliStatL.setId("smallTitle");
 		}
 	}
 	
