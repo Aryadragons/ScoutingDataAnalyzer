@@ -843,6 +843,18 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				}
 			}
 		}
+		HBox mainHB = new HBox(5);
+		HBox nonHB = new HBox(5);
+		VBox blue1VB = new VBox(5);
+		VBox blue2VB = new VBox(5);
+		VBox blue3VB = new VBox(5);
+		VBox blue4VB = new VBox(5);
+		VBox red1VB = new VBox(5);
+		VBox red2VB = new VBox(5);
+		VBox red3VB = new VBox(5);
+		VBox red4VB = new VBox(5);
+		VBox redTotalVB = new VBox(5);
+		VBox blueTotalVB = new VBox(5);
 		if(mainColor == true) {
 			Label blueTeam1TitleL = new Label("Captain");
 			Label blueTeam2TitleL = new Label("1st Pick");
@@ -852,10 +864,16 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			blueTeam2TitleL.setId("smallerTitle");
 			blueTeam3TitleL.setId("smallerTitle");
 			blueTeam4TitleL.setId("smallerTitle");
-			VBox blue1VB = new VBox(5);
-			VBox blue2VB = new VBox(5);
-			VBox blue3VB = new VBox(5);
-			VBox blue4VB = new VBox(5);
+			int totalBlueCy = 0;
+			int totalBlueSpe = 0;
+			int totalBlueAmp = 0;
+			int totalBlueTrap = 0;
+			int totalBlueCli = 0;
+			int totalRedCy = 0;
+			int totalRedSpe = 0;
+			int totalRedAmp = 0;
+			int totalRedTrap = 0;
+			int totalRedCli = 0;
 			if(nonTeamNum1 != 0) {
 				Label blueTeam1NumL = new Label(Integer.toString(nonTeamNum1));
 				Label blue1MatchCyTitleL = new Label("Cycles");
@@ -868,6 +886,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				Label blue1MatchAmpStatL = new Label(Integer.toString(blueSortedTeams.get(0).getMatchAmp()));
 				Label blue1MatchTrapStatL = new Label(Integer.toString(blueSortedTeams.get(0).getMatchTrap()));
 				Label blue1MatchCliStatL = new Label(Integer.toString(blueSortedTeams.get(0).getMatchClimb()));
+				totalBlueCy = totalBlueCy + blueSortedTeams.get(0).getMatchSpe() + blueSortedTeams.get(0).getMatchAmp() + blueSortedTeams.get(0).getMatchTrap();
+				totalBlueSpe = totalBlueSpe + blueSortedTeams.get(0).getMatchSpe();
+				totalBlueAmp = totalBlueAmp + blueSortedTeams.get(0).getMatchAmp();
+				totalBlueTrap = totalBlueTrap + blueSortedTeams.get(0).getMatchTrap();
+				totalBlueCli = totalBlueCli + blueSortedTeams.get(0).getMatchClimb();
 				Label blue1AvgCyTitleL = new Label("Avg Cycles");
 				Label blue1AvgSpeTitleL = new Label("Avg Speakers");
 				Label blue1AvgAmpTitleL = new Label("Avg Amp");
@@ -957,6 +980,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				Label blue2MatchAmpStatL = new Label(Integer.toString(blueSortedTeams.get(1).getMatchAmp()));
 				Label blue2MatchTrapStatL = new Label(Integer.toString(blueSortedTeams.get(1).getMatchTrap()));
 				Label blue2MatchCliStatL = new Label(Integer.toString(blueSortedTeams.get(1).getMatchClimb()));
+				totalBlueCy = totalBlueCy + blueSortedTeams.get(1).getMatchSpe() + blueSortedTeams.get(1).getMatchAmp() + blueSortedTeams.get(1).getMatchTrap();
+				totalBlueSpe = totalBlueSpe + blueSortedTeams.get(1).getMatchSpe();
+				totalBlueAmp = totalBlueAmp + blueSortedTeams.get(1).getMatchAmp();
+				totalBlueTrap = totalBlueTrap + blueSortedTeams.get(1).getMatchTrap();
+				totalBlueCli = totalBlueCli + blueSortedTeams.get(1).getMatchClimb();
 				Label blue2AvgCyTitleL = new Label("Avg Cycles");
 				Label blue2AvgSpeTitleL = new Label("Avg Speakers");
 				Label blue2AvgAmpTitleL = new Label("Avg Amp");
@@ -1047,6 +1075,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				Label blue3MatchAmpStatL = new Label(Integer.toString(blueSortedTeams.get(2).getMatchAmp()));
 				Label blue3MatchTrapStatL = new Label(Integer.toString(blueSortedTeams.get(2).getMatchTrap()));
 				Label blue3MatchCliStatL = new Label(Integer.toString(blueSortedTeams.get(2).getMatchClimb()));
+				totalBlueCy = totalBlueCy + blueSortedTeams.get(2).getMatchSpe() + blueSortedTeams.get(2).getMatchAmp() + blueSortedTeams.get(2).getMatchTrap();
+				totalBlueSpe = totalBlueSpe + blueSortedTeams.get(2).getMatchSpe();
+				totalBlueAmp = totalBlueAmp + blueSortedTeams.get(2).getMatchAmp();
+				totalBlueTrap = totalBlueTrap + blueSortedTeams.get(2).getMatchTrap();
+				totalBlueCli = totalBlueCli + blueSortedTeams.get(2).getMatchClimb();
 				Label blue3AvgCyTitleL = new Label("Avg Cycles");
 				Label blue3AvgSpeTitleL = new Label("Avg Speakers");
 				Label blue3AvgAmpTitleL = new Label("Avg Amp");
@@ -1137,6 +1170,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				Label blue4MatchAmpStatL = new Label(Integer.toString(blueSortedTeams.get(3).getMatchAmp()));
 				Label blue4MatchTrapStatL = new Label(Integer.toString(blueSortedTeams.get(3).getMatchTrap()));
 				Label blue4MatchCliStatL = new Label(Integer.toString(blueSortedTeams.get(3).getMatchClimb()));
+				totalBlueCy = totalBlueCy + blueSortedTeams.get(3).getMatchSpe() + blueSortedTeams.get(3).getMatchAmp() + blueSortedTeams.get(3).getMatchTrap();
+				totalBlueSpe = totalBlueSpe + blueSortedTeams.get(3).getMatchSpe();
+				totalBlueAmp = totalBlueAmp + blueSortedTeams.get(3).getMatchAmp();
+				totalBlueTrap = totalBlueTrap + blueSortedTeams.get(3).getMatchTrap();
+				totalBlueCli = totalBlueCli + blueSortedTeams.get(3).getMatchClimb();
 				Label blue4AvgCyTitleL = new Label("Avg Cycles");
 				Label blue4AvgSpeTitleL = new Label("Avg Speakers");
 				Label blue4AvgAmpTitleL = new Label("Avg Amp");
@@ -1223,10 +1261,6 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			redTeam2TitleL.setId("smallerTitle");
 			redTeam3TitleL.setId("smallerTitle");
 			redTeam4TitleL.setId("smallerTitle");
-			VBox red1VB = new VBox(5);
-			VBox red2VB = new VBox(5);
-			VBox red3VB = new VBox(5);
-			VBox red4VB = new VBox(5);
 			if(mainTeamNum1 != 0) {
 				Label redTeam1NumL = new Label(Integer.toString(nonTeamNum1));
 				Label red1MatchCyTitleL = new Label("Cycles");
@@ -1595,10 +1629,16 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			blueTeam2TitleL.setId("smallerTitle");
 			blueTeam3TitleL.setId("smallerTitle");
 			blueTeam4TitleL.setId("smallerTitle");
-			VBox blue1VB = new VBox(5);
-			VBox blue2VB = new VBox(5);
-			VBox blue3VB = new VBox(5);
-			VBox blue4VB = new VBox(5);
+			int totalBlueCy = 0;
+			int totalBlueSpe = 0;
+			int totalBlueAmp = 0;
+			int totalBlueTrap = 0;
+			int totalBlueCli = 0;
+			int totalRedCy = 0;
+			int totalRedSpe = 0;
+			int totalRedAmp = 0;
+			int totalRedTrap = 0;
+			int totalRedCli = 0;
 			if(nonTeamNum1 != 0) {
 				Label blueTeam1NumL = new Label(Integer.toString(mainTeamNum1));
 				Label blue1MatchCyTitleL = new Label("Cycles");
@@ -1611,6 +1651,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				Label blue1MatchAmpStatL = new Label(Integer.toString(blueSortedTeams.get(0).getMatchAmp()));
 				Label blue1MatchTrapStatL = new Label(Integer.toString(blueSortedTeams.get(0).getMatchTrap()));
 				Label blue1MatchCliStatL = new Label(Integer.toString(blueSortedTeams.get(0).getMatchClimb()));
+				totalBlueCy = totalBlueCy + blueSortedTeams.get(0).getMatchSpe() + blueSortedTeams.get(0).getMatchAmp() + blueSortedTeams.get(0).getMatchTrap();
+				totalBlueSpe = totalBlueSpe + blueSortedTeams.get(0).getMatchSpe();
+				totalBlueAmp = totalBlueAmp + blueSortedTeams.get(0).getMatchAmp();
+				totalBlueTrap = totalBlueTrap + blueSortedTeams.get(0).getMatchTrap();
+				totalBlueCli = totalBlueCli + blueSortedTeams.get(0).getMatchClimb();
 				Label blue1AvgCyTitleL = new Label("Avg Cycles");
 				Label blue1AvgSpeTitleL = new Label("Avg Speakers");
 				Label blue1AvgAmpTitleL = new Label("Avg Amp");
@@ -1700,6 +1745,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				Label blue2MatchAmpStatL = new Label(Integer.toString(blueSortedTeams.get(1).getMatchAmp()));
 				Label blue2MatchTrapStatL = new Label(Integer.toString(blueSortedTeams.get(1).getMatchTrap()));
 				Label blue2MatchCliStatL = new Label(Integer.toString(blueSortedTeams.get(1).getMatchClimb()));
+				totalBlueCy = totalBlueCy + blueSortedTeams.get(1).getMatchSpe() + blueSortedTeams.get(1).getMatchAmp() + blueSortedTeams.get(1).getMatchTrap();
+				totalBlueSpe = totalBlueSpe + blueSortedTeams.get(1).getMatchSpe();
+				totalBlueAmp = totalBlueAmp + blueSortedTeams.get(1).getMatchAmp();
+				totalBlueTrap = totalBlueTrap + blueSortedTeams.get(1).getMatchTrap();
+				totalBlueCli = totalBlueCli + blueSortedTeams.get(1).getMatchClimb();
 				Label blue2AvgCyTitleL = new Label("Avg Cycles");
 				Label blue2AvgSpeTitleL = new Label("Avg Speakers");
 				Label blue2AvgAmpTitleL = new Label("Avg Amp");
@@ -1790,6 +1840,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				Label blue3MatchAmpStatL = new Label(Integer.toString(blueSortedTeams.get(2).getMatchAmp()));
 				Label blue3MatchTrapStatL = new Label(Integer.toString(blueSortedTeams.get(2).getMatchTrap()));
 				Label blue3MatchCliStatL = new Label(Integer.toString(blueSortedTeams.get(2).getMatchClimb()));
+				totalBlueCy = totalBlueCy + blueSortedTeams.get(2).getMatchSpe() + blueSortedTeams.get(2).getMatchAmp() + blueSortedTeams.get(2).getMatchTrap();
+				totalBlueSpe = totalBlueSpe + blueSortedTeams.get(2).getMatchSpe();
+				totalBlueAmp = totalBlueAmp + blueSortedTeams.get(2).getMatchAmp();
+				totalBlueTrap = totalBlueTrap + blueSortedTeams.get(2).getMatchTrap();
+				totalBlueCli = totalBlueCli + blueSortedTeams.get(2).getMatchClimb();
 				Label blue3AvgCyTitleL = new Label("Avg Cycles");
 				Label blue3AvgSpeTitleL = new Label("Avg Speakers");
 				Label blue3AvgAmpTitleL = new Label("Avg Amp");
@@ -1880,6 +1935,11 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				Label blue4MatchAmpStatL = new Label(Integer.toString(blueSortedTeams.get(3).getMatchAmp()));
 				Label blue4MatchTrapStatL = new Label(Integer.toString(blueSortedTeams.get(3).getMatchTrap()));
 				Label blue4MatchCliStatL = new Label(Integer.toString(blueSortedTeams.get(3).getMatchClimb()));
+				totalBlueCy = totalBlueCy + blueSortedTeams.get(3).getMatchSpe() + blueSortedTeams.get(3).getMatchAmp() + blueSortedTeams.get(3).getMatchTrap();
+				totalBlueSpe = totalBlueSpe + blueSortedTeams.get(3).getMatchSpe();
+				totalBlueAmp = totalBlueAmp + blueSortedTeams.get(3).getMatchAmp();
+				totalBlueTrap = totalBlueTrap + blueSortedTeams.get(3).getMatchTrap();
+				totalBlueCli = totalBlueCli + blueSortedTeams.get(3).getMatchClimb();
 				Label blue4AvgCyTitleL = new Label("Avg Cycles");
 				Label blue4AvgSpeTitleL = new Label("Avg Speakers");
 				Label blue4AvgAmpTitleL = new Label("Avg Amp");
@@ -1966,10 +2026,6 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			redTeam2TitleL.setId("smallerTitle");
 			redTeam3TitleL.setId("smallerTitle");
 			redTeam4TitleL.setId("smallerTitle");
-			VBox red1VB = new VBox(5);
-			VBox red2VB = new VBox(5);
-			VBox red3VB = new VBox(5);
-			VBox red4VB = new VBox(5);
 			if(nonTeamNum1 != 0) {
 				Label redTeam1NumL = new Label(Integer.toString(nonTeamNum1));
 				Label red1MatchCyTitleL = new Label("Cycles");
@@ -2329,9 +2385,64 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				red4VB.getChildren().addAll(redTitle4BP, red4CyBP, red4AvgCyBP, red4SpeBP, red4AvgSpeBP, red4AmpBP, red4AvgAmpBP, red4TrapBP, red4AvgTrapBP, red4CliBP, red4AvgCliBP);
 				
 			}
-			HBox mainHB = new HBox(5);
-			HBox nonHB = new HBox(5);
 		}
+		if(mainColor = false) {
+			if(isBlueTeam1 == true) {
+				mainHB.getChildren().addAll(blue1VB);
+			}
+			if(isBlueTeam2 == true) {
+				mainHB.getChildren().addAll(blue2VB);
+			}
+			if(isBlueTeam3 == true) {
+				mainHB.getChildren().addAll(blue3VB);
+			}
+			if(isBlueTeam4 == true) {
+				mainHB.getChildren().addAll(blue4VB);
+			}
+			if(isRedTeam1 == true) {
+				nonHB.getChildren().addAll(red1VB);
+			}
+			if(isRedTeam2 == true) {
+				nonHB.getChildren().addAll(red2VB);
+			}
+			if(isRedTeam3 == true) {
+				nonHB.getChildren().addAll(red3VB);
+			}
+			if(isRedTeam4 == true) {
+				nonHB.getChildren().addAll(red4VB);
+			}
+		}else {
+			if(isRedTeam1 == true) {
+				mainHB.getChildren().addAll(blue1VB);
+			}
+			if(isRedTeam2 == true) {
+				mainHB.getChildren().addAll(blue2VB);
+			}
+			if(isRedTeam3 == true) {
+				mainHB.getChildren().addAll(red3VB);
+			}
+			if(isRedTeam4 == true) {
+				mainHB.getChildren().addAll(red4VB);
+			}
+			if(isBlueTeam1 == true) {
+				nonHB.getChildren().addAll(blue1VB);
+			}
+			if(isBlueTeam2 == true) {
+				nonHB.getChildren().addAll(blue2VB);
+			}
+			if(isBlueTeam3 == true) {
+				nonHB.getChildren().addAll(blue3VB);
+			}
+			if(isBlueTeam4 == true) {
+				nonHB.getChildren().addAll(blue4VB);
+			}
+		}
+		this.add(new Label("    "), 0, 0);
+		this.add(new Label("    "), 2, 0);
+		this.add(new Label("    "), 3, 0);
+		this.add(mainHB, 1, 1);
+		this.add(nonHB, 4, 1);
+		
 	}
 	
 	public int findNonAll(int tempTeamNum) {
@@ -4472,7 +4583,8 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				String isReplayS = isReplayCB.getSelectionModel().getSelectedItem();
 				int allNum = Integer.parseInt(allNumS);
 				int matchNum = Integer.parseInt(matchNumS);
-				boolean IsReplay = Boolean.parseBoolean(isReplayS);
+				boolean isReplay = Boolean.parseBoolean(isReplayS);
+				setPlayoffStuff(allNum, matchNum, isReplay);
 			}
 		} catch(Exception e) {
 			System.out.println("Error: " + e);
