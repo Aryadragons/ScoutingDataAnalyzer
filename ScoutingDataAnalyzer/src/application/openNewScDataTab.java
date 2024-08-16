@@ -388,6 +388,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					//fileInput.next();
 			//	}
 				while(fileInput.hasNextLine()) {
+					System.out.println("boopStart");
 					fileTeamNumS = fileInput.next();
 					fileMatchNumS = fileInput.next();
 					fileIsPracS  = fileInput.next();
@@ -433,7 +434,7 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 					fileCommentS = fileInput.next();
 					fileHumPostionS = fileInput.next();
 					fileHumSkillS = fileInput.next();
-					System.out.println("boop");
+					System.out.println("boop" + fileTeamNumS);
 					int lengthOfFileHumPostion = fileHumPostionS.length() - 1;
 					fileHumPostionSTrue = fileHumPostionS.substring(1, lengthOfFileHumPostion);
 					System.out.println("boop1");
@@ -498,10 +499,15 @@ public class openNewScDataTab extends GridPane implements EventHandler<ActionEve
 						fileMatches = 1;
 						fileTempTeamList.addTempTeam(fileTeamNum, (fileAmp + fileSpe + fileTrap), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue, fileHumPostionSTrue, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes, tempM);
 					} else {
+						System.out.println("boop3.1");
 						if(fileTempTeamList.getATempTeam(fileTeamNum, fileTempTeamList) != null) {
+							System.out.println("boop3.2");
 							fileMatches = fileTempTeamList.getATempTeam(fileTeamNum, fileTempTeamList).getTotalMatchesPlayed();
+							System.out.println("boop3.3");
 							fileTempTeamList.addOnToTempTeam(fileTeamNum, (fileTrap + fileAmp + fileSpe), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue, fileHumPostionSTrue, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes, tempM);
+							System.out.println("boop3.4");
 						} else {
+							System.out.println("boop3.bad");
 							fileMatches = 1;
 							fileTempTeamList.addTempTeam(fileTeamNum, (fileAmp + fileSpe + fileTrap), fileMatches, fileAmp, fileSpe, fileTrap, fileClimb, fileCommentSTrue, fileHumPostionSTrue, fileHumAmpSkill, fileHumScoSkill, fileHumAmpNotes, tempM);
 						}
