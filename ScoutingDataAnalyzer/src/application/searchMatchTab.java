@@ -663,236 +663,305 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				System.out.println("boopseMPlay7.9.1");
 				for(int i = 0; i < blueTeams.size(); i++) {
 					System.out.println("boopseMPlay7.9.2");
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance1().getTeam1().getTeamNum()) {
-						System.out.println("boopseMPlay7.9.3");
-						isBlueTeam1 = true;
-						 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
-						 blueSortedTeams.add(0, redTeams.get(i));
-						 nonTeam1 = theTL.getATeam(nonTeamNum1);
+					if(thePOA.getAlliance1().getTeam1() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance1().getTeam1().getTeamNum()) {
+							System.out.println("boopseMPlay7.9.3");
+							isBlueTeam1 = true;
+							 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
+							 blueSortedTeams.add(0, redTeams.get(i));
+							 nonTeam1 = theTL.getATeam(nonTeamNum1);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance1().getTeam2().getTeamNum()) {
-						System.out.println("boopseMPlay7.9.4");
-						isBlueTeam2 = true;
-						nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(1, redTeams.get(i));
-						nonTeam2 = theTL.getATeam(nonTeamNum2);
+					if(thePOA.getAlliance1().getTeam2() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance1().getTeam2().getTeamNum()) {
+							System.out.println("boopseMPlay7.9.4");
+							isBlueTeam2 = true;
+							nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(1, redTeams.get(i));
+							nonTeam2 = theTL.getATeam(nonTeamNum2);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance1().getTeam3().getTeamNum()) {
-						System.out.println("boopseMPlay7.9.5");
-						isBlueTeam3 = true;
-						nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(2, redTeams.get(i));
-						nonTeam3 = theTL.getATeam(nonTeamNum3);
+					if(thePOA.getAlliance1().getTeam3() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance1().getTeam3().getTeamNum()) {
+							System.out.println("boopseMPlay7.9.5");
+							isBlueTeam3 = true;
+							nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(2, redTeams.get(i));
+							nonTeam3 = theTL.getATeam(nonTeamNum3);
+						}
 					}
-					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance1().getTeam4().getTeamNum()) {
-						System.out.println("boopseMPlay7.9.6");
-						isBlueTeam4 = true;
-						nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(3, redTeams.get(i));
-						nonTeam4 = theTL.getATeam(nonTeamNum4);
+					if(thePOA.getAlliance1().getTeam4() != null) {
+						if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance1().getTeam4().getTeamNum()) {
+							System.out.println("boopseMPlay7.9.6");
+							isBlueTeam4 = true;
+							nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(3, redTeams.get(i));
+							nonTeam4 = theTL.getATeam(nonTeamNum4);
+						}
 					}
 				}
 			}
 			if(nonAllNum == 2) {
 				System.out.println("boopseMPlay7.10");
 				for(int i = 0; i < blueTeams.size(); i++) {
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance2().getTeam1().getTeamNum()) {
-						isBlueTeam1 = true;
-						 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
-						 blueSortedTeams.add(0, redTeams.get(i));
-						 nonTeam1 = theTL.getATeam(nonTeamNum1);
+					System.out.println("boopseMPlay7.10.1");
+					if(thePOA.getAlliance2().getTeam1() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance2().getTeam1().getTeamNum()) {
+							isBlueTeam1 = true;
+							 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
+							 blueSortedTeams.add(0, redTeams.get(i));
+							 nonTeam1 = theTL.getATeam(nonTeamNum1);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance2().getTeam2().getTeamNum()) {
-						isBlueTeam2 = true;
-						nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(1, redTeams.get(i));
-						nonTeam2 = theTL.getATeam(nonTeamNum2);
+					System.out.println("boopseMPlay7.10.2");
+					if(thePOA.getAlliance2().getTeam2() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance2().getTeam2().getTeamNum()) {
+							isBlueTeam2 = true;
+							nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(1, redTeams.get(i));
+							nonTeam2 = theTL.getATeam(nonTeamNum2);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance2().getTeam3().getTeamNum()) {
-						isBlueTeam3 = true;
-						nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(2, redTeams.get(i));
-						nonTeam3 = theTL.getATeam(nonTeamNum3);
+					System.out.println("boopseMPlay7.10.3");
+					if(thePOA.getAlliance2().getTeam3() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance2().getTeam3().getTeamNum()) {
+							isBlueTeam3 = true;
+							nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(2, redTeams.get(i));
+							nonTeam3 = theTL.getATeam(nonTeamNum3);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance2().getTeam4().getTeamNum()) {
-						isBlueTeam4 = true;
-						nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(3, redTeams.get(i));
-						nonTeam4 = theTL.getATeam(nonTeamNum4);
+					System.out.println("boopseMPlay7.10.4");
+					if(thePOA.getAlliance2().getTeam4() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance2().getTeam4().getTeamNum()) {
+							isBlueTeam4 = true;
+							nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(3, redTeams.get(i));
+							nonTeam4 = theTL.getATeam(nonTeamNum4);
+						}
 					}
+					System.out.println("boopseMPlay7.10.5");
 				}
 			}
 			if(nonAllNum == 3) {
 				System.out.println("boopseMPlay7.11");
 				for(int i = 0; i < blueTeams.size(); i++) {
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance3().getTeam1().getTeamNum()) {
-						isBlueTeam1 = true;
-						 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
-						 blueSortedTeams.add(0, redTeams.get(i));
-						 nonTeam1 = theTL.getATeam(nonTeamNum1);
+					if(thePOA.getAlliance3().getTeam1() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance3().getTeam1().getTeamNum()) {
+							isBlueTeam1 = true;
+							 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
+							 blueSortedTeams.add(0, redTeams.get(i));
+							 nonTeam1 = theTL.getATeam(nonTeamNum1);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance3().getTeam2().getTeamNum()) {
-						isBlueTeam2 = true;
-						nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(1, redTeams.get(i));
-						nonTeam2 = theTL.getATeam(nonTeamNum2);
+					if(thePOA.getAlliance3().getTeam2() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance3().getTeam2().getTeamNum()) {
+							isBlueTeam2 = true;
+							nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(1, redTeams.get(i));
+							nonTeam2 = theTL.getATeam(nonTeamNum2);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance3().getTeam3().getTeamNum()) {
-						isBlueTeam3 = true;
-						nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(2, redTeams.get(i));
-						nonTeam3 = theTL.getATeam(nonTeamNum3);
+					if(thePOA.getAlliance3().getTeam3() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance3().getTeam3().getTeamNum()) {
+							isBlueTeam3 = true;
+							nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(2, redTeams.get(i));
+							nonTeam3 = theTL.getATeam(nonTeamNum3);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance3().getTeam4().getTeamNum()) {
-						isBlueTeam4 = true;
-						nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(3, redTeams.get(i));
-						nonTeam4 = theTL.getATeam(nonTeamNum4);
+					if(thePOA.getAlliance3().getTeam4() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance3().getTeam4().getTeamNum()) {
+							isBlueTeam4 = true;
+							nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(3, redTeams.get(i));
+							nonTeam4 = theTL.getATeam(nonTeamNum4);
+						}
 					}
 				}
 			}
 			if(nonAllNum == 4) {
 				System.out.println("boopseMPlay7.12");
 				for(int i = 0; i < blueTeams.size(); i++) {
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance4().getTeam1().getTeamNum()) {
-						isBlueTeam1 = true;
-						 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
-						 blueSortedTeams.add(0, redTeams.get(i));
-						 nonTeam1 = theTL.getATeam(nonTeamNum1);
+					if(thePOA.getAlliance4().getTeam1() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance4().getTeam1().getTeamNum()) {
+							isBlueTeam1 = true;
+							 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
+							 blueSortedTeams.add(0, redTeams.get(i));
+							 nonTeam1 = theTL.getATeam(nonTeamNum1);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance4().getTeam2().getTeamNum()) {
-						isBlueTeam2 = true;
-						nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(1, redTeams.get(i));
-						nonTeam2 = theTL.getATeam(nonTeamNum2);
+					if(thePOA.getAlliance4().getTeam2() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance4().getTeam2().getTeamNum()) {
+							isBlueTeam2 = true;
+							nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(1, redTeams.get(i));
+							nonTeam2 = theTL.getATeam(nonTeamNum2);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance4().getTeam3().getTeamNum()) {
-						isBlueTeam3 = true;
-						nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(2, redTeams.get(i));
-						nonTeam3 = theTL.getATeam(nonTeamNum3);
+					if(thePOA.getAlliance4().getTeam3() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance4().getTeam3().getTeamNum()) {
+							isBlueTeam3 = true;
+							nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(2, redTeams.get(i));
+							nonTeam3 = theTL.getATeam(nonTeamNum3);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance4().getTeam4().getTeamNum()) {
-						isBlueTeam4 = true;
-						nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(3, redTeams.get(i));
-						nonTeam4 = theTL.getATeam(nonTeamNum4);
+					if(thePOA.getAlliance4().getTeam4() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance4().getTeam4().getTeamNum()) {
+							isBlueTeam4 = true;
+							nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(3, redTeams.get(i));
+							nonTeam4 = theTL.getATeam(nonTeamNum4);
+						}
 					}
 				}
 			}
 			if(nonAllNum == 5) {
 				System.out.println("boopseMPlay7.13");
 				for(int i = 0; i < blueTeams.size(); i++) {
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance5().getTeam1().getTeamNum()) {
-						isBlueTeam1 = true;
-						 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
-						 blueSortedTeams.add(0, redTeams.get(i));
-						 nonTeam1 = theTL.getATeam(nonTeamNum1);
+					if(thePOA.getAlliance5().getTeam1() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance5().getTeam1().getTeamNum()) {
+							isBlueTeam1 = true;
+							 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
+							 blueSortedTeams.add(0, redTeams.get(i));
+							 nonTeam1 = theTL.getATeam(nonTeamNum1);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance5().getTeam2().getTeamNum()) {
-						isBlueTeam2 = true;
-						nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(1, redTeams.get(i));
-						nonTeam2 = theTL.getATeam(nonTeamNum2);
+					if(thePOA.getAlliance5().getTeam2() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance5().getTeam2().getTeamNum()) {
+							isBlueTeam2 = true;
+							nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(1, redTeams.get(i));
+							nonTeam2 = theTL.getATeam(nonTeamNum2);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance5().getTeam3().getTeamNum()) {
-						isBlueTeam3 = true;
-						nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(2, redTeams.get(i));
-						nonTeam3 = theTL.getATeam(nonTeamNum3);
+					if(thePOA.getAlliance5().getTeam3() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance5().getTeam3().getTeamNum()) {
+							isBlueTeam3 = true;
+							nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(2, redTeams.get(i));
+							nonTeam3 = theTL.getATeam(nonTeamNum3);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance5().getTeam4().getTeamNum()) {
-						isBlueTeam4 = true;
-						nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(3, redTeams.get(i));
-						nonTeam4 = theTL.getATeam(nonTeamNum4);
+					if(thePOA.getAlliance5().getTeam4() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance5().getTeam4().getTeamNum()) {
+							isBlueTeam4 = true;
+							nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(3, redTeams.get(i));
+							nonTeam4 = theTL.getATeam(nonTeamNum4);
+						}
 					}
 				}
 			}
 			if(nonAllNum == 6) {
 				System.out.println("boopseMPlay7.14");
 				for(int i = 0; i < blueTeams.size(); i++) {
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance6().getTeam1().getTeamNum()) {
-						isBlueTeam1 = true;
-						 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
-						 blueSortedTeams.add(0, redTeams.get(i));
-						 nonTeam1 = theTL.getATeam(nonTeamNum1);
+					if(thePOA.getAlliance6().getTeam1() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance6().getTeam1().getTeamNum()) {
+							isBlueTeam1 = true;
+							 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
+							 blueSortedTeams.add(0, redTeams.get(i));
+							 nonTeam1 = theTL.getATeam(nonTeamNum1);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance6().getTeam2().getTeamNum()) {
-						isBlueTeam2 = true;
-						nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(1, redTeams.get(i));
-						nonTeam2 = theTL.getATeam(nonTeamNum2);
+					if(thePOA.getAlliance6().getTeam2() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance6().getTeam2().getTeamNum()) {
+							isBlueTeam2 = true;
+							nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(1, redTeams.get(i));
+							nonTeam2 = theTL.getATeam(nonTeamNum2);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance6().getTeam3().getTeamNum()) {
-						isBlueTeam3 = true;
-						nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(2, redTeams.get(i));
-						nonTeam3 = theTL.getATeam(nonTeamNum3);
+					if(thePOA.getAlliance6().getTeam3() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance6().getTeam3().getTeamNum()) {
+							isBlueTeam3 = true;
+							nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(2, redTeams.get(i));
+							nonTeam3 = theTL.getATeam(nonTeamNum3);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance6().getTeam4().getTeamNum()) {
-						isBlueTeam4 = true;
-						nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(3, redTeams.get(i));
-						nonTeam4 = theTL.getATeam(nonTeamNum4);
+					if(thePOA.getAlliance6().getTeam4() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance6().getTeam4().getTeamNum()) {
+							isBlueTeam4 = true;
+							nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(3, redTeams.get(i));
+							nonTeam4 = theTL.getATeam(nonTeamNum4);
+						}
 					}
 				}
 			}
 			if(nonAllNum == 7) {
 				System.out.println("boopseMPlay7.15");
 				for(int i = 0; i < blueTeams.size(); i++) {
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance7().getTeam1().getTeamNum()) {
-						isBlueTeam1 = true;
-						 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
-						 blueSortedTeams.add(0, redTeams.get(i));
-						 nonTeam1 = theTL.getATeam(nonTeamNum1);
+					if(thePOA.getAlliance7().getTeam1() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance7().getTeam1().getTeamNum()) {
+							isBlueTeam1 = true;
+							 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
+							 blueSortedTeams.add(0, redTeams.get(i));
+							 nonTeam1 = theTL.getATeam(nonTeamNum1);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance7().getTeam2().getTeamNum()) {
-						isBlueTeam2 = true;
-						nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(1, redTeams.get(i));
-						nonTeam2 = theTL.getATeam(nonTeamNum2);
+					if(thePOA.getAlliance7().getTeam2() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance7().getTeam2().getTeamNum()) {
+							isBlueTeam2 = true;
+							nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(1, redTeams.get(i));
+							nonTeam2 = theTL.getATeam(nonTeamNum2);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance7().getTeam3().getTeamNum()) {
-						isBlueTeam3 = true;
-						nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(2, redTeams.get(i));
-						nonTeam3 = theTL.getATeam(nonTeamNum3);
+					if(thePOA.getAlliance7().getTeam3() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance7().getTeam3().getTeamNum()) {
+							isBlueTeam3 = true;
+							nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(2, redTeams.get(i));
+							nonTeam3 = theTL.getATeam(nonTeamNum3);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance7().getTeam4().getTeamNum()) {
-						isBlueTeam4 = true;
-						nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(3, redTeams.get(i));
-						nonTeam4 = theTL.getATeam(nonTeamNum4);
+					if(thePOA.getAlliance7().getTeam4() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance7().getTeam4().getTeamNum()) {
+							isBlueTeam4 = true;
+							nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(3, redTeams.get(i));
+							nonTeam4 = theTL.getATeam(nonTeamNum4);
+						}
 					}
 				}
 			}
 			if(nonAllNum == 8) {
 				System.out.println("boopseMPlay7.16");
 				for(int i = 0; i < blueTeams.size(); i++) {
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance8().getTeam1().getTeamNum()) {
-						isBlueTeam1 = true;
-						 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
-						 blueSortedTeams.add(0, redTeams.get(i));
-						 nonTeam1 = theTL.getATeam(nonTeamNum1);
+					if(thePOA.getAlliance8().getTeam1() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance8().getTeam1().getTeamNum()) {
+							isBlueTeam1 = true;
+							 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
+							 blueSortedTeams.add(0, redTeams.get(i));
+							 nonTeam1 = theTL.getATeam(nonTeamNum1);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance8().getTeam2().getTeamNum()) {
-						isBlueTeam2 = true;
-						nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(1, redTeams.get(i));
-						nonTeam2 = theTL.getATeam(nonTeamNum2);
+					if(thePOA.getAlliance8().getTeam2() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance8().getTeam2().getTeamNum()) {
+							isBlueTeam2 = true;
+							nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(1, redTeams.get(i));
+							nonTeam2 = theTL.getATeam(nonTeamNum2);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance8().getTeam3().getTeamNum()) {
-						isBlueTeam3 = true;
-						nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(2, redTeams.get(i));
-						nonTeam3 = theTL.getATeam(nonTeamNum3);
+					if(thePOA.getAlliance8().getTeam3() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance8().getTeam3().getTeamNum()) {
+							isBlueTeam3 = true;
+							nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(2, redTeams.get(i));
+							nonTeam3 = theTL.getATeam(nonTeamNum3);
+						}
 					}
-					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance8().getTeam4().getTeamNum()) {
-						isBlueTeam4 = true;
-						nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
-						blueSortedTeams.add(3, redTeams.get(i));
-						nonTeam4 = theTL.getATeam(nonTeamNum4);
+					if(thePOA.getAlliance8().getTeam4() != null) {
+						if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance8().getTeam4().getTeamNum()) {
+							isBlueTeam4 = true;
+							nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
+							blueSortedTeams.add(3, redTeams.get(i));
+							nonTeam4 = theTL.getATeam(nonTeamNum4);
+						}
 					}
 				}
 			}
@@ -910,7 +979,9 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 		VBox red4VB = new VBox(5);
 		VBox redTotalVB = new VBox(5);
 		VBox blueTotalVB = new VBox(5);
+		System.out.println("boopseMPlay9");
 		if(mainColor == true) {
+			System.out.println("boopseMPlay10");
 			Label blueTeam1TitleL = new Label("Captain");
 			Label blueTeam2TitleL = new Label("1st Pick");
 			Label blueTeam3TitleL = new Label("2nd Pick");
@@ -929,7 +1000,9 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			int totalRedAmp = 0;
 			int totalRedTrap = 0;
 			int totalRedCli = 0;
+			System.out.println("boopseMPlay11");
 			if(nonTeamNum1 != 0) {
+				System.out.println("boopseMPlay12");
 				Label blueTeam1NumL = new Label(Integer.toString(nonTeamNum1));
 				Label blue1MatchCyTitleL = new Label("Cycles");
 				Label blue1MatchSpeTitleL = new Label("Speakers");
@@ -1024,6 +1097,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				blue1VB.getChildren().addAll(blueTitle1BP, blue1CyBP, blue1AvgCyBP, blue1SpeBP, blue1AvgSpeBP, blue1AmpBP, blue1AvgAmpBP, blue1TrapBP, blue1AvgTrapBP, blue1CliBP, blue1AvgCliBP);
 			}
 			if(nonTeamNum2 != 0) {
+				System.out.println("boopseMPlay13");
 				Label blueTeam2NumL = new Label(Integer.toString(nonTeamNum2));
 				Label blue2MatchCyTitleL = new Label("Cycles");
 				Label blue2MatchSpeTitleL = new Label("Speakers");
@@ -1119,6 +1193,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				
 			}
 			if(nonTeamNum3 != 0) {
+				System.out.println("boopseMPlay14");
 				Label blueTeam3NumL = new Label(Integer.toString(nonTeamNum3));
 				Label blue3MatchCyTitleL = new Label("Cycles");
 				Label blue3MatchSpeTitleL = new Label("Speakers");
@@ -1214,6 +1289,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				
 			}
 			if(nonTeamNum4 != 0) {
+				System.out.println("boopseMPlay16");
 				Label blueTeam4NumL = new Label(Integer.toString(nonTeamNum4));
 				Label blue4MatchCyTitleL = new Label("Cycles");
 				Label blue4MatchSpeTitleL = new Label("Speakers");
@@ -1317,6 +1393,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 			redTeam3TitleL.setId("smallerTitle");
 			redTeam4TitleL.setId("smallerTitle");
 			if(mainTeamNum1 != 0) {
+				System.out.println("boopseMPlay17");
 				Label redTeam1NumL = new Label(Integer.toString(nonTeamNum1));
 				Label red1MatchCyTitleL = new Label("Cycles");
 				Label red1MatchSpeTitleL = new Label("Speakers");
@@ -1411,6 +1488,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				red1VB.getChildren().addAll(redTitle1BP, red1CyBP, red1AvgCyBP, red1SpeBP, red1AvgSpeBP, red1AmpBP, red1AvgAmpBP, red1TrapBP, red1AvgTrapBP, red1CliBP, red1AvgCliBP);
 			}
 			if(mainTeamNum2 != 0) {
+				System.out.println("boopseMPlay18");
 				Label redTeam2NumL = new Label(Integer.toString(nonTeamNum2));
 				Label red2MatchCyTitleL = new Label("Cycles");
 				Label red2MatchSpeTitleL = new Label("Speakers");
@@ -1506,6 +1584,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				
 			}
 			if(mainTeamNum3 != 0) {
+				System.out.println("boopseMPlay19");
 				Label redTeam3NumL = new Label(Integer.toString(nonTeamNum3));
 				Label red3MatchCyTitleL = new Label("Cycles");
 				Label red3MatchSpeTitleL = new Label("Speakers");
@@ -1601,6 +1680,7 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				
 			}
 			if(mainTeamNum4 != 0) {
+				System.out.println("boopseMPlay20");
 				Label redTeam4NumL = new Label(Integer.toString(nonTeamNum4));
 				Label red4MatchCyTitleL = new Label("Cycles");
 				Label red4MatchSpeTitleL = new Label("Speakers");
