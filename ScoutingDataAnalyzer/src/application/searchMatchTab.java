@@ -321,6 +321,8 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 		List<Match> allsMatch = mainML.getMatchFromFullList(matchNum, true);
 		List<Match> blueTeams =  new ArrayList<>();
 		List<Match> redTeams =  new ArrayList<>();
+		List<Match> blueSortedTeams =  new ArrayList<>();
+		List<Match> redSortedTeams =  new ArrayList<>();
 		Boolean mainColor = null;
 		boolean isRedTeam1 = false;
 		boolean isRedTeam2 = false;
@@ -337,36 +339,44 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 				mainColor = mColor;
 				if(mainColor == false) {
 					blueTeams.add(m);
+					blueSortedTeams.add(0, m);
 					isBlueTeam1 = true;
 				}else {
 					redTeams.add(m);
+					redSortedTeams.add(0, m);
 					isRedTeam1 = true;
 				}
 			}else if(m.getMatchTeamNum() == mainTeamNum2){
 				mainColor = mColor;
 				if(mainColor == false) {
 					blueTeams.add(m);
+					blueSortedTeams.add(1, m);
 					isBlueTeam2 = true;
 				}else {
 					redTeams.add(m);
+					redSortedTeams.add(1, m);
 					isRedTeam2 = true;
 				}
 			}else if(m.getMatchTeamNum() == mainTeamNum3){
 				mainColor = mColor;
 				if(mainColor == false) {
 					blueTeams.add(m);
+					blueSortedTeams.add(2, m);
 					isBlueTeam3 = true;
 				}else {
 					redTeams.add(m);
+					redSortedTeams.add(2, m);
 					isRedTeam3 = true;
 				}
 			}else if(m.getMatchTeamNum() == mainTeamNum4){
 				mainColor = mColor;
 				if(mainColor == false) {
 					blueTeams.add(m);
+					blueSortedTeams.add(3, m);
 					isBlueTeam4 = true;
 				}else {
 					redTeams.add(m);
+					redSortedTeams.add(3, m);
 					isRedTeam4 = true;
 				}
 			}else {
@@ -387,21 +397,25 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance1().getTeam1().getTeamNum()) {
 						isRedTeam1 = true;
 						 nonTeamNum1 = redTeams.get(i).getMatchTeamNum();
+						 redSortedTeams.add(0, redTeams.get(i));
 						 nonTeam1 = theTL.getATeam(nonTeamNum1);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance1().getTeam2().getTeamNum()) {
 						isRedTeam2 = true;
 						nonTeamNum2 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(1, redTeams.get(i));
 						nonTeam2 = theTL.getATeam(nonTeamNum2);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance1().getTeam3().getTeamNum()) {
 						isRedTeam3 = true;
 						nonTeamNum3 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(2, redTeams.get(i));
 						nonTeam3 = theTL.getATeam(nonTeamNum3);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance1().getTeam4().getTeamNum()) {
 						isRedTeam4 = true;
 						nonTeamNum4 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(4, redTeams.get(i));
 						nonTeam4 = theTL.getATeam(nonTeamNum4);
 					}
 				}
@@ -411,21 +425,25 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance2().getTeam1().getTeamNum()) {
 						isRedTeam1 = true;
 						 nonTeamNum1 = redTeams.get(i).getMatchTeamNum();
+						 redSortedTeams.add(0, redTeams.get(i));
 						 nonTeam1 = theTL.getATeam(nonTeamNum1);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance2().getTeam2().getTeamNum()) {
 						isRedTeam2 = true;
 						nonTeamNum2 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(1, redTeams.get(i));
 						nonTeam2 = theTL.getATeam(nonTeamNum2);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance2().getTeam3().getTeamNum()) {
 						isRedTeam3 = true;
 						nonTeamNum3 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(2, redTeams.get(i));
 						nonTeam3 = theTL.getATeam(nonTeamNum3);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance2().getTeam4().getTeamNum()) {
 						isRedTeam4 = true;
 						nonTeamNum4 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(3, redTeams.get(i));
 						nonTeam4 = theTL.getATeam(nonTeamNum4);
 					}
 				}
@@ -435,21 +453,25 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance3().getTeam1().getTeamNum()) {
 						isRedTeam1 = true;
 						 nonTeamNum1 = redTeams.get(i).getMatchTeamNum();
+						 redSortedTeams.add(0, redTeams.get(i));
 						 nonTeam1 = theTL.getATeam(nonTeamNum1);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance3().getTeam2().getTeamNum()) {
 						isRedTeam2 = true;
 						nonTeamNum2 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(1, redTeams.get(i));
 						nonTeam2 = theTL.getATeam(nonTeamNum2);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance3().getTeam3().getTeamNum()) {
 						isRedTeam3 = true;
 						nonTeamNum3 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(2, redTeams.get(i));
 						nonTeam3 = theTL.getATeam(nonTeamNum3);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance3().getTeam4().getTeamNum()) {
 						isRedTeam4 = true;
 						nonTeamNum4 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(3, redTeams.get(i));
 						nonTeam4 = theTL.getATeam(nonTeamNum4);
 					}
 				}
@@ -459,21 +481,25 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance4().getTeam1().getTeamNum()) {
 						isRedTeam1 = true;
 						 nonTeamNum1 = redTeams.get(i).getMatchTeamNum();
+						 redSortedTeams.add(0, redTeams.get(i));
 						 nonTeam1 = theTL.getATeam(nonTeamNum1);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance4().getTeam2().getTeamNum()) {
 						isRedTeam2 = true;
 						nonTeamNum2 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(1, redTeams.get(i));
 						nonTeam2 = theTL.getATeam(nonTeamNum2);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance4().getTeam3().getTeamNum()) {
 						isRedTeam3 = true;
 						nonTeamNum3 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(2, redTeams.get(i));
 						nonTeam3 = theTL.getATeam(nonTeamNum3);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance4().getTeam4().getTeamNum()) {
 						isRedTeam4 = true;
 						nonTeamNum4 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(3, redTeams.get(i));
 						nonTeam4 = theTL.getATeam(nonTeamNum4);
 					}
 				}
@@ -483,21 +509,25 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance5().getTeam1().getTeamNum()) {
 						isRedTeam1 = true;
 						 nonTeamNum1 = redTeams.get(i).getMatchTeamNum();
+						 redSortedTeams.add(0, redTeams.get(i));
 						 nonTeam1 = theTL.getATeam(nonTeamNum1);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance5().getTeam2().getTeamNum()) {
 						isRedTeam2 = true;
 						nonTeamNum2 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(1, redTeams.get(i));
 						nonTeam2 = theTL.getATeam(nonTeamNum2);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance5().getTeam3().getTeamNum()) {
 						isRedTeam3 = true;
 						nonTeamNum3 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(2, redTeams.get(i));
 						nonTeam3 = theTL.getATeam(nonTeamNum3);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance5().getTeam4().getTeamNum()) {
 						isRedTeam4 = true;
 						nonTeamNum4 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(3, redTeams.get(i));
 						nonTeam4 = theTL.getATeam(nonTeamNum4);
 					}
 				}
@@ -507,21 +537,25 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance6().getTeam1().getTeamNum()) {
 						isRedTeam1 = true;
 						 nonTeamNum1 = redTeams.get(i).getMatchTeamNum();
+						 redSortedTeams.add(0, redTeams.get(i));
 						 nonTeam1 = theTL.getATeam(nonTeamNum1);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance6().getTeam2().getTeamNum()) {
 						isRedTeam2 = true;
 						nonTeamNum2 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(1, redTeams.get(i));
 						nonTeam2 = theTL.getATeam(nonTeamNum2);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance6().getTeam3().getTeamNum()) {
 						isRedTeam3 = true;
 						nonTeamNum3 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(2, redTeams.get(i));
 						nonTeam3 = theTL.getATeam(nonTeamNum3);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance6().getTeam4().getTeamNum()) {
 						isRedTeam4 = true;
 						nonTeamNum4 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(3, redTeams.get(i));
 						nonTeam4 = theTL.getATeam(nonTeamNum4);
 					}
 				}
@@ -531,21 +565,25 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance7().getTeam1().getTeamNum()) {
 						isRedTeam1 = true;
 						 nonTeamNum1 = redTeams.get(i).getMatchTeamNum();
+						 redSortedTeams.add(0, redTeams.get(i));
 						 nonTeam1 = theTL.getATeam(nonTeamNum1);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance7().getTeam2().getTeamNum()) {
 						isRedTeam2 = true;
 						nonTeamNum2 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(1, redTeams.get(i));
 						nonTeam2 = theTL.getATeam(nonTeamNum2);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance7().getTeam3().getTeamNum()) {
 						isRedTeam3 = true;
 						nonTeamNum3 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(2, redTeams.get(i));
 						nonTeam3 = theTL.getATeam(nonTeamNum3);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance7().getTeam4().getTeamNum()) {
 						isRedTeam4 = true;
 						nonTeamNum4 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(3, redTeams.get(i));
 						nonTeam4 = theTL.getATeam(nonTeamNum4);
 					}
 				}
@@ -555,21 +593,25 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance8().getTeam1().getTeamNum()) {
 						isRedTeam1 = true;
 						 nonTeamNum1 = redTeams.get(i).getMatchTeamNum();
+						 redSortedTeams.add(0, redTeams.get(i));
 						 nonTeam1 = theTL.getATeam(nonTeamNum1);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance8().getTeam2().getTeamNum()) {
 						isRedTeam2 = true;
 						nonTeamNum2 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(1, redTeams.get(i));
 						nonTeam2 = theTL.getATeam(nonTeamNum2);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance8().getTeam3().getTeamNum()) {
 						isRedTeam3 = true;
 						nonTeamNum3 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(2, redTeams.get(i));
 						nonTeam3 = theTL.getATeam(nonTeamNum3);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance8().getTeam4().getTeamNum()) {
 						isRedTeam4 = true;
 						nonTeamNum4 = redTeams.get(i).getMatchTeamNum();
+						redSortedTeams.add(3, redTeams.get(i));
 						nonTeam4 = theTL.getATeam(nonTeamNum4);
 					}
 				}
@@ -581,21 +623,25 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance1().getTeam1().getTeamNum()) {
 						isBlueTeam1 = true;
 						 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
+						 blueSortedTeams.add(0, redTeams.get(i));
 						 nonTeam1 = theTL.getATeam(nonTeamNum1);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance1().getTeam2().getTeamNum()) {
 						isBlueTeam2 = true;
 						nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(1, redTeams.get(i));
 						nonTeam2 = theTL.getATeam(nonTeamNum2);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance1().getTeam3().getTeamNum()) {
 						isBlueTeam3 = true;
 						nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(2, redTeams.get(i));
 						nonTeam3 = theTL.getATeam(nonTeamNum3);
 					}
 					if(redTeams.get(i).getMatchTeamNum() == thePOA.getAlliance1().getTeam4().getTeamNum()) {
 						isBlueTeam4 = true;
 						nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(3, redTeams.get(i));
 						nonTeam4 = theTL.getATeam(nonTeamNum4);
 					}
 				}
@@ -605,21 +651,25 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance2().getTeam1().getTeamNum()) {
 						isBlueTeam1 = true;
 						 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
+						 blueSortedTeams.add(0, redTeams.get(i));
 						 nonTeam1 = theTL.getATeam(nonTeamNum1);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance2().getTeam2().getTeamNum()) {
 						isBlueTeam2 = true;
 						nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(1, redTeams.get(i));
 						nonTeam2 = theTL.getATeam(nonTeamNum2);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance2().getTeam3().getTeamNum()) {
 						isBlueTeam3 = true;
 						nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(2, redTeams.get(i));
 						nonTeam3 = theTL.getATeam(nonTeamNum3);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance2().getTeam4().getTeamNum()) {
 						isBlueTeam4 = true;
 						nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(3, redTeams.get(i));
 						nonTeam4 = theTL.getATeam(nonTeamNum4);
 					}
 				}
@@ -629,21 +679,25 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance3().getTeam1().getTeamNum()) {
 						isBlueTeam1 = true;
 						 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
+						 blueSortedTeams.add(0, redTeams.get(i));
 						 nonTeam1 = theTL.getATeam(nonTeamNum1);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance3().getTeam2().getTeamNum()) {
 						isBlueTeam2 = true;
 						nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(1, redTeams.get(i));
 						nonTeam2 = theTL.getATeam(nonTeamNum2);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance3().getTeam3().getTeamNum()) {
 						isBlueTeam3 = true;
 						nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(2, redTeams.get(i));
 						nonTeam3 = theTL.getATeam(nonTeamNum3);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance3().getTeam4().getTeamNum()) {
 						isBlueTeam4 = true;
 						nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(3, redTeams.get(i));
 						nonTeam4 = theTL.getATeam(nonTeamNum4);
 					}
 				}
@@ -653,21 +707,25 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance4().getTeam1().getTeamNum()) {
 						isBlueTeam1 = true;
 						 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
+						 blueSortedTeams.add(0, redTeams.get(i));
 						 nonTeam1 = theTL.getATeam(nonTeamNum1);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance4().getTeam2().getTeamNum()) {
 						isBlueTeam2 = true;
 						nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(1, redTeams.get(i));
 						nonTeam2 = theTL.getATeam(nonTeamNum2);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance4().getTeam3().getTeamNum()) {
 						isBlueTeam3 = true;
 						nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(2, redTeams.get(i));
 						nonTeam3 = theTL.getATeam(nonTeamNum3);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance4().getTeam4().getTeamNum()) {
 						isBlueTeam4 = true;
 						nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(3, redTeams.get(i));
 						nonTeam4 = theTL.getATeam(nonTeamNum4);
 					}
 				}
@@ -677,21 +735,25 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance5().getTeam1().getTeamNum()) {
 						isBlueTeam1 = true;
 						 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
+						 blueSortedTeams.add(0, redTeams.get(i));
 						 nonTeam1 = theTL.getATeam(nonTeamNum1);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance5().getTeam2().getTeamNum()) {
 						isBlueTeam2 = true;
 						nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(1, redTeams.get(i));
 						nonTeam2 = theTL.getATeam(nonTeamNum2);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance5().getTeam3().getTeamNum()) {
 						isBlueTeam3 = true;
 						nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(2, redTeams.get(i));
 						nonTeam3 = theTL.getATeam(nonTeamNum3);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance5().getTeam4().getTeamNum()) {
 						isBlueTeam4 = true;
 						nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(3, redTeams.get(i));
 						nonTeam4 = theTL.getATeam(nonTeamNum4);
 					}
 				}
@@ -701,21 +763,25 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance6().getTeam1().getTeamNum()) {
 						isBlueTeam1 = true;
 						 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
+						 blueSortedTeams.add(0, redTeams.get(i));
 						 nonTeam1 = theTL.getATeam(nonTeamNum1);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance6().getTeam2().getTeamNum()) {
 						isBlueTeam2 = true;
 						nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(1, redTeams.get(i));
 						nonTeam2 = theTL.getATeam(nonTeamNum2);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance6().getTeam3().getTeamNum()) {
 						isBlueTeam3 = true;
 						nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(2, redTeams.get(i));
 						nonTeam3 = theTL.getATeam(nonTeamNum3);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance6().getTeam4().getTeamNum()) {
 						isBlueTeam4 = true;
 						nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(3, redTeams.get(i));
 						nonTeam4 = theTL.getATeam(nonTeamNum4);
 					}
 				}
@@ -725,21 +791,25 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance7().getTeam1().getTeamNum()) {
 						isBlueTeam1 = true;
 						 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
+						 blueSortedTeams.add(0, redTeams.get(i));
 						 nonTeam1 = theTL.getATeam(nonTeamNum1);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance7().getTeam2().getTeamNum()) {
 						isBlueTeam2 = true;
 						nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(1, redTeams.get(i));
 						nonTeam2 = theTL.getATeam(nonTeamNum2);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance7().getTeam3().getTeamNum()) {
 						isBlueTeam3 = true;
 						nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(2, redTeams.get(i));
 						nonTeam3 = theTL.getATeam(nonTeamNum3);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance7().getTeam4().getTeamNum()) {
 						isBlueTeam4 = true;
 						nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(3, redTeams.get(i));
 						nonTeam4 = theTL.getATeam(nonTeamNum4);
 					}
 				}
@@ -749,25 +819,90 @@ public class searchMatchTab extends GridPane implements EventHandler<ActionEvent
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance8().getTeam1().getTeamNum()) {
 						isBlueTeam1 = true;
 						 nonTeamNum1 = blueTeams.get(i).getMatchTeamNum();
+						 blueSortedTeams.add(0, redTeams.get(i));
 						 nonTeam1 = theTL.getATeam(nonTeamNum1);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance8().getTeam2().getTeamNum()) {
 						isBlueTeam2 = true;
 						nonTeamNum2 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(1, redTeams.get(i));
 						nonTeam2 = theTL.getATeam(nonTeamNum2);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance8().getTeam3().getTeamNum()) {
 						isBlueTeam3 = true;
 						nonTeamNum3 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(2, redTeams.get(i));
 						nonTeam3 = theTL.getATeam(nonTeamNum3);
 					}
 					if(blueTeams.get(i).getMatchTeamNum() == thePOA.getAlliance8().getTeam4().getTeamNum()) {
 						isBlueTeam4 = true;
 						nonTeamNum4 = blueTeams.get(i).getMatchTeamNum();
+						blueSortedTeams.add(3, redTeams.get(i));
 						nonTeam4 = theTL.getATeam(nonTeamNum4);
 					}
 				}
 			}
+		}
+		Label blueTeam1TitleL = new Label("Captain");
+		Label blueTeam2TitleL = new Label("1st Pick");
+		Label blueTeam3TitleL = new Label("2nd Pick");
+		Label blueTeam4TitleL = new Label("Backup");
+		if(nonTeamNum1 != 0) {
+			Label blueTeam1NumL = new Label(Integer.toString(nonTeamNum1));
+			Label blue1MatchCyTitleL = new Label("Cycles");
+			Label blue1MatchSpeTitleL = new Label("Speakers");
+			Label blue1MatchAmpTitleL = new Label("Amp");
+			Label blue1MatchTrapTitleL = new Label("Trap");
+			Label blue1MatchCliTitleL = new Label("Climb");
+			Label blue1MatchCyStatL = new Label(Integer.toString(blueSortedTeams.get(0).getMatchSpe() + blueSortedTeams.get(0).getMatchAmp() + blueSortedTeams.get(0).getMatchTrap()));
+			Label blue1MatchSpeStatL = new Label(Integer.toString(blueSortedTeams.get(0).getMatchSpe()));
+			Label blue1MatchAmpStatL = new Label(Integer.toString(blueSortedTeams.get(0).getMatchAmp()));
+			Label blue1MatchTrapStatL = new Label(Integer.toString(blueSortedTeams.get(0).getMatchTrap()));
+			Label blue1MatchCliStatL = new Label(Integer.toString(blueSortedTeams.get(0).getMatchClimb()));
+			Label blue1AvgCyTitleL = new Label("Avg Cycles");
+			Label blue1AvgSpeTitleL = new Label("Avg Speakers");
+			Label blue1AvgAmpTitleL = new Label("Avg Amp");
+			Label blue1AvgTrapTitleL = new Label("Avg Trap");
+			Label blue1AvgCliTitleL = new Label("Avg Climb");
+		}
+		if(nonTeamNum1 != 0) {
+			Label blueTeam2NumL = new Label(Integer.toString(nonTeamNum2));
+			Label blue2MatchCyTitleL = new Label("Cycles");
+			Label blue2MatchSpeTitleL = new Label("Speakers");
+			Label blue2MatchAmpTitleL = new Label("Amp");
+			Label blue2MatchTrapTitleL = new Label("Trap");
+			Label blue2MatchCliTitleL = new Label("Climb");
+			Label blue2MatchCyStatL = new Label(Integer.toString(blueSortedTeams.get(1).getMatchSpe() + blueSortedTeams.get(0).getMatchAmp() + blueSortedTeams.get(0).getMatchTrap()));
+			Label blue2MatchSpeStatL = new Label(Integer.toString(blueSortedTeams.get(1).getMatchSpe()));
+			Label blue2MatchAmpStatL = new Label(Integer.toString(blueSortedTeams.get(1).getMatchAmp()));
+			Label blue2MatchTrapStatL = new Label(Integer.toString(blueSortedTeams.get(1).getMatchTrap()));
+			Label blue2MatchCliStatL = new Label(Integer.toString(blueSortedTeams.get(1).getMatchClimb()));
+		}
+		if(nonTeamNum1 != 0) {
+			Label blueTeam3NumL = new Label(Integer.toString(nonTeamNum3));
+			Label blue3MatchCyTitleL = new Label("Cycles");
+			Label blue3MatchSpeTitleL = new Label("Speakers");
+			Label blue3MatchAmpTitleL = new Label("Amp");
+			Label blue3MatchTrapTitleL = new Label("Trap");
+			Label blue3MatchCliTitleL = new Label("Climb");
+			Label blue3MatchCyStatL = new Label(Integer.toString(blueSortedTeams.get(2).getMatchSpe() + blueSortedTeams.get(0).getMatchAmp() + blueSortedTeams.get(0).getMatchTrap()));
+			Label blue3MatchSpeStatL = new Label(Integer.toString(blueSortedTeams.get(2).getMatchSpe()));
+			Label blue3MatchAmpStatL = new Label(Integer.toString(blueSortedTeams.get(2).getMatchAmp()));
+			Label blue3MatchTrapStatL = new Label(Integer.toString(blueSortedTeams.get(2).getMatchTrap()));
+			Label blue3MatchCliStatL = new Label(Integer.toString(blueSortedTeams.get(2).getMatchClimb()));
+		}
+		if(nonTeamNum1 != 0) {
+			Label blueTeam4NumL = new Label(Integer.toString(nonTeamNum4));
+			Label blue4MatchCyTitleL = new Label("Cycles");
+			Label blue4MatchSpeTitleL = new Label("Speakers");
+			Label blue4MatchAmpTitleL = new Label("Amp");
+			Label blue4MatchTrapTitleL = new Label("Trap");
+			Label blue4MatchCliTitleL = new Label("Climb");
+			Label blue4MatchCyStatL = new Label(Integer.toString(blueSortedTeams.get(3).getMatchSpe() + blueSortedTeams.get(0).getMatchAmp() + blueSortedTeams.get(0).getMatchTrap()));
+			Label blue4MatchSpeStatL = new Label(Integer.toString(blueSortedTeams.get(3).getMatchSpe()));
+			Label blue4MatchAmpStatL = new Label(Integer.toString(blueSortedTeams.get(3).getMatchAmp()));
+			Label blue4MatchTrapStatL = new Label(Integer.toString(blueSortedTeams.get(3).getMatchTrap()));
+			Label blue4MatchCliStatL = new Label(Integer.toString(blueSortedTeams.get(3).getMatchClimb()));
 		}
 	}
 	
