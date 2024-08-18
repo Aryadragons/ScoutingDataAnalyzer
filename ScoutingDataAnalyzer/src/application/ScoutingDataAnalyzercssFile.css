@@ -1417,3 +1417,12 @@
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
+#comTSelTeam{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}

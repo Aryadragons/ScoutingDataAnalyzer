@@ -27,13 +27,41 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 	
 	public compareTeamsTab(List<Integer> importedListOfTeamNums, TeamList imTL) {
 		listOfTeamNums = importedListOfTeamNums;
-		imTL = theTL;
+		theTL = imTL;
 		Label selTeam1 = new Label("Select a Team");
 		Label selTeam2 = new Label("Select a Team");
 		Label selTeam3 = new Label("Select a Team");
+		selTeam1.setId("smallTitle");
+		selTeam2.setId("smallTitle");
+		selTeam3.setId("smallTitle");
 		team1CB = new ComboBox<String>();
 		team2CB = new ComboBox<String>();
 		team3CB = new ComboBox<String>();
+		addComboBoxItems(team1CB);
+		addComboBoxItems(team2CB);
+		addComboBoxItems(team3CB);
+		BorderPane team1BP = new BorderPane();
+		team1BP.setTop(selTeam1);
+		team1BP.setCenter(team1CB);
+		team1BP.setId("comTSelTeam");
+		BorderPane team2BP = new BorderPane();
+		team2BP.setTop(selTeam2);
+		team2BP.setCenter(team2CB);
+		team2BP.setId("comTSelTeam");
+		BorderPane team3BP = new BorderPane();
+		team3BP.setTop(selTeam3);
+		team3BP.setCenter(team3CB);
+		team3BP.setId("comTSelTeam");
+		submitB = new Button("Submit");
+		submitB.setOnAction(this);
+		this.add(new Label("    "), 0, 0);
+		this.add(new Label("    "), 2, 0);
+		this.add(new Label("    "), 4, 0);
+		this.add(new Label("    "), 0, 2);
+		this.add(team1BP, 1, 1);
+		this.add(team2BP, 3, 1);
+		this.add(team3BP, 5, 1);
+		this.add(submitB, 1, 3);
 	}
 	
 	private void addComboBoxItems(ComboBox<String> temp) {
@@ -47,6 +75,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 	}
 	
 	public void threeTeamCompare(Team T1, Team T2, Team T3) {
+		System.out.println("BoopComTeams4.0");
 		double t1AvgCy = T1.getAvgCycles();
 		double t1AvgSpe = T1.getAvgSpe();
 		double t1AvgAmp = T1.getAvgAmp();
@@ -77,6 +106,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		double t3AvgAmpN = T3.getHumAmpNotes();
 		double t3TimesSco = T3.getTimesHumSco();
 		double t3TimesAmp = T3.getTimesHumAmp();
+		System.out.println("BoopComTeams4.1");
 		Label t1AvgCyL = new Label(Double.toString(t1AvgCy));
 		Label t1AvgSpeL = new Label(Double.toString(t1AvgSpe));
 		Label t1AvgAmpL = new Label(Double.toString(t1AvgAmp));
@@ -107,6 +137,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		Label t3AvgAmpNL = new Label(Double.toString(t3AvgAmpN));
 		Label t3TimesScoL = new Label(Double.toString(t3TimesSco));
 		Label t3TimesAmpL = new Label(Double.toString(t3TimesAmp));
+		System.out.println("BoopComTeams4.2");
 		Label t1AvgCyTitleL = new Label("Avg Cycle");
 		Label t1AvgSpeTitleL = new Label("Avg Speaker");
 		Label t1AvgAmpTitleL = new Label("Avg Amp");
@@ -137,6 +168,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		Label t3AvgAmpNTitleL = new Label("High Notes");
 		Label t3TimesScoTitleL = new Label("Times Score");
 		Label t3TimesAmpTitleL = new Label("Times Amp");
+		System.out.println("BoopComTeams4.3");
 		t1AvgCyL.setId("avgStat");
 		t1AvgSpeL.setId("avgStat");
 		t1AvgAmpL.setId("avgStat");
@@ -197,6 +229,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		t3AvgAmpNTitleL.setId("smallTitle");
 		t3TimesScoTitleL.setId("smallTitle");
 		t3TimesAmpTitleL.setId("smallTitle");
+		System.out.println("BoopComTeams4.4");
 		BorderPane t1CyBP = new BorderPane();
 		BorderPane t1SpeBP = new BorderPane();
 		BorderPane t1AmpBP = new BorderPane();
@@ -227,66 +260,79 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		BorderPane t3AvgAmpNBP = new BorderPane();
 		BorderPane t3TimesScoBP = new BorderPane();
 		BorderPane t3TimesAmpBP = new BorderPane();
+		System.out.println("BoopComTeams4.5");
 		t1CyBP.setTop(t1AvgCyTitleL);
 		t1SpeBP.setTop(t1AvgSpeTitleL);
 		t1AmpBP.setTop(t1AvgAmpTitleL);
 		t1TrapBP.setTop(t1AvgTrapTitleL);
 		t1CliBP.setTop(t1AvgCliTitleL);
+		System.out.println("BoopComTeams4.5.1");
 		t1AvgScoSkBP.setTop(t1AvgScoSkTitleL);
 		t1AvgAmpSkBP.setTop(t1AvgAmpSkTitleL);
 		t1AvgAmpNBP.setTop(t1AvgAmpNTitleL);
 		t1TimesScoBP.setTop(t1TimesScoTitleL);
 		t1TimesAmpBP.setTop(t1TimesAmpTitleL);
+		System.out.println("BoopComTeams4.5.2");
 		t2CyBP.setTop(t2AvgCyTitleL);
 		t2SpeBP.setTop(t2AvgSpeTitleL);
 		t2AmpBP.setTop(t2AvgAmpTitleL);
 		t2TrapBP.setTop(t2AvgTrapTitleL);
 		t2CliBP.setTop(t2AvgCliTitleL);
+		System.out.println("BoopComTeams4.5.3");
 		t2AvgScoSkBP.setTop(t2AvgScoSkTitleL);
 		t2AvgAmpSkBP.setTop(t2AvgAmpSkTitleL);
 		t2AvgAmpNBP.setTop(t2AvgAmpNTitleL);
 		t2TimesScoBP.setTop(t2TimesScoTitleL);
 		t2TimesAmpBP.setTop(t2TimesAmpTitleL);
+		System.out.println("BoopComTeams4.5.4");
 		t3CyBP.setTop(t3AvgCyTitleL);
 		t3SpeBP.setTop(t3AvgSpeTitleL);
 		t3AmpBP.setTop(t3AvgAmpTitleL);
 		t3TrapBP.setTop(t3AvgTrapTitleL);
 		t3CliBP.setTop(t3AvgCliTitleL);
+		System.out.println("BoopComTeams4.5.5");
 		t3AvgScoSkBP.setTop(t3AvgScoSkTitleL);
 		t3AvgAmpSkBP.setTop(t3AvgAmpSkTitleL);
 		t3AvgAmpNBP.setTop(t3AvgAmpNTitleL);
 		t3TimesScoBP.setTop(t3TimesScoTitleL);
 		t3TimesAmpBP.setTop(t3TimesAmpTitleL);
+		System.out.println("BoopComTeams4.5.6");
 		t1CyBP.setCenter(t1AvgCyL);
 		t1SpeBP.setCenter(t1AvgSpeL);
 		t1AmpBP.setCenter(t1AvgAmpL);
 		t1TrapBP.setCenter(t1AvgTrapL);
 		t1CliBP.setCenter(t1AvgCliL);
+		System.out.println("BoopComTeams4.5.7");
 		t1AvgScoSkBP.setCenter(t1AvgScoSkL);
 		t1AvgAmpSkBP.setCenter(t1AvgAmpSkL);
 		t1AvgAmpNBP.setCenter(t1AvgAmpNL);
 		t1TimesScoBP.setCenter(t1TimesScoL);
 		t1TimesAmpBP.setCenter(t1TimesAmpL);
-		t2CyBP.setCenter(t2AvgCyTitleL);
-		t2SpeBP.setCenter(t2AvgSpeTitleL);
-		t2AmpBP.setCenter(t2AvgAmpTitleL);
-		t2TrapBP.setCenter(t2AvgTrapTitleL);
-		t2CliBP.setCenter(t2AvgCliTitleL);
+		System.out.println("BoopComTeams4.5.8");
+		t2CyBP.setCenter(t2AvgCyL);
+		t2SpeBP.setCenter(t2AvgSpeL);
+		t2AmpBP.setCenter(t2AvgAmpL);
+		t2TrapBP.setCenter(t2AvgTrapL);
+		t2CliBP.setCenter(t2AvgCliL);
+		System.out.println("BoopComTeams4.5.9");
 		t2AvgScoSkBP.setCenter(t2AvgScoSkL);
 		t2AvgAmpSkBP.setCenter(t2AvgAmpSkL);
 		t2AvgAmpNBP.setCenter(t2AvgAmpNL);
 		t2TimesScoBP.setCenter(t2TimesScoL);
 		t2TimesAmpBP.setCenter(t2TimesAmpL);
-		t3CyBP.setCenter(t3AvgCyTitleL);
-		t3SpeBP.setCenter(t3AvgSpeTitleL);
-		t3AmpBP.setCenter(t3AvgAmpTitleL);
-		t3TrapBP.setCenter(t3AvgTrapTitleL);
-		t3CliBP.setCenter(t3AvgCliTitleL);
+		System.out.println("BoopComTeams4.5.10");
+		t3CyBP.setCenter(t3AvgCyL);
+		t3SpeBP.setCenter(t3AvgSpeL);
+		t3AmpBP.setCenter(t3AvgAmpL);
+		t3TrapBP.setCenter(t3AvgTrapL);
+		t3CliBP.setCenter(t3AvgCliL);
+		System.out.println("BoopComTeams4.5.11");
 		t3AvgScoSkBP.setCenter(t3AvgScoSkL);
 		t3AvgAmpSkBP.setCenter(t3AvgAmpSkL);
 		t3AvgAmpNBP.setCenter(t3AvgAmpNL);
 		t3TimesScoBP.setCenter(t3TimesScoL);
 		t3TimesAmpBP.setCenter(t3TimesAmpL);
+		System.out.println("BoopComTeams4.6");
 		t1CyBP.setId("comTeamsStatBP1");
 		t1SpeBP.setId("comTeamsStatBP2");
 		t1AmpBP.setId("comTeamsStatBP3");
@@ -317,6 +363,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		t3AvgAmpNBP.setId("comTeamsStatBP58");
 		t3TimesScoBP.setId("comTeamsStatBP9");
 		t3TimesAmpBP.setId("comTeamsStatBP8");
+		System.out.println("BoopComTeams4.7");
 		Label t1TeamNumL = new Label(Integer.toString(T1.getTeamNum()) + "'s Stats");
 		Label t2TeamNumL = new Label(Integer.toString(T2.getTeamNum()) + "'s Stats");
 		Label t3TeamNumL = new Label(Integer.toString(T3.getTeamNum()) + "'s Stats");
@@ -329,18 +376,27 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		t1TeamNumBP.setCenter(t1TeamNumL);
 		t2TeamNumBP.setCenter(t2TeamNumL);
 		t3TeamNumBP.setCenter(t3TeamNumL);
+		System.out.println("BoopComTeams4.8");
 		VBox t1VB = new VBox(5);
 		VBox t2VB = new VBox(5);
 		VBox t3VB = new VBox(5);
 		t1VB.getChildren().addAll(t1TeamNumBP, t1CyBP, t1SpeBP, t1AmpBP, t1TrapBP, t1CliBP, t1AvgScoSkBP, t1AvgAmpSkBP, t1AvgAmpNBP, t1TimesScoBP, t1TimesAmpBP);
 		t2VB.getChildren().addAll(t2TeamNumBP, t2CyBP, t2SpeBP, t2AmpBP, t2TrapBP, t2CliBP, t2AvgScoSkBP, t2AvgAmpSkBP, t2AvgAmpNBP, t2TimesScoBP, t2TimesAmpBP);
 		t3VB.getChildren().addAll(t3TeamNumBP, t3CyBP, t3SpeBP, t3AmpBP, t3TrapBP, t3CliBP, t3AvgScoSkBP, t3AvgAmpSkBP, t3AvgAmpNBP, t3TimesScoBP, t3TimesAmpBP);
+		System.out.println("BoopComTeams4.9");
 		this.add(new Label("    "), 0, 0);
 		this.add(new Label("    "), 2, 0);
 		this.add(new Label("    "), 4, 0);
+		this.add(new Label("    "), 6, 0);
+		this.add(new Label("    "), 8, 0);
+		this.add(new Label("    "), 10, 0);
+		this.add(new Label("    "), 0, 2);
 		this.add(t1VB, 1, 1);
 		this.add(t2VB, 5, 1);
 		this.add(t3VB, 9, 1);
+		System.out.println("BoopComTeams4.10");
+		threeTeamsPieChart(T1, T2, T3);
+		System.out.println("BoopComTeams4.11");
 	}
 	
 	public void twoTeamCompare(Team T1, Team T2) {
@@ -539,8 +595,13 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		this.add(new Label("    "), 0, 0);
 		this.add(new Label("    "), 2, 0);
 		this.add(new Label("    "), 4, 0);
+		this.add(new Label("    "), 6, 0);
+		this.add(new Label("    "), 8, 0);
+		this.add(new Label("    "), 10, 0);
+		this.add(new Label("    "), 0, 2);
 		this.add(t1VB, 1, 1);
 		this.add(t2VB, 3, 1);
+		twoTeamsPieChart(T1, T2);
 	}
 	
 	public void threeTeamsPieChart(Team T1, Team T2, Team T3) {
@@ -636,6 +697,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		PieChart teamSpePieC = new PieChart(pieChartData3);
 		teamSpePieC.autosize();
 		teamSpePieC.setMaxSize(350, 350);
+		teamSpePieC.setMinSize(350, 350);
 		teamSpePieC.setLabelsVisible(true);
 		//Trap between all teams
 		double totalTrap = t1Trap + t2Trap + t3Trap;
@@ -1104,30 +1166,45 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 	
 	@Override
 	public void handle(ActionEvent event) {
+		System.out.println("BoopComTeams0");
 		try {
 			if (event.getSource() == submitB) {
+				this.getChildren().clear();
+				System.out.println("BoopComTeams1");
 				String selTeamNum1S = team1CB.getSelectionModel().getSelectedItem();
 				String selTeamNum2S = team1CB.getSelectionModel().getSelectedItem();
 				String selTeamNum3S = team1CB.getSelectionModel().getSelectedItem();
 				int selTeamNum1;
 				int selTeamNum2;
 				int selTeamNum3;
+				Team T1 = null;
+				Team T2 = null;
+				Team T3 = null;
 				int numOfSelected = 0;
 				if(selTeamNum1S != null) {
 					selTeamNum1 = Integer.parseInt(selTeamNum1S);
-					Team T1 = theTL.getATeam(selTeamNum1);
+					T1 = theTL.getATeam(selTeamNum1);
 					numOfSelected++;
 				}
 				if(selTeamNum2S != null) {
 					selTeamNum2 = Integer.parseInt(selTeamNum2S);
-					Team T2 = theTL.getATeam(selTeamNum2);
+					T2 = theTL.getATeam(selTeamNum2);
 					numOfSelected++;
 				}
 				if(selTeamNum3S != null) {
 					selTeamNum3 = Integer.parseInt(selTeamNum3S);
-					Team T3 = theTL.getATeam(selTeamNum3);
+					T3 = theTL.getATeam(selTeamNum3);
 					numOfSelected++;
 				}
+				System.out.println("BoopComTeams2");
+				if(numOfSelected == 2) {
+					System.out.println("BoopComTeams3");
+					twoTeamCompare(T1, T2); 
+				}else if(numOfSelected == 3) {
+					System.out.println("BoopComTeams4");
+					threeTeamCompare(T1, T2, T3);
+				}
+				System.out.println("BoopComTeams5");
 				
 			}
 		} catch (Exception e) {
