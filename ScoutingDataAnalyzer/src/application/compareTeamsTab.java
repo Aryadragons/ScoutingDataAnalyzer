@@ -2,8 +2,11 @@ package application;
 
 import java.util.List;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -540,6 +543,78 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		this.add(t2VB, 3, 1);
 	}
 	
+	public void threeTeamsPieChart(Team T1, Team T2, Team T3) {
+		double t1Cy = T1.getAvgSpe() + T1.getAvgAmp() + T1.getAvgTrap();
+		double t1Spe = T1.getAvgSpe();
+		double t1Amp = T1.getAvgAmp();
+		double t1Trap = T1.getAvgTrap();
+		double t1Cli = T1.getAvgClimb();
+		int t1TSco = T1.getTimesHumSco();
+		int t1TAmp = T1.getTimesHumAmp();
+		double t2Cy = T3.getAvgSpe() + T2.getAvgAmp() + T2.getAvgTrap();
+		double t2Spe = T2.getAvgSpe();
+		double t2Amp = T2.getAvgAmp();
+		double t2Trap = T2.getAvgTrap();
+		double t2Cli = T2.getAvgClimb();
+		double t2TSco = T2.getTimesHumSco();
+		double t2TAmp = T2.getTimesHumAmp();
+		double t3Cy = T3.getAvgSpe() + T3.getAvgAmp() + T3.getAvgTrap();
+		double t3Spe = T3.getAvgSpe();
+		double t3Amp = T3.getAvgAmp();
+		double t3Trap = T3.getAvgTrap();
+		double t3Cli = T3.getAvgClimb();
+		double t3TSco = T3.getTimesHumSco();
+		double t3TAmp = T3.getTimesHumAmp();
+		//Cycles between all teams
+		double totalCy = t1Cy + t2Cy + t3Cy;
+		int t1CyPer = (int) ((t1Cy/totalCy) * 100);
+		int t2CyPer = (int) ((t2Cy/totalCy) * 100);
+		int t3CyPer = (int) ((t3Cy/totalCy) * 100);
+		int whoToAdd = 1;
+		while(t1CyPer + t2CyPer + t3CyPer != 100) {
+			if(whoToAdd == 1) {
+				t1CyPer++;
+				whoToAdd++;
+			}else if(whoToAdd == 2) {
+				t2CyPer++;
+				whoToAdd++;
+			}else if(whoToAdd == 3){
+				t3CyPer++;
+				whoToAdd = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(new PieChart.Data("Team 1", t1CyPer), new PieChart.Data("Team 2", t2CyPer), new PieChart.Data("Team 3", t3CyPer));
+		PieChart teamCyclePieC = new PieChart(pieChartData);
+		teamCyclePieC.autosize();
+		teamCyclePieC.setMaxSize(350, 350);
+		teamCyclePieC.setLabelsVisible(true);
+		this.add(teamCyclePieC, 1, 3);
+		//Amp between all teams
+		double totalAmp = t1Amp + t2Amp + t3Amp;
+		int t1AmpPer = (int) ((t1Amp/totalAmp) * 100);
+		int t2AmpPer = (int) ((t2Amp/totalAmp) * 100);
+		int t3AmpPer = (int) ((t3Amp/totalAmp) * 100);
+		int whoToAdd2 = 1;
+		while(t1AmpPer + t2AmpPer + t3AmpPer != 100) {
+			if(whoToAdd2 == 1) {
+				t1AmpPer++;
+				whoToAdd2++;
+			}else if(whoToAdd2 == 2) {
+				t2AmpPer++;
+				whoToAdd2++;
+			}else if(whoToAdd2 == 3){
+				t3AmpPer++;
+				whoToAdd2 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData2 = FXCollections.observableArrayList(new PieChart.Data("Team 1", t1CyPer), new PieChart.Data("Team 2", t2CyPer), new PieChart.Data("Team 3", t3CyPer));
+		PieChart teamAmpPieC = new PieChart(pieChartData2);
+		teamAmpPieC.autosize();
+		teamAmpPieC.setMaxSize(350, 350);
+		teamAmpPieC.setLabelsVisible(true);
+		this.add(teamAmpPieC, 1, 3);
+	}
+	
 	@Override
 	public void handle(ActionEvent event) {
 		try {
@@ -547,12 +622,25 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 				String selTeamNum1S = team1CB.getSelectionModel().getSelectedItem();
 				String selTeamNum2S = team1CB.getSelectionModel().getSelectedItem();
 				String selTeamNum3S = team1CB.getSelectionModel().getSelectedItem();
-				int selTeamNum1 = Integer.parseInt(selTeamNum1S);
-				int selTeamNum2 = Integer.parseInt(selTeamNum1S);
-				int selTeamNum3 = Integer.parseInt(selTeamNum1S);
-				Team T1 = theTL.getATeam(selTeamNum1);
-				Team T2 = theTL.getATeam(selTeamNum2);
-				Team T3 = theTL.getATeam(selTeamNum3);
+				int selTeamNum1;
+				int selTeamNum2;
+				int selTeamNum3;
+				int numOfSelected = 0;
+				if(selTeamNum1S != null) {
+					selTeamNum1 = Integer.parseInt(selTeamNum1S);
+					Team T1 = theTL.getATeam(selTeamNum1);
+					numOfSelected++;
+				}
+				if(selTeamNum2S != null) {
+					selTeamNum2 = Integer.parseInt(selTeamNum2S);
+					Team T2 = theTL.getATeam(selTeamNum2);
+					numOfSelected++;
+				}
+				if(selTeamNum3S != null) {
+					selTeamNum3 = Integer.parseInt(selTeamNum3S);
+					Team T3 = theTL.getATeam(selTeamNum3);
+					numOfSelected++;
+				}
 				
 			}
 		} catch (Exception e) {
