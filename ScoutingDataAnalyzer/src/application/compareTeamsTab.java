@@ -549,6 +549,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		double t1Amp = T1.getAvgAmp();
 		double t1Trap = T1.getAvgTrap();
 		double t1Cli = T1.getAvgClimb();
+		double t1HighN = T1.getHumAmpNotes();
 		int t1TSco = T1.getTimesHumSco();
 		int t1TAmp = T1.getTimesHumAmp();
 		double t2Cy = T3.getAvgSpe() + T2.getAvgAmp() + T2.getAvgTrap();
@@ -556,6 +557,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		double t2Amp = T2.getAvgAmp();
 		double t2Trap = T2.getAvgTrap();
 		double t2Cli = T2.getAvgClimb();
+		double t2HighN = T1.getHumAmpNotes();
 		double t2TSco = T2.getTimesHumSco();
 		double t2TAmp = T2.getTimesHumAmp();
 		double t3Cy = T3.getAvgSpe() + T3.getAvgAmp() + T3.getAvgTrap();
@@ -563,6 +565,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		double t3Amp = T3.getAvgAmp();
 		double t3Trap = T3.getAvgTrap();
 		double t3Cli = T3.getAvgClimb();
+		double t3HighN = T1.getHumAmpNotes();
 		double t3TSco = T3.getTimesHumSco();
 		double t3TAmp = T3.getTimesHumAmp();
 		//Cycles between all teams
@@ -588,7 +591,6 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		teamCyclePieC.autosize();
 		teamCyclePieC.setMaxSize(350, 350);
 		teamCyclePieC.setLabelsVisible(true);
-		this.add(teamCyclePieC, 1, 3);
 		//Amp between all teams
 		double totalAmp = t1Amp + t2Amp + t3Amp;
 		int t1AmpPer = (int) ((t1Amp/totalAmp) * 100);
@@ -607,11 +609,125 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 				whoToAdd2 = 1;
 			}
 		}
-		ObservableList<PieChart.Data> pieChartData2 = FXCollections.observableArrayList(new PieChart.Data("Team 1", t1CyPer), new PieChart.Data("Team 2", t2CyPer), new PieChart.Data("Team 3", t3CyPer));
+		ObservableList<PieChart.Data> pieChartData2 = FXCollections.observableArrayList(new PieChart.Data("Team 1", t1AmpPer), new PieChart.Data("Team 2", t2AmpPer), new PieChart.Data("Team 3", t3AmpPer));
 		PieChart teamAmpPieC = new PieChart(pieChartData2);
 		teamAmpPieC.autosize();
 		teamAmpPieC.setMaxSize(350, 350);
 		teamAmpPieC.setLabelsVisible(true);
+		//Speaker between all teams
+		double totalSpe = t1Spe + t2Spe + t3Spe;
+		int t1SpePer = (int) ((t1Spe/totalSpe) * 100);
+		int t2SpePer = (int) ((t2Spe/totalSpe) * 100);
+		int t3SpePer = (int) ((t3Spe/totalSpe) * 100);
+		int whoToAdd3 = 1;
+		while(t1SpePer + t2SpePer + t3SpePer != 100) {
+			if(whoToAdd3 == 1) {
+				t1SpePer++;
+				whoToAdd3++;
+			}else if(whoToAdd3 == 2) {
+				t2SpePer++;
+				whoToAdd3++;
+			}else if(whoToAdd3 == 3){
+				t3SpePer++;
+				whoToAdd3 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData3 = FXCollections.observableArrayList(new PieChart.Data("Team 1", t1SpePer), new PieChart.Data("Team 2", t2SpePer), new PieChart.Data("Team 3", t3SpePer));
+		PieChart teamSpePieC = new PieChart(pieChartData3);
+		teamSpePieC.autosize();
+		teamSpePieC.setMaxSize(350, 350);
+		teamSpePieC.setLabelsVisible(true);
+		//Trap between all teams
+		double totalTrap = t1Trap + t2Trap + t3Trap;
+		int t1TrapPer = (int) ((t1Trap/totalTrap) * 100);
+		int t2TrapPer = (int) ((t2Trap/totalTrap) * 100);
+		int t3TrapPer = (int) ((t3Trap/totalTrap) * 100);
+		int whoToAdd4 = 1;
+		while(t1TrapPer + t2TrapPer + t3TrapPer != 100) {
+			if(whoToAdd4 == 1) {
+				t1TrapPer++;
+				whoToAdd4++;
+			}else if(whoToAdd4 == 2) {
+				t2TrapPer++;
+				whoToAdd4++;
+			}else if(whoToAdd4 == 3){
+				t3TrapPer++;
+				whoToAdd4 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData4 = FXCollections.observableArrayList(new PieChart.Data("Team 1", t1TrapPer), new PieChart.Data("Team 2", t2TrapPer), new PieChart.Data("Team 3", t3TrapPer));
+		PieChart teamTrapPieC = new PieChart(pieChartData4);
+		teamTrapPieC.autosize();
+		teamTrapPieC.setMaxSize(350, 350);
+		teamTrapPieC.setLabelsVisible(true);
+		//Climb between all teams
+		double totalCli = t1Cli + t2Cli + t3Cli;
+		int t1CliPer = (int) ((t1Cli/totalCli) * 100);
+		int t2CliPer = (int) ((t2Cli/totalCli) * 100);
+		int t3CliPer = (int) ((t3Cli/totalCli) * 100);
+		int whoToAdd5 = 1;
+		while(t1CliPer + t2CliPer + t3CliPer != 100) {
+			if(whoToAdd5 == 1) {
+				t1CliPer++;
+				whoToAdd5++;
+			}else if(whoToAdd5 == 2) {
+				t2CliPer++;
+				whoToAdd5++;
+			}else if(whoToAdd5 == 3){
+				t3CliPer++;
+				whoToAdd5 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData5 = FXCollections.observableArrayList(new PieChart.Data("Team 1", t1CliPer), new PieChart.Data("Team 2", t2CliPer), new PieChart.Data("Team 3", t3CliPer));
+		PieChart teamCliPieC = new PieChart(pieChartData5);
+		teamCliPieC.autosize();
+		teamCliPieC.setMaxSize(350, 350);
+		teamCliPieC.setLabelsVisible(true);
+		//High Notes between all teams
+		double totalHighN = t1HighN + t2HighN + t3HighN;
+		int t1HighNPer = (int) ((t1HighN/totalHighN) * 100);
+		int t2HighNPer = (int) ((t2HighN/totalHighN) * 100);
+		int t3HighNPer = (int) ((t3HighN/totalHighN) * 100);
+		int whoToAdd6 = 1;
+		while(t1HighNPer + t2HighNPer + t3HighNPer != 100) {
+			if(whoToAdd6 == 1) {
+				t1HighNPer++;
+				whoToAdd6++;
+			}else if(whoToAdd6 == 2) {
+				t2HighNPer++;
+				whoToAdd6++;
+			}else if(whoToAdd6 == 3){
+				t3HighNPer++;
+				whoToAdd6 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData6 = FXCollections.observableArrayList(new PieChart.Data("Team 1", t1HighNPer), new PieChart.Data("Team 2", t2HighNPer), new PieChart.Data("Team 3", t3HighNPer));
+		PieChart teamHighNPieC = new PieChart(pieChartData6);
+		teamHighNPieC.autosize();
+		teamHighNPieC.setMaxSize(350, 350);
+		teamHighNPieC.setLabelsVisible(true);
+		//Team 1 Cycle Composition
+		double totalCyT1 = t1Spe + t1Amp + t1Trap;
+		int t1SpeComPer = (int) ((t1Spe/totalCyT1) * 100);
+		int t1AmpComPer = (int) ((t1Amp/totalCyT1) * 100);
+		int t1TrapComPer = (int) ((t1Trap/totalCyT1) * 100);
+		int whoToAdd7 = 1;
+		while(t1SpeComPer + t1AmpComPer + t1TrapComPer != 100) {
+			if(whoToAdd7 == 1) {
+				t1SpeComPer++;
+				whoToAdd7++;
+			}else if(whoToAdd7 == 2) {
+				t1AmpComPer++;
+				whoToAdd7++;
+			}else if(whoToAdd7 == 3){
+				t1TrapComPer++;
+				whoToAdd7 = 1;
+			}
+		}
+		
+		
+		this.add(teamCyclePieC, 1, 3);
+		this.add(teamSpePieC, 1, 3);
 		this.add(teamAmpPieC, 1, 3);
 	}
 	
