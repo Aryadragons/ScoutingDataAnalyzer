@@ -1271,10 +1271,10 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	}
 	
 	private void makeCompareTeams() {
-		compareTeamsTab comTeams = new compareTeamsTab();
-		comTeams.setMinHeight(800);
+		compareTeamsTab comTeams = new compareTeamsTab(listOfTeamNumsSorted, mainTeamList);
+		comTeams.setMinHeight(1400);
 		comTeams.setMinWidth(1400);
-		comTeams.setMaxHeight(800);
+		comTeams.setMaxHeight(1400);
 		comTeams.setMaxWidth(1400);
 		FileInputStream inputComTeams;
 		try {
