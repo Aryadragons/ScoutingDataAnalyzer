@@ -402,15 +402,13 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		System.out.println("BoopComTeams4.9");
 		this.add(new Label("    "), 0, 0);
 		this.add(new Label("    "), 0, 2);
-		this.add(t1VB, 1, 1);
-		this.add(t2VB, 3, 1);
-		this.add(t3VB, 5, 1);
 		System.out.println("BoopComTeams4.10");
 		threeTeamsPieChart(T1, T2, T3);
 		System.out.println("BoopComTeams4.11");
 	}
 	
 	public void twoTeamCompare(Team T1, Team T2) {
+		System.out.println("BoopComTeams3.0");
 		double t1AvgCy = T1.getAvgCycles();
 		double t1AvgSpe = T1.getAvgSpe();
 		double t1AvgAmp = T1.getAvgAmp();
@@ -431,6 +429,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		double t2AvgAmpN = T1.getHumAmpNotes();
 		double t2TimesSco = T1.getTimesHumSco();
 		double t2TimesAmp = T1.getTimesHumAmp();
+		System.out.println("BoopComTeams3.1");
 		Label t1AvgCyL = new Label(Double.toString(t1AvgCy));
 		Label t1AvgSpeL = new Label(Double.toString(t1AvgSpe));
 		Label t1AvgAmpL = new Label(Double.toString(t1AvgAmp));
@@ -451,6 +450,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		Label t2AvgAmpNL = new Label(Double.toString(t2AvgAmpN));
 		Label t2TimesScoL = new Label(Double.toString(t2TimesSco));
 		Label t2TimesAmpL = new Label(Double.toString(t2TimesAmp));
+		System.out.println("BoopComTeams3.2");
 		Label t1AvgCyTitleL = new Label("Avg Cycle");
 		Label t1AvgSpeTitleL = new Label("Avg Speaker");
 		Label t1AvgAmpTitleL = new Label("Avg Amp");
@@ -471,6 +471,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		Label t2AvgAmpNTitleL = new Label("High Notes");
 		Label t2TimesScoTitleL = new Label("Times Score");
 		Label t2TimesAmpTitleL = new Label("Times Amp");
+		System.out.println("BoopComTeams3.3");
 		t1AvgCyL.setId("avgStat");
 		t1AvgSpeL.setId("avgStat");
 		t1AvgAmpL.setId("avgStat");
@@ -491,6 +492,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		t2AvgAmpNL.setId("avgStat");
 		t2TimesScoL.setId("avgStat");
 		t2TimesAmpL.setId("avgStat");
+		System.out.println("BoopComTeams3.4");
 		t1AvgCyTitleL.setId("smallTitle");
 		t1AvgSpeTitleL.setId("smallTitle");
 		t1AvgAmpTitleL .setId("smallTitle");
@@ -511,6 +513,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		t2AvgAmpNTitleL.setId("smallTitle");
 		t2TimesScoTitleL.setId("smallTitle");
 		t2TimesAmpTitleL.setId("smallTitle");
+		System.out.println("BoopComTeams3.5");
 		BorderPane t1CyBP = new BorderPane();
 		BorderPane t1SpeBP = new BorderPane();
 		BorderPane t1AmpBP = new BorderPane();
@@ -531,6 +534,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		BorderPane t2AvgAmpNBP = new BorderPane();
 		BorderPane t2TimesScoBP = new BorderPane();
 		BorderPane t2TimesAmpBP = new BorderPane();
+		System.out.println("BoopComTeams3.6");
 		t1CyBP.setTop(t1AvgCyTitleL);
 		t1SpeBP.setTop(t1AvgSpeTitleL);
 		t1AmpBP.setTop(t1AvgAmpTitleL);
@@ -551,6 +555,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		t2AvgAmpNBP.setTop(t2AvgAmpNTitleL);
 		t2TimesScoBP.setTop(t2TimesScoTitleL);
 		t2TimesAmpBP.setTop(t2TimesAmpTitleL);
+		System.out.println("BoopComTeams3.7");
 		t1CyBP.setCenter(t1AvgCyL);
 		t1SpeBP.setCenter(t1AvgSpeL);
 		t1AmpBP.setCenter(t1AvgAmpL);
@@ -561,16 +566,17 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		t1AvgAmpNBP.setCenter(t1AvgAmpNL);
 		t1TimesScoBP.setCenter(t1TimesScoL);
 		t1TimesAmpBP.setCenter(t1TimesAmpL);
-		t2CyBP.setCenter(t2AvgCyTitleL);
-		t2SpeBP.setCenter(t2AvgSpeTitleL);
-		t2AmpBP.setCenter(t2AvgAmpTitleL);
-		t2TrapBP.setCenter(t2AvgTrapTitleL);
-		t2CliBP.setCenter(t2AvgCliTitleL);
+		t2CyBP.setCenter(t2AvgCyL);
+		t2SpeBP.setCenter(t2AvgSpeL);
+		t2AmpBP.setCenter(t2AvgAmpL);
+		t2TrapBP.setCenter(t2AvgTrapL);
+		t2CliBP.setCenter(t2AvgCliL);
 		t2AvgScoSkBP.setCenter(t2AvgScoSkL);
 		t2AvgAmpSkBP.setCenter(t2AvgAmpSkL);
 		t2AvgAmpNBP.setCenter(t2AvgAmpNL);
 		t2TimesScoBP.setCenter(t2TimesScoL);
 		t2TimesAmpBP.setCenter(t2TimesAmpL);
+		System.out.println("BoopComTeams3.8");
 		t1CyBP.setId("comTeamsStatBP1");
 		t1SpeBP.setId("comTeamsStatBP2");
 		t1AmpBP.setId("comTeamsStatBP3");
@@ -591,6 +597,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		t2AvgAmpNBP.setId("comTeamsStatBP8");
 		t2TimesScoBP.setId("comTeamsStatBP9");
 		t2TimesAmpBP.setId("comTeamsStatBP8");
+		System.out.println("BoopComTeams3.9");
 		Label t1TeamNumL = new Label(Integer.toString(T1.getTeamNum()) + "'s Stats");
 		Label t2TeamNumL = new Label(Integer.toString(T2.getTeamNum()) + "'s Stats");
 		t1TeamNumL.setId("TitleLabelPlay");
@@ -599,8 +606,9 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		BorderPane t2TeamNumBP = new BorderPane();
 		t1TeamNumBP.setCenter(t1TeamNumL);
 		t2TeamNumBP.setCenter(t2TeamNumL);
-		VBox t1VB = new VBox(5);
-		VBox t2VB = new VBox(5);
+		System.out.println("BoopComTeams3.10");
+		t1VB = new VBox(5);
+		t2VB = new VBox(5);
 		t1VB.getChildren().addAll(t1TeamNumBP, t1CyBP, t1SpeBP, t1AmpBP, t1TrapBP, t1CliBP, t1AvgScoSkBP, t1AvgAmpSkBP, t1AvgAmpNBP, t1TimesScoBP, t1TimesAmpBP);
 		t2VB.getChildren().addAll(t2TeamNumBP, t2CyBP, t2SpeBP, t2AmpBP, t2TrapBP, t2CliBP, t2AvgScoSkBP, t2AvgAmpSkBP, t2AvgAmpNBP, t2TimesScoBP, t2TimesAmpBP);
 		this.add(new Label("    "), 0, 0);
@@ -612,7 +620,9 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		this.add(new Label("    "), 0, 2);
 		this.add(t1VB, 1, 1);
 		this.add(t2VB, 3, 1);
+		System.out.println("BoopComTeams3.11");
 		twoTeamsPieChart(T1, T2);
+		System.out.println("BoopComTeams3.12");
 	}
 	
 	public void threeTeamsPieChart(Team T1, Team T2, Team T3) {
@@ -661,8 +671,8 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(new PieChart.Data("Team 1", t1CyPer), new PieChart.Data("Team 2", t2CyPer), new PieChart.Data("Team 3", t3CyPer));
 		PieChart teamCyclePieC = new PieChart(pieChartData);
 		teamCyclePieC.autosize();
-		teamCyclePieC.setMaxSize(300, 300);
-		teamCyclePieC.setMinSize(300, 300);
+		teamCyclePieC.setMaxSize(350, 350);
+		teamCyclePieC.setMinSize(350, 350);
 		teamCyclePieC.setLabelsVisible(true);
 		//Amp between all teams
 		double totalAmp = t1Amp + t2Amp + t3Amp;
@@ -685,8 +695,8 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		ObservableList<PieChart.Data> pieChartData2 = FXCollections.observableArrayList(new PieChart.Data("Team 1", t1AmpPer), new PieChart.Data("Team 2", t2AmpPer), new PieChart.Data("Team 3", t3AmpPer));
 		PieChart teamAmpPieC = new PieChart(pieChartData2);
 		teamAmpPieC.autosize();
-		teamAmpPieC.setMaxSize(300, 300);
-		teamAmpPieC.setMinSize(300, 300);
+		teamAmpPieC.setMaxSize(350, 350);
+		teamAmpPieC.setMinSize(350, 350);
 		teamAmpPieC.setLabelsVisible(true);
 		//Speaker between all teams
 		double totalSpe = t1Spe + t2Spe + t3Spe;
@@ -709,8 +719,8 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		ObservableList<PieChart.Data> pieChartData3 = FXCollections.observableArrayList(new PieChart.Data("Team 1", t1SpePer), new PieChart.Data("Team 2", t2SpePer), new PieChart.Data("Team 3", t3SpePer));
 		PieChart teamSpePieC = new PieChart(pieChartData3);
 		teamSpePieC.autosize();
-		teamSpePieC.setMaxSize(300, 300);
-		teamSpePieC.setMinSize(300, 300);
+		teamSpePieC.setMaxSize(350, 350);
+		teamSpePieC.setMinSize(350, 350);
 		teamSpePieC.setLabelsVisible(true);
 		//Trap between all teams
 		double totalTrap = t1Trap + t2Trap + t3Trap;
@@ -733,8 +743,8 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		ObservableList<PieChart.Data> pieChartData4 = FXCollections.observableArrayList(new PieChart.Data("Team 1", t1TrapPer), new PieChart.Data("Team 2", t2TrapPer), new PieChart.Data("Team 3", t3TrapPer));
 		PieChart teamTrapPieC = new PieChart(pieChartData4);
 		teamTrapPieC.autosize();
-		teamTrapPieC.setMaxSize(300, 300);
-		teamTrapPieC.setMinSize(300, 300);
+		teamTrapPieC.setMaxSize(350, 350);
+		teamTrapPieC.setMinSize(350, 350);
 		teamTrapPieC.setLabelsVisible(true);
 		//Climb between all teams
 		double totalCli = t1Cli + t2Cli + t3Cli;
@@ -757,8 +767,8 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		ObservableList<PieChart.Data> pieChartData5 = FXCollections.observableArrayList(new PieChart.Data("Team 1", t1CliPer), new PieChart.Data("Team 2", t2CliPer), new PieChart.Data("Team 3", t3CliPer));
 		PieChart teamCliPieC = new PieChart(pieChartData5);
 		teamCliPieC.autosize();
-		teamCliPieC.setMaxSize(300, 300);
-		teamCliPieC.setMinSize(300, 300);
+		teamCliPieC.setMaxSize(400, 400);
+		teamCliPieC.setMinSize(400, 400);
 		teamCliPieC.setLabelsVisible(true);
 		//High Notes between all teams
 		double totalHighN = t1HighN + t2HighN + t3HighN;
@@ -781,8 +791,8 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		ObservableList<PieChart.Data> pieChartData6 = FXCollections.observableArrayList(new PieChart.Data("Team 1", t1HighNPer), new PieChart.Data("Team 2", t2HighNPer), new PieChart.Data("Team 3", t3HighNPer));
 		PieChart teamHighNPieC = new PieChart(pieChartData6);
 		teamHighNPieC.autosize();
-		teamHighNPieC.setMaxSize(300, 300);
-		teamHighNPieC.setMinSize(300, 300);
+		teamHighNPieC.setMaxSize(400, 400);
+		teamHighNPieC.setMinSize(400, 400);
 		teamHighNPieC.setLabelsVisible(true);
 		//Team 1 Cycle Composition
 		double totalCyT1 = t1Spe + t1Amp + t1Trap;
@@ -925,32 +935,58 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		ObservableList<PieChart.Data> pieChartData12 = FXCollections.observableArrayList(new PieChart.Data("Scoure", t3TimesScoPer), new PieChart.Data("Amp", t3TimesAmpPer), new PieChart.Data("None", t3TimesNonePer));
 		team3HumPlayPieC = new PieChart(pieChartData12);
 		team3HumPlayPieC.autosize();
-		team3HumPlayPieC.setMaxSize(350, 350);
-		team3HumPlayPieC.setMinSize(350, 350);
+		team3HumPlayPieC.setMaxSize(300, 300);
+		team3HumPlayPieC.setMinSize(300, 300);
 		team3HumPlayPieC.setLabelsVisible(true);
-		HBox pieChartHB = new HBox(0);
+		HBox pieChart1HB = new HBox();
+		HBox pieChart2HB = new HBox();
 		Label comCyPCL = new Label("Cycles");
 		Label comSpePCL = new Label("Speaker");
 		Label comAmpPCL = new Label("Amp");
 		Label comTrapPCL = new Label("Trap");
 		Label comCliPCL = new Label("Climb");
-		comCyPCL.setId("bigLightLabel");
-		comSpePCL.setId("bigLightLabel");
-		comAmpPCL.setId("bigLightLabel");
-		comTrapPCL.setId("bigLightLabel");
-		comCliPCL.setId("bigLightLabel");
+		Label comHighNPCL = new Label("High Notes");
+		comCyPCL.setId("smallTitle");
+		comSpePCL.setId("smallTitle");
+		comAmpPCL.setId("smallTitle");
+		comTrapPCL.setId("smallTitle");
+		comCliPCL.setId("smallTitle");
+		comHighNPCL.setId("smallTitle");
+		BorderPane comCyPCBP = new BorderPane();
+		BorderPane comSpePCBP = new BorderPane();
+		BorderPane comAmpPCBP = new BorderPane();
+		BorderPane comTrapPCBP = new BorderPane();
+		BorderPane comCliPCBP = new BorderPane();
+		BorderPane comHighNPCBP = new BorderPane();
+		comCyPCBP.setCenter(comCyPCL);
+		comSpePCBP.setCenter(comSpePCL);
+		comAmpPCBP.setCenter(comAmpPCL);
+		comTrapPCBP.setCenter(comTrapPCL);
+		comCliPCBP.setCenter(comCliPCL);
+		comHighNPCBP.setCenter(comHighNPCL);
+		comCyPCBP.setId("comTeamsPCLsBP1");
+		comSpePCBP.setId("comTeamsPCLsBP2");
+		comAmpPCBP.setId("comTeamsPCLsBP3");
+		comTrapPCBP.setId("comTeamsPCLsBP4");
+		comCliPCBP.setId("comTeamsPCLsBP5");
+		comHighNPCBP.setId("comTeamsPCLsBP6");
 		VBox cyPCVB = new VBox(5);
 		VBox spePCVB = new VBox(5);
 		VBox ampPCVB = new VBox(5);
 		VBox trapPCVB = new VBox(5);
 		VBox cliPCVB = new VBox(5);
-		cyPCVB.getChildren().addAll(comCyPCL, teamCyclePieC);
-		spePCVB.getChildren().addAll(comSpePCL, teamSpePieC);
-		ampPCVB.getChildren().addAll(comAmpPCL, teamAmpPieC);
-		trapPCVB.getChildren().addAll(comTrapPCL, teamTrapPieC);
-		cliPCVB.getChildren().addAll(comCliPCL, teamHighNPieC);
-		pieChartHB.getChildren().addAll(cyPCVB, spePCVB, ampPCVB, trapPCVB, cliPCVB);
-		this.add(pieChartHB, 1, 3);
+		VBox highNVB = new VBox(5);
+		cyPCVB.getChildren().addAll(comCyPCBP, teamCyclePieC);
+		spePCVB.getChildren().addAll(comSpePCBP, teamSpePieC);
+		ampPCVB.getChildren().addAll(comAmpPCBP, teamAmpPieC);
+		trapPCVB.getChildren().addAll(comTrapPCBP, teamTrapPieC);
+		cliPCVB.getChildren().addAll(comCliPCBP, teamCliPieC);
+		highNVB.getChildren().addAll(comHighNPCBP, teamHighNPieC);
+		pieChart1HB.getChildren().addAll(cyPCVB, spePCVB, ampPCVB, trapPCVB);
+		pieChart2HB.getChildren().addAll(cliPCVB, highNVB);
+		this.add(pieChart1HB, 1, 3);
+		this.add(new Label("    "), 0, 4);
+		this.add(pieChart2HB, 1, 5);
 		team1PCVB = new VBox(5);
 		team2PCVB = new VBox(5);
 		team3PCVB = new VBox(5);
@@ -961,6 +997,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 	}
 	
 	public void twoTeamsPieChart(Team T1, Team T2) {
+		System.out.println("BoopComTeams3.11.0");
 		double t1Cy = T1.getAvgSpe() + T1.getAvgAmp() + T1.getAvgTrap();
 		double t1Spe = T1.getAvgSpe();
 		double t1Amp = T1.getAvgAmp();
@@ -977,7 +1014,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		double t2HighN = T2.getHumAmpNotes();
 		double t2TSco = T2.getTimesHumSco();
 		double t2TAmp = T2.getTimesHumAmp();
-		
+		System.out.println("BoopComTeams3.11.1");
 		//Cycles between all teams
 		double totalCy = t1Cy + t2Cy;
 		int t1CyPer = (int) ((t1Cy/totalCy) * 100);
@@ -998,6 +1035,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		teamCyclePieC.setMaxSize(350, 350);
 		teamCyclePieC.setLabelsVisible(true);
 		//Amp between all teams
+		System.out.println("BoopComTeams3.11.2");
 		double totalAmp = t1Amp + t2Amp;
 		int t1AmpPer = (int) ((t1Amp/totalAmp) * 100);
 		int t2AmpPer = (int) ((t2Amp/totalAmp) * 100);
@@ -1017,6 +1055,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		teamAmpPieC.setMaxSize(350, 350);
 		teamAmpPieC.setLabelsVisible(true);
 		//Speaker between all teams
+		System.out.println("BoopComTeams3.11.3");
 		double totalSpe = t1Spe + t2Spe;
 		int t1SpePer = (int) ((t1Spe/totalSpe) * 100);
 		int t2SpePer = (int) ((t2Spe/totalSpe) * 100);
@@ -1035,6 +1074,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		teamSpePieC.autosize();
 		teamSpePieC.setMaxSize(350, 350);
 		teamSpePieC.setLabelsVisible(true);
+		System.out.println("BoopComTeams3.11.4");
 		//Trap between all teams
 		double totalTrap = t1Trap + t2Trap;
 		int t1TrapPer = (int) ((t1Trap/totalTrap) * 100);
@@ -1055,6 +1095,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		teamTrapPieC.setMaxSize(350, 350);
 		teamTrapPieC.setLabelsVisible(true);
 		//Climb between all teams
+		System.out.println("BoopComTeams3.11.5");
 		double totalCli = t1Cli + t2Cli;
 		int t1CliPer = (int) ((t1Cli/totalCli) * 100);
 		int t2CliPer = (int) ((t2Cli/totalCli) * 100);
@@ -1074,6 +1115,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		teamCliPieC.setMaxSize(350, 350);
 		teamCliPieC.setLabelsVisible(true);
 		//High Notes between all teams
+		System.out.println("BoopComTeams3.11.6");
 		double totalHighN = t1HighN + t2HighN;
 		int t1HighNPer = (int) ((t1HighN/totalHighN) * 100);
 		int t2HighNPer = (int) ((t2HighN/totalHighN) * 100);
@@ -1093,6 +1135,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		teamHighNPieC.setMaxSize(350, 350);
 		teamHighNPieC.setLabelsVisible(true);
 		//Team 1 Cycle Composition
+		System.out.println("BoopComTeams3.11.7");
 		double totalCyT1 = t1Spe + t1Amp + t1Trap;
 		int t1SpeComPer = (int) ((t1Spe/totalCyT1) * 100);
 		int t1AmpComPer = (int) ((t1Amp/totalCyT1) * 100);
@@ -1111,11 +1154,12 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 			}
 		}
 		ObservableList<PieChart.Data> pieChartData7 = FXCollections.observableArrayList(new PieChart.Data("Speaker", t1SpeComPer), new PieChart.Data("Amp", t1TrapComPer), new PieChart.Data("Trap", t1TrapComPer));
-		PieChart team1CyPieC = new PieChart(pieChartData7);
+		team1CyPieC = new PieChart(pieChartData7);
 		team1CyPieC.autosize();
 		team1CyPieC.setMaxSize(350, 350);
 		team1CyPieC.setLabelsVisible(true);
 		//Team 1 Human Player Position
+		System.out.println("BoopComTeams3.11.8");
 		double totalMatchesT1 = T1.getTotalMatchesPlayed();
 		int t1TimesScoPer = (int) ((t1TSco/totalMatchesT1) * 100);
 		int t1TimesAmpPer = (int) ((t1TAmp/totalMatchesT1) * 100);
@@ -1134,11 +1178,12 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 			}
 		}
 		ObservableList<PieChart.Data> pieChartData8 = FXCollections.observableArrayList(new PieChart.Data("Scoure", t1TimesScoPer), new PieChart.Data("Amp", t1TimesAmpPer), new PieChart.Data("None", t1TimesNonePer));
-		PieChart team1HumPlayPieC = new PieChart(pieChartData8);
+		team1HumPlayPieC = new PieChart(pieChartData8);
 		team1HumPlayPieC.autosize();
 		team1HumPlayPieC.setMaxSize(350, 350);
 		team1HumPlayPieC.setLabelsVisible(true);
 		//Team 2 Cycle Composition
+		System.out.println("BoopComTeams3.11.9");
 		double totalCyT2 = t2Spe + t2Amp + t2Trap;
 		int t2SpeComPer = (int) ((t2Spe/totalCyT2) * 100);
 		int t2AmpComPer = (int) ((t2Amp/totalCyT2) * 100);
@@ -1157,11 +1202,12 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 			}
 		}
 		ObservableList<PieChart.Data> pieChartData9 = FXCollections.observableArrayList(new PieChart.Data("Speaker", t2SpeComPer), new PieChart.Data("Amp", t2TrapComPer), new PieChart.Data("Trap", t2TrapComPer));
-		PieChart team2CyPieC = new PieChart(pieChartData9);
+		team2CyPieC = new PieChart(pieChartData9);
 		team2CyPieC.autosize();
 		team2CyPieC.setMaxSize(350, 350);
 		team2CyPieC.setLabelsVisible(true);
 		//Team 2 Human Player Position
+		System.out.println("BoopComTeams3.11.10");
 		double totalMatchesT2 = T2.getTotalMatchesPlayed();
 		int t2TimesScoPer = (int) ((t2TSco/totalMatchesT2) * 100);
 		int t2TimesAmpPer = (int) ((t2TAmp/totalMatchesT2) * 100);
@@ -1180,24 +1226,69 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 			}
 		}
 		ObservableList<PieChart.Data> pieChartData10 = FXCollections.observableArrayList(new PieChart.Data("Scoure", t2TimesScoPer), new PieChart.Data("Amp", t2TimesAmpPer), new PieChart.Data("None", t2TimesNonePer));
-		PieChart team2HumPlayPieC = new PieChart(pieChartData10);
+		team2HumPlayPieC = new PieChart(pieChartData10);
 		team2HumPlayPieC.autosize();
 		team2HumPlayPieC.setMaxSize(350, 350);
 		team2HumPlayPieC.setLabelsVisible(true);
-		
-		
-		this.add(teamCyclePieC, 1, 3);
-		this.add(teamSpePieC, 3, 3);
-		this.add(teamAmpPieC, 5, 3);
-		this.add(teamTrapPieC, 7, 3);
-		this.add(teamCliPieC, 7, 3);
-		this.add(teamHighNPieC, 11, 3);
-		VBox team1PCVB = new VBox(5);
-		VBox team2PCVB = new VBox(5);
+		System.out.println("BoopComTeams3.11.11");
+		HBox pieChart1HB = new HBox();
+		HBox pieChart2HB = new HBox();
+		Label comCyPCL = new Label("Cycles");
+		Label comSpePCL = new Label("Speaker");
+		Label comAmpPCL = new Label("Amp");
+		Label comTrapPCL = new Label("Trap");
+		Label comCliPCL = new Label("Climb");
+		Label comHighNPCL = new Label("High Notes");
+		comCyPCL.setId("smallTitle");
+		comSpePCL.setId("smallTitle");
+		comAmpPCL.setId("smallTitle");
+		comTrapPCL.setId("smallTitle");
+		comCliPCL.setId("smallTitle");
+		comHighNPCL.setId("smallTitle");
+		System.out.println("BoopComTeams3.11.12");
+		BorderPane comCyPCBP = new BorderPane();
+		BorderPane comSpePCBP = new BorderPane();
+		BorderPane comAmpPCBP = new BorderPane();
+		BorderPane comTrapPCBP = new BorderPane();
+		BorderPane comCliPCBP = new BorderPane();
+		BorderPane comHighNPCBP = new BorderPane();
+		comCyPCBP.setCenter(comCyPCL);
+		comSpePCBP.setCenter(comSpePCL);
+		comAmpPCBP.setCenter(comAmpPCL);
+		comTrapPCBP.setCenter(comTrapPCL);
+		comCliPCBP.setCenter(comCliPCL);
+		comHighNPCBP.setCenter(comHighNPCL);
+		comCyPCBP.setId("comTeamsPCLsBP1");
+		comSpePCBP.setId("comTeamsPCLsBP2");
+		comAmpPCBP.setId("comTeamsPCLsBP3");
+		comTrapPCBP.setId("comTeamsPCLsBP4");
+		comCliPCBP.setId("comTeamsPCLsBP5");
+		comHighNPCBP.setId("comTeamsPCLsBP6");
+		System.out.println("BoopComTeams3.11.13");
+		VBox cyPCVB = new VBox(5);
+		VBox spePCVB = new VBox(5);
+		VBox ampPCVB = new VBox(5);
+		VBox trapPCVB = new VBox(5);
+		VBox cliPCVB = new VBox(5);
+		VBox highNVB = new VBox(5);
+		cyPCVB.getChildren().addAll(comCyPCBP, teamCyclePieC);
+		spePCVB.getChildren().addAll(comSpePCBP, teamSpePieC);
+		ampPCVB.getChildren().addAll(comAmpPCBP, teamAmpPieC);
+		trapPCVB.getChildren().addAll(comTrapPCBP, teamTrapPieC);
+		cliPCVB.getChildren().addAll(comCliPCBP, teamCliPieC);
+		highNVB.getChildren().addAll(comHighNPCBP, teamHighNPieC);
+		pieChart1HB.getChildren().addAll(cyPCVB, spePCVB, ampPCVB, trapPCVB);
+		pieChart2HB.getChildren().addAll(cliPCVB, highNVB);
+		System.out.println("BoopComTeams3.11.14");
+		this.add(pieChart1HB, 1, 3);
+		this.add(new Label("    "), 0, 4);
+		this.add(pieChart2HB, 1, 5);
+		team1PCVB = new VBox(5);
+		team2PCVB = new VBox(5);
+		team3PCVB = new VBox(5);
 		team1PCVB.getChildren().addAll(team1CyPieC, team1HumPlayPieC);
 		team2PCVB.getChildren().addAll(team2CyPieC, team2HumPlayPieC);
-		this.add(team1PCVB, 3, 1);
-		this.add(team2PCVB, 7, 1);
+		System.out.println("BoopComTeams3.11.15");
 	}
 	
 	@Override
@@ -1241,6 +1332,8 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 				if(numOfSelected == 2) {
 					System.out.println("BoopComTeams3");
 					twoTeamCompare(T1, T2); 
+					topHB.getChildren().addAll(t1VB, team1PCVB, t2VB, team2PCVB);
+					this.add(topHB, 1, 1);
 				}else if(numOfSelected == 3) {
 					System.out.println("BoopComTeams4");
 					threeTeamCompare(T1, T2, T3);
