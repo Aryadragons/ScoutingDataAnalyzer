@@ -1426,3 +1426,12 @@
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
+#comTeamsTitleBP1{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
