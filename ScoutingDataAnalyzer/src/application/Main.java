@@ -1179,7 +1179,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
 		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
 		sp.setContent(seTeams);
-		sp.setMinHeight(600);
+		sp.setMinHeight(1400);
 		Tab seTeamsTab = new Tab("Search Teams", sp);
 		mainTP.getTabs().addAll(seTeamsTab);
 	}
@@ -1272,9 +1272,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	
 	private void makeCompareTeams() {
 		compareTeamsTab comTeams = new compareTeamsTab(listOfTeamNumsSorted, mainTeamList);
-		comTeams.setMinHeight(2000);
+		comTeams.setMinHeight(2200);
 		comTeams.setMinWidth(1400);
-		comTeams.setMaxHeight(2000);
+		comTeams.setMaxHeight(2200);
 		comTeams.setMaxWidth(1400);
 		FileInputStream inputComTeams;
 		try {
@@ -1291,6 +1291,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
 		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
 		sp.setContent(comTeams);
+		sp.setMaxHeight(800);
 		Tab comTeamsTab = new Tab("Compare Teams", sp);
 		mainTP.getTabs().addAll(comTeamsTab);
 	}

@@ -812,7 +812,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 				whoToAdd7 = 1;
 			}
 		}
-		ObservableList<PieChart.Data> pieChartData7 = FXCollections.observableArrayList(new PieChart.Data("Speaker", t1SpeComPer), new PieChart.Data("Amp", t1TrapComPer), new PieChart.Data("Trap", t1TrapComPer));
+		ObservableList<PieChart.Data> pieChartData7 = FXCollections.observableArrayList(new PieChart.Data("Speaker", t1SpeComPer), new PieChart.Data("Amp", t1AmpComPer), new PieChart.Data("Trap", t1TrapComPer));
 		team1CyPieC = new PieChart(pieChartData7);
 		team1CyPieC.autosize();
 		team1CyPieC.setMaxSize(300, 300);
@@ -860,7 +860,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 				whoToAdd9 = 1;
 			}
 		}
-		ObservableList<PieChart.Data> pieChartData9 = FXCollections.observableArrayList(new PieChart.Data("Speaker", t2SpeComPer), new PieChart.Data("Amp", t2TrapComPer), new PieChart.Data("Trap", t2TrapComPer));
+		ObservableList<PieChart.Data> pieChartData9 = FXCollections.observableArrayList(new PieChart.Data("Speaker", t2SpeComPer), new PieChart.Data("Amp", t2AmpComPer), new PieChart.Data("Trap", t2TrapComPer));
 		team2CyPieC = new PieChart(pieChartData9);
 		team2CyPieC.autosize();
 		team2CyPieC.setMaxSize(300, 300);
@@ -908,7 +908,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 				whoToAdd11 = 1;
 			}
 		}
-		ObservableList<PieChart.Data> pieChartData11 = FXCollections.observableArrayList(new PieChart.Data("Speaker", t3SpeComPer), new PieChart.Data("Amp", t3TrapComPer), new PieChart.Data("Trap", t3TrapComPer));
+		ObservableList<PieChart.Data> pieChartData11 = FXCollections.observableArrayList(new PieChart.Data("Speaker", t3SpeComPer), new PieChart.Data("Amp", t3AmpComPer), new PieChart.Data("Trap", t3TrapComPer));
 		team3CyPieC = new PieChart(pieChartData11);
 		team3CyPieC.autosize();
 		team3CyPieC.setMaxSize(300, 300);
@@ -1066,7 +1066,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 				whoToAdd3++;
 			}else if(whoToAdd3 == 2) {
 				t2SpePer++;
-				whoToAdd3++;
+				whoToAdd3 = 1;
 			}
 		}
 		ObservableList<PieChart.Data> pieChartData3 = FXCollections.observableArrayList(new PieChart.Data("Team 1", t1SpePer), new PieChart.Data("Team 2", t2SpePer));
@@ -1086,7 +1086,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 				whoToAdd4++;
 			}else if(whoToAdd4 == 2) {
 				t2TrapPer++;
-				whoToAdd4++;
+				whoToAdd4 = 1;
 			}
 		}
 		ObservableList<PieChart.Data> pieChartData4 = FXCollections.observableArrayList(new PieChart.Data("Team 1", t1TrapPer), new PieChart.Data("Team 2", t2TrapPer));
@@ -1106,7 +1106,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 				whoToAdd5++;
 			}else if(whoToAdd5 == 2) {
 				t2CliPer++;
-				whoToAdd5++;
+				whoToAdd5 = 1;
 			}
 		}
 		ObservableList<PieChart.Data> pieChartData5 = FXCollections.observableArrayList(new PieChart.Data("Team 1", t1CliPer), new PieChart.Data("Team 2", t2CliPer));
@@ -1126,7 +1126,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 				whoToAdd6++;
 			}else if(whoToAdd6 == 2) {
 				t2HighNPer++;
-				whoToAdd6++;
+				whoToAdd6 = 1;
 			}
 		}
 		ObservableList<PieChart.Data> pieChartData6 = FXCollections.observableArrayList(new PieChart.Data("Team 1", t1HighNPer), new PieChart.Data("Team 2", t2HighNPer));
@@ -1141,6 +1141,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		int t1AmpComPer = (int) ((t1Amp/totalCyT1) * 100);
 		int t1TrapComPer = (int) ((t1Trap/totalCyT1) * 100);
 		int whoToAdd7 = 1;
+		System.out.println("BoopComTeams3.11.7.1" + t1SpeComPer + "Amp" + t1AmpComPer + "Trap" + t1TrapComPer);
 		while(t1SpeComPer + t1AmpComPer + t1TrapComPer != 100) {
 			if(whoToAdd7 == 1) {
 				t1SpeComPer++;
@@ -1153,7 +1154,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 				whoToAdd7 = 1;
 			}
 		}
-		ObservableList<PieChart.Data> pieChartData7 = FXCollections.observableArrayList(new PieChart.Data("Speaker", t1SpeComPer), new PieChart.Data("Amp", t1TrapComPer), new PieChart.Data("Trap", t1TrapComPer));
+		ObservableList<PieChart.Data> pieChartData7 = FXCollections.observableArrayList(new PieChart.Data("Speaker", t1SpeComPer), new PieChart.Data("Amp", t1AmpComPer), new PieChart.Data("Trap", t1TrapComPer));
 		team1CyPieC = new PieChart(pieChartData7);
 		team1CyPieC.autosize();
 		team1CyPieC.setMaxSize(350, 350);
@@ -1201,7 +1202,7 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 				whoToAdd9 = 1;
 			}
 		}
-		ObservableList<PieChart.Data> pieChartData9 = FXCollections.observableArrayList(new PieChart.Data("Speaker", t2SpeComPer), new PieChart.Data("Amp", t2TrapComPer), new PieChart.Data("Trap", t2TrapComPer));
+		ObservableList<PieChart.Data> pieChartData9 = FXCollections.observableArrayList(new PieChart.Data("Speaker", t2SpeComPer), new PieChart.Data("Amp", t2AmpComPer), new PieChart.Data("Trap", t2TrapComPer));
 		team2CyPieC = new PieChart(pieChartData9);
 		team2CyPieC.autosize();
 		team2CyPieC.setMaxSize(350, 350);
