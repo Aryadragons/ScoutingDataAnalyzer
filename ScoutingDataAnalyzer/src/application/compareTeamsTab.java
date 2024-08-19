@@ -606,6 +606,8 @@ public class compareTeamsTab extends GridPane implements EventHandler<ActionEven
 		BorderPane t2TeamNumBP = new BorderPane();
 		t1TeamNumBP.setCenter(t1TeamNumL);
 		t2TeamNumBP.setCenter(t2TeamNumL);
+		t1TeamNumBP.setId("comTeamsTitleBP1");
+		t2TeamNumBP.setId("comTeamsTitleBP1");
 		System.out.println("BoopComTeams3.10");
 		t1VB = new VBox(5);
 		t2VB = new VBox(5);
