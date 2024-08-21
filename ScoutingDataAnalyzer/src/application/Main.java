@@ -1303,9 +1303,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		}else {
 			comAlliances = new compareAlliancesTab(false, listOfTeamNumsSorted, mainTeamList, thePOA, fileDTDL, fileDTCL);
 		}
-		comAlliances.setMinHeight(1400);
+		comAlliances.setMinHeight(2000);
 		comAlliances.setMinWidth(1400);
-		comAlliances.setMaxHeight(1400);
+		comAlliances.setMaxHeight(2000);
 		comAlliances.setMaxWidth(1400);
 		FileInputStream inputComAlliances;
 		try {
@@ -1321,6 +1321,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		ScrollPane sp = new ScrollPane();
 		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
 		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
+		sp.setMinHeight(600);
 		sp.setContent(comAlliances);
 		Tab comAlliancesTab = new Tab("Compare Alliances", sp);
 		mainTP.getTabs().addAll(comAlliancesTab);
