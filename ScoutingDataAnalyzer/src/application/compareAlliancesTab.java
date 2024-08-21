@@ -2,8 +2,11 @@ package application;
 
 import java.util.List;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -178,7 +181,6 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 			}
 		}
 	}
-	
 	public void addCompare2Alls(Team a1T1, Team a1T2, Team a1T3, Team a2T1, Team a2T2, Team a2T3) {
 		int a1T1Num = a1T1.getTeamNum();
 		int a1T2Num = a1T2.getTeamNum();
@@ -1743,6 +1745,52 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		this.add(a3HB, 1, 5);
 	}
 
+	public void addCompare3PieChart(Team a1T1, Team a1T2, Team a1T3, Team a2T1, Team a2T2, Team a2T3, Team a3T1, Team a3T2, Team a3T3) {
+		double a1Cy = a1T1.getAvgCycles() + a1T2.getAvgCycles() + a1T3.getAvgCycles();
+		double a1Spe = a1T1.getAvgSpe() + a1T2.getAvgSpe() + a1T3.getAvgSpe();
+		double a1Amp = a1T1.getAvgAmp() + a1T2.getAvgAmp() + a1T3.getAvgAmp();
+		double a1Trap = a1T1.getAvgTrap() + a1T2.getAvgTrap() + a1T3.getAvgTrap();
+		double a1TimesSco = a1T1.getAvgCycles() + a1T2.getAvgCycles() + a1T3.getAvgCycles();
+		double a1TimesAmp = a1T1.getAvgCycles() + a1T2.getAvgCycles() + a1T3.getAvgCycles();
+		double a2Cy = a2T1.getAvgCycles() + a2T2.getAvgCycles() + a2T3.getAvgCycles();
+		double a2Spe = a2T1.getAvgSpe() + a2T2.getAvgSpe() + a2T3.getAvgSpe();
+		double a2Amp = a2T1.getAvgAmp() + a2T2.getAvgAmp() + a2T3.getAvgAmp();
+		double a2Trap = a2T1.getAvgTrap() + a2T2.getAvgTrap() + a2T3.getAvgTrap();
+		double a2TimesSco = a2T1.getAvgCycles() + a2T2.getAvgCycles() + a2T3.getAvgCycles();
+		double a2TimesAmp = a2T1.getAvgCycles() + a2T2.getAvgCycles() + a2T3.getAvgCycles();
+		double a3Cy = a3T1.getAvgCycles() + a3T2.getAvgCycles() + a3T3.getAvgCycles();
+		double a3Spe = a3T1.getAvgSpe() + a3T2.getAvgSpe() + a3T3.getAvgSpe();
+		double a3Amp = a3T1.getAvgAmp() + a3T2.getAvgAmp() + a3T3.getAvgAmp();
+		double a3Trap = a3T1.getAvgTrap() + a3T2.getAvgTrap() + a3T3.getAvgTrap();
+		double a3TimesSco = a3T1.getAvgCycles() + a3T2.getAvgCycles() + a3T3.getAvgCycles();
+		double a3TimesAmp = a3T1.getAvgCycles() + a3T2.getAvgCycles() + a3T3.getAvgCycles();
+		int a1TotalMatches = a1T1.getTotalMatchesPlayed() + a1T2.getTotalMatchesPlayed() + a1T3.getTotalMatchesPlayed();
+		//alliance 1 cy pie chart
+		int a1SpeComPer = (int) ((a1Spe/a1Cy) * 100);
+		int a1AmpComPer = (int) ((a1Amp/a1Cy) * 100);
+		int a1TrapComPer = (int) ((a1Trap/a1Cy) * 100);
+		int whoToAdd1 = 1;
+		while(a1SpeComPer + a1AmpComPer + a1TrapComPer != 100) {
+			if(whoToAdd1 == 1) {
+				a1SpeComPer++;
+				whoToAdd1++;
+			}else if(whoToAdd1 == 2) {
+				a1AmpComPer++;
+				whoToAdd1++;
+			}else if(whoToAdd1 == 3){
+				a1TrapComPer++;
+				whoToAdd1 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData1 = FXCollections.observableArrayList(new PieChart.Data("Speaker", a1SpeComPer), new PieChart.Data("Amp", a1AmpComPer), new PieChart.Data("Trap", a1TrapComPer));
+		PieChart a1CyPieC = new PieChart(pieChartData1);
+		a1CyPieC.autosize();
+		a1CyPieC.setMaxSize(300, 300);
+		a1CyPieC.setMinSize(300, 300);
+		a1CyPieC.setLabelsVisible(true);
+		//alliance 1 hum position pie chart
+	}
+	
 	@Override
 	public void handle(ActionEvent event) {
 		try {
@@ -1777,35 +1825,75 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 				Team a3T2 = null;
 				Team a3T3 = null;
 				int numOfSelected = 0;
-				if(selTeamNum1S != null) {
-					selTeamNum1 = Integer.parseInt(selTeamNum1S);
-					T1 = theTL.getATeam(selTeamNum1);
+				int isA1T1 = 0;
+				int isA1T2 = 0;
+				int isA1T3 = 0;
+				int isA2T1 = 0;
+				int isA2T2 = 0;
+				int isA2T3 = 0;
+				int isA3T1 = 0;
+				int isA3T2 = 0;
+				int isA3T3 = 0;
+				if(selTeamNumA1T1S != null) {
+					selTeamNumA1T1 = Integer.parseInt(selTeamNumA1T1S);
+					a1T1 = theTL.getATeam(selTeamNumA1T1);
 					numOfSelected++;
+					isA1T1 = 1;
 				}
-				if(selTeamNum2S != null) {
-					selTeamNum2 = Integer.parseInt(selTeamNum2S);
-					T2 = theTL.getATeam(selTeamNum2);
+				if(selTeamNumA1T2S != null) {
+					selTeamNumA1T2 = Integer.parseInt(selTeamNumA1T2S);
+					a1T2 = theTL.getATeam(selTeamNumA1T2);
 					numOfSelected++;
+					isA1T2 = 1;
 				}
-				if(selTeamNum3S != null) {
-					selTeamNum3 = Integer.parseInt(selTeamNum3S);
-					T3 = theTL.getATeam(selTeamNum3);
+				if(selTeamNumA1T3S != null) {
+					selTeamNumA1T3 = Integer.parseInt(selTeamNumA1T3S);
+					a1T3 = theTL.getATeam(selTeamNumA1T3);
 					numOfSelected++;
+					isA1T3 = 1;
 				}
-				double t1AvgCy = T1.getAvgCycles();
-				double t2AvgCy = T1.getAvgCycles();
-				double t3AvgCy = T1.getAvgCycles();
-				System.out.println("BoopComTeams1.1" + t1AvgCy + t2AvgCy + t3AvgCy);
-				HBox topHB = new HBox(0);
+				if(selTeamNumA2T1S != null) {
+					selTeamNumA2T1 = Integer.parseInt(selTeamNumA2T1S);
+					a2T1 = theTL.getATeam(selTeamNumA2T1);
+					numOfSelected++;
+					isA2T1 = 1;
+				}
+				if(selTeamNumA2T2S != null) {
+					selTeamNumA2T2 = Integer.parseInt(selTeamNumA2T2S);
+					a2T2 = theTL.getATeam(selTeamNumA2T2);
+					numOfSelected++;
+					isA2T2 = 1;
+				}
+				if(selTeamNumA2T3S != null) {
+					selTeamNumA2T3 = Integer.parseInt(selTeamNumA2T3S);
+					a2T3 = theTL.getATeam(selTeamNumA2T3);
+					numOfSelected++;
+					isA2T3 = 1;
+				}
+				if(selTeamNumA3T1S != null) {
+					selTeamNumA3T1 = Integer.parseInt(selTeamNumA3T1S);
+					a3T1 = theTL.getATeam(selTeamNumA3T1);
+					numOfSelected++;
+					isA3T1 = 1;
+				}
+				if(selTeamNumA3T2S != null) {
+					selTeamNumA3T2 = Integer.parseInt(selTeamNumA3T2S);
+					a3T2 = theTL.getATeam(selTeamNumA3T2);
+					numOfSelected++;
+					isA3T2 = 1;
+				}
+				if(selTeamNumA3T3S != null) {
+					selTeamNumA3T3 = Integer.parseInt(selTeamNumA3T3S);
+					a3T3 = theTL.getATeam(selTeamNumA3T3);
+					numOfSelected++;
+					isA3T3 = 1;
+				}				
 				System.out.println("BoopComTeams2");
-				if(numOfSelected == 2) {
-					System.out.println("BoopComTeams3");
-					addCompare2Alls(T1, T2); 
-					this.add(topHB, 1, 1);
-				}else if(numOfSelected == 3) {
+				if(numOfSelected == 9) {
 					System.out.println("BoopComTeams4");
-					addCompare3Alls(T1, T2, T3);
-					this.add(topHB, 1, 1);
+					addCompare3Alls(a1T1, a1T2, a1T3, a2T1, a2T2, a2T3, a3T1, a3T2, a3T3);
+				}else if(numOfSelected == 6) {
+					addCompare2Alls(a1T1, a1T2, a1T3, a2T1, a2T2, a2T3);
 				}
 				System.out.println("BoopComTeams5");
 				
