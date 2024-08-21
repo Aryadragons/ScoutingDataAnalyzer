@@ -1534,3 +1534,57 @@
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
+#comAllstatBP1{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(128, 255, 219);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllstatBP2{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllstatBP3{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllstatBP4{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllstatBP5{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllstatBP6{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
