@@ -134,6 +134,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 			this.add(a3T3SelBP, 5, 5);
 			//adding button
 			submitNonB = new Button("Submit");
+			submitNonB.setOnAction(this);
 			this.add(submitNonB, 1, 7);
 		}else {
 			Label a1L = new Label("Select the 1st Allince");
@@ -900,6 +901,33 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		Label a3T1NumL = new Label(Integer.toString(a3T1Num) + "'s Stats");
 		Label a3T2NumL = new Label(Integer.toString(a3T2Num) + "'s Stats");
 		Label a3T3NumL = new Label(Integer.toString(a3T3Num) + "'s Stats");
+		BorderPane a1T1NumBP = new BorderPane();
+		BorderPane a1T2NumBP = new BorderPane();
+		BorderPane a1T3NumBP = new BorderPane();
+		BorderPane a2T1NumBP = new BorderPane();
+		BorderPane a2T2NumBP = new BorderPane();
+		BorderPane a2T3NumBP = new BorderPane();
+		BorderPane a3T1NumBP = new BorderPane();
+		BorderPane a3T2NumBP = new BorderPane();
+		BorderPane a3T3NumBP = new BorderPane();
+		a1T1NumBP.setCenter(a1T1NumL);
+		a1T2NumBP.setCenter(a1T2NumL);
+		a1T3NumBP.setCenter(a1T3NumL);
+		a2T1NumBP.setCenter(a2T1NumL);
+		a2T2NumBP.setCenter(a2T2NumL);
+		a2T3NumBP.setCenter(a2T3NumL);
+		a3T1NumBP.setCenter(a3T1NumL);
+		a3T2NumBP.setCenter(a3T2NumL);
+		a3T3NumBP.setCenter(a3T3NumL);
+		a1T1NumBP.setId("comAllstatBP6");
+		a1T2NumBP.setId("comAllstatBP6");
+		a1T3NumBP.setId("comAllstatBP6");
+		a2T1NumBP.setId("comAllstatBP6");
+		a2T2NumBP.setId("comAllstatBP6");
+		a2T3NumBP.setCenter(a2T3NumL);
+		a3T1NumBP.setCenter(a3T1NumL);
+		a3T2NumBP.setCenter(a3T2NumL);
+		a3T3NumBP.setCenter(a3T3NumL);
 		Label a1T1CyL = new Label(Double.toString(a1T1Cy));
 		Label a1T2CyL = new Label(Double.toString(a1T2Cy));
 		Label a1T3CyL = new Label(Double.toString(a1T3Cy));
@@ -1621,38 +1649,38 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a1HighNBP.setCenter(a1TotalHighNL);
 		a1TimesScoBP.setCenter(a1TotalTimesScoL);
 		a1TimesAmpBP.setCenter(a1TotalTimesAmpL);
-		a2CyBP.setTop(a1CyTitleL);
-		a2SpeBP.setTop(a1SpeTitleL);
-		a2AmpBP.setTop(a1AmpTitleL);
-		a2TrapBP.setTop(a1TrapTitleL);
-		a2CliBP.setTop(a1CliTitleL);
-		a2HighNBP.setTop(a1HighNTitleL);
-		a2TimesScoBP.setTop(a1TimesScoTitleL);
-		a2TimesAmpBP.setTop(a1TimesAmpTitleL);
-		a2CyBP.setCenter(a1TotalCyL);
-		a2SpeBP.setCenter(a1TotalSpeL);
-		a2AmpBP.setCenter(a1TotalAmpL);
-		a2TrapBP.setCenter(a1TotalTrapL);
-		a2CliBP.setCenter(a1TotalCliL);
-		a2HighNBP.setCenter(a1TotalHighNL);
-		a2TimesScoBP.setCenter(a1TotalTimesScoL);
-		a2TimesAmpBP.setCenter(a1TotalTimesAmpL);
-		a3CyBP.setTop(a1CyTitleL);
-		a3SpeBP.setTop(a1SpeTitleL);
-		a3AmpBP.setTop(a1AmpTitleL);
-		a3TrapBP.setTop(a1TrapTitleL);
-		a3CliBP.setTop(a1CliTitleL);
-		a3HighNBP.setTop(a1HighNTitleL);
-		a3TimesScoBP.setTop(a1TimesScoTitleL);
-		a3TimesAmpBP.setTop(a1TimesAmpTitleL);
-		a3CyBP.setCenter(a1TotalCyL);
-		a3SpeBP.setCenter(a1TotalSpeL);
-		a3AmpBP.setCenter(a1TotalAmpL);
-		a3TrapBP.setCenter(a1TotalTrapL);
-		a3CliBP.setCenter(a1TotalCliL);
-		a3HighNBP.setCenter(a1TotalHighNL);
-		a3TimesScoBP.setCenter(a1TotalTimesScoL);
-		a3TimesAmpBP.setCenter(a1TotalTimesAmpL);
+		a2CyBP.setTop(a2CyTitleL);
+		a2SpeBP.setTop(a2SpeTitleL);
+		a2AmpBP.setTop(a2AmpTitleL);
+		a2TrapBP.setTop(a2TrapTitleL);
+		a2CliBP.setTop(a2CliTitleL);
+		a2HighNBP.setTop(a2HighNTitleL);
+		a2TimesScoBP.setTop(a2TimesScoTitleL);
+		a2TimesAmpBP.setTop(a2TimesAmpTitleL);
+		a2CyBP.setCenter(a2TotalCyL);
+		a2SpeBP.setCenter(a2TotalSpeL);
+		a2AmpBP.setCenter(a2TotalAmpL);
+		a2TrapBP.setCenter(a2TotalTrapL);
+		a2CliBP.setCenter(a2TotalCliL);
+		a2HighNBP.setCenter(a2TotalHighNL);
+		a2TimesScoBP.setCenter(a2TotalTimesScoL);
+		a2TimesAmpBP.setCenter(a2TotalTimesAmpL);
+		a3CyBP.setTop(a3CyTitleL);
+		a3SpeBP.setTop(a3SpeTitleL);
+		a3AmpBP.setTop(a3AmpTitleL);
+		a3TrapBP.setTop(a3TrapTitleL);
+		a3CliBP.setTop(a3CliTitleL);
+		a3HighNBP.setTop(a3HighNTitleL);
+		a3TimesScoBP.setTop(a3TimesScoTitleL);
+		a3TimesAmpBP.setTop(a3TimesAmpTitleL);
+		a3CyBP.setCenter(a3TotalCyL);
+		a3SpeBP.setCenter(a3TotalSpeL);
+		a3AmpBP.setCenter(a3TotalAmpL);
+		a3TrapBP.setCenter(a3TotalTrapL);
+		a3CliBP.setCenter(a3TotalCliL);
+		a3HighNBP.setCenter(a3TotalHighNL);
+		a3TimesScoBP.setCenter(a3TotalTimesScoL);
+		a3TimesAmpBP.setCenter(a3TotalTimesAmpL);
 		a1CyBP.setId("comAllstatBP1");
 		a1SpeBP.setId("comAllstatBP2");
 		a1AmpBP.setId("comAllstatBP3");
@@ -1707,23 +1735,23 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		VBox a3T1OtherVB = new VBox(5);
 		VBox a3T2OtherVB = new VBox(5);
 		VBox a3T3OtherVB = new VBox(5);
-		a1T1CyVB.getChildren().addAll(a1T1CyBP, a1T1SpeBP, a1T1AmpBP, a1T1TrapBP);
+		a1T1CyVB.getChildren().addAll(a1T1NumBP, a1T1CyBP, a1T1SpeBP, a1T1AmpBP, a1T1TrapBP);
 		a1T1OtherVB.getChildren().addAll(a1T1CliBP, a1T1HighNBP, a1T1TimesScoBP, a1T1TimesAmpBP);
-		a1T2CyVB.getChildren().addAll(a1T2CyBP, a1T2SpeBP, a1T2AmpBP, a1T2TrapBP);
+		a1T2CyVB.getChildren().addAll(a1T2NumBP, a1T2CyBP, a1T2SpeBP, a1T2AmpBP, a1T2TrapBP);
 		a1T2OtherVB.getChildren().addAll(a1T2CliBP, a1T2HighNBP, a1T2TimesScoBP, a1T2TimesAmpBP);
-		a1T3CyVB.getChildren().addAll(a1T3CyBP, a1T3SpeBP, a1T3AmpBP, a1T3TrapBP);
+		a1T3CyVB.getChildren().addAll(a1T3NumBP, a1T3CyBP, a1T3SpeBP, a1T3AmpBP, a1T3TrapBP);
 		a1T3OtherVB.getChildren().addAll(a1T3CliBP, a1T3HighNBP, a1T3TimesScoBP, a1T3TimesAmpBP);
-		a2T1CyVB.getChildren().addAll(a2T1CyBP, a2T1SpeBP, a2T1AmpBP, a2T1TrapBP);
+		a2T1CyVB.getChildren().addAll(a2T1NumBP, a2T1CyBP, a2T1SpeBP, a2T1AmpBP, a2T1TrapBP);
 		a2T1OtherVB.getChildren().addAll(a2T1CliBP, a2T1HighNBP, a2T1TimesScoBP, a2T1TimesAmpBP);
-		a2T2CyVB.getChildren().addAll(a2T2CyBP, a2T2SpeBP, a2T2AmpBP, a2T2TrapBP);
+		a2T2CyVB.getChildren().addAll(a2T2NumBP, a2T2CyBP, a2T2SpeBP, a2T2AmpBP, a2T2TrapBP);
 		a2T2OtherVB.getChildren().addAll(a2T2CliBP, a2T2HighNBP, a2T2TimesScoBP, a2T2TimesAmpBP);
-		a2T3CyVB.getChildren().addAll(a2T3CyBP, a2T3SpeBP, a2T3AmpBP, a2T3TrapBP);
+		a2T3CyVB.getChildren().addAll(a2T3NumBP, a2T3CyBP, a2T3SpeBP, a2T3AmpBP, a2T3TrapBP);
 		a2T3OtherVB.getChildren().addAll(a2T3CliBP, a2T3HighNBP, a2T3TimesScoBP, a2T3TimesAmpBP);
-		a3T1CyVB.getChildren().addAll(a3T1CyBP, a3T1SpeBP, a3T1AmpBP, a3T1TrapBP);
+		a3T1CyVB.getChildren().addAll(a3T1NumBP, a3T1CyBP, a3T1SpeBP, a3T1AmpBP, a3T1TrapBP);
 		a3T1OtherVB.getChildren().addAll(a3T1CliBP, a3T1HighNBP, a3T1TimesScoBP, a3T1TimesAmpBP);
-		a3T2CyVB.getChildren().addAll(a3T2CyBP, a3T2SpeBP, a3T2AmpBP, a3T2TrapBP);
+		a3T2CyVB.getChildren().addAll(a3T2NumBP, a3T2CyBP, a3T2SpeBP, a3T2AmpBP, a3T2TrapBP);
 		a3T2OtherVB.getChildren().addAll(a3T2CliBP, a3T2HighNBP, a3T2TimesScoBP, a3T2TimesAmpBP);
-		a3T3CyVB.getChildren().addAll(a3T3CyBP, a3T3SpeBP, a3T3AmpBP, a3T3TrapBP);
+		a3T3CyVB.getChildren().addAll(a3T3NumBP, a3T3CyBP, a3T3SpeBP, a3T3AmpBP, a3T3TrapBP);
 		a3T3OtherVB.getChildren().addAll(a3T3CliBP, a3T3HighNBP, a3T3TimesScoBP, a3T3TimesAmpBP);
 		Label blank1 = new Label("    ");
 		Label blank2 = new Label("    ");
@@ -1746,6 +1774,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 	}
 
 	public void addCompare3PieChart(Team a1T1, Team a1T2, Team a1T3, Team a2T1, Team a2T2, Team a2T3, Team a3T1, Team a3T2, Team a3T3) {
+		System.out.println("BoopComAlls4.0");
 		double a1Cy = a1T1.getAvgCycles() + a1T2.getAvgCycles() + a1T3.getAvgCycles();
 		double a1Spe = a1T1.getAvgSpe() + a1T2.getAvgSpe() + a1T3.getAvgSpe();
 		double a1Amp = a1T1.getAvgAmp() + a1T2.getAvgAmp() + a1T3.getAvgAmp();
@@ -1765,6 +1794,158 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		double a3TimesSco = a3T1.getAvgCycles() + a3T2.getAvgCycles() + a3T3.getAvgCycles();
 		double a3TimesAmp = a3T1.getAvgCycles() + a3T2.getAvgCycles() + a3T3.getAvgCycles();
 		int a1TotalMatches = a1T1.getTotalMatchesPlayed() + a1T2.getTotalMatchesPlayed() + a1T3.getTotalMatchesPlayed();
+		int a2TotalMatches = a2T1.getTotalMatchesPlayed() + a2T2.getTotalMatchesPlayed() + a2T3.getTotalMatchesPlayed();
+		int a3TotalMatches = a3T1.getTotalMatchesPlayed() + a3T2.getTotalMatchesPlayed() + a3T3.getTotalMatchesPlayed();
+		System.out.println("BoopComAlls4.1");
+		//alliance 1 cy pie chart
+		int a1SpeComPer = (int) ((a1Spe/a1Cy) * 100);
+		int a1AmpComPer = (int) ((a1Amp/a1Cy) * 100);
+		int a1TrapComPer = (int) ((a1Trap/a1Cy) * 100);
+		int whoToAdd1 = 1;
+		while(a1SpeComPer + a1AmpComPer + a1TrapComPer != 100) {
+			if(whoToAdd1 == 1) {
+				a1SpeComPer++;
+				whoToAdd1++;
+			}else if(whoToAdd1 == 2) {
+				a1AmpComPer++;
+				whoToAdd1++;
+			}else if(whoToAdd1 == 3){
+				a1TrapComPer++;
+				whoToAdd1 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData1 = FXCollections.observableArrayList(new PieChart.Data("Speaker", a1SpeComPer), new PieChart.Data("Amp", a1AmpComPer), new PieChart.Data("Trap", a1TrapComPer));
+		PieChart a1CyPieC = new PieChart(pieChartData1);
+		a1CyPieC.autosize();
+		a1CyPieC.setMaxSize(300, 300);
+		a1CyPieC.setMinSize(300, 300);
+		a1CyPieC.setLabelsVisible(true);
+		System.out.println("BoopComAlls4.2");
+		//alliance 1 hum position pie chart
+		int a1TimesScoComPer = (int) ((a1TimesSco/a1TotalMatches) * 100);
+		int a1TimesAmpComPer = (int) ((a1TimesAmp/a1TotalMatches) * 100);
+		int whoToAdd2 = 1;
+		while(a1TimesScoComPer + a1TimesAmpComPer != 100) {
+			if(whoToAdd2 == 1) {
+				a1TimesScoComPer++;
+				whoToAdd2++;
+			}else if(whoToAdd2 == 2) {
+				a1TimesAmpComPer++;
+				whoToAdd2 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData2 = FXCollections.observableArrayList(new PieChart.Data("Scoure", a1TimesScoComPer), new PieChart.Data("Amp", a1TimesAmpComPer));
+		PieChart a1HumPieC = new PieChart(pieChartData2);
+		a1HumPieC.autosize();
+		a1HumPieC.setMaxSize(300, 300);
+		a1HumPieC.setMinSize(300, 300);
+		a1HumPieC.setLabelsVisible(true);
+		System.out.println("BoopComAlls4.3");
+		//alliance 2 cy pie chart
+		int a2SpeComPer = (int) ((a2Spe/a2Cy) * 100);
+		int a2AmpComPer = (int) ((a2Amp/a2Cy) * 100);
+		int a2TrapComPer = (int) ((a2Trap/a2Cy) * 100);
+		int whoToAdd3 = 1;
+		while(a2SpeComPer + a2AmpComPer + a2TrapComPer != 100) {
+			if(whoToAdd3 == 1) {
+				a2SpeComPer++;
+				whoToAdd3++;
+			}else if(whoToAdd3 == 2) {
+				a2AmpComPer++;
+				whoToAdd3++;
+			}else if(whoToAdd3 == 3){
+				a2TrapComPer++;
+				whoToAdd3 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData3 = FXCollections.observableArrayList(new PieChart.Data("Speaker", a2SpeComPer), new PieChart.Data("Amp", a2AmpComPer), new PieChart.Data("Trap", a2TrapComPer));
+		PieChart a2CyPieC = new PieChart(pieChartData3);
+		a2CyPieC.autosize();
+		a2CyPieC.setMaxSize(300, 300);
+		a2CyPieC.setMinSize(300, 300);
+		a2CyPieC.setLabelsVisible(true);
+		System.out.println("BoopComAlls4.4");
+		//alliance 2 hum position pie chart
+		int a2TimesScoComPer = (int) ((a2TimesSco/a2TotalMatches) * 100);
+		int a2TimesAmpComPer = (int) ((a2TimesAmp/a2TotalMatches) * 100);
+		int whoToAdd4 = 1;
+		while(a2TimesScoComPer + a2TimesAmpComPer != 100) {
+			if(whoToAdd4 == 1) {
+				a2TimesScoComPer++;
+				whoToAdd4++;
+			}else if(whoToAdd4 == 2) {
+				a2TimesAmpComPer++;
+				whoToAdd4 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData4 = FXCollections.observableArrayList(new PieChart.Data("Scoure", a2TimesScoComPer), new PieChart.Data("Amp", a2TimesAmpComPer));
+		PieChart a2HumPieC = new PieChart(pieChartData4);
+		a2HumPieC.autosize();
+		a2HumPieC.setMaxSize(300, 300);
+		a2HumPieC.setMinSize(300, 300);
+		a2HumPieC.setLabelsVisible(true);
+		System.out.println("BoopComAlls4.5");
+		//alliance 3 cy pie chart
+		int a3SpeComPer = (int) ((a3Spe/a3Cy) * 100);
+		int a3AmpComPer = (int) ((a3Amp/a3Cy) * 100);
+		int a3TrapComPer = (int) ((a3Trap/a3Cy) * 100);
+		int whoToAdd5 = 1;
+		while(a3SpeComPer + a3AmpComPer + a3TrapComPer != 100) {
+			if(whoToAdd5 == 1) {
+				a3SpeComPer++;
+				whoToAdd5++;
+			}else if(whoToAdd5 == 2) {
+				a3AmpComPer++;
+				whoToAdd5++;
+			}else if(whoToAdd5 == 3){
+				a3TrapComPer++;
+				whoToAdd5 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData5 = FXCollections.observableArrayList(new PieChart.Data("Speaker", a3SpeComPer), new PieChart.Data("Amp", a3AmpComPer), new PieChart.Data("Trap", a3TrapComPer));
+		PieChart a3CyPieC = new PieChart(pieChartData5);
+		a3CyPieC.autosize();
+		a3CyPieC.setMaxSize(300, 300);
+		a3CyPieC.setMinSize(300, 300);
+		a3CyPieC.setLabelsVisible(true);
+		System.out.println("BoopComAlls4.6");
+		//alliance 3 hum position pie chart
+		int a3TimesScoComPer = (int) ((a3TimesSco/a3TotalMatches) * 100);
+		int a3TimesAmpComPer = (int) ((a3TimesAmp/a3TotalMatches) * 100);
+		int whoToAdd6 = 1;
+		while(a3TimesScoComPer + a3TimesAmpComPer != 100) {
+			if(whoToAdd6 == 1) {
+				a3TimesScoComPer++;
+				whoToAdd6++;
+			}else if(whoToAdd6 == 2) {
+				a3TimesAmpComPer++;
+				whoToAdd6 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData6 = FXCollections.observableArrayList(new PieChart.Data("Scoure", a3TimesScoComPer), new PieChart.Data("Amp", a3TimesAmpComPer));
+		PieChart a3HumPieC = new PieChart(pieChartData6);
+		a3HumPieC.autosize();
+		a3HumPieC.setMaxSize(300, 300);
+		a3HumPieC.setMinSize(300, 300);
+		a3HumPieC.setLabelsVisible(true);
+		System.out.println("BoopComAlls4.7");
+	}
+	
+	public void addCompare2PieChart(Team a1T1, Team a1T2, Team a1T3, Team a2T1, Team a2T2, Team a2T3) {
+		double a1Cy = a1T1.getAvgCycles() + a1T2.getAvgCycles() + a1T3.getAvgCycles();
+		double a1Spe = a1T1.getAvgSpe() + a1T2.getAvgSpe() + a1T3.getAvgSpe();
+		double a1Amp = a1T1.getAvgAmp() + a1T2.getAvgAmp() + a1T3.getAvgAmp();
+		double a1Trap = a1T1.getAvgTrap() + a1T2.getAvgTrap() + a1T3.getAvgTrap();
+		double a1TimesSco = a1T1.getAvgCycles() + a1T2.getAvgCycles() + a1T3.getAvgCycles();
+		double a1TimesAmp = a1T1.getAvgCycles() + a1T2.getAvgCycles() + a1T3.getAvgCycles();
+		double a2Cy = a2T1.getAvgCycles() + a2T2.getAvgCycles() + a2T3.getAvgCycles();
+		double a2Spe = a2T1.getAvgSpe() + a2T2.getAvgSpe() + a2T3.getAvgSpe();
+		double a2Amp = a2T1.getAvgAmp() + a2T2.getAvgAmp() + a2T3.getAvgAmp();
+		double a2Trap = a2T1.getAvgTrap() + a2T2.getAvgTrap() + a2T3.getAvgTrap();
+		double a2TimesSco = a2T1.getAvgCycles() + a2T2.getAvgCycles() + a2T3.getAvgCycles();
+		double a2TimesAmp = a2T1.getAvgCycles() + a2T2.getAvgCycles() + a2T3.getAvgCycles();
+		int a1TotalMatches = a1T1.getTotalMatchesPlayed() + a1T2.getTotalMatchesPlayed() + a1T3.getTotalMatchesPlayed();
+		int a2TotalMatches = a2T1.getTotalMatchesPlayed() + a2T2.getTotalMatchesPlayed() + a2T3.getTotalMatchesPlayed();
 		//alliance 1 cy pie chart
 		int a1SpeComPer = (int) ((a1Spe/a1Cy) * 100);
 		int a1AmpComPer = (int) ((a1Amp/a1Cy) * 100);
@@ -1789,6 +1970,66 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a1CyPieC.setMinSize(300, 300);
 		a1CyPieC.setLabelsVisible(true);
 		//alliance 1 hum position pie chart
+		int a1TimesScoComPer = (int) ((a1TimesSco/a1TotalMatches) * 100);
+		int a1TimesAmpComPer = (int) ((a1TimesAmp/a1TotalMatches) * 100);
+		int whoToAdd2 = 1;
+		while(a1TimesScoComPer + a1TimesAmpComPer != 100) {
+			if(whoToAdd2 == 1) {
+				a1TimesScoComPer++;
+				whoToAdd2++;
+			}else if(whoToAdd2 == 2) {
+				a1TimesAmpComPer++;
+				whoToAdd2 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData2 = FXCollections.observableArrayList(new PieChart.Data("Scoure", a1TimesScoComPer), new PieChart.Data("Amp", a1TimesAmpComPer));
+		PieChart a1HumPieC = new PieChart(pieChartData2);
+		a1HumPieC.autosize();
+		a1HumPieC.setMaxSize(300, 300);
+		a1HumPieC.setMinSize(300, 300);
+		a1HumPieC.setLabelsVisible(true);
+		//alliance 2 cy pie chart
+		int a2SpeComPer = (int) ((a2Spe/a2Cy) * 100);
+		int a2AmpComPer = (int) ((a2Amp/a2Cy) * 100);
+		int a2TrapComPer = (int) ((a2Trap/a2Cy) * 100);
+		int whoToAdd3 = 1;
+		while(a2SpeComPer + a2AmpComPer + a2TrapComPer != 100) {
+			if(whoToAdd3 == 1) {
+				a2SpeComPer++;
+				whoToAdd3++;
+			}else if(whoToAdd3 == 2) {
+				a2AmpComPer++;
+				whoToAdd3++;
+			}else if(whoToAdd3 == 3){
+				a2TrapComPer++;
+				whoToAdd3 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData3 = FXCollections.observableArrayList(new PieChart.Data("Speaker", a2SpeComPer), new PieChart.Data("Amp", a2AmpComPer), new PieChart.Data("Trap", a2TrapComPer));
+		PieChart a2CyPieC = new PieChart(pieChartData3);
+		a2CyPieC.autosize();
+		a2CyPieC.setMaxSize(300, 300);
+		a2CyPieC.setMinSize(300, 300);
+		a2CyPieC.setLabelsVisible(true);
+		//alliance 2 hum position pie chart
+		int a2TimesScoComPer = (int) ((a2TimesSco/a2TotalMatches) * 100);
+		int a2TimesAmpComPer = (int) ((a2TimesAmp/a2TotalMatches) * 100);
+		int whoToAdd4 = 1;
+		while(a2TimesScoComPer + a2TimesAmpComPer != 100) {
+			if(whoToAdd4 == 1) {
+				a2TimesScoComPer++;
+				whoToAdd4++;
+			}else if(whoToAdd4 == 2) {
+				a2TimesAmpComPer++;
+				whoToAdd4 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData4 = FXCollections.observableArrayList(new PieChart.Data("Scoure", a2TimesScoComPer), new PieChart.Data("Amp", a2TimesAmpComPer));
+		PieChart a2HumPieC = new PieChart(pieChartData4);
+		a2HumPieC.autosize();
+		a2HumPieC.setMaxSize(300, 300);
+		a2HumPieC.setMinSize(300, 300);
+		a2HumPieC.setLabelsVisible(true);
 	}
 	
 	@Override
@@ -1796,7 +2037,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		try {
 			if (event.getSource() == submitNonB) {
 				this.getChildren().clear();
-				System.out.println("BoopComTeams1");
+				System.out.println("BoopComAlls1");
 				String selTeamNumA1T1S = allince1T1CB.getSelectionModel().getSelectedItem();
 				String selTeamNumA1T2S = allince1T2CB.getSelectionModel().getSelectedItem();
 				String selTeamNumA1T3S = allince1T3CB.getSelectionModel().getSelectedItem();
@@ -1888,14 +2129,17 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 					numOfSelected++;
 					isA3T3 = 1;
 				}				
-				System.out.println("BoopComTeams2");
+				System.out.println("BoopComAlls2");
 				if(numOfSelected == 9) {
-					System.out.println("BoopComTeams4");
+					System.out.println("BoopComAlls3");
 					addCompare3Alls(a1T1, a1T2, a1T3, a2T1, a2T2, a2T3, a3T1, a3T2, a3T3);
+					System.out.println("BoopComAlls4");
+					addCompare3PieChart(a1T1, a1T2, a1T3, a2T1, a2T2, a2T3, a3T1, a3T2, a3T3);
 				}else if(numOfSelected == 6) {
 					addCompare2Alls(a1T1, a1T2, a1T3, a2T1, a2T2, a2T3);
+					addCompare2PieChart(a1T1, a1T2, a1T3, a2T1, a2T2, a2T3);
 				}
-				System.out.println("BoopComTeams5");
+				System.out.println("BoopComAlls5");
 				
 			}
 		} catch (Exception e) {

@@ -1297,10 +1297,15 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	}
 	
 	private void makeCompareAllinces() {
-		compareAlliancesTab comAlliances = new compareAlliancesTab();
-		comAlliances.setMinHeight(800);
+		compareAlliancesTab comAlliances;
+		if(thePOA.getAlliance1() != null) {
+			comAlliances = new compareAlliancesTab(true, listOfTeamNumsSorted, mainTeamList, thePOA, fileDTDL, fileDTCL);
+		}else {
+			comAlliances = new compareAlliancesTab(false, listOfTeamNumsSorted, mainTeamList, thePOA, fileDTDL, fileDTCL);
+		}
+		comAlliances.setMinHeight(1400);
 		comAlliances.setMinWidth(1400);
-		comAlliances.setMaxHeight(800);
+		comAlliances.setMaxHeight(1400);
 		comAlliances.setMaxWidth(1400);
 		FileInputStream inputComAlliances;
 		try {

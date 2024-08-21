@@ -1466,6 +1466,7 @@
 	-fx-min-height: 50;
 	-fx-max-height: 50;
 	-fx-max-width: 100;
+	-fx-min-width: 100;
 	-fx-background-color: rgb(86, 207, 225);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
@@ -1485,6 +1486,51 @@
 	-fx-min-width: 135;
 	-fx-max-width: 135;
 	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllselBP1{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(128, 255, 219);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllselBP2{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllselBP3{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllselBP4{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllselBP5{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(72, 191, 227);
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
