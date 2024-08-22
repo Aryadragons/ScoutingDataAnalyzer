@@ -1321,7 +1321,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		ScrollPane sp = new ScrollPane();
 		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
 		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
-		sp.setMinHeight(600);
+		sp.setMaxHeight(600);
 		sp.setContent(comAlliances);
 		Tab comAlliancesTab = new Tab("Compare Alliances", sp);
 		mainTP.getTabs().addAll(comAlliancesTab);
