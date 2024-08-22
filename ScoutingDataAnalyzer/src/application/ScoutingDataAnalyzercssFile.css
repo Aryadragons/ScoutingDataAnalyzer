@@ -1615,4 +1615,19 @@
 	-fx-text-fill: rgb(55, 0, 93);
 	-fx-background-radius:10;
 }
-
+#comAllsPieCLBP{
+	-fx-min-height: 55;
+	-fx-max-height: 55;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllsPieChartId{
+	-fx-pie-color: rgb(183,38,255);
+	-fx-pie-color: rgb(195,83,255);
+	-fx-pie-color: rgb(170,0,255);
+	-fx-pie-color: rgb(144,0,216);
+	-fx-pie-color: rgb(119,0,178);
+}

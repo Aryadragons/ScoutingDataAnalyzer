@@ -1869,8 +1869,8 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a1CyPieC.setLabelsVisible(true);
 		System.out.println("BoopComAlls4.2");
 		//alliance 1 hum position pie chart
-		int a1TimesScoComPer = (int) ((a1TimesSco/a1TotalMatches) * 100);
-		int a1TimesAmpComPer = (int) ((a1TimesAmp/a1TotalMatches) * 100);
+		int a1TimesScoComPer = (int) ((a1TimesSco/a1TotalMatches));
+		int a1TimesAmpComPer = (int) ((a1TimesAmp/a1TotalMatches));
 		int whoToAdd2 = 1;
 		while(a1TimesScoComPer + a1TimesAmpComPer != 100) {
 			if(whoToAdd2 == 1) {
@@ -1887,6 +1887,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a1HumPieC.setMaxSize(300, 300);
 		a1HumPieC.setMinSize(300, 300);
 		a1HumPieC.setLabelsVisible(true);
+		a1HumPieC.setId("comAllsPieChartId");
 		System.out.println("BoopComAlls4.3");
 		//alliance 2 cy pie chart
 		int a2SpeComPer = (int) ((a2Spe/a2Cy) * 100);
@@ -1913,8 +1914,8 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a2CyPieC.setLabelsVisible(true);
 		System.out.println("BoopComAlls4.4");
 		//alliance 2 hum position pie chart
-		int a2TimesScoComPer = (int) ((a2TimesSco/a2TotalMatches) * 100);
-		int a2TimesAmpComPer = (int) ((a2TimesAmp/a2TotalMatches) * 100);
+		int a2TimesScoComPer = (int) ((a2TimesSco/a2TotalMatches));
+		int a2TimesAmpComPer = (int) ((a2TimesAmp/a2TotalMatches));
 		int whoToAdd4 = 1;
 		while(a2TimesScoComPer + a2TimesAmpComPer != 100) {
 			if(whoToAdd4 == 1) {
@@ -1931,6 +1932,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a2HumPieC.setMaxSize(300, 300);
 		a2HumPieC.setMinSize(300, 300);
 		a2HumPieC.setLabelsVisible(true);
+		a2HumPieC.setId("comAllsPieChartId");
 		System.out.println("BoopComAlls4.5");
 		//alliance 3 cy pie chart
 		int a3SpeComPer = (int) ((a3Spe/a3Cy) * 100);
@@ -1957,8 +1959,13 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a3CyPieC.setLabelsVisible(true);
 		System.out.println("BoopComAlls4.6");
 		//alliance 3 hum position pie chart
-		int a3TimesScoComPer = (int) ((a3TimesSco/a3TotalMatches) * 100);
-		int a3TimesAmpComPer = (int) ((a3TimesAmp/a3TotalMatches) * 100);
+		System.out.println("BoopComAlls4.6.0" + a3TimesSco);
+		System.out.println("BoopComAlls4.6.0" + a3TimesAmp);
+		System.out.println("BoopComAlls4.6.0" + a3TotalMatches);
+		int a3TimesScoComPer = (int) ((a3TimesSco/a3TotalMatches));
+		int a3TimesAmpComPer = (int) ((a3TimesAmp/a3TotalMatches));
+		System.out.println("BoopComAlls4.6.1" + a3TimesScoComPer);
+		System.out.println("BoopComAlls4.6.1" + a3TimesAmpComPer);
 		int whoToAdd6 = 1;
 		while(a3TimesScoComPer + a3TimesAmpComPer != 100) {
 			if(whoToAdd6 == 1) {
@@ -1969,15 +1976,41 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 				whoToAdd6 = 1;
 			}
 		}
+		System.out.println("BoopComAlls4.6.2" + a3TimesScoComPer);
+		System.out.println("BoopComAlls4.6.2" + a3TimesAmpComPer);
 		ObservableList<PieChart.Data> pieChartData6 = FXCollections.observableArrayList(new PieChart.Data("Scoure", a3TimesScoComPer), new PieChart.Data("Amp", a3TimesAmpComPer));
 		PieChart a3HumPieC = new PieChart(pieChartData6);
 		a3HumPieC.autosize();
 		a3HumPieC.setMaxSize(300, 300);
 		a3HumPieC.setMinSize(300, 300);
 		a3HumPieC.setLabelsVisible(true);
+		a3HumPieC.setId("comAllsPieChartId");
 		System.out.println("BoopComAlls4.7");
 		//V Boxes
-		VBox a1
+		Label a1PieCL = new Label("Alliance 1 Pie Charts");
+		Label a2PieCL = new Label("Alliance 2 Pie Charts");
+		Label a3PieCL = new Label("Alliance 3 Pie Charts");
+		a1PieCL.setId("smallTitle");
+		a2PieCL.setId("smallTitle");
+		a3PieCL.setId("smallTitle");
+		BorderPane a1PieCLBP = new BorderPane();
+		BorderPane a2PieCLBP = new BorderPane();
+		BorderPane a3PieCLBP = new BorderPane();
+		a1PieCLBP.setCenter(a1PieCL);
+		a2PieCLBP.setCenter(a2PieCL);
+		a3PieCLBP.setCenter(a3PieCL);
+		a1PieCLBP.setId("comAllsPieCLBP");
+		a2PieCLBP.setId("comAllsPieCLBP");
+		a3PieCLBP.setId("comAllsPieCLBP");
+		VBox a1PieCVB = new VBox(5);
+		VBox a2PieCVB = new VBox(5);
+		VBox a3PieCVB = new VBox(5);
+		a1PieCVB.getChildren().addAll(a1PieCLBP, a1CyPieC, a1HumPieC);
+		a2PieCVB.getChildren().addAll(a2PieCLBP, a2CyPieC, a2HumPieC);
+		a3PieCVB.getChildren().addAll(a3PieCLBP, a3CyPieC, a3HumPieC);
+		HBox pieChartsHB = new HBox(5);
+		pieChartsHB.getChildren().addAll(a1PieCVB, a2PieCVB, a3PieCVB);
+		this.add(pieChartsHB, 1, 7);
 	}
 	
 	public void addCompare2PieChart(Team a1T1, Team a1T2, Team a1T3, Team a2T1, Team a2T2, Team a2T3) {
@@ -2019,8 +2052,8 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a1CyPieC.setMinSize(300, 300);
 		a1CyPieC.setLabelsVisible(true);
 		//alliance 1 hum position pie chart
-		int a1TimesScoComPer = (int) ((a1TimesSco/a1TotalMatches) * 100);
-		int a1TimesAmpComPer = (int) ((a1TimesAmp/a1TotalMatches) * 100);
+		int a1TimesScoComPer = (int) ((a1TimesSco/a1TotalMatches));
+		int a1TimesAmpComPer = (int) ((a1TimesAmp/a1TotalMatches));
 		int whoToAdd2 = 1;
 		while(a1TimesScoComPer + a1TimesAmpComPer != 100) {
 			if(whoToAdd2 == 1) {
@@ -2061,8 +2094,8 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a2CyPieC.setMinSize(300, 300);
 		a2CyPieC.setLabelsVisible(true);
 		//alliance 2 hum position pie chart
-		int a2TimesScoComPer = (int) ((a2TimesSco/a2TotalMatches) * 100);
-		int a2TimesAmpComPer = (int) ((a2TimesAmp/a2TotalMatches) * 100);
+		int a2TimesScoComPer = (int) ((a2TimesSco/a2TotalMatches));
+		int a2TimesAmpComPer = (int) ((a2TimesAmp/a2TotalMatches));
 		int whoToAdd4 = 1;
 		while(a2TimesScoComPer + a2TimesAmpComPer != 100) {
 			if(whoToAdd4 == 1) {
@@ -2079,6 +2112,24 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a2HumPieC.setMaxSize(300, 300);
 		a2HumPieC.setMinSize(300, 300);
 		a2HumPieC.setLabelsVisible(true);
+		//V Boxes
+		Label a1PieCL = new Label("Alliance 1 Pie Charts");
+		Label a2PieCL = new Label("Alliance 2 Pie Charts");
+		a1PieCL.setId("smallTitle");
+		a2PieCL.setId("smallTitle");
+		BorderPane a1PieCLBP = new BorderPane();
+		BorderPane a2PieCLBP = new BorderPane();
+		a1PieCLBP.setCenter(a1PieCL);
+		a2PieCLBP.setCenter(a2PieCL);
+		a1PieCLBP.setId("comAllsPieCLBP");
+		a2PieCLBP.setId("comAllsPieCLBP");
+		VBox a1PieCVB = new VBox(5);
+		VBox a2PieCVB = new VBox(5);
+		a1PieCVB.getChildren().addAll(a1PieCLBP, a1CyPieC, a1HumPieC);
+		a2PieCVB.getChildren().addAll(a2PieCLBP, a2CyPieC, a2HumPieC);
+		HBox pieChartsHB = new HBox(5);
+		pieChartsHB.getChildren().addAll(a1PieCVB, a2PieCVB);
+		this.add(pieChartsHB, 1, 7);
 	}
 	
 	@Override
