@@ -27,9 +27,9 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 	private ComboBox<String> allince3T1CB;
 	private ComboBox<String> allince3T2CB;
 	private ComboBox<String> allince3T3CB;
-	private ComboBox<String> allince1CB;
-	private ComboBox<String> allince2CB;
-	private ComboBox<String> allince3CB;
+	private ComboBox<String> alliance1CB;
+	private ComboBox<String> alliance2CB;
+	private ComboBox<String> alliance3CB;
 	private Button submitNonB;
 	private List<Integer> listOfTeamNums;
 	private TeamList theTL;
@@ -143,21 +143,21 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 			a1L.setId("smallTitle");
 			a2L.setId("smallTitle");
 			a3L.setId("smallTitle");
-			allince1CB = new ComboBox<String>();
-			allince2CB = new ComboBox<String>();
-			allince3CB = new ComboBox<String>();
-			addComboBoxItems(allince1CB);
-			addComboBoxItems(allince2CB);
-			addComboBoxItems(allince3CB);
+			alliance1CB = new ComboBox<String>();
+			alliance2CB = new ComboBox<String>();
+			alliance3CB = new ComboBox<String>();
+			addComboBoxItems(alliance1CB);
+			addComboBoxItems(alliance2CB);
+			addComboBoxItems(alliance3CB);
 			BorderPane a1  = new BorderPane();
 			BorderPane a2  = new BorderPane();
 			BorderPane a3  = new BorderPane();
 			a1.setTop(a1L);
 			a2.setTop(a2L);
 			a3.setTop(a3L);
-			a1.setCenter(allince1CB);
-			a2.setCenter(allince2CB);
-			a3.setCenter(allince3CB);
+			a1.setCenter(alliance1CB);
+			a2.setCenter(alliance2CB);
+			a3.setCenter(alliance3CB);
 			a1.setId("comAllselBP1");
 			a2.setId("comAllselBP2");
 			a3.setId("comAllselBP3");
@@ -169,6 +169,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 			this.add(a2, 3, 1);
 			this.add(a3, 5, 1);
 			submitPlayB = new Button("Submit");
+			submitPlayB.setOnAction(this);
 			this.add(submitPlayB, 1, 3);
 		}
 	}
@@ -2135,6 +2136,188 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 	@Override
 	public void handle(ActionEvent event) {
 		try {
+			if(event.getSource() == submitPlayB) {
+				Boolean a1Has4th = false;
+				Boolean a2Has4th = false;
+				Boolean a3Has4th = false;
+				String a1AllianceNumS = alliance1CB.getSelectionModel().getSelectedItem();
+				String a2AllianceNumS = alliance2CB.getSelectionModel().getSelectedItem();
+				String a3AllianceNumS = alliance3CB.getSelectionModel().getSelectedItem();
+				int a1AllianceNum = 0;
+				int a2AllianceNum = 0;
+				int a3AllianceNum = 0;
+				int numOfAlls = 0;
+				if(a1AllianceNumS != null) {
+					a1AllianceNum = Integer.parseInt(a1AllianceNumS);
+				}
+				if(a2AllianceNumS != null) {
+					a2AllianceNum = Integer.parseInt(a2AllianceNumS);
+				}
+				if(a3AllianceNumS != null) {
+					a3AllianceNum = Integer.parseInt(a3AllianceNumS);
+				}
+				PlayoffAlliance a1 = null;
+				PlayoffAlliance a2 = null;
+				PlayoffAlliance a3 = null;
+				if(a1AllianceNum == 1) {
+					a1 = thePOA.getAlliance1();
+					numOfAlls++;
+				}
+				if(a1AllianceNum == 2) {
+					a1 = thePOA.getAlliance2();
+					numOfAlls++;
+				}
+				if(a1AllianceNum == 3) {
+					a1 = thePOA.getAlliance3();
+					numOfAlls++;
+				}
+				if(a1AllianceNum == 4) {
+					a1 = thePOA.getAlliance4();
+					numOfAlls++;
+				}
+				if(a1AllianceNum == 5) {
+					a1 = thePOA.getAlliance5();
+					numOfAlls++;
+				}
+				if(a1AllianceNum == 6) {
+					a1 = thePOA.getAlliance6();
+					numOfAlls++;
+				}
+				if(a1AllianceNum == 7) {
+					a1 = thePOA.getAlliance7();
+					numOfAlls++;
+				}
+				if(a1AllianceNum == 8) {
+					a1 = thePOA.getAlliance8();
+					numOfAlls++;
+				}
+				if(a2AllianceNum == 1) {
+					a2 = thePOA.getAlliance1();
+					numOfAlls++;
+				}
+				if(a2AllianceNum == 2) {
+					a2 = thePOA.getAlliance2();
+					numOfAlls++;
+				}
+				if(a2AllianceNum == 3) {
+					a2 = thePOA.getAlliance3();
+					numOfAlls++;
+				}
+				if(a2AllianceNum == 4) {
+					a2 = thePOA.getAlliance4();
+					numOfAlls++;
+				}
+				if(a2AllianceNum == 5) {
+					a2 = thePOA.getAlliance5();
+					numOfAlls++;
+				}
+				if(a2AllianceNum == 6) {
+					a2 = thePOA.getAlliance6();
+					numOfAlls++;
+				}
+				if(a2AllianceNum == 7) {
+					a2 = thePOA.getAlliance7();
+					numOfAlls++;
+				}
+				if(a2AllianceNum == 8) {
+					a2 = thePOA.getAlliance8();
+					numOfAlls++;
+				}
+				if(a3AllianceNum == 1) {
+					a3 = thePOA.getAlliance1();
+					numOfAlls++;
+				}
+				if(a3AllianceNum == 2) {
+					a3 = thePOA.getAlliance2();
+					numOfAlls++;
+				}
+				if(a3AllianceNum == 3) {
+					a3 = thePOA.getAlliance3();
+					numOfAlls++;
+				}
+				if(a3AllianceNum == 4) {
+					a3 = thePOA.getAlliance4();
+					numOfAlls++;
+				}
+				if(a3AllianceNum == 5) {
+					a3 = thePOA.getAlliance5();
+					numOfAlls++;
+				}
+				if(a3AllianceNum == 6) {
+					a3 = thePOA.getAlliance6();
+					numOfAlls++;
+				}
+				if(a3AllianceNum == 7) {
+					a3 = thePOA.getAlliance7();
+					numOfAlls++;
+				}
+				if(a3AllianceNum == 8) {
+					a3 = thePOA.getAlliance8();
+					numOfAlls++;
+				}
+				Team a1T1 = null;
+				Team a1T2 = null;
+				Team a1T3 = null;
+				Team a1T4 = null;
+				Team a2T1 = null;
+				Team a2T2 = null;
+				Team a2T3 = null;
+				Team a2T4 = null;
+				Team a3T1 = null;
+				Team a3T2 = null;
+				Team a3T3 = null;
+				Team a3T4 = null;
+				if(a1 != null) {
+					if(a1.getTeam1() != null) {
+						a1T1 = a1.getTeam1();
+					}
+					if(a1.getTeam2() != null) {
+						a1T2 = a1.getTeam2();
+					}
+					if(a1.getTeam3() != null) {
+						a1T3 = a1.getTeam3();
+					}
+					if(a1.getTeam4() != null) {
+						a1T4 = a1.getTeam4();
+						a1Has4th = true;
+					}
+				}
+				if(a2 != null) {
+					if(a2.getTeam1() != null) {
+						a2T1 = a2.getTeam1();
+					}
+					if(a2.getTeam2() != null) {
+						a2T2 = a2.getTeam2();
+					}
+					if(a2.getTeam3() != null) {
+						a2T3 = a2.getTeam3();
+					}
+					if(a2.getTeam4() != null) {
+						a2T4 = a2.getTeam4();
+						a2Has4th = true;
+					}
+				}
+				if(a3 != null) {
+					if(a3.getTeam1() != null) {
+						a3T1 = a3.getTeam1();
+					}
+					if(a3.getTeam2() != null) {
+						a3T2 = a3.getTeam2();
+					}
+					if(a3.getTeam3() != null) {
+						a3T3 = a3.getTeam3();
+					}
+					if(a3.getTeam4() != null) {
+						a3T4 = a3.getTeam4();
+						a3Has4th = true;
+					}
+				}
+				if(numOfAlls == 2) {
+					
+				}else if(numOfAlls == 3) {
+					
+				}
+			}
 			if (event.getSource() == submitNonB) {
 				this.getChildren().clear();
 				System.out.println("BoopComAlls1");
