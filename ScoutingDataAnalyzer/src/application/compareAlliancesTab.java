@@ -2133,6 +2133,107 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		this.add(pieChartsHB, 1, 7);
 	}
 	
+	public void addCompare3PlayAlls(PlayoffAlliance a1, Team a1T1, Team a1T2, Team a1T3, int a1AllNum, PlayoffAlliance a2, Team a2T1, Team a2T2, Team a2T3, int a2AllNum, PlayoffAlliance a3, Team a3T1, Team a3T2, Team a3T3, int a3AllNum) {
+		Label a1TitleL = null;
+		if(a1AllNum == 1) {
+			a1TitleL = new Label("Allaince 1's Stats");
+		}
+		if(a1AllNum == 2) {
+			a1TitleL = new Label("Allaince 2's Stats");
+		}
+		if(a1AllNum == 3) {
+			a1TitleL = new Label("Allaince 3's Stats");
+		}
+		if(a1AllNum == 4) {
+			a1TitleL = new Label("Allaince 4's Stats");
+		}
+		if(a1AllNum == 5) {
+			a1TitleL = new Label("Allaince 5's Stats");
+		}
+		if(a1AllNum == 6) {
+			a1TitleL = new Label("Allaince 6's Stats");
+		}
+		if(a1AllNum == 7) {
+			a1TitleL = new Label("Allaince 7's Stats");
+		}
+		if(a1AllNum == 8) {
+			a1TitleL = new Label("Allaince 8's Stats");
+		}
+		double a1T1Cy = a1T1.getAvgCycles();
+		double a1T2Cy = a1T1.getAvgCycles();
+		double a1T3Cy = a1T1.getAvgCycles();
+		double a1Cy = a1T1Cy + a1T2Cy + a1T3Cy;
+		Label a1CyL = new Label(Double.toString(a1Cy));
+		double a1T1Spe = a1T1.getAvgSpe();
+		double a1T2Spe = a1T1.getAvgSpe();
+		double a1T3Spe = a1T1.getAvgSpe();
+		double a1Spe = a1T1Spe + a1T2Spe + a1T3Spe;
+		Label a1SpeL = new Label(Double.toString(a1Spe));
+		double a1T1Amp = a1T1.getAvgAmp();
+		double a1T2Amp = a1T1.getAvgAmp();
+		double a1T3Amp = a1T1.getAvgAmp();
+		double a1Amp = a1T1Amp + a1T2Amp + a1T3Amp;
+		Label a1AmpL = new Label(Double.toString(a1Amp));
+		double a1T1Trap = a1T1.getAvgTrap();
+		double a1T2Trap = a1T1.getAvgTrap();
+		double a1T3Trap = a1T1.getAvgTrap();
+		double a1Trap = a1T1Trap + a1T2Trap + a1T3Trap;
+		Label a1TrapL = new Label(Double.toString(a1Trap));
+		double a1T1Cli = a1T1.getAvgClimb();
+		double a1T2Cli = a1T1.getAvgClimb();
+		double a1T3Cli = a1T1.getAvgClimb();
+		double a1Cli = a1T1Cli + a1T2Cli + a1T3Cli;
+		Label a1CliL = new Label(Double.toString(a1Cli));
+		int a1T1TimesSco = a1T1.getTimesHumSco();
+		int a1T2TimesSco = a1T2.getTimesHumSco();
+		int a1T3TimesSco = a1T3.getTimesHumSco();
+		int a1TimesSco = a1T1TimesSco + a1T2TimesSco + a1T3TimesSco;
+		Label a1TimesScoL = new Label(Integer.toString(a1TimesSco));
+		int a1T1TimesAmp = a1T1.getTimesHumAmp();
+		int a1T2TimesAmp = a1T2.getTimesHumAmp();
+		int a1T3TimesAmp = a1T3.getTimesHumAmp();
+		int a1TimesAmp = a1T1TimesAmp + a1T2TimesAmp + a1T3TimesAmp;
+		Label a1TimesAmpL = new Label(Integer.toString(a1TimesAmp));
+		Label a1TitleCyL = new Label("Avg Cycles");
+		Label a1TitleSpeL = new Label("Avg Speaker");
+		Label a1TitleAmpL = new Label("Avg Amp");
+		Label a1TitleTrapL = new Label("Avg Trap");
+		Label a1TitleCliL = new Label("Avg Climb");
+		Label a1TitleTimesScoL = new Label("Times Scoure");
+		Label a1TitleTimesAmpL = new Label("Times Amp");
+		BorderPane a1TitleBP = new BorderPane();
+		BorderPane a1CyBP = new BorderPane();
+		BorderPane a1SpeBP = new BorderPane();
+		BorderPane a1AmpBP = new BorderPane();
+		BorderPane a1TrapBP = new BorderPane();
+		BorderPane a1CliBP = new BorderPane();
+		BorderPane a1TimesScoBP = new BorderPane();
+		BorderPane a1TimesAmpBP = new BorderPane();
+		a1CyBP.setTop(a1TitleCyL);
+		a1SpeBP.setTop(a1TitleSpeL);
+		a1AmpBP.setTop(a1TitleAmpL);
+		a1TrapBP.setTop(a1TitleTrapL);
+		a1CliBP.setTop(a1TitleCliL);
+		a1TimesScoBP.setTop(a1TitleTimesScoL);
+		a1TimesAmpBP.setTop(a1TitleTimesAmpL);
+		a1TitleBP.setCenter(a1TitleL);
+		a1CyBP.setCenter(a1CyL);
+		a1SpeBP.setCenter(a1SpeL);
+		a1AmpBP.setCenter(a1AmpL);
+		a1TrapBP.setCenter(a1TrapL);
+		a1CliBP.setCenter(a1CliL);
+		a1TimesScoBP.setCenter(a1TimesScoL);
+		a1TimesAmpBP.setCenter(a1TimesAmpL);
+		a1TitleBP.setId("comAllsPlayTitleBP");
+		a1CyBP.setId("comAllsPlayStatBP1");
+		a1SpeBP.setId("comAllsPlayStatBP2");
+		a1AmpBP.setId("comAllsPlayStatBP3");
+		a1TrapBP.setId("comAllsPlayStatBP4");
+		a1CliBP.setId("comAllsPlayStatBP5");
+		a1TimesScoBP.setId("comAllsPlayStatBP6");
+		a1TimesAmpBP.setId("comAllsPlayStatBP7");
+	}
+	
 	@Override
 	public void handle(ActionEvent event) {
 		try {
