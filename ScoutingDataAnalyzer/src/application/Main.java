@@ -1313,9 +1313,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		}else {
 			comAlliances = new compareAlliancesTab(false, listOfTeamNumsSorted, mainTeamList, thePOA, fileDTDL, fileDTCL);
 		}
-		comAlliances.setMinHeight(2400);
+		comAlliances.setMinHeight(2800);
 		comAlliances.setMinWidth(1400);
-		comAlliances.setMaxHeight(2400);
+		comAlliances.setMaxHeight(2800);
 		comAlliances.setMaxWidth(1400);
 		FileInputStream inputComAlliances;
 		try {

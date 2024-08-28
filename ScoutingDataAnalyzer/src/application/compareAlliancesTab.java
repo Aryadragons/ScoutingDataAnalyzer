@@ -2462,6 +2462,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		if(a1AllNum == 8) {
 			a1TitleL = new Label("Allaince 8's Stats");
 		}
+		a1TitleL.setId("smallTitle");
 		double a1T1Cy = a1T1.getAvgCycles();
 		double a1T2Cy = a1T2.getAvgCycles();
 		double a1T3Cy = a1T3.getAvgCycles();
@@ -2549,7 +2550,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a1CliBP.setCenter(a1CliL);
 		a1TimesScoBP.setCenter(a1TimesScoL);
 		a1TimesAmpBP.setCenter(a1TimesAmpL);
-		a1TitleBP.setId("comAllsPlayTitleBP");
+		a1TitleBP.setId("comAllsPlayAllTitleBP");
 		a1CyBP.setId("comAllsPlayStatBP1");
 		a1SpeBP.setId("comAllsPlayStatBP2");
 		a1AmpBP.setId("comAllsPlayStatBP3");
@@ -2806,16 +2807,16 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a1T4TimesScoBP.setId("comAllsPlayStatBP6");
 		a1T4TimesAmpBP.setId("comAllsPlayStatBP7");
 		VBox a1T4VB = new VBox(5);
-		a1T4VB.getChildren().addAll(a1T4TitleBP, a1T4SpeBP, a1T4AmpBP, a1T4TrapBP, a1T4CliBP, a1T4TimesScoBP, a1T4TimesAmpBP);
+		a1T4VB.getChildren().addAll(a1T4TitleBP, a1T4CyBP, a1T4SpeBP, a1T4AmpBP, a1T4TrapBP, a1T4CliBP, a1T4TimesScoBP, a1T4TimesAmpBP);
 		VBox a1VB = new VBox(5);
 		VBox a1T1VB = new VBox(5);
 		VBox a1T2VB = new VBox(5);
 		VBox a1T3VB = new VBox(5);
-		a1VB.getChildren().addAll(a1TitleBP, a1SpeBP, a1AmpBP, a1TrapBP, a1CliBP, a1TimesScoBP, a1TimesAmpBP);
-		a1T1VB.getChildren().addAll(a1T1TitleBP, a1T1SpeBP, a1T1AmpBP, a1T1TrapBP, a1T1CliBP, a1T1TimesScoBP, a1T1TimesAmpBP);
-		a1T2VB.getChildren().addAll(a1T2TitleBP, a1T2SpeBP, a1T2AmpBP, a1T2TrapBP, a1T2CliBP, a1T2TimesScoBP, a1T2TimesAmpBP);
-		a1T3VB.getChildren().addAll(a1T3TitleBP, a1T3SpeBP, a1T3AmpBP, a1T3TrapBP, a1T3CliBP, a1T3TimesScoBP, a1T3TimesAmpBP);
-		all1HB.getChildren().addAll(a1T1VB, a1T2VB, a1T3VB);
+		a1VB.getChildren().addAll(a1TitleBP, a1CyBP, a1SpeBP, a1AmpBP, a1TrapBP, a1CliBP, a1TimesScoBP, a1TimesAmpBP);
+		a1T1VB.getChildren().addAll(a1T1TitleBP, a1T1CyBP, a1T1SpeBP, a1T1AmpBP, a1T1TrapBP, a1T1CliBP, a1T1TimesScoBP, a1T1TimesAmpBP);
+		a1T2VB.getChildren().addAll(a1T2TitleBP, a1T2CyBP, a1T2SpeBP, a1T2AmpBP, a1T2TrapBP, a1T2CliBP, a1T2TimesScoBP, a1T2TimesAmpBP);
+		a1T3VB.getChildren().addAll(a1T3TitleBP, a1T3CyBP, a1T3SpeBP, a1T3AmpBP, a1T3TrapBP, a1T3CliBP, a1T3TimesScoBP, a1T3TimesAmpBP);
+		all1HB.getChildren().addAll(a1VB, a1T1VB, a1T2VB, a1T3VB);
 		all1HB.getChildren().addAll(a1T4VB);
 	}
 	
@@ -2845,6 +2846,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		if(a1AllNum == 8) {
 			a1TitleL = new Label("Allaince 8's Stats");
 		}
+		a1TitleL.setId("smallTitle");
 		double a1T1Cy = a1T1.getAvgCycles();
 		double a1T2Cy = a1T2.getAvgCycles();
 		double a1T3Cy = a1T3.getAvgCycles();
@@ -2925,7 +2927,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a1CliBP.setCenter(a1CliL);
 		a1TimesScoBP.setCenter(a1TimesScoL);
 		a1TimesAmpBP.setCenter(a1TimesAmpL);
-		a1TitleBP.setId("comAllsPlayTitleBP");
+		a1TitleBP.setId("comAllsPlayAllTitleBP");
 		a1CyBP.setId("comAllsPlayStatBP1");
 		a1SpeBP.setId("comAllsPlayStatBP2");
 		a1AmpBP.setId("comAllsPlayStatBP3");
@@ -3123,11 +3125,11 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		VBox a1T1VB = new VBox(5);
 		VBox a1T2VB = new VBox(5);
 		VBox a1T3VB = new VBox(5);
-		a1VB.getChildren().addAll(a1TitleBP, a1SpeBP, a1AmpBP, a1TrapBP, a1CliBP, a1TimesScoBP, a1TimesAmpBP);
-		a1T1VB.getChildren().addAll(a1T1TitleBP, a1T1SpeBP, a1T1AmpBP, a1T1TrapBP, a1T1CliBP, a1T1TimesScoBP, a1T1TimesAmpBP);
-		a1T2VB.getChildren().addAll(a1T2TitleBP, a1T2SpeBP, a1T2AmpBP, a1T2TrapBP, a1T2CliBP, a1T2TimesScoBP, a1T2TimesAmpBP);
-		a1T3VB.getChildren().addAll(a1T3TitleBP, a1T3SpeBP, a1T3AmpBP, a1T3TrapBP, a1T3CliBP, a1T3TimesScoBP, a1T3TimesAmpBP);
-		all1HB.getChildren().addAll(a1T1VB, a1T2VB, a1T3VB);
+		a1VB.getChildren().addAll(a1TitleBP, a1CyBP, a1SpeBP, a1AmpBP, a1TrapBP, a1CliBP, a1TimesScoBP, a1TimesAmpBP);
+		a1T1VB.getChildren().addAll(a1T1TitleBP, a1T1CyBP, a1T1SpeBP, a1T1AmpBP, a1T1TrapBP, a1T1CliBP, a1T1TimesScoBP, a1T1TimesAmpBP);
+		a1T2VB.getChildren().addAll(a1T2TitleBP, a1T2CyBP, a1T2SpeBP, a1T2AmpBP, a1T2TrapBP, a1T2CliBP, a1T2TimesScoBP, a1T2TimesAmpBP);
+		a1T3VB.getChildren().addAll(a1T3TitleBP, a1T3CyBP, a1T3SpeBP, a1T3AmpBP, a1T3TrapBP, a1T3CliBP, a1T3TimesScoBP, a1T3TimesAmpBP);
+		all1HB.getChildren().addAll(a1VB, a1T1VB, a1T2VB, a1T3VB);
 	}
 	
 	public void addCompare2AllHas4thPlayAlls(PlayoffAlliance a2, Team a2T1, Team a2T2, Team a2T3, Team a2T4, int a2AllNum) {
@@ -3156,6 +3158,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		if(a2AllNum == 8) {
 			a2TitleL = new Label("Allaince 8's Stats");
 		}
+		a2TitleL.setId("smallTitle");
 		double a2T1Cy = a2T1.getAvgCycles();
 		double a2T2Cy = a2T2.getAvgCycles();
 		double a2T3Cy = a2T3.getAvgCycles();
@@ -3243,7 +3246,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a2CliBP.setCenter(a2CliL);
 		a2TimesScoBP.setCenter(a2TimesScoL);
 		a2TimesAmpBP.setCenter(a2TimesAmpL);
-		a2TitleBP.setId("comAllsPlayTitleBP");
+		a2TitleBP.setId("comAllsPlayAllTitleBP");
 		a2CyBP.setId("comAllsPlayStatBP1");
 		a2SpeBP.setId("comAllsPlayStatBP2");
 		a2AmpBP.setId("comAllsPlayStatBP3");
@@ -3500,16 +3503,16 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a2T4TimesScoBP.setId("comAllsPlayStatBP6");
 		a2T4TimesAmpBP.setId("comAllsPlayStatBP7");
 		VBox a2T4VB = new VBox(5);
-		a2T4VB.getChildren().addAll(a2T4TitleBP, a2T4SpeBP, a2T4AmpBP, a2T4TrapBP, a2T4CliBP, a2T4TimesScoBP, a2T4TimesAmpBP);
+		a2T4VB.getChildren().addAll(a2T4TitleBP, a2T4CyBP, a2T4SpeBP, a2T4AmpBP, a2T4TrapBP, a2T4CliBP, a2T4TimesScoBP, a2T4TimesAmpBP);
 		VBox a2VB = new VBox(5);
 		VBox a2T1VB = new VBox(5);
 		VBox a2T2VB = new VBox(5);
 		VBox a2T3VB = new VBox(5);
-		a2VB.getChildren().addAll(a2TitleBP, a2SpeBP, a2AmpBP, a2TrapBP, a2CliBP, a2TimesScoBP, a2TimesAmpBP);
-		a2T1VB.getChildren().addAll(a2T1TitleBP, a2T1SpeBP, a2T1AmpBP, a2T1TrapBP, a2T1CliBP, a2T1TimesScoBP, a2T1TimesAmpBP);
-		a2T2VB.getChildren().addAll(a2T2TitleBP, a2T2SpeBP, a2T2AmpBP, a2T2TrapBP, a2T2CliBP, a2T2TimesScoBP, a2T2TimesAmpBP);
-		a2T3VB.getChildren().addAll(a2T3TitleBP, a2T3SpeBP, a2T3AmpBP, a2T3TrapBP, a2T3CliBP, a2T3TimesScoBP, a2T3TimesAmpBP);
-		all2HB.getChildren().addAll(a2T1VB, a2T2VB, a2T3VB);
+		a2VB.getChildren().addAll(a2TitleBP, a2CyBP, a2SpeBP, a2AmpBP, a2TrapBP, a2CliBP, a2TimesScoBP, a2TimesAmpBP);
+		a2T1VB.getChildren().addAll(a2T1TitleBP, a2T1CyBP, a2T1SpeBP, a2T1AmpBP, a2T1TrapBP, a2T1CliBP, a2T1TimesScoBP, a2T1TimesAmpBP);
+		a2T2VB.getChildren().addAll(a2T2TitleBP, a2T2CyBP, a2T2SpeBP, a2T2AmpBP, a2T2TrapBP, a2T2CliBP, a2T2TimesScoBP, a2T2TimesAmpBP);
+		a2T3VB.getChildren().addAll(a2T3TitleBP, a2T3CyBP, a2T3SpeBP, a2T3AmpBP, a2T3TrapBP, a2T3CliBP, a2T3TimesScoBP, a2T3TimesAmpBP);
+		all2HB.getChildren().addAll(a2VB, a2T1VB, a2T2VB, a2T3VB);
 		all2HB.getChildren().addAll(a2T4VB);
 	}
 	
@@ -3540,6 +3543,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		if(a2AllNum == 8) {
 			a2TitleL = new Label("Allaince 8's Stats");
 		}
+		a2TitleL.setId("smallTitle");
 		System.out.println("BoopComAllsPlay6.4.1.1");
 		double a2T1Cy = a2T1.getAvgCycles();
 		double a2T2Cy = a2T2.getAvgCycles();
@@ -3622,7 +3626,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a2CliBP.setCenter(a2CliL);
 		a2TimesScoBP.setCenter(a2TimesScoL);
 		a2TimesAmpBP.setCenter(a2TimesAmpL);
-		a2TitleBP.setId("comAllsPlayTitleBP");
+		a2TitleBP.setId("comAllsPlayAllTitleBP");
 		a2CyBP.setId("comAllsPlayStatBP1");
 		a2SpeBP.setId("comAllsPlayStatBP2");
 		a2AmpBP.setId("comAllsPlayStatBP3");
@@ -3824,11 +3828,11 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		VBox a2T1VB = new VBox(5);
 		VBox a2T2VB = new VBox(5);
 		VBox a2T3VB = new VBox(5);
-		a2VB.getChildren().addAll(a2TitleBP, a2SpeBP, a2AmpBP, a2TrapBP, a2CliBP, a2TimesScoBP, a2TimesAmpBP);
-		a2T1VB.getChildren().addAll(a2T1TitleBP, a2T1SpeBP, a2T1AmpBP, a2T1TrapBP, a2T1CliBP, a2T1TimesScoBP, a2T1TimesAmpBP);
-		a2T2VB.getChildren().addAll(a2T2TitleBP, a2T2SpeBP, a2T2AmpBP, a2T2TrapBP, a2T2CliBP, a2T2TimesScoBP, a2T2TimesAmpBP);
-		a2T3VB.getChildren().addAll(a2T3TitleBP, a2T3SpeBP, a2T3AmpBP, a2T3TrapBP, a2T3CliBP, a2T3TimesScoBP, a2T3TimesAmpBP);
-		all2HB.getChildren().addAll(a2T1VB, a2T2VB, a2T3VB);
+		a2VB.getChildren().addAll(a2TitleBP, a2CyBP, a2SpeBP, a2AmpBP, a2TrapBP, a2CliBP, a2TimesScoBP, a2TimesAmpBP);
+		a2T1VB.getChildren().addAll(a2T1TitleBP, a2T1CyBP, a2T1SpeBP, a2T1AmpBP, a2T1TrapBP, a2T1CliBP, a2T1TimesScoBP, a2T1TimesAmpBP);
+		a2T2VB.getChildren().addAll(a2T2TitleBP, a2T2CyBP, a2T2SpeBP, a2T2AmpBP, a2T2TrapBP, a2T2CliBP, a2T2TimesScoBP, a2T2TimesAmpBP);
+		a2T3VB.getChildren().addAll(a2T3TitleBP, a2T3CyBP, a2T3SpeBP, a2T3AmpBP, a2T3TrapBP, a2T3CliBP, a2T3TimesScoBP, a2T3TimesAmpBP);
+		all2HB.getChildren().addAll(a2VB, a2T1VB, a2T2VB, a2T3VB);
 	}
 	
 	public void addCompare3AllHas4thPlayAlls(PlayoffAlliance a3, Team a3T1, Team a3T2, Team a3T3, Team a3T4, int a3AllNum) {
@@ -3857,6 +3861,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		if(a3AllNum == 8) {
 			a3TitleL = new Label("Allaince 8's Stats");
 		}
+		a3TitleL.setId("smallTitle");
 		double a3T1Cy = a3T1.getAvgCycles();
 		double a3T2Cy = a3T2.getAvgCycles();
 		double a3T3Cy = a3T3.getAvgCycles();
@@ -3944,7 +3949,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a3CliBP.setCenter(a3CliL);
 		a3TimesScoBP.setCenter(a3TimesScoL);
 		a3TimesAmpBP.setCenter(a3TimesAmpL);
-		a3TitleBP.setId("comAllsPlayTitleBP");
+		a3TitleBP.setId("comAllsPlayAllTitleBP");
 		a3CyBP.setId("comAllsPlayStatBP1");
 		a3SpeBP.setId("comAllsPlayStatBP2");
 		a3AmpBP.setId("comAllsPlayStatBP3");
@@ -4241,6 +4246,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		if(a3AllNum == 8) {
 			a3TitleL = new Label("Allaince 8's Stats");
 		}
+		a3TitleL.setId("smallTitle");
 		double a3T1Cy = a3T1.getAvgCycles();
 		double a3T2Cy = a3T2.getAvgCycles();
 		double a3T3Cy = a3T3.getAvgCycles();
@@ -4321,7 +4327,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a3CliBP.setCenter(a3CliL);
 		a3TimesScoBP.setCenter(a3TimesScoL);
 		a3TimesAmpBP.setCenter(a3TimesAmpL);
-		a3TitleBP.setId("comAllsPlayTitleBP");
+		a3TitleBP.setId("comAllsPlayAllTitleBP");
 		a3CyBP.setId("comAllsPlayStatBP1");
 		a3SpeBP.setId("comAllsPlayStatBP2");
 		a3AmpBP.setId("comAllsPlayStatBP3");
