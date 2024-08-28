@@ -158,9 +158,36 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 			alliance1CB = new ComboBox<String>();
 			alliance2CB = new ComboBox<String>();
 			alliance3CB = new ComboBox<String>();
-			addComboBoxItems(alliance1CB);
-			addComboBoxItems(alliance2CB);
-			addComboBoxItems(alliance3CB);
+			int numOfAlls = 0;
+			if(thePOA.getAlliance1() != null) {
+				numOfAlls++;
+			}
+			if(thePOA.getAlliance2() != null) {
+				numOfAlls++;
+			}
+			if(thePOA.getAlliance3() != null) {
+				numOfAlls++;
+			}
+			if(thePOA.getAlliance4() != null) {
+				numOfAlls++;
+			}
+			if(thePOA.getAlliance5() != null) {
+				numOfAlls++;
+			}
+			if(thePOA.getAlliance6() != null) {
+				numOfAlls++;
+			}
+			if(thePOA.getAlliance7() != null) {
+				numOfAlls++;
+			}
+			if(thePOA.getAlliance8() != null) {
+				numOfAlls++;
+			}
+			for(int i = 0; i < numOfAlls; i++) {
+				alliance1CB.getItems().add(Integer.toString(i + 1));
+				alliance2CB.getItems().add(Integer.toString(i + 1));
+				alliance3CB.getItems().add(Integer.toString(i + 1));
+			}
 			BorderPane a1  = new BorderPane();
 			BorderPane a2  = new BorderPane();
 			BorderPane a3  = new BorderPane();
@@ -170,9 +197,9 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 			a1.setCenter(alliance1CB);
 			a2.setCenter(alliance2CB);
 			a3.setCenter(alliance3CB);
-			a1.setId("comAllselBP1");
-			a2.setId("comAllselBP2");
-			a3.setId("comAllselBP3");
+			a1.setId("comAllselPlayBP1");
+			a2.setId("comAllselPlayBP2");
+			a3.setId("comAllselPlayBP3");
 			this.add(new Label("    "), 0, 0);
 			this.add(new Label("    "), 2, 0);
 			this.add(new Label("    "), 4, 0);
@@ -3474,11 +3501,12 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a2T1VB.getChildren().addAll(a2T1TitleBP, a2T1SpeBP, a2T1AmpBP, a2T1TrapBP, a2T1CliBP, a2T1TimesScoBP, a2T1TimesAmpBP);
 		a2T2VB.getChildren().addAll(a2T2TitleBP, a2T2SpeBP, a2T2AmpBP, a2T2TrapBP, a2T2CliBP, a2T2TimesScoBP, a2T2TimesAmpBP);
 		a2T3VB.getChildren().addAll(a2T3TitleBP, a2T3SpeBP, a2T3AmpBP, a2T3TrapBP, a2T3CliBP, a2T3TimesScoBP, a2T3TimesAmpBP);
-		all1HB.getChildren().addAll(a2T1VB, a2T2VB, a2T3VB);
-		all12HB.getChildren().addAll(a2T4VB);
+		all2HB.getChildren().addAll(a2T1VB, a2T2VB, a2T3VB);
+		all22HB.getChildren().addAll(a2T4VB);
 	}
 	
 	public void addCompare2AllNo4thPlayAlls(PlayoffAlliance a2, Team a2T1, Team a2T2, Team a2T3, int a2AllNum) {
+		System.out.println("BoopComAllsPlay6.4.1.0");
 		Label a2TitleL = null;
 		if(a2AllNum == 1) {
 			a2TitleL = new Label("Allaince 1's Stats");
@@ -3504,6 +3532,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		if(a2AllNum == 8) {
 			a2TitleL = new Label("Allaince 8's Stats");
 		}
+		System.out.println("BoopComAllsPlay6.4.1.1");
 		double a2T1Cy = a2T1.getAvgCycles();
 		double a2T2Cy = a2T1.getAvgCycles();
 		double a2T3Cy = a2T1.getAvgCycles();
@@ -3538,6 +3567,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		int a2T2TimesAmp = a2T2.getTimesHumAmp();
 		int a2T3TimesAmp = a2T3.getTimesHumAmp();
 		int a2TimesAmp = a2T1TimesAmp + a2T2TimesAmp + a2T3TimesAmp;
+		System.out.println("BoopComAllsPlay6.4.1.2");
 		Label a2TimesAmpL = new Label(Integer.toString(a2TimesAmp));
 		Label a2TitleCyL = new Label("Avg Cycles");
 		Label a2TitleSpeL = new Label("Avg Speaker");
@@ -3592,9 +3622,11 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a2CliBP.setId("comAllsPlayStatBP5");
 		a2TimesScoBP.setId("comAllsPlayStatBP6");
 		a2TimesAmpBP.setId("comAllsPlayStatBP7");
+		System.out.println("BoopComAllsPlay6.4.1.3");
 		int a2T1TeamNum = a2T1.getTeamNum();
 		int a2T2TeamNum = a2T2.getTeamNum();
 		int a2T3TeamNum = a2T3.getTeamNum();
+		System.out.println("BoopComAllsPlay6.4.1.4");
 		Label a2T1TitleL = new Label(a2T1TeamNum + "'s Stats");
 		Label a2T2TitleL = new Label(a2T2TeamNum + "'s Stats");
 		Label a2T3TitleL = new Label(a2T3TeamNum + "'s Stats");
@@ -3640,6 +3672,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		Label a2T3TitleCliL = new Label("Avg Climb");
 		Label a2T3TitleTimesScoL = new Label("Times Scoure");
 		Label a2T3TitleTimesAmpL = new Label("Times Amp");
+		System.out.println("BoopComAllsPlay6.4.1.5");
 		a2T1CyL.setId("avgStat");
 		a2T1SpeL.setId("avgStat");
 		a2T1AmpL.setId("avgStat");
@@ -3685,6 +3718,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a2T1TitleL.setId("smallTitle");
 		a2T2TitleL.setId("smallTitle");
 		a2T3TitleL.setId("smallTitle");
+		System.out.println("BoopComAllsPlay6.4.1.6");
 		BorderPane a2T1TitleBP = new BorderPane();
 		BorderPane a2T1CyBP = new BorderPane();
 		BorderPane a2T1SpeBP = new BorderPane();
@@ -3786,7 +3820,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a2T1VB.getChildren().addAll(a2T1TitleBP, a2T1SpeBP, a2T1AmpBP, a2T1TrapBP, a2T1CliBP, a2T1TimesScoBP, a2T1TimesAmpBP);
 		a2T2VB.getChildren().addAll(a2T2TitleBP, a2T2SpeBP, a2T2AmpBP, a2T2TrapBP, a2T2CliBP, a2T2TimesScoBP, a2T2TimesAmpBP);
 		a2T3VB.getChildren().addAll(a2T3TitleBP, a2T3SpeBP, a2T3AmpBP, a2T3TrapBP, a2T3CliBP, a2T3TimesScoBP, a2T3TimesAmpBP);
-		all1HB.getChildren().addAll(a2T1VB, a2T2VB, a2T3VB);
+		all2HB.getChildren().addAll(a2T1VB, a2T2VB, a2T3VB);
 	}
 	
 	public void addCompare3AllHas4thPlayAlls(PlayoffAlliance a3, Team a3T1, Team a3T2, Team a3T3, Team a3T4, int a3AllNum) {
@@ -4169,8 +4203,8 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a3T1VB.getChildren().addAll(a3T1TitleBP, a3T1SpeBP, a3T1AmpBP, a3T1TrapBP, a3T1CliBP, a3T1TimesScoBP, a3T1TimesAmpBP);
 		a3T2VB.getChildren().addAll(a3T2TitleBP, a3T2SpeBP, a3T2AmpBP, a3T2TrapBP, a3T2CliBP, a3T2TimesScoBP, a3T2TimesAmpBP);
 		a3T3VB.getChildren().addAll(a3T3TitleBP, a3T3SpeBP, a3T3AmpBP, a3T3TrapBP, a3T3CliBP, a3T3TimesScoBP, a3T3TimesAmpBP);
-		all1HB.getChildren().addAll(a3T1VB, a3T2VB, a3T3VB);
-		all12HB.getChildren().addAll(a3T4VB);
+		all3HB.getChildren().addAll(a3T1VB, a3T2VB, a3T3VB);
+		all32HB.getChildren().addAll(a3T4VB);
 	}
 	
 	public void addCompare3AllNo4thPlayAlls(PlayoffAlliance a3, Team a3T1, Team a3T2, Team a3T3, int a3AllNum) {
@@ -4481,10 +4515,172 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a3T1VB.getChildren().addAll(a3T1TitleBP, a3T1SpeBP, a3T1AmpBP, a3T1TrapBP, a3T1CliBP, a3T1TimesScoBP, a3T1TimesAmpBP);
 		a3T2VB.getChildren().addAll(a3T2TitleBP, a3T2SpeBP, a3T2AmpBP, a3T2TrapBP, a3T2CliBP, a3T2TimesScoBP, a3T2TimesAmpBP);
 		a3T3VB.getChildren().addAll(a3T3TitleBP, a3T3SpeBP, a3T3AmpBP, a3T3TrapBP, a3T3CliBP, a3T3TimesScoBP, a3T3TimesAmpBP);
-		all1HB.getChildren().addAll(a3T1VB, a3T2VB, a3T3VB);
+		all3HB.getChildren().addAll(a3T1VB, a3T2VB, a3T3VB);
 	}
 	
 	public void addCompare1AllHas4thPlayPieChart(PlayoffAlliance a1, Team a1T1, Team a1T2, Team a1T3, Team a1T4, int a1AllNum) {
+		double a1Cy = a1T1.getAvgCycles() + a1T2.getAvgCycles() + a1T3.getAvgCycles() + a1T4.getAvgCycles();
+		double a1Spe = a1T1.getAvgSpe() + a1T2.getAvgSpe() + a1T3.getAvgSpe() + a1T4.getAvgSpe();
+		double a1Amp = a1T1.getAvgAmp() + a1T2.getAvgAmp() + a1T3.getAvgAmp() + a1T4.getAvgAmp();
+		double a1Trap = a1T1.getAvgTrap() + a1T2.getAvgTrap() + a1T3.getAvgTrap() + a1T4.getAvgTrap();
+		double a1Climb = a1T1.getAvgClimb() + a1T2.getAvgClimb() + a1T3.getAvgClimb() + a1T4.getAvgClimb();
+		double a1TimesSco = a1T1.getTimesHumSco() + a1T2.getTimesHumSco() + a1T3.getTimesHumSco() + a1T4.getTimesHumSco();
+		double a1TimesAmp = a1T1.getTimesHumAmp() + a1T2.getTimesHumAmp() + a1T3.getTimesHumAmp() + a1T4.getTimesHumAmp();
+		double a1TotalMatches = a1T1.getTotalMatchesPlayed() + a1T2.getTotalMatchesPlayed() + a1T3.getTotalMatchesPlayed() + a1T4.getTotalMatchesPlayed();
+		//alliance 1 cy pie chart
+		int a1SpeComPer = (int) ((a1Spe/a1Cy) * 100);
+		int a1AmpComPer = (int) ((a1Amp/a1Cy) * 100);
+		int a1TrapComPer = (int) ((a1Trap/a1Cy) * 100);
+		int whoToAdd1 = 1;
+		while(a1SpeComPer + a1AmpComPer + a1TrapComPer != 100) {
+			if(whoToAdd1 == 1) {
+				a1SpeComPer++;
+				whoToAdd1++;
+			}else if(whoToAdd1 == 2) {
+				a1AmpComPer++;
+				whoToAdd1++;
+			}else if(whoToAdd1 == 3){
+				a1TrapComPer++;
+				whoToAdd1 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData1 = FXCollections.observableArrayList(new PieChart.Data("Speaker", a1SpeComPer), new PieChart.Data("Amp", a1AmpComPer), new PieChart.Data("Trap", a1TrapComPer));
+		PieChart a1CyPieC = new PieChart(pieChartData1);
+		a1CyPieC.autosize();
+		a1CyPieC.setMaxSize(300, 300);
+		a1CyPieC.setMinSize(300, 300);
+		a1CyPieC.setLabelsVisible(true);
+		//alliance 1 Hum Player Position
+		int a1TimesScoComPer = (int) ((a1TimesSco/a1TotalMatches));
+		int a1TimesAmpComPer = (int) ((a1TimesAmp/a1TotalMatches));
+		int whoToAdd4 = 1;
+		while(a1TimesScoComPer + a1TimesAmpComPer != 100) {
+			if(whoToAdd4 == 1) {
+				a1TimesScoComPer++;
+				whoToAdd4++;
+			}else if(whoToAdd4 == 2) {
+				a1TimesAmpComPer++;
+				whoToAdd4 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData4 = FXCollections.observableArrayList(new PieChart.Data("Scoure", a1TimesScoComPer), new PieChart.Data("Amp", a1TimesAmpComPer));
+		PieChart a1HumPieC = new PieChart(pieChartData4);
+		a1HumPieC.autosize();
+		a1HumPieC.setMaxSize(300, 300);
+		a1HumPieC.setMinSize(300, 300);
+		a1HumPieC.setLabelsVisible(true);
+		all12HB.getChildren().addAll(a1CyPieC, a1HumPieC);
+	}
+	
+	public void addCompare2AllHas4thPlayPieChart(PlayoffAlliance a2, Team a2T1, Team a2T2, Team a2T3, Team a2T4, int a2AllNum) {
+		double a2Cy = a2T1.getAvgCycles() + a2T2.getAvgCycles() + a2T3.getAvgCycles() + a2T4.getAvgCycles();
+		double a2Spe = a2T1.getAvgSpe() + a2T2.getAvgSpe() + a2T3.getAvgSpe() + a2T4.getAvgSpe();
+		double a2Amp = a2T1.getAvgAmp() + a2T2.getAvgAmp() + a2T3.getAvgAmp() + a2T4.getAvgAmp();
+		double a2Trap = a2T1.getAvgTrap() + a2T2.getAvgTrap() + a2T3.getAvgTrap() + a2T4.getAvgTrap();
+		double a2Climb = a2T1.getAvgClimb() + a2T2.getAvgClimb() + a2T3.getAvgClimb() + a2T4.getAvgClimb();
+		double a2TimesSco = a2T1.getTimesHumSco() + a2T2.getTimesHumSco() + a2T3.getTimesHumSco() + a2T4.getTimesHumSco();
+		double a2TimesAmp = a2T1.getTimesHumAmp() + a2T2.getTimesHumAmp() + a2T3.getTimesHumAmp() + a2T4.getTimesHumAmp();
+		double a2TotalMatches = a2T1.getTotalMatchesPlayed() + a2T2.getTotalMatchesPlayed() + a2T3.getTotalMatchesPlayed() + a2T4.getTotalMatchesPlayed();
+		//alliance 2 cy pie chart
+		int a2SpeComPer = (int) ((a2Spe/a2Cy) * 100);
+		int a2AmpComPer = (int) ((a2Amp/a2Cy) * 100);
+		int a2TrapComPer = (int) ((a2Trap/a2Cy) * 100);
+		int whoToAdd2 = 1;
+		while(a2SpeComPer + a2AmpComPer + a2TrapComPer != 100) {
+			if(whoToAdd2 == 1) {
+				a2SpeComPer++;
+				whoToAdd2++;
+			}else if(whoToAdd2 == 2) {
+				a2AmpComPer++;
+				whoToAdd2++;
+			}else if(whoToAdd2 == 3){
+				a2TrapComPer++;
+				whoToAdd2 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData2 = FXCollections.observableArrayList(new PieChart.Data("Speaker", a2SpeComPer), new PieChart.Data("Amp", a2AmpComPer), new PieChart.Data("Trap", a2TrapComPer));
+		PieChart a2CyPieC = new PieChart(pieChartData2);
+		a2CyPieC.autosize();
+		a2CyPieC.setMaxSize(300, 300);
+		a2CyPieC.setMinSize(300, 300);
+		a2CyPieC.setLabelsVisible(true);
+		//alliance 2 Hum Player Position
+		int a2TimesScoComPer = (int) ((a2TimesSco/a2TotalMatches));
+		int a2TimesAmpComPer = (int) ((a2TimesAmp/a2TotalMatches));
+		int whoToAdd5 = 1;
+		while(a2TimesScoComPer + a2TimesAmpComPer != 100) {
+			if(whoToAdd5 == 1) {
+				a2TimesScoComPer++;
+				whoToAdd5++;
+			}else if(whoToAdd5 == 2) {
+				a2TimesAmpComPer++;
+				whoToAdd5 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData5 = FXCollections.observableArrayList(new PieChart.Data("Scoure", a2TimesScoComPer), new PieChart.Data("Amp", a2TimesAmpComPer));
+		PieChart a2HumPieC = new PieChart(pieChartData5);
+		a2HumPieC.autosize();
+		a2HumPieC.setMaxSize(300, 300);
+		a2HumPieC.setMinSize(300, 300);
+		a2HumPieC.setLabelsVisible(true);
+		all22HB.getChildren().addAll(a2CyPieC, a2HumPieC);
+	}
+	
+	public void addCompare3AllHas4thPlayPieChart(PlayoffAlliance a3, Team a3T1, Team a3T2, Team a3T3, Team a3T4, int a3AllNum) {
+		double a3Cy = a3T1.getAvgCycles() + a3T2.getAvgCycles() + a3T3.getAvgCycles() + a3T4.getAvgCycles();
+		double a3Spe = a3T1.getAvgSpe() + a3T2.getAvgSpe() + a3T3.getAvgSpe() + a3T4.getAvgSpe();
+		double a3Amp = a3T1.getAvgAmp() + a3T2.getAvgAmp() + a3T3.getAvgAmp() + a3T4.getAvgAmp();
+		double a3Trap = a3T1.getAvgTrap() + a3T2.getAvgTrap() + a3T3.getAvgTrap() + a3T4.getAvgTrap();
+		double a3Climb = a3T1.getAvgClimb() + a3T2.getAvgClimb() + a3T3.getAvgClimb() + a3T4.getAvgClimb();
+		double a3TimesSco = a3T1.getTimesHumSco() + a3T2.getTimesHumSco() + a3T3.getTimesHumSco() + a3T4.getTimesHumSco();
+		double a3TimesAmp = a3T1.getTimesHumAmp() + a3T2.getTimesHumAmp() + a3T3.getTimesHumAmp() + a3T4.getTimesHumAmp();
+		double a3TotalMatches = a3T1.getTotalMatchesPlayed() + a3T2.getTotalMatchesPlayed() + a3T3.getTotalMatchesPlayed() + a3T4.getTotalMatchesPlayed();
+		//alliance 3 cy pie chart
+		int a3SpeComPer = (int) ((a3Spe/a3Cy) * 100);
+		int a3AmpComPer = (int) ((a3Amp/a3Cy) * 100);
+		int a3TrapComPer = (int) ((a3Trap/a3Cy) * 100);
+		int whoToAdd3 = 1;
+		while(a3SpeComPer + a3AmpComPer + a3TrapComPer != 100) {
+			if(whoToAdd3 == 1) {
+				a3SpeComPer++;
+				whoToAdd3++;
+			}else if(whoToAdd3 == 2) {
+				a3AmpComPer++;
+				whoToAdd3++;
+			}else if(whoToAdd3 == 3){
+				a3TrapComPer++;
+				whoToAdd3 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData3 = FXCollections.observableArrayList(new PieChart.Data("Speaker", a3SpeComPer), new PieChart.Data("Amp", a3AmpComPer), new PieChart.Data("Trap", a3TrapComPer));
+		PieChart a3CyPieC = new PieChart(pieChartData3);
+		a3CyPieC.autosize();
+		a3CyPieC.setMaxSize(300, 300);
+		a3CyPieC.setMinSize(300, 300);
+		a3CyPieC.setLabelsVisible(true);
+		//alliance 3 Hum Player Position
+		int a3TimesScoComPer = (int) ((a3TimesSco/a3TotalMatches));
+		int a3TimesAmpComPer = (int) ((a3TimesAmp/a3TotalMatches));
+		int whoToAdd6 = 1;
+		while(a3TimesScoComPer + a3TimesAmpComPer != 100) {
+			if(whoToAdd6 == 1) {
+				a3TimesScoComPer++;
+				whoToAdd6++;
+			}else if(whoToAdd6 == 2) {
+				a3TimesAmpComPer++;
+				whoToAdd6 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData6 = FXCollections.observableArrayList(new PieChart.Data("Scoure", a3TimesScoComPer), new PieChart.Data("Amp", a3TimesAmpComPer));
+		PieChart a3HumPieC = new PieChart(pieChartData6);
+		a3HumPieC.autosize();
+		a3HumPieC.setMaxSize(300, 300);
+		a3HumPieC.setMinSize(300, 300);
+		a3HumPieC.setLabelsVisible(true);
+		all32HB.getChildren().addAll(a3CyPieC, a3HumPieC);
+	}
+	
+	public void addCompare1AllNo4thPlayPieChart(PlayoffAlliance a1, Team a1T1, Team a1T2, Team a1T3, int a1AllNum) {
 		double a1Cy = a1T1.getAvgCycles() + a1T2.getAvgCycles() + a1T3.getAvgCycles();
 		double a1Spe = a1T1.getAvgSpe() + a1T2.getAvgSpe() + a1T3.getAvgSpe();
 		double a1Amp = a1T1.getAvgAmp() + a1T2.getAvgAmp() + a1T3.getAvgAmp();
@@ -4535,9 +4731,10 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a1HumPieC.setMaxSize(300, 300);
 		a1HumPieC.setMinSize(300, 300);
 		a1HumPieC.setLabelsVisible(true);
+		all12HB.getChildren().addAll(a1CyPieC, a1HumPieC);
 	}
 	
-	public void addCompare2AllHas4thPlayPieChart(PlayoffAlliance a2, Team a2T1, Team a2T2, Team a2T3, Team a2T4, int a2AllNum) {
+	public void addCompare2AllNo4thPlayPieChart(PlayoffAlliance a2, Team a2T1, Team a2T2, Team a2T3, int a2AllNum) {
 		double a2Cy = a2T1.getAvgCycles() + a2T2.getAvgCycles() + a2T3.getAvgCycles();
 		double a2Spe = a2T1.getAvgSpe() + a2T2.getAvgSpe() + a2T3.getAvgSpe();
 		double a2Amp = a2T1.getAvgAmp() + a2T2.getAvgAmp() + a2T3.getAvgAmp();
@@ -4588,22 +4785,61 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a2HumPieC.setMaxSize(300, 300);
 		a2HumPieC.setMinSize(300, 300);
 		a2HumPieC.setLabelsVisible(true);
-	}
-	
-	public void addCompare3AllHas4thPlayPieChart(PlayoffAlliance a3, Team a3T1, Team a3T2, Team a3T3, Team a3T4, int a3AllNum) {
-		
-	}
-	
-	public void addCompare1AllNo4thPlayPieChart(PlayoffAlliance a1, Team a1T1, Team a1T2, Team a1T3, int a1AllNum) {
-		
-	}
-	
-	public void addCompare2AllNo4thPlayPieChart(PlayoffAlliance a2, Team a2T1, Team a2T2, Team a2T3, int a2AllNum) {
-		
+		all22HB.getChildren().addAll(a2CyPieC, a2HumPieC);
 	}
 	
 	public void addCompare3AllNo4thPlayPieChart(PlayoffAlliance a3, Team a3T1, Team a3T2, Team a3T3, int a3AllNum) {
-		
+		double a3Cy = a3T1.getAvgCycles() + a3T2.getAvgCycles() + a3T3.getAvgCycles();
+		double a3Spe = a3T1.getAvgSpe() + a3T2.getAvgSpe() + a3T3.getAvgSpe();
+		double a3Amp = a3T1.getAvgAmp() + a3T2.getAvgAmp() + a3T3.getAvgAmp();
+		double a3Trap = a3T1.getAvgTrap() + a3T2.getAvgTrap() + a3T3.getAvgTrap();
+		double a3Climb = a3T1.getAvgClimb() + a3T2.getAvgClimb() + a3T3.getAvgClimb();
+		double a3TimesSco = a3T1.getTimesHumSco() + a3T2.getTimesHumSco() + a3T3.getTimesHumSco();
+		double a3TimesAmp = a3T1.getTimesHumAmp() + a3T2.getTimesHumAmp() + a3T3.getTimesHumAmp();
+		double a3TotalMatches = a3T1.getTotalMatchesPlayed() + a3T2.getTotalMatchesPlayed() + a3T3.getTotalMatchesPlayed();
+		//alliance 3 cy pie chart
+		int a3SpeComPer = (int) ((a3Spe/a3Cy) * 100);
+		int a3AmpComPer = (int) ((a3Amp/a3Cy) * 100);
+		int a3TrapComPer = (int) ((a3Trap/a3Cy) * 100);
+		int whoToAdd3 = 1;
+		while(a3SpeComPer + a3AmpComPer + a3TrapComPer != 100) {
+			if(whoToAdd3 == 1) {
+				a3SpeComPer++;
+				whoToAdd3++;
+			}else if(whoToAdd3 == 2) {
+				a3AmpComPer++;
+				whoToAdd3++;
+			}else if(whoToAdd3 == 3){
+				a3TrapComPer++;
+				whoToAdd3 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData3 = FXCollections.observableArrayList(new PieChart.Data("Speaker", a3SpeComPer), new PieChart.Data("Amp", a3AmpComPer), new PieChart.Data("Trap", a3TrapComPer));
+		PieChart a3CyPieC = new PieChart(pieChartData3);
+		a3CyPieC.autosize();
+		a3CyPieC.setMaxSize(300, 300);
+		a3CyPieC.setMinSize(300, 300);
+		a3CyPieC.setLabelsVisible(true);
+		//alliance 3 Hum Player Position
+		int a3TimesScoComPer = (int) ((a3TimesSco/a3TotalMatches));
+		int a3TimesAmpComPer = (int) ((a3TimesAmp/a3TotalMatches));
+		int whoToAdd6 = 1;
+		while(a3TimesScoComPer + a3TimesAmpComPer != 100) {
+			if(whoToAdd6 == 1) {
+				a3TimesScoComPer++;
+				whoToAdd6++;
+			}else if(whoToAdd6 == 2) {
+				a3TimesAmpComPer++;
+				whoToAdd6 = 1;
+			}
+		}
+		ObservableList<PieChart.Data> pieChartData6 = FXCollections.observableArrayList(new PieChart.Data("Scoure", a3TimesScoComPer), new PieChart.Data("Amp", a3TimesAmpComPer));
+		PieChart a3HumPieC = new PieChart(pieChartData6);
+		a3HumPieC.autosize();
+		a3HumPieC.setMaxSize(300, 300);
+		a3HumPieC.setMinSize(300, 300);
+		a3HumPieC.setLabelsVisible(true);
+		all32HB.getChildren().addAll(a3CyPieC, a3HumPieC);
 	}
 	
 	@Override
@@ -4611,6 +4847,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 	public void handle(ActionEvent event) {
 		try {
 			if(event.getSource() == submitPlayB) {
+				System.out.println("BoopComAllsPlay0");
 				Boolean a1Has4th = false;
 				Boolean a2Has4th = false;
 				Boolean a3Has4th = false;
@@ -4621,6 +4858,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 				int a2AllianceNum = 0;
 				int a3AllianceNum = 0;
 				int numOfAlls = 0;
+				System.out.println("BoopComAllsPlay1");
 				if(a1AllianceNumS != null) {
 					a1AllianceNum = Integer.parseInt(a1AllianceNumS);
 				}
@@ -4633,6 +4871,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 				PlayoffAlliance a1 = null;
 				PlayoffAlliance a2 = null;
 				PlayoffAlliance a3 = null;
+				System.out.println("BoopComAllsPlay2");
 				if(a1AllianceNum == 1) {
 					a1 = thePOA.getAlliance1();
 					numOfAlls++;
@@ -4729,6 +4968,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 					a3 = thePOA.getAlliance8();
 					numOfAlls++;
 				}
+				System.out.println("BoopComAllsPlay3");
 				Team a1T1 = null;
 				Team a1T2 = null;
 				Team a1T3 = null;
@@ -4786,34 +5026,76 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 						a3Has4th = true;
 					}
 				}
+				System.out.println("BoopComAllsPlay4");
+				this.add(new Label("    "), 0, 0);
+				this.add(new Label("    "), 2, 0);
+				this.add(new Label("    "), 0, 2);
+				this.add(new Label("    "), 0, 4);
+				this.add(new Label("    "), 0, 6);
+				this.add(new Label("    "), 0, 8);
+				this.add(new Label("    "), 0, 10);
+				this.add(new Label("    "), 0, 12);
+				System.out.println("BoopComAllsPlay5");
 				if(numOfAlls == 2) {
 					if(a1Has4th == true) {
 						addCompare1AllHas4thPlayAlls(a1, a1T1, a1T2, a1T3, a1T4, a1AllianceNum);
+						addCompare1AllHas4thPlayPieChart(a1, a1T1, a1T2, a1T3, a1T4, a1AllianceNum);
 					}else {
 						addCompare1AllNo4thPlayAlls(a1, a1T1, a1T2, a1T3, a1AllianceNum);
+						addCompare1AllNo4thPlayPieChart(a1, a1T1, a1T2, a1T3, a1AllianceNum);
 					}
 					if(a2Has4th == true) {
 						addCompare2AllHas4thPlayAlls(a2, a2T1, a2T2, a2T3, a2T4, a2AllianceNum);
+						addCompare2AllHas4thPlayPieChart(a2, a2T1, a2T2, a2T3, a2T4, a2AllianceNum);
 					}else {
 						addCompare2AllNo4thPlayAlls(a2, a2T1, a2T2, a2T3, a2AllianceNum);
+						addCompare2AllNo4thPlayPieChart(a2, a2T1, a2T2, a2T3, a2AllianceNum);
 					}
+					this.add(all1HB, 1, 1);
+					this.add(all12HB, 1, 3);
+					this.add(all2HB, 1, 5);
+					this.add(all22HB, 1, 7);
 				}else if(numOfAlls == 3) {
+					System.out.println("BoopComAllsPlay6");
 					if(a1Has4th == true) {
+						System.out.println("BoopComAllsPlay6.1");
 						addCompare1AllHas4thPlayAlls(a1, a1T1, a1T2, a1T3, a1T4, a1AllianceNum);
+						addCompare1AllHas4thPlayPieChart(a1, a1T1, a1T2, a1T3, a1T4, a1AllianceNum);
 					}else {
+						System.out.println("BoopComAllsPlay6.2");
 						addCompare1AllNo4thPlayAlls(a1, a1T1, a1T2, a1T3, a1AllianceNum);
+						addCompare1AllNo4thPlayPieChart(a1, a1T1, a1T2, a1T3, a1AllianceNum);
 					}
 					if(a2Has4th == true) {
+						System.out.println("BoopComAllsPlay6.3");
 						addCompare2AllHas4thPlayAlls(a2, a2T1, a2T2, a2T3, a2T4, a2AllianceNum);
+						addCompare2AllHas4thPlayPieChart(a2, a2T1, a2T2, a2T3, a2T4, a2AllianceNum);
 					}else {
+						System.out.println("BoopComAllsPlay6.4");
 						addCompare2AllNo4thPlayAlls(a2, a2T1, a2T2, a2T3, a2AllianceNum);
+						System.out.println("BoopComAllsPlay6.4.2");
+						addCompare2AllNo4thPlayPieChart(a2, a2T1, a2T2, a2T3, a2AllianceNum);
+						System.out.println("BoopComAllsPlay6.4.3");
 					}
 					if(a3Has4th == true) {
-						addCompare3AllHas4thPlayAlls(a3, a3T1, a3T2, a3T3, a2T4, a3AllianceNum);
+						System.out.println("BoopComAllsPlay6.5");
+						addCompare3AllHas4thPlayAlls(a3, a3T1, a3T2, a3T3, a3T4, a3AllianceNum);
+						addCompare3AllHas4thPlayPieChart(a3, a3T1, a3T2, a3T3, a3T4, a3AllianceNum);
 					}else {
-						addCompare3AllNo4thPlayAlls(a3, a3T1, a3T2, a3T3, a2AllianceNum);
+						System.out.println("BoopComAllsPlay6.6");
+						addCompare3AllNo4thPlayAlls(a3, a3T1, a3T2, a3T3, a3AllianceNum);
+						addCompare3AllNo4thPlayPieChart(a3, a3T1, a3T2, a3T3, a3AllianceNum);
 					}
+					System.out.println("BoopComAllsPlay7");
+					this.add(all1HB, 1, 1);
+					this.add(all12HB, 1, 3);
+					this.add(all2HB, 1, 5);
+					this.add(all22HB, 1, 7);
+					this.add(all3HB, 1, 9);
+					this.add(all32HB, 1, 11);
+					System.out.println("BoopComAllsPlay8");
 				}
+				System.out.println("BoopComAllsPlay9");
 			}
 			if (event.getSource() == submitNonB) {
 				this.getChildren().clear();
