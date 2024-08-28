@@ -160,27 +160,35 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 			alliance3CB = new ComboBox<String>();
 			int numOfAlls = 0;
 			if(thePOA.getAlliance1() != null) {
+				System.out.println("BoopComAll0");
 				numOfAlls++;
 			}
 			if(thePOA.getAlliance2() != null) {
+				System.out.println("BoopComAll1");
 				numOfAlls++;
 			}
 			if(thePOA.getAlliance3() != null) {
+				System.out.println("BoopComAll2");
 				numOfAlls++;
 			}
 			if(thePOA.getAlliance4() != null) {
+				System.out.println("BoopComAll3");
 				numOfAlls++;
 			}
 			if(thePOA.getAlliance5() != null) {
+				System.out.println("BoopComAll4");
 				numOfAlls++;
 			}
 			if(thePOA.getAlliance6() != null) {
+				System.out.println("BoopComAll5");
 				numOfAlls++;
 			}
 			if(thePOA.getAlliance7() != null) {
+				System.out.println("BoopComAll6");
 				numOfAlls++;
 			}
 			if(thePOA.getAlliance8() != null) {
+				System.out.println("BoopComAll7");
 				numOfAlls++;
 			}
 			for(int i = 0; i < numOfAlls; i++) {
@@ -2455,8 +2463,8 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 			a1TitleL = new Label("Allaince 8's Stats");
 		}
 		double a1T1Cy = a1T1.getAvgCycles();
-		double a1T2Cy = a1T1.getAvgCycles();
-		double a1T3Cy = a1T1.getAvgCycles();
+		double a1T2Cy = a1T2.getAvgCycles();
+		double a1T3Cy = a1T3.getAvgCycles();
 		double a1T4Cy = a1T4.getAvgCycles();
 		double a1T4Spe = a1T4.getAvgSpe();
 		double a1T4Amp = a1T4.getAvgAmp();
@@ -2467,23 +2475,23 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		double a1Cy = a1T1Cy + a1T2Cy + a1T3Cy + a1T4Cy;
 		Label a1CyL = new Label(Double.toString(a1Cy));
 		double a1T1Spe = a1T1.getAvgSpe();
-		double a1T2Spe = a1T1.getAvgSpe();
-		double a1T3Spe = a1T1.getAvgSpe();
+		double a1T2Spe = a1T2.getAvgSpe();
+		double a1T3Spe = a1T3.getAvgSpe();
 		double a1Spe = a1T1Spe + a1T2Spe + a1T3Spe + a1T4Spe;
 		Label a1SpeL = new Label(Double.toString(a1Spe));
 		double a1T1Amp = a1T1.getAvgAmp();
-		double a1T2Amp = a1T1.getAvgAmp();
-		double a1T3Amp = a1T1.getAvgAmp();
+		double a1T2Amp = a1T2.getAvgAmp();
+		double a1T3Amp = a1T3.getAvgAmp();
 		double a1Amp = a1T1Amp + a1T2Amp + a1T3Amp + a1T4Amp;
 		Label a1AmpL = new Label(Double.toString(a1Amp));
 		double a1T1Trap = a1T1.getAvgTrap();
-		double a1T2Trap = a1T1.getAvgTrap();
-		double a1T3Trap = a1T1.getAvgTrap();
+		double a1T2Trap = a1T2.getAvgTrap();
+		double a1T3Trap = a1T3.getAvgTrap();
 		double a1Trap = a1T1Trap + a1T2Trap + a1T3Trap + a1T4Trap;
 		Label a1TrapL = new Label(Double.toString(a1Trap));
 		double a1T1Cli = a1T1.getAvgClimb();
-		double a1T2Cli = a1T1.getAvgClimb();
-		double a1T3Cli = a1T1.getAvgClimb();
+		double a1T2Cli = a1T2.getAvgClimb();
+		double a1T3Cli = a1T3.getAvgClimb();
 		double a1Cli = a1T1Cli + a1T2Cli + a1T3Cli + a1T4Cli;
 		Label a1CliL = new Label(Double.toString(a1Cli));
 		int a1T1TimesSco = a1T1.getTimesHumSco();
@@ -2808,7 +2816,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a1T2VB.getChildren().addAll(a1T2TitleBP, a1T2SpeBP, a1T2AmpBP, a1T2TrapBP, a1T2CliBP, a1T2TimesScoBP, a1T2TimesAmpBP);
 		a1T3VB.getChildren().addAll(a1T3TitleBP, a1T3SpeBP, a1T3AmpBP, a1T3TrapBP, a1T3CliBP, a1T3TimesScoBP, a1T3TimesAmpBP);
 		all1HB.getChildren().addAll(a1T1VB, a1T2VB, a1T3VB);
-		all12HB.getChildren().addAll(a1T4VB);
+		all1HB.getChildren().addAll(a1T4VB);
 	}
 	
 	public void addCompare1AllNo4thPlayAlls(PlayoffAlliance a1, Team a1T1, Team a1T2, Team a1T3, int a1AllNum) {
@@ -2838,28 +2846,28 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 			a1TitleL = new Label("Allaince 8's Stats");
 		}
 		double a1T1Cy = a1T1.getAvgCycles();
-		double a1T2Cy = a1T1.getAvgCycles();
-		double a1T3Cy = a1T1.getAvgCycles();
+		double a1T2Cy = a1T2.getAvgCycles();
+		double a1T3Cy = a1T3.getAvgCycles();
 		double a1Cy = a1T1Cy + a1T2Cy + a1T3Cy;
 		Label a1CyL = new Label(Double.toString(a1Cy));
 		double a1T1Spe = a1T1.getAvgSpe();
-		double a1T2Spe = a1T1.getAvgSpe();
-		double a1T3Spe = a1T1.getAvgSpe();
+		double a1T2Spe = a1T2.getAvgSpe();
+		double a1T3Spe = a1T3.getAvgSpe();
 		double a1Spe = a1T1Spe + a1T2Spe + a1T3Spe;
 		Label a1SpeL = new Label(Double.toString(a1Spe));
 		double a1T1Amp = a1T1.getAvgAmp();
-		double a1T2Amp = a1T1.getAvgAmp();
-		double a1T3Amp = a1T1.getAvgAmp();
+		double a1T2Amp = a1T2.getAvgAmp();
+		double a1T3Amp = a1T3.getAvgAmp();
 		double a1Amp = a1T1Amp + a1T2Amp + a1T3Amp;
 		Label a1AmpL = new Label(Double.toString(a1Amp));
 		double a1T1Trap = a1T1.getAvgTrap();
-		double a1T2Trap = a1T1.getAvgTrap();
-		double a1T3Trap = a1T1.getAvgTrap();
+		double a1T2Trap = a1T2.getAvgTrap();
+		double a1T3Trap = a1T3.getAvgTrap();
 		double a1Trap = a1T1Trap + a1T2Trap + a1T3Trap;
 		Label a1TrapL = new Label(Double.toString(a1Trap));
 		double a1T1Cli = a1T1.getAvgClimb();
-		double a1T2Cli = a1T1.getAvgClimb();
-		double a1T3Cli = a1T1.getAvgClimb();
+		double a1T2Cli = a1T2.getAvgClimb();
+		double a1T3Cli = a1T3.getAvgClimb();
 		double a1Cli = a1T1Cli + a1T2Cli + a1T3Cli;
 		Label a1CliL = new Label(Double.toString(a1Cli));
 		int a1T1TimesSco = a1T1.getTimesHumSco();
@@ -3149,8 +3157,8 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 			a2TitleL = new Label("Allaince 8's Stats");
 		}
 		double a2T1Cy = a2T1.getAvgCycles();
-		double a2T2Cy = a2T1.getAvgCycles();
-		double a2T3Cy = a2T1.getAvgCycles();
+		double a2T2Cy = a2T2.getAvgCycles();
+		double a2T3Cy = a2T3.getAvgCycles();
 		double a2T4Cy = a2T4.getAvgCycles();
 		double a2T4Spe = a2T4.getAvgSpe();
 		double a2T4Amp = a2T4.getAvgAmp();
@@ -3161,23 +3169,23 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		double a2Cy = a2T1Cy + a2T2Cy + a2T3Cy + a2T4Cy;
 		Label a2CyL = new Label(Double.toString(a2Cy));
 		double a2T1Spe = a2T1.getAvgSpe();
-		double a2T2Spe = a2T1.getAvgSpe();
-		double a2T3Spe = a2T1.getAvgSpe();
+		double a2T2Spe = a2T2.getAvgSpe();
+		double a2T3Spe = a2T3.getAvgSpe();
 		double a2Spe = a2T1Spe + a2T2Spe + a2T3Spe + a2T4Spe;
 		Label a2SpeL = new Label(Double.toString(a2Spe));
 		double a2T1Amp = a2T1.getAvgAmp();
-		double a2T2Amp = a2T1.getAvgAmp();
-		double a2T3Amp = a2T1.getAvgAmp();
+		double a2T2Amp = a2T2.getAvgAmp();
+		double a2T3Amp = a2T3.getAvgAmp();
 		double a2Amp = a2T1Amp + a2T2Amp + a2T3Amp + a2T4Amp;
 		Label a2AmpL = new Label(Double.toString(a2Amp));
 		double a2T1Trap = a2T1.getAvgTrap();
-		double a2T2Trap = a2T1.getAvgTrap();
-		double a2T3Trap = a2T1.getAvgTrap();
+		double a2T2Trap = a2T2.getAvgTrap();
+		double a2T3Trap = a2T3.getAvgTrap();
 		double a2Trap = a2T1Trap + a2T2Trap + a2T3Trap + a2T4Trap;
 		Label a2TrapL = new Label(Double.toString(a2Trap));
 		double a2T1Cli = a2T1.getAvgClimb();
-		double a2T2Cli = a2T1.getAvgClimb();
-		double a2T3Cli = a2T1.getAvgClimb();
+		double a2T2Cli = a2T2.getAvgClimb();
+		double a2T3Cli = a2T3.getAvgClimb();
 		double a2Cli = a2T1Cli + a2T2Cli + a2T3Cli + a2T4Cli;
 		Label a2CliL = new Label(Double.toString(a2Cli));
 		int a2T1TimesSco = a2T1.getTimesHumSco();
@@ -3502,7 +3510,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a2T2VB.getChildren().addAll(a2T2TitleBP, a2T2SpeBP, a2T2AmpBP, a2T2TrapBP, a2T2CliBP, a2T2TimesScoBP, a2T2TimesAmpBP);
 		a2T3VB.getChildren().addAll(a2T3TitleBP, a2T3SpeBP, a2T3AmpBP, a2T3TrapBP, a2T3CliBP, a2T3TimesScoBP, a2T3TimesAmpBP);
 		all2HB.getChildren().addAll(a2T1VB, a2T2VB, a2T3VB);
-		all22HB.getChildren().addAll(a2T4VB);
+		all2HB.getChildren().addAll(a2T4VB);
 	}
 	
 	public void addCompare2AllNo4thPlayAlls(PlayoffAlliance a2, Team a2T1, Team a2T2, Team a2T3, int a2AllNum) {
@@ -3534,28 +3542,28 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		}
 		System.out.println("BoopComAllsPlay6.4.1.1");
 		double a2T1Cy = a2T1.getAvgCycles();
-		double a2T2Cy = a2T1.getAvgCycles();
-		double a2T3Cy = a2T1.getAvgCycles();
+		double a2T2Cy = a2T2.getAvgCycles();
+		double a2T3Cy = a2T3.getAvgCycles();
 		double a2Cy = a2T1Cy + a2T2Cy + a2T3Cy;
 		Label a2CyL = new Label(Double.toString(a2Cy));
 		double a2T1Spe = a2T1.getAvgSpe();
-		double a2T2Spe = a2T1.getAvgSpe();
-		double a2T3Spe = a2T1.getAvgSpe();
+		double a2T2Spe = a2T2.getAvgSpe();
+		double a2T3Spe = a2T3.getAvgSpe();
 		double a2Spe = a2T1Spe + a2T2Spe + a2T3Spe;
 		Label a2SpeL = new Label(Double.toString(a2Spe));
 		double a2T1Amp = a2T1.getAvgAmp();
-		double a2T2Amp = a2T1.getAvgAmp();
-		double a2T3Amp = a2T1.getAvgAmp();
+		double a2T2Amp = a2T2.getAvgAmp();
+		double a2T3Amp = a2T3.getAvgAmp();
 		double a2Amp = a2T1Amp + a2T2Amp + a2T3Amp;
 		Label a2AmpL = new Label(Double.toString(a2Amp));
 		double a2T1Trap = a2T1.getAvgTrap();
-		double a2T2Trap = a2T1.getAvgTrap();
-		double a2T3Trap = a2T1.getAvgTrap();
+		double a2T2Trap = a2T2.getAvgTrap();
+		double a2T3Trap = a2T3.getAvgTrap();
 		double a2Trap = a2T1Trap + a2T2Trap + a2T3Trap;
 		Label a2TrapL = new Label(Double.toString(a2Trap));
 		double a2T1Cli = a2T1.getAvgClimb();
-		double a2T2Cli = a2T1.getAvgClimb();
-		double a2T3Cli = a2T1.getAvgClimb();
+		double a2T2Cli = a2T2.getAvgClimb();
+		double a2T3Cli = a2T3.getAvgClimb();
 		double a2Cli = a2T1Cli + a2T2Cli + a2T3Cli;
 		Label a2CliL = new Label(Double.toString(a2Cli));
 		int a2T1TimesSco = a2T1.getTimesHumSco();
@@ -3826,7 +3834,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 	public void addCompare3AllHas4thPlayAlls(PlayoffAlliance a3, Team a3T1, Team a3T2, Team a3T3, Team a3T4, int a3AllNum) {
 		Label a3TitleL = null;
 		if(a3AllNum == 1) {
-			a3TitleL = new Label("Allaince 1's Stats");
+			a3TitleL = new Label("Alliance 1's Stats");
 		}
 		if(a3AllNum == 2) {
 			a3TitleL = new Label("Allaince 2's Stats");
@@ -3850,8 +3858,8 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 			a3TitleL = new Label("Allaince 8's Stats");
 		}
 		double a3T1Cy = a3T1.getAvgCycles();
-		double a3T2Cy = a3T1.getAvgCycles();
-		double a3T3Cy = a3T1.getAvgCycles();
+		double a3T2Cy = a3T2.getAvgCycles();
+		double a3T3Cy = a3T3.getAvgCycles();
 		double a3T4Cy = a3T4.getAvgCycles();
 		double a3T4Spe = a3T4.getAvgSpe();
 		double a3T4Amp = a3T4.getAvgAmp();
@@ -4194,17 +4202,17 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a3T4TimesScoBP.setId("comAllsPlayStatBP6");
 		a3T4TimesAmpBP.setId("comAllsPlayStatBP7");
 		VBox a3T4VB = new VBox(5);
-		a3T4VB.getChildren().addAll(a3T4TitleBP, a3T4SpeBP, a3T4AmpBP, a3T4TrapBP, a3T4CliBP, a3T4TimesScoBP, a3T4TimesAmpBP);
+		a3T4VB.getChildren().addAll(a3T4TitleBP, a3T4CyBP, a3T4SpeBP, a3T4AmpBP, a3T4TrapBP, a3T4CliBP, a3T4TimesScoBP, a3T4TimesAmpBP);
 		VBox a3VB = new VBox(5);
 		VBox a3T1VB = new VBox(5);
 		VBox a3T2VB = new VBox(5);
 		VBox a3T3VB = new VBox(5);
-		a3VB.getChildren().addAll(a3TitleBP, a3SpeBP, a3AmpBP, a3TrapBP, a3CliBP, a3TimesScoBP, a3TimesAmpBP);
-		a3T1VB.getChildren().addAll(a3T1TitleBP, a3T1SpeBP, a3T1AmpBP, a3T1TrapBP, a3T1CliBP, a3T1TimesScoBP, a3T1TimesAmpBP);
-		a3T2VB.getChildren().addAll(a3T2TitleBP, a3T2SpeBP, a3T2AmpBP, a3T2TrapBP, a3T2CliBP, a3T2TimesScoBP, a3T2TimesAmpBP);
-		a3T3VB.getChildren().addAll(a3T3TitleBP, a3T3SpeBP, a3T3AmpBP, a3T3TrapBP, a3T3CliBP, a3T3TimesScoBP, a3T3TimesAmpBP);
-		all3HB.getChildren().addAll(a3T1VB, a3T2VB, a3T3VB);
-		all32HB.getChildren().addAll(a3T4VB);
+		a3VB.getChildren().addAll(a3TitleBP, a3CyBP, a3SpeBP, a3AmpBP, a3TrapBP, a3CliBP, a3TimesScoBP, a3TimesAmpBP);
+		a3T1VB.getChildren().addAll(a3T1TitleBP, a3T1CyBP, a3T1SpeBP, a3T1AmpBP, a3T1TrapBP, a3T1CliBP, a3T1TimesScoBP, a3T1TimesAmpBP);
+		a3T2VB.getChildren().addAll(a3T2TitleBP, a3T2CyBP, a3T2SpeBP, a3T2AmpBP, a3T2TrapBP, a3T2CliBP, a3T2TimesScoBP, a3T2TimesAmpBP);
+		a3T3VB.getChildren().addAll(a3T3TitleBP, a3T3CyBP, a3T3SpeBP, a3T3AmpBP, a3T3TrapBP, a3T3CliBP, a3T3TimesScoBP, a3T3TimesAmpBP);
+		all3HB.getChildren().addAll(a3VB, a3T1VB, a3T2VB, a3T3VB);
+		all3HB.getChildren().addAll(a3T4VB);
 	}
 	
 	public void addCompare3AllNo4thPlayAlls(PlayoffAlliance a3, Team a3T1, Team a3T2, Team a3T3, int a3AllNum) {
@@ -4234,28 +4242,28 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 			a3TitleL = new Label("Allaince 8's Stats");
 		}
 		double a3T1Cy = a3T1.getAvgCycles();
-		double a3T2Cy = a3T1.getAvgCycles();
-		double a3T3Cy = a3T1.getAvgCycles();
+		double a3T2Cy = a3T2.getAvgCycles();
+		double a3T3Cy = a3T3.getAvgCycles();
 		double a3Cy = a3T1Cy + a3T2Cy + a3T3Cy;
 		Label a3CyL = new Label(Double.toString(a3Cy));
 		double a3T1Spe = a3T1.getAvgSpe();
-		double a3T2Spe = a3T1.getAvgSpe();
-		double a3T3Spe = a3T1.getAvgSpe();
+		double a3T2Spe = a3T2.getAvgSpe();
+		double a3T3Spe = a3T3.getAvgSpe();
 		double a3Spe = a3T1Spe + a3T2Spe + a3T3Spe;
 		Label a3SpeL = new Label(Double.toString(a3Spe));
 		double a3T1Amp = a3T1.getAvgAmp();
-		double a3T2Amp = a3T1.getAvgAmp();
-		double a3T3Amp = a3T1.getAvgAmp();
+		double a3T2Amp = a3T2.getAvgAmp();
+		double a3T3Amp = a3T3.getAvgAmp();
 		double a3Amp = a3T1Amp + a3T2Amp + a3T3Amp;
 		Label a3AmpL = new Label(Double.toString(a3Amp));
 		double a3T1Trap = a3T1.getAvgTrap();
-		double a3T2Trap = a3T1.getAvgTrap();
-		double a3T3Trap = a3T1.getAvgTrap();
+		double a3T2Trap = a3T2.getAvgTrap();
+		double a3T3Trap = a3T3.getAvgTrap();
 		double a3Trap = a3T1Trap + a3T2Trap + a3T3Trap;
 		Label a3TrapL = new Label(Double.toString(a3Trap));
 		double a3T1Cli = a3T1.getAvgClimb();
-		double a3T2Cli = a3T1.getAvgClimb();
-		double a3T3Cli = a3T1.getAvgClimb();
+		double a3T2Cli = a3T2.getAvgClimb();
+		double a3T3Cli = a3T3.getAvgClimb();
 		double a3Cli = a3T1Cli + a3T2Cli + a3T3Cli;
 		Label a3CliL = new Label(Double.toString(a3Cli));
 		int a3T1TimesSco = a3T1.getTimesHumSco();
@@ -4511,11 +4519,11 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		VBox a3T1VB = new VBox(5);
 		VBox a3T2VB = new VBox(5);
 		VBox a3T3VB = new VBox(5);
-		a3VB.getChildren().addAll(a3TitleBP, a3SpeBP, a3AmpBP, a3TrapBP, a3CliBP, a3TimesScoBP, a3TimesAmpBP);
-		a3T1VB.getChildren().addAll(a3T1TitleBP, a3T1SpeBP, a3T1AmpBP, a3T1TrapBP, a3T1CliBP, a3T1TimesScoBP, a3T1TimesAmpBP);
-		a3T2VB.getChildren().addAll(a3T2TitleBP, a3T2SpeBP, a3T2AmpBP, a3T2TrapBP, a3T2CliBP, a3T2TimesScoBP, a3T2TimesAmpBP);
-		a3T3VB.getChildren().addAll(a3T3TitleBP, a3T3SpeBP, a3T3AmpBP, a3T3TrapBP, a3T3CliBP, a3T3TimesScoBP, a3T3TimesAmpBP);
-		all3HB.getChildren().addAll(a3T1VB, a3T2VB, a3T3VB);
+		a3VB.getChildren().addAll(a3TitleBP, a3CyBP, a3SpeBP, a3AmpBP, a3TrapBP, a3CliBP, a3TimesScoBP, a3TimesAmpBP);
+		a3T1VB.getChildren().addAll(a3T1TitleBP, a3T1CyBP, a3T1SpeBP, a3T1AmpBP, a3T1TrapBP, a3T1CliBP, a3T1TimesScoBP, a3T1TimesAmpBP);
+		a3T2VB.getChildren().addAll(a3T2TitleBP, a3T2CyBP, a3T2SpeBP, a3T2AmpBP, a3T2TrapBP, a3T2CliBP, a3T2TimesScoBP, a3T2TimesAmpBP);
+		a3T3VB.getChildren().addAll(a3T3TitleBP, a3T3CyBP, a3T3SpeBP, a3T3AmpBP, a3T3TrapBP, a3T3CliBP, a3T3TimesScoBP, a3T3TimesAmpBP);
+		all3HB.getChildren().addAll(a3VB, a3T1VB, a3T2VB, a3T3VB);
 	}
 	
 	public void addCompare1AllHas4thPlayPieChart(PlayoffAlliance a1, Team a1T1, Team a1T2, Team a1T3, Team a1T4, int a1AllNum) {
@@ -4569,7 +4577,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a1HumPieC.setMaxSize(300, 300);
 		a1HumPieC.setMinSize(300, 300);
 		a1HumPieC.setLabelsVisible(true);
-		all12HB.getChildren().addAll(a1CyPieC, a1HumPieC);
+		all1HB.getChildren().addAll(a1CyPieC, a1HumPieC);
 	}
 	
 	public void addCompare2AllHas4thPlayPieChart(PlayoffAlliance a2, Team a2T1, Team a2T2, Team a2T3, Team a2T4, int a2AllNum) {
@@ -4623,7 +4631,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a2HumPieC.setMaxSize(300, 300);
 		a2HumPieC.setMinSize(300, 300);
 		a2HumPieC.setLabelsVisible(true);
-		all22HB.getChildren().addAll(a2CyPieC, a2HumPieC);
+		all2HB.getChildren().addAll(a2CyPieC, a2HumPieC);
 	}
 	
 	public void addCompare3AllHas4thPlayPieChart(PlayoffAlliance a3, Team a3T1, Team a3T2, Team a3T3, Team a3T4, int a3AllNum) {
@@ -4677,7 +4685,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a3HumPieC.setMaxSize(300, 300);
 		a3HumPieC.setMinSize(300, 300);
 		a3HumPieC.setLabelsVisible(true);
-		all32HB.getChildren().addAll(a3CyPieC, a3HumPieC);
+		all3HB.getChildren().addAll(a3CyPieC, a3HumPieC);
 	}
 	
 	public void addCompare1AllNo4thPlayPieChart(PlayoffAlliance a1, Team a1T1, Team a1T2, Team a1T3, int a1AllNum) {
@@ -4731,7 +4739,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a1HumPieC.setMaxSize(300, 300);
 		a1HumPieC.setMinSize(300, 300);
 		a1HumPieC.setLabelsVisible(true);
-		all12HB.getChildren().addAll(a1CyPieC, a1HumPieC);
+		all1HB.getChildren().addAll(a1CyPieC, a1HumPieC);
 	}
 	
 	public void addCompare2AllNo4thPlayPieChart(PlayoffAlliance a2, Team a2T1, Team a2T2, Team a2T3, int a2AllNum) {
@@ -4785,7 +4793,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a2HumPieC.setMaxSize(300, 300);
 		a2HumPieC.setMinSize(300, 300);
 		a2HumPieC.setLabelsVisible(true);
-		all22HB.getChildren().addAll(a2CyPieC, a2HumPieC);
+		all2HB.getChildren().addAll(a2CyPieC, a2HumPieC);
 	}
 	
 	public void addCompare3AllNo4thPlayPieChart(PlayoffAlliance a3, Team a3T1, Team a3T2, Team a3T3, int a3AllNum) {
@@ -4839,7 +4847,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		a3HumPieC.setMaxSize(300, 300);
 		a3HumPieC.setMinSize(300, 300);
 		a3HumPieC.setLabelsVisible(true);
-		all32HB.getChildren().addAll(a3CyPieC, a3HumPieC);
+		all3HB.getChildren().addAll(a3CyPieC, a3HumPieC);
 	}
 	
 	@Override
@@ -4848,6 +4856,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 		try {
 			if(event.getSource() == submitPlayB) {
 				System.out.println("BoopComAllsPlay0");
+				this.getChildren().clear();
 				Boolean a1Has4th = false;
 				Boolean a2Has4th = false;
 				Boolean a3Has4th = false;
@@ -4871,10 +4880,11 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 				PlayoffAlliance a1 = null;
 				PlayoffAlliance a2 = null;
 				PlayoffAlliance a3 = null;
-				System.out.println("BoopComAllsPlay2");
+				System.out.println("BoopComAllsPlay2" + a1AllianceNum + a2AllianceNum + a3AllianceNum);
 				if(a1AllianceNum == 1) {
 					a1 = thePOA.getAlliance1();
 					numOfAlls++;
+					System.out.println("BoopComAllsPlay2.1");
 				}
 				if(a1AllianceNum == 2) {
 					a1 = thePOA.getAlliance2();
@@ -4915,6 +4925,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 				if(a2AllianceNum == 3) {
 					a2 = thePOA.getAlliance3();
 					numOfAlls++;
+					System.out.println("BoopComAllsPlay2.2");
 				}
 				if(a2AllianceNum == 4) {
 					a2 = thePOA.getAlliance4();
@@ -4951,6 +4962,7 @@ public class compareAlliancesTab extends GridPane implements EventHandler<Action
 				if(a3AllianceNum == 4) {
 					a3 = thePOA.getAlliance4();
 					numOfAlls++;
+					System.out.println("BoopComAllsPlay2.3");
 				}
 				if(a3AllianceNum == 5) {
 					a3 = thePOA.getAlliance5();

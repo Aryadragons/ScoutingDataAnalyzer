@@ -909,6 +909,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		team31 = Integer.parseInt(team31S);
 		team32 = Integer.parseInt(team32S);
 		System.out.println("BoopPlay5");
+		System.out.println("BoopPlay5.1.0" + teamsOnA2);
 		if(team1 != 0) {
 			teamsOnA1++;
 			team1T = mainTeamList.getATeam(team1);
@@ -921,6 +922,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 			teamsOnA1++;
 			team3T = mainTeamList.getATeam(team3);
 		}
+		System.out.println("BoopPlay5.1.1" + teamsOnA2);
 		if(team4 != 0) {
 			teamsOnA2++;
 			team4T = mainTeamList.getATeam(team4);
@@ -934,8 +936,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		if(team6 != 0) {
 			teamsOnA2++;
 			team6T = mainTeamList.getATeam(team6);
-			System.out.println("BoopPlay5.3 A2:" + teamsOnA2++);
+			System.out.println("BoopPlay5.3 A2:" + teamsOnA2);
 		}
+		System.out.println("BoopPlay5.1.1" + teamsOnA2);
 		if(team7 != 0) {
 			teamsOnA3++;
 			team7T = mainTeamList.getATeam(team7);
@@ -1054,6 +1057,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		if(teamsOnA1 == 1) {
 			thePOA.setAlliance1(team1T);
 		}
+		System.out.println("BoopComAll0" + teamsOnA2);
 		if(teamsOnA2 == 4) {
 			thePOA.setAlliance2(team4T, team5T, team6T, team26T);
 		}
@@ -1139,7 +1143,10 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		if(teamsOnA8 == 1) {
 			thePOA.setAlliance8(team22T);
 		}
-		System.out.println("BoopPlay7");	
+		System.out.println("BoopPlay7");
+		if(thePOA.getAlliance2() == null) {
+			System.out.println("BoopComAll0");
+		}
 	}
 	
 	private void sortListOfTeamNums() {
@@ -1299,6 +1306,9 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	private void makeCompareAllinces() {
 		compareAlliancesTab comAlliances;
 		if(thePOA.getAlliance1() != null) {
+			if(thePOA.getAlliance2() == null) {
+				System.out.println("BoopComAll0");
+			}
 			comAlliances = new compareAlliancesTab(true, listOfTeamNumsSorted, mainTeamList, thePOA, fileDTDL, fileDTCL);
 		}else {
 			comAlliances = new compareAlliancesTab(false, listOfTeamNumsSorted, mainTeamList, thePOA, fileDTDL, fileDTCL);
