@@ -5,6 +5,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 
 public class findBestTeamTab extends GridPane {
 	
@@ -20,8 +21,10 @@ public class findBestTeamTab extends GridPane {
 	private ComboBox<String> range5CB;
 	private ComboBox<String> numOfTeamsCB;
 	private Button submitB;
+	private TeamList theTL;
 	
-	public findBestTeamTab() {
+	public findBestTeamTab(TeamList imTL) {
+		theTL = imTL;
 		Label mect1L = new Label("First Meterict to Sort on");
 		Label mect2L = new Label("Second Meterict to Sort on");
 		Label mect3L = new Label("Third Meterict to Sort on");
@@ -33,15 +36,15 @@ public class findBestTeamTab extends GridPane {
 		mect4L.setId("smallTitle");
 		mect5L.setId("smallTitle");
 		firstMetCB = new ComboBox<String>();
-		firstMetCB.getItems().addAll("Cycles", "Auto", "Speckers", "Amp", "Trap", "Climb", "High Notes");
+		firstMetCB.getItems().addAll("Cycles", "Speckers", "Amp", "Trap", "Climb", "High Notes");
 		secondMetCB = new ComboBox<String>();
-		secondMetCB.getItems().addAll("Cycles", "Auto", "Specker", "Amp", "Trap", "Climb", "High Notes");
+		secondMetCB.getItems().addAll("Cycles", "Specker", "Amp", "Trap", "Climb", "High Notes");
 		thirdMetCB = new ComboBox<String>();
-		thirdMetCB.getItems().addAll("Cycles", "Auto", "Specker", "Amp", "Trap", "Climb", "High Notes");
+		thirdMetCB.getItems().addAll("Cycles", "Specker", "Amp", "Trap", "Climb", "High Notes");
 		fourthMetCB = new ComboBox<String>();
-		fourthMetCB.getItems().addAll("Cycles", "Auto", "Specker", "Amp", "Trap", "Climb", "High Notes");
+		fourthMetCB.getItems().addAll("Cycles", "Specker", "Amp", "Trap", "Climb", "High Notes");
 		fifthMetCB = new ComboBox<String>();
-		fifthMetCB.getItems().addAll("Cycles", "Auto", "Specker", "Amp", "Trap", "Climb", "High Notes");
+		fifthMetCB.getItems().addAll("Cycles", "Specker", "Amp", "Trap", "Climb", "High Notes");
 		BorderPane mect1BP = new BorderPane();
 		BorderPane mect2BP = new BorderPane();
 		BorderPane mect3BP = new BorderPane();
@@ -114,16 +117,102 @@ public class findBestTeamTab extends GridPane {
 		range3BP.setId("findBestTeamSelRangeBP");
 		range4BP.setId("findBestTeamSelRangeBP");
 		range5BP.setId("findBestTeamSelRangeBP");
+		this.add(range1BP, 1, 3);
+		this.add(range2BP, 3, 3);
+		this.add(range3BP, 5, 3);
+		this.add(range4BP, 7, 3);
+		this.add(range5BP, 9, 3);
 		Label numOfTeamsL = new Label("How Many teams");
 		numOfTeamsL.setId("smallTitle");
 		numOfTeamsCB = new ComboBox<String>();
-		numOfTeamsCB
+		numOfTeamsCB.getItems().addAll("5", "10", "15", "20", "25", "30", "35", "40");
+		BorderPane numOfTeamsBP = new BorderPane();
+		numOfTeamsBP.setTop(numOfTeamsL);
+		numOfTeamsBP.setCenter(numOfTeamsCB);
+		numOfTeamsBP.setId("findBestTeamSelNumOfTeamBP");
+		this.add(numOfTeamsBP, 1, 5);
 		//Adding in the Button
 		submitB = new Button("Submit");
-		this.add(submitB, 1, 5);
+		this.add(submitB, 1, 7);
 	}
 	
-	public void findBestTeams(int numOfTeams) {
+	public TeamList findBestTeams(int numOfTeams, int cyPr, int ampPr, int spePr, int trapPr, int climbPr, int highNotePr) {
+		TeamList sortedTL = new TeamList();
+		return null;
+	}
+	
+	public void displayBestTeams(int numOfTeams, TeamList sortedTL, int cyPr, int ampPr, int spePr, int trapPr, int climbPr, int highNotePr) {
 		
+		if(numOfTeams == 10) {
+			Team tempT = sortedTL.listOfTeams.get(0);
+			int teamNum = tempT.getTeamNum();
+			double cy = tempT.getAvgCycles();
+			double spe = tempT.getAvgSpe();
+			double amp = tempT.getAvgAmp();
+			double trap = tempT.getAvgTrap();
+			double climb = tempT.getAvgClimb();
+			double highN = tempT.getHumAmpNotes();
+			Label teamNumL = new Label(Integer.toString(teamNum));
+			Label cyL = new Label(Double.toString(cy));
+			Label speL = new Label(Double.toString(spe));
+			Label ampL = new Label(Double.toString(amp));
+			Label trapL = new Label(Double.toString(trap));
+			Label climbL = new Label(Double.toString(climb));
+			Label highNL = new Label(Double.toString(highN));
+			teamNumL.setId("avgStat");
+			cyL.setId("avgStat");
+			speL.setId("avgStat");
+			ampL.setId("avgStat");
+			trapL.setId("avgStat");
+			climbL.setId("avgStat");
+			highNL.setId("avgStat");
+			Label teamNumTitleL = new Label("Team Num");
+			Label cyTitleL = new Label("Avg Cycles");
+			Label speTitleL = new Label("Avg Speaker");
+			Label ampTitleL = new Label("Avg Amp");
+			Label trapTitleL = new Label("Avg Trap");
+			Label climbTitleL = new Label("Avg CLimb");
+			Label highNTitleL = new Label("Avg High Notes");
+			teamNumTitleL.setId("smallTitle");
+			cyTitleL.setId("smallTitle");
+			speTitleL.setId("smallTitle");
+			ampTitleL.setId("smallTitle");
+			trapTitleL.setId("smallTitle");
+			climbTitleL.setId("smallTitle");
+			highNTitleL.setId("smallTitle");
+			BorderPane teamNumBP = new BorderPane();
+			BorderPane cyBP = new BorderPane();
+			BorderPane speBP = new BorderPane();
+			BorderPane ampBP = new BorderPane();
+			BorderPane trapBP = new BorderPane();
+			BorderPane climbBP = new BorderPane();
+			BorderPane highNBP = new BorderPane();
+			teamNumBP.setTop(teamNumTitleL);
+			cyBP.setTop(cyTitleL);
+			speBP.setTop(speTitleL);
+			ampBP.setTop(ampTitleL);
+			trapBP.setTop(trapTitleL);
+			climbBP.setTop(climbTitleL);
+			highNBP.setTop(highNTitleL);
+			teamNumBP.setCenter(teamNumL);
+			cyBP.setCenter(cyL);
+			speBP.setCenter(speL);
+			ampBP.setCenter(ampL);
+			trapBP.setCenter(trapL);
+			climbBP.setCenter(climbL);
+			highNBP.setCenter(highNL);
+			teamNumBP.setId("findBestTeamStatBP1");
+			cyBP.setId("findBestTeamStatBP2");
+			speBP.setId("findBestTeamStatBP3");
+			ampBP.setId("findBestTeamStatBP4");
+			trapBP.setId("findBestTeamStatBP5");
+			climbBP.setId("findBestTeamStatBP6");
+			highNBP.setId("findBestTeamStatBP7");
+			VBox teamVB = new VBox(5);
+			teamVB.getChildren().addAll(teamNumBP, cyBP, speBP, ampBP, trapBP, climbBP, highNBP);
+			BorderPane teamBP = new BorderPane();
+			teamBP.setCenter(teamVB);
+			teamBP.setId("findBestTeamStatAllBP1");
+		}
 	}
 }
