@@ -1,5 +1,7 @@
 package application;
 
+import java.util.List;
+
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -137,7 +139,21 @@ public class findBestTeamTab extends GridPane {
 	}
 	
 	public TeamList findBestTeams(int numOfTeams, int cyPr, int ampPr, int spePr, int trapPr, int climbPr, int highNotePr) {
-		TeamList sortedTL = new TeamList();
+		private List<Integer> listOfTeamNumsSorted;
+		listOfTeamNumsSorted.clear();
+		for (int i = 0; i < 80; i++) {
+			listOfTeamNumsSorted.add(null);
+		}
+		int place = 0;
+		for (int i = 0; i < listOfTeamNums.size(); i++) {
+			place = 0;
+			for(int e = 0; e < listOfTeamNums.size(); e++) {
+				if (listOfTeamNums.get(i) > listOfTeamNums.get(e)) {
+					place++;
+				}
+			}
+			listOfTeamNumsSorted.set(place, listOfTeamNums.get(i));
+		}
 		return null;
 	}
 	
@@ -495,6 +511,23 @@ public class findBestTeamTab extends GridPane {
 		BorderPane team5teamBP = new BorderPane();
 		team5teamBP.setCenter(team5teamVB);
 		team5teamBP.setId("findBestTeamStatAllBP1");
+		this.add(new Label("    "), 0, 0);
+		this.add(new Label("    "), 2, 0);
+		this.add(new Label("    "), 4, 0);
+		this.add(new Label("    "), 6, 0);
+		this.add(new Label("    "), 8, 0);
+		this.add(new Label("    "), 0, 2);
+		this.add(new Label("    "), 0, 4);
+		this.add(new Label("    "), 0, 6);
+		this.add(new Label("    "), 0, 8);
+		this.add(new Label("    "), 0, 10);
+		this.add(new Label("    "), 0, 12);
+		this.add(new Label("    "), 0, 14);
+		this.add(team1teamBP, 1, 1);
+		this.add(team2teamBP, 3, 1);
+		this.add(team3teamBP, 5, 1);
+		this.add(team4teamBP, 7, 1);
+		this.add(team5teamBP, 9, 1);
 		if(numOfTeams == 10) {
 			//team 6
 			tempT = sortedTL.listOfTeams.get(5);
@@ -846,10 +879,15 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team10teamBP = new BorderPane();
 			team10teamBP.setCenter(team10teamVB);
 			team10teamBP.setId("findBestTeamStatAllBP1");
+			this.add(team6teamBP, 1, 3);
+			this.add(team7teamBP, 3, 3);
+			this.add(team8teamBP, 5, 3);
+			this.add(team9teamBP, 7, 3);
+			this.add(team10teamBP, 9, 3);
 		}
 		if(numOfTeams == 15) {
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 11
+			tempT = sortedTL.listOfTeams.get(10);
 			int team11teamNum = tempT.getTeamNum();
 			double team11cy = tempT.getAvgCycles();
 			double team11spe = tempT.getAvgSpe();
@@ -918,8 +956,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team11teamBP = new BorderPane();
 			team11teamBP.setCenter(team11teamVB);
 			team11teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 12
+			tempT = sortedTL.listOfTeams.get(11);
 			int team12teamNum = tempT.getTeamNum();
 			double team12cy = tempT.getAvgCycles();
 			double team12spe = tempT.getAvgSpe();
@@ -988,8 +1026,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team12teamBP = new BorderPane();
 			team12teamBP.setCenter(team12teamVB);
 			team12teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 13
+			tempT = sortedTL.listOfTeams.get(12);
 			int team13teamNum = tempT.getTeamNum();
 			double team13cy = tempT.getAvgCycles();
 			double team13spe = tempT.getAvgSpe();
@@ -1058,8 +1096,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team13teamBP = new BorderPane();
 			team13teamBP.setCenter(team13teamVB);
 			team13teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 14
+			tempT = sortedTL.listOfTeams.get(13);
 			int team14teamNum = tempT.getTeamNum();
 			double team14cy = tempT.getAvgCycles();
 			double team14spe = tempT.getAvgSpe();
@@ -1128,8 +1166,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team14teamBP = new BorderPane();
 			team14teamBP.setCenter(team14teamVB);
 			team14teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 15
+			tempT = sortedTL.listOfTeams.get(14);
 			int team15teamNum = tempT.getTeamNum();
 			double team15cy = tempT.getAvgCycles();
 			double team15spe = tempT.getAvgSpe();
@@ -1198,10 +1236,15 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team15teamBP = new BorderPane();
 			team15teamBP.setCenter(team15teamVB);
 			team15teamBP.setId("findBestTeamStatAllBP1");
+			this.add(team11teamBP, 1, 5);
+			this.add(team12teamBP, 3, 5);
+			this.add(team13teamBP, 5, 5);
+			this.add(team14teamBP, 7, 5);
+			this.add(team15teamBP, 9, 5);
 		}
 		if(numOfTeams == 20) {
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 16
+			tempT = sortedTL.listOfTeams.get(15);
 			int team16teamNum = tempT.getTeamNum();
 			double team16cy = tempT.getAvgCycles();
 			double team16spe = tempT.getAvgSpe();
@@ -1270,8 +1313,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team16teamBP = new BorderPane();
 			team16teamBP.setCenter(team16teamVB);
 			team16teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 17
+			tempT = sortedTL.listOfTeams.get(16);
 			int team17teamNum = tempT.getTeamNum();
 			double team17cy = tempT.getAvgCycles();
 			double team17spe = tempT.getAvgSpe();
@@ -1340,8 +1383,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team17teamBP = new BorderPane();
 			team17teamBP.setCenter(team17teamVB);
 			team17teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 18
+			tempT = sortedTL.listOfTeams.get(17);
 			int team18teamNum = tempT.getTeamNum();
 			double team18cy = tempT.getAvgCycles();
 			double team18spe = tempT.getAvgSpe();
@@ -1410,8 +1453,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team18teamBP = new BorderPane();
 			team18teamBP.setCenter(team18teamVB);
 			team18teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 19
+			tempT = sortedTL.listOfTeams.get(18);
 			int team19teamNum = tempT.getTeamNum();
 			double team19cy = tempT.getAvgCycles();
 			double team19spe = tempT.getAvgSpe();
@@ -1480,8 +1523,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team19teamBP = new BorderPane();
 			team19teamBP.setCenter(team19teamVB);
 			team19teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 20
+			tempT = sortedTL.listOfTeams.get(19);
 			int team20teamNum = tempT.getTeamNum();
 			double team20cy = tempT.getAvgCycles();
 			double team20spe = tempT.getAvgSpe();
@@ -1550,10 +1593,15 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team20teamBP = new BorderPane();
 			team20teamBP.setCenter(team20teamVB);
 			team20teamBP.setId("findBestTeamStatAllBP1");
+			this.add(team16teamBP, 1, 7);
+			this.add(team17teamBP, 3, 7);
+			this.add(team18teamBP, 5, 7);
+			this.add(team19teamBP, 7, 7);
+			this.add(team20teamBP, 9, 7);
 		}
 		if(numOfTeams == 25) {
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 21
+			tempT = sortedTL.listOfTeams.get(20);
 			int team21teamNum = tempT.getTeamNum();
 			double team21cy = tempT.getAvgCycles();
 			double team21spe = tempT.getAvgSpe();
@@ -1692,8 +1740,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team22teamBP = new BorderPane();
 			team22teamBP.setCenter(team22teamVB);
 			team22teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 23
+			tempT = sortedTL.listOfTeams.get(22);
 			int team23teamNum = tempT.getTeamNum();
 			double team23cy = tempT.getAvgCycles();
 			double team23spe = tempT.getAvgSpe();
@@ -1762,8 +1810,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team23teamBP = new BorderPane();
 			team23teamBP.setCenter(team23teamVB);
 			team23teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 24
+			tempT = sortedTL.listOfTeams.get(23);
 			int team24teamNum = tempT.getTeamNum();
 			double team24cy = tempT.getAvgCycles();
 			double team24spe = tempT.getAvgSpe();
@@ -1832,8 +1880,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team24teamBP = new BorderPane();
 			team24teamBP.setCenter(team24teamVB);
 			team24teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 25
+			tempT = sortedTL.listOfTeams.get(24);
 			int team25teamNum = tempT.getTeamNum();
 			double team25cy = tempT.getAvgCycles();
 			double team25spe = tempT.getAvgSpe();
@@ -1902,10 +1950,15 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team25teamBP = new BorderPane();
 			team25teamBP.setCenter(team25teamVB);
 			team25teamBP.setId("findBestTeamStatAllBP1");
+			this.add(team21teamBP, 1, 9);
+			this.add(team22teamBP, 3, 9);
+			this.add(team23teamBP, 5, 9);
+			this.add(team24teamBP, 7, 9);
+			this.add(team25teamBP, 9, 9);
 		}
 		if(numOfTeams == 30) {
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 26
+			tempT = sortedTL.listOfTeams.get(25);
 			int team26teamNum = tempT.getTeamNum();
 			double team26cy = tempT.getAvgCycles();
 			double team26spe = tempT.getAvgSpe();
@@ -1974,8 +2027,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team26teamBP = new BorderPane();
 			team26teamBP.setCenter(team26teamVB);
 			team26teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 27
+			tempT = sortedTL.listOfTeams.get(26);
 			int team27teamNum = tempT.getTeamNum();
 			double team27cy = tempT.getAvgCycles();
 			double team27spe = tempT.getAvgSpe();
@@ -2044,8 +2097,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team27teamBP = new BorderPane();
 			team27teamBP.setCenter(team27teamVB);
 			team27teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 28
+			tempT = sortedTL.listOfTeams.get(27);
 			int team28teamNum = tempT.getTeamNum();
 			double team28cy = tempT.getAvgCycles();
 			double team28spe = tempT.getAvgSpe();
@@ -2114,8 +2167,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team28teamBP = new BorderPane();
 			team28teamBP.setCenter(team28teamVB);
 			team28teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 29
+			tempT = sortedTL.listOfTeams.get(28);
 			int team29teamNum = tempT.getTeamNum();
 			double team29cy = tempT.getAvgCycles();
 			double team29spe = tempT.getAvgSpe();
@@ -2184,8 +2237,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team29teamBP = new BorderPane();
 			team29teamBP.setCenter(team29teamVB);
 			team29teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 30
+			tempT = sortedTL.listOfTeams.get(29);
 			int team30teamNum = tempT.getTeamNum();
 			double team30cy = tempT.getAvgCycles();
 			double team30spe = tempT.getAvgSpe();
@@ -2254,10 +2307,15 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team30teamBP = new BorderPane();
 			team30teamBP.setCenter(team30teamVB);
 			team30teamBP.setId("findBestTeamStatAllBP1");
+			this.add(team26teamBP, 1, 11);
+			this.add(team27teamBP, 3, 11);
+			this.add(team28teamBP, 5, 11);
+			this.add(team29teamBP, 7, 11);
+			this.add(team30teamBP, 9, 11);
 		}
 		if(numOfTeams == 35) {
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 31
+			tempT = sortedTL.listOfTeams.get(30);
 			int team31teamNum = tempT.getTeamNum();
 			double team31cy = tempT.getAvgCycles();
 			double team31spe = tempT.getAvgSpe();
@@ -2326,8 +2384,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team31teamBP = new BorderPane();
 			team31teamBP.setCenter(team31teamVB);
 			team31teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 32
+			tempT = sortedTL.listOfTeams.get(31);
 			int team32teamNum = tempT.getTeamNum();
 			double team32cy = tempT.getAvgCycles();
 			double team32spe = tempT.getAvgSpe();
@@ -2396,8 +2454,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team32teamBP = new BorderPane();
 			team32teamBP.setCenter(team32teamVB);
 			team32teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 33
+			tempT = sortedTL.listOfTeams.get(32);
 			int team33teamNum = tempT.getTeamNum();
 			double team33cy = tempT.getAvgCycles();
 			double team33spe = tempT.getAvgSpe();
@@ -2466,8 +2524,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team33teamBP = new BorderPane();
 			team33teamBP.setCenter(team33teamVB);
 			team33teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 34
+			tempT = sortedTL.listOfTeams.get(33);
 			int team34teamNum = tempT.getTeamNum();
 			double team34cy = tempT.getAvgCycles();
 			double team34spe = tempT.getAvgSpe();
@@ -2536,8 +2594,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team34teamBP = new BorderPane();
 			team34teamBP.setCenter(team34teamVB);
 			team34teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 35
+			tempT = sortedTL.listOfTeams.get(34);
 			int team35teamNum = tempT.getTeamNum();
 			double team35cy = tempT.getAvgCycles();
 			double team35spe = tempT.getAvgSpe();
@@ -2606,10 +2664,15 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team35teamBP = new BorderPane();
 			team35teamBP.setCenter(team35teamVB);
 			team35teamBP.setId("findBestTeamStatAllBP1");
+			this.add(team1teamBP, 1, 13);
+			this.add(team2teamBP, 3, 13);
+			this.add(team3teamBP, 5, 13);
+			this.add(team4teamBP, 7, 13);
+			this.add(team5teamBP, 9, 13);
 		}
 		if(numOfTeams == 40) {
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 36
+			tempT = sortedTL.listOfTeams.get(35);
 			int team36teamNum = tempT.getTeamNum();
 			double team36cy = tempT.getAvgCycles();
 			double team36spe = tempT.getAvgSpe();
@@ -2678,8 +2741,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team36teamBP = new BorderPane();
 			team36teamBP.setCenter(team36teamVB);
 			team36teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 37
+			tempT = sortedTL.listOfTeams.get(36);
 			int team37teamNum = tempT.getTeamNum();
 			double team37cy = tempT.getAvgCycles();
 			double team37spe = tempT.getAvgSpe();
@@ -2749,7 +2812,7 @@ public class findBestTeamTab extends GridPane {
 			team37teamBP.setCenter(team37teamVB);
 			team37teamBP.setId("findBestTeamStatAllBP1");
 			//team 38
-			tempT = sortedTL.listOfTeams.get(0);
+			tempT = sortedTL.listOfTeams.get(37);
 			int team38teamNum = tempT.getTeamNum();
 			double team38cy = tempT.getAvgCycles();
 			double team38spe = tempT.getAvgSpe();
@@ -2818,8 +2881,8 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team38teamBP = new BorderPane();
 			team38teamBP.setCenter(team38teamVB);
 			team38teamBP.setId("findBestTeamStatAllBP1");
-			//team 1
-			tempT = sortedTL.listOfTeams.get(0);
+			//team 39
+			tempT = sortedTL.listOfTeams.get(38);
 			int team39teamNum = tempT.getTeamNum();
 			double team39cy = tempT.getAvgCycles();
 			double team39spe = tempT.getAvgSpe();
@@ -2888,6 +2951,81 @@ public class findBestTeamTab extends GridPane {
 			BorderPane team39teamBP = new BorderPane();
 			team39teamBP.setCenter(team39teamVB);
 			team39teamBP.setId("findBestTeamStatAllBP1");
+			//team 40
+			tempT = sortedTL.listOfTeams.get(0);
+			int team40teamNum = tempT.getTeamNum();
+			double team40cy = tempT.getAvgCycles();
+			double team40spe = tempT.getAvgSpe();
+			double team40amp = tempT.getAvgAmp();
+			double team40trap = tempT.getAvgTrap();
+			double team40climb = tempT.getAvgClimb();
+			double team40highN = tempT.getHumAmpNotes();
+			Label team40teamNumL = new Label(Integer.toString(team40teamNum));
+			Label team40cyL = new Label(Double.toString(team40cy));
+			Label team40speL = new Label(Double.toString(team40spe));
+			Label team40ampL = new Label(Double.toString(team40amp));
+			Label team40trapL = new Label(Double.toString(team40trap));
+			Label team40climbL = new Label(Double.toString(team40climb));
+			Label team40highNL = new Label(Double.toString(team40highN));
+			team40teamNumL.setId("avgStat");
+			team40cyL.setId("avgStat");
+			team40speL.setId("avgStat");
+			team40ampL.setId("avgStat");
+			team40trapL.setId("avgStat");
+			team40climbL.setId("avgStat");
+			team40highNL.setId("avgStat");
+			Label team40teamNumTitleL = new Label("Team Num");
+			Label team40cyTitleL = new Label("Avg Cycles");
+			Label team40speTitleL = new Label("Avg Speaker");
+			Label team40ampTitleL = new Label("Avg Amp");
+			Label team40trapTitleL = new Label("Avg Trap");
+			Label team40climbTitleL = new Label("Avg CLimb");
+			Label team40highNTitleL = new Label("Avg High Notes");
+			team40teamNumTitleL.setId("smallTitle");
+			team40cyTitleL.setId("smallTitle");
+			team40speTitleL.setId("smallTitle");
+			team40ampTitleL.setId("smallTitle");
+			team40trapTitleL.setId("smallTitle");
+			team40climbTitleL.setId("smallTitle");
+			team40highNTitleL.setId("smallTitle");
+			BorderPane team40teamNumBP = new BorderPane();
+			BorderPane team40cyBP = new BorderPane();
+			BorderPane team40speBP = new BorderPane();
+			BorderPane team40ampBP = new BorderPane();
+			BorderPane team40trapBP = new BorderPane();
+			BorderPane team40climbBP = new BorderPane();
+			BorderPane team40highNBP = new BorderPane();
+			team40teamNumBP.setTop(team40teamNumTitleL);
+			team40cyBP.setTop(team40cyTitleL);
+			team40speBP.setTop(team40speTitleL);
+			team40ampBP.setTop(team40ampTitleL);
+			team40trapBP.setTop(team40trapTitleL);
+			team40climbBP.setTop(team40climbTitleL);
+			team40highNBP.setTop(team40highNTitleL);
+			team40teamNumBP.setCenter(team40teamNumL);
+			team40cyBP.setCenter(team40cyL);
+			team40speBP.setCenter(team40speL);
+			team40ampBP.setCenter(team40ampL);
+			team40trapBP.setCenter(team40trapL);
+			team40climbBP.setCenter(team40climbL);
+			team40highNBP.setCenter(team40highNL);
+			team40teamNumBP.setId("findBestTeamStatBP1");
+			team40cyBP.setId("findBestTeamStatBP2");
+			team40speBP.setId("findBestTeamStatBP3");
+			team40ampBP.setId("findBestTeamStatBP4");
+			team40trapBP.setId("findBestTeamStatBP5");
+			team40climbBP.setId("findBestTeamStatBP6");
+			team40highNBP.setId("findBestTeamStatBP7");
+			VBox team40teamVB = new VBox(5);
+			team40teamVB.getChildren().addAll(team40teamNumBP, team40cyBP, team40speBP, team40ampBP, team40trapBP, team40climbBP, team40highNBP);
+			BorderPane team40teamBP = new BorderPane();
+			team40teamBP.setCenter(team40teamVB);
+			team40teamBP.setId("findBestTeamStatAllBP1");
+			this.add(team1teamBP, 1, 15);
+			this.add(team2teamBP, 3, 15);
+			this.add(team3teamBP, 5, 15);
+			this.add(team4teamBP, 7, 15);
+			this.add(team5teamBP, 9, 15);
 		}
 	}
 }

@@ -1154,7 +1154,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		for (int i = 0; i < 80; i++) {
 			listOfTeamNumsSorted.add(null);
 		}
-		int place;
+		int place = 0;
 		for (int i = 0; i < listOfTeamNums.size(); i++) {
 			place = 0;
 			for(int e = 0; e < listOfTeamNums.size(); e++) {
