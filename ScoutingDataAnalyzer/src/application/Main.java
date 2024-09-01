@@ -1388,7 +1388,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 	}
 	
 	private void makeFindBestTeam() {
-		findBestTeamTab findTeam = new findBestTeamTab();
+		findBestTeamTab findTeam = new findBestTeamTab(mainTeamList);
 		findTeam.setMinHeight(800);
 		findTeam.setMinWidth(1400);
 		findTeam.setMaxHeight(800);
