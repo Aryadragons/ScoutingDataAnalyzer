@@ -1,0 +1,11 @@
+.tab{
+    -fx-background-insets: 0 1 0 1,0,0;
+}
+.MyTabPane .tab {
+    -fx-background-color: black;
+
+}
+.MyTabPane .tab:selected
+{
+    -fx-background-color: black;
+}

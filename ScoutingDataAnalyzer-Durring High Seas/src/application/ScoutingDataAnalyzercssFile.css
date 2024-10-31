@@ -1,0 +1,1800 @@
+.root{
+	-fx-text-fill: rgb(219,178,255);
+	-fx-font-size: 15;
+}
+.menu-bar {
+    -fx-background-color: rgb(72,72,72) ;
+}
+.button{
+    -fx-background-color: rgb(193,177,255) ;
+}
+#seLabelTeamsStyle{
+	-fx-text-fill: rgb(219,178,255);
+	-fx-font-size: 20;
+}
+.label{
+	-fx-text-fill: rgb(219,178,255);
+}
+.tab{
+	-fx-tab-min-width: 1400;
+	-fx-tab-min-height: 800;
+}
+.bar-chart{
+	-fx-category-gap: 1;
+}
+.axis-tick-mark{
+	-fx-tick-label-fill: rgb(219,178,255);
+}
+#Axis{
+	-fx-tick-label-fill: rgb(219,178,255);
+}
+.default-color0.chart-pie { -fx-pie-color: rgb(183,38,255); }
+.default-color1.chart-pie { -fx-pie-color: rgb(195,83,255); }
+.default-color3.chart-pie { -fx-pie-color: rgb(170,0,255); }
+.default-color4.chart-pie { -fx-pie-color: rgb(144,0,216); }
+.default-color2.chart-pie { -fx-pie-color: rgb(119,0,178); }
+ 
+.chart-pie-label-line {
+    -fx-stroke: rgb(219,178,255);
+    -fx-fill: rgb(219,178,255);
+}
+ 
+.chart-pie-label {
+    -fx-fill: rgb(219,178,255);
+    -fx-font-size: 1em;
+} 
+.chart-legend {
+   -fx-background-color:  rgb(105, 48, 195);
+   -fx-stroke: rgb(219,178,255);
+}
+.chart-pie{
+	-fx-padding: 0, 0, 0, 0;
+}
+
+#studslabel{
+	-fx-text-fill: rgb(170,0,255);
+	-fx-font-size: 20;
+}
+
+#ADC{
+	-fx-text-fill: rgb(201,2,2);
+}
+
+#TitleLabel{
+	-fx-text-fill: rgb(219,178,255);
+	-fx-font-size: 25;
+}
+
+#warn1{
+	-fx-text-fill: rgb(232,229,28);
+	-fx-font-size: 20;
+}
+
+#warn2{
+	-fx-text-fill: rgb(252,92,18);
+	-fx-font-size: 20;
+}
+
+#warn3{
+	-fx-text-fill: rgb(201,2,2);
+	-fx-font-size: 20;
+}
+
+#strat{
+	-fx-text-fill: rgb(4,179,6);
+	-fx-font-size: 20;
+}
+
+#TitleLabelPlay{
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-font-size: 25;
+}
+
+#BPA1{
+	-fx-min-height: 200;
+	-fx-max-height: 200;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(128, 255, 219);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#BPA2{
+	-fx-min-height: 200;
+	-fx-max-height: 200;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#BPA3{
+	-fx-min-height: 200;
+	-fx-max-height: 200;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#BPA4{
+	-fx-min-height: 200;
+	-fx-max-height: 200;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#BPA5{
+	-fx-min-height: 200;
+	-fx-max-height: 200;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#BPA6{
+	-fx-min-height: 200;
+	-fx-max-height: 200;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#BPA7{
+	-fx-min-height: 200;
+	-fx-max-height: 200;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#BPA8{
+	-fx-min-height: 200;
+	-fx-max-height: 200;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+
+#EditedPlay{
+	-fx-text-fill: rgb(128, 255, 219);
+}
+
+#saveDVB{
+	-fx-min-height: 75;
+	-fx-max-height: 75;
+	-fx-min-width: 150;
+	-fx-max-width: 150;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+
+#savePlayVB{
+	-fx-min-height: 75;
+	-fx-max-height: 75;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#saveDL0{
+	-fx-text-fill: rgb(94, 96, 206);
+	-fx-font-size: 15;
+}
+#saveDL1{
+	-fx-text-fill: rgb(255,71,71);
+	-fx-font-size: 15;
+}
+#saveDL2{
+	-fx-text-fill: rgb(255,172,71);
+	-fx-font-size: 15;
+}
+#saveDL3{
+	-fx-text-fill: rgb(250,255,92);
+	-fx-font-size: 15;
+}
+#saveDL4{
+	-fx-text-fill: rgb(136,255,112);
+	-fx-font-size: 15;
+}
+#saveDL5{
+	-fx-text-fill: rgb(92,241,255);
+	-fx-font-size: 15;
+}
+#saveDL6{
+	-fx-text-fill: rgb(92,154,255);
+	-fx-font-size: 15;
+}
+#saveDL7{
+	-fx-text-fill: rgb(166,92,255);
+	-fx-font-size: 15;
+}
+#saveDL8{
+	-fx-text-fill: rgb(163,0,163);
+	-fx-font-size: 15;
+}
+#savePlayL0{
+	-fx-text-fill: rgb(83, 144, 217);
+	-fx-font-size: 15;
+}
+#savePlayL1{
+	-fx-text-fill: rgb(255,71,71);
+	-fx-font-size: 15;
+}
+#savePlayL2{
+	-fx-text-fill: rgb(255,172,71);
+	-fx-font-size: 15;
+}
+#savePlayL3{
+	-fx-text-fill: rgb(250,255,92);
+	-fx-font-size: 15;
+}
+#savePlayL4{
+	-fx-text-fill: rgb(136,255,112);
+	-fx-font-size: 15;
+}
+#savePlayL5{
+	-fx-text-fill: rgb(92,241,255);
+	-fx-font-size: 15;
+}
+#savePlayL6{
+	-fx-text-fill: rgb(92,154,255);
+	-fx-font-size: 15;
+}
+#savePlayL7{
+	-fx-text-fill: rgb(166,92,255);
+	-fx-font-size: 15;
+}
+#savePlayL8{
+	-fx-text-fill: rgb(163,0,163);
+	-fx-font-size: 15;
+}
+
+#setPlayL{
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-font-size: 15;
+}
+#BPA4open{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 800;
+	-fx-max-width: 800;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#BPA5open{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 800;
+	-fx-max-width: 800;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#BPA6open{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 1000;
+	-fx-max-width: 1000;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+
+#openDTCBP1{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(128, 255, 219);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#openDTCBP2{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#openDTCBP3{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#openDTCBP4{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#openDTCBP5{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#openDTCBP6{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#openDTCBP7{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#openDTCBP8{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#openDTCBP9{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(105, 48, 195);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#avgCyclesBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(128, 255, 219);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#avgSpeBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#avgAmpBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#avgTrapBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#avgClimbBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#timesScoBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#timesAmpBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#avgScoSkillBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#avgAmpSkillBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#avgAmpNotesBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seTeamsStudMentsBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 350;
+	-fx-max-width: 350;
+	-fx-background-color: rgb(105, 48, 195);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seTeamsBattsBP{
+	-fx-min-height: 75;
+	-fx-max-height: 75;
+	-fx-min-width: 350;
+	-fx-max-width: 350;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seTeamsProgramBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 300;
+	-fx-max-width: 300;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seTeamsDriveTrBP{
+	-fx-min-height: 125;
+	-fx-max-height: 125;
+	-fx-min-width: 350;
+	-fx-max-width: 350;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seTeamsAutoBP1{
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(128, 255, 219);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seTeamsAutoBP2{
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seTeamsAutoBP3{
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seTeamsAutoBP4{
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seTeamsAutoBP5{
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seTeamsAutoBP6{
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seTeamsAutoBP7{
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seTeamsAutoBP8{
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seTeamsAutoBP9{
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(105, 48, 195);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#saDriverBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 350;
+	-fx-max-width: 350;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#hourDriverBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 350;
+	-fx-max-width: 350;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#saOperatorBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 350;
+	-fx-max-width: 350;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#hourOperatorBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 350;
+	-fx-max-width: 350;
+	-fx-background-color: rgb(105, 48, 195);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#drCoachVB{
+	-fx-min-height: 80;
+	-fx-max-height: 80;
+	-fx-min-width: 350;
+	-fx-max-width: 350;
+	-fx-background-color: rgb(105, 48, 195);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#humPlayerBP{
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-min-width: 350;
+	-fx-max-width: 350;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#searchTeamsSelTBP{
+	-fx-min-height: 75;
+	-fx-max-height: 75;
+	-fx-min-width: 250;
+	-fx-max-width: 250;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#smallTitle{
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-font-size: 22;
+}
+#avgStat{
+	-fx-font-size: 35;
+	-fx-text-fill: rgb(219,178,255);
+}
+#teamTitleBP{
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-min-width: 350;
+	-fx-max-width: 350;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#MatchBarChartBP{
+	-fx-min-height: 300;
+	-fx-max-height: 300;
+	-fx-min-width: 300;
+	-fx-max-width: 300;
+}
+#commentsBP{
+	-fx-min-height: 300;
+	-fx-max-height: 300;
+	-fx-min-width: 300;
+	-fx-max-width: 300;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#deleteBP{
+	-fx-min-height: 75;
+	-fx-max-height: 75;
+	-fx-min-width: 350;
+	-fx-max-width: 350;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#sizeBP{
+	-fx-min-height: 1800;
+	-fx-max-height: 1800;
+	-fx-min-width: 250;
+	-fx-max-width: 250;
+}
+#seDTCBP1{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(128, 255, 219);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seDTCBP2{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seDTCBP3{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seDTCBP4{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seDTCBP5{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seDTCBP6{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seDTCBP7{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAutosTF{
+	-fx-min-width: 125;
+	-fx-max-width: 125;
+}
+#seAutosSelectBP1{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAutosSelectBP2{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAutosSelectBP3{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAutosSelectBP4{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAutoStatBP1{
+	-fx-min-height: 500;
+	-fx-max-height: 500;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(105, 48, 195);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAutoStatBP2{
+	-fx-min-height: 500;
+	-fx-max-height: 500;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAutoStatBP3{
+	-fx-min-height: 500;
+	-fx-max-height: 500;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAutoStatBP4{
+	-fx-min-height: 500;
+	-fx-max-height: 500;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAutoStatBP5{
+	-fx-min-height: 500;
+	-fx-max-height: 500;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAutoStatBP6{
+	-fx-min-height: 500;
+	-fx-max-height: 500;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAutoStatBP7{
+	-fx-min-height: 500;
+	-fx-max-height: 500;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAutoStatBP8{
+	-fx-min-height: 500;
+	-fx-max-height: 500;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAutoStatBP9{
+
+	-fx-min-height: 500;
+	-fx-max-height: 500;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(128, 255, 219);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllSelectTeam1{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllSelectTeam2{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllSelectTeam3{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllNonBP1{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(128, 255, 219);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllNonBP2{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllNonBP3{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllNonBP4{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllNonBP5{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllNonBP6{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllNonBP7{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllNonBP8{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllNonBP9{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(105, 48, 195);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllBP1{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(128, 255, 219);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllBP2{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllBP3{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllBP4{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllBP5{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllBP6{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllBP7{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllBP8{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllBP9{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(105, 48, 195);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAlla1TitleBP{
+	-fx-min-height: 75;
+	-fx-max-height: 75;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllt1TitleBP{
+	-fx-min-height: 75;
+	-fx-max-height: 75;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllt2TitleBP{
+	-fx-min-height: 75;
+	-fx-max-height: 75;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllt3TitleBP{
+	-fx-min-height: 75;
+	-fx-max-height: 75;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#smallerTitle{
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-font-size: 19;
+}
+#seAllworks1{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(105, 48, 195);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllworks2{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllworks3{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllMelBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllMeltBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllt1ADC{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllt2ADC{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllt3ADC{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllWarnBPT1{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllWarnBPT2{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllWarnBPT3{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(128, 255, 219);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seAllSelectall{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seMStatBP1{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(128, 255, 219);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seMStatBP2{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seMStatBP3{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seMStatBP4{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seMStatBP5{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seMStatBP6{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seMStatBP7{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seMStatBP8{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seMStatBP9{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(105, 48, 195);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seMSelBp1{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seMSelBp2{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 225;
+	-fx-max-width: 225;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seMSelBp3{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 225;
+	-fx-max-width: 225;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seMSelBp4{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#seMTotalBP6{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comTeamsStatBP1{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(128, 255, 219);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comTeamsStatBP2{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comTeamsStatBP3{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comTeamsStatBP4{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comTeamsStatBP5{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comTeamsStatBP6{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comTeamsStatBP7{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comTeamsStatBP8{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comTeamsStatBP9{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(105, 48, 195);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comTSelTeam{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 175;
+	-fx-max-width: 175;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comTeamsTitleBP1{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comTeamsPCLsBP1{
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-min-width: 100;
+	-fx-max-width: 100;
+	-fx-background-color: rgb(128, 255, 219);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comTeamsPCLsBP2{
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-min-width: 100;
+	-fx-max-width: 100;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comTeamsPCLsBP3{
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-min-width: 100;
+	-fx-max-width: 100;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comTeamsPCLsBP4{
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-max-width: 100;
+	-fx-min-width: 100;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comTeamsPCLsBP5{
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-min-width: 100;
+	-fx-max-width: 100;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comTeamsPCLsBP6{
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-min-width: 135;
+	-fx-max-width: 135;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllselBP1{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(128, 255, 219);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllselBP2{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllselBP3{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllselBP4{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllselBP5{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllstatBP1{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(128, 255, 219);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllstatBP2{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllstatBP3{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllstatBP4{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllstatBP5{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllstatBP6{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllstatBP7{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllstatBP8{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllstatBP9{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(105, 48, 195);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllsPieCLBP{
+	-fx-min-height: 55;
+	-fx-max-height: 55;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllsPieChartId{
+	-fx-pie-color: rgb(183,38,255);
+	-fx-pie-color: rgb(195,83,255);
+	-fx-pie-color: rgb(170,0,255);
+	-fx-pie-color: rgb(144,0,216);
+	-fx-pie-color: rgb(119,0,178);
+}
+#comAllselPlayBP1{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 250;
+	-fx-max-width: 250;
+	-fx-background-color: rgb(128, 255, 219);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllselPlayBP2{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 250;
+	-fx-max-width: 250;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllselPlayBP3{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 250;
+	-fx-max-width: 250;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllsPlayStatBP1{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(128, 255, 219);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllsPlayStatBP2{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(114, 239, 221);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllsPlayStatBP3{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(100, 223, 223);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllsPlayStatBP4{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(86, 207, 225);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllsPlayStatBP5{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(72, 191, 227);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllsPlayStatBP6{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllsPlayStatBP7{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllsPlayStatBP8{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllsPlayStatBP9{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(105, 48, 195);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllsPlayTitleBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 155;
+	-fx-max-width: 155;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#comAllsPlayAllTitleBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#findBestTeamSelRangeBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(83, 144, 217);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#findBestTeamSelMectBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(78, 168, 222);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#findBestTeamSelNumOfTeamBP{
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 200;
+	-fx-max-width: 200;
+	-fx-background-color: rgb(94, 96, 206);
+	-fx-text-fill: rgb(55, 0, 93);
+	-fx-background-radius:10;
+}
+#frcblueSquare{
+	-fx-fill: rgb(0, 111, 230);
+}
+#frcRedSquare{
+	-fx-fill: rgb(230, 0, 0);
+}
+#frcBlackSquare{
+	-fx-fill: rgb(26, 26, 26);
+}
+
+#frcwhiteSquare{
+	-fx-fill: rgb(255, 255, 255);
+}
