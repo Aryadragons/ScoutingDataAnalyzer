@@ -2504,7 +2504,2272 @@ public class findBestTeamTab extends GridPane {
 						}
 					}
 				}
+			//amp as 1st 
+			if(stat1.compareTo("amp") == 0) {
+				if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+					place++;
+				}else {
+					if(stat2.compareTo("cy") == 0) {
+						if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+							place++;
+						}else {
+							if(stat3.compareTo("spe") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+									place++;
+								}else {
+									if(stat4.compareTo("trap") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("trap") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("highN") == 0) {
+										if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("trap") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							if(stat3.compareTo("trap") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+									place++;
+								}else {
+									if(stat4.compareTo("spe") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("highN") == 0) {
+										if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							if(stat3.compareTo("climb") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+									place++;
+								}else {
+									if(stat4.compareTo("trap") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("spe") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("trap") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("highN") == 0) {
+										if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+											place++;
+										}else {
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("trap") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							if(stat3.compareTo("highN") == 0) {
+								if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+									place++;
+								}else {
+									if(stat4.compareTo("trap") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("trap") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("spe") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("trap") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					if(stat2.compareTo("spe") == 0) {
+						if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+							place++;
+						}else {
+							if(stat3.compareTo("cy") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+									place++;
+								}else {
+									if(stat4.compareTo("trap") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("trap") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("highN") == 0) {
+										if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("trap") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							
+							if(stat3.compareTo("trap") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+									place++;
+								}else {
+									if(stat4.compareTo("cy") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("highN") == 0) {
+										if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							if(stat3.compareTo("climb") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+									place++;
+								}else {
+									if(stat4.compareTo("trap") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("cy") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("trap") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("highN") == 0) {
+										if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+											place++;
+										}else {
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("trap") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							if(stat3.compareTo("highN") == 0) {
+								if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+									place++;
+								}else {
+									if(stat4.compareTo("trap") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("trap") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("cy") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("trap") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+						}
+					}
+					if(stat2.compareTo("trap") == 0) {
+						if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+							place++;
+						}else {
+							if(stat3.compareTo("cy") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+									place++;
+								}else {
+									if(stat4.compareTo("spe") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("highN") == 0) {
+										if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							
+							if(stat3.compareTo("spe") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+									place++;
+								}else {
+									if(stat4.compareTo("cy") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("highN") == 0) {
+										if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							if(stat3.compareTo("climb") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+									place++;
+								}else {
+									if(stat4.compareTo("spe") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("cy") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("highN") == 0) {
+										if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+											place++;
+										}else {
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							if(stat3.compareTo("highN") == 0) {
+								if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+									place++;
+								}else {
+									if(stat4.compareTo("spe") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("cy") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+								
+							}
+						}
+					}
+					if(stat2.compareTo("climb") == 0) {
+						if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+							place++;
+						}else {
+							if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+								place++;
+							}else {
+								if(stat3.compareTo("cy") == 0) {
+									if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+										place++;
+									}else {
+										if(stat4.compareTo("spe") == 0) {
+											if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+												place++;
+											}else {
+												if(stat5.compareTo("trap") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("highN") == 0) {
+													if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+														place++;
+													}
+												}
+												
+											}
+										}
+										if(stat4.compareTo("trap") == 0) {
+											if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+												place++;
+											}else {
+												if(stat5.compareTo("highN") == 0) {
+													if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("spe") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+														place++;
+													}
+												}
+											}
+										}
+										if(stat4.compareTo("highN") == 0) {
+											if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+												place++;
+											}else {
+												if(stat5.compareTo("trap") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("spe") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+														place++;
+													}
+												}
+											}
+										}
+									}
+								}
+								
+								if(stat3.compareTo("spe") == 0) {
+									if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+										place++;
+									}else {
+										if(stat4.compareTo("cy") == 0) {
+											if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+												place++;
+											}else {
+												if(stat5.compareTo("trap") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("highN") == 0) {
+													if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+														place++;
+													}
+												}
+											}
+										}
+										if(stat4.compareTo("trap") == 0) {
+											if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+												place++;
+											}else {
+												if(stat5.compareTo("highN") == 0) {
+													if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("cy") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+														place++;
+													}
+												}
+											}
+										}
+										if(stat4.compareTo("highN") == 0) {
+											if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+												place++;
+											}else {
+												if(stat5.compareTo("trap") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("cy") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+														place++;
+													}
+												}
+											}
+										}
+									}
+								}
+								if(stat3.compareTo("trap") == 0) {
+									if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+										place++;
+									}else {
+										if(stat4.compareTo("spe") == 0) {
+											if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+												place++;
+											}else {
+												if(stat5.compareTo("highN") == 0) {
+													if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("cy") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+														place++;
+													}
+												}
+											}
+										}
+										if(stat4.compareTo("cy") == 0) {
+											if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+												place++;
+											}else {
+												if(stat5.compareTo("highN") == 0) {
+													if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("spe") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+														place++;
+													}
+												}
+											}
+										}
+										if(stat4.compareTo("highN") == 0) {
+											if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+												place++;
+											}else {
+												if(stat5.compareTo("cy") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("spe") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+														place++;
+													}
+												}
+											}
+										}
+									}
+								}
+								if(stat3.compareTo("highN") == 0) {
+									if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+										place++;
+									}else {
+										if(stat4.compareTo("spe") == 0) {
+											if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+												place++;
+											}else {
+												if(stat5.compareTo("trap") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("cy") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+														place++;
+													}
+												}
+											}
+										}
+										if(stat4.compareTo("trap") == 0) {
+											if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+												place++;
+											}else {
+												if(stat5.compareTo("spe") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("cy") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+														place++;
+													}
+												}
+											}
+										}
+										if(stat4.compareTo("cy") == 0) {
+											if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+												place++;
+											}else {
+												if(stat5.compareTo("trap") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("spe") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+														place++;
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					if(stat2.compareTo("highN") == 0) {
+						if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+							place++;
+						}else {
+							if(stat3.compareTo("cy") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+									place++;
+								}else {
+									if(stat4.compareTo("spe") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("trap") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+													place++;
+												}
+											}
+											
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("trap") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("trap") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							
+							if(stat3.compareTo("spe") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+									place++;
+								}else {
+									if(stat4.compareTo("cy") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("trap") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("trap") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("trap") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							if(stat3.compareTo("climb") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+									place++;
+								}else {
+									if(stat4.compareTo("spe") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+											place++;
+										}else {
+											if(stat5.compareTo("trap") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("cy") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+											place++;
+										}else {
+											if(stat5.compareTo("trap") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("trap") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+											place++;
+										}else {
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							if(stat3.compareTo("trap") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+									place++;
+								}else {
+									if(stat4.compareTo("spe") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("cy") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			}
+			//Trap as 1st 
+			if(stat1.compareTo("Trap") == 0) {
+				if(theTL.listOfTeams.get(i).getAvgTrap() - range1 > theTL.listOfTeams.get(e).getAvgTrap()) {
+					place++;
+				}else {
+					if(stat2.compareTo("cy") == 0) {
+						if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+							place++;
+						}else {
+							if(stat3.compareTo("amp") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+									place++;
+								}else {
+									if(stat4.compareTo("spe") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("highN") == 0) {
+										if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							if(stat3.compareTo("spe") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+									place++;
+								}else {
+									if(stat4.compareTo("amp") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("amp") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("highN") == 0) {
+										if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("amp") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							if(stat3.compareTo("climb") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+									place++;
+								}else {
+									if(stat4.compareTo("spe") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("amp") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("amp") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("highN") == 0) {
+										if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+											place++;
+										}else {
+											if(stat5.compareTo("amp") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							if(stat3.compareTo("highN") == 0) {
+								if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+									place++;
+								}else {
+									if(stat4.compareTo("spe") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("amp") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("amp") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("amp") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					if(stat2.compareTo("amp") == 0) {
+						if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+							place++;
+						}else {
+							if(stat3.compareTo("cy") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+									place++;
+								}else {
+									if(stat4.compareTo("spe") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("highN") == 0) {
+										if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							
+							if(stat3.compareTo("spe") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+									place++;
+								}else {
+									if(stat4.compareTo("cy") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("highN") == 0) {
+										if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							if(stat3.compareTo("climb") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+									place++;
+								}else {
+									if(stat4.compareTo("spe") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("cy") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("highN") == 0) {
+										if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+											place++;
+										}else {
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							if(stat3.compareTo("highN") == 0) {
+								if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+									place++;
+								}else {
+									if(stat4.compareTo("spe") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("cy") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+						}
+					}
+					if(stat2.compareTo("spe") == 0) {
+						if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+							place++;
+						}else {
+							if(stat3.compareTo("cy") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+									place++;
+								}else {
+									if(stat4.compareTo("amp") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("amp") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("highN") == 0) {
+										if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("amp") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							
+							if(stat3.compareTo("amp") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+									place++;
+								}else {
+									if(stat4.compareTo("cy") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("highN") == 0) {
+										if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							if(stat3.compareTo("climb") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+									place++;
+								}else {
+									if(stat4.compareTo("amp") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("cy") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+											place++;
+										}else {
+											if(stat5.compareTo("highN") == 0) {
+												if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("amp") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("highN") == 0) {
+										if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+											place++;
+										}else {
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("amp") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							if(stat3.compareTo("highN") == 0) {
+								if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+									place++;
+								}else {
+									if(stat4.compareTo("amp") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("amp") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("cy") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("amp") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+													place++;
+												}
+											}
+										}
+									}
+								
+							}
+						}
+					}
+					if(stat2.compareTo("climb") == 0) {
+						if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+							place++;
+						}else {
+							if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+								place++;
+							}else {
+								if(stat3.compareTo("cy") == 0) {
+									if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+										place++;
+									}else {
+										if(stat4.compareTo("amp") == 0) {
+											if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+												place++;
+											}else {
+												if(stat5.compareTo("spe") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("highN") == 0) {
+													if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+														place++;
+													}
+												}
+												
+											}
+										}
+										if(stat4.compareTo("spe") == 0) {
+											if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+												place++;
+											}else {
+												if(stat5.compareTo("highN") == 0) {
+													if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("amp") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+														place++;
+													}
+												}
+											}
+										}
+										if(stat4.compareTo("highN") == 0) {
+											if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+												place++;
+											}else {
+												if(stat5.compareTo("spe") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("amp") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+														place++;
+													}
+												}
+											}
+										}
+									}
+								}
+								
+								if(stat3.compareTo("amp") == 0) {
+									if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+										place++;
+									}else {
+										if(stat4.compareTo("cy") == 0) {
+											if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+												place++;
+											}else {
+												if(stat5.compareTo("spe") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("highN") == 0) {
+													if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+														place++;
+													}
+												}
+											}
+										}
+										if(stat4.compareTo("spe") == 0) {
+											if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+												place++;
+											}else {
+												if(stat5.compareTo("highN") == 0) {
+													if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("cy") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+														place++;
+													}
+												}
+											}
+										}
+										if(stat4.compareTo("highN") == 0) {
+											if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+												place++;
+											}else {
+												if(stat5.compareTo("spe") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("cy") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+														place++;
+													}
+												}
+											}
+										}
+									}
+								}
+								if(stat3.compareTo("spe") == 0) {
+									if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+										place++;
+									}else {
+										if(stat4.compareTo("amp") == 0) {
+											if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+												place++;
+											}else {
+												if(stat5.compareTo("highN") == 0) {
+													if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("cy") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+														place++;
+													}
+												}
+											}
+										}
+										if(stat4.compareTo("cy") == 0) {
+											if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+												place++;
+											}else {
+												if(stat5.compareTo("highN") == 0) {
+													if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("amp") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+														place++;
+													}
+												}
+											}
+										}
+										if(stat4.compareTo("highN") == 0) {
+											if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+												place++;
+											}else {
+												if(stat5.compareTo("cy") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("amp") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+														place++;
+													}
+												}
+											}
+										}
+									}
+								}
+								if(stat3.compareTo("highN") == 0) {
+									if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+										place++;
+									}else {
+										if(stat4.compareTo("amp") == 0) {
+											if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+												place++;
+											}else {
+												if(stat5.compareTo("spe") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("cy") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+														place++;
+													}
+												}
+											}
+										}
+										if(stat4.compareTo("spe") == 0) {
+											if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+												place++;
+											}else {
+												if(stat5.compareTo("amp") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("cy") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+														place++;
+													}
+												}
+											}
+										}
+										if(stat4.compareTo("cy") == 0) {
+											if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+												place++;
+											}else {
+												if(stat5.compareTo("spe") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+														place++;
+													}
+												}
+												if(stat5.compareTo("amp") == 0) {
+													if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+														place++;
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					if(stat2.compareTo("highN") == 0) {
+						if(theTL.listOfTeams.get(i).getHumAmpNotes() - range1 > theTL.listOfTeams.get(e).getHumAmpNotes()) {
+							place++;
+						}else {
+							if(stat3.compareTo("cy") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+									place++;
+								}else {
+									if(stat4.compareTo("amp") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+											
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("amp") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("spe") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("amp") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							
+							if(stat3.compareTo("amp") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+									place++;
+								}else {
+									if(stat4.compareTo("cy") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("spe") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							if(stat3.compareTo("climb") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+									place++;
+								}else {
+									if(stat4.compareTo("amp") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+											place++;
+										}else {
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("cy") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+											place++;
+										}else {
+											if(stat5.compareTo("spe") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("amp") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("spe") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+											place++;
+										}else {
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("amp") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+							if(stat3.compareTo("spe") == 0) {
+								if(theTL.listOfTeams.get(i).getAvgSpe() - range1 > theTL.listOfTeams.get(e).getAvgSpe()) {
+									place++;
+								}else {
+									if(stat4.compareTo("amp") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("climb") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+											place++;
+										}else {
+											if(stat5.compareTo("amp") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("cy") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+													place++;
+												}
+											}
+										}
+									}
+									if(stat4.compareTo("cy") == 0) {
+										if(theTL.listOfTeams.get(i).getAvgCycles() - range1 > theTL.listOfTeams.get(e).getAvgCycles()) {
+											place++;
+										}else {
+											if(stat5.compareTo("climb") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgClimb() - range1 > theTL.listOfTeams.get(e).getAvgClimb()) {
+													place++;
+												}
+											}
+											if(stat5.compareTo("amp") == 0) {
+												if(theTL.listOfTeams.get(i).getAvgAmp() - range1 > theTL.listOfTeams.get(e).getAvgAmp()) {
+													place++;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			
+		
+		}
 			listOfTeamNumsSorted.listOfTeams.set(place, theTL.listOfTeams.get(i));
 		}
 		return null;

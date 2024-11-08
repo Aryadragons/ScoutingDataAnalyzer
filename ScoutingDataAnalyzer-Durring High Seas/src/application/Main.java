@@ -1186,7 +1186,7 @@ public class Main extends Application implements EventHandler<ActionEvent>{
 		sp.setHbarPolicy(ScrollBarPolicy.NEVER);
 		sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
 		sp.setContent(seTeams);
-		sp.setMinHeight(2000);
+		sp.setMinHeight(800);
 		Tab seTeamsTab = new Tab("Search Teams", sp);
 		mainTP.getTabs().addAll(seTeamsTab);
 	}
